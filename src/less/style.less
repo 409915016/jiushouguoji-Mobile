@@ -1,0 +1,252 @@
+@import "value.less";
+@import "func.less";
+@import "base.less";
+@import "fixed-el.less";
+@import "icon.less";
+
+
+
+html {
+    font-size: 113.6px;
+}
+body {
+    background-color: #fff;
+    height: 100%;
+    background-color: #e6e6e6;
+    color: #333;    
+}
+
+.wrapper {
+    width: 100%;
+    height: 1000px;
+    background-color: @wrapper-bg-color;
+    margin: 0 auto;
+    max-width: @max-width;
+    //min-width: @min-width;
+
+}
+
+/************************
+
+滑动页
+
+************************/
+
+.main-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: @max-width;
+    margin-top: unit((@search-bar-height + @nav-bar-height + 2)/@base-px-2-rem, rem);
+    padding-bottom: unit((@nav-buttom-bar-height ) /@base-px-2-rem, rem);
+}
+
+
+
+
+/************************
+
+头部大图
+可以复用的样式
+main-wrapper 
+    big-banner
+        big-banner-imgBox
+            p
+
+************************/
+
+
+
+
+.big-banner {
+    .big-banner-imgBox {
+        width: 100%;
+        max-width: @max-width;
+        height: unit(750/@base-px-2-rem, rem);
+
+        // background-image: url("../img/banner-img.jpg");
+        // background-size: 100%;
+        // background-repeat: no-repeat no-repeat;
+        // background-position: center center;
+        position: relative;
+        
+
+        // to fix the big image split the page
+        // http://www.divcss5.com/wenji/w364.shtml
+        overflow: hidden;
+        img {
+            //display: block;
+            // to fix the big image split the page
+            // http://stackoverflow.com/questions/7055393/center-image-using-text-align-center
+            height: unit(750/@base-px-2-rem, rem);
+            position: relative;
+            //-webkit- to fix UC borwser transform not work.
+            -webkit-transform: translateX(-50%) scale(1.1,1.1);
+            transform: translateX(-50%) scale(1.1,1.1);
+            zoom: 1.1;
+            left: 50%;
+            @media screen and (min-width: 768px) {
+                -webkit-transform: translateX(-50%) scale(1.2,1.2);
+                transform: translateX(-50%) scale(1.2,1.2);
+                zoom: 1.2;
+            }
+        }
+    }
+    /*大图下的文字*/
+    .make-big-img-p(@big-banner-text-height);
+}
+
+
+/************************
+
+产品容器
+
+************************/
+
+.product-section {
+    margin-top: unit(20/@base-px-2-rem, rem);
+    background-color: #fff;
+
+    //defluat 140
+    .make-big-img-p(120);
+}
+/************************
+
+产品大图
+
+************************/
+div.product-imgBox {
+    width: 100%;
+    max-width: @max-width;
+    height: unit(750/@base-px-2-rem, rem);
+
+    position: relative;
+    overflow: hidden;
+    img{
+        height: unit(750/@base-px-2-rem, rem);
+        position: relative;
+        //-webkit- to fix UC borwser transform not work.
+        -webkit-transform: translateX(-50%) scale(1,1);
+        transform: translateX(-50%) scale(1,1);
+        zoom: 1.1;
+        left: 50%;
+        @media screen and (min-width: 768px) {
+            -webkit-transform: translateX(-50%) scale(1.2,1.2);
+            transform: translateX(-50%) scale(1.2,1.2);
+            zoom: 1.2;
+        }
+    }
+    &:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 46.999%;
+        
+        border-left: unit(40/@base-px-2-rem, rem) solid transparent;
+        border-right: unit(40/@base-px-2-rem, rem) solid transparent;
+        border-bottom: unit(40/@base-px-2-rem, rem) solid #fff;
+
+    }
+    &.no-after {
+        &:after {
+            display: none;
+        }
+    }
+    
+}
+
+
+/************************
+
+产品Swiper
+
+************************/
+div.swiper-product {
+    .swiper-slide {
+        text-align: center;
+        img {
+            height: unit(360/@base-px-2-rem, rem);
+        }
+        p {
+            text-overflow: ellipsis;     
+            line-height: 1.4em;
+            height: 2.8em;
+            overflow: hidden;   
+            @media screen and (min-width: 768px) {
+                font-size: 20px;
+                letter-spacing: 2px;
+            }     
+            &+p {
+                color: red;
+                font-weight: 600;
+            }
+        }
+        //last swipwer look more……
+        &:last-child {
+            //to fix UC borwser margin-top not work.
+            .clearfix();
+            p {
+                font-size: 15px;
+                margin: unit(45/@base-px-2-rem, rem);
+                margin-top: unit(100/@base-px-2-rem, rem);
+                // height: unit(250/@base-px-2-rem, rem);
+                // line-height: unit(250/@base-px-2-rem, rem);
+                .make-line-and-height-p(250);
+                border: 1px solid #999;
+                font-weight: 600;
+                @media screen and (min-width: 768px) {
+                    font-size: 20px;
+                    letter-spacing: 2px;
+                    font-weight: 500;
+                }     
+                
+            }
+        }
+    }
+    
+}
+
+.one-product-wrapper {
+    margin-top: unit(20/@base-px-2-rem, rem);
+    background-color: #fff;
+    /*精品推荐*/
+    > p {
+        width: 100%;
+        text-align: center;    
+
+        .make-line-and-height-p(@big-banner-text-height);
+        font-size: 15px;
+        background-color: #fff;
+        letter-spacing: 1px;
+        color: #000;
+        font-weight: 500;
+        @media screen and (min-width: 768px) {
+            font-size: 20px;
+            letter-spacing: 2px;
+        }
+    }
+    
+}
+.one-product {
+    padding-bottom: unit(50/@base-px-2-rem, rem);
+    img {
+        width: 100%;
+        border-top: 1px solid #eee;
+        //height: unit(630/@base-px-2-rem, rem);
+        // -webkit-transform: scale(1.2,1.2);
+        // transform:  scale(1.2,1.2);
+        padding: 0 unit(100/@base-px-2-rem, rem);
+    }
+    p {
+        padding: 0 unit(50/@base-px-2-rem, rem);
+        font-size: 14px;
+        +p {
+            text-align: right;
+            color: red;
+            font-weight: 600;
+        }
+        @media screen and (min-width: 768px) {
+            font-size: 20px;
+            letter-spacing: 2px;
+        }
+    }
+}

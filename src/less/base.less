@@ -1,0 +1,75 @@
+* {
+    box-sizing: border-box;
+}
+
+.fr {
+    float: right;
+}
+
+.fl {
+    float: left;
+}
+
+ul,
+li,
+p,
+h1,
+h2,
+h3 {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: #111;
+    &:link {
+        color: #111;
+    }
+    &:visited {
+        color: #111;
+    }
+}
+
+button,
+select,
+option,
+input[type="text"],
+textarea {
+    -webkit-appearance: none;
+    //fix dropdown style display error in firefox 
+    //see http://stackoverflow.com/questions/5748351/webkit-appearance-none-firefox-equivalent
+    //and https://developer.mozilla.org/en-US/docs/Web/CSS/-moz-appearance
+    -moz-appearance: none;
+    outline: none;
+    border: 0;
+}
+
+body {
+    //font-family: "Helvetica", "Tahoma", "Arial", "STXihei", "华文细黑", "Heiti", "黑体", "Microsoft YaHei", "微软雅黑", "SimSun", "宋体", "sans-serif";
+    font-family: "微软雅黑", "SimSun", "宋体", "sans-serif";
+    width: 100%;
+}
+
+section {
+    .clearfix();
+}
+
+
+/*
+some table normalize style in here
+*/
+
+th {
+    font-weight: 500;
+}
+
+th,
+td {
+    padding: 0px 20px;
+    //border: 1px solid #ddddde;
+}

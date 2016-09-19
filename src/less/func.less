@@ -1,0 +1,146 @@
+/*
+function
+*/
+.turnover-color-block-func (@block-border-color, @border-width, @nth: 1) when ( iscolor(@block-border-color)) {
+    &:nth-of-type(@{nth}) {
+        border-left: @border-width @block-border-color solid;
+        &:after {
+            background-color: @block-border-color;
+        }
+    }
+}
+
+.hover-trans(@type, @color) when (@type =color) and (iscolor(@color)) {
+    transition: all .15s ease-in-out;
+    &:hover {
+        color: @color;
+        //transition: all .15s ease-in-out;
+    }
+}
+
+.hover-trans(@type, @color) when (@type =bgc) and (iscolor(@color)) {
+    transition: all .3s ease-in-out;
+    &:hover {
+        background-color: @color;
+        //transition: all .15s ease-in-out;
+    }
+}
+
+.focus-trans(@type, @width) when (@type =width) and (isnumber(@width)) {
+    transition: all .5s ease-in-out;
+    &:focus {
+        width: @width;
+        //transition: all .15s ease-in-out;
+    }
+}
+/*
+function
+*/
+.turnover-color-block-func (@block-border-color, @border-width, @nth: 1) when ( iscolor(@block-border-color)) {
+    &:nth-of-type(@{nth}) {
+        border-left: @border-width @block-border-color solid;
+        &:after {
+            background-color: @block-border-color;
+        }
+    }
+}
+
+
+.hover-trans(@type, @color) when (@type =color) and (iscolor(@color)) {
+    transition: all .15s ease-in-out;
+    &:hover {
+        color: @color;
+        //transition: all .15s ease-in-out;
+    }
+}
+
+.hover-trans(@type, @color) when (@type =bgc) and (iscolor(@color)) {
+    transition: all .3s ease-in-out;
+    &:hover {
+        background-color: @color;
+        //transition: all .15s ease-in-out;
+    }
+}
+
+.focus-trans(@type, @width) when (@type =width) and (isnumber(@width)) {
+    transition: all .5s ease-in-out;
+    &:focus {
+        width: @width;
+        //transition: all .15s ease-in-out;
+    }
+}
+
+.ranglist-line(@percent, @color, @nth) when (iscolor(@color)) {
+    tbody tr:nth-of-type(@{nth}) td:nth-of-type(2) {
+        span.line {
+            position: relative;
+            margin-left: 15px;
+            display: inline-block;
+            vertical-align: middle;
+            width: 170px;
+            background-color: #dcdcdc;
+            height: 4px;
+            &:before {
+                content: "";
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                display: block;
+                width: 170px*@percent;
+                background-color: @color;
+                height: 4px;
+            }
+        }
+    }
+}
+
+.make-line-and-height-p(@number) {
+    height: unit(@number/@base-px-2-rem, rem);
+    line-height: unit(@number/@base-px-2-rem, rem);
+}
+
+.make-big-img-p(@big-banner-text-height) {
+    >p {
+        width: 100%;
+        // height: unit(100/@base-px-2-rem, rem);
+        // line-height: unit(100/@base-px-2-rem, rem);
+        .make-line-and-height-p(@big-banner-text-height);
+        text-align: center;
+        
+        font-size: 15px;
+        background-color: #fff;
+        letter-spacing: 1px;
+        color: #000;
+        font-weight: 500;
+        @media screen and (min-width: 768px) {
+            font-size: 20px;
+            letter-spacing: 2px;
+        }
+    }
+}
+
+
+
+// Mixin itself
+.clearfix {
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+// Mixin itself
+.clearfix {
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}

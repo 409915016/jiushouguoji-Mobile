@@ -1,0 +1,28 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+.wrapper {
+  margin: 0 auto;
+  width: 980px;
+  height: 1386px;
+  background-color: #f1f1f1;
+}
+.wrapper section {
+  margin: 0 43px;
+}
+.wrapper section.header {
+  border: 2px solid #938e8c;
+}
+.wrapper section.header .block {
+  background-color: #d45d5c;
+  display: inline-block;
+  vertical-align: bottom;
+}
+.wrapper section.header .block span {
+  height: 61px;
+  line-height: 61px;
+}

@@ -1,0 +1,192 @@
+@import "value.less";
+
+
+/************************
+
+     返回顶部
+
+************************/
+#back-to-top {
+    display: block;
+    position: fixed;
+    z-index: @z-index-nav-search-bar;
+    right: unit(100/@base-px-2-rem, rem);
+    bottom: unit((@nav-bar-height + 100 )/@base-px-2-rem, rem);
+    width: unit(@go-to-top-icon-size/@base-px-2-rem, rem);
+    height: unit(@go-to-top-icon-size/@base-px-2-rem, rem);
+    //fix the ipad high resolution?
+    @media screen and (min-width: 768px) {
+        right: unit(270/@base-px-2-rem, rem);
+    }
+
+}
+/************************
+
+     搜索栏
+
+************************/
+
+
+
+.search-bar {
+    position: fixed;
+    z-index: @z-index-nav-search-bar;
+    width: 100%;
+    max-width: @max-width;
+    top: 0;
+    height: unit(@search-bar-height/@base-px-2-rem, rem);
+    background-color: #fff;
+    padding-top: unit(@search-bar-blank/@base-px-2-rem, rem);
+    padding-bottom: unit(@search-bar-blank/@base-px-2-rem, rem);
+    border-bottom: 1px solid @search-bar-border-color;
+    
+    form {
+        display: inline-block;
+        width: 72%;
+    }
+    .form-group {
+        display: inline-block;
+        vertical-align: initial;
+        width: 100%;
+        border-radius: 5px;
+        background-color: @search-area-color;
+
+        //padding-top should be equal to span.vertical-line height
+        padding-top: unit(@search-area-blank/@base-px-2-rem, rem);
+
+        //padding-bottom: unit(@search-area-blank/@base-px-2-rem, rem);
+
+        height: unit(@search-area-height/@base-px-2-rem, rem);
+
+        
+        span.vertical-line {
+        border-left: 1px solid #555;
+
+        //same to input height minus 15 maybe
+
+        height: unit( (@search-input-height - 22) /@base-px-2-rem, rem);
+
+        //margin-top should be equal to form-group padding-top
+
+        margin-top: unit(10/@base-px-2-rem, rem);
+
+        }
+        
+        input {
+            background-color: @search-area-color;
+            padding: 0;
+            float: left;
+
+            margin-left: unit(20/@base-px-2-rem, rem);
+
+            height: unit(@search-input-height/@base-px-2-rem, rem);
+
+            line-height: unit(@search-input-height/@base-px-2-rem, rem);
+
+            width: 75%;
+            letter-spacing: 1px;
+            font-size: 14px;
+
+            @media screen and (min-width: 768px) {
+                font-size: 20px;
+                letter-spacing: 2px;
+            }
+        }
+    }
+}
+
+/************************
+
+     顶部导航栏
+
+************************/
+
+.nav-bar {
+    position: fixed;
+    z-index: @z-index-nav-search-bar;
+    width: 100%;
+    max-width: @max-width;
+    //search bar in his head
+    top: unit(@search-bar-height/@base-px-2-rem, rem);
+    height: unit(@nav-bar-height/@base-px-2-rem, rem);
+    background-color: #fff;
+    //nav bar ,no padding in this block.
+    //padding-top: unit(@nav-bar-blank/@base-px-2-rem, rem);
+    text-align: center;
+    //text-align: justify;
+
+    
+    ul {
+        display: block;
+        li {
+            display: inline-block;   
+            &.active {
+                
+                a {
+                    color: red;
+                    border-bottom: 1px solid #333;
+                }
+            }
+            a {
+
+                display: block;
+                //equal to nav-bar height
+                //line-height: unit(@nav-bar-height  /@base-px-2-rem, rem);
+                //height: unit(@nav-bar-height  /@base-px-2-rem, rem);
+                .make-line-and-height-p(@nav-bar-height);
+                padding: 0 unit(@nav-bar-link-padding/@base-px-2-rem, rem);
+                font-size: 14px;
+                
+                @media screen and (min-width: 768px) {
+                    font-size: 20px;
+                    letter-spacing: 2px;
+                  
+                }
+                
+            }
+            
+        }
+    }
+
+}
+/************************
+
+      底部导航栏
+
+************************/
+
+.nav-buttom-bar {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    max-width: @max-width;
+    height: unit(@nav-buttom-bar-height/@base-px-2-rem, rem);
+    z-index: @z-index-nav-search-bar;
+    background-color: #fff;
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+
+    text-align: center;
+    
+    ul {
+        display: block;
+        li {
+            display: inline-block;
+            width: 24%;
+            a {
+                display: block;
+                &.active {
+                    color: red;
+                }
+            }
+            p {
+                //test value line-height
+                line-height: unit(25/@base-px-2-rem, rem);
+                font-size: 12px;
+                @media screen and (min-width: 768px) {
+                    font-size: 20px;
+                    letter-spacing: 2px;
+                }  
+            }
+        }
+    }
+}
