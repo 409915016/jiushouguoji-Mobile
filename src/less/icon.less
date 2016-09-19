@@ -5,16 +5,17 @@ i.icon {
     width: unit(@search-bar-icon-size/@base-px-2-rem, rem);
     height: unit(@search-bar-icon-size/@base-px-2-rem, rem);
     display: inline-block;
+    background-size: 100% 100%;
     &.message {
-        background-image: url("../img/icon/message@2x.png");
-        background-size: 100% 100%;
+        background-image: url("@{image-address}/message@2x.png");
+        
         margin-left: unit(40/@base-px-2-rem, rem);
         margin-right: unit(30/@base-px-2-rem, rem);
         
     }
     &.search {
-        background-image: url("../img/icon/search@2x.png");
-        background-size: 100% 100%;
+        background-image: url("@{image-address}/search@2x.png");
+        
         width: unit(@search-input-icon-size/@base-px-2-rem, rem);
         height: unit(@search-input-icon-size/@base-px-2-rem, rem);
         margin-left: unit(40/@base-px-2-rem, rem);
@@ -23,8 +24,8 @@ i.icon {
     
     }
     &.scan {
-        background-image: url("../img/icon/scan@2x.png");
-        background-size: 100% 100%;
+        background-image: url("@{image-address}/scan@2x.png");
+
         margin-right: unit(40/@base-px-2-rem, rem); 
         
     }
@@ -32,43 +33,48 @@ i.icon {
     底部导航栏图标
     */
     &.home {
-        background-image: url("../img/icon/home@2x.png");
-        background-size: 100% 100%;
+        background-image: url("@{image-address}/home@2x.png");
         margin-top: unit(5/@base-px-2-rem, rem); 
         width: unit(@nav-buttom-bar-icon-size/@base-px-2-rem, rem);
         height: unit(@nav-buttom-bar-icon-size/@base-px-2-rem, rem);
         &.active {
-            background-image: url("../img/icon/home-red@2x.png");
+            background-image: url("@{image-address}/home-red@2x.png");
         }
         
     }
     &.hot {
-        background-image: url("../img/icon/hot@2x.png");
-        background-size: 100% 100%;
+        background-image: url("@{image-address}/hot@2x.png");
         margin-top: unit(5/@base-px-2-rem, rem);
         width: unit(@nav-buttom-bar-icon-size/@base-px-2-rem, rem);
         height: unit(@nav-buttom-bar-icon-size/@base-px-2-rem, rem);
+        &.active {
+            background-image: url("@{image-address}/hot-red@2x.png");
+        }
         
     }
     &.shopcar {
-        background-image: url("../img/icon/shopcar@2x.png");
-        background-size: 100% 100%;
+        background-image: url("@{image-address}/shopcar@2x.png");
         margin-top: unit(5/@base-px-2-rem, rem);
         width: unit(@nav-buttom-bar-icon-size/@base-px-2-rem, rem);
         height: unit(@nav-buttom-bar-icon-size/@base-px-2-rem, rem);
+        &.active {
+            background-image: url("@{image-address}/shopcar-red@2x.png");
+        }
         
     }
     &.my {
-        background-image: url("../img/icon/my@2x.png");
-        background-size: 100% 100%;
+        background-image: url("@{image-address}/my@2x.png");
         margin-top: unit(5/@base-px-2-rem, rem);
         width: unit(@nav-buttom-bar-icon-size/@base-px-2-rem, rem);
         height: unit(@nav-buttom-bar-icon-size/@base-px-2-rem, rem);
+        &.active {
+            background-image: url("@{image-address}/my-red@2x.png");
+        }
         
     }
+    //返回顶部
     &.totop {
-        background-image: url("../img/icon/gotop@2x.png");
-        background-size: 100% 100%;
+        background-image: url("@{image-address}/gotop@2x.png");
         width: unit(@go-to-top-icon-size/@base-px-2-rem, rem);
         height: unit(@go-to-top-icon-size/@base-px-2-rem, rem);
         

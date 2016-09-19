@@ -69,7 +69,7 @@ function
         //transition: all .15s ease-in-out;
     }
 }
-
+//长进度条 百分比
 .ranglist-line(@percent, @color, @nth) when (iscolor(@color)) {
     tbody tr:nth-of-type(@{nth}) td:nth-of-type(2) {
         span.line {
@@ -93,12 +93,12 @@ function
         }
     }
 }
-
+//p 元素高度占位 用于移动设备
 .make-line-and-height-p(@number) {
     height: unit(@number/@base-px-2-rem, rem);
     line-height: unit(@number/@base-px-2-rem, rem);
 }
-
+//p 元素高度占位 用于移动设备
 .make-big-img-p(@big-banner-text-height) {
     >p {
         width: 100%;

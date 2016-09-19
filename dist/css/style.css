@@ -243,19 +243,18 @@ i.icon {
   width: 0.79225352rem;
   height: 0.79225352rem;
   display: inline-block;
+  background-size: 100% 100%;
   /*
     底部导航栏图标
     */
 }
 i.icon.message {
   background-image: url("../img/icon/message@2x.png");
-  background-size: 100% 100%;
   margin-left: 0.35211268rem;
   margin-right: 0.26408451rem;
 }
 i.icon.search {
   background-image: url("../img/icon/search@2x.png");
-  background-size: 100% 100%;
   width: 0.44014085rem;
   height: 0.44014085rem;
   margin-left: 0.35211268rem;
@@ -264,12 +263,10 @@ i.icon.search {
 }
 i.icon.scan {
   background-image: url("../img/icon/scan@2x.png");
-  background-size: 100% 100%;
   margin-right: 0.35211268rem;
 }
 i.icon.home {
   background-image: url("../img/icon/home@2x.png");
-  background-size: 100% 100%;
   margin-top: 0.04401408rem;
   width: 0.79225352rem;
   height: 0.79225352rem;
@@ -279,28 +276,33 @@ i.icon.home.active {
 }
 i.icon.hot {
   background-image: url("../img/icon/hot@2x.png");
-  background-size: 100% 100%;
   margin-top: 0.04401408rem;
   width: 0.79225352rem;
   height: 0.79225352rem;
+}
+i.icon.hot.active {
+  background-image: url("../img/icon/hot-red@2x.png");
 }
 i.icon.shopcar {
   background-image: url("../img/icon/shopcar@2x.png");
-  background-size: 100% 100%;
   margin-top: 0.04401408rem;
   width: 0.79225352rem;
   height: 0.79225352rem;
+}
+i.icon.shopcar.active {
+  background-image: url("../img/icon/shopcar-red@2x.png");
 }
 i.icon.my {
   background-image: url("../img/icon/my@2x.png");
-  background-size: 100% 100%;
   margin-top: 0.04401408rem;
   width: 0.79225352rem;
   height: 0.79225352rem;
 }
+i.icon.my.active {
+  background-image: url("../img/icon/my-red@2x.png");
+}
 i.icon.totop {
   background-image: url("../img/icon/gotop@2x.png");
-  background-size: 100% 100%;
   width: 0.79225352rem;
   height: 0.79225352rem;
 }
