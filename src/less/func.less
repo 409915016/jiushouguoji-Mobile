@@ -1,6 +1,7 @@
 /*
 function
 */
+
 .turnover-color-block-func (@block-border-color, @border-width, @nth: 1) when ( iscolor(@block-border-color)) {
     &:nth-of-type(@{nth}) {
         border-left: @border-width @block-border-color solid;
@@ -33,9 +34,12 @@ function
         //transition: all .15s ease-in-out;
     }
 }
+
+
 /*
 function
 */
+
 .turnover-color-block-func (@block-border-color, @border-width, @nth: 1) when ( iscolor(@block-border-color)) {
     &:nth-of-type(@{nth}) {
         border-left: @border-width @block-border-color solid;
@@ -44,7 +48,6 @@ function
         }
     }
 }
-
 
 .hover-trans(@type, @color) when (@type =color) and (iscolor(@color)) {
     transition: all .15s ease-in-out;
@@ -69,6 +72,7 @@ function
         //transition: all .15s ease-in-out;
     }
 }
+
 //长进度条 百分比
 .ranglist-line(@percent, @color, @nth) when (iscolor(@color)) {
     tbody tr:nth-of-type(@{nth}) td:nth-of-type(2) {
@@ -93,11 +97,13 @@ function
         }
     }
 }
+
 //p 元素高度占位 用于移动设备
 .make-line-and-height-p(@number) {
     height: unit(@number/@base-px-2-rem, rem);
     line-height: unit(@number/@base-px-2-rem, rem);
 }
+
 //p 元素高度占位 用于移动设备
 .make-big-img-p(@big-banner-text-height) {
     >p {
@@ -106,7 +112,6 @@ function
         // line-height: unit(100/@base-px-2-rem, rem);
         .make-line-and-height-p(@big-banner-text-height);
         text-align: center;
-        
         font-size: 15px;
         background-color: #fff;
         letter-spacing: 1px;
@@ -119,7 +124,44 @@ function
     }
 }
 
+.make-2X2-product-box() {
+    //
+    .product-box-wrapper {
+        width: 100%;
+        padding: unit(20/@base-px-2-rem, rem);
+        >.product-box {
+            
+            display: inline-block;
 
+            width: 49.5%;
+            text-align: center;
+            >img {
+                height: unit(360/@base-px-2-rem, rem);
+            }
+            >p {
+                text-overflow: ellipsis;
+                line-height: 1.4em;
+                height: 2.8em;
+                overflow: hidden;
+                @media screen and (min-width: 768px) {
+                    font-size: 20px;
+                    letter-spacing: 2px;
+                }
+                &+p {
+                    color: red;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+}
+
+.mod-retina-display(@fs, @ls) {
+     @media screen and (min-width: 768px) {
+        font-size: @fs;
+        letter-spacing: @ls;
+    }
+}
 
 // Mixin itself
 .clearfix {

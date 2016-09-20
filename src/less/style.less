@@ -40,6 +40,11 @@ body {
     max-width: @max-width;
     margin-top: unit((@search-bar-height + @nav-bar-height + 2)/@base-px-2-rem, rem);
     padding-bottom: unit((@nav-buttom-bar-height ) /@base-px-2-rem, rem);
+    &.feature {
+        margin-top: unit((@search-bar-height + 2)/@base-px-2-rem, rem);
+        padding-bottom: unit(0 /@base-px-2-rem, rem);
+
+    }
 }
 
 
@@ -61,12 +66,13 @@ main-wrapper
 
 
 
+
 .big-banner {
     .big-banner-imgBox {
         width: 100%;
         max-width: @max-width;
         height: unit(750/@base-px-2-rem, rem);
-
+        
         // background-image: url("../img/banner-img.jpg");
         // background-size: 100%;
         // background-repeat: no-repeat no-repeat;
@@ -112,6 +118,10 @@ main-wrapper
 
     //defluat 140
     .make-big-img-p(120);
+    &:first-child {
+        margin-top: unit(0/@base-px-2-rem, rem);
+    }
+
 }
 /************************
 
@@ -181,6 +191,7 @@ div.swiper-product {
             }     
             &+p {
                 color: red;
+
                 font-weight: 600;
             }
         }
@@ -208,6 +219,11 @@ div.swiper-product {
     }
     
 }
+/************************
+
+单个产品展示
+
+************************/
 
 .one-product-wrapper {
     margin-top: unit(20/@base-px-2-rem, rem);
@@ -230,6 +246,12 @@ div.swiper-product {
     }
     
 }
+
+/************************
+
+单个产品展示
+
+************************/
 .one-product {
     padding-bottom: unit(50/@base-px-2-rem, rem);
     img {
@@ -254,3 +276,29 @@ div.swiper-product {
         }
     }
 }
+
+
+
+
+
+
+
+/************************
+
+2X2产品页
+
+************************/
+.product-section {
+    
+    .make-2X2-product-box();
+    //have product-box-wrapper 
+    >p {
+       font-size: 13px;
+       color: #999;
+       .mod-retina-display(20px, 0px);
+    }
+
+}
+
+
+

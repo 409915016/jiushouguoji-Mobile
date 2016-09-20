@@ -91,6 +91,9 @@ th,
 td {
   padding: 0px 20px;
 }
+img[src=""] {
+  opacity: 0;
+}
 /************************
 
      返回顶部
@@ -274,6 +277,9 @@ i.icon.home {
 i.icon.home.active {
   background-image: url("../img/icon/home-red@2x.png");
 }
+i.icon.home.active + p {
+  color: red;
+}
 i.icon.hot {
   background-image: url("../img/icon/hot@2x.png");
   margin-top: 0.04401408rem;
@@ -282,6 +288,9 @@ i.icon.hot {
 }
 i.icon.hot.active {
   background-image: url("../img/icon/hot-red@2x.png");
+}
+i.icon.hot.active + p {
+  color: red;
 }
 i.icon.shopcar {
   background-image: url("../img/icon/shopcar@2x.png");
@@ -292,6 +301,9 @@ i.icon.shopcar {
 i.icon.shopcar.active {
   background-image: url("../img/icon/shopcar-red@2x.png");
 }
+i.icon.shopcar.active + p {
+  color: red;
+}
 i.icon.my {
   background-image: url("../img/icon/my@2x.png");
   margin-top: 0.04401408rem;
@@ -300,6 +312,9 @@ i.icon.my {
 }
 i.icon.my.active {
   background-image: url("../img/icon/my-red@2x.png");
+}
+i.icon.my.active + p {
+  color: red;
 }
 i.icon.totop {
   background-image: url("../img/icon/gotop@2x.png");
@@ -333,6 +348,10 @@ body {
   max-width: 640px;
   margin-top: 2.21830986rem;
   padding-bottom: 1.32042254rem;
+}
+.main-wrapper.feature {
+  margin-top: 1.16197183rem;
+  padding-bottom: 0rem;
 }
 /************************
 
@@ -411,6 +430,9 @@ main-wrapper
     font-size: 20px;
     letter-spacing: 2px;
   }
+}
+.product-section:first-child {
+  margin-top: 0rem;
 }
 /************************
 
@@ -510,6 +532,11 @@ div.swiper-product .swiper-slide:last-child p {
     font-weight: 500;
   }
 }
+/************************
+
+单个产品展示
+
+************************/
 .one-product-wrapper {
   margin-top: 0.17605634rem;
   background-color: #fff;
@@ -532,6 +559,11 @@ div.swiper-product .swiper-slide:last-child p {
     letter-spacing: 2px;
   }
 }
+/************************
+
+单个产品展示
+
+************************/
 .one-product {
   padding-bottom: 0.44014085rem;
 }
@@ -553,5 +585,48 @@ div.swiper-product .swiper-slide:last-child p {
   .one-product p {
     font-size: 20px;
     letter-spacing: 2px;
+  }
+}
+/************************
+
+2X2产品页
+
+************************/
+.product-section .product-box-wrapper {
+  width: 100%;
+  padding: 0.17605634rem;
+}
+.product-section .product-box-wrapper > .product-box {
+  display: inline-block;
+  width: 49.5%;
+  text-align: center;
+}
+.product-section .product-box-wrapper > .product-box > img {
+  height: 3.16901408rem;
+}
+.product-section .product-box-wrapper > .product-box > p {
+  text-overflow: ellipsis;
+  line-height: 1.4em;
+  height: 2.8em;
+  overflow: hidden;
+}
+@media screen and (min-width: 768px) {
+  .product-section .product-box-wrapper > .product-box > p {
+    font-size: 20px;
+    letter-spacing: 2px;
+  }
+}
+.product-section .product-box-wrapper > .product-box > p + p {
+  color: red;
+  font-weight: 600;
+}
+.product-section > p {
+  font-size: 13px;
+  color: #999;
+}
+@media screen and (min-width: 768px) {
+  .product-section > p {
+    font-size: 20px;
+    letter-spacing: 0px;
   }
 }
