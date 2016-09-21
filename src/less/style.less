@@ -40,13 +40,13 @@ body {
     max-width: @max-width;
     margin-top: unit((@search-bar-height + @nav-bar-height + 2)/@base-px-2-rem, rem);
     padding-bottom: unit((@nav-buttom-bar-height ) /@base-px-2-rem, rem);
+    //feature 只存在标题栏时，高度为 search-bar的高度
     &.feature {
-        margin-top: unit((@search-bar-height + 2)/@base-px-2-rem, rem);
+        margin-top: unit((@search-bar-height - 2)/@base-px-2-rem, rem);
         padding-bottom: unit(0 /@base-px-2-rem, rem);
 
     }
 }
-
 
 
 
@@ -123,6 +123,9 @@ main-wrapper
     }
 
 }
+
+
+
 /************************
 
 产品大图
@@ -167,6 +170,8 @@ div.product-imgBox {
     }
     
 }
+
+
 
 
 /************************
@@ -279,10 +284,6 @@ div.swiper-product {
 
 
 
-
-
-
-
 /************************
 
 2X2产品页
@@ -299,6 +300,22 @@ div.swiper-product {
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

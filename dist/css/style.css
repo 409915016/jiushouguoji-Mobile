@@ -242,6 +242,31 @@ img[src=""] {
     letter-spacing: 2px;
   }
 }
+/************************
+
+标题栏
+
+************************/
+.base-nav-bar {
+  position: fixed;
+  z-index: 11;
+  width: 100%;
+  max-width: 640px;
+  height: 1.1443662rem;
+  top: 0;
+  background-color: #fff;
+  border-bottom: 1px solid #b2b2b2;
+  padding-top: 0.14084507rem;
+  padding-bottom: 0.14084507rem;
+  text-align: center;
+}
+.base-nav-bar > p {
+  width: 100%;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 0.79225352rem;
+  margin-left: -0.79225352rem;
+}
 i.icon {
   width: 0.79225352rem;
   height: 0.79225352rem;
@@ -321,6 +346,9 @@ i.icon.totop {
   width: 0.79225352rem;
   height: 0.79225352rem;
 }
+i.icon.back {
+  background-image: url("../img/icon/back@2x.png");
+}
 html {
   font-size: 113.6px;
 }
@@ -350,7 +378,7 @@ body {
   padding-bottom: 1.32042254rem;
 }
 .main-wrapper.feature {
-  margin-top: 1.16197183rem;
+  margin-top: 1.12676056rem;
   padding-bottom: 0rem;
 }
 /************************
