@@ -45,13 +45,16 @@ body {
     padding-bottom: unit((@nav-buttom-bar-height ) /@base-px-2-rem, rem);
     //feature 只存在标题栏时，高度为 search-bar的高度
     &.feature {
-        margin-top: unit((@search-bar-height - 2)/@base-px-2-rem, rem);
+        margin-top: unit((@base-nav-bar-height)/@base-px-2-rem, rem);
         padding-bottom: unit(0 /@base-px-2-rem, rem);
 
     }
+    &.details {
+        margin-top: unit((@base-nav-bar-height)/@base-px-2-rem, rem);
+        padding-bottom: unit(@product-nav-bar-height /@base-px-2-rem, rem);
+        //margin-bottom: unit(@product-nav-bar-height/@base-px-2-rem, rem);
+    }
 }
-
-
 
 
 
@@ -65,8 +68,6 @@ main-wrapper
             p
 
 ************************/
-
-
 
 
 
@@ -96,7 +97,8 @@ main-wrapper
             -webkit-transform: translateX(-50%) scale(1.1,1.1);
             transform: translateX(-50%) scale(1.1,1.1);
             zoom: 1.1;
-            left: 50%;
+            //fix the ip6 over device not in the center 
+            left: 49.9%;
             @media screen and (min-width: 768px) {
                 -webkit-transform: translateX(-50%) scale(1.2,1.2);
                 transform: translateX(-50%) scale(1.2,1.2);
@@ -121,11 +123,16 @@ main-wrapper
 
     //defluat 140
     .make-big-img-p(120);
-    &:first-child {
-        margin-top: unit(0/@base-px-2-rem, rem);
-    }
+    // &:first-child {
+    //     margin-top: unit(0/@base-px-2-rem, rem);
+    // }
 
 }
+
+
+
+
+
 
 
 
@@ -158,6 +165,7 @@ div.product-imgBox {
             zoom: 1.2;
         }
     }
+    //大图下的正三角
     &:after {
         content: '';
         position: absolute;
@@ -169,6 +177,7 @@ div.product-imgBox {
         border-bottom: unit(40/@base-px-2-rem, rem) solid #fff;
 
     }
+    //隐藏正三角
     &.no-after {
         &:after {
             display: none;
@@ -230,6 +239,8 @@ div.swiper-product {
     }
     
 }
+
+
 
 
 
@@ -317,6 +328,160 @@ div.swiper-product {
     }
 
 }
+
+
+
+
+/************************
+
+产品详情页
+
+************************/
+
+section.product-show {
+    background-color: #fff;
+    img {
+        width: 100%;
+    }
+
+}
+//商品详细信息
+section.product-details {
+    background-color: #fff;
+    padding: 0 unit(40/@base-px-2-rem, rem);
+    p {
+        padding-top: unit(30/@base-px-2-rem, rem);
+        
+        &.border-b {
+            border-bottom: 1px solid @text-gray;
+        }
+        //推荐商品
+        &:last-child {
+            font-size: 16px;
+            color: @text-gray;
+            padding-bottom: unit(20/@base-px-2-rem, rem);
+        }
+    
+    }
+
+    a {
+        //padding-top: unit(30/@base-px-2-rem, rem);
+        &.border-b {
+            border-bottom: 1px solid @text-gray;
+        }
+    }
+    //价格
+    p.product-details-price {
+        font-size: 22px;
+        color: @text-red;
+
+    }
+    //品名
+    .product-details-name {
+        font-size: 16px;
+        color: @text-primary;
+    }
+    //发货店家
+    .product-details-shop {
+        font-size: 13px;
+        color: @text-gray;
+        padding-top: unit(20/@base-px-2-rem, rem);
+        padding-bottom: unit(20/@base-px-2-rem, rem);
+        
+    }
+    //退货要求
+    .product-details-returns {
+        font-size: 13px;
+        color: @text-gray;
+        padding-top: unit(20/@base-px-2-rem, rem);
+        padding-bottom: unit(20/@base-px-2-rem, rem);
+    
+    }
+    
+
+}
+
+/************************
+
+产品详情页 - 评论块
+
+************************/
+
+div.comment-queue {
+    //可点击跳转下评论页
+    a.product-details-comment {
+        display: block;
+        font-size: 16px;
+        color: @text-gray;
+        padding: unit(20/@base-px-2-rem, rem) 0;
+    }
+
+}
+
+
+
+//每条评论
+section.comment-one {
+    >p {
+        >span {
+            //user-name
+            font-size: 16px;
+            width: 49%;
+            display: inline-block;
+            
+            +span {
+                //comment-time
+                color: @text-gray;
+                text-align: right;
+            }
+        }
+        
+    }
+    //是否包含评论图片
+    div.comment-imgBox {
+        padding: unit(20/@base-px-2-rem, rem);
+        //fix the blank between image 
+        //img 标签之间不换行 则间隔不存在
+        font-size: 0;
+        img {
+            margin-left: unit(20/@base-px-2-rem, rem);
+            height: unit(200/@base-px-2-rem, rem);
+            width: unit(200/@base-px-2-rem, rem);
+        }
+    }
+   
+}
+
+
+
+
+
+
+
+
+/************************
+
+产品详情页 - 推荐商品
+
+************************/
+
+
+section.product-more {
+    background-color: #fff;
+    padding-top: unit(40/@base-px-2-rem, rem);
+    //have some problem
+    .swiper-slide {
+        &:last-child {
+            display: none;
+        }
+    }
+
+}
+
+
+
+
+
 
 
 

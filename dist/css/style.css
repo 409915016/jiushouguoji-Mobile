@@ -275,14 +275,82 @@ img[src=""] {
     letter-spacing: 0px;
   }
 }
+/************************
+
+      商品详情页底部导航栏
+
+************************/
+.product-nav-bar {
+  position: fixed;
+  z-index: 11;
+  width: 100%;
+  max-width: 640px;
+  height: 1.32042254rem;
+  bottom: 0;
+  background-color: #fff;
+  border-top: 1px solid #b2b2b2;
+}
+.product-nav-bar ul {
+  display: block;
+}
+.product-nav-bar ul li {
+  float: left;
+  display: inline-block;
+  font-size: 0;
+  width: 15%;
+}
+.product-nav-bar ul li a {
+  text-align: center;
+  display: block;
+}
+.product-nav-bar ul li a.active {
+  color: red;
+}
+.product-nav-bar ul li p {
+  line-height: 0.22007042rem;
+  font-size: 12px;
+}
+@media screen and (min-width: 768px) {
+  .product-nav-bar ul li p {
+    font-size: 20px;
+    letter-spacing: 2px;
+  }
+}
+.product-nav-bar ul li:last-child {
+  float: right;
+  width: 52%;
+  background-color: #e9282e;
+}
+.product-nav-bar ul li:last-child p {
+  line-height: 1.32042254rem;
+  font-size: 18px;
+  color: #fff;
+}
 i.icon {
   width: 0.79225352rem;
   height: 0.79225352rem;
   display: inline-block;
   background-size: 100% 100%;
-  /*
-    底部导航栏图标
-    */
+  /********************
+
+    首页搜索栏、导航栏icon
+    
+    ********************/
+  /********************
+
+    底部导航栏icon
+    
+    ********************/
+  /********************
+
+    返回顶部icon
+    
+    ********************/
+  /********************
+
+    标题栏icon
+    
+    ********************/
 }
 i.icon.message {
   background-image: url("../img/icon/message@2x.png");
@@ -364,6 +432,11 @@ i.icon.share {
   margin-right: 0.17605634rem;
   margin-top: 0.13204225rem;
 }
+i.icon.right {
+  background-image: url("../img/icon/right.png");
+  width: 0.24647887rem;
+  height: 0.49295775rem;
+}
 html {
   font-size: 113.6px;
 }
@@ -392,8 +465,12 @@ body {
   padding-bottom: 1.49647887rem;
 }
 .main-wrapper.feature {
-  margin-top: 1.12676056rem;
+  margin-top: 1.32042254rem;
   padding-bottom: 0rem;
+}
+.main-wrapper.details {
+  margin-top: 1.32042254rem;
+  padding-bottom: 1.32042254rem;
 }
 /************************
 
@@ -421,7 +498,7 @@ main-wrapper
   -webkit-transform: translateX(-50%) scale(1.1, 1.1);
   transform: translateX(-50%) scale(1.1, 1.1);
   zoom: 1.1;
-  left: 50%;
+  left: 49.9%;
 }
 @media screen and (min-width: 768px) {
   .big-banner .big-banner-imgBox img {
@@ -472,9 +549,6 @@ main-wrapper
     font-size: 20px;
     letter-spacing: 2px;
   }
-}
-.product-section:first-child {
-  margin-top: 0rem;
 }
 /************************
 
@@ -675,4 +749,94 @@ div.swiper-product .swiper-slide:last-child p {
     font-size: 20px;
     letter-spacing: 0px;
   }
+}
+/************************
+
+产品详情页
+
+************************/
+section.product-show {
+  background-color: #fff;
+}
+section.product-show img {
+  width: 100%;
+}
+section.product-details {
+  background-color: #fff;
+  padding: 0 0.35211268rem;
+}
+section.product-details p {
+  padding-top: 0.26408451rem;
+}
+section.product-details p.border-b {
+  border-bottom: 1px solid #aaa;
+}
+section.product-details p:last-child {
+  font-size: 16px;
+  color: #aaa;
+  padding-bottom: 0.17605634rem;
+}
+section.product-details a.border-b {
+  border-bottom: 1px solid #aaa;
+}
+section.product-details p.product-details-price {
+  font-size: 22px;
+  color: #e9282e;
+}
+section.product-details .product-details-name {
+  font-size: 16px;
+  color: #333;
+}
+section.product-details .product-details-shop {
+  font-size: 13px;
+  color: #aaa;
+  padding-top: 0.17605634rem;
+  padding-bottom: 0.17605634rem;
+}
+section.product-details .product-details-returns {
+  font-size: 13px;
+  color: #aaa;
+  padding-top: 0.17605634rem;
+  padding-bottom: 0.17605634rem;
+}
+/************************
+
+产品详情页 - 评论块
+
+************************/
+div.comment-queue a.product-details-comment {
+  display: block;
+  font-size: 16px;
+  color: #aaa;
+  padding: 0.17605634rem 0;
+}
+section.comment-one > p > span {
+  font-size: 16px;
+  width: 49%;
+  display: inline-block;
+}
+section.comment-one > p > span + span {
+  color: #aaa;
+  text-align: right;
+}
+section.comment-one div.comment-imgBox {
+  padding: 0.17605634rem;
+  font-size: 0;
+}
+section.comment-one div.comment-imgBox img {
+  margin-left: 0.17605634rem;
+  height: 1.76056338rem;
+  width: 1.76056338rem;
+}
+/************************
+
+产品详情页 - 推荐商品
+
+************************/
+section.product-more {
+  background-color: #fff;
+  padding-top: 0.35211268rem;
+}
+section.product-more .swiper-slide:last-child {
+  display: none;
 }
