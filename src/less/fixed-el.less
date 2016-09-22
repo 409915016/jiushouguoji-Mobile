@@ -161,9 +161,13 @@
     width: 100%;
     max-width: @max-width;
     height: unit(@nav-buttom-bar-height/@base-px-2-rem, rem);
+    padding-top: unit(@search-bar-blank/@base-px-2-rem, rem);
+    padding-bottom: unit(@search-bar-blank/@base-px-2-rem, rem);
     z-index: @z-index-nav-search-bar;
     background-color: #fff;
     border-top: 1px solid rgba(0, 0, 0, 0.2);
+
+
 
     text-align: center;
     
@@ -202,24 +206,29 @@
     z-index: @z-index-nav-search-bar;
     width: 100%;
     max-width: @max-width;
-    height: unit(@search-bar-height/@base-px-2-rem, rem);
+    height: unit(@base-nav-bar-height/@base-px-2-rem, rem);
 
     top: 0;
     background-color: #fff;
     border-bottom: 1px solid @search-bar-border-color;
 
 
-    padding-top: unit(@search-bar-blank/@base-px-2-rem, rem);
-    padding-bottom: unit(@search-bar-blank/@base-px-2-rem, rem);
+    padding-top: unit(@search-bar-blank*2/@base-px-2-rem, rem);
+    padding-bottom: unit(@search-bar-blank*2/@base-px-2-rem, rem);
     text-align: center;
     >p {
-        width: 100%;
+        float: left;
+        width: 86%;
         font-size: 16px;
         font-weight: 600;
         line-height: unit( (@search-bar-height - @nav-bar-blank*2) /@base-px-2-rem, rem);
         //margin-right: unit( 10/@base-px-2-rem, rem);
-        margin-left: -(unit(@search-bar-icon-size /@base-px-2-rem, rem));
+        //margin-left: -(unit(@search-bar-icon-size /@base-px-2-rem, rem));
+
     }
+    .mod-retina-display(20px, 0px);
+
+    
 
 
 }

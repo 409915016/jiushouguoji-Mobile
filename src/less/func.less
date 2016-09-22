@@ -123,35 +123,44 @@ function
         }
     }
 }
-
+//产品专场下的 2X2 商品展示容器 及 布局
 .make-2X2-product-box() {
     //
     .product-box-wrapper {
         width: 100%;
         padding: unit(20/@base-px-2-rem, rem);
         >.product-box {
-            
             display: inline-block;
-
-            width: 49.5%;
-            text-align: center;
-            >img {
-                height: unit(360/@base-px-2-rem, rem);
-            }
-            >p {
-                text-overflow: ellipsis;
-                line-height: 1.4em;
-                height: 2.8em;
-                overflow: hidden;
-                @media screen and (min-width: 768px) {
-                    font-size: 20px;
-                    letter-spacing: 2px;
+            width: 49%;
+            >a {
+                //display: block;
+                //width: 49.5%;
+                text-align: center;
+                >img {
+                    //http://stackoverflow.com/questions/7055393/center-image-using-text-align-center
+                    //fix the img in the block containers
+                    //img is an inline ele
+                    height: unit(360/@base-px-2-rem, rem);
+                    display: block;
+                    margin: 0 auto;
                 }
-                &+p {
-                    color: red;
-                    font-weight: 600;
+                >p {
+                    text-overflow: ellipsis;
+                    line-height: 1.4em;
+                    height: 2.8em;
+                    overflow: hidden;
+                    @media screen and (min-width: 768px) {
+                        font-size: 20px;
+                        letter-spacing: 2px;
+                    }
+                    &+p {
+                        color: red;
+                        font-weight: 600;
+                    }
                 }
             }
+            
+            
         }
     }
 }
