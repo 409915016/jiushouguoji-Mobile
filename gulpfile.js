@@ -4,11 +4,18 @@ var gulp = require('gulp'),
     cleancss = require('gulp-clean-css'),
     autoprefixer = require('gulp-autoprefixer');
 
+var LessPluginAutoPrefix = require('less-plugin-autoprefix');
+var autoprefix= new LessPluginAutoPrefix({browsers: ["last 10 versions"]});
+
 
 var browser_config = {
     baseDir: 'dist',
     watchFiles: ['dist/*.html', 'dist/css/*.css', 'dist/js/*.js']
 };
+
+
+
+
 gulp.task('browser-sync', ['testLess', 'autoprefixer'], function () {
     browserSync.init({
         files: browser_config.watchFiles,
@@ -17,13 +24,15 @@ gulp.task('browser-sync', ['testLess', 'autoprefixer'], function () {
         }
     });
 
-    gulp.watch('src/less/style.less', ['testLess']);
+    gulp.watch('src/less/*.less', ['testLess']);
     gulp.watch("dist/*.html").on('change', browserSync.reload);
 });
 
 gulp.task('testLess', function () {
     gulp.src('src/less/style.less')
-        .pipe(less())
+        .pipe(less({
+            plugins: [autoprefix]
+        }))
         .pipe(gulp.dest('dist/css'));
 });
 
