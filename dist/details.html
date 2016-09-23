@@ -231,10 +231,6 @@
                 <img src="img/productLongPic/12.jpg" alt="">
                 <img src="img/productLongPic/13.jpg" alt="">
             </section>
-
-
-
-
         </div>
         <!--可见页 end-->
 
@@ -254,43 +250,27 @@
 
             $('.product-longPic').hide();
 
-            // if ($(document).scrollTop() == 0) {
-            //     //alert("滚动条已经到达顶部为0");
-            // }
-            //$(window).height() 是设备屏幕高度
-            //$(document).height() 整个页面高度
-            // if ($(document).scrollTop() >= $(document).height() - $(window).height()) {
-            //     alert("滚动条已经到达底部为" + $(document).scrollTop());
-            //     scrolltims++;
-            //     if (scrolltims > 0) {
-            //         $(".product-details-artcle").show();
-            //     }
-            // }
             var ones = true;
             $(window).scroll(function() {　　
                 var scrollTop = $(this).scrollTop();　　
                 var scrollHeight = $(document).height();　　
                 var windowHeight = $(this).height();
-                
+
                 console.log(ones);
-                if ( (scrollTop + windowHeight == scrollHeight) && (ones) )  {　　
+                if ((scrollTop + windowHeight == scrollHeight) && (ones)) {　　
                     ones = false;
                     //alert("you are in the bottom");
                     console.log(ones);
                     $('.product-longPic').show();
                     var longPic_h = ($('.product-longPic').offset() - $('.product-tips').height());
-                    
                     $('html, body').delay(800).animate({
                         //http://www.tuicool.com/articles/JJNZRb
                         scrollTop: $('.product-longPic').offset().top - 100
-                    }, 400, function(){
+                    }, 400, function() {
                         //$('.product-tips p').html("图文详情");
                         $('.product-tips').hide("fast", "linear");
                     });
-                    
                 }
-                
-
             });
         });
     </script>
