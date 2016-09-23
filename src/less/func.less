@@ -36,6 +36,8 @@ function
 }
 
 
+
+
 /*
 function
 */
@@ -123,6 +125,7 @@ function
         }
     }
 }
+
 //产品专场下的 2X2 商品展示容器 及 布局
 .make-2X2-product-box() {
     //
@@ -159,14 +162,18 @@ function
                     }
                 }
             }
-            
-            
         }
     }
 }
 
 .mod-retina-display(@fs, @ls) {
-     @media screen and (min-width: 768px) {
+    p {
+        @media screen and (min-width: 768px) {
+            font-size: @fs;
+            letter-spacing: @ls;
+        }
+    }
+    @media screen and (min-width: 768px) {
         font-size: @fs;
         letter-spacing: @ls;
     }

@@ -28,14 +28,20 @@ body {
 
 /************************
 
-滑动页
+Swiper 分页指示器颜色
 
 ************************/
 
+.swiper-pagination-bullet-active {
+    background-color: @text-red !important;
 
+}
 
+/************************
 
+滑动页
 
+************************/
 
 .main-wrapper {
     position: relative;
@@ -332,6 +338,8 @@ div.swiper-product {
 
 
 
+
+
 /************************
 
 产品详情页
@@ -401,6 +409,18 @@ section.product-details {
 
 }
 
+//下拉提醒
+section.product-tips {
+    background-color: #e6e6e6;
+    height: unit(@product-nav-bar-height/@base-px-2-rem, rem);
+    text-align: center;
+    p {
+        line-height: unit(@product-nav-bar-height/@base-px-2-rem, rem);
+        color: @product-tips-text-color;
+        font-size: 14px;
+    }
+}
+
 /************************
 
 产品详情页 - 评论块
@@ -436,6 +456,10 @@ section.comment-one {
             }
         }
         
+    }
+    p.comment-content {
+        font-size: 12px;
+        color: #333;
     }
     //是否包含评论图片
     div.comment-imgBox {
@@ -478,6 +502,19 @@ section.product-more {
 
 }
 
+/************************
+
+产品详情页 - 长图介绍
+
+************************/
+
+section.product-longPic {
+    font-size: 0;
+    line-height: 0;
+    img {
+        width: 100%;
+    }
+}
 
 
 

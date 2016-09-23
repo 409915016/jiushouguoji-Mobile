@@ -222,11 +222,12 @@
         font-size: 16px;
         font-weight: 600;
         line-height: unit( (@search-bar-height - @nav-bar-blank*2) /@base-px-2-rem, rem);
+        .mod-retina-display(20px, 0px);
         //margin-right: unit( 10/@base-px-2-rem, rem);
         //margin-left: -(unit(@search-bar-icon-size /@base-px-2-rem, rem));
 
     }
-    .mod-retina-display(20px, 0px);
+    
 
 
 }
@@ -248,8 +249,6 @@
     border-top: 1px solid @bar-border-color;
 
 
-    
-
     //text-align: center;
     
     ul {
@@ -266,24 +265,25 @@
                     color: red;
                 }
             }
+            //三个icon
             p {
                 //test value line-height
-                line-height: unit(25/@base-px-2-rem, rem);
+                line-height: unit(45/@base-px-2-rem, rem);
                 font-size: 12px;
-                @media screen and (min-width: 768px) {
-                    font-size: 20px;
-                    letter-spacing: 2px;
-                }  
+                color: @product-nav-text-color;
+                .mod-retina-display(20px, 0px);
             }
-
+            //加入购物车
             &:last-child {
                 float: right;
-                width: 52%;
+                width: 55%;
                 background-color: @text-red;
                 p {
                     line-height: unit(@product-nav-bar-height/@base-px-2-rem, rem);
                     font-size: 18px;
                     color: #fff;
+
+                    .mod-retina-display(20px, 2px);
                 }
             }
         }

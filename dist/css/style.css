@@ -21,7 +21,8 @@ function
   clear: both;
 }
 * {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 .fr {
   float: right;
@@ -270,7 +271,13 @@ img[src=""] {
   line-height: 0.79225352rem;
 }
 @media screen and (min-width: 768px) {
-  .base-nav-bar {
+  .base-nav-bar > p p {
+    font-size: 20px;
+    letter-spacing: 0px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .base-nav-bar > p {
     font-size: 20px;
     letter-spacing: 0px;
   }
@@ -307,24 +314,43 @@ img[src=""] {
   color: red;
 }
 .product-nav-bar ul li p {
-  line-height: 0.22007042rem;
+  line-height: 0.39612676rem;
   font-size: 12px;
+  color: #676767;
+}
+@media screen and (min-width: 768px) {
+  .product-nav-bar ul li p p {
+    font-size: 20px;
+    letter-spacing: 0px;
+  }
 }
 @media screen and (min-width: 768px) {
   .product-nav-bar ul li p {
     font-size: 20px;
-    letter-spacing: 2px;
+    letter-spacing: 0px;
   }
 }
 .product-nav-bar ul li:last-child {
   float: right;
-  width: 52%;
+  width: 55%;
   background-color: #e9282e;
 }
 .product-nav-bar ul li:last-child p {
   line-height: 1.32042254rem;
   font-size: 18px;
   color: #fff;
+}
+@media screen and (min-width: 768px) {
+  .product-nav-bar ul li:last-child p p {
+    font-size: 20px;
+    letter-spacing: 2px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .product-nav-bar ul li:last-child p {
+    font-size: 20px;
+    letter-spacing: 2px;
+  }
 }
 i.icon {
   width: 0.79225352rem;
@@ -349,6 +375,11 @@ i.icon {
   /********************
 
     标题栏icon
+    
+    ********************/
+  /********************
+
+    评论块右指示
     
     ********************/
 }
@@ -437,6 +468,24 @@ i.icon.right {
   width: 0.24647887rem;
   height: 0.49295775rem;
 }
+i.icon.details-collect {
+  background-image: url("../img/icon/details-collect-1.jpg");
+  margin-top: 0.04401408rem;
+  width: 0.79225352rem;
+  height: 0.79225352rem;
+}
+i.icon.details-shopcar {
+  background-image: url("../img/icon/details-shopcar-1.jpg");
+  margin-top: 0.04401408rem;
+  width: 0.79225352rem;
+  height: 0.79225352rem;
+}
+i.icon.details-services {
+  background-image: url("../img/icon/details-services-1.jpg");
+  margin-top: 0.04401408rem;
+  width: 0.79225352rem;
+  height: 0.79225352rem;
+}
 html {
   font-size: 113.6px;
 }
@@ -451,6 +500,14 @@ body {
   background-color: #e6e6e6;
   margin: 0 auto;
   max-width: 640px;
+}
+/************************
+
+Swiper 分页指示器颜色
+
+************************/
+.swiper-pagination-bullet-active {
+  background-color: #e9282e !important;
 }
 /************************
 
@@ -496,14 +553,16 @@ main-wrapper
   height: 6.60211268rem;
   position: relative;
   -webkit-transform: translateX(-50%) scale(1.1, 1.1);
-  transform: translateX(-50%) scale(1.1, 1.1);
+  -ms-transform: translateX(-50%) scale(1.1, 1.1);
+      transform: translateX(-50%) scale(1.1, 1.1);
   zoom: 1.1;
   left: 49.9%;
 }
 @media screen and (min-width: 768px) {
   .big-banner .big-banner-imgBox img {
     -webkit-transform: translateX(-50%) scale(1.2, 1.2);
-    transform: translateX(-50%) scale(1.2, 1.2);
+    -ms-transform: translateX(-50%) scale(1.2, 1.2);
+        transform: translateX(-50%) scale(1.2, 1.2);
     zoom: 1.2;
   }
 }
@@ -566,14 +625,16 @@ div.product-imgBox img {
   height: 6.60211268rem;
   position: relative;
   -webkit-transform: translateX(-50%) scale(1, 1);
-  transform: translateX(-50%) scale(1, 1);
+  -ms-transform: translateX(-50%) scale(1, 1);
+      transform: translateX(-50%) scale(1, 1);
   zoom: 1.1;
   left: 50%;
 }
 @media screen and (min-width: 768px) {
   div.product-imgBox img {
     -webkit-transform: translateX(-50%) scale(1.2, 1.2);
-    transform: translateX(-50%) scale(1.2, 1.2);
+    -ms-transform: translateX(-50%) scale(1.2, 1.2);
+        transform: translateX(-50%) scale(1.2, 1.2);
     zoom: 1.2;
   }
 }
@@ -745,6 +806,12 @@ div.swiper-product .swiper-slide:last-child p {
   color: #999;
 }
 @media screen and (min-width: 768px) {
+  .product-section > p p {
+    font-size: 20px;
+    letter-spacing: 0px;
+  }
+}
+@media screen and (min-width: 768px) {
   .product-section > p {
     font-size: 20px;
     letter-spacing: 0px;
@@ -799,6 +866,16 @@ section.product-details .product-details-returns {
   padding-top: 0.17605634rem;
   padding-bottom: 0.17605634rem;
 }
+section.product-tips {
+  background-color: #e6e6e6;
+  height: 1.32042254rem;
+  text-align: center;
+}
+section.product-tips p {
+  line-height: 1.32042254rem;
+  color: #5a5a5a;
+  font-size: 14px;
+}
 /************************
 
 产品详情页 - 评论块
@@ -818,6 +895,10 @@ section.comment-one > p > span {
 section.comment-one > p > span + span {
   color: #aaa;
   text-align: right;
+}
+section.comment-one p.comment-content {
+  font-size: 12px;
+  color: #333;
 }
 section.comment-one div.comment-imgBox {
   padding: 0.17605634rem;
@@ -839,4 +920,16 @@ section.product-more {
 }
 section.product-more .swiper-slide:last-child {
   display: none;
+}
+/************************
+
+产品详情页 - 长图介绍
+
+************************/
+section.product-longPic {
+  font-size: 0;
+  line-height: 0;
+}
+section.product-longPic img {
+  width: 100%;
 }
