@@ -16,8 +16,8 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/flexible.js"></script>
     <script src="js/swiper.jquery.min.js"></script>
-    <script src="js/main.js">
-    </script>
+    <script src="js/main.js"></script>
+    <script src="js/jsonTest.js"></script>
 
 </head>
 
@@ -47,21 +47,22 @@
         <!--顶部导航栏-->
         <div class="nav-bar">
             <ul class="">
-                <li class="active">
-                    <a href="index.html">首页</a>
-                </li>
-                <li>
-                    <a href="index-kongda.html">KONGDA</a>
-                </li>
-                <li>
-                    <a href="index-baby.html">母婴</a>
-                </li>
-                <li>
-                    <a href="index-maquillage.html">护肤美妆</a>
-                </li>
-                <li>
-                    <a href="index-state.html">国家馆</a>
-                </li>
+                <!--<li class="active">
+                        <a href="index.html"></a>
+                    </li>
+                    <li>
+                        <a href="index-kongda.html"></a>
+                    </li>
+                    <li>
+                        <a href="index-baby.html"></a>
+                    </li>
+
+                    <li>
+                        <a href="index-maquillage.html"></a>
+                    </li>
+                    <li>
+                        <a href="index-state.html"></a>
+                    </li>-->
             </ul>
         </div>
         <!--底部导航栏-->
@@ -382,6 +383,9 @@
 
     <script>
         $(document).ready(function() {
+            $(".nav-bar ul li").removeClass("active");
+            $(".nav-bar ul li:first-child").addClass("active");
+
             $(".nav-buttom-bar ul li a i").removeClass("active");
             $(".nav-buttom-bar ul li:first-child a i").addClass("active");
         });
