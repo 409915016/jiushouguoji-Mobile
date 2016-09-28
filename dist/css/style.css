@@ -302,7 +302,6 @@ img[src=""] {
 }
 .product-nav-bar ul li {
   float: left;
-  display: inline-block;
   font-size: 0;
   width: 15%;
 }

@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
 
     var Swiper1 = new Swiper('.swiper-product', {
         slidesPerView: 3,
@@ -9,8 +9,8 @@ $(document).ready(function() {
     // hide #back-top first
     $("#back-to-top").hide();
     // fade in #back-top
-    $(function() {
-        $(window).scroll(function() {
+    $(function () {
+        $(window).scroll(function () {
             if ($(this).scrollTop() > 500) {
                 $("#back-to-top").show();
 
@@ -20,7 +20,7 @@ $(document).ready(function() {
         });
 
         // scroll body to 0px on click
-        $("#back-to-top").click(function() {
+        $("#back-to-top").click(function () {
             $('body,html').animate({
                 scrollTop: 0
             }, 220);
