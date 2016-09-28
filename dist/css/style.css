@@ -352,6 +352,20 @@ img[src=""] {
     letter-spacing: 2px;
   }
 }
+.product-nav-bar ul li:nth-child(2) {
+  position: relative;
+}
+.product-nav-bar ul li:nth-child(2):before {
+  content: attr(data-shop-count);
+  position: absolute;
+  right: 0;
+  top: 5px;
+  z-index: 12;
+  font-size: 13px;
+  color: #e9282e;
+  height: 13px;
+  width: 13px;
+}
 i.icon {
   width: 0.79225352rem;
   height: 0.79225352rem;

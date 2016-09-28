@@ -11,6 +11,13 @@
     position: fixed;
     z-index: @z-index-nav-search-bar;
     right: unit(100/@base-px-2-rem, rem);
+
+    //http://sale.jd.com/act/vxSIhCHBKP1.html?qz_gdt=yyiowvy2aaafg63wuciq&utm_campaign=t_232310336_1&utm_term=yyiowvy2aaafg63wuciq&utm_medium=jzt-zhitou&utm_source=jdzt_refer_null#
+    //left: 50%;
+    //margin-left: 33vw;
+    //margin-left: unit(380/@base-px-2-rem, rem);.
+
+
     bottom: unit((@nav-bar-height + 100 )/@base-px-2-rem, rem);
     width: unit(@go-to-top-icon-size/@base-px-2-rem, rem);
     height: unit(@go-to-top-icon-size/@base-px-2-rem, rem);
@@ -284,6 +291,25 @@
                     color: #fff;
 
                     .mod-retina-display(20px, 2px);
+                }
+            }
+            &:nth-child(2) {
+                position: relative;
+                &:before {
+                    //display: block;
+                    //http://www.jb51.net/article/81984.htm
+
+                    //dataset
+                    content: attr(data-shop-count);
+                    position: absolute;
+                    right: 0;
+                    top: 5px;
+                    z-index: @z-index-nav-search-bar + 1;   
+                    font-size: 13px;
+                    color: @text-red;
+                    //float: right;
+                    height: 13px;
+                    width: 13px;
                 }
             }
         }
