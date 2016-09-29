@@ -95,6 +95,12 @@ td {
 img[src=""] {
   opacity: 0;
 }
+.no-visible {
+  visibility: hidden;
+}
+.no-display {
+  display: none;
+}
 /************************
 
      返回顶部
@@ -197,6 +203,7 @@ img[src=""] {
   line-height: 1.05633803rem;
   padding: 0 0.24647887rem;
   font-size: 14px;
+  color: #8a8a8a;
 }
 @media screen and (min-width: 768px) {
   .nav-bar ul li a {

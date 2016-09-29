@@ -241,11 +241,17 @@
         $(document).ready(function() {
             $(".nav-buttom-bar ul li a i").removeClass("active");
             $(".nav-buttom-bar ul li:first-child a i").addClass("active");
-
+            //详情页商品滑动
             var mySwiper = new Swiper('.product-show .swiper-container', {
                 autoplay: 3500,
                 loop: true,
                 pagination: '.swiper-pagination',
+            });
+
+            //详情页推荐商品
+            var mySwiper1 = new Swiper('.swiper-product', {
+                slidesPerView: 3,
+                spaceBetween: 0,
             });
 
 

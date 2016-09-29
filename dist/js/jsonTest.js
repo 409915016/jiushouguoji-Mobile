@@ -72,6 +72,10 @@ $(function ($) {
 
         $(".big-banner-imgBox img")[0].src = nav_banner_imgadr[0];
 
+
+
+
+
     }); //getJSON end
 
 
@@ -87,7 +91,7 @@ $(function ($) {
             alert("获取数据失败");
             return;
         }
-        console.log(data.data.length); //6
+        //console.log(data.data.length); //6
         var product_section_count = data.data.length;
 
         var product_wrapper = $(".product-wrapper")[0];
@@ -96,8 +100,11 @@ $(function ($) {
         //copy element
         for (var i = 0; i < product_section_count; i++) {
             var clone = product_section.cloneNode(true);
+            //console.log(clone);
             product_wrapper.appendChild(clone);
         }
+        product_wrapper.lastChild.remove();
+
 
         var all_img = new Array;
         all_img = $(".product-imgBox a img");
@@ -114,8 +121,13 @@ $(function ($) {
 
         })
 
-    });
+        //重新实例化
+        var index_Swiper = new Swiper('.swiper-product', {
+            slidesPerView: 3,
+            spaceBetween: 0,
+        });
 
+    });
 
 
 });

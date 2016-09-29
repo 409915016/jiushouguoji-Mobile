@@ -113,7 +113,7 @@
             <!--商品大图与滑动-->
             <div class="product-wrapper">
                 <!--section 为单个专场-->
-                <section class="product-section">
+                <section class="product-section ">
                     <!--商品大图-->
                     <div class="product-imgBox">
                         <a href="feature.html" class="">
@@ -231,16 +231,18 @@
 
     </div>
 
-
-
-
     <script>
         $(document).ready(function() {
             $(".nav-bar ul li").removeClass("active");
             $(".nav-bar ul li:first-child").addClass("active");
-
             $(".nav-buttom-bar ul li a i").removeClass("active");
             $(".nav-buttom-bar ul li:first-child a i").addClass("active");
+
+            // //重新实例化
+            // var index_Swiper = new Swiper('.swiper-product', {
+            //     slidesPerView: 3,
+            //     spaceBetween: 0,
+            // });
         });
     </script>
 

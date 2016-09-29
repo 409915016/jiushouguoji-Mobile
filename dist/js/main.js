@@ -1,9 +1,4 @@
 $(document).ready(function () {
-
-    var Swiper1 = new Swiper('.swiper-product', {
-        slidesPerView: 3,
-        spaceBetween: 0,
-    });
     // reference to stackoverflow 
     // http://stackoverflow.com/questions/14249998/jquery-back-to-top
     // hide #back-top first
