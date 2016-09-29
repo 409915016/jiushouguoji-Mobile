@@ -1,0 +1,18 @@
+@import "value.less";
+@import "func.less";
+@import "base.less";
+.shopdoor-section {
+    background-color: #fff;
+}
+
+.door-name {
+    padding: 0 unit(@shopcar-left-right-blank/@base-px-2-rem, rem);
+    >span {
+        // height: unit( @shopcar-door-height/@base-px-2-rem, rem);
+        // line-height: unit( @shopcar-door-height/@base-px-2-rem, rem);
+        .make-line-and-height-p(@shopcar-door-height);
+        font-size: 16px;
+    
+    }
+
+}

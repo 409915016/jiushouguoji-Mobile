@@ -1,21 +1,15 @@
 //55 33
 @import "value.less";
-
 i.icon {
     width: unit(@search-bar-icon-size/@base-px-2-rem, rem);
     height: unit(@search-bar-icon-size/@base-px-2-rem, rem);
     display: inline-block;
     background-size: 100% 100%;
-
     /********************
 
     首页搜索栏、导航栏icon
     
     ********************/
-
-
-                                            
-                                        
     //           ./syhhhhyo/.`             
     //         :yhs:.````.:shy/            
     //       :hy:           `:hh:          
@@ -33,64 +27,41 @@ i.icon {
     //  `/osssssyd+        +dyssssss+.     
     //           :hy/.``./yd+`             
     //             :oyyyys/`               
-                                        
-
     &.message {
-        background-image: url("@{image-address}/message@2x.png");
-        
+        background-image: url("@{icon-address}/message@2x.png");
         margin-left: unit(40/@base-px-2-rem, rem);
         margin-right: unit(30/@base-px-2-rem, rem);
-        
     }
-
-
-
     &.search {
-        background-image: url("@{image-address}/search@2x.png");
-        
+        background-image: url("@{icon-address}/search@2x.png");
         width: unit(@search-input-icon-size/@base-px-2-rem, rem);
         height: unit(@search-input-icon-size/@base-px-2-rem, rem);
         margin-left: unit(40/@base-px-2-rem, rem);
         margin-right: unit(30/@base-px-2-rem, rem);
-        margin-top: unit(10/@base-px-2-rem, rem); 
-    
+        margin-top: unit(10/@base-px-2-rem, rem);
     }
-    
-                                         
-                                        
     //    `......`           `......`      
     //  .ohhyyyys-           :yyyyyhh+`    
     //  :do                        `yd.    
     //  :do                        `sd.    
     //  :do                        `sd.    
     //  `-`                         ..     
-                                        
     //  `-----------------------------     
     //  -ossssssssssssssssssssssssssso`    
-                                        
-                                        
     //  -y/                        `+s.    
     //  :do                        `sd.    
     //  :do                        `sd.    
     //  -hh/////:.           ./////+hy.    
     //   ./ooooo+.           -+oooo+/.     
-                                        
-                                        
-
     &.scan {
-        background-image: url("@{image-address}/scan@2x.png");
-
-        margin-right: unit(40/@base-px-2-rem, rem); 
-        
+        background-image: url("@{icon-address}/scan@2x.png");
+        margin-right: unit(40/@base-px-2-rem, rem);
     }
     /********************
 
     底部导航栏icon
     
     ********************/
-
-
-        
     //                    `..                   
     //                  :yhho-                 
     //               `:yy: `+hs-               
@@ -111,24 +82,18 @@ i.icon {
     //      `+d-     od.      .do     .ds`     
     //       -yyooooohd.      .dhooooshs.      
     //        `........        ........        
-
     &.home {
-        background-image: url("@{image-address}/home@2x.png");
-        margin-top: unit(5/@base-px-2-rem, rem); 
+        background-image: url("@{icon-address}/home@2x.png");
+        margin-top: unit(5/@base-px-2-rem, rem);
         width: unit(@nav-buttom-bar-icon-size/@base-px-2-rem, rem);
         height: unit(@nav-buttom-bar-icon-size/@base-px-2-rem, rem);
         &.active {
-            background-image: url("@{image-address}/home-red@2x.png");
+            background-image: url("@{icon-address}/home-red@2x.png");
             &+p {
                 color: red;
             }
         }
-        
     }
-
-    
-                                         
-                                            
     //            `:+syyyyyyyyso/.`            
     //         `/yhs/-.``  ```.:+yho-          
     //       .oho-                `/yy:        
@@ -146,25 +111,18 @@ i.icon {
     //       `/ys:`              `./-          
     //         `-oys+:.`    ``-/oys:`          
     //             .:+osssssss+:.              
-                                        
-
     &.hot {
-        background-image: url("@{image-address}/hot@2x.png");
+        background-image: url("@{icon-address}/hot@2x.png");
         margin-top: unit(5/@base-px-2-rem, rem);
         width: unit(@nav-buttom-bar-icon-size/@base-px-2-rem, rem);
         height: unit(@nav-buttom-bar-icon-size/@base-px-2-rem, rem);
         &.active {
-            background-image: url("@{image-address}/hot-red@2x.png");
+            background-image: url("@{icon-address}/hot-red@2x.png");
             &+p {
                 color: red;
             }
         }
-        
     }
-
-
-    
-                                            
     // `syyys/`                                
     // `/++ohmh.   ........................`   
     //      -hm+  :ddddddddddddddddddddddddh+` 
@@ -184,23 +142,18 @@ i.icon {
     //             .+o+````          `/o+-     
     //             smmm+             /dmmy`    
     //             ./o/`             `:o+.     
-
     &.shopcar {
-        background-image: url("@{image-address}/shopcar@2x.png");
+        background-image: url("@{icon-address}/shopcar@2x.png");
         margin-top: unit(5/@base-px-2-rem, rem);
         width: unit(@nav-buttom-bar-icon-size/@base-px-2-rem, rem);
         height: unit(@nav-buttom-bar-icon-size/@base-px-2-rem, rem);
         &.active {
-            background-image: url("@{image-address}/shopcar-red@2x.png");
+            background-image: url("@{icon-address}/shopcar-red@2x.png");
             &+p {
                 color: red;
             }
         }
-        
     }
-
-    
-                                         
     //             `-::::-`                
     //          .+ydysoosydh+.             
     //        `ody/`      `/ydo`           
@@ -220,35 +173,28 @@ i.icon {
     // `yd-                         :dy    
     // .so`                         .ss    
     &.my {
-        background-image: url("@{image-address}/my@2x.png");
+        background-image: url("@{icon-address}/my@2x.png");
         margin-top: unit(5/@base-px-2-rem, rem);
         width: unit(@nav-buttom-bar-icon-size/@base-px-2-rem, rem);
         height: unit(@nav-buttom-bar-icon-size/@base-px-2-rem, rem);
         &.active {
-            background-image: url("@{image-address}/my-red@2x.png");
+            background-image: url("@{icon-address}/my-red@2x.png");
             &+p {
                 color: red;
             }
         }
-        
     }
-
-
     /********************
 
     返回顶部icon
     
     ********************/
-
     //返回顶部
     &.totop {
-        background-image: url("@{image-address}/gotop@2x.png");
+        background-image: url("@{icon-address}/gotop@2x.png");
         width: unit(@go-to-top-icon-size/@base-px-2-rem, rem);
         height: unit(@go-to-top-icon-size/@base-px-2-rem, rem);
-        
     }
-
-
     /********************
 
     标题栏icon
@@ -256,59 +202,60 @@ i.icon {
     ********************/
     //返回
     &.back {
-        background-image: url("@{image-address}/back@2x.png");
+        background-image: url("@{icon-address}/back@2x.png");
         //margin-left: unit(10/@base-px-2-rem, rem);
-        
     }
-
     //分享
     &.share {
-        background-image: url("@{image-address}/share@2x.png");
+        background-image: url("@{icon-address}/share@2x.png");
         width: unit((@base-nav-bar-icon-size - 20) /@base-px-2-rem, rem);
         height: unit((@base-nav-bar-icon-size - 20) /@base-px-2-rem, rem);
         margin-right: unit(20/@base-px-2-rem, rem);
         margin-top: unit(15/@base-px-2-rem, rem);
-        
     }
-
-
     /********************
 
     评论块右指示
     
     ********************/
-    
     &.right {
-        background-image: url("@{image-address}/right.png");
+        background-image: url("@{icon-address}/right.png");
         //margin-left: unit(10/@base-px-2-rem, rem);
         width: unit(28/@base-px-2-rem, rem);
         height: unit(56/@base-px-2-rem, rem);
     }
-
-
     &.details-collect {
-        background-image: url("@{image-address}/details-collect-1.jpg");
+        background-image: url("@{icon-address}/details-collect-1.jpg");
         margin-top: unit(5/@base-px-2-rem, rem);
         width: unit(@nav-buttom-bar-icon-size/@base-px-2-rem, rem);
         height: unit(@nav-buttom-bar-icon-size/@base-px-2-rem, rem);
-
     }
-
-
     &.details-shopcar {
-        background-image: url("@{image-address}/details-shopcar-1.jpg");
+        background-image: url("@{icon-address}/details-shopcar-1.jpg");
         margin-top: unit(5/@base-px-2-rem, rem);
         width: unit(@nav-buttom-bar-icon-size/@base-px-2-rem, rem);
         height: unit(@nav-buttom-bar-icon-size/@base-px-2-rem, rem);
-
     }
-
     &.details-services {
-        background-image: url("@{image-address}/details-services-1.jpg");
+        background-image: url("@{icon-address}/details-services-1.jpg");
         margin-top: unit(5/@base-px-2-rem, rem);
         width: unit(@nav-buttom-bar-icon-size/@base-px-2-rem, rem);
         height: unit(@nav-buttom-bar-icon-size/@base-px-2-rem, rem);
-
     }
+    //购物车 勾选icon
+    &.checked {
+        background-image: url("@{icon-address}/checked.png");
+        margin-top: unit(5/@base-px-2-rem, rem);
+        width: unit(@shopcar-check-icon/@base-px-2-rem, rem);
+        height: unit(@shopcar-check-icon/@base-px-2-rem, rem);
+    }
+    &.no-check {
+        background-image: url("@{icon-address}/no-check.png");
+        margin-top: unit(42/@base-px-2-rem, rem);
+        margin-right: unit(45/@base-px-2-rem, rem);
+        width: unit(@shopcar-check-icon/@base-px-2-rem, rem);
+        height: unit(@shopcar-check-icon/@base-px-2-rem, rem);
+    }
+
 
 }

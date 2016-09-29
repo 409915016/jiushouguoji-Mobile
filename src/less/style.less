@@ -4,6 +4,8 @@
 @import "fixed-el.less";
 @import "icon.less";
 
+@import "shopcar.less";
+
 
 
 html {
@@ -56,6 +58,11 @@ Swiper 分页指示器颜色
 
     }
     &.details {
+        margin-top: unit((@base-nav-bar-height)/@base-px-2-rem, rem);
+        padding-bottom: unit(@product-nav-bar-height /@base-px-2-rem, rem);
+        //margin-bottom: unit(@product-nav-bar-height/@base-px-2-rem, rem);
+    }
+    &.shopcar {
         margin-top: unit((@base-nav-bar-height)/@base-px-2-rem, rem);
         padding-bottom: unit(@product-nav-bar-height /@base-px-2-rem, rem);
         //margin-bottom: unit(@product-nav-bar-height/@base-px-2-rem, rem);
@@ -123,7 +130,7 @@ main-wrapper
 
 ************************/
 
-.product-section {
+.product-section, .shopdoor-section {
     margin-top: unit(20/@base-px-2-rem, rem);
     background-color: #fff;
 
@@ -134,14 +141,6 @@ main-wrapper
     // }
 
 }
-
-
-
-
-
-
-
-
 
 
 
