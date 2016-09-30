@@ -245,17 +245,27 @@ i.icon {
     //购物车 勾选icon
     &.checked {
         background-image: url("@{icon-address}/checked.png");
-        margin-top: unit(5/@base-px-2-rem, rem);
+        //margin-top: unit(5/@base-px-2-rem, rem);
         width: unit(@shopcar-check-icon/@base-px-2-rem, rem);
         height: unit(@shopcar-check-icon/@base-px-2-rem, rem);
     }
     &.no-check {
         background-image: url("@{icon-address}/no-check.png");
         margin-top: unit(42/@base-px-2-rem, rem);
-        margin-right: unit(45/@base-px-2-rem, rem);
         width: unit(@shopcar-check-icon/@base-px-2-rem, rem);
         height: unit(@shopcar-check-icon/@base-px-2-rem, rem);
     }
+    &.add {
+        background-image: url("@{icon-address}/add.png");
+        width: unit(@shopcar-add-icon/@base-px-2-rem, rem);
+        height: unit(@shopcar-add-icon/@base-px-2-rem, rem);
+    }
+    &.minus {
+        background-image: url("@{icon-address}/minus.png");
+        width: unit(@shopcar-add-icon/@base-px-2-rem, rem);
+        height: unit(@shopcar-add-icon/@base-px-2-rem, rem);
+    }
+
 
 
 }

@@ -3,6 +3,7 @@
 @import "base.less";
 .shopdoor-section {
     background-color: #fff;
+    
 }
 
 .door-name {
@@ -12,7 +13,155 @@
         // line-height: unit( @shopcar-door-height/@base-px-2-rem, rem);
         .make-line-and-height-p(@shopcar-door-height);
         font-size: 16px;
-    
     }
+    >i {
+        margin-top: unit(42/@base-px-2-rem, rem);
+        margin-right: unit(45/@base-px-2-rem, rem);
+    }
+}
 
+.shopcar-list {
+    // //旧兼容
+    // display: box;
+    // //主轴两边对齐
+    // box-pack: justify;
+    // //显示正方向
+    // box-direction: normal;
+    // //主轴对齐
+    // box-align: start;
+    // //侧轴对齐
+    // box-orient: horizontal;
+    // //不换行
+    // box-lines: single;
+    //mark
+    padding: unit(@shopcar-left-right-blank/@base-px-2-rem, rem);
+    border-top: 1px solid @shopcar-border-color;
+    //new
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    flex-flow: row nowrap;
+    //两边对齐
+    justify-content: space-between;
+}
+
+//左边
+.shopcar-list-left {
+    width: 60%;
+    // //旧兼容
+    // display: box;
+    // //主轴两边对齐
+    // box-pack: justify;
+    // //侧轴居中
+    // box-align: center;
+    // //侧轴对齐
+    // box-orient: horizontal;
+    // //显示正方向
+    // box-direction: normal;
+    // //不换行
+    // box-lines: single;
+    //new
+    font-size: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    flex-flow: row nowrap;
+    //侧轴居中
+    align-items: center;
+    justify-content: flex-start;
+    
+}
+
+.shopcar-list-icon {
+    font-size: 0;
+    margin-right: unit(45/@base-px-2-rem, rem);
+    width: unit(@shopcar-check-icon/@base-px-2-rem, rem);
+    height: unit(@shopcar-check-icon/@base-px-2-rem, rem);
+    i {
+        // margin-top: unit(80/@base-px-2-rem, rem);
+        // margin-right: unit(45/@base-px-2-rem, rem);
+    }
+}
+
+.shopcar-list-img {
+    font-size: 0;
+    height: unit(300/@base-px-2-rem, rem);
+    width: unit(300/@base-px-2-rem, rem);
+    img {
+        width: 100%;
+        height: unit(300/@base-px-2-rem, rem);
+        width: unit(300/@base-px-2-rem, rem);
+    }
+}
+
+.shopcar-list-right {
+    font-size: 13px;
+    // //旧兼容
+    // display: box;
+    // //主轴两边对齐
+    // box-pack: justify;
+    // //显示正方向
+    // box-direction: normal;
+    // //主轴对齐
+    // box-align: start;
+    // //侧轴对齐
+    // box-orient: vertical; //垂直
+    // //不换行
+    // box-lines: multiple;
+    margin-left: unit(30/@base-px-2-rem, rem);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-flow: row wrap;
+    width: 100%;
+    //justify-content: space-between;
+    p {
+        //置顶
+        align-self: flex-start;
+    }
+    .shopcar-product-price-count {
+        width: 100%;
+        //置底
+        align-self: flex-end;
+    }
+}
+
+.shopcar-product-count {
+    // //旧兼容
+    // display: box;
+    // //主轴两边对齐
+    // box-pack: justify;
+    // //显示正方向
+    // box-direction: normal;
+    // //主轴对齐
+    // box-align: start;
+    // //侧轴对齐
+    // box-orient: horizontal; //水平
+    // //不换行
+    // box-lines: multiple;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    font-size: 16px;
+    > span {
+        padding-left: unit(80/@base-px-2-rem, rem);
+    }
+    .shopcar-product-count-c {
+        //line-height: unit(@shopcar-add-icon/@base-px-2-rem, rem);
+        //font-size: 0;
+        span {
+            line-height: unit(@shopcar-add-icon/@base-px-2-rem, rem);
+            height: unit(@shopcar-add-icon/@base-px-2-rem, rem);
+            padding: 0 unit(30/@base-px-2-rem, rem);
+            // font-size: 16px;
+        }
+        i {
+            //vertical-align: middle;
+            
+            //line-height: unit(@shopcar-add-icon/@base-px-2-rem, rem);
+        }
+    }
 }
