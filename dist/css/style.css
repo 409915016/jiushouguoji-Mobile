@@ -375,6 +375,8 @@ img[src=""] {
 i.icon {
   width: 0.79225352rem;
   height: 0.79225352rem;
+  background-origin: content-box;
+  background-repeat: no-repeat;
   display: inline-block;
   background-size: 100% 100%;
   /********************
@@ -513,7 +515,6 @@ i.icon.checked {
 }
 i.icon.no-check {
   background-image: url("../img/icon/no-check.png");
-  margin-top: 0.36971831rem;
   width: 0.61619718rem;
   height: 0.61619718rem;
 }
@@ -531,16 +532,35 @@ i.icon.minus {
   background-color: #fff;
 }
 .door-name {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  -webkit-flex-flow: row nowrap;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   padding: 0 0.44014085rem;
 }
 .door-name > span {
   height: 1.32042254rem;
   line-height: 1.32042254rem;
   font-size: 16px;
-}
-.door-name > i {
-  margin-top: 0.36971831rem;
-  margin-right: 0.39612676rem;
 }
 .shopcar-list {
   padding: 0.44014085rem;
@@ -592,7 +612,8 @@ i.icon.minus {
       -ms-flex-pack: start;
           justify-content: flex-start;
 }
-.shopcar-list-icon {
+.shopcar-list-icon,
+.shopcar-check-icon {
   font-size: 0;
   margin-right: 0.39612676rem;
   width: 0.61619718rem;
@@ -664,11 +685,27 @@ i.icon.minus {
 }
 .shopcar-product-count > span {
   padding-left: 0.70422535rem;
+  -webkit-align-self: center;
+      -ms-flex-item-align: center;
+              -ms-grid-row-align: center;
+          align-self: center;
+}
+.shopcar-product-count .shopcar-product-count-c {
+  -webkit-align-self: center;
+      -ms-flex-item-align: center;
+              -ms-grid-row-align: center;
+          align-self: center;
 }
 .shopcar-product-count .shopcar-product-count-c span {
+  float: left;
   line-height: 0.44014085rem;
-  height: 0.44014085rem;
-  padding: 0 0.26408451rem;
+  padding: 0rem 0;
+}
+.shopcar-product-count .shopcar-product-count-c i {
+  float: left;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  padding: 0rem 0.26408451rem;
 }
 html {
   font-size: 113.6px;

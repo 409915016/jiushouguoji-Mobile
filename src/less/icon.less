@@ -3,6 +3,8 @@
 i.icon {
     width: unit(@search-bar-icon-size/@base-px-2-rem, rem);
     height: unit(@search-bar-icon-size/@base-px-2-rem, rem);
+    background-origin: content-box;
+    background-repeat: no-repeat;
     display: inline-block;
     background-size: 100% 100%;
     /********************
@@ -251,11 +253,12 @@ i.icon {
     }
     &.no-check {
         background-image: url("@{icon-address}/no-check.png");
-        margin-top: unit(42/@base-px-2-rem, rem);
+        //margin-top: unit(42/@base-px-2-rem, rem);
         width: unit(@shopcar-check-icon/@base-px-2-rem, rem);
         height: unit(@shopcar-check-icon/@base-px-2-rem, rem);
     }
     &.add {
+        
         background-image: url("@{icon-address}/add.png");
         width: unit(@shopcar-add-icon/@base-px-2-rem, rem);
         height: unit(@shopcar-add-icon/@base-px-2-rem, rem);
