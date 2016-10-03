@@ -95,7 +95,7 @@ $(function ($) {
         var product_section_count = data.data.length;
 
         var product_wrapper = $(".product-wrapper")[0];
-        var product_section = $(".product-section")[0];
+        var product_section = $(".base-mt-wrapper")[0];
         //console.log(product_section);
         //copy element
         for (var i = 0; i < product_section_count; i++) {

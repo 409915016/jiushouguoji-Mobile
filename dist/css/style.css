@@ -1,25 +1,31 @@
 /*
 function
 */
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
 /*
 function
 */
-.clearfix:before,
-.clearfix:after {
-  content: "";
-  display: table;
-}
-.clearfix:after {
-  clear: both;
-}
-.clearfix:before,
-.clearfix:after {
-  content: "";
-  display: table;
-}
-.clearfix:after {
-  clear: both;
-}
+/*
+通用单行文字标题栏
+*/
+/*
+两边有线
+*/
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -528,9 +534,6 @@ i.icon.minus {
   width: 0.44014085rem;
   height: 0.44014085rem;
 }
-.shopdoor-section {
-  background-color: #fff;
-}
 .door-name {
   display: -webkit-box;
   display: -webkit-flex;
@@ -707,6 +710,54 @@ i.icon.minus {
           box-sizing: content-box;
   padding: 0rem 0.26408451rem;
 }
+.shopcar .base-mt-wrapper > p {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  height: 1.23239437rem;
+  line-height: 1.23239437rem;
+  font-size: 15px;
+  background-color: #fff;
+  letter-spacing: 1px;
+  color: #000;
+  font-weight: 500;
+}
+@media screen and (min-width: 768px) {
+  .shopcar .base-mt-wrapper > p p {
+    font-size: 20px;
+    letter-spacing: 2px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .shopcar .base-mt-wrapper > p {
+    font-size: 20px;
+    letter-spacing: 2px;
+  }
+}
+.shopcar .base-mt-wrapper > p:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  height: 1px;
+  width: 22.3%;
+  background-color: #aaa;
+}
+.shopcar .base-mt-wrapper > p:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  height: 1px;
+  width: 22.3%;
+  background-color: #aaa;
+}
+.shopcar .base-mt-wrapper > p {
+  color: #aaa;
+  font-size: 16px;
+}
 html {
   font-size: 113.6px;
 }
@@ -753,7 +804,7 @@ Swiper 分页指示器颜色
 }
 .main-wrapper.shopcar {
   margin-top: 1.32042254rem;
-  padding-bottom: 1.32042254rem;
+  padding-bottom: 1.49647887rem;
 }
 /************************
 
@@ -805,35 +856,6 @@ main-wrapper
 }
 @media screen and (min-width: 768px) {
   .big-banner > p {
-    font-size: 20px;
-    letter-spacing: 2px;
-  }
-}
-/************************
-
-产品容器
-
-************************/
-.product-section,
-.shopdoor-section {
-  margin-top: 0.17605634rem;
-  background-color: #fff;
-}
-.product-section > p,
-.shopdoor-section > p {
-  width: 100%;
-  height: 1.05633803rem;
-  line-height: 1.05633803rem;
-  text-align: center;
-  font-size: 15px;
-  background-color: #fff;
-  letter-spacing: 1px;
-  color: #000;
-  font-weight: 500;
-}
-@media screen and (min-width: 768px) {
-  .product-section > p,
-  .shopdoor-section > p {
     font-size: 20px;
     letter-spacing: 2px;
   }
@@ -943,33 +965,6 @@ div.swiper-product .swiper-slide:last-child p {
 单个产品展示
 
 ************************/
-.one-product-wrapper {
-  margin-top: 0.17605634rem;
-  background-color: #fff;
-  /*精品推荐*/
-}
-.one-product-wrapper > p {
-  width: 100%;
-  text-align: center;
-  height: 1.23239437rem;
-  line-height: 1.23239437rem;
-  font-size: 15px;
-  background-color: #fff;
-  letter-spacing: 1px;
-  color: #000;
-  font-weight: 500;
-}
-@media screen and (min-width: 768px) {
-  .one-product-wrapper > p {
-    font-size: 20px;
-    letter-spacing: 2px;
-  }
-}
-/************************
-
-单个产品展示
-
-************************/
 .one-product {
   padding-bottom: 0.44014085rem;
 }
@@ -998,50 +993,50 @@ div.swiper-product .swiper-slide:last-child p {
 2X2产品页
 
 ************************/
-.product-section .product-box-wrapper {
+.base-mt-wrapper .product-box-wrapper {
   width: 100%;
   padding: 0.17605634rem;
 }
-.product-section .product-box-wrapper > .product-box {
+.base-mt-wrapper .product-box-wrapper > .product-box {
   display: inline-block;
   width: 49%;
 }
-.product-section .product-box-wrapper > .product-box > a {
+.base-mt-wrapper .product-box-wrapper > .product-box > a {
   text-align: center;
 }
-.product-section .product-box-wrapper > .product-box > a > img {
+.base-mt-wrapper .product-box-wrapper > .product-box > a > img {
   height: 3.16901408rem;
   display: block;
   margin: 0 auto;
 }
-.product-section .product-box-wrapper > .product-box > a > p {
+.base-mt-wrapper .product-box-wrapper > .product-box > a > p {
   text-overflow: ellipsis;
   line-height: 1.4em;
   height: 2.8em;
   overflow: hidden;
 }
 @media screen and (min-width: 768px) {
-  .product-section .product-box-wrapper > .product-box > a > p {
+  .base-mt-wrapper .product-box-wrapper > .product-box > a > p {
     font-size: 20px;
     letter-spacing: 2px;
   }
 }
-.product-section .product-box-wrapper > .product-box > a > p + p {
+.base-mt-wrapper .product-box-wrapper > .product-box > a > p + p {
   color: red;
   font-weight: 600;
 }
-.product-section > p {
+.base-mt-wrapper > p.end-text {
   font-size: 13px;
   color: #999;
 }
 @media screen and (min-width: 768px) {
-  .product-section > p p {
+  .base-mt-wrapper > p.end-text p {
     font-size: 20px;
     letter-spacing: 0px;
   }
 }
 @media screen and (min-width: 768px) {
-  .product-section > p {
+  .base-mt-wrapper > p.end-text {
     font-size: 20px;
     letter-spacing: 0px;
   }
@@ -1161,4 +1156,65 @@ section.product-longPic {
 }
 section.product-longPic img {
   width: 100%;
+}
+/************************
+
+产品容器
+
+************************/
+.base-mt-wrapper > p {
+  width: 100%;
+  text-align: center;
+  height: 1.23239437rem;
+  line-height: 1.23239437rem;
+  font-size: 15px;
+  background-color: #fff;
+  letter-spacing: 1px;
+  color: #000;
+  font-weight: 500;
+}
+@media screen and (min-width: 768px) {
+  .base-mt-wrapper > p p {
+    font-size: 20px;
+    letter-spacing: 2px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .base-mt-wrapper > p {
+    font-size: 20px;
+    letter-spacing: 2px;
+  }
+}
+/************************
+
+单个产品展示
+
+************************/
+.base-mt-wrapper {
+  margin-top: 0.35211268rem;
+  background-color: #fff;
+  /*精品推荐*/
+}
+.base-mt-wrapper > p {
+  width: 100%;
+  text-align: center;
+  height: 1.23239437rem;
+  line-height: 1.23239437rem;
+  font-size: 15px;
+  background-color: #fff;
+  letter-spacing: 1px;
+  color: #000;
+  font-weight: 500;
+}
+@media screen and (min-width: 768px) {
+  .base-mt-wrapper > p p {
+    font-size: 20px;
+    letter-spacing: 2px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .base-mt-wrapper > p {
+    font-size: 20px;
+    letter-spacing: 2px;
+  }
 }

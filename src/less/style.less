@@ -3,19 +3,16 @@
 @import "base.less";
 @import "fixed-el.less";
 @import "icon.less";
-
 @import "shopcar.less";
-
-
-
 html {
     font-size: 113.6px;
 }
+
 body {
     background-color: #fff;
     height: 100%;
     background-color: #e6e6e6;
-    color: #333;    
+    color: #333;
 }
 
 .wrapper {
@@ -25,8 +22,8 @@ body {
     margin: 0 auto;
     max-width: @max-width;
     //min-width: @min-width;
-
 }
+
 
 /************************
 
@@ -36,8 +33,8 @@ Swiper 分页指示器颜色
 
 .swiper-pagination-bullet-active {
     background-color: @text-red !important;
-
 }
+
 
 /************************
 
@@ -55,7 +52,6 @@ Swiper 分页指示器颜色
     &.feature {
         margin-top: unit((@base-nav-bar-height)/@base-px-2-rem, rem);
         padding-bottom: unit(0 /@base-px-2-rem, rem);
-
     }
     &.details {
         margin-top: unit((@base-nav-bar-height)/@base-px-2-rem, rem);
@@ -64,11 +60,10 @@ Swiper 分页指示器颜色
     }
     &.shopcar {
         margin-top: unit((@base-nav-bar-height)/@base-px-2-rem, rem);
-        padding-bottom: unit(@product-nav-bar-height /@base-px-2-rem, rem);
+        padding-bottom: unit( (@product-nav-bar-height + 20) /@base-px-2-rem, rem);
         //margin-bottom: unit(@product-nav-bar-height/@base-px-2-rem, rem);
     }
 }
-
 
 
 /************************
@@ -82,21 +77,16 @@ main-wrapper
 
 ************************/
 
-
-
 .big-banner {
     .big-banner-imgBox {
         width: 100%;
         max-width: @max-width;
         height: unit(750/@base-px-2-rem, rem);
-        
         // background-image: url("../img/banner-img.jpg");
         // background-size: 100%;
         // background-repeat: no-repeat no-repeat;
         // background-position: center center;
         position: relative;
-        
-
         // to fix the big image split the page
         // http://www.divcss5.com/wenji/w364.shtml
         overflow: hidden;
@@ -107,14 +97,14 @@ main-wrapper
             height: unit(750/@base-px-2-rem, rem);
             position: relative;
             //-webkit- to fix UC borwser transform not work.
-            -webkit-transform: translateX(-50%) scale(1.1,1.1);
-            transform: translateX(-50%) scale(1.1,1.1);
+            -webkit-transform: translateX(-50%) scale(1.1, 1.1);
+            transform: translateX(-50%) scale(1.1, 1.1);
             zoom: 1.1;
             //fix the ip6 over device not in the center 
             left: 49.9%;
             @media screen and (min-width: 768px) {
-                -webkit-transform: translateX(-50%) scale(1.2,1.2);
-                transform: translateX(-50%) scale(1.2,1.2);
+                -webkit-transform: translateX(-50%) scale(1.2, 1.2);
+                transform: translateX(-50%) scale(1.2, 1.2);
                 zoom: 1.2;
             }
         }
@@ -126,47 +116,27 @@ main-wrapper
 
 /************************
 
-产品容器
-
-************************/
-
-.product-section, .shopdoor-section {
-    margin-top: unit(20/@base-px-2-rem, rem);
-    background-color: #fff;
-
-    //defluat 140
-    .make-big-img-p(120);
-    // &:first-child {
-    //     margin-top: unit(0/@base-px-2-rem, rem);
-    // }
-
-}
-
-
-
-/************************
-
 产品大图
 
 ************************/
+
 div.product-imgBox {
     width: 100%;
     max-width: @max-width;
     height: unit(750/@base-px-2-rem, rem);
-
     position: relative;
     overflow: hidden;
-    img{
+    img {
         height: unit(750/@base-px-2-rem, rem);
         position: relative;
         //-webkit- to fix UC borwser transform not work.
-        -webkit-transform: translateX(-50%) scale(1,1);
-        transform: translateX(-50%) scale(1,1);
+        -webkit-transform: translateX(-50%) scale(1, 1);
+        transform: translateX(-50%) scale(1, 1);
         zoom: 1.1;
         left: 50%;
         @media screen and (min-width: 768px) {
-            -webkit-transform: translateX(-50%) scale(1.2,1.2);
-            transform: translateX(-50%) scale(1.2,1.2);
+            -webkit-transform: translateX(-50%) scale(1.2, 1.2);
+            transform: translateX(-50%) scale(1.2, 1.2);
             zoom: 1.2;
         }
     }
@@ -176,11 +146,9 @@ div.product-imgBox {
         position: absolute;
         bottom: 0;
         left: 46.999%;
-        
         border-left: unit(40/@base-px-2-rem, rem) solid transparent;
         border-right: unit(40/@base-px-2-rem, rem) solid transparent;
         border-bottom: unit(40/@base-px-2-rem, rem) solid #fff;
-
     }
     //隐藏正三角
     &.no-after {
@@ -188,10 +156,7 @@ div.product-imgBox {
             display: none;
         }
     }
-    
 }
-
-
 
 
 /************************
@@ -199,6 +164,7 @@ div.product-imgBox {
 产品Swiper
 
 ************************/
+
 div.swiper-product {
     .swiper-slide {
         text-align: center;
@@ -206,17 +172,16 @@ div.swiper-product {
             height: unit(360/@base-px-2-rem, rem);
         }
         p {
-            text-overflow: ellipsis;     
+            text-overflow: ellipsis;
             line-height: 1.4em;
             height: 2.8em;
-            overflow: hidden;   
+            overflow: hidden;
             @media screen and (min-width: 768px) {
                 font-size: 20px;
                 letter-spacing: 2px;
-            }     
+            }
             &+p {
                 color: red;
-
                 font-weight: 600;
             }
         }
@@ -237,50 +202,10 @@ div.swiper-product {
                     font-size: 20px;
                     letter-spacing: 2px;
                     font-weight: 500;
-                }     
-                
+                }
             }
         }
     }
-    
-}
-
-
-
-
-
-
-
-
-
-
-/************************
-
-单个产品展示
-
-************************/
-
-.one-product-wrapper {
-    margin-top: unit(20/@base-px-2-rem, rem);
-    background-color: #fff;
-    /*精品推荐*/
-    > p {
-        width: 100%;
-        text-align: center;    
-
-        .make-line-and-height-p(@big-banner-text-height);
-        font-size: 15px;
-        background-color: #fff;
-        letter-spacing: 1px;
-        color: #000;
-        font-weight: 500;
-        @media screen and (min-width: 768px) {
-            font-size: 20px;
-            letter-spacing: 2px;
-        }
-    }
-    
-
 }
 
 
@@ -290,6 +215,7 @@ div.swiper-product {
 单个产品展示
 
 ************************/
+
 .one-product {
     padding-bottom: unit(50/@base-px-2-rem, rem);
     img {
@@ -316,27 +242,22 @@ div.swiper-product {
 }
 
 
-
 /************************
 
 2X2产品页
 
 ************************/
-.product-section {
-    
+
+.base-mt-wrapper {
     .make-2X2-product-box();
     //have product-box-wrapper 
-    >p {
-       font-size: 13px;
-       color: #999;
-       .mod-retina-display(20px, 0px);
+    >p.end-text {
+        font-size: 13px;
+        color: #999;
+        .mod-retina-display(20px, 0px);
     }
-
+    >p::first-of-type {}
 }
-
-
-
-
 
 
 /************************
@@ -350,15 +271,14 @@ section.product-show {
     img {
         width: 100%;
     }
-
 }
+
 //商品详细信息
 section.product-details {
     background-color: #fff;
     padding: 0 unit(40/@base-px-2-rem, rem);
     p {
         padding-top: unit(30/@base-px-2-rem, rem);
-        
         &.border-b {
             border-bottom: 1px solid @text-gray;
         }
@@ -368,9 +288,7 @@ section.product-details {
             color: @text-gray;
             padding-bottom: unit(20/@base-px-2-rem, rem);
         }
-    
     }
-
     a {
         //padding-top: unit(30/@base-px-2-rem, rem);
         &.border-b {
@@ -381,7 +299,6 @@ section.product-details {
     p.product-details-price {
         font-size: 22px;
         color: @text-red;
-
     }
     //品名
     .product-details-name {
@@ -394,7 +311,6 @@ section.product-details {
         color: @text-gray;
         padding-top: unit(20/@base-px-2-rem, rem);
         padding-bottom: unit(20/@base-px-2-rem, rem);
-        
     }
     //退货要求
     .product-details-returns {
@@ -402,10 +318,7 @@ section.product-details {
         color: @text-gray;
         padding-top: unit(20/@base-px-2-rem, rem);
         padding-bottom: unit(20/@base-px-2-rem, rem);
-    
     }
-    
-
 }
 
 //下拉提醒
@@ -419,6 +332,7 @@ section.product-tips {
         font-size: 14px;
     }
 }
+
 
 /************************
 
@@ -434,10 +348,7 @@ div.comment-queue {
         color: @text-gray;
         padding: unit(20/@base-px-2-rem, rem) 0;
     }
-
 }
-
-
 
 //每条评论
 section.comment-one {
@@ -447,14 +358,12 @@ section.comment-one {
             font-size: 16px;
             width: 49%;
             display: inline-block;
-            
             +span {
                 //comment-time
                 color: @text-gray;
                 text-align: right;
             }
         }
-        
     }
     p.comment-content {
         font-size: 12px;
@@ -472,7 +381,6 @@ section.comment-one {
             width: unit(200/@base-px-2-rem, rem);
         }
     }
-   
 }
 
 
@@ -481,7 +389,6 @@ section.comment-one {
 产品详情页 - 推荐商品
 
 ************************/
-
 
 section.product-more {
     background-color: #fff;
@@ -492,8 +399,8 @@ section.product-more {
             display: none;
         }
     }
-
 }
+
 
 /************************
 
@@ -510,31 +417,38 @@ section.product-longPic {
 }
 
 
+/************************
+
+产品容器
+
+************************/
+
+.base-mt-wrapper {
+    .base-title(none);
+    //.make-big-img-p(120);
+    // &:first-child {
+    //     margin-top: unit(0/@base-px-2-rem, rem);
+    // }
+}
 
 
+/************************
+
+单个产品展示
+
+************************/
+
+.base-mt-wrapper {
+    margin-top: unit( @base-mt /@base-px-2-rem, rem);
+    background-color: #fff;
+    /*精品推荐*/
+    .base-title(none);
+}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.base-mt-wrapper() {
+    //defluat 140
+    margin-top: unit(@base-mt/@base-px-2-rem, rem);
+    background-color: #fff;
+}
 

@@ -2,6 +2,31 @@
 function
 */
 
+
+// Mixin itself
+.clearfix {
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+// Mixin itself
+.clearfix {
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
 .turnover-color-block-func (@block-border-color, @border-width, @nth: 1) when ( iscolor(@block-border-color)) {
     &:nth-of-type(@{nth}) {
         border-left: @border-width @block-border-color solid;
@@ -181,30 +206,63 @@ function
 
 
 
-.make-text(@fs, @ls) {
+.make-text(@fs, @ls) {}
 
+
+/*
+通用单行文字标题栏
+*/
+
+.base-title(@line-arg) when (@line-arg =none) {
+    > p {
+        width: 100%;
+        text-align: center;
+        .make-line-and-height-p(@big-banner-text-height);
+        font-size: 15px;
+        background-color: #fff;
+        letter-spacing: 1px;
+        color: #000;
+        font-weight: 500;
+        .mod-retina-display(20px, 2px);
+    }
 }
 
-// Mixin itself
-.clearfix {
-    &:before,
-    &:after {
-        content: "";
-        display: table;
-    }
-    &:after {
-        clear: both;
-    }
-}
 
-// Mixin itself
-.clearfix {
-    &:before,
-    &:after {
-        content: "";
-        display: table;
-    }
-    &:after {
-        clear: both;
+/*
+两边有线
+*/
+
+.base-title(@line-arg) when (@line-arg =line) {
+    > p {
+        position: relative;
+        width: 100%;
+        text-align: center;
+        .make-line-and-height-p(@big-banner-text-height);
+        font-size: 15px;
+        background-color: #fff;
+        letter-spacing: 1px;
+        color: #000;
+        font-weight: 500;
+        .mod-retina-display(20px, 2px);
+        &:after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 5%;
+            height: 1px;
+            width: 22.3%;
+            background-color: #aaa;
+        }
+        &:before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 50%;
+            right: 5%;
+            height: 1px;
+            width: 22.3%;
+            background-color: #aaa;
+        }
     }
 }
