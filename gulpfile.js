@@ -5,17 +5,14 @@ var gulp = require('gulp'),
     autoprefixer = require('gulp-autoprefixer');
 
 var LessPluginAutoPrefix = require('less-plugin-autoprefix');
-var autoprefix= new LessPluginAutoPrefix({browsers: ["last 10 versions"]});
-
+var autoprefix = new LessPluginAutoPrefix({
+    browsers: ["last 10 versions"]
+});
 
 var browser_config = {
     baseDir: 'dist',
     watchFiles: ['dist/*.html', 'dist/css/*.css', 'dist/js/*.js']
 };
-
-
-
-
 gulp.task('browser-sync', ['testLess', 'autoprefixer'], function () {
     browserSync.init({
         files: browser_config.watchFiles,
