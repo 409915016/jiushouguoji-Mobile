@@ -7,9 +7,9 @@
 ************************/
 
 #back-to-top {
-    display: block;
     position: fixed;
     z-index: @z-index-nav-search-bar;
+    display: block;
     right: unit(100/@base-px-2-rem, rem);
     //http://sale.jd.com/act/vxSIhCHBKP1.html?qz_gdt=yyiowvy2aaafg63wuciq&utm_campaign=t_232310336_1&utm_term=yyiowvy2aaafg63wuciq&utm_medium=jzt-zhitou&utm_source=jdzt_refer_null#
     //left: 50%;
@@ -32,13 +32,14 @@
 ************************/
 
 .search-bar {
-    position: fixed;
-    z-index: @z-index-nav-search-bar;
-    width: 100%;
-    max-width: @max-width;
+    // position: fixed;
+    // z-index: @z-index-nav-search-bar;
+    // width: 100%;
+    // max-width: @max-width;
+    // height: unit(@search-bar-height/@base-px-2-rem, rem);
+    // background-color: #fff;
+    .make-fixed-bar(@search-bar-height);
     top: 0;
-    height: unit(@search-bar-height/@base-px-2-rem, rem);
-    background-color: #fff;
     padding-top: unit(@search-bar-blank/@base-px-2-rem, rem);
     padding-bottom: unit(@search-bar-blank/@base-px-2-rem, rem);
     border-bottom: 1px solid @bar-border-color;
@@ -93,10 +94,11 @@
     z-index: @z-index-nav-search-bar;
     width: 100%;
     max-width: @max-width;
-    //search bar in his head
-    top: unit(@search-bar-height/@base-px-2-rem, rem);
     height: unit(@nav-bar-height/@base-px-2-rem, rem);
     background-color: #fff;
+    .make-fixed-bar(@nav-bar-height);
+    //search bar in his head
+    top: unit(@search-bar-height/@base-px-2-rem, rem);
     //nav bar ,no padding in this block.
     //padding-top: unit(@nav-bar-blank/@base-px-2-rem, rem);
     text-align: center;
@@ -137,15 +139,16 @@
 ************************/
 
 .nav-buttom-bar {
-    position: fixed;
+    // position: fixed;
+    // width: 100%;
+    // max-width: @max-width;
+    // height: unit(@nav-buttom-bar-height/@base-px-2-rem, rem);
+    // z-index: @z-index-nav-search-bar;
+    // background-color: #fff;
+    .make-fixed-bar(@nav-buttom-bar-height);
     bottom: 0;
-    width: 100%;
-    max-width: @max-width;
-    height: unit(@nav-buttom-bar-height/@base-px-2-rem, rem);
     padding-top: unit(@search-bar-blank/@base-px-2-rem, rem);
     padding-bottom: unit(@search-bar-blank/@base-px-2-rem, rem);
-    z-index: @z-index-nav-search-bar;
-    background-color: #fff;
     border-top: 1px solid rgba(0, 0, 0, 0.2);
     text-align: center;
     ul {
@@ -175,18 +178,19 @@
 
 /************************
 
-标题栏
+通用标题栏 顶部
 
 ************************/
 
 .base-nav-bar {
-    position: fixed;
-    z-index: @z-index-nav-search-bar;
-    width: 100%;
-    max-width: @max-width;
-    height: unit(@base-nav-bar-height/@base-px-2-rem, rem);
+    // position: fixed;
+    // z-index: @z-index-nav-search-bar;
+    // width: 100%;
+    // max-width: @max-width;
+    // height: unit(@base-nav-bar-height/@base-px-2-rem, rem);
+    // background-color: #fcfcfc;
+    .make-fixed-bar(@base-nav-bar-height);
     top: 0;
-    background-color: #fcfcfc;
     border-bottom: 1px solid @bar-border-color;
     padding-top: unit(@search-bar-blank*2/@base-px-2-rem, rem);
     padding-bottom: unit(@search-bar-blank*2/@base-px-2-rem, rem);
@@ -211,17 +215,19 @@
 ************************/
 
 .product-nav-bar {
-    position: fixed;
-    z-index: @z-index-nav-search-bar;
-    width: 100%;
-    max-width: @max-width;
-    height: unit(@product-nav-bar-height/@base-px-2-rem, rem);
+    // position: fixed;
+    // z-index: @z-index-nav-search-bar;
+    // width: 100%;
+    // max-width: @max-width;
+    // height: unit(@product-nav-bar-height/@base-px-2-rem, rem);
+    // background-color: #fff;
+    .make-fixed-bar(@product-nav-bar-height);
     bottom: 0;
-    background-color: #fff;
     border-top: 1px solid @bar-border-color;
     //text-align: center;
     ul {
         display: block;
+        //三个icon
         li {
             float: left;
             //display: inline-block;
@@ -234,7 +240,7 @@
                     color: red;
                 }
             }
-            //三个icon
+            //icon 下的文字
             p {
                 //test value line-height
                 line-height: unit(45/@base-px-2-rem, rem);
@@ -257,21 +263,71 @@
             &:nth-child(2) {
                 position: relative;
                 &:before {
+                    //购物车商品数量
                     //display: block;
                     //http://www.jb51.net/article/81984.htm
                     //dataset
                     content: attr(data-shop-count);
                     position: absolute;
+                    z-index: @z-index-nav-search-bar + 1;
                     right: 0;
                     top: 5px;
-                    z-index: @z-index-nav-search-bar + 1;
                     font-size: 13px;
                     color: @text-red;
-                    //float: right;
                     height: 13px;
                     width: 13px;
                 }
             }
         }
+    }
+}
+
+.shopcar-nav-bar {
+    .make-fixed-bar(@nav-buttom-bar-height);
+    //位于base nav上
+    bottom: unit(@nav-buttom-bar-height/@base-px-2-rem, rem);
+    border-top: 1px solid @bar-border-color;
+    padding-left: unit(@shopcar-left-right-blank/@base-px-2-rem, rem);
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    .shopcar-check-icon {
+        margin-right: 0;
+    }
+    .shopcar-check-icon + span {
+        text-align: left;
+        width: 20%;
+        color: #333;
+        font-size: 18px;
+        font-weight: 500;
+    }
+    .order-price {
+        width: 32%;
+        //height: 100%;
+        text-align: right;
+        //padding-right: unit( (@shopcar-left-right-blank - 20)/@base-px-2-rem, rem);
+        p {
+            font-size: 15px;
+            &:first-child {
+                color: @text-red;
+            }
+            &:nth-child(2) {
+                color: @text-gray;
+                font-size: 13px;
+            }
+        }
+    }
+    a.order-btn {
+        width: 33.33%;
+        height: 100%;
+        text-align: center;
+        line-height: unit(@nav-buttom-bar-height/@base-px-2-rem, rem);
+        font-size: 16px;
+        font-weight: 500;
+        letter-spacing: 2px;
+        color: #fff;
+        display: block;
+        background-color: @order-btn-color;
     }
 }

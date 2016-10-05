@@ -5,7 +5,6 @@
 @import "icon.less";
 @import "shopcar.less";
 @import "details-comment.less";
-
 html {
     font-size: 113.6px;
 }
@@ -45,32 +44,29 @@ Swiper 分页指示器颜色
 ************************/
 
 .main-wrapper {
+    //main-wrapper 同级的class 用来标识 不同页面
     position: relative;
     width: 100%;
     max-width: @max-width;
     margin-top: unit((@search-bar-height + @nav-bar-height + 2)/@base-px-2-rem, rem);
     padding-bottom: unit((@nav-buttom-bar-height ) /@base-px-2-rem, rem);
     //feature 只存在标题栏时，高度为 search-bar的高度
-    &.feature {
+    //各种页面下 可见块的顶部边距 
+    &.title-bar {
         margin-top: unit((@base-nav-bar-height)/@base-px-2-rem, rem);
+        //padding-bottom: unit(0 /@base-px-2-rem, rem);
+        padding-bottom: unit((@nav-buttom-bar-height ) /@base-px-2-rem, rem);
+        &.h-100-white {
+            background-color: #fff;
+            height: 100%;
+        }
+    }
+    &.feature {
         padding-bottom: unit(0 /@base-px-2-rem, rem);
     }
-    &.details {
-        margin-top: unit((@base-nav-bar-height)/@base-px-2-rem, rem);
-        padding-bottom: unit(@product-nav-bar-height /@base-px-2-rem, rem);
-        //margin-bottom: unit(@product-nav-bar-height/@base-px-2-rem, rem);
-    }
+
     &.shopcar {
-        margin-top: unit((@base-nav-bar-height)/@base-px-2-rem, rem);
-        padding-bottom: unit( (@product-nav-bar-height + 20) /@base-px-2-rem, rem);
-        //margin-bottom: unit(@product-nav-bar-height/@base-px-2-rem, rem);
-    }
-    &.comment {
-        margin-top: unit((@base-nav-bar-height)/@base-px-2-rem, rem);
-        padding-bottom: unit( (@product-nav-bar-height + 20) /@base-px-2-rem, rem);
-        //margin-bottom: unit(@product-nav-bar-height/@base-px-2-rem, rem);
-        background-color: #fff;
-        height: 100%;
+        padding-bottom: unit((@nav-buttom-bar-height )*2 /@base-px-2-rem, rem);
     }
 }
 
@@ -259,14 +255,8 @@ div.swiper-product {
 .base-mt-wrapper {
     .make-2X2-product-box();
     //have product-box-wrapper 
-    >p.end-text {
-        font-size: 13px;
-        color: #999;
-        .mod-retina-display(20px, 0px);
-    }
     >p::first-of-type {}
 }
-
 
 
 /************************
@@ -306,4 +296,27 @@ div.swiper-product {
 .base-pd-lr-wrapper {
     background-color: #fff;
     padding: 0 unit(@base-pd-lr/@base-px-2-rem, rem);
+}
+
+
+/*
+
+加在完毕文字提示
+
+*/
+
+//直接用于任何容器 已具有样式
+p.end-text {
+    font-size: 13px;
+    color: #999;
+    .mod-retina-display(20px, 0px);
+    position: relative;
+    width: 100%;
+    text-align: center;
+    .make-line-and-height-p(@big-banner-text-height);
+    font-size: 15px;
+    background-color: #fff;
+    letter-spacing: 1px;
+    font-weight: 500;
+    .mod-retina-display(20px, 2px);
 }

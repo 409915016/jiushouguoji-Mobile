@@ -266,3 +266,20 @@ function
         }
     }
 }
+
+
+/*
+
+创建fixed元素
+*/
+
+
+
+.make-fixed-bar(@height) {
+    position: fixed;
+    z-index: @z-index-nav-search-bar;
+    width: 100%;
+    max-width: @max-width;
+    height: unit(@height/@base-px-2-rem, rem);
+    background-color: #fff;
+}

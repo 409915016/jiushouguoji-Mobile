@@ -1,7 +1,6 @@
 @import "value.less";
 @import "func.less";
 
-
 /************************
 
 产品详情页
@@ -158,13 +157,24 @@ section.comment-one {
     }
 }
 
-//评论页下的单条评论需要一些间隔
-.comment{
-    section.comment-one {
+//评论页下 评论选择按钮块 的同级第一条评论 需要一些顶部边距
+.comment-select {
+    + section.comment-one {
         margin-top: unit(20/@base-px-2-rem, rem);
+        p.comment-content {
+            padding-top: unit(30/@base-px-2-rem, rem);
+        }
+        ~ section.comment-one {
+            border-top: 1px solid @comment-one-border-color;
+            margin-top: unit(20/@base-px-2-rem, rem);
+            padding-top: unit(20/@base-px-2-rem, rem);
+            p.comment-content {
+                padding-top: unit(30/@base-px-2-rem, rem);
+            }
+        }
     }
-
 }
+
 
 /************************
 
