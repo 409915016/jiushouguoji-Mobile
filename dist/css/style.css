@@ -1242,7 +1242,13 @@ div.swiper-product .swiper-slide:last-child p {
       -ms-flex-align: stretch;
           align-items: stretch;
 }
-.no-swiper-product a div {
+.no-swiper-product a .product-imgBox {
+  width: 15.84507042rem;
+}
+.no-swiper-product a .product-imgBox img {
+  width: 100%;
+}
+.no-swiper-product a .product-name-price {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1258,12 +1264,8 @@ div.swiper-product .swiper-slide:last-child p {
       -ms-flex-align: start;
           align-items: flex-start;
 }
-.no-swiper-product a div p:nth-child(2) {
+.no-swiper-product a .product-name-price p:nth-child(2) {
   color: #e9282e;
-}
-.no-swiper-product a img {
-  height: 6.16197183rem;
-  width: 6.16197183rem;
 }
 /************************
 

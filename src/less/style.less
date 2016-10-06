@@ -228,7 +228,15 @@ div.swiper-product {
         //http://stackoverflow.com/questions/15381172/css-flexbox-child-height-100
         //使项目下的所有元素高度100%
         align-items: stretch;
-        div {
+        //修复移动端图显示不正常
+        .product-imgBox {
+            //height: unit(700/@base-px-2-rem, rem);
+            width: unit(1800/@base-px-2-rem, rem);
+            img {
+                width: 100%;
+            }
+        }
+        .product-name-price {
             //该项目主轴为纵向
             display: flex;
             flex-flow: column wrap;
@@ -239,10 +247,6 @@ div.swiper-product {
                     color: @text-red;
                 }
             }
-        }
-        img {
-            height: unit(700/@base-px-2-rem, rem);
-            width: unit(700/@base-px-2-rem, rem);
         }
     }
 }
