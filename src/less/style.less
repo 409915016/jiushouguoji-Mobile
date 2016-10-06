@@ -64,7 +64,6 @@ Swiper 分页指示器颜色
     &.feature {
         padding-bottom: unit(0 /@base-px-2-rem, rem);
     }
-
     &.shopcar {
         padding-bottom: unit((@nav-buttom-bar-height )*2 /@base-px-2-rem, rem);
     }
@@ -209,6 +208,41 @@ div.swiper-product {
                     font-weight: 500;
                 }
             }
+        }
+    }
+}
+
+
+/************************
+
+产品Swiper  只有单个商品
+
+************************/
+
+.no-swiper-product {
+    width: 100%;
+    a {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        //http://stackoverflow.com/questions/15381172/css-flexbox-child-height-100
+        //使项目下的所有元素高度100%
+        align-items: stretch;
+        div {
+            //该项目主轴为纵向
+            display: flex;
+            flex-flow: column wrap;
+            justify-content: space-around;
+            align-items: flex-start;
+            p {
+                &:nth-child(2) {
+                    color: @text-red;
+                }
+            }
+        }
+        img {
+            height: unit(700/@base-px-2-rem, rem);
+            width: unit(700/@base-px-2-rem, rem);
         }
     }
 }

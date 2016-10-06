@@ -1219,6 +1219,54 @@ div.swiper-product .swiper-slide:last-child p {
 }
 /************************
 
+产品Swiper  只有单个商品
+
+************************/
+.no-swiper-product {
+  width: 100%;
+}
+.no-swiper-product a {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row nowrap;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+.no-swiper-product a div {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: column wrap;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+.no-swiper-product a div p:nth-child(2) {
+  color: #e9282e;
+}
+.no-swiper-product a img {
+  height: 6.16197183rem;
+  width: 6.16197183rem;
+}
+/************************
+
 单个产品展示
 
 ************************/
