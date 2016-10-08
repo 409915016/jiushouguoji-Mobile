@@ -229,7 +229,7 @@ function
 
 
 /*
-两边有线
+容器下的第一个p 两边有线
 */
 
 .base-title(@line-arg) when (@line-arg =line) {
@@ -282,4 +282,23 @@ function
     max-width: @max-width;
     height: unit(@height/@base-px-2-rem, rem);
     background-color: #fff;
+}
+
+
+/*布局用容器*/
+
+//左右内边距
+.base-pd-lr-wrapper() {
+    background-color: #fff;
+    padding: 0 unit(@base-pd-lr/@base-px-2-rem, rem);
+}
+//上下内边距
+.base-pd-tb-wrapper() {
+    background-color: #fff;
+    padding: unit(@base-pd-tb/@base-px-2-rem, rem) 0;
+}
+//全内边距
+.base-pd-wrapper() {
+    background-color: #fff;
+    padding: unit(@base-pd-tb/@base-px-2-rem, rem);
 }

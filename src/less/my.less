@@ -1,0 +1,71 @@
+@import "value.less";
+@import "func.less";
+@import "base.less";
+section.user-info-simple {
+    .base-pd-wrapper();
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    //align-items: center;
+    align-items: stretch;
+    .user-header-imgBox {
+        margin-left: unit(40/@base-px-2-rem, rem);
+        width: unit(200/@base-px-2-rem, rem);
+        height: unit(200/@base-px-2-rem, rem);
+        img {
+            width: 100%;
+            border-radius: 50%;
+        }
+    }
+    .user-name-custom {
+        font-size: 16px;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-between;
+        margin-left: unit(40/@base-px-2-rem, rem);
+    }
+}
+
+section.user-row {
+    .base-pd-wrapper();
+    
+    margin-top: unit(5/@base-px-2-rem, rem);
+    &.pt-60 {
+        padding-top: unit( 60 /@base-px-2-rem, rem);
+    }
+    ul {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-around;
+        align-items: center;
+        //align-items: stretch;
+        li {
+            text-align: center;
+        }
+    }
+    &.my-order {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center;
+        p {
+            font-size: 14px;
+            color: #333;
+            font-weight: 600;
+            width: 65%;
+            margin-left: unit(40/@base-px-2-rem, rem);
+        }
+        .look-my-order {
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: flex-end;
+            align-items: center;
+            width: 35%;
+            span {
+                margin-right: unit(40/@base-px-2-rem, rem);
+                //width: 85%;
+                color: #999999;
+            }
+        }
+    }
+}

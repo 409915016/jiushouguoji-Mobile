@@ -2,6 +2,12 @@
 @import "func.less";
 @import "base.less";
 
+/****************
+
+商家名称
+
+****************/
+
 .door-name {
     display: flex;
     flex-direction: row;
@@ -17,25 +23,28 @@
         .make-line-and-height-p(@shopcar-door-height);
         font-size: 16px;
     }
+    .shopcar-check-icon {
+        font-size: 0;
+        margin-right: unit(45/@base-px-2-rem, rem);
+        width: unit(@shopcar-check-icon/@base-px-2-rem, rem);
+        height: unit(@shopcar-check-icon/@base-px-2-rem, rem);
+        i {
+            // margin-top: unit(80/@base-px-2-rem, rem);
+            // margin-right: unit(45/@base-px-2-rem, rem);
+        }
+    }
 }
 
+
+/****************
+
+单件商品 有左边和右边
+
+****************/
+
 .shopcar-list {
-    // //旧兼容
-    // display: box;
-    // //主轴两边对齐
-    // box-pack: justify;
-    // //显示正方向
-    // box-direction: normal;
-    // //主轴对齐
-    // box-align: start;
-    // //侧轴对齐
-    // box-orient: horizontal;
-    // //不换行
-    // box-lines: single;
-    //mark
     padding: unit(@shopcar-left-right-blank/@base-px-2-rem, rem);
     border-top: 1px solid @shopcar-border-color;
-    //new
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -44,22 +53,15 @@
     justify-content: space-between;
 }
 
-//左边
+
+/****************
+
+单件商品 左边 勾选 + 商品图
+
+****************/
+
 .shopcar-list-left {
     width: 60%;
-    // //旧兼容
-    // display: box;
-    // //主轴两边对齐
-    // box-pack: justify;
-    // //侧轴居中
-    // box-align: center;
-    // //侧轴对齐
-    // box-orient: horizontal;
-    // //显示正方向
-    // box-direction: normal;
-    // //不换行
-    // box-lines: single;
-    //new
     font-size: 0;
     display: flex;
     flex-direction: row;
@@ -68,45 +70,38 @@
     //侧轴居中
     align-items: center;
     justify-content: flex-start;
-}
-
-//check icon 容器
-.shopcar-list-icon, .shopcar-check-icon {
-    font-size: 0;
-    margin-right: unit(45/@base-px-2-rem, rem);
-    width: unit(@shopcar-check-icon/@base-px-2-rem, rem);
-    height: unit(@shopcar-check-icon/@base-px-2-rem, rem);
-    i {
-        // margin-top: unit(80/@base-px-2-rem, rem);
-        // margin-right: unit(45/@base-px-2-rem, rem);
+    //check icon 容器
+    .shopcar-list-icon, .shopcar-check-icon {
+        font-size: 0;
+        margin-right: unit(45/@base-px-2-rem, rem);
+        width: unit(@shopcar-check-icon/@base-px-2-rem, rem);
+        height: unit(@shopcar-check-icon/@base-px-2-rem, rem);
+        i {
+            // margin-top: unit(80/@base-px-2-rem, rem);
+            // margin-right: unit(45/@base-px-2-rem, rem);
+        }
     }
-}
-
-.shopcar-list-img {
-    font-size: 0;
-    height: unit(300/@base-px-2-rem, rem);
-    width: unit(300/@base-px-2-rem, rem);
-    img {
-        width: 100%;
+    .shopcar-list-img {
+        font-size: 0;
         height: unit(300/@base-px-2-rem, rem);
         width: unit(300/@base-px-2-rem, rem);
+        img {
+            width: 100%;
+            height: unit(300/@base-px-2-rem, rem);
+            width: unit(300/@base-px-2-rem, rem);
+        }
     }
 }
+
+
+/****************
+
+单件商品 右边 商品名 + 单价 + 数量
+
+****************/
 
 .shopcar-list-right {
     font-size: 13px;
-    // //旧兼容
-    // display: box;
-    // //主轴两边对齐
-    // box-pack: justify;
-    // //显示正方向
-    // box-direction: normal;
-    // //主轴对齐
-    // box-align: start;
-    // //侧轴对齐
-    // box-orient: vertical; //垂直
-    // //不换行
-    // box-lines: multiple;
     margin-left: unit(30/@base-px-2-rem, rem);
     display: flex;
     flex-direction: row;
@@ -125,19 +120,14 @@
     }
 }
 
+
+/****************
+
+单件商品 单价 + 数量 
+
+****************/
+
 .shopcar-product-count {
-    // //旧兼容
-    // display: box;
-    // //主轴两边对齐
-    // box-pack: justify;
-    // //显示正方向
-    // box-direction: normal;
-    // //主轴对齐
-    // box-align: start;
-    // //侧轴对齐
-    // box-orient: horizontal; //水平
-    // //不换行
-    // box-lines: multiple;
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -159,26 +149,13 @@
             //height: unit(@shopcar-add-icon/@base-px-2-rem, rem);
             padding: unit(0/@base-px-2-rem, rem) 0;
             // font-size: 16px;
-            
         }
         i {
-    
             float: left;
             box-sizing: content-box;
             padding: unit(0/@base-px-2-rem, rem) unit(30/@base-px-2-rem, rem);
             //vertical-align: middle;
             //line-height: unit(@shopcar-add-icon/@base-px-2-rem, rem);
-        }
-    }
-}
-
-//购物车猜你喜欢 两条线
-.shopcar {
-    .base-mt-wrapper {
-        .base-title(line);
-        > p {
-            color: #aaa;
-            font-size: 16px;
         }
     }
 }
