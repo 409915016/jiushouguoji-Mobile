@@ -10,8 +10,8 @@ section.user-info-simple {
     align-items: stretch;
     .user-header-imgBox {
         margin-left: unit(40/@base-px-2-rem, rem);
-        width: unit(200/@base-px-2-rem, rem);
-        height: unit(200/@base-px-2-rem, rem);
+        width: unit(@user-header-imgSize/@base-px-2-rem, rem);
+        height: unit(@user-header-imgSize/@base-px-2-rem, rem);
         img {
             width: 100%;
             border-radius: 50%;
@@ -26,11 +26,18 @@ section.user-info-simple {
     }
 }
 
+
+
+
 section.user-row {
     .base-pd-wrapper();
     margin-top: unit(5/@base-px-2-rem, rem);
     &.pt-60 {
-        padding-top: unit( 60 /@base-px-2-rem, rem);
+        padding-top: unit(60/@base-px-2-rem, rem);
+    }
+    i {
+        margin-top: unit(@my-page-icon-mt/@base-px-2-rem, rem);
+        margin-bottom: unit(@my-page-icon-mb/@base-px-2-rem, rem);
     }
     ul {
         display: flex;
@@ -47,6 +54,9 @@ section.user-row {
         flex-flow: row nowrap;
         justify-content: space-between;
         align-items: center;
+        i {
+            margin: unit(0/@base-px-2-rem, rem);
+        }
         p {
             font-size: 14px;
             color: #333;

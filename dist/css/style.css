@@ -633,18 +633,18 @@ i.icon.minus {
 }
 i.icon.collect {
   background-image: url("../img/icon/collect.png");
-  width: 1.05633803rem;
-  height: 1.05633803rem;
+  width: 0.88028169rem;
+  height: 0.88028169rem;
 }
 i.icon.heart {
   background-image: url("../img/icon/heart.png");
-  width: 1.05633803rem;
-  height: 1.05633803rem;
+  width: 0.88028169rem;
+  height: 0.88028169rem;
 }
 i.icon.clock {
   background-image: url("../img/icon/clock.png");
-  width: 1.05633803rem;
-  height: 1.05633803rem;
+  width: 0.88028169rem;
+  height: 0.88028169rem;
 }
 i.icon.car {
   background-image: url("../img/icon/car.png");
@@ -1121,8 +1121,8 @@ section.user-info-simple {
 }
 section.user-info-simple .user-header-imgBox {
   margin-left: 0.35211268rem;
-  width: 1.76056338rem;
-  height: 1.76056338rem;
+  width: 1.84859155rem;
+  height: 1.84859155rem;
 }
 section.user-info-simple .user-header-imgBox img {
   width: 100%;
@@ -1150,6 +1150,10 @@ section.user-row {
 }
 section.user-row.pt-60 {
   padding-top: 0.52816901rem;
+}
+section.user-row i {
+  margin-top: 0.08802817rem;
+  margin-bottom: 0.17605634rem;
 }
 section.user-row ul {
   display: -webkit-box;
@@ -1186,6 +1190,9 @@ section.user-row.my-order {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
+}
+section.user-row.my-order i {
+  margin: 0rem;
 }
 section.user-row.my-order p {
   font-size: 14px;
