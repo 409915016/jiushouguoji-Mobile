@@ -1,10 +1,10 @@
 var gulp = require('gulp'),
     less = require('gulp-less'),
     browserSync = require('browser-sync').create(),
-    cleancss = require('gulp-clean-css'),
-    autoprefixer = require('gulp-autoprefixer');
+    cleanCSS = require('gulp-clean-css'),
+    LessPluginAutoPrefix = require('less-plugin-autoprefix'),
+    rename = require("gulp-rename");
 
-var LessPluginAutoPrefix = require('less-plugin-autoprefix');
 var autoprefix = new LessPluginAutoPrefix({
     browsers: ["last 10 versions"]
 });
@@ -13,17 +13,6 @@ var browser_config = {
     baseDir: 'dist',
     watchFiles: ['dist/*.html', 'dist/css/*.css', 'dist/js/*.js']
 };
-gulp.task('browser-sync', ['testLess', 'autoprefixer'], function () {
-    browserSync.init({
-        files: browser_config.watchFiles,
-        server: {
-            baseDir: browser_config.baseDir
-        }
-    });
-
-    gulp.watch('src/less/*.less', ['testLess']);
-    gulp.watch("dist/*.html").on('change', browserSync.reload);
-});
 
 gulp.task('testLess', function () {
     gulp.src('src/less/style.less')
@@ -33,15 +22,34 @@ gulp.task('testLess', function () {
         .pipe(gulp.dest('dist/css'));
 });
 
-gulp.task('autoprefixer', function () {
-    return gulp.src('src/css/style.css')
-        .pipe(autoprefixer({
-            browsers: ['> 5%'],
-            cascade: true
+gulp.task('minify-css', function () {
+    return gulp.src('dist/css/style.css')
+        .pipe(cleanCSS({
+            advanced: false,
+            compatibility: 'ie8',
+            output: 'style-min',
+            keepSpecialComments: '*',
+            keepBreaks: false
+        }))
+        .pipe(rename({
+            suffix: '.min'
         }))
         .pipe(gulp.dest('dist/css'));
 });
 
+gulp.task('browser-sync', ['testLess', 'minify-css'], function () {
+    browserSync.init({
+        files: browser_config.watchFiles,
+        server: {
+            baseDir: browser_config.baseDir
+        }
+    });
+
+    gulp.watch('src/less/*.less', ['testLess']);
+    gulp.watch('dist/css/*.css', ['minify-css']);
+    gulp.watch("dist/*.html").on('change', browserSync.reload);
+});
 
 
-gulp.task('default', ['testLess', 'browser-sync']);
+
+gulp.task('default', ['testLess', 'minify-css', 'browser-sync']);
