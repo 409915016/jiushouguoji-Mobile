@@ -1,6 +1,13 @@
 @import "value.less";
 @import "func.less";
 @import "base.less";
+
+/****************
+
+用户头像 昵称 和 个人签名
+
+****************/
+
 section.user-info-simple {
     .base-pd-wrapper();
     display: flex;
@@ -18,16 +25,24 @@ section.user-info-simple {
         }
     }
     .user-name-custom {
+        width: 60%;
         font-size: 16px;
         display: flex;
         flex-flow: column nowrap;
         justify-content: space-between;
         margin-left: unit(40/@base-px-2-rem, rem);
+        p {
+            .text-omit();
+        }
     }
 }
 
 
+/****************
 
+有4个按钮的 行块
+
+****************/
 
 section.user-row {
     .base-pd-wrapper();
@@ -49,14 +64,16 @@ section.user-row {
             text-align: center;
         }
     }
+    /****************
+
+    我的订单 
+
+    ****************/
     &.my-order {
         display: flex;
         flex-flow: row nowrap;
         justify-content: space-between;
         align-items: center;
-        i {
-            margin: unit(0/@base-px-2-rem, rem);
-        }
         p {
             font-size: 14px;
             color: #333;
@@ -64,6 +81,11 @@ section.user-row {
             width: 65%;
             margin-left: unit(40/@base-px-2-rem, rem);
         }
+        /****************
+
+        查看全部订单
+
+        ****************/
         .look-my-order {
             display: flex;
             flex-flow: row nowrap;
@@ -75,6 +97,55 @@ section.user-row {
                 //width: 85%;
                 color: #999999;
             }
+            i {
+                margin: unit(0/@base-px-2-rem, rem);
+            }
+        }
+    }
+}
+
+
+/****************
+
+个人中心
+
+****************/
+
+section.my-center-header-name {
+    padding-top: unit(@base-nav-bar-height/@base-px-2-rem, rem);
+    text-align: center;
+    .my-center-header-imgBox {
+        display: inline-block;
+        width: unit(@user-header-imgSize/@base-px-2-rem, rem);
+        height: unit(@user-header-imgSize/@base-px-2-rem, rem);
+        margin-bottom: unit(20/@base-px-2-rem, rem);
+        img {
+            width: 100%;
+        }
+        ~ p {
+            font-size: 16px;
+        }
+    }
+}
+
+section.my-center-row {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: unit(35/@base-px-2-rem, rem) 0;
+    border-bottom: 1px solid @bar-border-color;
+    p {
+        font-size: 15px;
+        &:first-child {
+            text-align: left;
+            width: 30%;
+        }
+        &:nth-child(2) {
+            width: 45%;
+            text-align: right;
+            //文字超出隐藏省略
+            .text-omit();
         }
     }
 }
