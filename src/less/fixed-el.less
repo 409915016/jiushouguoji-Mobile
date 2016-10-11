@@ -183,27 +183,35 @@
 ************************/
 
 .base-nav-bar {
-    // position: fixed;
-    // z-index: @z-index-nav-search-bar;
-    // width: 100%;
-    // max-width: @max-width;
-    // height: unit(@base-nav-bar-height/@base-px-2-rem, rem);
-    // background-color: #fcfcfc;
+
     .make-fixed-bar(@base-nav-bar-height);
     top: 0;
     border-bottom: 1px solid @bar-border-color;
-    padding-top: unit(@search-bar-blank*2/@base-px-2-rem, rem);
-    padding-bottom: unit(@search-bar-blank*2/@base-px-2-rem, rem);
-    text-align: center;
+    // padding-top: unit(@search-bar-blank*2/@base-px-2-rem, rem);
+    // padding-bottom: unit(@search-bar-blank*2/@base-px-2-rem, rem);
+    // text-align: center;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+
+
     >p {
-        float: left;
-        width: 86%;
+        //float: left;
+        //width: 86%;
         font-size: 16px;
         font-weight: 600;
         line-height: unit( (@search-bar-height - @nav-bar-blank*2) /@base-px-2-rem, rem);
         .mod-retina-display(20px, 0px);
         //margin-right: unit( 10/@base-px-2-rem, rem);
         //margin-left: -(unit(@search-bar-icon-size /@base-px-2-rem, rem));
+    }
+    a {
+        padding-right: unit( 35/@base-px-2-rem, rem);
+        font-size: 16px;
+        font-weight: 600;
+        line-height: unit( (@search-bar-height - @nav-bar-blank*2) /@base-px-2-rem, rem);
+        .mod-retina-display(20px, 0px);
     }
 }
 
