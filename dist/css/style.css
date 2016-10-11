@@ -67,6 +67,7 @@ button,
 select,
 option,
 input[type="text"],
+input[type="password"],
 textarea {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -107,10 +108,10 @@ img[src=""] {
   opacity: 0;
 }
 .no-visible {
-  visibility: hidden;
+  visibility: hidden !important;
 }
 .no-display {
-  display: none;
+  display: none !important;
 }
 /************************
 
@@ -277,13 +278,23 @@ img[src=""] {
   background-color: #fff;
   top: 0;
   border-bottom: 1px solid #b2b2b2;
-  padding-top: 0.28169014rem;
-  padding-bottom: 0.28169014rem;
-  text-align: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row nowrap;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .base-nav-bar > p {
-  float: left;
-  width: 86%;
   font-size: 16px;
   font-weight: 600;
   line-height: 0.79225352rem;
@@ -296,6 +307,24 @@ img[src=""] {
 }
 @media screen and (min-width: 768px) {
   .base-nav-bar > p {
+    font-size: 20px;
+    letter-spacing: 0px;
+  }
+}
+.base-nav-bar a {
+  padding-right: 0.30809859rem;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 0.79225352rem;
+}
+@media screen and (min-width: 768px) {
+  .base-nav-bar a p {
+    font-size: 20px;
+    letter-spacing: 0px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .base-nav-bar a {
     font-size: 20px;
     letter-spacing: 0px;
   }
@@ -705,6 +734,28 @@ i.icon.exit {
   background-image: url("../img/icon/exit.png");
   width: 0.88028169rem;
   height: 0.88028169rem;
+}
+i.icon.qq {
+  background-image: url("../img/icon/qq.png");
+  width: 1.06514085rem;
+  height: 1.06514085rem;
+}
+i.icon.wechat {
+  background-image: url("../img/icon/wechat.png");
+  width: 1.06514085rem;
+  height: 1.06514085rem;
+}
+i.icon.account {
+  background-image: url("../img/icon/account.png");
+  margin: 0 0.22007042rem;
+  width: 0.52816901rem;
+  height: 0.52816901rem;
+}
+i.icon.passward {
+  background-image: url("../img/icon/passward.png");
+  margin: 0 0.22007042rem;
+  width: 0.52816901rem;
+  height: 0.52816901rem;
 }
 /****************
 
@@ -1154,6 +1205,27 @@ section.user-info-simple .user-name-custom p {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+section.user-info-simple .user-loginBox {
+  width: 75%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row nowrap;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+section.user-info-simple .user-loginBox button {
+  background-color: #e9282e;
+  font-size: 16px;
+}
 /****************
 
 有4个按钮的 行块
@@ -1302,6 +1374,138 @@ section.my-center-row p:nth-child(2) {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+.login-sign-wrapper {
+  padding: 1.76056338rem 0.88028169rem 0.44014085rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: column nowrap;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #fff;
+  color: #b0b0b0;
+  font-size: 14px;
+}
+.login-sign-wrapper.sign input {
+  margin-left: 0.44014085rem;
+}
+.login-sign-wrapper.sign section:nth-of-type(1) {
+  width: 55%;
+  margin-right: 2.02464789rem;
+}
+.login-sign-wrapper.sign section:nth-of-type(1) button {
+  width: 50%;
+  margin: 0;
+  position: relative;
+  left: 2.02464789rem;
+  padding: 0.13204225rem 0.17605634rem;
+  background-color: #fff;
+  color: #ed5358;
+  border: 1px solid #ed5358;
+  font-size: 12px;
+}
+.login-sign-wrapper > p {
+  padding-bottom: 0.44014085rem;
+}
+.login-sign-wrapper a.forget {
+  -webkit-align-self: flex-end;
+      -ms-flex-item-align: end;
+          align-self: flex-end;
+  padding-top: 0.26408451rem;
+  margin-right: 0.88028169rem;
+  color: #b0b0b0;
+  font-size: 12px;
+}
+.login-sign-wrapper button {
+  width: 80%;
+  margin-top: 0.44014085rem;
+  border-radius: 53px;
+  border-top-left-radius: 53px;
+  border-top-right-radius: 53px;
+  border-bottom-left-radius: 53px;
+  border-bottom-right-radius: 53px;
+  background-color: #ed5358;
+  height: 1.05633803rem;
+}
+.login-sign-wrapper section {
+  margin-top: 0.44014085rem;
+  height: 1.05633803rem;
+}
+.login-sign-wrapper section.inputBlock {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row nowrap;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 80%;
+  background-color: #f0f0f0;
+  padding: 0.08802817rem 0;
+  border-radius: 53px;
+  border-top-left-radius: 53px;
+  border-top-right-radius: 53px;
+  border-bottom-left-radius: 53px;
+  border-bottom-right-radius: 53px;
+}
+.login-sign-wrapper section.inputBlock input {
+  width: 80%;
+  background-color: transparent;
+  font-size: 15px;
+  line-height: 1.65;
+}
+.login-sign-wrapper section.other-way-login {
+  width: 50%;
+  text-align: center;
+  padding-top: 1.32042254rem;
+}
+.login-sign-wrapper section.other-way-login > p {
+  font-size: 11px;
+}
+.login-sign-wrapper section.other-way-login div.qq-wechat {
+  margin-top: 0.61619718rem;
+  font-size: 12px;
+}
+.login-sign-wrapper section.other-way-login div.qq-wechat ul {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row nowrap;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.login-sign-wrapper section.other-way-login div.qq-wechat ul li {
+  padding: 0 0.04401408rem;
+}
+.login-sign-wrapper section.other-way-login div.qq-wechat ul p {
+  color: #b0b0b0;
+  font-size: 10px;
+}
 html {
   font-size: 113.6px;
 }
@@ -1348,6 +1552,9 @@ Swiper 分页指示器颜色
 .main-wrapper.title-bar.h-100-white {
   background-color: #fff;
   height: 100%;
+}
+.main-wrapper.title-bar.no-b-nav {
+  padding-bottom: 0;
 }
 .main-wrapper.feature {
   padding-bottom: 0rem;
@@ -1799,4 +2006,9 @@ p.end-text {
 .shopcar .base-mt-wrapper > p.guess-you-like {
   color: #aaa;
   font-size: 16px;
+}
+button {
+  padding: 0.22007042rem 0.70422535rem;
+  color: #fff;
+  border-radius: 5px;
 }

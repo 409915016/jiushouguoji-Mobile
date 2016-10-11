@@ -35,6 +35,17 @@ section.user-info-simple {
             .text-omit();
         }
     }
+    .user-loginBox {
+        width: 75%;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-around;
+        align-items: center;
+        button {
+            background-color: @red-btn-color;
+            font-size: 16px;
+        }
+    }
 }
 
 
@@ -146,6 +157,109 @@ section.my-center-row {
             text-align: right;
             //文字超出隐藏省略
             .text-omit();
+        }
+    }
+}
+
+//登陆页
+.login-sign-wrapper {
+    padding: unit(200/@base-px-2-rem, rem) unit(100/@base-px-2-rem, rem) unit(50/@base-px-2-rem, rem);
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    color: #b0b0b0;
+    font-size: 14px;
+    &.sign {
+        input {
+            margin-left: unit( 50/@base-px-2-rem, rem);
+        }
+        section:nth-of-type(1) {
+            width: 55%;
+            margin-right: unit( 230/@base-px-2-rem, rem);
+            button {
+                width: 50%;
+                margin: 0;
+                position: relative;
+                left: unit( 230/@base-px-2-rem, rem);
+                padding: unit(15/@base-px-2-rem, rem) unit(20/@base-px-2-rem, rem);
+                background-color: #fff;
+                color: @login-btn-bg-color;
+                border: 1px solid @login-btn-bg-color;
+                font-size: 12px;
+            }
+        }
+    }
+    > p {
+        padding-bottom: unit(50/@base-px-2-rem, rem);
+    }
+    a.forget {
+        align-self: flex-end;
+        padding-top: unit(30/@base-px-2-rem, rem);
+        margin-right: unit(100/@base-px-2-rem, rem);
+        color: #b0b0b0;
+        font-size: 12px;
+    }
+    button {
+        width: 80%;
+        margin-top: unit(50/@base-px-2-rem, rem);
+        border-radius: 53px;
+        border-top-left-radius: 53px;
+        border-top-right-radius: 53px;
+        border-bottom-left-radius: 53px;
+        border-bottom-right-radius: 53px;
+        background-color: @login-btn-bg-color;
+        height: unit(120/@base-px-2-rem, rem);
+    }
+    section {
+        margin-top: unit(50/@base-px-2-rem, rem);
+        height: unit(120/@base-px-2-rem, rem);
+    }
+    section.inputBlock {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-start;
+        align-items: center;
+        width: 80%;
+        background-color: #f0f0f0;
+        padding: unit(10/@base-px-2-rem, rem) 0;
+        border-radius: 53px;
+        border-top-left-radius: 53px;
+        border-top-right-radius: 53px;
+        border-bottom-left-radius: 53px;
+        border-bottom-right-radius: 53px;
+        input {
+            width: 80%;
+            background-color: transparent;
+            font-size: 15px;
+            //修复手机端输入提示偏上的问题
+            line-height: 1.65;
+        }
+    }
+    section.other-way-login {
+        width: 50%;
+        text-align: center;
+        padding-top: unit(150/@base-px-2-rem, rem);
+        >p {
+            font-size: 11px;
+        }
+        div.qq-wechat {
+            margin-top: unit(70/@base-px-2-rem, rem);
+            font-size: 12px;
+            ul {
+                display: flex;
+                flex-flow: row nowrap;
+                justify-content: space-around;
+                align-items: center;
+                li {
+                    padding: 0 unit(5/@base-px-2-rem, rem);
+                }
+                p {
+                    color: #b0b0b0;
+                    font-size: 10px;
+                }
+            }
         }
     }
 }
