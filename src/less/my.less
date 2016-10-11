@@ -15,6 +15,8 @@ section.user-info-simple {
     justify-content: flex-start;
     //align-items: center;
     align-items: stretch;
+
+    //用户头像容器 
     .user-header-imgBox {
         margin-left: unit(40/@base-px-2-rem, rem);
         width: unit(@user-header-imgSize/@base-px-2-rem, rem);
@@ -24,6 +26,7 @@ section.user-info-simple {
             border-radius: 50%;
         }
     }
+    //用户昵称 和 签名
     .user-name-custom {
         width: 60%;
         font-size: 16px;
@@ -139,6 +142,11 @@ section.my-center-header-name {
     }
 }
 
+/****************
+
+个人中心 - 一行功能键 三个或者四个的容器
+
+****************/
 section.my-center-row {
     display: flex;
     flex-flow: row nowrap;
@@ -161,7 +169,17 @@ section.my-center-row {
     }
 }
 
-//登陆页
+
+/****************
+
+login-sign-wrapper
+
+登录页 注册页 重置密码页 容器
+
+****************/
+
+
+
 .login-sign-wrapper {
     padding: unit(200/@base-px-2-rem, rem) unit(100/@base-px-2-rem, rem) unit(50/@base-px-2-rem, rem);
     display: flex;
@@ -171,7 +189,10 @@ section.my-center-row {
     background-color: #fff;
     color: #b0b0b0;
     font-size: 14px;
+    //仅注册页 重置密码页
+    //存在单行 两个按钮样式
     &.sign {
+
         input {
             margin-left: unit( 50/@base-px-2-rem, rem);
         }
@@ -191,9 +212,11 @@ section.my-center-row {
             }
         }
     }
+    //中间的句子
     > p {
         padding-bottom: unit(50/@base-px-2-rem, rem);
     }
+    //重置密码页
     a.forget {
         align-self: flex-end;
         padding-top: unit(30/@base-px-2-rem, rem);
@@ -201,6 +224,7 @@ section.my-center-row {
         color: #b0b0b0;
         font-size: 12px;
     }
+    //大红 按钮
     button {
         width: 80%;
         margin-top: unit(50/@base-px-2-rem, rem);
@@ -212,10 +236,12 @@ section.my-center-row {
         background-color: @login-btn-bg-color;
         height: unit(120/@base-px-2-rem, rem);
     }
+    //保持容器的间距
     section {
         margin-top: unit(50/@base-px-2-rem, rem);
         height: unit(120/@base-px-2-rem, rem);
     }
+    //input 容器布局
     section.inputBlock {
         display: flex;
         flex-flow: row nowrap;
@@ -237,13 +263,16 @@ section.my-center-row {
             line-height: 1.65;
         }
     }
+    //其他登陆方式
     section.other-way-login {
         width: 50%;
         text-align: center;
         padding-top: unit(150/@base-px-2-rem, rem);
+        //文字居中
         >p {
             font-size: 11px;
         }
+        //两个按钮的容器
         div.qq-wechat {
             margin-top: unit(70/@base-px-2-rem, rem);
             font-size: 12px;

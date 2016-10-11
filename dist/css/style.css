@@ -1342,6 +1342,11 @@ section.my-center-header-name .my-center-header-imgBox img {
 section.my-center-header-name .my-center-header-imgBox ~ p {
   font-size: 16px;
 }
+/****************
+
+个人中心 - 一行功能键 三个或者四个的容器
+
+****************/
 section.my-center-row {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1374,6 +1379,13 @@ section.my-center-row p:nth-child(2) {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+/****************
+
+login-sign-wrapper
+
+登录页 注册页 重置密码页 容器
+
+****************/
 .login-sign-wrapper {
   padding: 1.76056338rem 0.88028169rem 0.44014085rem;
   display: -webkit-box;
