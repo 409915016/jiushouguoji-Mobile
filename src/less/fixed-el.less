@@ -82,6 +82,38 @@
     }
 }
 
+.search-bar-menu {
+    .make-fixed-bar(@search-bar-height);
+    width: unit(250/@base-px-2-rem, rem);
+    height: 100%;
+    //height: unit(335/@base-px-2-rem, rem);
+    //background-color: #fff;
+    position: absolute;
+    z-index: 11;
+    top: unit((@search-bar-height + 1) /@base-px-2-rem, rem);
+    left: unit(50/@base-px-2-rem, rem);
+    ul {
+        border: 1px solid @text-gray;
+        border-radius: 8px;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+        background-color: #fff;
+    }
+    li {
+        text-align: center;
+        border-bottom: 1px solid @text-gray;
+        &:last-child {
+            border-bottom: none;
+        }
+        a {
+            font-size: 14px;
+            padding: unit(30/@base-px-2-rem, rem) 0;
+        }
+    }
+}
+
 
 /************************
 
@@ -91,12 +123,14 @@
 
 .nav-bar {
     position: fixed;
-    z-index: @z-index-nav-search-bar;
+    //z-index: @z-index-nav-search-bar - 1;
     width: 100%;
     max-width: @max-width;
     height: unit(@nav-bar-height/@base-px-2-rem, rem);
     background-color: #fff;
     .make-fixed-bar(@nav-bar-height);
+    //修正遮盖弹出菜单
+    z-index: 10;
     //search bar in his head
     top: unit(@search-bar-height/@base-px-2-rem, rem);
     //nav bar ,no padding in this block.
@@ -183,7 +217,6 @@
 ************************/
 
 .base-nav-bar {
-
     .make-fixed-bar(@base-nav-bar-height);
     top: 0;
     border-bottom: 1px solid @bar-border-color;
@@ -194,8 +227,6 @@
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
-
-
     >p {
         //float: left;
         //width: 86%;
@@ -238,9 +269,9 @@
         //三个icon
         li {
             float: left;
-            //display: inline-block;
             font-size: 0;
             width: 15%;
+            //position: relative;
             a {
                 text-align: center;
                 display: block;
@@ -270,7 +301,7 @@
             }
             &:nth-child(2) {
                 position: relative;
-                &:before {
+                &::before {
                     //购物车商品数量
                     //display: block;
                     //http://www.jb51.net/article/81984.htm
@@ -287,6 +318,12 @@
                 }
             }
         }
+    }
+}
+
+li[data-shop-count="0"] {
+    &::before {
+        display: none !important;
     }
 }
 

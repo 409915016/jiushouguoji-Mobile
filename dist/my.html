@@ -126,7 +126,7 @@
 
             </div>
             <!--查看全部订单-->
-            <section class="user-row">
+            <section class="user-row has-shop-count">
                 <ul>
                     <li>
                         <a href="">
@@ -230,8 +230,12 @@
 
     <script>
         $(document).ready(function() {
-            // $(".nav-buttom-bar ul li a i").removeClass("active");
-            // $(".nav-buttom-bar ul li:nth-child(2) a i").addClass("active");
+            var shop_car_count = $(".has-shop-count li");
+            shop_car_count[0].dataset.shopCount = "1";
+            shop_car_count[1].dataset.shopCount = "1";
+            shop_car_count[2].dataset.shopCount = "1";
+            shop_car_count[3].dataset.shopCount = "1";
+           
         });
     </script>
 

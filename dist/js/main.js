@@ -7,10 +7,10 @@ $(document).ready(function () {
     $(function () {
         $(window).scroll(function () {
             if ($(this).scrollTop() > 500) {
-                $("#back-to-top").show();
+                $("#back-to-top").show(100);
 
             } else {
-                $("#back-to-top").hide();
+                $("#back-to-top").hide(100);
             }
         });
 
@@ -23,6 +23,15 @@ $(document).ready(function () {
         });
     });
 
+    //左边铃铛
 
+    $(".search-bar-menu").hide();
+    $(".search-bar-more").click(function () {
+        $(".search-bar-menu").toggle("show");
+    });
+
+    $(".main-wrapper").click(function () {
+        $(".search-bar-menu").hide();
+    });
 
 });

@@ -15,7 +15,6 @@ section.user-info-simple {
     justify-content: flex-start;
     //align-items: center;
     align-items: stretch;
-
     //用户头像容器 
     .user-header-imgBox {
         margin-left: unit(40/@base-px-2-rem, rem);
@@ -76,6 +75,7 @@ section.user-row {
         //align-items: stretch;
         li {
             text-align: center;
+            position: relative;
         }
     }
     /****************
@@ -118,6 +118,30 @@ section.user-row {
     }
 }
 
+.has-shop-count {
+    li {
+        &::before {
+            //购物车商品数量
+            //display: block;
+            //http://www.jb51.net/article/81984.htm
+            //dataset
+            content: attr(data-shop-count);
+            position: absolute;
+            //z-index: @z-index-nav-search-bar + 1;
+            right: -10px;
+            top: 3px;
+            font-size: 13px;
+            color: @text-red;
+            height: 20px;
+            width: 20px;
+            border: 1px solid @text-red;
+            border-radius: 50%;
+            line-height: 1.5;
+            background-color: #fff;
+        }
+    }
+}
+
 
 /****************
 
@@ -142,11 +166,13 @@ section.my-center-header-name {
     }
 }
 
+
 /****************
 
 个人中心 - 一行功能键 三个或者四个的容器
 
 ****************/
+
 section.my-center-row {
     display: flex;
     flex-flow: row nowrap;
@@ -178,8 +204,6 @@ login-sign-wrapper
 
 ****************/
 
-
-
 .login-sign-wrapper {
     padding: unit(200/@base-px-2-rem, rem) unit(100/@base-px-2-rem, rem) unit(50/@base-px-2-rem, rem);
     display: flex;
@@ -192,7 +216,6 @@ login-sign-wrapper
     //仅注册页 重置密码页
     //存在单行 两个按钮样式
     &.sign {
-
         input {
             margin-left: unit( 50/@base-px-2-rem, rem);
         }
