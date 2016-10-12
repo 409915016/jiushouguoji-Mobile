@@ -137,10 +137,26 @@
     //padding-top: unit(@nav-bar-blank/@base-px-2-rem, rem);
     text-align: center;
     //text-align: justify;
-    ul {
-        display: block;
+    &.on-base-title {
+        top: unit(@base-nav-bar-height/@base-px-2-rem, rem);
+        ul {
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-around;
+            align-items: center;
+        }
         li {
-            display: inline-block;
+            //width: 20%;
+        }
+    }
+    ul {
+        //display: block;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-around;
+        align-items: center;
+        li {
+            //display: inline-block;
             &.active {
                 a {
                     color: red;

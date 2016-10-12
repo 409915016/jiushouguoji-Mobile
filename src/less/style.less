@@ -69,6 +69,17 @@ Swiper 分页指示器颜色
             padding-bottom: 0;
         }
     }
+    &.h-title-bar {
+        margin-top: unit((@base-nav-bar-height + @nav-bar-height)/@base-px-2-rem, rem);
+        padding-bottom: unit((@nav-buttom-bar-height) /@base-px-2-rem, rem);
+        &.h-100-white {
+            background-color: #fff;
+            height: 100%;
+        }
+        &.no-b-nav {
+            padding-bottom: 0;
+        }
+    }
     &.feature {
         padding-bottom: unit(0 /@base-px-2-rem, rem);
     }

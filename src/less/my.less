@@ -327,9 +327,12 @@ login-sign-wrapper
 
 ****************/
 
+//当没有收藏的时候 显示一些文字
 .arrival, .wish, div.collect {
     //防止与icon 的collect冲突
     min-height: unit(500/@base-px-2-rem, rem);
+    //当没有收藏的时候 显示一些文字来占位
+    //文字的样式
     > p {
         padding: unit(150/@base-px-2-rem, rem) 0;
         line-height: 1.6;
@@ -366,5 +369,58 @@ login-sign-wrapper
         justify-content: space-around;
         align-items: stretch;
         padding: unit(20/@base-px-2-rem, rem) unit(0/@base-px-2-rem, rem)
+    }
+}
+
+
+/****************
+
+优惠券页面
+
+未使用 已使用 已过期
+
+三个页面切换
+
+****************/
+
+.coupon {
+    .switch-wrapper {
+        display: none;
+        background-color: #fff;
+        height: 100%;
+    }
+    .coupon-single {
+        margin: unit(40/@base-px-2-rem, rem) unit(30/@base-px-2-rem, rem) 0;
+        //width: 100%;
+        padding: unit(30/@base-px-2-rem, rem);
+        border-radius: 7px;
+        height: unit(250/@base-px-2-rem, rem);
+        background-color: #eee;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-start;
+        align-items: center;
+        font-size: 12px;
+        > span {
+            font-size: 17px;
+            font-weight: 600;
+        }
+        p {
+            padding: unit(13/@base-px-2-rem, rem) 0;
+        }
+    }
+    .coupon-name-time-key {
+        margin-left: unit(50/@base-px-2-rem, rem);
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-between;
+        align-items: stretch;
+        width: 100%;
+    }
+    .coupon-name-time {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center;
     }
 }

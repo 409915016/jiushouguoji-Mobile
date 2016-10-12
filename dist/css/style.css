@@ -238,11 +238,40 @@ img[src=""] {
   top: 1.1443662rem;
   text-align: center;
 }
-.nav-bar ul {
-  display: block;
+.nav-bar.on-base-title {
+  top: 1.32042254rem;
 }
-.nav-bar ul li {
-  display: inline-block;
+.nav-bar.on-base-title ul {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row nowrap;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.nav-bar ul {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row nowrap;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .nav-bar ul li.active a {
   color: red;
@@ -986,11 +1015,13 @@ i.icon.passward {
   padding-left: 0.70422535rem;
   -webkit-align-self: center;
       -ms-flex-item-align: center;
+              -ms-grid-row-align: center;
           align-self: center;
 }
 .shopcar-product-count .shopcar-product-count-c {
   -webkit-align-self: center;
       -ms-flex-item-align: center;
+              -ms-grid-row-align: center;
           align-self: center;
 }
 .shopcar-product-count .shopcar-product-count-c span {
@@ -1647,6 +1678,86 @@ div.collect > p {
           align-items: stretch;
   padding: 0.17605634rem 0rem;
 }
+/****************
+
+优惠券页面
+
+未使用 已使用 已过期
+
+三个页面切换
+
+****************/
+.coupon .switch-wrapper {
+  display: none;
+  background-color: #fff;
+  height: 100%;
+}
+.coupon .coupon-single {
+  margin: 0.35211268rem 0.26408451rem 0;
+  padding: 0.26408451rem;
+  border-radius: 7px;
+  height: 2.20070423rem;
+  background-color: #eee;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row nowrap;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 12px;
+}
+.coupon .coupon-single > span {
+  font-size: 17px;
+  font-weight: 600;
+}
+.coupon .coupon-single p {
+  padding: 0.11443662rem 0;
+}
+.coupon .coupon-name-time-key {
+  margin-left: 0.44014085rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: column nowrap;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  width: 100%;
+}
+.coupon .coupon-name-time {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row nowrap;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
 html {
   font-size: 113.6px;
 }
@@ -1695,6 +1806,17 @@ Swiper 分页指示器颜色
   height: 100%;
 }
 .main-wrapper.title-bar.no-b-nav {
+  padding-bottom: 0;
+}
+.main-wrapper.h-title-bar {
+  margin-top: 2.37676056rem;
+  padding-bottom: 1.49647887rem;
+}
+.main-wrapper.h-title-bar.h-100-white {
+  background-color: #fff;
+  height: 100%;
+}
+.main-wrapper.h-title-bar.no-b-nav {
   padding-bottom: 0;
 }
 .main-wrapper.feature {
