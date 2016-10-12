@@ -178,8 +178,8 @@ section.my-center-row {
     flex-flow: row nowrap;
     justify-content: space-around;
     align-items: center;
-    padding: unit(35/@base-px-2-rem, rem) 0;
-    border-bottom: 1px solid @bar-border-color;
+    padding: unit(40/@base-px-2-rem, rem) 0;
+    border-bottom: 1px solid @shopcar-border-color;
     p {
         font-size: 15px;
         &:first-child {
@@ -231,7 +231,9 @@ login-sign-wrapper
                 background-color: #fff;
                 color: @login-btn-bg-color;
                 border: 1px solid @login-btn-bg-color;
-                font-size: 12px;
+                font-size: 14px;
+                letter-spacing: 1px;
+                //line-height: 2;
             }
         }
     }
@@ -313,5 +315,56 @@ login-sign-wrapper
                 }
             }
         }
+    }
+}
+
+
+/****************
+
+到货提醒 我的收藏 心愿单 页面
+
+单个商品标签
+
+****************/
+
+.arrival, .wish, div.collect {
+    //防止与icon 的collect冲突
+    min-height: unit(500/@base-px-2-rem, rem);
+    > p {
+        padding: unit(150/@base-px-2-rem, rem) 0;
+        line-height: 1.6;
+        text-align: center;
+        font-size: 14px;
+        background-color: #fff;
+    }
+}
+
+.base-product-label {
+    padding: unit(10/@base-px-2-rem, rem) unit(30/@base-px-2-rem, rem);
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    background-color: #fff;
+    border-bottom: 1px solid @shopcar-border-color;
+    &:last-of-type {
+        border-bottom: 0;
+    }
+    .label-product-imgBox {
+        width: unit(300/@base-px-2-rem, rem);
+        height: unit(300/@base-px-2-rem, rem);
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .label-product-info {
+        font-size: 14px;
+        width: 75%;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-around;
+        align-items: stretch;
+        padding: unit(20/@base-px-2-rem, rem) unit(0/@base-px-2-rem, rem)
     }
 }

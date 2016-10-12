@@ -31,6 +31,11 @@ function
 创建fixed元素
 */
 /*布局用容器*/
+/************************
+
+     flex 布局
+
+************************/
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -1414,8 +1419,8 @@ section.my-center-row {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 0.30809859rem 0;
-  border-bottom: 1px solid #b2b2b2;
+  padding: 0.35211268rem 0;
+  border-bottom: 1px solid #b2b3b4;
 }
 section.my-center-row p {
   font-size: 15px;
@@ -1475,7 +1480,8 @@ login-sign-wrapper
   background-color: #fff;
   color: #ed5358;
   border: 1px solid #ed5358;
-  font-size: 12px;
+  font-size: 14px;
+  letter-spacing: 1px;
 }
 .login-sign-wrapper > p {
   padding-bottom: 0.44014085rem;
@@ -1569,6 +1575,77 @@ login-sign-wrapper
 .login-sign-wrapper section.other-way-login div.qq-wechat ul p {
   color: #b0b0b0;
   font-size: 10px;
+}
+/****************
+
+到货提醒 我的收藏 心愿单 页面
+
+单个商品标签
+
+****************/
+.arrival,
+.wish,
+div.collect {
+  min-height: 4.40140845rem;
+}
+.arrival > p,
+.wish > p,
+div.collect > p {
+  padding: 1.32042254rem 0;
+  line-height: 1.6;
+  text-align: center;
+  font-size: 14px;
+  background-color: #fff;
+}
+.base-product-label {
+  padding: 0.08802817rem 0.26408451rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row nowrap;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  background-color: #fff;
+  border-bottom: 1px solid #b2b3b4;
+}
+.base-product-label:last-of-type {
+  border-bottom: 0;
+}
+.base-product-label .label-product-imgBox {
+  width: 2.64084507rem;
+  height: 2.64084507rem;
+}
+.base-product-label .label-product-imgBox img {
+  width: 100%;
+  height: 100%;
+}
+.base-product-label .label-product-info {
+  font-size: 14px;
+  width: 75%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: column nowrap;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  padding: 0.17605634rem 0rem;
 }
 html {
   font-size: 113.6px;
@@ -2023,7 +2100,10 @@ p.end-text {
     letter-spacing: 2px;
   }
 }
-.shopcar .base-mt-wrapper > p {
+.shopcar .base-mt-wrapper > p,
+.arrival .base-mt-wrapper > p,
+.wish .base-mt-wrapper > p,
+.collect .base-mt-wrapper > p {
   position: relative;
   width: 100%;
   text-align: center;
@@ -2036,18 +2116,27 @@ p.end-text {
   font-weight: 500;
 }
 @media screen and (min-width: 768px) {
-  .shopcar .base-mt-wrapper > p p {
+  .shopcar .base-mt-wrapper > p p,
+  .arrival .base-mt-wrapper > p p,
+  .wish .base-mt-wrapper > p p,
+  .collect .base-mt-wrapper > p p {
     font-size: 20px;
     letter-spacing: 2px;
   }
 }
 @media screen and (min-width: 768px) {
-  .shopcar .base-mt-wrapper > p {
+  .shopcar .base-mt-wrapper > p,
+  .arrival .base-mt-wrapper > p,
+  .wish .base-mt-wrapper > p,
+  .collect .base-mt-wrapper > p {
     font-size: 20px;
     letter-spacing: 2px;
   }
 }
-.shopcar .base-mt-wrapper > p:after {
+.shopcar .base-mt-wrapper > p:after,
+.arrival .base-mt-wrapper > p:after,
+.wish .base-mt-wrapper > p:after,
+.collect .base-mt-wrapper > p:after {
   content: "";
   display: block;
   position: absolute;
@@ -2057,7 +2146,10 @@ p.end-text {
   width: 22.3%;
   background-color: #aaa;
 }
-.shopcar .base-mt-wrapper > p:before {
+.shopcar .base-mt-wrapper > p:before,
+.arrival .base-mt-wrapper > p:before,
+.wish .base-mt-wrapper > p:before,
+.collect .base-mt-wrapper > p:before {
   content: "";
   display: block;
   position: absolute;
@@ -2067,7 +2159,10 @@ p.end-text {
   width: 22.3%;
   background-color: #aaa;
 }
-.shopcar .base-mt-wrapper > p.guess-you-like {
+.shopcar .base-mt-wrapper > p.guess-you-like,
+.arrival .base-mt-wrapper > p.guess-you-like,
+.wish .base-mt-wrapper > p.guess-you-like,
+.collect .base-mt-wrapper > p.guess-you-like {
   color: #aaa;
   font-size: 16px;
 }
