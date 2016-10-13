@@ -80,7 +80,7 @@ textarea {
   border: 0;
 }
 body {
-  font-family: "微软雅黑", "SimSun", "宋体", "sans-serif";
+  font-family: "Heiti SC", "微软雅黑", "SimSun", "宋体", "sans-serif";
   width: 100%;
 }
 section:before,
@@ -1033,6 +1033,28 @@ i.icon.passward {
           box-sizing: content-box;
   padding: 0rem 0.26408451rem;
 }
+/****************
+
+空购物车 
+
+****************/
+.shopcar-empty {
+  background-color: #fff;
+  text-align: center;
+  padding: 0.88028169rem 0;
+}
+.shopcar-empty p {
+  font-size: 18px;
+  padding-bottom: 0.88028169rem;
+}
+.shopcar-empty a {
+  display: inline;
+}
+.shopcar-empty span {
+  font-size: 14px;
+  padding: 0.08802817rem 0.44014085rem;
+  background-color: #f0f0f0;
+}
 /************************
 
 产品详情页
@@ -1142,7 +1164,7 @@ div.comment-queue div.comment-select {
 }
 div.comment-queue div.comment-select > span {
   margin-left: 0.17605634rem;
-  padding: 0.13204225rem 0.39612676rem;
+  padding: 0.17605634rem 0.39612676rem;
   background-color: #f0f0f0;
   border-radius: 3px;
 }
@@ -1152,11 +1174,19 @@ div.comment-queue div.comment-select > span.active {
 div.comment-queue div.comment-select > span:first-child {
   margin-left: 0;
 }
+div.comment-queue .comment-single {
+  display: none;
+  background-color: #fff;
+  height: 100%;
+}
 /************************
 
 产品详情页 - 评论块 - 单条评论
 
 ************************/
+section.comment-one > p {
+  line-height: 1.6;
+}
 section.comment-one > p > span {
   font-size: 16px;
   width: 49%;
@@ -1169,6 +1199,7 @@ section.comment-one > p > span + span {
 section.comment-one p.comment-content {
   font-size: 12px;
   color: #333;
+  line-height: 1.6;
 }
 section.comment-one div.comment-imgBox {
   padding: 0.17605634rem;
@@ -2263,7 +2294,7 @@ p.end-text {
   top: 50%;
   left: 5%;
   height: 1px;
-  width: 22.3%;
+  width: 26%;
   background-color: #aaa;
 }
 .shopcar .base-mt-wrapper > p:before,
@@ -2276,7 +2307,7 @@ p.end-text {
   top: 50%;
   right: 5%;
   height: 1px;
-  width: 22.3%;
+  width: 26%;
   background-color: #aaa;
 }
 .shopcar .base-mt-wrapper > p.guess-you-like,
