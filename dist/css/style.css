@@ -1015,13 +1015,11 @@ i.icon.passward {
   padding-left: 0.70422535rem;
   -webkit-align-self: center;
       -ms-flex-item-align: center;
-              -ms-grid-row-align: center;
           align-self: center;
 }
 .shopcar-product-count .shopcar-product-count-c {
   -webkit-align-self: center;
       -ms-flex-item-align: center;
-              -ms-grid-row-align: center;
           align-self: center;
 }
 .shopcar-product-count .shopcar-product-count-c span {

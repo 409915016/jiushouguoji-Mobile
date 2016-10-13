@@ -34,10 +34,9 @@ $(document).ready(function () {
         $(".search-bar-menu").hide();
     });
 
-
+    //优惠券 页面切换
 
     $('.switch-wrapper').eq($('.nav-bar li').index($('.nav-bar li.active'))).show();
-
     $('.nav-bar li').click(function () {
         var _this = $(this);
         $('.nav-bar li').removeClass('active');
