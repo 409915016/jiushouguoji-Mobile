@@ -246,6 +246,7 @@ div.swiper-product {
 
 ************************/
 
+
 .no-swiper-product {
     width: 100%;
     a {
@@ -261,6 +262,9 @@ div.swiper-product {
             width: unit(1800/@base-px-2-rem, rem);
             img {
                 width: 100%;
+            }
+            &::after {
+                display: none;
             }
         }
         .product-name-price {

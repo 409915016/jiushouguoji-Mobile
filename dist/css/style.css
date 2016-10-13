@@ -2047,6 +2047,9 @@ div.swiper-product .swiper-slide:last-child p {
 .no-swiper-product a .product-imgBox img {
   width: 100%;
 }
+.no-swiper-product a .product-imgBox::after {
+  display: none;
+}
 .no-swiper-product a .product-name-price {
   display: -webkit-box;
   display: -webkit-flex;
