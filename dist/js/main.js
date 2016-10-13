@@ -45,4 +45,17 @@ $(document).ready(function () {
         $('.switch-wrapper').eq($('.nav-bar li').index(_this)).show();
     });
 
+
+
+    //评论页 页面切换
+        
+    $('.comment-single').eq($('.comment-select > span').index($('.comment-select > span.active'))).show();
+    $('.comment-select > span').click(function () {
+        var _this = $(this);
+        $('.comment-select > span').removeClass('active');
+        _this.addClass('active');
+        $('.comment-single').hide();
+        $('.comment-single').eq($('.comment-select > span').index(_this)).show();
+    });
+
 });
