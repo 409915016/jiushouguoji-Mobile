@@ -3,7 +3,8 @@ var gulp = require('gulp'),
     browserSync = require('browser-sync').create(),
     cleanCSS = require('gulp-clean-css'),
     LessPluginAutoPrefix = require('less-plugin-autoprefix'),
-    rename = require("gulp-rename");
+    rename = require("gulp-rename"),
+    sourcemaps = require('gulp-sourcemaps');
 
 var autoprefix = new LessPluginAutoPrefix({
     browsers: ["last 10 versions"]
@@ -16,9 +17,11 @@ var browser_config = {
 
 gulp.task('testLess', function () {
     gulp.src('src/less/style.less')
+        .pipe(sourcemaps.init())
         .pipe(less({
             plugins: [autoprefix]
         }))
+        .pipe(sourcemaps.write(''))
         .pipe(gulp.dest('dist/css'));
 });
 
