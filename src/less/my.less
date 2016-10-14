@@ -337,7 +337,7 @@ login-sign-wrapper
         padding: unit(150/@base-px-2-rem, rem) 0;
         line-height: 1.6;
         text-align: center;
-        font-size: 14px;
+        font-size: 16px;
         background-color: #fff;
     }
 }
@@ -424,3 +424,118 @@ login-sign-wrapper
         align-items: center;
     }
 }
+
+
+/****************
+
+收货地址
+
+****************/
+
+.user-address-single {
+    background-color: #fff;
+    margin-top: unit(30/@base-px-2-rem, rem);
+    border-top: 1px solid @border-color-gray-light;
+    border-bottom: 1px solid @border-color-gray-light;
+    color: @border-color-gray;
+    &:first-child {
+        border-top: 0;
+    }
+    .user-address-select {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-start;
+        align-items: center;
+        padding: unit(15/@base-px-2-rem, rem) unit(45/@base-px-2-rem, rem);
+        padding-right: unit(80/@base-px-2-rem, rem);
+        font-size: 15px;
+        border-bottom: 1px solid @border-color-gray;
+        i {
+            margin-right: unit(45/@base-px-2-rem, rem);
+        }
+        span {
+            flex-grow: 2;
+        }
+        span.user-address-del {
+            flex-grow: 1;
+            text-align: right;
+        }
+    }
+    .user-address-info {
+        padding: unit(10/@base-px-2-rem, rem) unit(45/@base-px-2-rem, rem);
+        p {
+            font-size: 14px;
+            //line-height: 1.4;
+            padding: unit(8/@base-px-2-rem, rem) 0;
+        }
+        p.user-real-name {
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: flex-start;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+}
+
+
+/****************
+
+编辑收货地址
+
+****************/
+
+p.alert-red {
+    padding: unit(10/@base-px-2-rem, rem) unit(30/@base-px-2-rem, rem);
+    background-color: @pink-bg;
+    color: @alert-red-color;
+    border-radius: 5px;
+    line-height: 1.55;
+}
+
+.user-input-list {
+    padding: 0 unit(30/@base-px-2-rem, rem) 0;
+    background-color: #fff;
+    font-size: 14px;
+    .input-list-row {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center;
+        color: #a4a4a4;
+        border-bottom: 1px solid @border-color-gray-very-light;
+        padding: unit(35/@base-px-2-rem, rem) unit(5/@base-px-2-rem, rem);
+        span {
+            width: 20%;
+        }
+        input {
+            width: 80%;
+            //修复手机端输入提示偏上的问题
+            //line-height: 1;
+            font-size: 14px;
+        }
+        input::-webkit-input-placeholder {
+            font-size: 14px;
+            line-height: 1.15;
+        }
+        input:-moz-placeholder {
+            font-size: 14px;
+            line-height: 1.15;
+        }
+        input::-moz-placeholder {
+            font-size: 14px;
+            line-height: 1.15;
+        }
+        input:-ms-input-placeholder {
+            font-size: 14px;
+            line-height: 1.15;
+        }
+    }
+}
+
+
+/****************
+
+关于我们
+
+****************/
