@@ -1,0 +1,96 @@
+@import "value.less";
+@import "func.less";
+@import "base.less";
+
+/****************
+
+我的订单
+
+****************/
+
+div.base-order {
+    background-color: #fff;
+    margin-top: unit( @base-mt /@base-px-2-rem, rem);
+    & > div,a {
+        padding: unit(20/@base-px-2-rem, rem) unit(40/@base-px-2-rem, rem)
+    }
+    .base-order-btn-row {
+        padding-top: 0;
+    }
+    .base-order-date-state {
+        padding: unit(35/@base-px-2-rem, rem) unit(50/@base-px-2-rem, rem);
+    }
+}
+
+.base-order-date-state {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 14px;
+    span {
+        width: 50%;
+        &:first-child {
+            text-align: left;
+        }
+        &:last-child {
+            text-align: right;
+        }
+    }
+}
+
+.base-order-info {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+    border-top: 1px solid @border-color-gray-light;
+    border-bottom: 1px solid @border-color-gray-light;
+    .order-imgBox {
+        width: unit(300/@base-px-2-rem, rem);
+        height: unit(300/@base-px-2-rem, rem);
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    & > p {
+        align-self: flex-start;
+        padding-top: unit(20/@base-px-2-rem, rem);
+        width: 55%;
+        font-size: 14px;
+        line-height: 1.4;
+    }
+    .order-price-num {
+        font-size: 14px;
+        align-self: center;
+        .base-order-price {
+            padding-top: unit(20/@base-px-2-rem, rem);
+            text-align: right;
+            color: @text-gray;
+        }
+    }
+}
+
+.base-order-total {
+    font-size: 14px;
+    p {
+        text-align: right;
+    }
+}
+
+.base-order-btn-row {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+    align-items: center;
+    padding-top: 0;
+    > a {
+        margin-left: unit(50/@base-px-2-rem, rem);
+        background-color: @red-btn-color;
+        padding: unit(25/@base-px-2-rem, rem) unit(40/@base-px-2-rem, rem);
+        border-radius: 5px;
+        color: #fff;
+        font-size: 14px;
+    }
+}
