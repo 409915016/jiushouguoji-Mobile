@@ -35,7 +35,9 @@ $(document).ready(function () {
     });
 
     //优惠券 页面切换
-
+    //通用组件
+    //选择器与页面同级
+    $('.switch-wrapper').hide();
     $('.switch-wrapper').eq($('.nav-bar li').index($('.nav-bar li.active'))).show();
     $('.nav-bar li').click(function () {
         var _this = $(this);
@@ -48,7 +50,7 @@ $(document).ready(function () {
 
 
     //评论页 页面切换
-        
+    $('.comment-single').hide();
     $('.comment-single').eq($('.comment-select > span').index($('.comment-select > span.active'))).show();
     $('.comment-select > span').click(function () {
         var _this = $(this);
