@@ -6,38 +6,75 @@
 @icon-address: "../img/icon";
 //longPic url
 @longPic-address: "../img/productLongPic";
-
-
 @min-width: 320px;
 @max-width: 640px;
+
+/****************
+
+配色
+
+****************/
+@bar-border-color:#b2b2b2;
+//链接高亮红
 @link-active-color: #e93036;
 @wrapper-bg-color: #f2f2f2;
+//搜索框背景色
+@search-area-color: #e8eced;
+//顶部导航栏 未激活字体色
+@nav-bar-link-color: #8a8a8a;
+//产品详情页下 字体色 
+@text-red: #e9282e;
+@text-primary: #333;
+@text-gray: #aaa;
+//产品详情页底部导航栏 字体色
+@product-tips-bg-color: #e6e6e6;
+@product-nav-text-color: #676767;
+@product-tips-text-color: #5a5a5a;
+//标签按钮激活背景色
+@comment-select-bt-active-bg: #ffcbcb;
+//标签按钮背景色
+@comment-select-bt-base-bg: #f0f0f0;
+//评论页 单条评论
+@comment-one-border-color: #d4d5d6;
+//购物车边框色
+@shopcar-border-color: #b2b3b4;
+//我的页面底色 
+@my-page-bg-color: #f7f7f7;
+//新增收货地址 警告提示背景色
+@pink-bg: #f8bec0;
+//新增收货地址 警告提示字体色
+@alert-red-color: #f06469;
+//登陆圆角长按钮
+@login-btn-bg-color: #ed5358;
+//收货地址按钮
+@red-btn-color: #e9282e;
+@order-btn-color: #e9282e;
+//我的订单页
+//边框分隔线颜色
+@border-color-gray-very-light: #ebebeb;
+@border-color-gray-light: #c8c7cc;
+@border-color-gray: #989898;
+
 /****************
 
 首页搜索栏
 
 ****************/
+
 @search-bar-height: 130px;
 @search-bar-blank: 16;
-@bar-border-color :#b2b2b2;
+
 /****************
 
 首页搜索栏输入框
 
 ****************/
+
 @search-area-height: 90;
 @search-area-width: 450px;
 @search-area-blank: 10;
-@search-area-color: #e8eced;
-
 @search-input-height: 75;
-/****************
 
-搜索栏两侧图标
-
-****************/
-
-@search-icon-size: 40px;
 /****************
 
 顶部导航栏 通用 优惠券 我的订单 
@@ -47,7 +84,7 @@
 @nav-bar-height: (@search-bar-height - 10);
 @nav-bar-blank: 20;
 @nav-bar-link-padding: 28;
-@nav-bar-link-color: #8a8a8a;
+
 /****************
 
 底部导航栏
@@ -58,7 +95,7 @@
 
 /****************
 
-//首页图片轮播下的文字占位高度 就手国际
+首页图片轮播下的文字占位高度 就手国际
 
 ****************/
 
@@ -69,67 +106,79 @@
 icon 图标大小
 
 ****************/
+
 @search-bar-icon-size: 90;
-@search-input-icon-size: 50px;
-@nav-buttom-bar-icon-size: 90px;
+@search-input-icon-size: 50;
+@nav-buttom-bar-icon-size: 90;
 @go-to-top-icon-size: 90;
 @my-page-icon-size: 120;
 @my-page-icon-size-small: 100;
 @shopcar-check-icon: 70;
+//购物车加减按钮
 @shopcar-add-icon: 50;
+//输入框左方图标
 @input-icon: 60;
-
+//搜索栏两侧图标
+@search-icon-size: 40px;
 
 /****************
 
-//通用 标题栏
+通用 标题栏
 
 ****************/
 
 @base-nav-bar-icon-size: @search-bar-icon-size;
 @base-nav-bar-height: (@search-bar-height + 20);
 
+/****************
 
-//产品详情页
-@text-red: #e9282e;
-@text-primary: #333;
-@text-gray: #aaa;
-//产品详情页 导航栏
+产品详情页
+
+****************/
+
+
+/****************
+
+产品详情页 底部导航栏
+
+****************/
+//产品详情页 底部导航栏
 @product-nav-bar-height: @base-nav-bar-height;
-@product-nav-text-color: #676767;
-@product-tips-bg-color: #e6e6e6;
-@product-tips-text-color: #5a5a5a;
 //购物车
 @shopcar-door-height: @base-nav-bar-height;
 @shopcar-left-right-blank: 50;
-@shopcar-border-color: #b2b3b4;
-@comment-select-bt-active-bg: #ffcbcb;
-@comment-select-bt-base-bg: #f0f0f0;
+
+/****************
+
+产品评论页
+
+****************/
+
+
+/****************
+
+通用容器
+
+****************/
+
 //分隔容器外边距
 @base-mt: 40;
 //容器内边距
 @base-pd-lr: 40;
 @base-pd-tb: 40;
-//评论页 单条评论
-@comment-one-border-color: #d4d5d6;
-@order-btn-color: #e9282e;
-//我的页面
-@my-page-bg-color: #f7f7f7;
+
+/****************
+
+我的页面
+
+****************/
+
 @user-header-imgSize: 210;
 @my-page-icon-mt: 10;
 @my-page-icon-mb: 20;
 
-//btn color
-@red-btn-color: #e9282e;
+/****************
 
-@login-btn-bg-color:#ed5358;
+新增收货地址
 
-
-//border-color 
-@border-color-gray-very-light: #ebebeb;
-@border-color-gray-light: #c8c7cc;
-@border-color-gray: #989898;
-
-@pink-bg: #f8bec0;
-@alert-red-color: #f06469;
-
+****************/

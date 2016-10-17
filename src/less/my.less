@@ -447,7 +447,8 @@ login-sign-wrapper
         flex-flow: row nowrap;
         justify-content: flex-start;
         align-items: center;
-        padding: unit(15/@base-px-2-rem, rem) unit(45/@base-px-2-rem, rem);
+        //比下面地址宽一些
+        padding: unit(15/@base-px-2-rem, rem) unit(60/@base-px-2-rem, rem);
         padding-right: unit(80/@base-px-2-rem, rem);
         font-size: 15px;
         border-bottom: 1px solid @border-color-gray;
@@ -462,20 +463,28 @@ login-sign-wrapper
             text-align: right;
         }
     }
-    .user-address-info {
-        padding: unit(10/@base-px-2-rem, rem) unit(45/@base-px-2-rem, rem);
-        p {
-            font-size: 14px;
-            //line-height: 1.4;
-            padding: unit(8/@base-px-2-rem, rem) 0;
-        }
-        p.user-real-name {
-            display: flex;
-            flex-flow: row nowrap;
-            justify-content: flex-start;
-            align-items: center;
-            justify-content: space-between;
-        }
+}
+
+/****************
+
+编辑收货地址
+订单单件商品信息
+通用
+
+****************/
+.user-address-info {
+    padding: unit(10/@base-px-2-rem, rem) unit(80/@base-px-2-rem, rem);
+    p {
+        font-size: 14px;
+        //line-height: 1.4;
+        padding: unit(8/@base-px-2-rem, rem) 0;
+    }
+    p.user-real-name {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-start;
+        align-items: center;
+        justify-content: space-between;
     }
 }
 

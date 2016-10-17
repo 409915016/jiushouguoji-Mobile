@@ -11,7 +11,7 @@
 div.base-order {
     background-color: #fff;
     margin-top: unit( @base-mt /@base-px-2-rem, rem);
-    & > div,a {
+    & > div, a {
         padding: unit(20/@base-px-2-rem, rem) unit(40/@base-px-2-rem, rem)
     }
     .base-order-btn-row {
@@ -28,6 +28,7 @@ div.base-order {
     justify-content: space-around;
     align-items: center;
     font-size: 14px;
+    border-bottom: 1px solid @border-color-gray-light;
     span {
         width: 50%;
         &:first-child {
@@ -39,13 +40,21 @@ div.base-order {
     }
 }
 
+
+/****************
+
+单件物品信息
+通用模块
+
+****************/
+
 .base-order-info {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-around;
     align-items: center;
-    border-top: 1px solid @border-color-gray-light;
     border-bottom: 1px solid @border-color-gray-light;
+    padding: unit(20/@base-px-2-rem, rem) unit(40/@base-px-2-rem, rem);
     .order-imgBox {
         width: unit(300/@base-px-2-rem, rem);
         height: unit(300/@base-px-2-rem, rem);
@@ -57,13 +66,16 @@ div.base-order {
     & > p {
         align-self: flex-start;
         padding-top: unit(20/@base-px-2-rem, rem);
-        width: 55%;
+        width: 53%;
         font-size: 14px;
         line-height: 1.4;
     }
     .order-price-num {
         font-size: 14px;
         align-self: center;
+        p {
+            text-align: right;
+        }
         .base-order-price {
             padding-top: unit(20/@base-px-2-rem, rem);
             text-align: right;
@@ -92,5 +104,66 @@ div.base-order {
         border-radius: 5px;
         color: #fff;
         font-size: 14px;
+    }
+}
+
+
+/****************
+
+订单信息
+
+****************/
+
+.order-comfirm-user-add, .order-comfirm-list {
+    background-color: #fff;
+    .order-list-door-name {
+        border-bottom: 1px solid @border-color-gray-light;
+        border-top: 1px solid @border-color-gray-light;
+        padding: unit(20/@base-px-2-rem, rem) unit(40/@base-px-2-rem, rem);
+        padding-left: unit(80/@base-px-2-rem, rem);
+        font-size: 14px;
+    }
+}
+
+.order-comfirm-list {
+    background-color: @my-page-bg-color;
+}
+
+.order-list {
+    background-color: #fff;
+    &:nth-child(n + 2) {
+        margin-top: unit(@base-mt/@base-px-2-rem, rem);
+        .order-list-door-name {
+            border-top: 0;
+        }
+    }
+}
+
+.order-comfirm-user-add {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+    .user-address-info {
+        padding-right: 0;
+        width: 100%;
+    }
+    i {
+        margin-right: unit(40/@base-px-2-rem, rem);
+        margin-left: unit(20/@base-px-2-rem, rem);
+    }
+}
+
+.order-comfirm-message {
+    margin-top: unit(@base-mt/@base-px-2-rem, rem);
+    padding: unit(20/@base-px-2-rem, rem) unit(80/@base-px-2-rem, rem);
+    background-color: #fff;
+    font-size: 15px;
+    textarea {
+        font-size: 15px;
+        width: 100%;
+        resize: none;
+        //line-height: 1.5;
+        color: @text-primary;
     }
 }

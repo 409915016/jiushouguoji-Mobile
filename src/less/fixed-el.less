@@ -232,9 +232,11 @@
             font-size: 16px;
             letter-spacing: 1px;
             //height: unit( @nav-buttom-bar-height/@base-px-2-rem, rem);
-            line-height:unit(( @nav-buttom-bar-height - 30)/@base-px-2-rem, rem);
-
+            line-height: unit(( @nav-buttom-bar-height - 30)/@base-px-2-rem, rem);
         }
+    }
+    &.no-padding {
+        padding: 0;
     }
 }
 
@@ -350,11 +352,19 @@
     }
 }
 
+//商品详情页显示购物车数量
 li[data-shop-count="0"] {
     &::before {
         display: none !important;
     }
 }
+
+
+/****************
+
+购物车结算栏
+
+****************/
 
 .shopcar-nav-bar {
     .make-fixed-bar(@nav-buttom-bar-height);
@@ -394,14 +404,62 @@ li[data-shop-count="0"] {
     }
     a.order-btn {
         width: 33.33%;
+        display: block;
+        //通用
+        .base-nav-buttom-bar-big-btn();
+    }
+}
+
+
+/****************
+
+底部导航满高按钮
+
+****************/
+
+.base-nav-buttom-bar-big-btn() {
+    background-color: @order-btn-color;
+    height: 100%;
+    text-align: center;
+    line-height: unit(@nav-buttom-bar-height/@base-px-2-rem, rem);
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    color: #fff;
+}
+
+
+/****************
+
+购物车下单-订单信息
+
+****************/
+
+.order-comfirm-bar {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    font-size: 15px;
+    .order-comfirm-price, .order-comfirm-btn {
+        height: 100%;
+        align-self: center;
+    }
+    .order-comfirm-price {
+        width: 60%;
         height: 100%;
         text-align: center;
         line-height: unit(@nav-buttom-bar-height/@base-px-2-rem, rem);
-        font-size: 16px;
-        font-weight: 500;
-        letter-spacing: 2px;
-        color: #fff;
-        display: block;
-        background-color: @order-btn-color;
+        padding-right: unit(200/@base-px-2-rem, rem);
+        color: @text-red;
+    }
+    .order-comfirm-btn {
+        width: 40%;
+        height: 100%;
+        text-align: center;
+        line-height: unit(@nav-buttom-bar-height/@base-px-2-rem, rem);
+        .base-nav-buttom-bar-big-btn();
     }
 }
