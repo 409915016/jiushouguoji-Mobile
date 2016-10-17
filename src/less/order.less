@@ -110,7 +110,7 @@ div.base-order {
 
 /****************
 
-订单信息
+购物车-下单-订单信息
 
 ****************/
 
@@ -125,20 +125,7 @@ div.base-order {
     }
 }
 
-.order-comfirm-list {
-    background-color: @my-page-bg-color;
-}
-
-.order-list {
-    background-color: #fff;
-    &:nth-child(n + 2) {
-        margin-top: unit(@base-mt/@base-px-2-rem, rem);
-        .order-list-door-name {
-            border-top: 0;
-        }
-    }
-}
-
+//卖家收件地址
 .order-comfirm-user-add {
     display: flex;
     flex-flow: row nowrap;
@@ -154,6 +141,23 @@ div.base-order {
     }
 }
 
+//一次下单的所有商品列表
+.order-comfirm-list {
+    background-color: @my-page-bg-color;
+}
+
+//单个商家的商品
+.order-list {
+    background-color: #fff;
+    &:nth-child(n + 2) {
+        margin-top: unit(@base-mt/@base-px-2-rem, rem);
+        .order-list-door-name {
+            border-top: 0;
+        }
+    }
+}
+
+//买家留言
 .order-comfirm-message {
     margin-top: unit(@base-mt/@base-px-2-rem, rem);
     padding: unit(20/@base-px-2-rem, rem) unit(80/@base-px-2-rem, rem);
@@ -166,4 +170,69 @@ div.base-order {
         //line-height: 1.5;
         color: @text-primary;
     }
+}
+
+
+/****************
+
+支付订单
+
+****************/
+
+.order-pay-price, .order-pay-coupon {
+    padding: unit(50/@base-px-2-rem, rem) unit(50/@base-px-2-rem, rem);
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 15px;
+    .pay-price {}
+    p + p {
+        color: @text-red;
+    }
+}
+
+.order-pay-way {
+    //padding-bottom: unit(800/@base-px-2-rem, rem);
+    //height: 50%;
+    > p {
+        padding: unit(50/@base-px-2-rem, rem) unit(50/@base-px-2-rem, rem);
+        font-size: 15px;
+    }
+    .pay-way {
+        padding: unit(40/@base-px-2-rem, rem) unit(50/@base-px-2-rem, rem);
+    }
+    .pay-way, .pay-way-text {
+        font-size: 15px;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    .pay-way-text {
+        width: 90%;
+    }
+}
+
+.pay-btn {
+    text-align: center;
+    padding-top: 60%;
+    padding-bottom: unit(150/@base-px-2-rem, rem);
+    @media screen and (max-height: 480px) {
+        padding-top: 35%;
+    }
+}
+
+button.half-btn {
+    font-size: 18px;
+    padding-top: unit(40/@base-px-2-rem, rem);
+    padding-bottom: unit(40/@base-px-2-rem, rem);
+    width: 55%;
+    border-radius: 8px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    background-color: @order-btn-color;
+    color: #fff;
 }

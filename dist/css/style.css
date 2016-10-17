@@ -976,6 +976,18 @@ i.icon.passward {
   width: 0.52816901rem;
   height: 0.52816901rem;
 }
+i.icon.allinpay {
+  background-image: url("../img/icon/allinpay.png");
+  margin: 0 0.22007042rem;
+  width: 0.52816901rem;
+  height: 0.52816901rem;
+}
+i.icon.alipay {
+  background-image: url("../img/icon/alipay.png");
+  margin: 0 0.22007042rem;
+  width: 0.52816901rem;
+  height: 0.52816901rem;
+}
 /****************
 
 商家名称
@@ -2224,7 +2236,7 @@ div.base-order .base-order-date-state {
 }
 /****************
 
-订单信息
+购物车-下单-订单信息
 
 ****************/
 .order-comfirm-user-add,
@@ -2238,18 +2250,6 @@ div.base-order .base-order-date-state {
   padding: 0.17605634rem 0.35211268rem;
   padding-left: 0.70422535rem;
   font-size: 14px;
-}
-.order-comfirm-list {
-  background-color: #f7f7f7;
-}
-.order-list {
-  background-color: #fff;
-}
-.order-list:nth-child(n + 2) {
-  margin-top: 0.35211268rem;
-}
-.order-list:nth-child(n + 2) .order-list-door-name {
-  border-top: 0;
 }
 .order-comfirm-user-add {
   display: -webkit-box;
@@ -2275,6 +2275,18 @@ div.base-order .base-order-date-state {
   margin-right: 0.35211268rem;
   margin-left: 0.17605634rem;
 }
+.order-comfirm-list {
+  background-color: #f7f7f7;
+}
+.order-list {
+  background-color: #fff;
+}
+.order-list:nth-child(n + 2) {
+  margin-top: 0.35211268rem;
+}
+.order-list:nth-child(n + 2) .order-list-door-name {
+  border-top: 0;
+}
 .order-comfirm-message {
   margin-top: 0.35211268rem;
   padding: 0.17605634rem 0.70422535rem;
@@ -2286,6 +2298,87 @@ div.base-order .base-order-date-state {
   width: 100%;
   resize: none;
   color: #333;
+}
+/****************
+
+支付订单
+
+****************/
+.order-pay-price,
+.order-pay-coupon {
+  padding: 0.44014085rem 0.44014085rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row nowrap;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 15px;
+}
+.order-pay-price p + p,
+.order-pay-coupon p + p {
+  color: #e9282e;
+}
+.order-pay-way > p {
+  padding: 0.44014085rem 0.44014085rem;
+  font-size: 15px;
+}
+.order-pay-way .pay-way {
+  padding: 0.35211268rem 0.44014085rem;
+}
+.order-pay-way .pay-way,
+.order-pay-way .pay-way-text {
+  font-size: 15px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row nowrap;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.order-pay-way .pay-way-text {
+  width: 90%;
+}
+.pay-btn {
+  text-align: center;
+  padding-top: 60%;
+  padding-bottom: 1.32042254rem;
+}
+@media screen and (max-height: 480px) {
+  .pay-btn {
+    padding-top: 35%;
+  }
+}
+button.half-btn {
+  font-size: 18px;
+  padding-top: 0.35211268rem;
+  padding-bottom: 0.35211268rem;
+  width: 55%;
+  border-radius: 8px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  background-color: #e9282e;
+  color: #fff;
 }
 html {
   font-size: 113.6px;
@@ -2332,6 +2425,7 @@ Swiper 分页指示器颜色
   max-width: 640px;
   margin-top: 2.21830986rem;
   padding-bottom: 1.49647887rem;
+  overflow: hidden;
 }
 .main-wrapper.title-bar {
   margin-top: 1.32042254rem;
@@ -2686,6 +2780,7 @@ div.swiper-product .swiper-slide:last-child p {
 .base-mt-wrapper {
   margin-top: 0.35211268rem;
   background-color: #fff;
+  overflow: hidden;
   /*精品推荐*/
 }
 .base-mt-wrapper > p {

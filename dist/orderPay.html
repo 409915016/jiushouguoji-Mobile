@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="zh-cmn-Hans">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="renderer" content="webkit">
+	<title>支付订单</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="renderer" content="webkit">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no" />
+	<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+	<meta content="telephone=no" name="format-detection" />
+	<link rel="Shortcut Icon" href="favicon.jpg" />
+	<link rel="stylesheet" href="css/normalize.min.css">
+	<link rel="stylesheet" href="css/style.min.css">
+	<link rel="stylesheet" href="css/swiper.min.css">
+
+	<script src="js/jquery.min.js"></script>
+	<script src="js/flexible.js"></script>
+	<script src="js/swiper.jquery.min.js"></script>
+	<script src="js/main.js">
+    </script>
+
+</head>
+
+<body>
+	<div class="wrapper">
+
+		<!--fixed element-->
+		<!--文字头-->
+		<div class="base-nav-bar">
+			<a class="" href="my.html">
+				<i class="icon back fl"></i>
+			</a>
+			<p>支付订单</p>
+			<a class="no-visible" href="index.html">
+				<i class="icon back fl"></i>
+			</a>
+		</div>
+
+
+		<!--fixed element end-->
+		<!--可见页-->
+		<div class="main-wrapper title-bar no-b-nav">
+			<div class="base-mt-wrapper">
+				<div class="order-pay-price">
+					<p>订单金额</p>
+					<p>￥<span class="pay-price">1000.00</span></p>
+				</div>
+			</div>
+
+			<div class="base-mt-wrapper">
+				<div class="order-pay-coupon">
+					<p>使用优惠券</p>
+					<i class="icon right"></i>
+
+				</div>
+			</div>
+
+			<div class="base-mt-wrapper">
+				<div class="order-pay-way">
+					<p>选择支付方式</p>
+					<section class="pay-way">
+						<div class="pay-way-text">
+							<i class="icon alipay"></i>
+							<p>支付宝</p>
+						</div>
+
+						<i class="icon checked"></i>
+					</section>
+
+					<section class="pay-way">
+						<div class="pay-way-text">
+							<i class="icon allinpay"></i>
+							<p>通联支付</p>
+						</div>
+
+						<i class="icon no-check"></i>
+					</section>
+
+				</div>
+				<div class="pay-btn">
+					<button type="" class="half-btn">确认支付</button>
+				</div>
+
+			</div>
+
+
+
+
+		</div>
+		<!--可见页 end-->
+
+	</div>
+
+
+
+
+	<script>
+        $(document).ready(function() {
+            // $(".nav-buttom-bar ul li a i").removeClass("active");
+            // $(".nav-buttom-bar ul li:nth-child(2) a i").addClass("active");
+        });
+    </script>
+
+</body>
+
+</html>
