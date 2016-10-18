@@ -2359,12 +2359,12 @@ div.base-order .base-order-date-state {
 }
 .pay-btn {
   text-align: center;
-  padding-top: 60%;
-  padding-bottom: 1.32042254rem;
+  padding-top: 40%;
+  padding-bottom: 1.76056338rem;
 }
 @media screen and (max-height: 480px) {
   .pay-btn {
-    padding-top: 35%;
+    padding-top: 30%;
   }
 }
 button.half-btn {

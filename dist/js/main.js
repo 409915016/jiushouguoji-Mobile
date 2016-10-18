@@ -60,4 +60,35 @@ $(document).ready(function () {
         $('.comment-single').eq($('.comment-select > span').index(_this)).show();
     });
 
+
+
+    //我的页面 到 我的订单跳转
+    function myOrderNav(navNum) {
+        document.cookie = "myOrderNav=" + navNum;
+    }
+    //$(".has-shop-count ul li").click = function() {
+    //console(this);
+    //myOrderNav(1);
+    // }
+
+    var get = function (name) {
+        return document.querySelector(name);
+    }
+
+    var getAll = function (name) {
+        return document.querySelectorAll(name);
+    }
+
+    $(".has-shop-count ul li").on("click", function () {
+        console.log(this);
+        var all_li = $(".has-shop-count li");
+        var this_li = this;
+        var li_index = $(this).index() + 1;
+        console.log(li_index);
+        myOrderNav(li_index);
+        console.log("设置cookie成功");
+        window.location.href = "myOrder.html";
+    })
+
+
 });

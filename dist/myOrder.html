@@ -350,6 +350,12 @@
         $(document).ready(function() {
             // $(".nav-buttom-bar ul li a i").removeClass("active");
             // $(".nav-buttom-bar ul li:nth-child(2) a i").addClass("active");
+			var myCookie = document.cookie.replace(/(?:(?:^|.*;\s*)myOrderNav\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+			//alert(myCookie);
+			shouldSetNav = $(".nav-bar li").get(myCookie);
+			shouldSetNav.click();
+
+
         });
     </script>
 
