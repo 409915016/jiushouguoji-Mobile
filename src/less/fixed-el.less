@@ -155,6 +155,7 @@
         flex-flow: row nowrap;
         justify-content: space-around;
         align-items: center;
+        padding: 0 unit(@base-pd-tb/@base-px-2-rem, rem);
         li {
             //display: inline-block;
             &.active {
@@ -202,10 +203,16 @@
     border-top: 1px solid rgba(0, 0, 0, 0.2);
     text-align: center;
     ul {
-        display: block;
+        //display: block;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-around;
+        align-items: center;
+        padding: 0 unit(@base-pd-tb/@base-px-2-rem, rem);
         li {
-            display: inline-block;
-            width: 24%;
+            //display: inline-block;
+            text-align: center;
+            width: 25%;
             a {
                 display: block;
                 &.active {
