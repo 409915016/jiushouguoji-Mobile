@@ -2120,6 +2120,9 @@ div.base-order .base-order-btn-row {
 div.base-order .base-order-date-state {
   padding: 0.30809859rem 0.44014085rem;
 }
+div.base-order:first-child {
+  margin-top: 0;
+}
 .base-order-date-state {
   display: -webkit-box;
   display: -webkit-flex;
