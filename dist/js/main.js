@@ -32,7 +32,40 @@ var getOrderMsg = function (imgURL, second, province) {
     get_order.addEventListener("webkitAnimationEnd", function(){
         this.classList.remove("get-order-animated-set");
         this.classList.remove("get-order-animated");
+
+        //getOrderMsg("http://www.atool.org/placeholder.png?size=50x50&bg=fff", 10, "黑龙江");
     })
+
+    get_order.addEventListener("mozAnimationEnd", function(){
+        this.classList.remove("get-order-animated-set");
+        this.classList.remove("get-order-animated");
+
+        //getOrderMsg("http://www.atool.org/placeholder.png?size=50x50&bg=fff", 10, "黑龙江");
+    })
+
+    get_order.addEventListener("MSAnimationEnd", function(){
+        this.classList.remove("get-order-animated-set");
+        this.classList.remove("get-order-animated");
+
+        //getOrderMsg("http://www.atool.org/placeholder.png?size=50x50&bg=fff", 10, "黑龙江");
+    })
+
+
+    get_order.addEventListener("oanimationend", function(){
+        this.classList.remove("get-order-animated-set");
+        this.classList.remove("get-order-animated");
+
+        //getOrderMsg("http://www.atool.org/placeholder.png?size=50x50&bg=fff", 10, "黑龙江");
+    })
+
+    get_order.addEventListener("animationend", function(){
+        this.classList.remove("get-order-animated-set");
+        this.classList.remove("get-order-animated");
+
+        //getOrderMsg("http://www.atool.org/placeholder.png?size=50x50&bg=fff", 10, "黑龙江");
+    })
+
+
 
 
     //get_order.style.opacity  = 1;
@@ -152,7 +185,16 @@ $(document).ready(function () {
 
 
     //getOrderMsg(imgURL, second, province);
-    //getOrderMsg("http://www.atool.org/placeholder.png?size=50x50&bg=fff", 10, "黑龙江");
+    getOrderMsg("http://www.atool.org/placeholder.png?size=50x50&bg=fff", 10, "黑龙江");
+
+
+    function timer() {
+        getOrderMsg();
+        setTimeout(timer, 7000);
+    }
+
+    timer();
+    
 
 
 });
