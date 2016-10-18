@@ -1,3 +1,48 @@
+var getOrderMsg = function (imgURL, second, province) {
+
+    var get_order = document.querySelector("#get-order");
+
+    var imgURL = arguments[0] ? arguments[0] : "http://www.atool.org/placeholder.png?size=40x40&bg=fff";
+    var second = arguments[1] ? arguments[1] : "8";
+    var province = arguments[2] ? arguments[2] : "广东";
+
+
+    //get-order get-order-animated-set get-order-animated
+    //imgURL
+    var get_order_img = document.querySelector(".get-order-imgBox img");
+    //var get_order_img_url= $(get_order_img_url);
+    get_order_img.attributes[0].nodeValue = imgURL;
+    //console.log(get_order_img);
+    //second
+    var get_order_second = document.querySelector(".get-order-second");
+    // var get_order_second = $(get_order_second);
+    get_order_second.innerHTML = second;
+    //console.log(get_order_second);
+    //province
+    var get_order_province = document.querySelector(".get-order-province");
+    //var get_order_province = $(get_order_province);
+    get_order_province.innerHTML = province;
+    //console.log(get_order_province);
+
+    //display
+
+    get_order.classList.add('get-order-animated-set');
+    get_order.classList.add('get-order-animated');
+
+    get_order.addEventListener("webkitAnimationEnd", function(){
+        this.classList.remove("get-order-animated-set");
+        this.classList.remove("get-order-animated");
+    })
+
+
+    //get_order.style.opacity  = 1;
+    //get_order.style.display = "flex";
+
+    get_order = null;
+}
+
+
+
 $(document).ready(function () {
     // reference to stackoverflow 
     // http://stackoverflow.com/questions/14249998/jquery-back-to-top
@@ -80,15 +125,34 @@ $(document).ready(function () {
     }
 
     $(".has-shop-count ul li").on("click", function () {
-        console.log(this);
-        var all_li = $(".has-shop-count li");
-        var this_li = this;
-        var li_index = $(this).index() + 1;
-        console.log(li_index);
-        myOrderNav(li_index);
-        console.log("设置cookie成功");
-        window.location.href = "myOrder.html";
-    })
+            console.log(this);
+            var all_li = $(".has-shop-count li");
+            var this_li = this;
+            var li_index = $(this).index() + 1;
+            console.log(li_index);
+            myOrderNav(li_index);
+            console.log("设置cookie成功");
+            window.location.href = "myOrder.html";
+        })
+        //var test = document.querySelector(".big-banner-imgBox").outerHTML;
+
+    var String_test = "消息测试";
+    //弹出层
+
+    var baseMsg = function (String) {
+            layer.open({
+                className: 'base-msg-pop',
+                content: String,
+                time: '1.5',
+                shade: false
+            })
+        }
+        //baseMsg(String_test);
+
+
+
+    //getOrderMsg(imgURL, second, province);
+    //getOrderMsg("http://www.atool.org/placeholder.png?size=50x50&bg=fff", 10, "黑龙江");
 
 
 });

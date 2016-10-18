@@ -7,6 +7,10 @@
 @import "details-comment.less";
 @import "my.less";
 @import "order.less";
+@import "layer.less";
+@import "animate.less";
+
+
 html {
     font-size: 113.6px;
 }
@@ -450,3 +454,25 @@ button {
 }
 
 a.bigBtn {}
+
+
+
+
+
+.base-msg-pop {
+    background-color: rgba(20, 20, 20, .75);
+    width: 20% !important;
+    .layui-m-layercont {
+            padding: 0;
+            line-height: 22px;
+            text-align: center;
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            padding: unit(10/@base-px-2-rem, rem);
+            letter-spacing: 1px;
+            
+    }
+}
