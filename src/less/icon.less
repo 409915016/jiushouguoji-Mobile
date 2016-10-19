@@ -371,48 +371,72 @@ i.icon {
         width: unit(@my-page-icon-size-small/@base-px-2-rem, rem);
         height: unit(@my-page-icon-size-small/@base-px-2-rem, rem);
     }
+    /********************
 
-
+    QQ 微信
+    
+    ********************/
     &.qq {
         background-image: url("@{icon-address}/qq.png");
         width: unit((@my-page-icon-size + 1)/@base-px-2-rem, rem);
         height: unit((@my-page-icon-size + 1)/@base-px-2-rem, rem);
     }
-
     &.wechat {
         background-image: url("@{icon-address}/wechat.png");
         width: unit((@my-page-icon-size + 1)/@base-px-2-rem, rem);
         height: unit((@my-page-icon-size + 1)/@base-px-2-rem, rem);
     }
+    /********************
 
+    登陆页面 输入框 
+    
+    ********************/
     &.account {
         background-image: url("@{icon-address}/account.png");
         margin: 0 unit(25/@base-px-2-rem, rem);
         width: unit(@input-icon/@base-px-2-rem, rem);
         height: unit(@input-icon/@base-px-2-rem, rem);
     }
-
     &.passward {
         background-image: url("@{icon-address}/passward.png");
         margin: 0 unit(25/@base-px-2-rem, rem);
         width: unit(@input-icon/@base-px-2-rem, rem);
         height: unit(@input-icon/@base-px-2-rem, rem);
     }
+    /********************
 
+    支付方式 支付宝 通联
+    
+    ********************/
     &.allinpay {
         background-image: url("@{icon-address}/allinpay.png");
         margin: 0 unit(25/@base-px-2-rem, rem);
         width: unit(@input-icon/@base-px-2-rem, rem);
         height: unit(@input-icon/@base-px-2-rem, rem);
     }
-
-
     &.alipay {
         background-image: url("@{icon-address}/alipay.png");
         margin: 0 unit(25/@base-px-2-rem, rem);
         width: unit(@input-icon/@base-px-2-rem, rem);
         height: unit(@input-icon/@base-px-2-rem, rem);
     }
+    /********************
 
+    订单详情
     
+    ********************/
+    &.truck {
+        background-image: url("@{icon-address}/truck.png");
+        //大
+        margin: unit(10/@base-px-2-rem, rem) unit(25/@base-px-2-rem, rem);
+        width: unit((@input-icon+ 80)/@base-px-2-rem, rem);
+        height: unit((@input-icon+80)/@base-px-2-rem, rem);
+    }
+    &.location {
+        background-image: url("@{icon-address}/location.png"); //小
+        margin: 0 unit(25/@base-px-2-rem, rem);
+        margin-top: unit(8/@base-px-2-rem, rem);
+        width: unit((@input-icon - 10)/@base-px-2-rem, rem);
+        height: unit((@input-icon - 10)/@base-px-2-rem, rem);
+    }
 }

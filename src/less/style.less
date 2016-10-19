@@ -9,8 +9,6 @@
 @import "order.less";
 @import "layer.less";
 @import "animate.less";
-
-
 html {
     font-size: 113.6px;
 }
@@ -26,10 +24,13 @@ a {
     display: block;
 }
 
-p {
-    &.text-red {
-        color: @text-red;
-    }
+
+.text-red {
+    color: @text-red;
+}
+
+.text-black {
+    color: #333;
 }
 
 textarea {
@@ -352,7 +353,7 @@ div.swiper-product {
 .base-mt-wrapper {
     .make-2X2-product-box();
     //have product-box-wrapper 
-    >p::first-of-type {}
+
 }
 
 
@@ -388,6 +389,9 @@ div.swiper-product {
     &.pt-40 {
         padding-top: unit( 40 /@base-px-2-rem, rem);
     }
+    &.no-tbpdding {
+        padding: 0 unit(40/@base-px-2-rem, rem);
+    }
 }
 
 .base-mt-wrapper() {
@@ -395,6 +399,30 @@ div.swiper-product {
     margin-top: unit(@base-mt/@base-px-2-rem, rem);
     background-color: #fff;
     overflow: hidden;
+}
+
+.base-wrapper {
+    //defluat 140
+    //margin-top: unit(@base-mt/@base-px-2-rem, rem);
+    background-color: #fff;
+    overflow: hidden;
+    border-bottom: 1px solid @border-color-gray-light;
+    padding: unit(20/@base-px-2-rem, rem) unit(40/@base-px-2-rem, rem);
+    &.no-thing {
+        padding: 0;
+    }
+}
+
+.base-wrapper() {
+    //defluat 140
+    //margin-top: unit(@base-mt/@base-px-2-rem, rem);
+    background-color: #fff;
+    overflow: hidden;
+    border-bottom: 1px solid @border-color-gray-light;
+    padding: unit(20/@base-px-2-rem, rem) unit(40/@base-px-2-rem, rem);
+    &.no-tbpdding {
+        padding: 0 unit(40/@base-px-2-rem, rem);
+    }
 }
 
 .base-pd-lr-wrapper {
@@ -453,26 +481,26 @@ button {
     border-radius: 5px;
 }
 
-a.bigBtn {}
 
+/************************
 
+通用消息提示
 
-
+************************/
 
 .base-msg-pop {
     background-color: rgba(20, 20, 20, .75);
-    width: 20% !important;
+    width: 35% !important;
     .layui-m-layercont {
-            padding: 0;
-            line-height: 22px;
-            text-align: center;
-            display: flex;
-            flex-flow: row nowrap;
-            justify-content: center;
-            align-items: center;
-            color: #fff;
-            padding: unit(10/@base-px-2-rem, rem);
-            letter-spacing: 1px;
-            
+        padding: 0;
+        line-height: 22px;
+        text-align: center;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        padding: unit(10/@base-px-2-rem, rem);
+        letter-spacing: 1px;
     }
 }

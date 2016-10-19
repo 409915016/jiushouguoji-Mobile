@@ -833,6 +833,26 @@ i.icon {
     我的页面  4个
     
     ********************/
+  /********************
+
+    QQ 微信
+    
+    ********************/
+  /********************
+
+    登陆页面 输入框 
+    
+    ********************/
+  /********************
+
+    支付方式 支付宝 通联
+    
+    ********************/
+  /********************
+
+    订单详情
+    
+    ********************/
 }
 i.icon.message {
   background-image: url("../img/icon/message@2x.png");
@@ -1065,6 +1085,19 @@ i.icon.alipay {
   margin: 0 0.22007042rem;
   width: 0.52816901rem;
   height: 0.52816901rem;
+}
+i.icon.truck {
+  background-image: url("../img/icon/truck.png");
+  margin: 0.08802817rem 0.22007042rem;
+  width: 1.23239437rem;
+  height: 1.23239437rem;
+}
+i.icon.location {
+  background-image: url("../img/icon/location.png");
+  margin: 0 0.22007042rem;
+  margin-top: 0.07042254rem;
+  width: 0.44014085rem;
+  height: 0.44014085rem;
 }
 /****************
 
@@ -2093,7 +2126,7 @@ div.collect > p {
   font-size: 14px;
   padding: 0.07042254rem 0;
 }
-.user-address-info p.user-real-name {
+.user-address-info p.user-real-name-phone {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2460,6 +2493,88 @@ button.half-btn {
   border-bottom-right-radius: 8px;
   background-color: #e9282e;
   color: #fff;
+}
+/****************
+
+订单详情
+
+****************/
+.order-details-state {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row nowrap;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0.17605634rem 0.35211268rem;
+}
+.order-details-state p {
+  font-size: 16px;
+  margin-left: 0.35211268rem;
+}
+.order-details-user-address {
+  padding: 0.17605634rem 0.35211268rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row nowrap;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+.order-details-user-address .user-address-info {
+  padding: 0;
+}
+.base-text-row {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row nowrap;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 15px;
+  color: #aaa;
+  padding: 0.30809859rem 0.35211268rem;
+  border-bottom: 1px solid #c8c7cc;
+}
+.base-text-row > span {
+  width: 50%;
+  text-align: left;
+}
+.base-text-row > span + span {
+  text-align: right;
+}
+.order-details-time-num {
+  font-size: 15px;
+}
+.order-details-time-num p {
+  padding: 0.13204225rem 0;
 }
 .layui-m-layer {
   position: relative;
@@ -2843,8 +2958,11 @@ body {
 a {
   display: block;
 }
-p.text-red {
+.text-red {
   color: #e9282e;
+}
+.text-black {
+  color: #333;
 }
 textarea {
   width: 100%;
@@ -3198,7 +3316,8 @@ div.swiper-product .swiper-slide:last-child p {
 产品容器
 
 ************************/
-.base-mt-wrapper > p {
+.base-mt-wrapper p.recommend,
+.base-mt-wrapper p.guess-you-like {
   width: 100%;
   text-align: center;
   height: 1.23239437rem;
@@ -3210,13 +3329,15 @@ div.swiper-product .swiper-slide:last-child p {
   font-weight: 500;
 }
 @media screen and (min-width: 768px) {
-  .base-mt-wrapper > p p {
+  .base-mt-wrapper p.recommend p,
+  .base-mt-wrapper p.guess-you-like p {
     font-size: 20px;
     letter-spacing: 2px;
   }
 }
 @media screen and (min-width: 768px) {
-  .base-mt-wrapper > p {
+  .base-mt-wrapper p.recommend,
+  .base-mt-wrapper p.guess-you-like {
     font-size: 20px;
     letter-spacing: 2px;
   }
@@ -3234,7 +3355,8 @@ div.swiper-product .swiper-slide:last-child p {
   overflow: hidden;
   /*精品推荐*/
 }
-.base-mt-wrapper > p {
+.base-mt-wrapper p.recommend,
+.base-mt-wrapper p.guess-you-like {
   width: 100%;
   text-align: center;
   height: 1.23239437rem;
@@ -3246,19 +3368,33 @@ div.swiper-product .swiper-slide:last-child p {
   font-weight: 500;
 }
 @media screen and (min-width: 768px) {
-  .base-mt-wrapper > p p {
+  .base-mt-wrapper p.recommend p,
+  .base-mt-wrapper p.guess-you-like p {
     font-size: 20px;
     letter-spacing: 2px;
   }
 }
 @media screen and (min-width: 768px) {
-  .base-mt-wrapper > p {
+  .base-mt-wrapper p.recommend,
+  .base-mt-wrapper p.guess-you-like {
     font-size: 20px;
     letter-spacing: 2px;
   }
 }
 .base-mt-wrapper.pt-40 {
   padding-top: 0.35211268rem;
+}
+.base-mt-wrapper.no-tbpdding {
+  padding: 0 0.35211268rem;
+}
+.base-wrapper {
+  background-color: #fff;
+  overflow: hidden;
+  border-bottom: 1px solid #c8c7cc;
+  padding: 0.17605634rem 0.35211268rem;
+}
+.base-wrapper.no-thing {
+  padding: 0;
 }
 .base-pd-lr-wrapper {
   background-color: #fff;
@@ -3314,10 +3450,14 @@ p.end-text {
     letter-spacing: 2px;
   }
 }
-.shopcar .base-mt-wrapper > p,
-.arrival .base-mt-wrapper > p,
-.wish .base-mt-wrapper > p,
-.collect .base-mt-wrapper > p {
+.shopcar .base-mt-wrapper p.recommend,
+.arrival .base-mt-wrapper p.recommend,
+.wish .base-mt-wrapper p.recommend,
+.collect .base-mt-wrapper p.recommend,
+.shopcar .base-mt-wrapper p.guess-you-like,
+.arrival .base-mt-wrapper p.guess-you-like,
+.wish .base-mt-wrapper p.guess-you-like,
+.collect .base-mt-wrapper p.guess-you-like {
   position: relative;
   width: 100%;
   text-align: center;
@@ -3330,27 +3470,39 @@ p.end-text {
   font-weight: 500;
 }
 @media screen and (min-width: 768px) {
-  .shopcar .base-mt-wrapper > p p,
-  .arrival .base-mt-wrapper > p p,
-  .wish .base-mt-wrapper > p p,
-  .collect .base-mt-wrapper > p p {
+  .shopcar .base-mt-wrapper p.recommend p,
+  .arrival .base-mt-wrapper p.recommend p,
+  .wish .base-mt-wrapper p.recommend p,
+  .collect .base-mt-wrapper p.recommend p,
+  .shopcar .base-mt-wrapper p.guess-you-like p,
+  .arrival .base-mt-wrapper p.guess-you-like p,
+  .wish .base-mt-wrapper p.guess-you-like p,
+  .collect .base-mt-wrapper p.guess-you-like p {
     font-size: 20px;
     letter-spacing: 2px;
   }
 }
 @media screen and (min-width: 768px) {
-  .shopcar .base-mt-wrapper > p,
-  .arrival .base-mt-wrapper > p,
-  .wish .base-mt-wrapper > p,
-  .collect .base-mt-wrapper > p {
+  .shopcar .base-mt-wrapper p.recommend,
+  .arrival .base-mt-wrapper p.recommend,
+  .wish .base-mt-wrapper p.recommend,
+  .collect .base-mt-wrapper p.recommend,
+  .shopcar .base-mt-wrapper p.guess-you-like,
+  .arrival .base-mt-wrapper p.guess-you-like,
+  .wish .base-mt-wrapper p.guess-you-like,
+  .collect .base-mt-wrapper p.guess-you-like {
     font-size: 20px;
     letter-spacing: 2px;
   }
 }
-.shopcar .base-mt-wrapper > p:after,
-.arrival .base-mt-wrapper > p:after,
-.wish .base-mt-wrapper > p:after,
-.collect .base-mt-wrapper > p:after {
+.shopcar .base-mt-wrapper p.recommend:after,
+.arrival .base-mt-wrapper p.recommend:after,
+.wish .base-mt-wrapper p.recommend:after,
+.collect .base-mt-wrapper p.recommend:after,
+.shopcar .base-mt-wrapper p.guess-you-like:after,
+.arrival .base-mt-wrapper p.guess-you-like:after,
+.wish .base-mt-wrapper p.guess-you-like:after,
+.collect .base-mt-wrapper p.guess-you-like:after {
   content: "";
   display: block;
   position: absolute;
@@ -3360,10 +3512,14 @@ p.end-text {
   width: 26%;
   background-color: #aaa;
 }
-.shopcar .base-mt-wrapper > p:before,
-.arrival .base-mt-wrapper > p:before,
-.wish .base-mt-wrapper > p:before,
-.collect .base-mt-wrapper > p:before {
+.shopcar .base-mt-wrapper p.recommend:before,
+.arrival .base-mt-wrapper p.recommend:before,
+.wish .base-mt-wrapper p.recommend:before,
+.collect .base-mt-wrapper p.recommend:before,
+.shopcar .base-mt-wrapper p.guess-you-like:before,
+.arrival .base-mt-wrapper p.guess-you-like:before,
+.wish .base-mt-wrapper p.guess-you-like:before,
+.collect .base-mt-wrapper p.guess-you-like:before {
   content: "";
   display: block;
   position: absolute;
@@ -3385,9 +3541,14 @@ button {
   color: #fff;
   border-radius: 5px;
 }
+/************************
+
+通用消息提示
+
+************************/
 .base-msg-pop {
   background-color: rgba(20, 20, 20, 0.75);
-  width: 20% !important;
+  width: 35% !important;
 }
 .base-msg-pop .layui-m-layercont {
   padding: 0;

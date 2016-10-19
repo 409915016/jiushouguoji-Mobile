@@ -7,6 +7,7 @@
 我的订单
 
 ****************/
+
 //order框架
 div.base-order {
     background-color: #fff;
@@ -194,6 +195,7 @@ div.base-order {
         color: @text-red;
     }
 }
+
 //支付方式
 .order-pay-way {
     //padding-bottom: unit(800/@base-px-2-rem, rem);
@@ -216,18 +218,19 @@ div.base-order {
         width: 90%;
     }
 }
+
 // 立即支付按钮
 .pay-btn {
     text-align: center;
     padding-top: 40%;
     padding-bottom: unit(200/@base-px-2-rem, rem);
     //35%
-
     //修复小屏幕显示
     @media screen and (max-height: 480px) {
         padding-top: 30%;
     }
 }
+
 //红色按钮
 button.half-btn {
     font-size: 18px;
@@ -241,4 +244,61 @@ button.half-btn {
     border-bottom-right-radius: 8px;
     background-color: @order-btn-color;
     color: #fff;
+}
+
+
+/****************
+
+订单详情
+
+****************/
+
+.order-details-state {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    padding: unit(20/@base-px-2-rem, rem) unit(40/@base-px-2-rem, rem);
+    p {
+        font-size: 16px;
+        margin-left: unit(40/@base-px-2-rem, rem);
+    }
+}
+
+.order-details-user-address {
+    padding: unit(20/@base-px-2-rem, rem) unit(40/@base-px-2-rem, rem);
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    .user-address-info {
+        padding: 0;
+    }
+}
+
+.base-text-row {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 15px;
+    //width: 100%;
+    color: @text-gray;
+    padding: unit(35/@base-px-2-rem, rem) unit(40/@base-px-2-rem, rem);
+    border-bottom: 1px solid@border-color-gray-light;
+    >span {
+        width: 50%;
+        text-align: left;
+        & + span {
+            text-align: right;
+        }
+    }
+}
+
+.order-details-time-num {
+    font-size: 15px;
+    p {
+         padding: unit(15/@base-px-2-rem, rem) 0;
+    }
+    
 }
