@@ -687,7 +687,6 @@ li[data-shop-count="0"]::before {
   height: 100%;
   -webkit-align-self: center;
       -ms-flex-item-align: center;
-              -ms-grid-row-align: center;
           align-self: center;
 }
 .order-comfirm-bar .order-comfirm-price {
@@ -1254,13 +1253,11 @@ i.icon.alipay {
   padding-left: 0.70422535rem;
   -webkit-align-self: center;
       -ms-flex-item-align: center;
-              -ms-grid-row-align: center;
           align-self: center;
 }
 .shopcar-product-count .shopcar-product-count-c {
   -webkit-align-self: center;
       -ms-flex-item-align: center;
-              -ms-grid-row-align: center;
           align-self: center;
 }
 .shopcar-product-count .shopcar-product-count-c span {
@@ -2276,7 +2273,6 @@ div.base-order:first-child {
   font-size: 14px;
   -webkit-align-self: center;
       -ms-flex-item-align: center;
-              -ms-grid-row-align: center;
           align-self: center;
 }
 .base-order-info .order-price-num p {

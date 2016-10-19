@@ -29,51 +29,30 @@ var getOrderMsg = function (imgURL, second, province) {
     get_order.classList.add('get-order-animated-set');
     get_order.classList.add('get-order-animated');
 
-    get_order.addEventListener("webkitAnimationEnd", function(){
+    get_order.addEventListener("webkitAnimationEnd", function () {
         this.classList.remove("get-order-animated-set");
         this.classList.remove("get-order-animated");
 
         //getOrderMsg("http://www.atool.org/placeholder.png?size=50x50&bg=fff", 10, "黑龙江");
     })
 
-    get_order.addEventListener("mozAnimationEnd", function(){
+    get_order.addEventListener("animationend", function () {
         this.classList.remove("get-order-animated-set");
         this.classList.remove("get-order-animated");
 
         //getOrderMsg("http://www.atool.org/placeholder.png?size=50x50&bg=fff", 10, "黑龙江");
     })
 
-    get_order.addEventListener("MSAnimationEnd", function(){
-        this.classList.remove("get-order-animated-set");
-        this.classList.remove("get-order-animated");
-
-        //getOrderMsg("http://www.atool.org/placeholder.png?size=50x50&bg=fff", 10, "黑龙江");
-    })
-
-
-    get_order.addEventListener("oanimationend", function(){
-        this.classList.remove("get-order-animated-set");
-        this.classList.remove("get-order-animated");
-
-        //getOrderMsg("http://www.atool.org/placeholder.png?size=50x50&bg=fff", 10, "黑龙江");
-    })
-
-    get_order.addEventListener("animationend", function(){
-        this.classList.remove("get-order-animated-set");
-        this.classList.remove("get-order-animated");
-
-        //getOrderMsg("http://www.atool.org/placeholder.png?size=50x50&bg=fff", 10, "黑龙江");
-    })
-
-
-
-
-    //get_order.style.opacity  = 1;
-    //get_order.style.display = "flex";
 
     get_order = null;
 }
 
+
+
+//我的页面 到 我的订单跳转
+function myOrderNav(navNum) {
+    document.cookie = "myOrderNav=" + navNum;
+}
 
 
 $(document).ready(function () {
@@ -140,10 +119,6 @@ $(document).ready(function () {
 
 
 
-    //我的页面 到 我的订单跳转
-    function myOrderNav(navNum) {
-        document.cookie = "myOrderNav=" + navNum;
-    }
     //$(".has-shop-count ul li").click = function() {
     //console(this);
     //myOrderNav(1);
@@ -158,16 +133,17 @@ $(document).ready(function () {
     }
 
     $(".has-shop-count ul li").on("click", function () {
-            console.log(this);
-            var all_li = $(".has-shop-count li");
-            var this_li = this;
-            var li_index = $(this).index() + 1;
-            console.log(li_index);
-            myOrderNav(li_index);
-            console.log("设置cookie成功");
-            window.location.href = "myOrder.html";
-        })
-        //var test = document.querySelector(".big-banner-imgBox").outerHTML;
+
+        console.log(this);
+        var all_li = $(".has-shop-count li");
+        var this_li = this;
+        var li_index = $(this).index() + 1;
+        console.log(li_index);
+        myOrderNav(li_index);
+        console.log("设置cookie成功");
+        window.location.href = "myOrder.html";
+    })
+
 
     var String_test = "消息测试";
     //弹出层
@@ -194,7 +170,7 @@ $(document).ready(function () {
     }
 
     timer();
-    
+
 
 
 });
