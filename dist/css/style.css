@@ -1727,6 +1727,11 @@ section.my-center-header-name .my-center-header-imgBox {
 }
 section.my-center-header-name .my-center-header-imgBox img {
   width: 100%;
+  border-radius: 50px;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
 }
 section.my-center-header-name .my-center-header-imgBox ~ p {
   font-size: 16px;
@@ -1736,7 +1741,7 @@ section.my-center-header-name .my-center-header-imgBox ~ p {
 个人中心 - 一行功能键 三个或者四个的容器
 
 ****************/
-section.my-center-row {
+.my-center-row {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1754,14 +1759,14 @@ section.my-center-row {
   padding: 0.35211268rem 0;
   border-bottom: 1px solid #b2b3b4;
 }
-section.my-center-row p {
+.my-center-row p {
   font-size: 15px;
 }
-section.my-center-row p:first-child {
+.my-center-row p:first-child {
   text-align: left;
   width: 30%;
 }
-section.my-center-row p:nth-child(2) {
+.my-center-row p:nth-child(2) {
   width: 45%;
   text-align: right;
   white-space: nowrap;
@@ -2060,6 +2065,15 @@ div.collect > p {
       -ms-flex-align: center;
           align-items: center;
 }
+.base-tips {
+  margin: 0.35211268rem 0.26408451rem 0;
+  padding: 0.26408451rem;
+  border-radius: 7px;
+  height: 2.20070423rem;
+  background-color: #eee;
+  color: #aaa;
+  font-size: 12px;
+}
 /****************
 
 收货地址
@@ -2212,6 +2226,26 @@ p.alert-red {
 关于我们
 
 ****************/
+.layui-m-layercont {
+  position: relative;
+  padding: 40px 30px !important;
+}
+.layui-m-layercont .wide-input {
+  border: 1px solid #e9282e;
+  padding: 0.22007042rem;
+  font-size: 14px;
+  width: 67%;
+  border-radius: 5px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.layui-m-layercont .half-btn {
+  margin-top: 0.39612676rem;
+  padding: 0.22007042rem;
+  width: 68%;
+}
 /****************
 
 我的订单
@@ -2575,6 +2609,9 @@ button.half-btn {
 }
 .order-details-time-num p {
   padding: 0.13204225rem 0;
+}
+.user-touch-select {
+  display: none;
 }
 .layui-m-layer {
   position: relative;

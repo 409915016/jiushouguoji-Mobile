@@ -47,7 +47,7 @@
 						
 					</div>-->
 				<p class="order-comfirm-price">合计：￥<span>73.00</span></p>
-				<a class="order-comfirm-btn" href="">确认订单</a>
+				<a class="order-comfirm-btn" href="myOrder.html">确认订单</a>
 			</div>
 		</div>
 		<!--fixed element end-->
@@ -143,13 +143,19 @@
 
 	</div>
 
+	<div class="user-touch-select">
 
-
+	</div>
 
 	<script>
         $(document).ready(function() {
             // $(".nav-buttom-bar ul li a i").removeClass("active");
             // $(".nav-buttom-bar ul li:nth-child(2) a i").addClass("active");
+			var aaa = get(".user-touch-select").innerHTML;
+			var user_add_c = get(".order-comfirm-user-add");
+			user_add_c.addEventListener("click", function(){
+				window.location.href = "myAddress.html";	
+			})
         });
     </script>
 

@@ -159,6 +159,7 @@ section.my-center-header-name {
         margin-bottom: unit(20/@base-px-2-rem, rem);
         img {
             width: 100%;
+            .make-border-radius(50px);
         }
         ~ p {
             font-size: 16px;
@@ -173,7 +174,7 @@ section.my-center-header-name {
 
 ****************/
 
-section.my-center-row {
+.my-center-row {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-around;
@@ -426,6 +427,19 @@ login-sign-wrapper
     }
 }
 
+//使用优惠券
+.base-tips {
+    margin: unit(40/@base-px-2-rem, rem) unit(30/@base-px-2-rem, rem) 0;
+    //width: 100%;
+    padding: unit(30/@base-px-2-rem, rem);
+    border-radius: 7px;
+    height: unit(250/@base-px-2-rem, rem);
+    background-color: #eee;
+    color: @text-gray;
+    font-size: 12px;
+    p {}
+}
+
 
 /****************
 
@@ -465,6 +479,7 @@ login-sign-wrapper
     }
 }
 
+
 /****************
 
 编辑收货地址
@@ -472,6 +487,7 @@ login-sign-wrapper
 通用
 
 ****************/
+
 .user-address-info {
     padding: unit(10/@base-px-2-rem, rem) unit(80/@base-px-2-rem, rem);
     p {
@@ -549,3 +565,23 @@ p.alert-red {
 关于我们
 
 ****************/
+
+//我的信息修改
+.layui-m-layercont {
+    position: relative;
+    padding: 40px 30px !important;
+    .wide-input {
+        border: 1px solid @order-btn-color;
+        padding: unit(25/@base-px-2-rem, rem);
+        font-size: 14px;
+        width: 67%;
+        .make-border-radius(5px);
+    }
+
+    .half-btn{
+        margin-top: unit(45/@base-px-2-rem, rem);
+        padding: unit(25/@base-px-2-rem, rem);
+        width: 68%;
+    }
+
+}

@@ -66,9 +66,10 @@ var getOrderMsg = function (imgURL, second, province) {
 
 *****************/
 
-function myOrderNav(navNum) {
+function SetMyOrderNav(navNum) {
     document.cookie = "myOrderNav=" + navNum;
 }
+
 
 /******************
 
@@ -86,6 +87,25 @@ var baseMsg = function (String) {
         shade: false
     })
 }
+
+
+/******************
+
+消息选择框
+
+baseSelect(String);
+
+*****************/
+
+var baseSelect = function (String) {
+    layer.open({
+        className: 'user-touch-select',
+        content: String,
+        time: '2',
+        shade: false
+    })
+}
+
 
 
 /******************
@@ -120,6 +140,22 @@ var SrolltoTop = function () {
         });
     });
 
+}
+
+
+
+
+function uesrExit() {
+    //底部对话框
+    layer.open({
+        content: '你确定要退出登陆吗？',
+        btn: ['退出', '取消'],
+        skin: 'footer',
+        yes: function (index) {
+            baseMsg("退出成功");
+            window.location.href = "index.html";
+        }
+    });
 }
 
 
@@ -165,26 +201,27 @@ $(document).ready(function () {
         $('.comment-single').eq($('.comment-select > span').index(_this)).show();
     });
 
+    /******************
 
+    我的页面 点击 到我的订单
+    读取点击的按钮序号 保存到cookie 中
+    跳转页面后再读取切换标签页
+
+    *****************/
 
     $(".has-shop-count ul li").on("click", function () {
-        console.log(this);
         var all_li = $(".has-shop-count li");
         var this_li = this;
         var li_index = $(this).index() + 1;
-        console.log(li_index);
-        myOrderNav(li_index);
-        console.log("设置cookie成功");
+        SetMyOrderNav(li_index);
+        //console.log("设置cookie成功");
         window.location.href = "myOrder.html";
     })
 
 
 
-
-
     //getOrderMsg(imgURL, second, province);
     getOrderMsg("http://www.atool.org/placeholder.png?size=50x50&bg=fff", 10, "黑龙江");
-
 
     function timer() {
         getOrderMsg();
@@ -196,4 +233,14 @@ $(document).ready(function () {
 
 
 
+
+
+
+
+
+
+
 });
+
+
+

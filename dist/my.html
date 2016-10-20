@@ -211,10 +211,10 @@
 					</li>
 
 					<li>
-						<a href="">
+						<a onclick="uesrExit()">
 							<i class="icon exit"></i>
 							<p>退出登录</p>
-						</a>
+						</a>	
 					</li>
 				</ul>
 			</section>
@@ -236,7 +236,11 @@
             shop_car_count[1].dataset.shopCount = "1";
             shop_car_count[2].dataset.shopCount = "1";
             shop_car_count[3].dataset.shopCount = "1";
-			myOrderNav(0);
+			//设置nav 为0
+			SetMyOrderNav(0);
+
+
+
           
             
         });
