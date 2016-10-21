@@ -148,10 +148,10 @@ textarea {
   -moz-appearance: none;
   outline: none;
   border: 0;
-  font-family: "Heiti SC", "微软雅黑", "SimSun", "宋体", "sans-serif";
+  font-family: "Helvetica Neue", "Helvetica", "STHeiTi", "Heiti SC", "微软雅黑", "SimSun", "宋体", "sans-serif";
 }
 body {
-  font-family: "Heiti SC", "微软雅黑", "SimSun", "宋体", "sans-serif";
+  font-family: "Helvetica Neue", "Helvetica", "STHeiTi", "Heiti SC", "微软雅黑", "SimSun", "宋体", "sans-serif";
   width: 100%;
 }
 section:before,
@@ -434,6 +434,39 @@ iframe {
 }
 .nav-buttom-bar.no-padding {
   padding: 0;
+}
+.nav-buttom-bar .nav-btn-wrapper {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row nowrap;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+}
+.nav-buttom-bar .nav-btn-wrapper > a {
+  height: 100%;
+  margin-left: 0.44014085rem;
+  background-color: #e9282e;
+  width: 25%;
+  padding: 0.35211268rem 0.35211268rem;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 15px;
+}
+.order-details-b-bar {
+  height: 1.18838028rem;
+  border: 0;
+  background-color: #ebebeb;
 }
 /************************
 
@@ -1877,6 +1910,7 @@ login-sign-wrapper
   background-color: transparent;
   font-size: 15px;
   line-height: 1.65;
+  line-height: normal;
 }
 .login-sign-wrapper section.other-way-login {
   width: 50%;
@@ -2178,7 +2212,7 @@ p.alert-red {
   background-color: #fff;
   font-size: 14px;
 }
-.user-input-list .input-list-row {
+.input-list-row {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2190,36 +2224,76 @@ p.alert-red {
   -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
   color: #a4a4a4;
   border-bottom: 1px solid #ebebeb;
   padding: 0.30809859rem 0.04401408rem;
 }
-.user-input-list .input-list-row span {
+.input-list-row > span {
   width: 20%;
 }
-.user-input-list .input-list-row input {
+.input-list-row > input {
   width: 80%;
+  line-height: normal;
   font-size: 14px;
+  padding: 0;
 }
-.user-input-list .input-list-row input::-webkit-input-placeholder {
+.input-list-row input::-webkit-input-placeholder {
   font-size: 14px;
   line-height: 1.15;
 }
-.user-input-list .input-list-row input:-moz-placeholder {
+.input-list-row input:-moz-placeholder {
   font-size: 14px;
   line-height: 1.15;
 }
-.user-input-list .input-list-row input::-moz-placeholder {
+.input-list-row input::-moz-placeholder {
   font-size: 14px;
   line-height: 1.15;
 }
-.user-input-list .input-list-row input:-ms-input-placeholder {
+.input-list-row input:-ms-input-placeholder {
   font-size: 14px;
   line-height: 1.15;
+}
+.input-list-row.has-radius {
+  border: 0;
+  background-color: #ebebeb;
+  margin-top: 0.44014085rem;
+  padding: 0.39612676rem 0.04401408rem;
+  border-radius: 5px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  font-size: 15px;
+  color: #333;
+}
+.input-list-row.has-radius > span {
+  width: 35%;
+  text-align: left;
+}
+.input-list-row.has-radius > span span {
+  padding: 0 0.26408451rem;
+  font-weight: 600;
+  font-size: 17px;
+}
+.input-list-row.has-radius > input,
+.input-list-row.has-radius select {
+  background-color: #ebebeb;
+  font-size: 15px;
+  width: 65%;
+  color: #333;
+  line-height: normal;
+}
+.input-list-row.has-radius:last-child {
+  padding: 0;
+}
+.input-list-row.has-radius > button {
+  width: 100%;
+  padding: 0.39612676rem 0;
+  background-color: #e9282e;
 }
 /****************
 
@@ -3432,6 +3506,10 @@ div.swiper-product .swiper-slide:last-child p {
 }
 .base-wrapper.no-thing {
   padding: 0;
+}
+.base-wrapper.no-tbpdding {
+  padding: 0 0.35211268rem;
+  border: 0;
 }
 .base-pd-lr-wrapper {
   background-color: #fff;

@@ -247,6 +247,31 @@
     &.no-padding {
         padding: 0;
     }
+    //订单详情下 的操作按钮
+    .nav-btn-wrapper {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-end;
+        align-items: center;
+        height: 100%;
+        > a {
+            height: 100%;
+            //height: unit( @nav-buttom-bar-height/@base-px-2-rem, rem);
+            margin-left: unit(50/@base-px-2-rem, rem);
+            background-color: @red-btn-color;
+            width: 25%;
+            padding: unit(40/@base-px-2-rem, rem) unit(40/@base-px-2-rem, rem);
+            border-radius: 5px;
+            color: #fff;
+            font-size: 15px;
+        }
+    }
+}
+
+.order-details-b-bar {
+    height: unit((@nav-buttom-bar-height - 35)/@base-px-2-rem, rem);
+    border: 0;
+    background-color: @border-color-gray-very-light;
 }
 
 
@@ -479,6 +504,7 @@ li[data-shop-count="0"] {
 就手收到订单
 
 ****************/
+
 #get-order {
     .make-fixed-bar(@nav-buttom-bar-height);
     padding: unit( 10/@base-px-2-rem, rem);
@@ -489,7 +515,6 @@ li[data-shop-count="0"] {
     height: unit( 120/@base-px-2-rem, rem);
     background-color: rgba(0, 0, 0, 0.2);
     font-size: 12px;
-    
     .make-border-radius(20px);
     display: flex;
     flex-flow: row nowrap;
@@ -497,7 +522,6 @@ li[data-shop-count="0"] {
     align-items: center;
     //display: none;
     opacity: 0;
-
     .get-order-imgBox {
         width: unit( 100/@base-px-2-rem, rem);
         height: unit( 100/@base-px-2-rem, rem);

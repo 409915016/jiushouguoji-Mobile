@@ -287,6 +287,7 @@ login-sign-wrapper
             font-size: 15px;
             //修复手机端输入提示偏上的问题
             line-height: 1.65;
+            line-height: normal;
         }
     }
     //其他登陆方式
@@ -523,38 +524,75 @@ p.alert-red {
     padding: 0 unit(30/@base-px-2-rem, rem) 0;
     background-color: #fff;
     font-size: 14px;
-    .input-list-row {
-        display: flex;
-        flex-flow: row nowrap;
-        justify-content: space-between;
-        align-items: center;
-        color: #a4a4a4;
-        border-bottom: 1px solid @border-color-gray-very-light;
-        padding: unit(35/@base-px-2-rem, rem) unit(5/@base-px-2-rem, rem);
-        span {
-            width: 20%;
+}
+
+//输入栏 通用
+.input-list-row {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: stretch;
+    color: #a4a4a4;
+    border-bottom: 1px solid @border-color-gray-very-light;
+    padding: unit(35/@base-px-2-rem, rem) unit(5/@base-px-2-rem, rem);
+    > span {
+        width: 20%;
+    }
+    > input {
+        width: 80%;
+        //修复手机端输入提示偏上的问题
+        line-height:normal;
+        font-size: 14px;
+        padding: 0;
+    }
+    input::-webkit-input-placeholder {
+        font-size: 14px;
+        line-height: 1.15;
+    }
+    input:-moz-placeholder {
+        font-size: 14px;
+        line-height: 1.15;
+    }
+    input::-moz-placeholder {
+        font-size: 14px;
+        line-height: 1.15;
+    }
+    input:-ms-input-placeholder {
+        font-size: 14px;
+        line-height: 1.15;
+    }
+    &.has-radius {
+        border: 0;
+        background-color: @border-color-gray-very-light;
+        margin-top: unit(50/@base-px-2-rem, rem);
+        padding: unit(45/@base-px-2-rem, rem) unit(5/@base-px-2-rem, rem);
+        .make-border-radius(5px);
+        font-size: 15px;
+        color: #333;
+        >span {
+            width: 35%;
+            //padding: 0 unit(55/@base-px-2-rem, rem);
+            text-align: left;
+            span {
+                padding: 0 unit(30/@base-px-2-rem, rem);
+                font-weight: 600;
+                font-size: 17px;
+            }
         }
-        input {
-            width: 80%;
-            //修复手机端输入提示偏上的问题
-            //line-height: 1;
-            font-size: 14px;
+        >input, select {
+            background-color: @border-color-gray-very-light;
+            font-size: 15px;
+            width: 65%;
+            color: #333;
+            line-height:normal
         }
-        input::-webkit-input-placeholder {
-            font-size: 14px;
-            line-height: 1.15;
+        &:last-child {
+            padding: 0;
         }
-        input:-moz-placeholder {
-            font-size: 14px;
-            line-height: 1.15;
-        }
-        input::-moz-placeholder {
-            font-size: 14px;
-            line-height: 1.15;
-        }
-        input:-ms-input-placeholder {
-            font-size: 14px;
-            line-height: 1.15;
+        > button {
+            width: 100%;
+            padding: unit(45/@base-px-2-rem, rem) 0;
+            background-color: @text-red;
         }
     }
 }
@@ -577,11 +615,9 @@ p.alert-red {
         width: 67%;
         .make-border-radius(5px);
     }
-
-    .half-btn{
+    .half-btn {
         margin-top: unit(45/@base-px-2-rem, rem);
         padding: unit(25/@base-px-2-rem, rem);
         width: 68%;
     }
-
 }
