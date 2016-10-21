@@ -298,16 +298,74 @@ button.half-btn {
 .order-details-time-num {
     font-size: 15px;
     p {
-         padding: unit(15/@base-px-2-rem, rem) 0;
+        padding: unit(15/@base-px-2-rem, rem) 0;
     }
-    
 }
 
-
-
-
 //
-
 .user-touch-select {
     display: none;
+}
+
+//消息页面
+.message-wrapper {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    section, .message-single {
+        margin-top: unit(40/@base-px-2-rem, rem);
+    }
+    .message-time {
+        background-color: @border-color-gray-very-light;
+        .make-border-radius(5px);
+        padding: unit(15/@base-px-2-rem, rem) unit(50/@base-px-2-rem, rem);
+        & + section {
+            margin-top: 0;
+        }
+    }
+    .message-block {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+        align-items: center;
+        width: 100%;
+        font-size: 15px;
+        span.message-sender {
+            align-self: flex-start;
+            position: relative;
+            padding-left: unit(50/@base-px-2-rem, rem);
+            &:before {
+                content: "";
+                display: block;
+                height: 12px;
+                width: 12px;
+                .make-border-radius(30px);
+                position: absolute;
+                top: 3px;
+                left: 0;
+                background-color: @border-color-gray-very-light;
+
+            }
+        }
+    }
+    .message-single {
+        width: 90%;
+        .make-border-radius(10px);
+        background-color: @border-color-gray-very-light;
+        padding: unit(15/@base-px-2-rem, rem) unit(50/@base-px-2-rem, rem);
+        padding-top: 0;
+        h3 {
+            font-weight: 500;
+        }
+        .message-title {
+            padding: unit(35/@base-px-2-rem, rem) 0;
+            border-bottom: 1px solid @border-color-gray-light;
+
+        }
+        .message-text {
+            padding: unit(35/@base-px-2-rem, rem) 0;
+            font-size: 15px;
+        }
+    }
 }
