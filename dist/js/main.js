@@ -83,7 +83,7 @@ var baseMsg = function (String) {
     layer.open({
         className: 'base-msg-pop',
         content: String,
-        time: '2',
+        //time: '2',
         shade: false
     })
 }
