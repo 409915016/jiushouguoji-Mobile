@@ -345,7 +345,6 @@ button.half-btn {
                 top: 3px;
                 left: 0;
                 background-color: @border-color-gray-very-light;
-
             }
         }
     }
@@ -361,11 +360,90 @@ button.half-btn {
         .message-title {
             padding: unit(35/@base-px-2-rem, rem) 0;
             border-bottom: 1px solid @border-color-gray-light;
-
         }
         .message-text {
             padding: unit(35/@base-px-2-rem, rem) 0;
             font-size: 15px;
         }
+    }
+}
+
+//物流查询
+.express-wrapper {
+    padding: unit(35/@base-px-2-rem, rem) unit(35/@base-px-2-rem, rem);
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    p {
+        font-size: 16px;
+        color: @border-color-gray;
+        line-height: 1.5;
+        padding: unit(10/@base-px-2-rem, rem) 0;
+        span {
+            padding-left: unit(30/@base-px-2-rem, rem);
+        }
+    }
+}
+
+.express-details {
+    //padding: unit(35/@base-px-2-rem, rem) unit(35/@base-px-2-rem, rem);
+    margin: unit(35/@base-px-2-rem, rem) unit(35/@base-px-2-rem, rem);
+    margin-left: unit(200/@base-px-2-rem, rem);
+    margin-top: 0;
+    position: relative;
+    .express-details-single {
+        padding: unit(30/@base-px-2-rem, rem) 0;
+        border-bottom: 1px solid @border-color-gray-very-light;
+        font-size: 13px;
+        position: relative;
+        p {
+            line-height: 1.55;
+        }
+        &:first-child {
+            color: @green;
+            //圆形
+            &:before {
+                content: "";
+                display: block;
+                height: 12px;
+                width: 12px;
+                .make-border-radius(30px);
+                position: absolute;
+                top: 16px;
+                left: -45px;
+                background-color: @green;
+                box-shadow: 0px 0px 0 3px @light-green;
+            }
+        }
+        &:last-child {
+            padding-bottom: 0;
+            border: 0;
+        }
+        //除第一之外的圆
+        &:before {
+            content: "";
+            display: block;
+            height: 9px;
+            width: 9px;
+            .make-border-radius(30px);
+            position: absolute;
+            top: 16px;
+            left: -44px;
+            background-color: @border-color-gray-light;
+            //box-shadow: 0px 0px 0 3px @light-green;
+        }
+    }
+    //线
+    &:before {
+        content: "";
+        display: block;
+        height: 100%;
+        width: 1px;
+        position: absolute;
+        top: 20px;
+        left: -40px;
+        background-color: @border-color-gray-light;
+        //box-shadow: 0px 0px 0 3px @light-green;
     }
 }

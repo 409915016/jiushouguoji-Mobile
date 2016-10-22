@@ -24,7 +24,6 @@ a {
     display: block;
 }
 
-
 .text-red {
     color: @text-red;
 }
@@ -353,7 +352,6 @@ div.swiper-product {
 .base-mt-wrapper {
     .make-2X2-product-box();
     //have product-box-wrapper 
-
 }
 
 
@@ -392,6 +390,9 @@ div.swiper-product {
     &.no-tbpdding {
         padding: 0 unit(40/@base-px-2-rem, rem);
     }
+    &.pd {
+        padding: unit(20/@base-px-2-rem, rem) unit(40/@base-px-2-rem, rem);
+    }
 }
 
 .base-mt-wrapper() {
@@ -413,11 +414,10 @@ div.swiper-product {
     }
     &.no-tbpdding {
         padding: 0 unit(40/@base-px-2-rem, rem);
-        border:0;
+        border: 0;
     }
     &.no-border {
-        border:0;
-
+        border: 0;
     }
 }
 
@@ -510,5 +510,6 @@ button {
         color: #fff;
         padding: unit(10/@base-px-2-rem, rem);
         letter-spacing: 1px;
+  ;
     }
 }

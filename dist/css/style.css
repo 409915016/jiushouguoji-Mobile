@@ -2300,11 +2300,11 @@ p.alert-red {
 关于我们
 
 ****************/
-.layui-m-layercont {
+.uesr-pop-change .layui-m-layercont {
   position: relative;
   padding: 40px 30px !important;
 }
-.layui-m-layercont .wide-input {
+.uesr-pop-change .layui-m-layercont .wide-input {
   border: 1px solid #e9282e;
   padding: 0.22007042rem;
   font-size: 14px;
@@ -2315,7 +2315,7 @@ p.alert-red {
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
 }
-.layui-m-layercont .half-btn {
+.uesr-pop-change .layui-m-layercont .half-btn {
   margin-top: 0.39612676rem;
   padding: 0.22007042rem;
   width: 68%;
@@ -2782,6 +2782,97 @@ button.half-btn {
 .message-wrapper .message-single .message-text {
   padding: 0.30809859rem 0;
   font-size: 15px;
+}
+.express-wrapper {
+  padding: 0.30809859rem 0.30809859rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: column nowrap;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+.express-wrapper p {
+  font-size: 16px;
+  color: #989898;
+  line-height: 1.5;
+  padding: 0.08802817rem 0;
+}
+.express-wrapper p span {
+  padding-left: 0.26408451rem;
+}
+.express-details {
+  margin: 0.30809859rem 0.30809859rem;
+  margin-left: 1.76056338rem;
+  margin-top: 0;
+  position: relative;
+}
+.express-details .express-details-single {
+  padding: 0.26408451rem 0;
+  border-bottom: 1px solid #ebebeb;
+  font-size: 13px;
+  position: relative;
+}
+.express-details .express-details-single p {
+  line-height: 1.55;
+}
+.express-details .express-details-single:first-child {
+  color: #25ae5f;
+}
+.express-details .express-details-single:first-child:before {
+  content: "";
+  display: block;
+  height: 12px;
+  width: 12px;
+  border-radius: 30px;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  position: absolute;
+  top: 16px;
+  left: -45px;
+  background-color: #25ae5f;
+  -webkit-box-shadow: 0px 0px 0 3px #b9e5cc;
+          box-shadow: 0px 0px 0 3px #b9e5cc;
+}
+.express-details .express-details-single:last-child {
+  padding-bottom: 0;
+  border: 0;
+}
+.express-details .express-details-single:before {
+  content: "";
+  display: block;
+  height: 9px;
+  width: 9px;
+  border-radius: 30px;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  position: absolute;
+  top: 16px;
+  left: -44px;
+  background-color: #c8c7cc;
+}
+.express-details:before {
+  content: "";
+  display: block;
+  height: 100%;
+  width: 1px;
+  position: absolute;
+  top: 20px;
+  left: -40px;
+  background-color: #c8c7cc;
 }
 .layui-m-layer {
   position: relative;
@@ -3593,6 +3684,9 @@ div.swiper-product .swiper-slide:last-child p {
 }
 .base-mt-wrapper.no-tbpdding {
   padding: 0 0.35211268rem;
+}
+.base-mt-wrapper.pd {
+  padding: 0.17605634rem 0.35211268rem;
 }
 .base-wrapper {
   background-color: #fff;
