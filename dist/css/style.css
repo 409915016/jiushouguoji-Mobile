@@ -2839,8 +2839,8 @@ button.half-btn {
   border-bottom-left-radius: 30px;
   border-bottom-right-radius: 30px;
   position: absolute;
-  top: 16px;
-  left: -45px;
+  top: 15px;
+  left: -41px;
   background-color: #25ae5f;
   -webkit-box-shadow: 0px 0px 0 3px #b9e5cc;
           box-shadow: 0px 0px 0 3px #b9e5cc;
@@ -2861,7 +2861,7 @@ button.half-btn {
   border-bottom-right-radius: 30px;
   position: absolute;
   top: 16px;
-  left: -44px;
+  left: -40px;
   background-color: #c8c7cc;
 }
 .express-details:before {
@@ -2871,7 +2871,7 @@ button.half-btn {
   width: 1px;
   position: absolute;
   top: 20px;
-  left: -40px;
+  left: -36px;
   background-color: #c8c7cc;
 }
 .layui-m-layer {
