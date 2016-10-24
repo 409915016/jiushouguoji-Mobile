@@ -108,11 +108,16 @@ Swiper 分页指示器颜色
     &.my-page {
         background-color: @my-page-bg-color;
         height: 100%;
+        margin-bottom: unit(120 /@base-px-2-rem, rem);
         //修复小屏幕显示页面显示不全
-        @media screen and (max-height: 480px) {
-            height: 100vh;
-            margin-bottom: unit(80 /@base-px-2-rem, rem);
+        @media screen and (max-height: 600px) {
+            height: 100%;
+            margin-bottom: unit(200 /@base-px-2-rem, rem);
         }
+        // @media screen and (min-height: 568px) {
+        //     height: 100%;
+        //     margin-bottom: unit(120 /@base-px-2-rem, rem);
+        // }
     }
     &.my-center {
         background-color: #fff;
@@ -130,6 +135,9 @@ Swiper 分页指示器颜色
         }
     }
 }
+
+//搜索页
+.product-search-wrapper {}
 
 
 /************************

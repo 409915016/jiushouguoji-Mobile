@@ -48,6 +48,12 @@
     form {
         display: inline-block;
         width: 72%;
+        &.flex {
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-around;
+            align-items: center;
+        }
     }
     .form-group {
         display: inline-block;
@@ -81,6 +87,61 @@
                 letter-spacing: 2px;
             }
         }
+    }
+    &.flex {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-around;
+        align-items: center;
+        .search-bar-submitBtn {
+            font-size: 16px;
+            display: block;
+            padding: unit(20/@base-px-2-rem, rem);
+        }
+        .form-group {
+            //修复弹出搜索页的搜索框样式
+            padding-top: unit((@search-area-blank+5)/@base-px-2-rem, rem);
+        }
+    }
+}
+
+.search-bar-back {
+    padding: unit(20/@base-px-2-rem, rem) unit(20/@base-px-2-rem, rem);
+}
+
+//搜索页内
+.search-keyword-wrapper {
+    margin-top: unit((@base-nav-bar-height)/@base-px-2-rem, rem);
+    padding: 0 unit(40/@base-px-2-rem, rem);
+}
+
+.search-keyword-row {
+    //修复 justify-content: space-between; 不两边对齐的问题
+    //取消该元素的 content: none;
+    &:after {
+        content: none;
+    }
+    &:before {
+        content: none;
+    }
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: unit(20/@base-px-2-rem, rem) 0;
+    width: 100%;
+    &:first-child {
+        justify-content: flex-start;
+        > a {
+            padding: unit(10/@base-px-2-rem, rem) unit(20/@base-px-2-rem, rem);
+            border: 1px solid #333;
+            .make-border-radius(10px);
+        }
+    }
+    > a {
+        padding: unit(10/@base-px-2-rem, rem) unit(20/@base-px-2-rem, rem);
+        border: 1px solid @border-color-gray-very-light;
+        .make-border-radius(10px);
     }
 }
 

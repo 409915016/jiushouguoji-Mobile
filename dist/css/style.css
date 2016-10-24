@@ -232,6 +232,22 @@ iframe {
   display: inline-block;
   width: 72%;
 }
+.search-bar form.flex {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row nowrap;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
 .search-bar .form-group {
   display: inline-block;
   vertical-align: initial;
@@ -262,6 +278,86 @@ iframe {
     font-size: 20px;
     letter-spacing: 2px;
   }
+}
+.search-bar.flex {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row nowrap;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.search-bar.flex .search-bar-submitBtn {
+  font-size: 16px;
+  display: block;
+  padding: 0.17605634rem;
+}
+.search-bar.flex .form-group {
+  padding-top: 0.13204225rem;
+}
+.search-bar-back {
+  padding: 0.17605634rem 0.17605634rem;
+}
+.search-keyword-wrapper {
+  margin-top: 1.32042254rem;
+  padding: 0 0.35211268rem;
+}
+.search-keyword-row {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row nowrap;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0.17605634rem 0;
+  width: 100%;
+}
+.search-keyword-row:after {
+  content: none;
+}
+.search-keyword-row:before {
+  content: none;
+}
+.search-keyword-row:first-child {
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+.search-keyword-row:first-child > a {
+  padding: 0.08802817rem 0.17605634rem;
+  border: 1px solid #333;
+  border-radius: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.search-keyword-row > a {
+  padding: 0.08802817rem 0.17605634rem;
+  border: 1px solid #ebebeb;
+  border-radius: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 .search-bar-menu {
   position: fixed;
@@ -3111,7 +3207,7 @@ section.door-comment .door-comment-star {
 }
 .layui-m-layermain {
   display: table;
-  font-family: Helvetica, arial, sans-serif;
+  font-family: "Helvetica Neue", "Helvetica", "STHeiTi", "Heiti SC", "微软雅黑", "SimSun", "宋体", "sans-serif";
   pointer-events: none;
 }
 .layui-m-layermain .layui-m-layersection {
@@ -3541,11 +3637,12 @@ Swiper 分页指示器颜色
 .main-wrapper.my-page {
   background-color: #f7f7f7;
   height: 100%;
+  margin-bottom: 1.05633803rem;
 }
-@media screen and (max-height: 480px) {
+@media screen and (max-height: 600px) {
   .main-wrapper.my-page {
-    height: 100vh;
-    margin-bottom: 0.70422535rem;
+    height: 100%;
+    margin-bottom: 1.76056338rem;
   }
 }
 .main-wrapper.my-center {
