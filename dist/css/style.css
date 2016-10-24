@@ -2172,6 +2172,7 @@ div.collect > p {
 }
 .user-address-single:first-child {
   border-top: 0;
+  margin-top: 0;
 }
 .user-address-single .user-address-select {
   display: -webkit-box;
@@ -2964,11 +2965,13 @@ button.half-btn {
   padding-left: 0.17605634rem;
 }
 .add-comment-navbar .add-comment-sent {
-  width: 30%;
+  width: 40%;
   height: 100%;
   line-height: 1.49647887rem;
   background-color: #e9282e;
   color: #fff;
+  font-size: 18px;
+  letter-spacing: 1px;
 }
 .add-comment-input {
   display: -webkit-box;
@@ -2982,20 +2985,23 @@ button.half-btn {
   -webkit-justify-content: flex-start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  -webkit-box-align: stretch;
-  -webkit-align-items: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 .add-comment-input .add-comment-imgBox {
   width: 2.81690141rem;
   height: 2.81690141rem;
+  font-size: 0;
 }
 .add-comment-input .add-comment-imgBox img {
   height: 100%;
+  width: 100%;
 }
 .add-comment-input textarea {
   height: 100%;
+  width: 65%;
   line-height: 1.5;
   font-size: 15px;
 }
@@ -3455,6 +3461,7 @@ body .layui-m-layer .layui-m-layer-msg {
 }
 html {
   font-size: 113.6px;
+  height: 100%;
 }
 body {
   background-color: #fff;
@@ -3477,6 +3484,7 @@ textarea {
 }
 .wrapper {
   width: 100%;
+  height: 100%;
   background-color: #f2f2f2;
   margin: 0 auto;
   max-width: 640px;
@@ -3533,6 +3541,12 @@ Swiper 分页指示器颜色
 .main-wrapper.my-page {
   background-color: #f7f7f7;
   height: 100%;
+}
+@media screen and (max-height: 480px) {
+  .main-wrapper.my-page {
+    height: 100vh;
+    margin-bottom: 0.70422535rem;
+  }
 }
 .main-wrapper.my-center {
   background-color: #fff;
@@ -3899,6 +3913,9 @@ div.swiper-product .swiper-slide:last-child p {
 .base-mt-wrapper.b-line {
   border-bottom: 1px solid #c8c7cc;
 }
+.base-mt-wrapper.no-mart {
+  margin-top: 0;
+}
 .base-wrapper {
   background-color: #fff;
   overflow: hidden;
@@ -3918,6 +3935,7 @@ div.swiper-product .swiper-slide:last-child p {
 .base-pd-lr-wrapper {
   background-color: #fff;
   padding: 0 0.35211268rem;
+  height: 100%;
 }
 .base-pd-tb-wrapper {
   background-color: #fff;

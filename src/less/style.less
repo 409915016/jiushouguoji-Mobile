@@ -11,6 +11,7 @@
 @import "animate.less";
 html {
     font-size: 113.6px;
+    height: 100%;
 }
 
 body {
@@ -39,11 +40,11 @@ textarea {
 
 .wrapper {
     width: 100%;
-    //height: 1000px;
+    height: 100%;
     background-color: @wrapper-bg-color;
     margin: 0 auto;
     max-width: @max-width;
-    //min-width: @min-width;
+    //height: auto;
 }
 
 
@@ -107,6 +108,11 @@ Swiper 分页指示器颜色
     &.my-page {
         background-color: @my-page-bg-color;
         height: 100%;
+        //修复小屏幕显示页面显示不全
+        @media screen and (max-height: 480px) {
+            height: 100vh;
+            margin-bottom: unit(80 /@base-px-2-rem, rem);
+        }
     }
     &.my-center {
         background-color: #fff;
@@ -396,6 +402,9 @@ div.swiper-product {
     &.b-line {
         border-bottom: 1px solid @border-color-gray-light;
     }
+    &.no-mart {
+        margin-top: 0;
+    }
 }
 
 .base-mt-wrapper() {
@@ -439,6 +448,7 @@ div.swiper-product {
 .base-pd-lr-wrapper {
     background-color: #fff;
     padding: 0 unit(@base-pd-lr/@base-px-2-rem, rem);
+    height: 100%;
 }
 
 .base-pd-tb-wrapper {
@@ -513,6 +523,6 @@ button {
         color: #fff;
         padding: unit(10/@base-px-2-rem, rem);
         letter-spacing: 1px;
-  ;
+        ;
     }
 }

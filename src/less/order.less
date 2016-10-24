@@ -468,29 +468,35 @@ button.half-btn {
         }
     }
     .add-comment-sent {
-        width: 30%;
+        width: 40%;
         height: 100%;
         line-height: unit(@nav-buttom-bar-height/@base-px-2-rem, rem);
         background-color: @red-btn-color;
         color: #fff;
+        font-size: 18px;
+        letter-spacing: 1px;
     }
 }
 
 .add-comment-input {
-    .add-comment-imgBox {
-        width: unit(320/@base-px-2-rem, rem);
-        height: unit(320/@base-px-2-rem, rem);
-        img {
-            //width: 100%;
-            height: 100%;
-        }
-    }
     display: flex;
     flex-flow: row nowrap;
     justify-content: flex-start;
-    align-items: stretch;
+    align-items: flex-start;
+
+
+    .add-comment-imgBox {
+        width: unit(320/@base-px-2-rem, rem);
+        height: unit(320/@base-px-2-rem, rem);
+        font-size: 0;
+        img {
+            height: 100%;
+            width: 100%;
+        }
+    }
     textarea {
         height: 100%;
+        width: 65%;
         line-height: 1.5;
         font-size: 15px;
     }
@@ -516,13 +522,12 @@ button.half-btn {
 }
 
 //店铺评价
-
 .add-door-comment {
     > p {
         font-size: 16px;
         padding: unit(30/@base-px-2-rem, rem) 0;
     }
-        height: 55vh;
+    height: 55vh;
 }
 
 section.door-comment {
