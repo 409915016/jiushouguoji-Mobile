@@ -886,6 +886,16 @@ i.icon {
     订单详情
     
     ********************/
+  /********************
+
+    发表评价
+    
+    ********************/
+  /********************
+
+    五星
+    
+    ********************/
 }
 i.icon.message {
   background-image: url("../img/icon/message@2x.png");
@@ -1131,6 +1141,46 @@ i.icon.location {
   margin-top: 0.07042254rem;
   width: 0.44014085rem;
   height: 0.44014085rem;
+}
+i.icon.bad {
+  background-image: url("../img/icon/bad.png");
+  width: 0.61619718rem;
+  height: 0.61619718rem;
+}
+i.icon.bad-gray {
+  background-image: url("../img/icon/bad-gray.png");
+  width: 0.61619718rem;
+  height: 0.61619718rem;
+}
+i.icon.good {
+  background-image: url("../img/icon/good.png");
+  width: 0.61619718rem;
+  height: 0.61619718rem;
+}
+i.icon.good-gray {
+  background-image: url("../img/icon/good-gray.png");
+  width: 0.61619718rem;
+  height: 0.61619718rem;
+}
+i.icon.not-good {
+  background-image: url("../img/icon/not-good.png");
+  width: 0.61619718rem;
+  height: 0.61619718rem;
+}
+i.icon.not-good-gray {
+  background-image: url("../img/icon/not-good-gray.png");
+  width: 0.61619718rem;
+  height: 0.61619718rem;
+}
+i.icon.star-gray {
+  background-image: url("../img/icon/star-gray.png");
+  width: 0.61619718rem;
+  height: 0.61619718rem;
+}
+i.icon.star-red {
+  background-image: url("../img/icon/star-red.png");
+  width: 0.61619718rem;
+  height: 0.61619718rem;
 }
 /****************
 
@@ -2874,6 +2924,165 @@ button.half-btn {
   left: -36px;
   background-color: #c8c7cc;
 }
+.add-comment-navbar {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row nowrap;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  padding-left: 0.44014085rem;
+  font-size: 15px;
+}
+.add-comment-navbar .add-comment-select {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row nowrap;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.add-comment-navbar .add-comment-select span {
+  padding-left: 0.17605634rem;
+}
+.add-comment-navbar .add-comment-sent {
+  width: 30%;
+  height: 100%;
+  line-height: 1.49647887rem;
+  background-color: #e9282e;
+  color: #fff;
+}
+.add-comment-input {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row nowrap;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+.add-comment-input .add-comment-imgBox {
+  width: 2.81690141rem;
+  height: 2.81690141rem;
+}
+.add-comment-input .add-comment-imgBox img {
+  height: 100%;
+}
+.add-comment-input textarea {
+  height: 100%;
+  line-height: 1.5;
+  font-size: 15px;
+}
+.add-comment-good {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row nowrap;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 0.44014085rem;
+  padding-bottom: 0.17605634rem;
+}
+.add-comment-good .comment-good {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row nowrap;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.add-comment-good .comment-good span {
+  padding-left: 0.26408451rem;
+  padding-top: 0.04401408rem;
+}
+.add-door-comment {
+  height: 55vh;
+}
+.add-door-comment > p {
+  font-size: 16px;
+  padding: 0.26408451rem 0;
+}
+section.door-comment {
+  padding: 0.13204225rem 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row nowrap;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+section.door-comment span {
+  width: 30%;
+  font-size: 14px;
+}
+section.door-comment .door-comment-star {
+  width: 70%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row nowrap;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
 .layui-m-layer {
   position: relative;
   z-index: 19891014;
@@ -3268,7 +3477,6 @@ textarea {
 }
 .wrapper {
   width: 100%;
-  height: 1000px;
   background-color: #f2f2f2;
   margin: 0 auto;
   max-width: 640px;
@@ -3687,6 +3895,9 @@ div.swiper-product .swiper-slide:last-child p {
 }
 .base-mt-wrapper.pd {
   padding: 0.17605634rem 0.35211268rem;
+}
+.base-mt-wrapper.b-line {
+  border-bottom: 1px solid #c8c7cc;
 }
 .base-wrapper {
   background-color: #fff;

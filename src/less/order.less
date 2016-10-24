@@ -447,3 +447,99 @@ button.half-btn {
         //box-shadow: 0px 0px 0 3px @light-green;
     }
 }
+
+//订单评论
+.add-comment-navbar {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding-left: unit(50/@base-px-2-rem, rem);
+    font-size: 15px;
+    .add-comment-select {
+        //width: 25%;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-around;
+        align-items: center;
+        span {
+            padding-left: unit(20/@base-px-2-rem, rem);
+        }
+    }
+    .add-comment-sent {
+        width: 30%;
+        height: 100%;
+        line-height: unit(@nav-buttom-bar-height/@base-px-2-rem, rem);
+        background-color: @red-btn-color;
+        color: #fff;
+    }
+}
+
+.add-comment-input {
+    .add-comment-imgBox {
+        width: unit(320/@base-px-2-rem, rem);
+        height: unit(320/@base-px-2-rem, rem);
+        img {
+            //width: 100%;
+            height: 100%;
+        }
+    }
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    textarea {
+        height: 100%;
+        line-height: 1.5;
+        font-size: 15px;
+    }
+}
+
+.add-comment-good {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: unit(50/@base-px-2-rem, rem);
+    padding-bottom: unit(20/@base-px-2-rem, rem);
+    .comment-good {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-around;
+        align-items: center;
+        span {
+            padding-left: unit(30/@base-px-2-rem, rem);
+            padding-top: unit(5/@base-px-2-rem, rem);
+        }
+    }
+}
+
+//店铺评价
+
+.add-door-comment {
+    > p {
+        font-size: 16px;
+        padding: unit(30/@base-px-2-rem, rem) 0;
+    }
+        height: 55vh;
+}
+
+section.door-comment {
+    padding: unit(15/@base-px-2-rem, rem) 0;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    span {
+        width: 30%;
+        font-size: 14px;
+    }
+    .door-comment-star {
+        width: 70%;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-around;
+        align-items: center;
+    }
+}
