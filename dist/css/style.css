@@ -371,6 +371,7 @@ iframe {
   z-index: 11;
   top: 1.15316901rem;
   left: 0.44014085rem;
+  display: none;
 }
 .search-bar-menu ul {
   border: 1px solid #aaa;
@@ -899,6 +900,26 @@ li[data-shop-count="0"]::before {
   #get-order {
     width: auto;
   }
+}
+/****************
+
+加入购物车
+
+****************/
+#TurnAround-img {
+  position: fixed;
+  z-index: 11;
+  width: 100%;
+  max-width: 640px;
+  height: 1.49647887rem;
+  background-color: #fff;
+  height: 1.32042254rem;
+  width: 1.32042254rem;
+  border-radius: 30px;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
 }
 i.icon {
   width: 0.79225352rem;
@@ -3555,12 +3576,102 @@ body .layui-m-layer .layui-m-layer-msg {
   -webkit-animation-name: get-order-animated-process;
   animation-name: get-order-animated-process;
 }
+/****************
+
+加入购物车 商品图 - 动画
+
+****************/
+.TurnAround-set {
+  -webkit-animation-duration: 0.8s;
+  animation-duration: 0.8s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+@-webkit-keyframes TurnAround {
+  0% {
+    bottom: 60%;
+    left: 45%;
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  20% {
+    bottom: 48%;
+    left: 39.4%;
+    -webkit-transform: rotate(720deg);
+            transform: rotate(720deg);
+  }
+  40% {
+    bottom: 36%;
+    left: 33.8%;
+    -webkit-transform: rotate(1440deg);
+            transform: rotate(1440deg);
+  }
+  60% {
+    bottom: 24%;
+    left: 28.2%;
+    -webkit-transform: rotate(2160deg);
+            transform: rotate(2160deg);
+  }
+  80% {
+    bottom: 12%;
+    left: 22.6%;
+    -webkit-transform: rotate(2880deg);
+            transform: rotate(2880deg);
+  }
+  100% {
+    bottom: 0%;
+    left: 17%;
+    -webkit-transform: rotate(3600deg);
+            transform: rotate(3600deg);
+  }
+}
+@keyframes TurnAround {
+  0% {
+    bottom: 60%;
+    left: 45%;
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  20% {
+    bottom: 48%;
+    left: 39.4%;
+    -webkit-transform: rotate(720deg);
+            transform: rotate(720deg);
+  }
+  40% {
+    bottom: 36%;
+    left: 33.8%;
+    -webkit-transform: rotate(1440deg);
+            transform: rotate(1440deg);
+  }
+  60% {
+    bottom: 24%;
+    left: 28.2%;
+    -webkit-transform: rotate(2160deg);
+            transform: rotate(2160deg);
+  }
+  80% {
+    bottom: 12%;
+    left: 22.6%;
+    -webkit-transform: rotate(2880deg);
+            transform: rotate(2880deg);
+  }
+  100% {
+    bottom: 0%;
+    left: 17%;
+    -webkit-transform: rotate(3600deg);
+            transform: rotate(3600deg);
+  }
+}
+.TurnAround-animated {
+  -webkit-animation-name: TurnAround;
+  animation-name: TurnAround;
+}
 html {
   font-size: 113.6px;
   height: 100%;
 }
 body {
-  background-color: #fff;
   height: 100%;
   background-color: #e6e6e6;
   color: #333;
@@ -3604,6 +3715,7 @@ Swiper 分页指示器颜色
   max-width: 640px;
   margin-top: 2.21830986rem;
   padding-bottom: 1.49647887rem;
+  background-color: #f2f2f2;
   overflow: hidden;
 }
 .main-wrapper.title-bar {
@@ -3655,6 +3767,9 @@ Swiper 分页指示器颜色
 }
 .main-wrapper.searchresult .base-product-label:last-of-type {
   border-bottom: 1px solid #b2b3b4;
+}
+.product-wrapper {
+  background-color: #f2f2f2;
 }
 /************************
 

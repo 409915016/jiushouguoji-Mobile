@@ -15,7 +15,6 @@ html {
 }
 
 body {
-    background-color: #fff;
     height: 100%;
     background-color: #e6e6e6;
     color: #333;
@@ -37,7 +36,7 @@ textarea {
     width: 100%;
     resize: none;
 }
-
+// body 下的容器
 .wrapper {
     width: 100%;
     height: 100%;
@@ -72,6 +71,7 @@ Swiper 分页指示器颜色
     max-width: @max-width;
     margin-top: unit((@search-bar-height + @nav-bar-height + 2)/@base-px-2-rem, rem);
     padding-bottom: unit((@nav-buttom-bar-height ) /@base-px-2-rem, rem);
+    background-color: @wrapper-bg-color;
     //test 
     overflow: hidden;
     //feature 只存在标题栏时，高度为 search-bar的高度
@@ -138,6 +138,11 @@ Swiper 分页指示器颜色
 
 //搜索页
 .product-search-wrapper {}
+
+//首页所有产品容器
+.product-wrapper {
+    background-color: @wrapper-bg-color;
+}
 
 
 /************************

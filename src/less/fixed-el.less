@@ -155,6 +155,7 @@
     z-index: 11;
     top: unit((@search-bar-height + 1) /@base-px-2-rem, rem);
     left: unit(50/@base-px-2-rem, rem);
+    display: none;
     ul {
         border: 1px solid @text-gray;
         border-radius: 8px;
@@ -601,4 +602,20 @@ li[data-shop-count="0"] {
         //width: unit( 980/@base-px-2-rem, rem);
         width: auto;
     }
+}
+
+
+/****************
+
+加入购物车
+
+****************/
+
+#TurnAround-img {
+    .make-fixed-bar(@nav-buttom-bar-height);
+    height: unit( 150/@base-px-2-rem, rem);
+    width: unit( 150/@base-px-2-rem, rem);
+    .make-border-radius(30px);
+
+    //display: none;
 }

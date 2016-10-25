@@ -42,6 +42,7 @@
 			<a href="">
 				<i class="icon scan fr"></i>
 			</a>
+			<!--弹出的菜单-->
 			<div class="search-bar-menu">
 				<ul>
 					<li>
@@ -112,9 +113,11 @@
 		<!--弹出搜索页面-->
 		<div class="product-search-wrapper no-display">
 			<div class="search-bar flex">
+				<!--关闭搜索页-->
 				<a class="search-bar-back">
 					<i class="icon back fl"></i>
 				</a>
+				<!--输入框容器-->
 				<form class="fl flex">
 					<div class="form-group">
 						<i class="icon search fl"></i>
@@ -122,8 +125,10 @@
 						<span class="vertical-line fl"></span>
 						<input type="text" id="product-search" name="keyword" class="fl" value="" placeholder="在千万海外商品中搜索"> </div>
 				</form>
+				<!--点击搜索商品-->
 				<a href="" class="search-bar-submitBtn"> 查询 </a>
 			</div>
+			<!--点击链接跳转搜索-->
 			<div class="search-keyword-wrapper">
 				<section class="search-keyword-row">
 					<a class="search-keyword-title">热搜</a>
@@ -181,6 +186,7 @@
 					<!--商品滑动-->
 					<div class="swiper-container swiper-product">
 						<div class="swiper-wrapper">
+							<!--滑动的单件商品-->
 							<div class="swiper-slide">
 								<a href="details.html">
 									<img src="img/meadjohnson-1.jpg">
@@ -322,9 +328,9 @@
 			//首页返回顶部
 			SrolltoTop();
 			//左边铃铛点击弹出下拉菜单
-			$(".search-bar-menu").hide();
+			//$(".search-bar-menu").hide();
 			$(".search-bar-more").click(function () {
-				$(".search-bar-menu").toggle("show");
+				$(".search-bar-menu").fadeToggle("fast", "linear");
 			});
 			$(".main-wrapper").click(function () {
 				$(".search-bar-menu").hide();

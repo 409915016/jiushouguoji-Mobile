@@ -70,7 +70,6 @@ function SetMyOrderNav(navNum) {
     document.cookie = "myOrderNav=" + navNum;
 }
 
-
 /******************
 
 消息弹出层
@@ -83,7 +82,7 @@ var baseMsg = function (String) {
     layer.open({
         className: 'base-msg-pop',
         content: String,
-        //time: '2',
+        time: '2',
         shade: false
     })
 }
@@ -142,6 +141,12 @@ var SrolltoTop = function () {
 
 }
 
+/******************
+
+用户退出
+
+*****************/
+
 function uesrExit() {
     //底部对话框
     layer.open({
@@ -156,8 +161,28 @@ function uesrExit() {
 }
 
 
-//设置当前页购物车内物品数量
-// 0 为不显示
+/******************
+ 
+就手收到订单测试
+
+*****************/
+
+
+function TestgetOrderMsg() {
+    getOrderMsg();
+    baseMsg("加入购物车成功");
+    setTimeout(timer, 7000);
+}
+
+
+/******************
+ 
+
+设置产品详情页内 购物车按钮物品数量
+ 0 为不显示
+
+*****************/
+
 function setShopCarNum(num) {
     var shop_car_count = $(".product-nav-bar ul li:nth-child(2)")[0];
     shop_car_count.dataset.shopCount = num;
@@ -167,77 +192,43 @@ function shopCarNumAdd() {
     var shop_car_count = $(".product-nav-bar ul li:nth-child(2)")[0];
     var addNum = Math.abs(shop_car_count.dataset.shopCount) + 1;
     shop_car_count.dataset.shopCount = addNum;
+
+
 }
 
 
 $(document).ready(function () {
 
-    //优惠券 页面切换
-    //通用组件
-    //选择器与页面同级
-    $('.switch-wrapper').hide();
-    $('.switch-wrapper').eq($('.nav-bar li').index($('.nav-bar li.active'))).show();
-    $('.nav-bar li').click(function () {
-        var _this = $(this);
-        $('.nav-bar li').removeClass('active');
-        _this.addClass('active');
-        $('.switch-wrapper').hide();
-        $('.switch-wrapper').eq($('.nav-bar li').index(_this)).show();
-    });
+});
 
 
+function shopcarTurnAround() {
+    TurnAround_img = get("#TurnAround-img");
+    imgSrc = get(".swiper-slide:first-child img").src;
+    TurnAround_img.src = imgSrc;
+    TurnAround_img.style.display = "block";
+    TurnAround_img.classList.add("TurnAround-animated");
+    TurnAround_img.classList.add("TurnAround-set");
 
-    //评论页 页面切换
-    $('.comment-single').hide();
-    $('.comment-single').eq($('.comment-select > span').index($('.comment-select > span.active'))).show();
-    $('.comment-select > span').click(function () {
-        var _this = $(this);
-        $('.comment-select > span').removeClass('active');
-        _this.addClass('active');
-        $('.comment-single').hide();
-        $('.comment-single').eq($('.comment-select > span').index(_this)).show();
-    });
+    TurnAround_img.addEventListener("webkitAnimationEnd", function () {
+        this.classList.remove("TurnAround-animated");
+        this.classList.remove("TurnAround-set");
+        this.style.display = "none";
+    }, false);
 
-    /******************
+    setTimeout(function () {
+        shopCarNumAdd();
+        baseMsg("加入购物车成功");
+    }, 1000);
+    
 
-    我的页面 点击 到我的订单
-    读取点击的按钮序号 保存到cookie 中
-    跳转页面后再读取切换标签页
 
-    *****************/
+}
 
-    $(".has-shop-count ul li").on("click", function () {
-        var all_li = $(".has-shop-count li");
-        var this_li = this;
-        var li_index = $(this).index() + 1;
-        SetMyOrderNav(li_index);
-        //console.log("设置cookie成功");
-        window.location.href = "myOrder.html";
+window.onload = function () {
+    addShopCarBtn = get("#addShopCar");
+    addShopCarBtn.addEventListener("click", function () {
+        shopcarTurnAround();
     })
 
-
-    //getOrderMsg(imgURL, second, province);
-    getOrderMsg("http://www.atool.org/placeholder.png?size=50x50&bg=fff", 10, "黑龙江");
-
-
-    function timer() {
-        getOrderMsg();
-        baseMsg("加入购物车成功");
-        setTimeout(timer, 7000);
-    }
-
-    timer();
-
-
-
-
-
-
-
-
-
-
-
-
-
-});
+}

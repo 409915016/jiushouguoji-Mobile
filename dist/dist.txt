@@ -1,0 +1,83 @@
+﻿dist
+│  about.html 关于我们 直接跳转到外部地址
+│  addComment.html 
+│  comment.html
+│  details.html
+│  dist.txt
+│  express.html
+│  favicon.jpg
+│  feature.html
+│  forget.html
+│  hot.html
+│  hotsell.html
+│  index-baby.html
+│  index-kongda.html
+│  index-maquillage.html
+│  index-state.html
+│  index.html
+│  login.html
+│  message.html
+│  my.html 
+│  myAddress.html
+│  myAddressAdd.html
+│  myArrival.html
+│  myCenter.html
+│  myCollect.html
+│  myCoupon.html
+│  myHistory.html
+│  myOrder.html
+│  myRefund.html
+│  myWish.html
+│  orderDetails.html
+│  orderInfo.html
+│  orderPay.html
+│  refund.html
+│  searchResult.html
+│  shopCar.html
+│  signin.html
+│  useCoupon.html
+│  
+├─css
+│      layer.css
+│      normalize.css
+│      normalize.min.css
+│      style.css
+│      style.css.map
+│      style.min.css
+│      swiper.min.css
+│      
+├─img
+│  │  banner-img.jpg
+│  │  meadjohnson-1.jpg
+│  │  meadjohnson.jpg
+│  │  state-banner.jpg
+│  │  state.jpg
+│  │  
+
+│  │          
+│  └─productLongPic
+│          1.jpg
+│          10.jpg
+│          11.jpg
+│          12.jpg
+│          13.jpg
+│          2.jpg
+│          3.jpg
+│          4.jpg
+│          5.jpg
+│          6.jpg
+│          7.jpg
+│          8.jpg
+│          9.jpg
+│          
+└─js
+        flexible.js
+        getActivityList.json
+        getNavList.json
+        jquery.min.js
+        jsonTest.js
+        layer.js
+        main.js
+        swiper.jquery.min.js
+        test.js
+        

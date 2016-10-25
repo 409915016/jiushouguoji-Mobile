@@ -14,18 +14,16 @@
 	<link rel="stylesheet" href="css/normalize.min.css">
 	<link rel="stylesheet" href="css/style.min.css">
 	<link rel="stylesheet" href="css/swiper.min.css">
-
 	<script src="js/jquery.min.js"></script>
 	<script src="js/flexible.js"></script>
-	<script src="js/swiper.jquery.min.js"></script><script src="js/layer.js"></script>
+	<script src="js/swiper.jquery.min.js"></script>
+	<script src="js/layer.js"></script>
 	<script src="js/main.js">
-    </script>
-
+	</script>
 </head>
 
 <body>
 	<div class="wrapper">
-
 		<!--fixed element-->
 		<!--文字头-->
 		<div class="base-nav-bar">
@@ -66,9 +64,7 @@
 				</li>
 			</ul>
 		</div>
-
 		<!--fixed element end-->
-
 		<!--可见页-->
 		<div class="main-wrapper title-bar my-page">
 			<!--登陆后点击进入个人信息页-->
@@ -76,16 +72,12 @@
 			<!--<a href="myCenter.html">-->
 			<section class="user-info-simple ">
 				<div class="user-header-imgBox">
-					<img src="http://www.atool.org/placeholder.png?size=50x50" alt="">
-				</div>
+					<img src="http://www.atool.org/placeholder.png?size=50x50" alt=""> </div>
 				<div class="user-name-custom no-display">
 					<p>jiushouguoji</p>
 					<p>test 123</p>
 				</div>
-				<div class="user-loginBox">
-					<button type="" onclick="location.href='login.html';">登陆</button>
-					<button type="" onclick="location.href='signin.html';">注册</button>
-				</div>
+				<div class="user-loginBox"> <button type="" onclick="location.href='login.html';">登陆</button> <button type="" onclick="location.href='signin.html';">注册</button>					</div>
 			</section>
 			<!--</a>-->
 			<section class="user-row">
@@ -118,12 +110,8 @@
 							<span>查看全部订单</span>
 							<i class="icon right"></i>
 						</div>
-
 					</section>
-
 				</a>
-
-
 			</div>
 			<!--查看全部订单-->
 			<section class="user-row has-shop-count">
@@ -146,7 +134,6 @@
 							<p>待收货</p>
 						</a>
 					</li>
-
 					<li>
 						<a href="javascript:void(0);">
 							<i class="icon comment"></i>
@@ -177,7 +164,6 @@
 								<p>优惠券</p>
 							</a>
 						</li>
-
 						<li>
 							<a href="myRefund.html">
 								<i class="icon refund"></i>
@@ -187,7 +173,6 @@
 					</ul>
 				</section>
 			</div>
-
 			<section class="user-row">
 				<ul>
 					<li>
@@ -210,43 +195,45 @@
 							<p>关于就手</p>
 						</a>
 					</li>
-
 					<li>
 						<a onclick="uesrExit()">
 							<i class="icon exit"></i>
 							<p>退出登录</p>
-						</a>	
+						</a>
 					</li>
 				</ul>
 			</section>
 			<!--<section class="user-row">
             </section>-->
-
 		</div>
 		<!--可见页 end-->
-
 	</div>
-
-
-
-
 	<script>
-        $(document).ready(function() {
-            var shop_car_count = $(".has-shop-count li");
-            shop_car_count[0].dataset.shopCount = "1";
-            shop_car_count[1].dataset.shopCount = "1";
-            shop_car_count[2].dataset.shopCount = "1";
-            shop_car_count[3].dataset.shopCount = "1";
+		$(document).ready(function () {
+			//我的页面 点击 到我的订单
+			
+			
+			$(".has-shop-count ul li").on("click", function () {
+				var all_li = $(".has-shop-count li");
+				var this_li = this;
+				var li_index = $(this).index() + 1;
+				//读取点击的按钮序号 保存到cookie 中
+				SetMyOrderNav(li_index);
+				//console.log("设置cookie成功");
+				window.location.href = "myOrder.html";
+			})
+			//跳转到 myOrder.html 页面后再读取切换标签页
+
+			//设置我的
+			var my_order_count = $(".has-shop-count li");
+			my_order_count[0].dataset.shopCount = "1";
+			my_order_count[1].dataset.shopCount = "1";
+			my_order_count[2].dataset.shopCount = "1";
+			my_order_count[3].dataset.shopCount = "1";
 			//设置nav 为0
 			SetMyOrderNav(0);
-
-
-
-          
-            
-        });
-    </script>
-
+		});
+	</script>
 </body>
 
 </html>

@@ -21,6 +21,7 @@
     animation-duration: 2s;
 }
 
+//就手收到订单动画时间
 .get-order-animated-set {
     -webkit-animation-duration: 5s;
     animation-duration: 5s;
@@ -28,6 +29,7 @@
     animation-fill-mode: both;
 }
 
+//就手收到订单动画过程
 @-webkit-keyframes get-order-animated-process {
     0% {
         opacity: 0;
@@ -61,4 +63,71 @@
 .get-order-animated {
     -webkit-animation-name: get-order-animated-process;
     animation-name: get-order-animated-process;
+}
+
+
+/****************
+
+加入购物车 商品图 - 动画
+
+****************/
+
+//加入购物车动画时间
+.TurnAround-set {
+    -webkit-animation-duration: 0.8s;
+    animation-duration: 0.8s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+// @-webkit-keyframes TurnAround {
+//     0% {
+//         opacity: 0;
+//     }
+//     20% {
+//         opacity: 1;
+//     }
+//     80% {
+//         opacity: 1;
+//     }
+//     100% {
+//         opacity: 0;
+//     }
+// }
+@keyframes TurnAround {
+    0% {
+        bottom: 60%;
+        left: 45%;
+        transform: rotate(0deg);
+    }
+    20% {
+        bottom: 48%;
+        left: 39.4%;
+        transform: rotate(720deg);
+    }
+    40% {
+        bottom: 36%;
+        left: 33.8%;
+        transform: rotate(1440deg);
+    }
+    60% {
+        bottom: 24%;
+        left: 28.2%;
+        transform: rotate(2160deg);
+    }
+    80% {
+        bottom: 12%;
+        left: 22.6%;
+        transform: rotate(2880deg);
+    }
+    100% {
+        bottom: 0%;
+        left: 17%;
+        transform: rotate(3600deg);
+    }
+}
+
+.TurnAround-animated {
+    -webkit-animation-name: TurnAround;
+    animation-name: TurnAround;
 }
