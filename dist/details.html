@@ -71,11 +71,8 @@
                 <span class="get-order-second">8</span>秒前收到来自
                 <span class="get-order-province">广东</span>的一张订单</p>
         </div>
-
-
         <!--加入购物车动画-->
         <img id="TurnAround-img" src="" alt="">
-
         <!--fixed element end-->
         <!--可见页-->
         <div class="main-wrapper title-bar">
@@ -271,24 +268,20 @@
     </script>
     <script>
         //设置显示的购物车内商品数量
-        setShopCarNum(7);
+        setShopCarNum(0);
         //显示的购物车内商品数量 + 1 
         shopCarNumAdd();
-
-
         //就手收到订单
         //getOrderMsg(imgURL, second, province);
         //getOrderMsg("http://www.atool.org/placeholder.png?size=50x50&bg=fff", 10, "黑龙江");
-        
         //循环测试用
         //TestgetOrderMsg();
-
         //消息提示
         //baseMsg("加入购物车成功");
-
-
-        
-
+        addShopCarBtn = get("#addShopCar");
+        addShopCarBtn.addEventListener("click", function () {
+            shopcarTurnAround();
+        })
     </script>
 </body>
 

@@ -226,9 +226,6 @@ function shopcarTurnAround() {
 }
 
 window.onload = function () {
-    addShopCarBtn = get("#addShopCar");
-    addShopCarBtn.addEventListener("click", function () {
-        shopcarTurnAround();
-    })
+ 
 
 }
