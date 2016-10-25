@@ -854,7 +854,7 @@ li[data-shop-count="0"]::before {
   left: 0.70422535rem;
   width: auto;
   height: 1.05633803rem;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.35);
   font-size: 12px;
   border-radius: 20px;
   border-top-left-radius: 20px;

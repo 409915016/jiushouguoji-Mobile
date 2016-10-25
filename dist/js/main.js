@@ -29,7 +29,7 @@ var getOrderMsg = function (imgURL, second, province) {
     var province = arguments[2] ? arguments[2] : "广东";
     //imgURL
     var get_order_img = document.querySelector(".get-order-imgBox img");
-    get_order_img.attributes[0].nodeValue = imgURL;
+    get_order_img.src = imgURL;
     //second
     var get_order_second = document.querySelector(".get-order-second");
     get_order_second.innerHTML = second;
@@ -142,9 +142,6 @@ var SrolltoTop = function () {
 
 }
 
-
-
-
 function uesrExit() {
     //底部对话框
     layer.open({
@@ -159,21 +156,21 @@ function uesrExit() {
 }
 
 
+//设置当前页购物车内物品数量
+// 0 为不显示
+function setShopCarNum(num) {
+    var shop_car_count = $(".product-nav-bar ul li:nth-child(2)")[0];
+    shop_car_count.dataset.shopCount = num;
+}
+
+function shopCarNumAdd() {
+    var shop_car_count = $(".product-nav-bar ul li:nth-child(2)")[0];
+    var addNum = Math.abs(shop_car_count.dataset.shopCount) + 1;
+    shop_car_count.dataset.shopCount = addNum;
+}
+
+
 $(document).ready(function () {
-
-    //首页返回顶部
-    SrolltoTop();
-
-    //左边铃铛
-
-    $(".search-bar-menu").hide();
-    $(".search-bar-more").click(function () {
-        $(".search-bar-menu").toggle("show");
-    });
-
-    $(".main-wrapper").click(function () {
-        $(".search-bar-menu").hide();
-    });
 
     //优惠券 页面切换
     //通用组件
@@ -219,9 +216,9 @@ $(document).ready(function () {
     })
 
 
-
     //getOrderMsg(imgURL, second, province);
     getOrderMsg("http://www.atool.org/placeholder.png?size=50x50&bg=fff", 10, "黑龙江");
+
 
     function timer() {
         getOrderMsg();
@@ -232,7 +229,7 @@ $(document).ready(function () {
     timer();
 
 
-    
+
 
 
 
@@ -244,6 +241,3 @@ $(document).ready(function () {
 
 
 });
-
-
-
