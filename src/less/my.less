@@ -605,11 +605,19 @@ p.alert-red {
 
 ****************/
 
-//我的信息修改
-.uesr-pop-change {
+
+/****************
+
+编辑用户信息
+
+****************/
+
+//点击修改用户信息按钮弹出窗口
+.uesr-change-pop {
+    position: relative;
     .layui-m-layercont {
-        position: relative;
-        padding: 40px 30px !important;
+        //position: relative;
+        padding: 20px 30px !important;
         .wide-input {
             border: 1px solid @order-btn-color;
             padding: unit(25/@base-px-2-rem, rem);
@@ -618,9 +626,73 @@ p.alert-red {
             .make-border-radius(5px);
         }
         .half-btn {
-            margin-top: unit(45/@base-px-2-rem, rem);
+            margin-top: unit(60/@base-px-2-rem, rem);
             padding: unit(25/@base-px-2-rem, rem);
-            width: 68%;
+            width: 78%;
+            //margin-left: unit(55/@base-px-2-rem, rem);
         }
+    }
+    form {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+        align-items: stretch;
+        p {
+            padding: unit(25/@base-px-2-rem, rem) unit(30/@base-px-2-rem, rem);
+            align-self: flex-start;
+        }
+        //单个布局
+        section.input-block {
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: flex-start;
+            align-items: stretch;
+            padding-bottom: unit(35/@base-px-2-rem, rem);
+        }
+    }
+    
+    .select-block {
+        border: 1px solid @order-btn-color;
+        .make-border-radius(5px);
+        //padding: unit(25/@base-px-2-rem, rem);
+        width: 73%;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-around;
+        align-items: center;
+        select.user-sex {
+            //width: 30%;
+            padding: 0 unit(200/@base-px-2-rem, rem);
+            //text-indent: 23vw;
+        }
+        select.user-bday {
+            width: 33%;
+            text-indent: 4vw;
+        }
+    }
+}
+
+.change-user-info-close {
+    position: absolute;
+    top: unit(5/@base-px-2-rem, rem);
+    right: unit(5/@base-px-2-rem, rem);
+    width: unit(1/@base-px-2-rem, rem);
+    height: unit(1/@base-px-2-rem, rem);
+    padding: unit(50/@base-px-2-rem, rem);
+    &:after, &:before {
+        content: "";
+        position: relative;
+        width: 23px;
+        height: 3px;
+        background-color: #ccc;
+        display: block;
+        left: -12px;
+    }
+    &:after {
+        margin-top: -3px;
+        transform: rotate(45deg);
+    }
+    &:before {
+        transform: rotate(135deg);
     }
 }

@@ -30,8 +30,7 @@
 				<i class="icon back fl"></i>
 			</a>
 			<p>个人中心</p>
-			<a class="" href="index.html">
-				修改
+			<a class="" id="change-user-infoBtn"> 修改
 				<!--<i class="icon back fl"></i>-->
 			</a>
 		</div>
@@ -41,28 +40,39 @@
 		<div class="main-wrapper title-bar my-center">
 			<!--修改用户信息弹出窗-->
 			<!--修改用户名-->
-			<div class="pop-wrapper no-display  change-user-name-block">
-				<input type="text" class="wide-input user-name-input">
+			<div class="pop-wrapper no-display  change-user-info-block">
+				<div class="change-user-info-close"></div>
+				<form action="">
+					<section class="input-block">
+						<p>昵称</p>
+						<input type="text" class="wide-input user-name-input"> </section>
+					<section class="input-block">
+						<p>签名</p>
+						<input type="text" class="wide-input user-name-input"> </section>
+					<section class="input-block">
+						<p>性别</p>
+						<div class="select-block"> <select class="user-sex">
+						<option value="男">男</option>
+						<option value="女">女</option>
+					</select> </div>
+					</section>
+					<section class="input-block">
+						<p>生日</p>
+						<div class="select-block"> <select class="user-bday">
+						<option value="男">1990</option>
+						<option value="女">1990</option>
+					</select> <select class="user-bday">
+						<option value="男">10</option>
+						<option value="女">10</option>
+					</select> <select class="user-bday">
+						<option value="男">01</option>
+						<option value="女">01</option>
+					</select> </div>
+					</section>
+				</form>
 				<button type="" class="half-btn change-user-name">提交</button>
 			</div>
-			<!--修改签名-->
-			<div class="pop-wrapper no-display  change-user-say-block">
-				<input type="text" class="wide-input user-say-input">
-				<button type="" class="half-btn change-user-say">提交</button>
-			</div>
-			<!--修改生日-->
-			<div class="pop-wrapper no-display  change-user-bday-block">
-				<select>
-					<option value="1994">1994</option>
-				</select>
-				<select>
-					<option value="04">04</option>
-				</select>
-				<select>
-					<option value="06">06</option>
-				</select>
-				<button type="" class="half-btn change-user-bday">提交</button>
-			</div>
+			<!--修改用户信息弹出窗 end -->
 			<section class="my-center-header-name">
 				<div class="my-center-header-imgBox">
 					<img src="http://www.atool.org/placeholder.png?size=50x50" alt=""> </div>
@@ -77,27 +87,22 @@
 				<section class="my-center-row">
 					<p>昵称</p>
 					<p>就手国际</p>
-					
 				</section>
 				<section class="my-center-row">
 					<p>签名</p>
 					<p>222222222222</p>
-					
 				</section>
 				<section class="my-center-row">
 					<p>性别</p>
 					<p>男</p>
-					
 				</section>
 				<section class="my-center-row">
 					<p>生日</p>
 					<p>2016-01-08</p>
-					
 				</section>
 				<section class="my-center-row" onclick=" window.location.href = 'forget.html';">
 					<p>重置密码</p>
 					<p> </p>
-					
 				</section>
 			</div>
 		</div>

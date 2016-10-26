@@ -228,5 +228,5 @@ function shopcarTurnAround() {
 }
 
 window.onload = function () {
-
+    
 }
