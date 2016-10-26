@@ -202,6 +202,8 @@ $(document).ready(function () {
 });
 
 
+
+
 function shopcarTurnAround() {
     TurnAround_img = get("#TurnAround-img");
     imgSrc = get(".swiper-slide:first-child img").src;
@@ -220,12 +222,11 @@ function shopcarTurnAround() {
         shopCarNumAdd();
         baseMsg("加入购物车成功");
     }, 1000);
-    
+
 
 
 }
 
 window.onload = function () {
- 
 
 }

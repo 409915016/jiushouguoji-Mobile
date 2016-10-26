@@ -1105,6 +1105,12 @@ i.icon.details-collect {
   width: 0.79225352rem;
   height: 0.79225352rem;
 }
+i.icon.collect-red {
+  background-image: url("../img/icon/collect-red.png");
+  margin-top: 0.04401408rem;
+  width: 0.79225352rem;
+  height: 0.79225352rem;
+}
 i.icon.details-shopcar {
   background-image: url("../img/icon/details-shopcar-1.jpg");
   margin-top: 0.04401408rem;

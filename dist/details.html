@@ -37,7 +37,7 @@
         <div class="product-nav-bar">
             <ul>
                 <li>
-                    <a class="" href="">
+                    <a class="">
                         <i class="icon details-collect "></i>
                         <p>收藏</p>
                     </a>
@@ -57,8 +57,10 @@
                 </li>
                 <li>
                     <a class="" id="addShopCar">
+                        <!--商品存在以下三种状态 -->
                         <!--<p>到货提醒</p>-->
-                        <p>加入购物车</p>
+                        <p>加入心愿单</p>
+                        <!--<p>加入购物车</p>-->
                     </a>
                 </li>
             </ul>
@@ -279,8 +281,37 @@
         //消息提示
         //baseMsg("加入购物车成功");
         addShopCarBtn = get("#addShopCar");
+        addShopCaP = get("#addShopCar p").innerHTML;
         addShopCarBtn.addEventListener("click", function () {
-            shopcarTurnAround();
+            if (addShopCaP == "到货提醒") {
+                //数据处理
+                baseMsg( addShopCaP + "成功");
+            }
+            if (addShopCaP == "加入心愿单") {
+                //数据处理
+                baseMsg( addShopCaP + "成功");
+            }
+            if (addShopCaP == "加入购物车") {
+                //数据处理
+                shopcarTurnAround();
+            }
+        })
+        addmyCollectBtn = get(".product-nav-bar a:first-child");
+        myCollectIcon = get(".product-nav-bar a:first-child i");
+        addmyCollectBtn.addEventListener("click", function () {
+            //数据处理
+            //取消收藏
+            if (myCollectIcon.classList.contains("collect-red")) {
+                console.log(myCollectIcon.classList.contains("collect-red"));
+                myCollectIcon.classList.remove("collect-red");
+                myCollectIcon.classList.add("details-collect");
+                baseMsg("取消收藏成功");
+            } else {
+                //添加收藏
+                myCollectIcon.classList.remove("details-collect");
+                myCollectIcon.classList.add("collect-red");
+                baseMsg("添加收藏成功");
+            }
         })
     </script>
 </body>
