@@ -67,8 +67,15 @@ var getOrderMsg = function (imgURL, second, province) {
 *****************/
 
 function SetMyOrderNav(navNum) {
-    document.cookie = "myOrderNav=" + navNum;
+
+    //cookie
+    //document.cookie = "myOrderNav=" + navNum;
+    //localStorage
+    localStorage.setItem("myOrderNav",navNum);
+    
 }
+
+
 
 /******************
 
@@ -228,5 +235,5 @@ function shopcarTurnAround() {
 }
 
 window.onload = function () {
-    
+
 }

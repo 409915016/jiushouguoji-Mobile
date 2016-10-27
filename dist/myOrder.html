@@ -424,13 +424,15 @@
 				$('.switch-wrapper').eq($('.nav-bar li').index(_this)).show();
 			});
 			//读取Cookie
-			var myCookie = document.cookie.replace(/(?:(?:^|.*;\s*)myOrderNav\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+			//var myCookie = document.cookie.replace(/(?:(?:^|.*;\s*)myOrderNav\s*\=\s*([^;]*).*$)|^.*$/, "$1");
 			//从Cookie取出切换的nav值
-			var SetNavActive = $(".nav-bar li").get(myCookie);
+			//var SetNavActive = $(".nav-bar li").get(myCookie);
+			//读取localStorage
+			var SetNavActive = $(".nav-bar li").get(parseInt(localStorage.getItem("myOrderNav")));
 			//切换标签页
 			SetNavActive.click();
 			//重置Cookie为0
-			SetMyOrderNav(0);
+			//SetMyOrderNav(0);
 		});
 	</script>
 </body>
