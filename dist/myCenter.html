@@ -39,8 +39,8 @@
 		<!--可见页-->
 		<div class="main-wrapper title-bar my-center">
 			<!--修改用户信息弹出窗-->
-			<!--修改用户名-->
 			<div class="pop-wrapper no-display  change-user-info-block">
+				<!--关闭按钮-->
 				<div class="change-user-info-close"></div>
 				<form action="">
 					<section class="input-block">
@@ -58,15 +58,15 @@
 					</section>
 					<section class="input-block">
 						<p>生日</p>
-						<div class="select-block"> <select class="user-bday">
-						<option value="男">1990</option>
-						<option value="女">1990</option>
-					</select> <select class="user-bday">
-						<option value="男">10</option>
-						<option value="女">10</option>
-					</select> <select class="user-bday">
-						<option value="男">01</option>
-						<option value="女">01</option>
+						<div class="select-block"> <select class="user-bday" id="user-bday-year">
+						<option value="1990">1990</option>
+						<option value="1991">1991</option>
+					</select> <select class="user-bday" id="user-bday-month">
+						<option value="10">10</option>
+						<option value="9">9</option>
+					</select> <select class="user-bday" id="user-bday-date">
+						<option value="01">01</option>
+						<option value="01">01</option>
 					</select> </div>
 					</section>
 				</form>
@@ -104,6 +104,7 @@
 					<p>重置密码</p>
 					<p> </p>
 				</section>
+
 			</div>
 		</div>
 		<!--可见页 end-->

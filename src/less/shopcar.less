@@ -4,6 +4,19 @@
 
 /****************
 
+购物车  另外的商家
+
+****************/
+
+.shopcar-door {
+    &:first-child {
+        margin-top: 0;
+    }
+}
+
+
+/****************
+
 商家名称
 
 ****************/
@@ -127,6 +140,22 @@
 
 ****************/
 
+.wrapper {
+    input[type="checkbox"] {
+        display: none;
+    }
+    input:checked {
+        & ~ label i {
+            background-image: url("@{icon-address}/checked.png");
+        }
+    }
+    label {
+        display: block;
+    }
+}
+
+.main-wrapper {}
+
 .shopcar-product-count {
     width: 100%;
     display: flex;
@@ -185,5 +214,3 @@
         background-color: @comment-select-bt-base-bg;
     }
 }
-
-

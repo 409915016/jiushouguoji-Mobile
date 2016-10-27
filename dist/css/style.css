@@ -1307,6 +1307,14 @@ i.icon.star-red {
 }
 /****************
 
+购物车  另外的商家
+
+****************/
+.shopcar-door:first-child {
+  margin-top: 0;
+}
+/****************
+
 商家名称
 
 ****************/
@@ -1465,6 +1473,15 @@ i.icon.star-red {
 单件商品 单价 + 数量 
 
 ****************/
+.wrapper input[type="checkbox"] {
+  display: none;
+}
+.wrapper input:checked ~ label i {
+  background-image: url("../img/icon/checked.png");
+}
+.wrapper label {
+  display: block;
+}
 .shopcar-product-count {
   width: 100%;
   display: -webkit-box;
@@ -2541,6 +2558,7 @@ p.alert-red {
       -ms-flex-align: stretch;
           align-items: stretch;
   padding-bottom: 0.30809859rem;
+  position: relative;
 }
 .uesr-change-pop .select-block {
   border: 1px solid #e9282e;
@@ -2566,12 +2584,21 @@ p.alert-red {
           align-items: center;
 }
 .uesr-change-pop .select-block select.user-sex {
-  padding: 0 1.76056338rem;
+  padding: 0 2.20070423rem;
 }
 .uesr-change-pop .select-block select.user-bday {
   width: 33%;
-  text-indent: 4vw;
+  text-indent: 0.66021127rem;
 }
+.uesr-change-pop .select-block select.user-bday:first-child {
+  text-indent: 0.44014085rem;
+}
+/****************
+
+修改用户信息
+弹出窗关闭按钮
+
+****************/
 .change-user-info-close {
   position: absolute;
   top: 0.04401408rem;

@@ -648,9 +648,10 @@ p.alert-red {
             justify-content: flex-start;
             align-items: stretch;
             padding-bottom: unit(35/@base-px-2-rem, rem);
+            position: relative;
         }
     }
-    
+    //下拉输入
     .select-block {
         border: 1px solid @order-btn-color;
         .make-border-radius(5px);
@@ -660,17 +661,28 @@ p.alert-red {
         flex-flow: row nowrap;
         justify-content: space-around;
         align-items: center;
+        //四个下拉选择 
         select.user-sex {
-            //width: 30%;
-            padding: 0 unit(200/@base-px-2-rem, rem);
-            //text-indent: 23vw;
+            padding: 0 unit(250/@base-px-2-rem, rem);
         }
+        //生日年月日
         select.user-bday {
             width: 33%;
-            text-indent: 4vw;
+            text-indent: unit(75/@base-px-2-rem, rem);
+            &:first-child {
+                text-indent: unit(50/@base-px-2-rem, rem);
+            }
         }
     }
 }
+
+
+/****************
+
+修改用户信息
+弹出窗关闭按钮
+
+****************/
 
 .change-user-info-close {
     position: absolute;
