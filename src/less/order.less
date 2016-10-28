@@ -87,14 +87,14 @@ div.base-order {
         }
     }
 }
-
+//合计
 .base-order-total {
     font-size: 14px;
     p {
         text-align: right;
     }
 }
-
+//订单操作按钮
 .base-order-btn-row {
     display: flex;
     flex-flow: row nowrap;
@@ -103,7 +103,7 @@ div.base-order {
     padding-top: 0;
     > a {
         margin-left: unit(50/@base-px-2-rem, rem);
-        background-color: @red-btn-color;
+        background-color: @red;
         padding: unit(25/@base-px-2-rem, rem) unit(40/@base-px-2-rem, rem);
         border-radius: 5px;
         color: #fff;
@@ -145,7 +145,7 @@ div.base-order {
     }
 }
 
-//一次下单的所有商品列表
+//下单的所有商品列表
 .order-comfirm-list {
     background-color: @my-page-bg-color;
 }
@@ -179,7 +179,7 @@ div.base-order {
 
 /****************
 
-支付订单
+支付订单页
 
 ****************/
 
@@ -190,9 +190,8 @@ div.base-order {
     justify-content: space-between;
     align-items: center;
     font-size: 15px;
-    .pay-price {}
     p + p {
-        color: @text-red;
+        color: @red;
     }
 }
 
@@ -242,14 +241,14 @@ button.half-btn {
     border-top-right-radius: 8px;
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
-    background-color: @order-btn-color;
+    background-color: @red;
     color: #fff;
 }
 
 
 /****************
 
-订单详情
+订单详情页
 
 ****************/
 
@@ -307,7 +306,13 @@ button.half-btn {
     display: none;
 }
 
-//消息页面
+
+/************************
+
+消息页面
+
+************************/
+
 .message-wrapper {
     display: flex;
     flex-flow: column nowrap;
@@ -367,8 +372,12 @@ button.half-btn {
         }
     }
 }
+/************************
 
-//物流查询
+物流查询页面
+
+************************/
+
 .express-wrapper {
     padding: unit(35/@base-px-2-rem, rem) unit(35/@base-px-2-rem, rem);
     display: flex;
@@ -448,7 +457,13 @@ button.half-btn {
     }
 }
 
-//订单评论
+
+/************************
+
+订单评论页面
+
+************************/
+
 .add-comment-navbar {
     display: flex;
     flex-flow: row nowrap;
@@ -471,7 +486,7 @@ button.half-btn {
         width: 40%;
         height: 100%;
         line-height: unit(@nav-buttom-bar-height/@base-px-2-rem, rem);
-        background-color: @red-btn-color;
+        background-color: @red;
         color: #fff;
         font-size: 18px;
         letter-spacing: 1px;
@@ -521,7 +536,12 @@ button.half-btn {
     }
 }
 
-//店铺评价
+/************************
+
+店铺评价
+
+************************/
+
 .add-door-comment {
     > p {
         font-size: 16px;

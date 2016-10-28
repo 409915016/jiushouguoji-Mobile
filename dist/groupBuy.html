@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="zh-cmn-Hans">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="renderer" content="webkit">
+	<title>我的团</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="renderer" content="webkit">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no" />
+	<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+	<meta content="telephone=no" name="format-detection" />
+	<link rel="Shortcut Icon" href="favicon.jpg" />
+	<link rel="stylesheet" href="css/normalize.min.css">
+	<link rel="stylesheet" href="css/style.min.css">
+	<link rel="stylesheet" href="css/swiper.min.css">
+	<script src="js/jquery.min.js"></script>
+	<script src="js/flexible.js"></script>
+	<script src="js/swiper.jquery.min.js"></script>
+	<script src="js/layer.js"></script>
+	<script src="js/main.js">
+	</script>
+</head>
+
+<body>
+	<div class="wrapper">
+		<!--fixed element-->
+		<!--文字头-->
+		<div class="base-nav-bar">
+			<a class="" href="my.html">
+				<i class="icon back fl"></i>
+			</a>
+			<p>我的团</p>
+			<a class="no-visible" href="index.html">
+				<i class="icon back fl"></i>
+			</a>
+		</div>
+		<!--顶部导航栏-->
+		<div class="nav-bar on-base-title ">
+			<ul class="">
+				<li class="active">
+					<a>全部</a>
+				</li>
+				<li>
+					<a>拼团中</a>
+				</li>
+				<li>
+					<a>拼团成功</a>
+				</li>
+				<li>
+					<a>拼团失败</a>
+				</li>
+
+			</ul>
+		</div>
+		<!--fixed element end-->
+		<!--可见页-->
+		<div class="main-wrapper h-title-bar no-b-nav myorder">
+			<!--全部订单-->
+			<!--switch-wrapper 全部订单 待付款 待发货等切换页-->
+			<!--base-order 单张订单内商品 可存在多个商品-->
+			<!--base-order 内含下面所有-->
+			<!--base-order-date-state 该订单时间和状态-->
+			<!--base-order-info 单个商品图 和 单价数量 内有order-imgBox order-price-num -->
+			<!--base-order-total 整张订单的总价以及件数-->
+			<!--base-order-btn-row 订单操作按钮容器-->
+			<section class="switch-wrapper">
+				<!--base-order 订单页通用块-->
+				<!--已取消的订单 无法点击进入订单详情-->
+				<div class="base-order">
+					<div class="base-order-date-state">
+						<span class="base-order-date">2016-04-16</span>
+						<span class="base-order-state">已取消</span>
+					</div>
+					<!--base-order 同家商店多件商品重复使用-->
+					<div class="base-order-info">
+						<!--base-order-info 一种商品显示-->
+						<!--商品图-->
+						<div class="order-imgBox">
+							<img src="img\meadjohnson-1.jpg" alt=""> </div>
+						<p>【6罐装】港版美赞臣 Meadjohson 4段奶粉 900g （3-6岁宝宝）</p>
+						<!--商品价格数量-->
+						<div class="order-price-num">
+							<p class="">￥
+								<span>115.00</span>
+							</p>
+							<p class="base-order-price">×
+								<span>3</span>
+							</p>
+						</div>
+					</div>
+					<div class="base-order-info">
+						<div class="order-imgBox">
+							<img src="img\meadjohnson-1.jpg" alt=""> </div>
+						<p>【6罐装】港版美赞臣 Meadjohson 4段奶粉 900g （3-6岁宝宝）</p>
+						<div class="order-price-num">
+							<p class="">￥
+								<span>115.00</span>
+							</p>
+							<p class="base-order-price">×
+								<span>3</span>
+							</p>
+						</div>
+					</div>
+					<div class="base-order-total">
+						<p>共
+							<span>1</span>件
+							<span>&nbsp;&nbsp;&nbsp;&nbsp;商品总价￥:</span>
+							<span>392.00</span>
+						</p>
+					</div>
+				</div>
+				<div class="base-order">
+					<div class="base-order-date-state">
+						<span>2016-04-16</span>
+						<span>已取消</span>
+					</div>
+					<div class="base-order-info">
+						<div class="order-imgBox">
+							<img src="img\meadjohnson-1.jpg" alt=""> </div>
+						<p>【6罐装】港版美赞臣 Meadjohson 4段奶粉 900g （3-6岁宝宝）</p>
+						<div class="order-price-num">
+							<p>￥
+								<span>115.00</span>
+							</p>
+							<p class="base-order-price">×
+								<span>3</span>
+							</p>
+						</div>
+					</div>
+					<div class="base-order-total">
+						<p>共
+							<span>1</span>件
+							<span>&nbsp;&nbsp;&nbsp;&nbsp;商品总价￥:</span>
+							<span>392.00</span>
+						</p>
+					</div>
+				</div>
+			</section>
+			<!--待付款-->
+			<section class="switch-wrapper">
+				<!--base-order 订单页通用块-->
+				<div class="base-order">
+					<div class="base-order-date-state">
+						<span class="base-order-date">2016-04-16</span>
+						<span class="base-order-state">待付款</span>
+					</div>
+					<!--除已取消的订单 可以进入订单详情页-->
+					<a href="orderDetails.html" class="base-order-info">
+						<div class="order-imgBox">
+							<img src="img\meadjohnson-1.jpg" alt=""> </div>
+						<p>【6罐装】港版美赞臣 Meadjohson 4段奶粉 900g （3-6岁宝宝）</p>
+						<div class="order-price-num">
+							<p>￥
+								<span>115.00</span>
+							</p>
+							<p class="base-order-price">×
+								<span>3</span>
+							</p>
+						</div>
+					</a>
+					<div class="base-order-total">
+						<p>共
+							<span>1</span>件
+							<span>&nbsp;&nbsp;&nbsp;&nbsp;应付总款￥:</span>
+							<span>392.00</span>
+						</p>
+					</div>
+					<!--订单操作-->
+					<div class="base-order-btn-row">
+						<a href="">取消订单</a>
+						<a href="orderPay.html">立即支付</a>
+					</div>
+				</div>
+				<div class="base-order">
+					<div class="base-order-date-state">
+						<span class="base-order-date">2016-04-16</span>
+						<span class="base-order-state">待付款</span>
+					</div>
+					<a href="orderDetails.html" class="base-order-info">
+						<div class="order-imgBox">
+							<img src="img\meadjohnson-1.jpg" alt=""> </div>
+						<p>【6罐装】港版美赞臣 Meadjohson 4段奶粉 900g （3-6岁宝宝）</p>
+						<div class="order-price-num">
+							<p>￥
+								<span>115.00</span>
+							</p>
+							<p class="base-order-price">×
+								<span>3</span>
+							</p>
+						</div>
+					</a>
+					<div class="base-order-total">
+						<p>共
+							<span>1</span>件
+							<span>&nbsp;&nbsp;&nbsp;&nbsp;应付总款￥:</span>
+							<span>392.00</span>
+						</p>
+					</div>
+					<div class="base-order-btn-row">
+						<a href="">取消订单</a>
+						<a href="orderPay.html">立即支付</a>
+					</div>
+				</div>
+			</section>
+			<!--待发货-->
+			<section class="switch-wrapper">
+				<!--base-order 订单页通用块-->
+				<div class="base-order">
+					<div class="base-order-date-state">
+						<span class="base-order-date">2016-04-16</span>
+						<span class="base-order-state">待发货</span>
+					</div>
+					<!--除已取消的订单 可以进入订单详情页-->
+					<a href="orderDetails.html" class="base-order-info">
+						<div class="order-imgBox">
+							<img src="img\meadjohnson-1.jpg" alt=""> </div>
+						<p>【6罐装】港版美赞臣 Meadjohson 4段奶粉 900g （3-6岁宝宝）</p>
+						<div class="order-price-num">
+							<p>￥
+								<span>115.00</span>
+							</p>
+							<p class="base-order-price">×
+								<span>3</span>
+							</p>
+						</div>
+					</a>
+					<div class="base-order-total">
+						<p>共
+							<span>1</span>件
+							<span>&nbsp;&nbsp;&nbsp;&nbsp;已付款￥:</span>
+							<span>392.00</span>
+						</p>
+					</div>
+					<div class="base-order-btn-row">
+						<a href="message.html">正在审核</a>
+					</div>
+				</div>
+				<!--base-order 订单页通用块-->
+				<div class="base-order">
+					<div class="base-order-date-state">
+						<span class="base-order-date">2016-04-16</span>
+						<span class="base-order-state">待发货</span>
+					</div>
+					<!--除已取消的订单 可以进入订单详情页-->
+					<a href="orderDetails.html" class="base-order-info">
+						<div class="order-imgBox">
+							<img src="img\meadjohnson-1.jpg" alt=""> </div>
+						<p>【6罐装】港版美赞臣 Meadjohson 4段奶粉 900g （3-6岁宝宝）</p>
+						<div class="order-price-num">
+							<p>￥
+								<span>115.00</span>
+							</p>
+							<p class="base-order-price">×
+								<span>3</span>
+							</p>
+						</div>
+					</a>
+					<div class="base-order-total">
+						<p>共
+							<span>1</span>件
+							<span>&nbsp;&nbsp;&nbsp;&nbsp;已付款￥:</span>
+							<span>392.00</span>
+						</p>
+					</div>
+					<div class="base-order-btn-row">
+						<a href="">申请退款</a>
+					</div>
+				</div>
+			</section>
+			<!--待收货-->
+			<section class="switch-wrapper">
+				<!--base-order 订单页通用块-->
+				<div class="base-order">
+					<div class="base-order-date-state">
+						<span class="base-order-date">2016-04-16</span>
+						<span class="base-order-state">待收货</span>
+					</div>
+					<!--除已取消的订单 可以进入订单详情页-->
+					<a href="orderDetails.html" class="base-order-info">
+						<div class="order-imgBox">
+							<img src="img\meadjohnson-1.jpg" alt=""> </div>
+						<p>【6罐装】港版美赞臣 Meadjohson 4段奶粉 900g （3-6岁宝宝）</p>
+						<div class="order-price-num">
+							<p>￥
+								<span>115.00</span>
+							</p>
+							<p class="base-order-price">×
+								<span>3</span>
+							</p>
+						</div>
+					</a>
+					<div class="base-order-total">
+						<p>共
+							<span>1</span>件
+							<span>&nbsp;&nbsp;&nbsp;&nbsp;已付款￥:</span>
+							<span>392.00</span>
+						</p>
+					</div>
+					<div class="base-order-btn-row">
+						<a href="express.html">查看物流</a>
+						<a href="">确认收货</a>
+					</div>
+				</div>
+				<!--base-order 订单页通用块-->
+				<div class="base-order">
+					<div class="base-order-date-state">
+						<span class="base-order-date">2016-04-16</span>
+						<span class="base-order-state">待收货</span>
+					</div>
+					<!--除已取消的订单 可以进入订单详情页-->
+					<a href="orderDetails.html" class="base-order-info">
+						<div class="order-imgBox">
+							<img src="img\meadjohnson-1.jpg" alt=""> </div>
+						<p>【6罐装】港版美赞臣 Meadjohson 4段奶粉 900g （3-6岁宝宝）</p>
+						<div class="order-price-num">
+							<p>￥
+								<span>115.00</span>
+							</p>
+							<p class="base-order-price">×
+								<span>3</span>
+							</p>
+						</div>
+					</a>
+					<div class="base-order-total">
+						<p>共
+							<span>1</span>件
+							<span>&nbsp;&nbsp;&nbsp;&nbsp;已付款￥:</span>
+							<span>392.00</span>
+						</p>
+					</div>
+					<div class="base-order-btn-row">
+						<a href="express.html">查看物流</a>
+						<a href="">确认收货</a>
+					</div>
+				</div>
+			</section>
+
+		</div>
+		<!--可见页 end-->
+	</div>
+	<script>
+		$(document).ready(function () {
+			//我的订单页 页面切换
+			//选择器与页面同级
+			$('.switch-wrapper').hide();
+			$('.switch-wrapper').eq($('.nav-bar li').index($('.nav-bar li.active'))).show();
+			$('.nav-bar li').click(function () {
+				var _this = $(this);
+				$('.nav-bar li').removeClass('active');
+				_this.addClass('active');
+				$('.switch-wrapper').hide();
+				$('.switch-wrapper').eq($('.nav-bar li').index(_this)).show();
+			});
+		});
+	</script>
+</body>
+
+</html>

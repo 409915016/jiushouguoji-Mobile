@@ -177,8 +177,8 @@ function uesrExit() {
 
 function TestgetOrderMsg() {
     getOrderMsg();
-    baseMsg("加入购物车成功");
-    setTimeout(timer, 7000);
+    //baseMsg("加入购物车成功");
+    setTimeout( 'TestgetOrderMsg()' , 7000);
 }
 
 

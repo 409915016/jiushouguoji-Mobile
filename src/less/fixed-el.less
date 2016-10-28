@@ -209,19 +209,14 @@
             justify-content: space-around;
             align-items: center;
         }
-        li {
-            //width: 20%;
-        }
     }
     ul {
-        //display: block;
         display: flex;
         flex-flow: row nowrap;
         justify-content: space-around;
         align-items: center;
         padding: 0 unit(@base-pd-tb/@base-px-2-rem, rem);
         li {
-            //display: inline-block;
             &.active {
                 a {
                     color: red;
@@ -295,7 +290,7 @@
         }
     }
     &.red-btn {
-        background-color: @order-btn-color;
+        background-color: @red;
         border-top: 0;
         > a {
             display: block;
@@ -320,7 +315,7 @@
             height: 100%;
             //height: unit( @nav-buttom-bar-height/@base-px-2-rem, rem);
             margin-left: unit(50/@base-px-2-rem, rem);
-            background-color: @red-btn-color;
+            background-color: @red;
             width: 25%;
             padding: unit(40/@base-px-2-rem, rem) unit(40/@base-px-2-rem, rem);
             border-radius: 5px;
@@ -376,7 +371,7 @@
 
 /************************
 
-      商品详情页底部导航栏
+商品详情页底部导航栏
 
 ************************/
 
@@ -418,7 +413,7 @@
             &:last-child {
                 float: right;
                 width: 55%;
-                background-color: @text-red;
+                background-color: @red;
                 p {
                     line-height: unit(@product-nav-bar-height/@base-px-2-rem, rem);
                     font-size: 18px;
@@ -439,7 +434,7 @@
                     right: 0;
                     top: 5px;
                     font-size: 13px;
-                    color: @text-red;
+                    color: @red;
                     height: 13px;
                     width: 13px;
                 }
@@ -490,7 +485,7 @@ li[data-shop-count="0"] {
         p {
             font-size: 15px;
             &:first-child {
-                color: @text-red;
+                color: @red;
             }
             &:nth-child(2) {
                 color: @text-gray;
@@ -514,7 +509,7 @@ li[data-shop-count="0"] {
 ****************/
 
 .base-nav-buttom-bar-big-btn() {
-    background-color: @order-btn-color;
+    background-color: @red;
     height: 100%;
     text-align: center;
     line-height: unit(@nav-buttom-bar-height/@base-px-2-rem, rem);
@@ -549,7 +544,7 @@ li[data-shop-count="0"] {
         text-align: center;
         line-height: unit(@nav-buttom-bar-height/@base-px-2-rem, rem);
         padding-right: unit(200/@base-px-2-rem, rem);
-        color: @text-red;
+        color: @red;
     }
     .order-comfirm-btn {
         width: 40%;
@@ -611,11 +606,10 @@ li[data-shop-count="0"] {
 
 ****************/
 
+//旋转的图
 #TurnAround-img {
     .make-fixed-bar(@nav-buttom-bar-height);
     height: unit( 150/@base-px-2-rem, rem);
     width: unit( 150/@base-px-2-rem, rem);
     .make-border-radius(30px);
-
-    //display: none;
 }

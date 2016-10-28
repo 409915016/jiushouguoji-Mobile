@@ -9,43 +9,7 @@
 @import "order.less";
 @import "layer.less";
 @import "animate.less";
-html {
-    font-size: 113.6px;
-    height: 100%;
-}
-
-body {
-    height: 100%;
-    background-color: #e6e6e6;
-    color: #333;
-}
-
-a {
-    display: block;
-}
-
-.text-red {
-    color: @text-red;
-}
-
-.text-black {
-    color: #333;
-}
-
-textarea {
-    width: 100%;
-    resize: none;
-}
-// body 下的容器
-.wrapper {
-    width: 100%;
-    height: 100%;
-    background-color: @wrapper-bg-color;
-    margin: 0 auto;
-    max-width: @max-width;
-    //height: auto;
-}
-
+@import "common.less";
 
 /************************
 
@@ -54,7 +18,7 @@ Swiper 分页指示器颜色
 ************************/
 
 .swiper-pagination-bullet-active {
-    background-color: @text-red !important;
+    background-color: @red !important;
 }
 
 
@@ -135,9 +99,6 @@ Swiper 分页指示器颜色
         }
     }
 }
-
-//搜索页
-.product-search-wrapper {}
 
 //首页所有产品容器
 .product-wrapper {
@@ -264,6 +225,8 @@ div.swiper-product {
                 font-weight: 600;
             }
         }
+    }
+    .swiper-slide {
         //last swipwer look more……
         &:last-child {
             //to fix UC borwser margin-top not work.
@@ -322,7 +285,7 @@ div.swiper-product {
             align-items: flex-start;
             p {
                 &:nth-child(2) {
-                    color: @text-red;
+                    color: @red;
                 }
             }
         }
@@ -374,112 +337,11 @@ div.swiper-product {
 }
 
 
-/************************
-
-产品容器
-
-************************/
-
-.base-mt-wrapper {
-    .base-title(none);
-    //.make-big-img-p(120);
-    // &:first-child {
-    //     margin-top: unit(0/@base-px-2-rem, rem);
-    // }
-}
-
-
-/************************
-
-单个产品展示
-
-布局容器
-
-************************/
-
-.base-mt-wrapper {
-    margin-top: unit( @base-mt /@base-px-2-rem, rem);
-    background-color: #fff;
-    overflow: hidden;
-    /*精品推荐*/
-    .base-title(none);
-    &.pt-40 {
-        padding-top: unit( 40 /@base-px-2-rem, rem);
-    }
-    &.no-tbpdding {
-        padding: 0 unit(40/@base-px-2-rem, rem);
-    }
-    &.pd {
-        padding: unit(20/@base-px-2-rem, rem) unit(40/@base-px-2-rem, rem);
-    }
-    &.b-line {
-        border-bottom: 1px solid @border-color-gray-light;
-    }
-    &.no-mart {
-        margin-top: 0;
-    }
-}
-
-.base-mt-wrapper() {
-    //defluat 140
-    margin-top: unit(@base-mt/@base-px-2-rem, rem);
-    background-color: #fff;
-    overflow: hidden;
-}
-
-.base-wrapper {
-    //defluat 140
-    //margin-top: unit(@base-mt/@base-px-2-rem, rem);
-    background-color: #fff;
-    overflow: hidden;
-    border-bottom: 1px solid @border-color-gray-light;
-    padding: unit(20/@base-px-2-rem, rem) unit(40/@base-px-2-rem, rem);
-    &.no-thing {
-        padding: 0;
-    }
-    &.no-tbpdding {
-        padding: 0 unit(40/@base-px-2-rem, rem);
-        border: 0;
-    }
-    &.no-border {
-        border: 0;
-    }
-}
-
-.base-wrapper() {
-    //defluat 140
-    //margin-top: unit(@base-mt/@base-px-2-rem, rem);
-    background-color: #fff;
-    overflow: hidden;
-    border-bottom: 1px solid @border-color-gray-light;
-    padding: unit(20/@base-px-2-rem, rem) unit(40/@base-px-2-rem, rem);
-    &.no-tbpdding {
-        padding: 0 unit(40/@base-px-2-rem, rem);
-    }
-}
-
-.base-pd-lr-wrapper {
-    background-color: #fff;
-    padding: 0 unit(@base-pd-lr/@base-px-2-rem, rem);
-    height: 100%;
-}
-
-.base-pd-tb-wrapper {
-    background-color: #fff;
-    padding: unit(@base-pd-tb/@base-px-2-rem, rem) 0;
-}
-
-.base-pd-wrapper {
-    background-color: #fff;
-    padding: unit(@base-pd-tb/@base-px-2-rem, rem);
-}
-
-
-/*
+/******************
 
 加在完毕文字提示
 
-*/
+******************/
 
 //直接用于任何容器 已具有样式
 p.end-text {
@@ -508,34 +370,3 @@ p.end-text {
     }
 }
 
-//按钮样式
-button {
-    padding: unit(25/@base-px-2-rem, rem) unit(80/@base-px-2-rem, rem);
-    color: #fff;
-    border-radius: 5px;
-}
-
-
-/************************
-
-通用消息提示
-
-************************/
-
-.base-msg-pop {
-    background-color: rgba(20, 20, 20, .75);
-    width: 35% !important;
-    .layui-m-layercont {
-        padding: 0;
-        line-height: 22px;
-        text-align: center;
-        display: flex;
-        flex-flow: row nowrap;
-        justify-content: center;
-        align-items: center;
-        color: #fff;
-        padding: unit(10/@base-px-2-rem, rem);
-        letter-spacing: 1px;
-        ;
-    }
-}

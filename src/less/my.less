@@ -43,8 +43,8 @@ section.user-info-simple {
         flex-flow: row nowrap;
         justify-content: space-around;
         align-items: center;
-        button {
-            background-color: @red-btn-color;
+        a.button {
+            background-color: @red;
             font-size: 16px;
         }
     }
@@ -131,10 +131,10 @@ section.user-row {
             right: -10px;
             top: 3px;
             font-size: 13px;
-            color: @text-red;
+            color: @red;
             height: 20px;
             width: 20px;
-            border: 1px solid @text-red;
+            border: 1px solid @red;
             border-radius: 50%;
             line-height: 1.6;
             background-color: #fff;
@@ -515,7 +515,7 @@ login-sign-wrapper
 
 p.alert-red {
     padding: unit(10/@base-px-2-rem, rem) unit(30/@base-px-2-rem, rem);
-    background-color: @pink-bg;
+    background-color: @pink;
     color: @alert-red-color;
     border-radius: 5px;
     line-height: 1.55;
@@ -527,7 +527,7 @@ p.alert-red {
     font-size: 14px;
 }
 
-//输入栏 通用
+//输入栏 
 .input-list-row {
     display: flex;
     flex-flow: row nowrap;
@@ -593,7 +593,7 @@ p.alert-red {
         > button {
             width: 100%;
             padding: unit(45/@base-px-2-rem, rem) 0;
-            background-color: @text-red;
+            background-color: @red;
         }
     }
 }
@@ -619,7 +619,7 @@ p.alert-red {
         //position: relative;
         padding: 20px 30px !important;
         .wide-input {
-            border: 1px solid @order-btn-color;
+            border: 1px solid @red;
             padding: unit(25/@base-px-2-rem, rem);
             font-size: 14px;
             width: 67%;
@@ -653,7 +653,7 @@ p.alert-red {
     }
     //下拉输入
     .select-block {
-        border: 1px solid @order-btn-color;
+        border: 1px solid @red;
         .make-border-radius(5px);
         //padding: unit(25/@base-px-2-rem, rem);
         width: 73%;
