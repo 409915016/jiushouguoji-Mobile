@@ -281,5 +281,7 @@ window.onload = function () {
         $(index).attr('for', temp + element);
     });
 
+    get("#check-num1").click();
+
 
 }
