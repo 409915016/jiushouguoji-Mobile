@@ -54,25 +54,105 @@ section.product-details {
         padding-bottom: unit(20/@base-px-2-rem, rem);
     }
 }
+
+
 /************************
 
 产品详情页 - 团购信息
 
 ************************/
 
+//外层容器
+.product-group-buy {
+    background-color: @group-gray;
+    > p {
+        padding: unit(30/@base-px-2-rem, rem) unit(40/@base-px-2-rem, rem);
+        color: #333;
+        font-size: 14px;
+    }
+    .group-buy-tips {
+        background-color: #fff;
+        span {
+            font-size: 18px;
+            padding: 0 unit(10/@base-px-2-rem, rem);
+        }
+    }
+    .group-buy-status {}
+}
 
+//拼团用户列表
+.group-buy-member-list {
+    padding: unit(30/@base-px-2-rem, rem) unit(40/@base-px-2-rem, rem);
+    background-color: #fff;
+    .group-buy-member {
+        border-bottom: 1px solid @border-color-gray-very-light;
+        // &:first-child > div {
+        //     margin-top: 0;
+        // }
+    }
+}
 
+.group-buy-user {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: stretch;
+    border: 1px solid @red;
+    border-left: 0;
+    .make-border-radius(40px);
+    margin: unit(20/@base-px-2-rem, rem) 0;
+    margin-left: unit(30/@base-px-2-rem, rem);
+    font-size: 13px;
+    img {
+        width: unit(130/@base-px-2-rem, rem);
+        height: unit(130/@base-px-2-rem, rem);
+        .make-border-radius(40px);
+        transform: scale(1.3, 1.3);
+    }
+    .group-buy-user-info {
+        //flex
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-around;
+        align-items: flex-start;
+        width: 27%;
+        padding-left: unit(30/@base-px-2-rem, rem);
+        
+        p {
+        
+            .text-omit();
+        }
+        
+    }
+    .group-buy-info {
+        //width: 30%;
+        //flex
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-around;
+        align-items: flex-end;
+        padding-right: unit(0/@base-px-2-rem, rem);
 
+    }
+    .group-bu-go {
+        background-color: @red;
+        .make-border-radius(40px);
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        width: 20%;
 
-
-
-
-
-
-
-
-
-
+        //flex
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+        p {
+            color: #fff;
+             
+        }
+        //padding: unit(50/@base-px-2-rem, rem) 0;
+    }
+}
 
 //下拉提醒
 section.product-tips {

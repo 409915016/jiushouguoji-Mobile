@@ -1604,6 +1604,137 @@ section.product-details .product-details-returns {
 产品详情页 - 团购信息
 
 ************************/
+.product-group-buy {
+  background-color: #ebebeb;
+}
+.product-group-buy > p {
+  padding: 0.26408451rem 0.35211268rem;
+  color: #333;
+  font-size: 14px;
+}
+.product-group-buy .group-buy-tips {
+  background-color: #fff;
+}
+.product-group-buy .group-buy-tips span {
+  font-size: 18px;
+  padding: 0 0.08802817rem;
+}
+.group-buy-member-list {
+  padding: 0.26408451rem 0.35211268rem;
+  background-color: #fff;
+}
+.group-buy-member-list .group-buy-member {
+  border-bottom: 1px solid #ebebeb;
+}
+.group-buy-user {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row nowrap;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  border: 1px solid #e9282e;
+  border-left: 0;
+  border-radius: 40px;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+  margin: 0.17605634rem 0;
+  margin-left: 0.26408451rem;
+  font-size: 13px;
+}
+.group-buy-user img {
+  width: 1.1443662rem;
+  height: 1.1443662rem;
+  border-radius: 40px;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+  -webkit-transform: scale(1.3, 1.3);
+      -ms-transform: scale(1.3, 1.3);
+          transform: scale(1.3, 1.3);
+}
+.group-buy-user .group-buy-user-info {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: column nowrap;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  width: 27%;
+  padding-left: 0.26408451rem;
+}
+.group-buy-user .group-buy-user-info p {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.group-buy-user .group-buy-info {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: column nowrap;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+  -webkit-box-align: end;
+  -webkit-align-items: flex-end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  padding-right: 0rem;
+}
+.group-buy-user .group-bu-go {
+  background-color: #e9282e;
+  border-radius: 40px;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  width: 20%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: column nowrap;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.group-buy-user .group-bu-go p {
+  color: #fff;
+}
 section.product-tips {
   background-color: #e6e6e6;
   height: 1.32042254rem;
@@ -1808,6 +1939,7 @@ section.user-info-simple .user-name-custom {
   margin-left: 0.35211268rem;
 }
 section.user-info-simple .user-name-custom p {
+  width: 100%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -2002,6 +2134,7 @@ section.my-center-header-name .my-center-header-imgBox ~ p {
 .my-center-row p:nth-child(2) {
   width: 45%;
   text-align: right;
+  width: 100%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
