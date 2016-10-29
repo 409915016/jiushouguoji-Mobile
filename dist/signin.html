@@ -19,7 +19,6 @@
 	<script src="js/swiper.jquery.min.js"></script>
 	<script src="js/layer.js"></script>
 	<script src="js/main.js">
-
 	</script>
 </head>
 
@@ -41,15 +40,15 @@
 				<p>注册平台账号</p>
 				<section class="inputBlock">
 					<input type="text" name="" value="" placeholder="手机号">
-					<button type="">验证</button>
+					<button id="sms-btn" type="">验证</button>
 				</section>
 				<section class="inputBlock ">
 					<input type="text" name="" value="" placeholder="请输入收到的注册码"> </section>
 				<section class="inputBlock">
-					<input type="password" name="" value="" placeholder="6-16位登录密码"> </section>
+					<input type="password" id="sign-password" name="" value="" placeholder="6-16位登录密码"> </section>
 				<section class="inputBlock">
-					<input type="password" name="" value="" placeholder="请再次输入密码"> </section>
-				<button type="">注册</button>
+					<input type="password" id="sign-password-retype" name="" value="" placeholder="请再次输入密码"> </section>
+				<button type="" id="sign-btn">注册</button>
 				<section class="other-way-login">
 					<p>其他方式登录</p>
 					<div class="qq-wechat">
@@ -74,10 +73,17 @@
 		<!--可见页 end-->
 	</div>
 	<script>
-		$(document).ready(function() {
-            // $(".nav-buttom-bar ul li a i").removeClass("active");
-            // $(".nav-buttom-bar ul li:nth-child(2) a i").addClass("active");
-        });
+		$(document).ready(function () {
+			get("#sign-password-retype").addEventListener("keyup", function () {
+				var i = get("#sign-password").value.trim();
+				var j = this.value.trim();
+				var verify_lenth = 5;
+				if ((i == j) && (i.toString().length > verify_lenth) && (j.toString().length > verify_lenth)) {
+					//do something
+					console.log("good!");
+				}
+			})
+		});
 	</script>
 </body>
 
