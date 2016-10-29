@@ -105,9 +105,13 @@ baseSelect(String);
 
 var baseSelect = function (String) {
     layer.open({
+        //弹出消息 css class
         className: 'user-touch-select',
+        //显示字符
         content: String,
+        //消息提示时间
         time: '2',
+        //遮罩层
         shade: false
     })
 }
@@ -239,49 +243,7 @@ function shopcarTurnAround() {
 
 window.onload = function () {
 
-    //console.log( get("#door-check").checked );
-
-
-    // shopcar_checkbox = function () {
-
-
-    // }
-
-
-
-    // var alldoor = $(".shopcar-door");
-    // console.log(alldoor);
-    // alldoor.each(function(element, index) {
-    //      console.log(index);
-
-
-
-    //      index.addEventListener("click", function(){
-
-    //      })
-    // }, this);
-
-
-
-    var all_checkbox = $(".shopcar-check-icon ");
-    var all_checkbox_input = all_checkbox.find("input");
-    var all_checkbox_label = all_checkbox.find("label");
-
-    all_checkbox_input.each(function (element, index) {
-        var temp = "check-num";
-        //console.log(index);
-        //console.log(element);
-        $(index).attr('id', temp + element);
-    });
-
-    all_checkbox_label.each(function (element, index) {
-        var temp = "check-num";
-        //console.log(index);
-        //console.log(element);
-        $(index).attr('for', temp + element);
-    });
-
-    get("#check-num1").click();
+ 
 
 
 }
