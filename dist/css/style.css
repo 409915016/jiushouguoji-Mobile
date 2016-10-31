@@ -1974,7 +1974,7 @@ section.product-longPic img {
 用户头像 昵称 和 个人签名
 
 ****************/
-section.user-info-simple {
+.user-info-simple {
   background-color: #fff;
   padding: 0.35211268rem;
   display: -webkit-box;
@@ -1993,16 +1993,16 @@ section.user-info-simple {
       -ms-flex-align: stretch;
           align-items: stretch;
 }
-section.user-info-simple .user-header-imgBox {
+.user-info-simple .user-header-imgBox {
   margin-left: 0.35211268rem;
   width: 1.84859155rem;
   height: 1.84859155rem;
 }
-section.user-info-simple .user-header-imgBox img {
+.user-info-simple .user-header-imgBox img {
   width: 100%;
   border-radius: 50%;
 }
-section.user-info-simple .user-name-custom {
+.user-info-simple .user-name-custom {
   width: 60%;
   font-size: 16px;
   display: -webkit-box;
@@ -2018,13 +2018,13 @@ section.user-info-simple .user-name-custom {
           justify-content: space-between;
   margin-left: 0.35211268rem;
 }
-section.user-info-simple .user-name-custom p {
+.user-info-simple .user-name-custom p {
   width: 100%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-section.user-info-simple .user-loginBox {
+.user-info-simple .user-loginBox {
   width: 75%;
   display: -webkit-box;
   display: -webkit-flex;
@@ -2041,7 +2041,7 @@ section.user-info-simple .user-loginBox {
       -ms-flex-align: center;
           align-items: center;
 }
-section.user-info-simple .user-loginBox a.button {
+.user-info-simple .user-loginBox a.button {
   background-color: #e9282e;
   font-size: 16px;
 }
@@ -2201,7 +2201,7 @@ section.my-center-header-name .my-center-header-imgBox ~ p {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 0.35211268rem 0;
+  padding: 0.35211268rem;
   border-bottom: 1px solid #b2b3b4;
 }
 .my-center-row p {

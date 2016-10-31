@@ -182,7 +182,7 @@ function uesrExit() {
 function TestgetOrderMsg() {
     getOrderMsg();
     //baseMsg("加入购物车成功");
-    setTimeout( 'TestgetOrderMsg()' , 7000);
+    setTimeout('TestgetOrderMsg()', 7000);
 }
 
 
@@ -213,7 +213,12 @@ $(document).ready(function () {
 });
 
 
+/******************
+ 
 
+添加到购物车 动画逻辑
+
+*****************/
 
 function shopcarTurnAround() {
     TurnAround_img = get("#TurnAround-img");
@@ -239,11 +244,31 @@ function shopcarTurnAround() {
 }
 
 
+/******************
+ 
+检查注册密码是否重复
+返回
+true
+false
+*****************/
 
+function check_password_retype() {
+    var a = false;
+    var i = get("#sign-password").value.trim();
+    var j = get("#sign-password-retype").value.trim();
+    var verify_lenth = 5;
+    if ((i == j) && (i.toString().length > verify_lenth) && (j.toString().length > verify_lenth)) {
+        a = true;
+    } else {
+        a = false;
+    }
+    return a;
+}
 
 window.onload = function () {
+    
 
- 
+
 
 
 }

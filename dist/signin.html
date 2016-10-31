@@ -74,15 +74,18 @@
 	</div>
 	<script>
 		$(document).ready(function () {
-			get("#sign-password-retype").addEventListener("keyup", function () {
-				var i = get("#sign-password").value.trim();
-				var j = this.value.trim();
-				var verify_lenth = 5;
-				if ((i == j) && (i.toString().length > verify_lenth) && (j.toString().length > verify_lenth)) {
-					//do something
-					console.log("good!");
+			get("#sign-btn").addEventListener("click", function () {
+				//check_password_retype 来检查两个输入框的密码
+				//返回 true false
+				if (check_password_retype()) {
+					alert("两次输入密码相同！");
+				} else {
+					alert("两次输入密码有误！");
 				}
 			})
+			get("#sign-password-retype").addEventListener("keyup", function () {
+				console.log(check_password_retype());
+			});
 		});
 	</script>
 </body>
