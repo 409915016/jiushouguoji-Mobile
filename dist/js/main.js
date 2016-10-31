@@ -266,7 +266,7 @@ function check_password_retype() {
 }
 
 window.onload = function () {
-    
+
 
 
 

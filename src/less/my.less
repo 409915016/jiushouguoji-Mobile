@@ -658,19 +658,36 @@ p.alert-red {
         //padding: unit(25/@base-px-2-rem, rem);
         width: 73%;
         display: flex;
-        flex-flow: row nowrap;
+        flex-flow: column nowrap;
         justify-content: space-around;
         align-items: center;
+        position: relative;
+        text-align: center;
         //四个下拉选择 
         select.user-sex {
-            padding: 0 unit(250/@base-px-2-rem, rem);
+            width: 100%;
+            padding: unit(20/@base-px-2-rem, rem) 0;
+            text-indent: 45%;
+            //android
+            background-color: #fff;
+            option {
+                background-color: #fff;
+            }
         }
         //生日年月日
-        select.user-bday {
-            width: 33%;
-            text-indent: unit(75/@base-px-2-rem, rem);
-            &:first-child {
-                text-indent: unit(50/@base-px-2-rem, rem);
+        // select.user-bday {
+        //     width: 33%;
+        //     text-indent: unit(75/@base-px-2-rem, rem);
+        //     &:first-child {
+        //         text-indent: unit(50/@base-px-2-rem, rem);
+        //     }
+        // }
+        input[type="date"] {
+            text-align: center;
+            width: 110px;
+            background-color: #fff;
+            @media screen and (max-width: 320px) {
+
             }
         }
     }
