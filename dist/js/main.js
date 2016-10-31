@@ -265,10 +265,30 @@ function check_password_retype() {
     return a;
 }
 
+/******************
+ 
+检查输入是否为空
+返回
+true
+false
+*****************/
+function check_input_empty(inputElement) {
+    var i = false;
+    //var _this = this;
+
+    var s = inputElement.value.trim();
+    //console.log(s);
+    if (s == "") {
+        i = false;
+    } else {
+        i = true;
+    }
+
+    return i;
+
+
+}
+
 window.onload = function () {
-
-
-
-
-
+    
 }

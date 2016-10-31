@@ -39,11 +39,11 @@
 			<div class="login-sign-wrapper sign">
 				<p>注册平台账号</p>
 				<section class="inputBlock">
-					<input type="text" name="" value="" placeholder="手机号">
+					<input type="text" id="phone-num" name="" value="" placeholder="手机号">
 					<button id="sms-btn" type="">验证</button>
 				</section>
 				<section class="inputBlock ">
-					<input type="text" name="" value="" placeholder="请输入收到的注册码"> </section>
+					<input type="text" id="sms-text" name="" value="" placeholder="请输入收到的注册码"> </section>
 				<section class="inputBlock">
 					<input type="password" id="sign-password" name="" value="" placeholder="6-16位登录密码"> </section>
 				<section class="inputBlock">
@@ -74,18 +74,25 @@
 	</div>
 	<script>
 		$(document).ready(function () {
-			get("#sign-btn").addEventListener("click", function () {
-				//check_password_retype 来检查两个输入框的密码
-				//返回 true false
-				if (check_password_retype()) {
-					alert("两次输入密码相同！");
+			get("#sms-btn").addEventListener("click", function () {
+				if (!check_input_empty(get("#phone-num"))) {
+					baseMsg("请输入手机号码");
 				} else {
-					alert("两次输入密码有误！");
+					//发送短信
 				}
 			})
-			get("#sign-password-retype").addEventListener("keyup", function () {
-				console.log(check_password_retype());
-			});
+			get("#sign-btn").addEventListener("click", function () {
+				if (!check_input_empty(get("#sms-text"))) {
+					baseMsg("请输入注册码");
+				} else if (!check_input_empty(get("#sign-password"))) {
+					baseMsg("请输入密码");
+				} else if (!check_password_retype()) {
+					baseMsg("两次输入的密码不相同");
+				} else {
+					baseMsg("通过");
+					//操作
+				}
+			})
 		});
 	</script>
 </body>

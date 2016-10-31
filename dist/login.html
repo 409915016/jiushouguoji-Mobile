@@ -19,7 +19,6 @@
 	<script src="js/swiper.jquery.min.js"></script>
 	<script src="js/layer.js"></script>
 	<script src="js/main.js">
-
 	</script>
 </head>
 
@@ -38,7 +37,7 @@
 		<!--fixed element end-->
 		<!--可见页-->
 		<div class="main-wrapper title-bar no-b-nav h-100-white">
-			<form>
+			<form onSubmit="">
 				<div action="" class="login-sign-wrapper">
 					<p>登陆就手国际</p>
 					<section class="inputBlock">
@@ -74,10 +73,17 @@
 		<!--可见页 end-->
 	</div>
 	<script>
-		$(document).ready(function() {
-            // $(".nav-buttom-bar ul li a i").removeClass("active");
-            // $(".nav-buttom-bar ul li:nth-child(2) a i").addClass("active");
-        });
+		$(document).ready(function () {
+			get("button").addEventListener("click", function () {
+				//alert(check_input_empty());
+				if (!check_input_empty()) {
+					baseMsg("请输入帐号和密码");
+				} else {
+					//判断返回的ajax
+					baseMsg("有数据");
+				}
+			})
+		});
 	</script>
 </body>
 
