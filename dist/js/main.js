@@ -295,211 +295,120 @@ var isNumber = function isNumber(value) {
 }
 
 
-/******************
- 
-商品评论页 选星功能
-*****************/
+
+
+var goods_grade_value = function () {
+    this.scores = 5;
+    this.result = 3;
+    this.content = "";
+    this.isanonymous = 1;
+
+}
+var door_grade_value = function () {
+    this.order_id = 13156165,
+        this.desccredit = 5,
+        this.servicecredit = 5,
+        this.deliverycredit = 5
+};
+
+
+
+//商品评价
+function set_goods_grade(HTMLDom) {
+    //单件商品评价块
+    var goods_DOM = $(HTMLDom)[0];
+    //评价输入框
+    var goods_contentDOM = $(goods_DOM).find("textarea")[0];
+    var goods_result_rowDOM = $(goods_DOM).find(".add-comment-good")[0];
+    var goods_result_DOM = $(goods_result_rowDOM).children(".comment-good");
+    var icon_DOM = goods_result_DOM.children("i");
+    var goods_id = goods_DOM.dataset.goodsId;
+    //goods id 列表
+    goodsid.push(goods_id);
+    var data = new goods_grade_value();
+    icon_init(icon_DOM);
+    //用户文字评论
+    var content_text;
+    //用户文字评论
+    $(goods_contentDOM).keyup(function (content_text) {
+            content_text = goods_contentDOM.value.trim();
+            data.content = content_text;
+        })
+        //好评
+    $(goods_result_DOM).click(function (result_class) {
+        var _this = $(this)[0];
+        var _this_all = $(this).parent().children();
+        var _icon = $(this).children("i");
+        var num = $(_this_all).index(_this) + 1;
+        data.result = num;
+        commentPostData[goods_id] = data;
+        icon_click(num, _this, result_class, icon_DOM);
+    })
+
+    //初始化icon
+    function icon_init(iconAll) {
+        $(iconAll).each(function (i) {
+            // console.log(this);
+            // console.log(i);
+            if (i == 0) {
+                $(this).addClass("good-gray");
+            }
+            if (i == 1) {
+                $(this).addClass("not-good-gray");
+            }
+            if (i == 2) {
+                $(this).addClass("bad-gray");
+            }
+
+        })
+    }
+    //激活icon
+    function icon_click(i, iconWrap, result_class, iconAll) {
+        // i 是传入的序号
+        var iconDOM = $(iconWrap).children("i");
+        icon_init(iconAll);
+        if (i == 1) {
+            iconDOM.removeClass("good-gray");
+            iconDOM.addClass("good");
+        }
+        if (i == 2) {
+            iconDOM.removeClass("not-good-gray");
+            iconDOM.addClass("not-good");
+        }
+        if (i == 3) {
+            iconDOM.removeClass("bad-gray");
+            iconDOM.addClass("bad");
+        }
+    }
+
+}
+//商店评价
+function set_door_grade(row_num, mark, orderid) {
+
+    if (isNumber(row_num) && isNumber(mark)) {
+        if (row_num == 1) {
+            data.desccredit = mark;
+        }
+        if (row_num == 2) {
+            data.servicecredit = mark;
+        }
+        if (row_num == 3) {
+            data.deliverycredit = mark;
+        }
+        data.order_id = orderid
+    }
+    commentPostData["order"] = data;
+
+}
+
+
 
 window.onload = function () {
 
+    /******************
+     
+    商品评论页 选星功能
+    *****************/
 
-    var user_grade_value = {
-        order_id: 13156165,
-        desccredit: 5,
-        servicecredit: 5,
-        deliverycredit: 5
-    };
-    var goods_grade_value = function () {
-        this.scores = 5;
-        this.result = 3;
-        this.content = "";
-        this.isanonymous = 1;
-
-    }
-     var aaa = [];
-
-    // var goods_grade_value = {
-    //         scores: 5,
-    //         result: 3,
-    //         content: "",
-    //         isanonymous: 1
-    //     }
-    //商店评价
-    function set_user_grade() {
-        set_user_grade.prototype.set = function (row_num, mark) {
-            if (isNumber(row_num) && isNumber(mark)) {
-                if (row_num == 1) {
-                    user_grade_value.desccredit = mark;
-
-                }
-                if (row_num == 2) {
-                    user_grade_value.servicecredit = mark;
-
-                }
-                if (row_num == 3) {
-                    user_grade_value.deliverycredit = mark;
-                }
-                //console.log(user_grade_value);
-            }
-        }
-        set_user_grade.prototype.return = function () {
-
-        }
-
-
-
-    }
-    //商品评价
-    function set_goods_grade(HTMLDom) {
-        var goods_DOM = $(HTMLDom)[0];
-        //console.log(goods_DOM);
-        //评价输入框
-        var goods_contentDOM = $(goods_DOM).find("textarea")[0];
-        //console.log(goods_contentDOM);
-        var goods_result_rowDOM = $(goods_DOM).find(".add-comment-good")[0];
-        //console.log(goods_result_rowDOM);
-        var goods_result_DOM = $(goods_result_rowDOM).children(".comment-good");
-        //console.log(goods_result_DOM);
-        var icon_DOM = goods_result_DOM.children("i");
-        //console.log(icon_DOM);
-        console.log(goods_DOM);
-        var goods_id = goods_DOM.dataset.goodsId; 
-        console.log(goods_id);
-        var data = new goods_grade_value();
-
-
-        //用户文字评论
-        var content_text;
-
-        //好中差 CSS类名
-        var add_class = {
-            a: "good",
-            b: "no-good",
-            c: "bad"
-        }
-        var remove_class = {
-            a: "good-gray",
-            b: "no-good-gray",
-            c: "bad-gray"
-        }
-
-        icon_init(icon_DOM);
-
-
-        //用户文字评论
-        $(goods_contentDOM).keyup(function (content_text) {
-            content_text = goods_contentDOM.value.trim();
-            goods_grade_value.content = content_text;
-            console.log(goods_grade_value.content);
-
-        })
-
-
-        //好评
-        $(goods_result_DOM).click(function (result_class) {
-                var _this = $(this)[0];
-                var _this_all = $(this).parent().children();
-                var _icon = $(this).children("i");
-                //当前icon
-                var num = $(_this_all).index(_this) + 1;
-                // goods_grade_value.result = num;
-
-                
-                data.result = num;
-                aaa[goods_id] = data;
-                console.table(aaa);
-                
-                console.log(data.result);
-                icon_click(num, _this, result_class, icon_DOM);
-
-            })
-            //
-        $(goods_DOM).click(function (event) {
-            //console.log(event.target);
-
-        })
-        set_user_grade.prototype.set = function () {
-
-        }
-
-        //初始化所有icon
-        function icon_init(iconAll) {
-            $(iconAll).each(function (i) {
-                // console.log(this);
-                // console.log(i);
-                if (i == 0) {
-                    $(this).addClass("good-gray");
-
-                }
-                if (i == 1) {
-                    $(this).addClass("not-good-gray");
-                }
-                if (i == 2) {
-                    $(this).addClass("bad-gray");
-
-                }
-
-            })
-        }
-        //激活icon
-        function icon_click(i, iconWrap, result_class, iconAll) {
-            // i 是传入的序号
-            var iconDOM = $(iconWrap).children("i");
-            icon_init(iconAll);
-            if (i == 1) {
-                iconDOM.removeClass("good-gray");
-                iconDOM.addClass("good");
-            }
-            if (i == 2) {
-                iconDOM.removeClass("not-good-gray");
-                iconDOM.addClass("not-good");
-            }
-            if (i == 3) {
-                iconDOM.removeClass("bad-gray");
-                iconDOM.addClass("bad");
-            }
-        }
-
-
-
-    }
-    $(".door-comment-select i").click(function (event) {
-
-        var active_class = "star-red";
-        var default_class = "star-gray";
-        var _this_i = $(this);
-        //door-comment-star
-        var _i_parent = _this_i.parent()[0];
-        ///door-comment
-        var _star_row = _this_i.parent().parent()[0];
-        //door-comment-select
-        var _star_row_parent = _this_i.parent().parent().parent()[0];
-        var row_num = $(_star_row_parent).children().index(_star_row) + 1;
-        var num = $(_i_parent).children().index(_this_i) + 1;
-        var a = new set_user_grade();
-        a.set(row_num, num);
-        //remove red
-        _this_i.nextAll().removeClass(active_class).addClass(default_class);
-        //add red
-        _this_i.addClass(default_class).prevAll().addClass(active_class);
-
-        console.log(user_grade_value);
-
-
-    })
-    $(".add-comment-select label").click(function () {
-            var anonymous_check = !get("#anonymous").checked;
-            if (anonymous_check) {
-                goods_grade_value.isanonymous = 1;
-            } else {
-                goods_grade_value.isanonymous = 0;
-            }
-            //	console.log(anonymous_check);
-        })
-        //实例化每件商品的评论
-
-    $(".addComment-product").each(function (i) {
-        new set_goods_grade(this);
-    })
 
 }

@@ -19,6 +19,7 @@
 	<script src="js/swiper.jquery.min.js"></script>
 	<script src="js/layer.js"></script>
 	<script src="js/main.js">
+
 	</script>
 </head>
 
@@ -39,7 +40,7 @@
 		<div class="nav-buttom-bar no-padding">
 			<div class="add-comment-navbar">
 				<div class="add-comment-select">
-					<input type="checkbox" name="111" value="111" id="anonymous" class="door-check-1" />
+					<input type="checkbox" name="111" value="111" id="anonymous" class="door-check-1" checked/>
 					<label for="anonymous" onclick="">
 						<i class="icon no-check"></i>
 					</label>
@@ -101,9 +102,8 @@
 					</div>
 				</div>
 			</section>
-
 			<div class="base-mt-wrapper pd">
-				<div class="add-door-comment">
+				<div class="add-door-comment" data-order-id="4564">
 					<p>店铺介绍</p>
 					<div class="door-comment-select">
 						<section class="door-comment">
@@ -143,10 +143,67 @@
 		<!--可见页 end-->
 	</div>
 	<script>
-		(function () {})();
-	</script>
+		(function () {
 
-	<script src="js/addcomment.js">
+
+					
+
+		})();
+	</script>
+	<script>
+		var data = new door_grade_value;
+
+    var goodsid = [];
+
+    var commentPostData = [];
+
+    $(".door-comment-select i").click(function (event) {
+            var w = $(".add-door-comment")[0];
+            var active_class = "star-red";
+            var default_class = "star-gray";
+            var _this_i = $(this);
+            //door-comment-star
+            var _i_parent = _this_i.parent()[0];
+            ///door-comment
+            var _star_row = _this_i.parent().parent()[0];
+            //door-comment-select
+            var _star_row_parent = _this_i.parent().parent().parent()[0];
+            var row_num = $(_star_row_parent).children().index(_star_row) + 1;
+            var num = $(_i_parent).children().index(_this_i) + 1;
+            var order_id = w.dataset.orderId;
+            set_door_grade(row_num, num, order_id);
+            _this_i.removeClass(default_class).addClass(active_class);
+            _this_i.prevAll().removeClass(default_class).addClass(active_class);
+            _this_i.nextAll().removeClass(active_class).addClass(default_class);
+        })
+        //匿名评价
+    $(".add-comment-select label").click(function () {
+        var anonymous_check = !get("#anonymous").checked;
+
+        if (anonymous_check) {
+            goodsid.forEach(function (ele, index) {
+
+                (commentPostData[ele]).isanonymous = 1;
+
+            })
+
+        } else {
+            goodsid.forEach(function (ele, index) {
+
+                (commentPostData[ele]).isanonymous = 0;
+
+            })
+        }
+
+        console.table(commentPostData);
+
+    })
+
+    //实例化每件商品的评论
+    $(".addComment-product").each(function (i) {
+        new set_goods_grade(this);
+    })
+	</script>
 </body>
 
 </html>
