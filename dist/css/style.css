@@ -114,6 +114,7 @@ function
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 .fr {
   float: right;
@@ -163,6 +164,7 @@ textarea {
   outline: none;
   border: 0;
   font-family: "Helvetica Neue", "Helvetica", "STHeiTi", "Heiti SC", "微软雅黑", "SimSun", "宋体", "sans-serif";
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
   font-family: "Helvetica Neue", "Helvetica", "STHeiTi", "Heiti SC", "微软雅黑", "SimSun", "宋体", "sans-serif";
@@ -852,7 +854,7 @@ li[data-shop-count="0"]::before {
   font-weight: 500;
 }
 .shopcar-nav-bar .order-price {
-  width: 32%;
+  width: 34%;
   text-align: right;
 }
 .shopcar-nav-bar .order-price p {
@@ -1022,6 +1024,7 @@ i.icon {
   background-repeat: no-repeat;
   display: inline-block;
   background-size: 100% 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   /********************
 
     首页搜索栏、导航栏icon
@@ -3557,6 +3560,7 @@ button.half-btn {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 .add-comment-good .comment-good span {
   padding-left: 0.26408451rem;
@@ -4085,6 +4089,7 @@ body {
 }
 a {
   display: block;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 .text-red {
   color: #e9282e;
@@ -4102,6 +4107,9 @@ textarea {
   background-color: #f2f2f2;
   margin: 0 auto;
   max-width: 640px;
+}
+button {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 /************************
 
@@ -4253,11 +4261,13 @@ button {
   padding: 0.22007042rem 0.70422535rem;
   color: #fff;
   border-radius: 5px;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 a.button {
   padding: 0.22007042rem 0.70422535rem;
   color: #fff;
   border-radius: 5px;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 /************************
 
@@ -4707,7 +4717,7 @@ p.end-text {
   top: 50%;
   left: 5%;
   height: 1px;
-  width: 26%;
+  width: 20%;
   background-color: #aaa;
 }
 .shopcar .base-mt-wrapper p.recommend:before,
@@ -4724,7 +4734,7 @@ p.end-text {
   top: 50%;
   right: 5%;
   height: 1px;
-  width: 26%;
+  width: 20%;
   background-color: #aaa;
 }
 .shopcar .base-mt-wrapper > p.guess-you-like,

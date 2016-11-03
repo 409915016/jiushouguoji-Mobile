@@ -405,10 +405,5 @@ function set_door_grade(row_num, mark, orderid) {
 
 window.onload = function () {
 
-    /******************
-     
-    商品评论页 选星功能
-    *****************/
-
-
+  
 }
