@@ -3016,6 +3016,9 @@ div.base-order:first-child {
   color: #fff;
   font-size: 14px;
 }
+.base-order-btn-row > a.disable {
+  background-color: #ccc;
+}
 /****************
 
 购物车-下单-订单信息
