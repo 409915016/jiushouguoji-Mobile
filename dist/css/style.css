@@ -2643,14 +2643,14 @@ p.alert-red {
   -webkit-flex-flow: row nowrap;
       -ms-flex-flow: row nowrap;
           flex-flow: row nowrap;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: stretch;
-  -webkit-align-items: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   color: #a4a4a4;
   border-bottom: 1px solid #ebebeb;
   padding: 0.30809859rem 0.04401408rem;
@@ -2717,6 +2717,15 @@ p.alert-red {
   width: 100%;
   padding: 0.39612676rem 0;
   background-color: #e9282e;
+}
+.input-list-row.has-select {
+  padding: 0.08802817rem 0.04401408rem;
+  position: relative;
+}
+.input-list-row.has-select select {
+  padding: 0.13204225rem 0;
+  width: 20%;
+  color: #a4a4a4;
 }
 /****************
 

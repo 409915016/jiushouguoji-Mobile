@@ -531,8 +531,8 @@ p.alert-red {
 .input-list-row {
     display: flex;
     flex-flow: row nowrap;
-    justify-content: space-between;
-    align-items: stretch;
+    justify-content: flex-start;
+    align-items: center;
     color: #a4a4a4;
     border-bottom: 1px solid @border-color-gray-very-light;
     padding: unit(35/@base-px-2-rem, rem) unit(5/@base-px-2-rem, rem);
@@ -594,6 +594,16 @@ p.alert-red {
             width: 100%;
             padding: unit(45/@base-px-2-rem, rem) 0;
             background-color: @red;
+        }
+    }
+    &.has-select {
+        padding: unit(10/@base-px-2-rem, rem) unit(5/@base-px-2-rem, rem);//15
+        position: relative;
+        select {
+            padding:  unit(15/@base-px-2-rem, rem) 0;
+            width: 20%;
+            color: #a4a4a4;
+            
         }
     }
 }
