@@ -446,24 +446,26 @@ ul.product-nav-buy {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-around;
-    align-items: stretch;
+    align-items: center;
     //加入购物车
     //拼团
     height: 100%;
     li {
-        width: 100%;
-        height: 100%;
         text-align: center;
+        width: 100%;
+        height: unit((@product-nav-bar-height) /@base-px-2-rem, rem);
         //加入购物车 团购内文字
         a {
             display: flex;
-            flex-flow: row wrap;
+            flex-flow: column nowrap;
             justify-content: center;
-            align-items: center;
+            align-items: stretch;
             height: 100%;
             p {
                 //兼容团购的两行文字 一半高度
                 line-height: unit((@product-nav-bar-height/2) /@base-px-2-rem, rem);
+                height: unit((@product-nav-bar-height/2) /@base-px-2-rem, rem);
+                width: 100%;
                 color: #fff;
                 font-size: 17px;
                 letter-spacing: 1px;
@@ -486,7 +488,6 @@ ul.product-nav-buy {
     }
 }
 
-#addShopCar {}
 
 //商品详情页显示购物车数量
 li[data-shop-count="0"] {

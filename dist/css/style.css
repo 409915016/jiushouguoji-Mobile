@@ -750,37 +750,39 @@ ul.product-nav-buy {
   -webkit-justify-content: space-around;
       -ms-flex-pack: distribute;
           justify-content: space-around;
-  -webkit-box-align: stretch;
-  -webkit-align-items: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
-  height: 100%;
-}
-ul.product-nav-buy li {
-  width: 100%;
-  height: 100%;
-  text-align: center;
-}
-ul.product-nav-buy li a {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-flow: row wrap;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-align: center;
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
   height: 100%;
 }
+ul.product-nav-buy li {
+  text-align: center;
+  width: 100%;
+  height: 1.32042254rem;
+}
+ul.product-nav-buy li a {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: column nowrap;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  height: 100%;
+}
 ul.product-nav-buy li a p {
   line-height: 0.66021127rem;
+  height: 0.66021127rem;
+  width: 100%;
   color: #fff;
   font-size: 17px;
   letter-spacing: 1px;
