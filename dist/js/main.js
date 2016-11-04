@@ -406,4 +406,7 @@ function set_door_grade(row_num, mark, orderid) {
 window.onload = function () {
 
   
+
+
+  
 }
