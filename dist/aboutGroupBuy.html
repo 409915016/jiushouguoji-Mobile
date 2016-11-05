@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="zh-cmn-Hans">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="renderer" content="webkit">
+	<title>关于就手</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="renderer" content="webkit">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no" />
+	<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+	<meta content="telephone=no" name="format-detection" />
+	<link rel="Shortcut Icon" href="favicon.jpg" />
+	<link rel="stylesheet" href="css/normalize.min.css">
+	<link rel="stylesheet" href="css/style.min.css">
+	<link rel="stylesheet" href="css/swiper.min.css">
+	<script src="js/jquery.min.js"></script>
+	<script src="js/flexible.js"></script>
+	<script src="js/swiper.jquery.min.js"></script>
+	<script src="js/layer.js"></script>
+	<script src="js/main.js">
+	</script>
+	<style>
+		body {
+			margin: 0 auto;
+			min-width: 320px;
+			max-width: 640px;
+			height: 100%;
+			font-size: 12px;
+			-webkit-text-size-adjust: 100%!important;
+			-webkit-user-select: text;
+			-moz-user-select: text;
+			user-select: text;
+			-ms-user-select: text;
+			background-color: #f8f8f8;
+			font-family: "Helvetica Neue", "Helvetica", "STHeiTi", "Heiti SC", "微软雅黑", "SimSun", "宋体", "sans-serif";
+		}
+		.main-wrapper {
+			background-color: #f8f8f8;
+		}
+		
+		.help {
+			height: auto;
+			overflow: hidden;
+			margin: 0 20px 10px;
+			color: #666;
+			font-size: 16px;
+		}
+		
+		.help .help-tit {
+			height: 21px;
+			line-height: 21px;
+			margin-top: 10px;
+			margin-bottom: 10px;
+			font-size: 14px
+		}
+		
+		.help i {
+			/*float: right;*/
+			width: 14px;
+			height: 1px;
+			background-color: #ccc;
+			margin: 8px 4px 0 3px
+		}
+		
+		.help .step-cube {
+			/*float: left;*/
+			margin-bottom: 5px;
+			padding-top: 20px;
+			position: relative;
+			padding-left: 25px;
+		}
+		
+		.step-cube:nth-of-type(2) {
+			padding-top: 0px;
+		}
+		
+		.step-cube:before {
+			content: "";
+			display: block;
+			position: absolute;
+			left: 10px;
+			bottom: -20px;
+			width: 1px;
+			height: 15px;
+			/*background-color: #ccc;*/
+			border-left: 1px dashed #ccc;
+		}
+		
+		.help .step-cube .help-i {
+			position: absolute;
+			display: inline-block;
+			width: 20px;
+			height: 20px;
+			left: 0;
+			bottom: 0;
+			line-height: 21px;
+			text-align: center;
+			background-color: #666;
+			color: #fff;
+			border-radius: 16px;
+			margin: 0;
+			padding: 0;
+			font-size: 16px;
+			box-shadow: 1px 2px 5px #bbb;
+		}
+		
+		.help .step-cube .help-t {
+			line-height: 20px;
+			font-size: 14px;
+			margin: 0 2px;
+		}
+		
+		.help .step-cube:last-child i {
+			display: none
+		}
+		
+		.rule {
+			margin: 0 10px;
+			color: #666;
+			font-size: 14px
+		}
+		
+		.help .step-cube .help-i.fix-i {
+			bottom: 20px;
+		}
+		
+		@media screen and (min-width: 414px) {
+			.help .step-cube .help-i.fix-i {
+				bottom: 0px;
+			}
+		}
+		
+		.rule-row {
+			padding-left: 27px;
+			position: relative;
+			line-height: 20px;
+			margin-bottom: 20px
+		}
+		
+		.rule-num {
+			position: absolute;
+			top: 0;
+			left: 0
+		}
+	</style>
+</head>
+
+<body>
+	<div class="wrapper">
+		<!--fixed element-->
+		<!--文字头-->
+		<div class="base-nav-bar">
+			<a class="" href="my.html">
+				<i class="icon back fl"></i>
+			</a>
+			<p>关于就手</p>
+			<a class="no-visible" href=""> 保存 </a>
+		</div>
+		<!--fixed element end-->
+		<!--可见页-->
+		<div class="main-wrapper title-bar no-b-nav about">
+			<div class="help">
+				<div id="common" class="help-tit">拼团流程：</div>
+				<div class="step-cube">
+					<div class="help-i">1</div>
+					<span class="help-t">选择心仪商品</span>
+					<i></i>
+				</div>
+				<div class="step-cube">
+					<div class="help-i">2</div>
+					<span class="help-t">支付开团或参团邀请</span>
+					<i></i>
+				</div>
+				<div class="step-cube">
+					<div class="help-i">3</div>
+					<span class="help-t">等待好友参团</span>
+					<i></i>
+				</div>
+				<div class="step-cube">
+					<div class="help-i fix-i">4</div>
+					<span class="help-t">达到人数团购成功立即发货，逾期未成团自动退款</span>
+					<i></i>
+				</div>
+			</div>
+			<div id="common-rule" class="rule">
+				<p class="rule-row">
+					<span class="rule-num">(1)</span>选择商品开团：选择拼团商品下单，团长完成支付后，团即刻开启。在活动期间内，参团人数需至少在24小时内达到规定人数，此团方能成功，否则超过活动期，或者超过拼团时间，此团均为失败，系统自动退款。</p>
+				<p class="rule-row">
+					<span class="rule-num">(2)</span>团长：开团且该团第一位支付成功的人。同一款商品，同一个账号、收货电话（收货身份证）只能开一个团。</p>
+				<p class="rule-row">
+					<span class="rule-num">(3)</span>参团成员：通过团长邀请购买该商品的成员即为参团人员，参团人员也可通过分享团链接给微信好友邀请更多的成员参加。高峰时期，同时支付人数过多，团人数受限，客服会以支付信息先后为参考取团要求人数，超出人员，可选择自己开团，如果用户在2小时内未选择自己开团，则客服会取消订单且为您退款。</p>
+				<p class="rule-row">
+					<span class="rule-num">(4)</span>团购成功：在规定期间内，所有团成员完成支付之后，订单状态即会变更为“已确认”，此拼团即算作成功，卖家即为每个团员进行单独发货。但抽奖商品还需等待商家在规定日期内对所有成功拼团成员进行抽奖，详细玩法参考具体商品详情。如果已经成团，团员主动退款，客服也会给其他成员发货。</p>
+				<p class="rule-row">
+					<span class="rule-num">(5)</span>团购失败：从团长开团24小时内未能找到相应开团人数的好友参团，或者拼团时间超过活动时间，均为该团失败。系统会在1-2个工作日内提交微信处理，微信审核通过之后会自动退款到原支付账户。</p>
+				<p class="rule-row">
+					<span class="rule-num">(6)</span>拼团，是基于好友的拼团购买，获取团购优惠，为了保证广大消费者的权益，本商城有权将判定为黄牛倒货的团解散并取消订单。</p>
+			</div>
+		</div>
+		<!--可见页 end-->
+	</div>
+	<script>
+		$(document).ready(function () {
+			// $(".nav-buttom-bar ul li a i").removeClass("active");
+			// $(".nav-buttom-bar ul li:nth-child(2) a i").addClass("active");
+		});
+	</script>
+</body>
+
+</html>
