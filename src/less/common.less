@@ -37,6 +37,11 @@ textarea {
     background-color: @wrapper-bg-color;
     margin: 0 auto;
     max-width: @max-width;
+    //解决子元素martop 不生效的问题
+    //w3cshcool中的解释是：外边距合并指的是，当两个垂直外边距相遇时，它们将形成一个外边距。
+    //合并后的外边距的高度等于两个发生合并的外边距的高度中的较大者。
+    padding-top: unit(1/@base-px-2-rem, rem);
+    //overflow: hidden;
     //height: auto;
 }
 
@@ -50,7 +55,6 @@ button {
 产品容器
 
 ************************/
-
 
 .base-mt-wrapper() {
     //defluat 140
@@ -267,9 +271,6 @@ one-product
 商品图占一行
 下面是文字和价格
 
-
-
-
 ************************/
 
 //弃用
@@ -314,6 +315,71 @@ single-goods
         border-bottom: 1px solid @border-color-gray-very-light;
     }
     .single-product();
+}
+
+
+/*************************
+
+group-goods
+上面是商品图
+下面是团购价格 几人团 和开团按钮
+
+
+*************************/
+
+.group-goods {
+    padding: 0 unit(50/@base-px-2-rem, rem);
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    > p {
+        .text-omit();
+        font-size: 14px;
+    }
+    .group-goods-imgBox {
+        height: 100%;
+        width: 100%;
+        height: unit(400/@base-px-2-rem, rem);
+        width: unit(400/@base-px-2-rem, rem);
+        img {
+            height: unit(400/@base-px-2-rem, rem);
+            width: unit(400/@base-px-2-rem, rem);
+        }
+    }
+}
+
+.group-goods-info {
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: unit(40/@base-px-2-rem, rem) 0;
+    .group-goods-price {
+        width: 33%;
+        p {
+            line-height: 140%;
+            &:first-child {
+                font-weight: 600;
+                color: @red;
+                font-size: 16px;
+            }
+        }
+    }
+    > p {
+        color: @red;
+        font-size: 16px;
+        width: 33%;
+        text-align: center;
+        // @media (min-width: 375px) {
+        //     width: 15%;
+        // }
+    }
+    button {
+        width: 33%;
+    }
 }
 
 

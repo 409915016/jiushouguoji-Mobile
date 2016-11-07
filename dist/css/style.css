@@ -4091,6 +4091,7 @@ textarea {
   background-color: #f2f2f2;
   margin: 0 auto;
   max-width: 640px;
+  padding-top: 0.00880282rem;
 }
 button {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -4333,9 +4334,6 @@ one-product
 商品图占一行
 下面是文字和价格
 
-
-
-
 ************************/
 .one-product {
   padding-bottom: 0.44014085rem;
@@ -4427,6 +4425,88 @@ single-goods
 }
 .single-goods .product-name-price p:nth-child(2) span {
   font-size: 14px;
+}
+/*************************
+
+group-goods
+上面是商品图
+下面是团购价格 几人团 和开团按钮
+
+
+*************************/
+.group-goods {
+  padding: 0 0.44014085rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: column nowrap;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.group-goods > p {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 14px;
+}
+.group-goods .group-goods-imgBox {
+  height: 100%;
+  width: 100%;
+  height: 3.52112676rem;
+  width: 3.52112676rem;
+}
+.group-goods .group-goods-imgBox img {
+  height: 3.52112676rem;
+  width: 3.52112676rem;
+}
+.group-goods-info {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row nowrap;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0.35211268rem 0;
+}
+.group-goods-info .group-goods-price {
+  width: 33%;
+}
+.group-goods-info .group-goods-price p {
+  line-height: 140%;
+}
+.group-goods-info .group-goods-price p:first-child {
+  font-weight: 600;
+  color: #e9282e;
+  font-size: 16px;
+}
+.group-goods-info > p {
+  color: #e9282e;
+  font-size: 16px;
+  width: 33%;
+  text-align: center;
+}
+.group-goods-info button {
+  width: 33%;
 }
 /************************
 
