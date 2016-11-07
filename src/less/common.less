@@ -14,7 +14,7 @@ body {
 
 a {
     display: block;
-    -webkit-tap-highlight-color:rgba(0,0,0,0);
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 .text-red {
@@ -39,8 +39,9 @@ textarea {
     max-width: @max-width;
     //height: auto;
 }
+
 button {
-    -webkit-tap-highlight-color:rgba(0,0,0,0);
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 
@@ -50,27 +51,19 @@ button {
 
 ************************/
 
-.base-mt-wrapper {
-    .base-title(none);
-    //.make-big-img-p(120);
-    // &:first-child {
-    //     margin-top: unit(0/@base-px-2-rem, rem);
-    // }
-}
 
-
-/************************
-
-单个产品展示
-
-布局容器
-
-************************/
-
-.base-mt-wrapper {
-    margin-top: unit( @base-mt /@base-px-2-rem, rem);
+.base-mt-wrapper() {
+    //defluat 140
+    margin-top: unit(@base-mt/@base-px-2-rem, rem);
     background-color: #fff;
     overflow: hidden;
+    &:first-child {
+        margin-top: unit(0/@base-px-2-rem, rem);
+    }
+}
+
+.base-mt-wrapper {
+    .base-mt-wrapper();
     /*精品推荐*/
     .base-title(none);
     &.pt-40 {
@@ -90,20 +83,17 @@ button {
     }
 }
 
-.base-mt-wrapper() {
-    //defluat 140
-    margin-top: unit(@base-mt/@base-px-2-rem, rem);
-    background-color: #fff;
-    overflow: hidden;
-}
-
-.base-wrapper {
+.base-wrapper() {
     //defluat 140
     //margin-top: unit(@base-mt/@base-px-2-rem, rem);
     background-color: #fff;
     overflow: hidden;
     border-bottom: 1px solid @border-color-gray-light;
     padding: unit(20/@base-px-2-rem, rem) unit(40/@base-px-2-rem, rem);
+}
+
+.base-wrapper {
+    .base-wrapper();
     &.no-thing {
         padding: 0;
     }
@@ -116,32 +106,37 @@ button {
     }
 }
 
-.base-wrapper() {
-    //defluat 140
-    //margin-top: unit(@base-mt/@base-px-2-rem, rem);
-    background-color: #fff;
-    overflow: hidden;
-    border-bottom: 1px solid @border-color-gray-light;
-    padding: unit(20/@base-px-2-rem, rem) unit(40/@base-px-2-rem, rem);
-    &.no-tbpdding {
-        padding: 0 unit(40/@base-px-2-rem, rem);
-    }
-}
-
-.base-pd-lr-wrapper {
+//左右内边距
+.base-pd-lr-wrapper() {
     background-color: #fff;
     padding: 0 unit(@base-pd-lr/@base-px-2-rem, rem);
     height: 100%;
 }
 
-.base-pd-tb-wrapper {
+//上下内边距
+.base-pd-tb-wrapper() {
     background-color: #fff;
     padding: unit(@base-pd-tb/@base-px-2-rem, rem) 0;
+    //height: 100%;
+}
+
+//全内边距
+.base-pd-wrapper() {
+    background-color: #fff;
+    padding: unit(@base-pd-tb/@base-px-2-rem, rem);
+    //height: 100%;
+}
+
+.base-pd-lr-wrapper {
+    .base-pd-lr-wrapper();
+}
+
+.base-pd-tb-wrapper {
+    .base-pd-tb-wrapper();
 }
 
 .base-pd-wrapper {
-    background-color: #fff;
-    padding: unit(@base-pd-tb/@base-px-2-rem, rem);
+    .base-pd-wrapper();
 }
 
 
@@ -170,14 +165,18 @@ button {
 }
 
 
-//按钮样式
+/************************
+
+按钮样式
+
+************************/
+
 .button() {
     padding: unit(25/@base-px-2-rem, rem) unit(80/@base-px-2-rem, rem);
     color: #fff;
     border-radius: 5px;
-    -webkit-tap-highlight-color:rgba(0,0,0,0);
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
-
 
 button {
     .button();
@@ -185,4 +184,327 @@ button {
 
 a.button {
     .button();
+}
+
+
+/************************
+
+     制造圆角
+
+************************/
+
+.make-border-radius(@px) {
+    border-radius: @px;
+    border-top-left-radius: @px;
+    border-top-right-radius: @px;
+    border-bottom-left-radius: @px;
+    border-bottom-right-radius: @px;
+}
+
+
+/************************
+
+单个产品展示 构造函数
+
+************************/
+
+.single-product() {
+    width: 100%;
+    a {
+        //padding: 0 unit(50/@base-px-2-rem, rem);
+        padding-right: unit(50/@base-px-2-rem, rem);
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        //http://stackoverflow.com/questions/15381172/css-flexbox-child-height-100
+        //使项目下的所有元素高度100%
+        align-items: stretch;
+        //修复移动端图显示不正常
+    }
+    .product-imgBox {
+        //height: unit(600/@base-px-2-rem, rem);
+        //width: unit(600/@base-px-2-rem, rem);
+        height: 100%;
+        width: 100%;
+        img {
+            // height: unit(600/@base-px-2-rem, rem);
+            // width: unit(600/@base-px-2-rem, rem);
+            width: 100%;
+            height: 100%;
+        }
+        &::after {
+            display: none;
+        }
+    }
+    .product-name-price {
+        //该项目主轴为纵向
+        //为容器增加上下边距 使得  space-between 能够布局
+        padding: unit(80/@base-px-2-rem, rem) 0;
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+        p {
+            &:nth-child(2) {
+                color: @red;
+                span {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}
+
+.no-swiper-product {
+    .single-product();
+}
+
+
+/************************
+
+单个产品展示
+one-product
+商品图占一行
+下面是文字和价格
+
+
+
+
+************************/
+
+//弃用
+.one-product {
+    padding-bottom: unit(50/@base-px-2-rem, rem);
+    img {
+        width: 100%;
+        border-top: 1px solid @border-color-gray-very-light;
+        //height: unit(630/@base-px-2-rem, rem);
+        // -webkit-transform: scale(1.2,1.2);
+        // transform:  scale(1.2,1.2);
+        padding: 0 unit(100/@base-px-2-rem, rem);
+    }
+    p {
+        padding: 0 unit(50/@base-px-2-rem, rem);
+        font-size: 14px;
+        +p {
+            text-align: right;
+            color: red;
+            font-weight: 600;
+        }
+        @media screen and (min-width: 768px) {
+            font-size: 20px;
+            letter-spacing: 2px;
+        }
+    }
+}
+
+
+/*************************
+
+single-goods
+左边是商品图
+右边是文字和价格
+
+
+*************************/
+
+.single-goods {
+    border-top: 1px solid @border-color-gray-very-light;
+    &:last-child {
+        border-bottom: 1px solid @border-color-gray-very-light;
+    }
+    .single-product();
+}
+
+
+/************************
+
+2X2产品页
+
+************************/
+
+.base-mt-wrapper {
+    .make-2X2-product-box();
+    //have product-box-wrapper 
+}
+
+//产品专场下的 2X2 商品展示容器 及 布局
+.make-2X2-product-box() {
+    //
+    .product-box-wrapper {
+        width: 100%;
+        padding: unit(20/@base-px-2-rem, rem);
+        >.product-box {
+            display: inline-block;
+            width: 49%;
+            >a {
+                //display: block;
+                //width: 49.5%;
+                text-align: center;
+                >img {
+                    //http://stackoverflow.com/questions/7055393/center-image-using-text-align-center
+                    //fix the img in the block containers
+                    //img is an inline ele
+                    height: unit(360/@base-px-2-rem, rem);
+                    display: block;
+                    margin: 0 auto;
+                }
+                >p {
+                    text-overflow: ellipsis;
+                    line-height: 1.4em;
+                    height: 2.8em;
+                    overflow: hidden;
+                    @media screen and (min-width: 768px) {
+                        font-size: 20px;
+                        letter-spacing: 2px;
+                    }
+                    &+p {
+                        color: red;
+                        font-weight: 600;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/************************
+
+大屏下字体修复
+
+************************/
+
+.mod-retina-display(@fs, @ls) {
+    p {
+        @media screen and (min-width: 768px) {
+            font-size: @fs;
+            letter-spacing: @ls;
+        }
+    }
+    @media screen and (min-width: 768px) {
+        font-size: @fs;
+        letter-spacing: @ls;
+    }
+}
+
+
+/************************
+
+通用单行文字标题栏
+
+************************/
+
+.base-title(@line-arg) when (@line-arg =none) {
+    p.recommend, p.guess-you-like {
+        width: 100%;
+        text-align: center;
+        .make-line-and-height-p(@big-banner-text-height);
+        font-size: 15px;
+        background-color: #fff;
+        letter-spacing: 1px;
+        color: #000;
+        font-weight: 500;
+        .mod-retina-display(20px, 2px);
+    }
+}
+
+
+/************************
+
+容器下的第一个p 两边有线
+
+************************/
+
+.base-title(@line-arg) when (@line-arg =line) {
+    p.recommend, p.guess-you-like {
+        position: relative;
+        width: 100%;
+        text-align: center;
+        .make-line-and-height-p(@big-banner-text-height);
+        font-size: 15px;
+        background-color: #fff;
+        letter-spacing: 1px;
+        color: #000;
+        font-weight: 500;
+        .mod-retina-display(20px, 2px);
+        &:after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 5%;
+            height: 1px;
+            width: 20%;
+            background-color: #aaa;
+        }
+        &:before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 50%;
+            right: 5%;
+            height: 1px;
+            width: 20%;
+            background-color: #aaa;
+        }
+    }
+}
+
+
+/************************
+
+创建fixed元素
+
+************************/
+
+.make-fixed-bar(@height) {
+    position: fixed;
+    z-index: @z-index-nav-search-bar;
+    width: 100%;
+    max-width: @max-width;
+    height: unit(@height/@base-px-2-rem, rem);
+    background-color: #fff;
+}
+
+
+/************************
+
+//文字超出隐藏省略
+//用于 p 
+//需要使用 width: 100%;
+
+************************/
+
+.text-omit() {
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+//p 元素高度占位 用于移动设备
+.make-line-and-height-p(@number) {
+    height: unit(@number/@base-px-2-rem, rem);
+    line-height: unit(@number/@base-px-2-rem, rem);
+}
+
+//p 元素高度占位 用于移动设备
+.make-big-img-p(@big-banner-text-height) {
+    >p {
+        width: 100%;
+        // height: unit(100/@base-px-2-rem, rem);
+        // line-height: unit(100/@base-px-2-rem, rem);
+        .make-line-and-height-p(@big-banner-text-height);
+        text-align: center;
+        font-size: 15px;
+        background-color: #fff;
+        letter-spacing: 1px;
+        color: #000;
+        font-weight: 500;
+        @media screen and (min-width: 768px) {
+            font-size: 20px;
+            letter-spacing: 2px;
+        }
+    }
 }
