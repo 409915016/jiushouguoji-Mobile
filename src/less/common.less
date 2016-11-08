@@ -190,9 +190,9 @@ button.goGroupBuy {
     .button();
     border-radius: 20px;
     padding: unit(15/@base-px-2-rem, rem) unit(40/@base-px-2-rem, rem);
-            font-size: 15px;
-        margin: 0 unit(20/@base-px-2-rem, rem);
-        background-color: @red;
+    font-size: 15px;
+    //margin: 0 unit(20/@base-px-2-rem, rem);
+    background-color: @red;
 }
 
 a.button {
@@ -374,6 +374,9 @@ group-goods
                 font-weight: 600;
                 color: @red;
                 font-size: 16px;
+                @media (min-width: 375px) {
+                    font-size: 17px;
+                }
             }
         }
     }
@@ -381,16 +384,15 @@ group-goods
     > p {
         color: @red;
         font-size: 16px;
-        text-align: center;
+        text-align: left;
         letter-spacing: 1px;
-        // @media (min-width: 375px) {
-        //     width: 15%;
-        // }
+        @media (min-width: 375px) {
+            font-size: 17px;
+            margin-right: unit(10/@base-px-2-rem, rem);
+        }
     }
     button {
         //width: 28%;
-
-        
     }
 }
 

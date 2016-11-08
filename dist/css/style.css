@@ -1589,6 +1589,9 @@ i.icon.star-red {
       -ms-flex-item-align: center;
           align-self: center;
 }
+.shopcar-product-count > span:before {
+  content: "￥";
+}
 .shopcar-product-count .shopcar-product-count-c {
   -webkit-align-self: center;
       -ms-flex-item-align: center;
@@ -4263,7 +4266,6 @@ button.goGroupBuy {
   border-radius: 20px;
   padding: 0.13204225rem 0.35211268rem;
   font-size: 15px;
-  margin: 0 0.17605634rem;
   background-color: #e9282e;
 }
 a.button {
@@ -4507,11 +4509,22 @@ group-goods
   color: #e9282e;
   font-size: 16px;
 }
+@media (min-width: 375px) {
+  .group-goods-info .group-goods-price p:first-child {
+    font-size: 17px;
+  }
+}
 .group-goods-info > p {
   color: #e9282e;
   font-size: 16px;
-  text-align: center;
+  text-align: left;
   letter-spacing: 1px;
+}
+@media (min-width: 375px) {
+  .group-goods-info > p {
+    font-size: 17px;
+    margin-right: 0.08802817rem;
+  }
 }
 /************************
 
