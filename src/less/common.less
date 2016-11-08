@@ -186,6 +186,15 @@ button {
     .button();
 }
 
+button.goGroupBuy {
+    .button();
+    border-radius: 20px;
+    padding: unit(15/@base-px-2-rem, rem) unit(40/@base-px-2-rem, rem);
+            font-size: 15px;
+        margin: 0 unit(20/@base-px-2-rem, rem);
+        background-color: @red;
+}
+
 a.button {
     .button();
 }
@@ -319,7 +328,7 @@ single-goods
 
 
 /*************************
-
+团购
 group-goods
 上面是商品图
 下面是团购价格 几人团 和开团按钮
@@ -349,16 +358,16 @@ group-goods
     }
 }
 
+//团购文字栏
 .group-goods-info {
     width: 100%;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
-
     padding: unit(40/@base-px-2-rem, rem) 0;
     .group-goods-price {
-        width: 33%;
+        //width: 38%;
         p {
             line-height: 140%;
             &:first-child {
@@ -368,17 +377,20 @@ group-goods
             }
         }
     }
+    //两人团
     > p {
         color: @red;
         font-size: 16px;
-        width: 33%;
         text-align: center;
+        letter-spacing: 1px;
         // @media (min-width: 375px) {
         //     width: 15%;
         // }
     }
     button {
-        width: 33%;
+        //width: 28%;
+
+        
     }
 }
 

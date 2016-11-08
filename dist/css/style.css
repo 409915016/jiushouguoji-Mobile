@@ -4255,6 +4255,17 @@ button {
   border-radius: 5px;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
+button.goGroupBuy {
+  padding: 0.22007042rem 0.70422535rem;
+  color: #fff;
+  border-radius: 5px;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  border-radius: 20px;
+  padding: 0.13204225rem 0.35211268rem;
+  font-size: 15px;
+  margin: 0 0.17605634rem;
+  background-color: #e9282e;
+}
 a.button {
   padding: 0.22007042rem 0.70422535rem;
   color: #fff;
@@ -4427,7 +4438,7 @@ single-goods
   font-size: 14px;
 }
 /*************************
-
+团购
 group-goods
 上面是商品图
 下面是团购价格 几人团 和开团按钮
@@ -4488,9 +4499,6 @@ group-goods
           align-items: center;
   padding: 0.35211268rem 0;
 }
-.group-goods-info .group-goods-price {
-  width: 33%;
-}
 .group-goods-info .group-goods-price p {
   line-height: 140%;
 }
@@ -4502,11 +4510,8 @@ group-goods
 .group-goods-info > p {
   color: #e9282e;
   font-size: 16px;
-  width: 33%;
   text-align: center;
-}
-.group-goods-info button {
-  width: 33%;
+  letter-spacing: 1px;
 }
 /************************
 
