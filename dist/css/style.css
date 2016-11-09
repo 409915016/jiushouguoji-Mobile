@@ -438,7 +438,7 @@ iframe {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 0 0.35211268rem;
+  padding: 0 0.17605634rem;
 }
 .nav-bar ul li.active a {
   color: red;
@@ -448,15 +448,10 @@ iframe {
   display: block;
   height: 1.05633803rem;
   line-height: 1.05633803rem;
-  padding: 0 0.24647887rem;
+  padding: 0 0.08215962rem;
   font-size: 14px;
   color: #8a8a8a;
-}
-@media screen and (min-width: 768px) {
-  .nav-bar ul li a {
-    font-size: 20px;
-    letter-spacing: 2px;
-  }
+  font-size: 1.125em;
 }
 /************************
 

@@ -215,7 +215,7 @@
         flex-flow: row nowrap;
         justify-content: space-around;
         align-items: center;
-        padding: 0 unit(@base-pd-tb/@base-px-2-rem, rem);
+        padding: 0 unit((@base-pd-tb/2)/@base-px-2-rem, rem);
         li {
             &.active {
                 a {
@@ -229,13 +229,14 @@
                 //line-height: unit(@nav-bar-height  /@base-px-2-rem, rem);
                 //height: unit(@nav-bar-height  /@base-px-2-rem, rem);
                 .make-line-and-height-p(@nav-bar-height);
-                padding: 0 unit(@nav-bar-link-padding/@base-px-2-rem, rem);
+                padding: 0 unit((@nav-bar-link-padding/3 )/@base-px-2-rem, rem);
                 font-size: 14px;
                 color: @nav-bar-link-color;
-                @media screen and (min-width: 768px) {
-                    font-size: 20px;
-                    letter-spacing: 2px;
-                }
+                font-size: unit( ( 36 / 32), em);
+                // @media screen and (min-width: 768px) {
+                //     font-size: 20px;
+                //     letter-spacing: 2px;
+                // }
             }
         }
     }
@@ -487,7 +488,6 @@ ul.product-nav-buy {
         }
     }
 }
-
 
 //商品详情页显示购物车数量
 li[data-shop-count="0"] {
