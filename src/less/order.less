@@ -86,7 +86,17 @@ div.base-order {
             color: @text-gray;
         }
     }
+    &.sold-out {
+        color: #333;
+        opacity: .35;
+        .order-price-num {
+            p {
+                color: #333;
+            }
+        }
+    }
 }
+
 //合计
 .base-order-total {
     font-size: 14px;
@@ -94,6 +104,7 @@ div.base-order {
         text-align: right;
     }
 }
+
 //订单操作按钮
 .base-order-btn-row {
     display: flex;
@@ -108,7 +119,7 @@ div.base-order {
         border-radius: 5px;
         color: #fff;
         font-size: 14px;
-        &.disable{
+        &.disable {
             background-color: #ccc;
         }
     }
@@ -375,6 +386,8 @@ button.half-btn {
         }
     }
 }
+
+
 /************************
 
 物流查询页面
@@ -501,8 +514,6 @@ button.half-btn {
     flex-flow: row nowrap;
     justify-content: flex-start;
     align-items: flex-start;
-
-
     .add-comment-imgBox {
         width: unit(320/@base-px-2-rem, rem);
         height: unit(320/@base-px-2-rem, rem);
@@ -528,18 +539,18 @@ button.half-btn {
     padding-top: unit(50/@base-px-2-rem, rem);
     padding-bottom: unit(20/@base-px-2-rem, rem);
     .comment-good {
-        
         display: flex;
         flex-flow: row nowrap;
         justify-content: space-around;
         align-items: center;
-        -webkit-tap-highlight-color: rgba(0,0,0,0);
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
         span {
             padding-left: unit(30/@base-px-2-rem, rem);
             padding-top: unit(5/@base-px-2-rem, rem);
         }
     }
 }
+
 
 /************************
 

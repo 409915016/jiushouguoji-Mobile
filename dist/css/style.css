@@ -2961,6 +2961,13 @@ div.base-order:first-child {
   text-align: right;
   color: #aaa;
 }
+.base-order-info.sold-out {
+  color: #333;
+  opacity: .35;
+}
+.base-order-info.sold-out .order-price-num p {
+  color: #333;
+}
 .base-order-total {
   font-size: 14px;
 }
