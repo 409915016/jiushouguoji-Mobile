@@ -118,16 +118,17 @@
 .search-keyword-row {
     //修复 justify-content: space-between; 不两边对齐的问题
     //取消该元素的 content: none;
+    overflow: hidden;
     &:after {
         content: none;
     }
     &:before {
         content: none;
     }
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    align-items: center;
+    /*display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;*/
     padding: unit(20/@base-px-2-rem, rem) 0;
     width: 100%;
     &:first-child {
@@ -136,10 +137,16 @@
             padding: unit(10/@base-px-2-rem, rem) unit(20/@base-px-2-rem, rem);
             border: 1px solid #333;
             .make-border-radius(10px);
+            margin-bottom: 0;
         }
     }
     > a {
+        float: left;
         padding: unit(10/@base-px-2-rem, rem) unit(20/@base-px-2-rem, rem);
+        margin-bottom: unit(20/@base-px-2-rem, rem);
+        margin-left: 0;
+        margin-right: unit(35/@base-px-2-rem, rem);
+        margin-bottom: unit(50/@base-px-2-rem, rem);
         border: 1px solid @border-color-gray-very-light;
         .make-border-radius(10px);
     }
@@ -229,7 +236,7 @@
                 //line-height: unit(@nav-bar-height  /@base-px-2-rem, rem);
                 //height: unit(@nav-bar-height  /@base-px-2-rem, rem);
                 .make-line-and-height-p(@nav-bar-height);
-                padding: 0 unit((@nav-bar-link-padding/3 )/@base-px-2-rem, rem);
+                padding: 0 unit((@nav-bar-link-padding/3)/@base-px-2-rem, rem);
                 font-size: 14px;
                 color: @nav-bar-link-color;
                 font-size: unit( ( 36 / 32), em);
