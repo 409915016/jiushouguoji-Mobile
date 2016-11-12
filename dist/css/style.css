@@ -1325,6 +1325,12 @@ i.icon.alipay {
   width: 0.52816901rem;
   height: 0.52816901rem;
 }
+i.icon.wechat-pay {
+  background-image: url("../img/icon/wechat-pay.png");
+  margin: 0 0.22007042rem;
+  width: 0.52816901rem;
+  height: 0.52816901rem;
+}
 i.icon.truck {
   background-image: url("../img/icon/truck.png");
   margin: 0.08802817rem 0.22007042rem;
@@ -1585,7 +1591,7 @@ i.icon.star-red {
           align-self: center;
 }
 .shopcar-product-count > span:before {
-  content: "￥";
+  content: "¥";
 }
 .shopcar-product-count .shopcar-product-count-c {
   -webkit-align-self: center;
