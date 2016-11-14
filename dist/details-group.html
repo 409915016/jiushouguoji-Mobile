@@ -182,6 +182,7 @@
 							<img src="http://fakeimg.pl/350x350/?text=Hello">
 							<img src="http://fakeimg.pl/350x350/?text=Hello">
 							<img src="http://fakeimg.pl/350x350/?text=Hello"> </div>
+
 					</section>
 					<!--单条评论-->
 					<section class="comment-one">
@@ -339,9 +340,9 @@
 		//消息提示
 		//baseMsg("加入购物车成功");
 		addShopCarBtn = get("#addShopCar");
-		addShopCaP = get("#addShopCar p").innerHTML;
+		addShopCaP = get("#addShopCar p:last-child").innerHTML;
 		addShopCarBtn.addEventListener("click", function () {
-			if (addShopCaP == "到货提醒") {
+			if (addShopCaP == "添加到货提醒") {
 				//数据处理
 				baseMsg(addShopCaP + "成功");
 			}

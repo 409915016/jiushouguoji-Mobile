@@ -16,15 +16,15 @@ var browser_config = {
     watchFiles: ['dist/*.html', 'dist/css/*.css', 'dist/js/*.js']
 };
 
-gulp.task('testLess', function () {
+gulp.task('compileLess', function () { //改个名字啦
     gulp.src('src/less/style.less')
         .pipe(sourcemaps.init())
         .pipe(less({
             plugins: [autoprefix]
         }))
         .pipe(sourcemaps.write(''))
-        .pipe(gulp.dest('dist/css'))
-        .pipe(gulp.dest('web/Public/css'));
+        .pipe(gulp.dest('dist/css'));
+        //.pipe(gulp.dest('web/Public/css'));不需要完整css只要mini版
 });
 
 gulp.task('minify-css', function () {
@@ -51,21 +51,21 @@ gulp.task('copyJS',  function() {
 
 
 
-gulp.task('browser-sync', ['testLess', 'minify-css', 'copyJS'], function () {
+gulp.task('browser-sync', ['compileLess', 'minify-css', 'copyJS'], function () {
     browserSync.init({
         files: browser_config.watchFiles,
         server: {
             baseDir: browser_config.baseDir
         }
     });
-    gulp.watch('src/less/*.less', ['testLess']);
+    gulp.watch('src/less/*.less', ['compileLess']);
     gulp.watch('dist/css/*.css', ['minify-css']);
     gulp.watch('dist/js/*.js', ['copyJS']);
     gulp.watch("dist/*.html").on('change', browserSync.reload);
 });
 
 
+gulp.task('update_css', ['compileLess', 'minify-css']);
 
 
-
-gulp.task('default', ['testLess', 'minify-css', 'browser-sync']);
+gulp.task('default', ['compileLess', 'minify-css', 'browser-sync']);

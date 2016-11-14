@@ -301,6 +301,7 @@
 				window.scrollTo(0, 0);
 			})
 		}
+
 		var search_wrapper = get(".product-search-wrapper").innerHTML;
 		//点击假的搜索栏 弹出页面
 		get(".fake-product-search").addEventListener("click", function () {
@@ -309,10 +310,14 @@
 				content: search_wrapper,
 				anim: false,
 				style: 'position:fixed; top:0; left:0; width: 100%; height: 100%; padding:10px 0; border:none;',
-				success: search_wrapper_close
+				success: search_wrapper_close,
 			});
 			//页面弹出后获取输入焦点
-			get(".layui-m-layermain #product-search").focus();
+			var search_keyword = $(".layui-m-layermain #product-search");
+			search_keyword.focus();
+			search_keyword.keyup(function () {
+				console.log(this.value);
+			});
 		})
 	</script>
 	<script>

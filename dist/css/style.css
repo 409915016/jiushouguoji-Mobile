@@ -544,7 +544,7 @@ iframe {
   padding: 0.35211268rem 0.35211268rem;
   border-radius: 5px;
   color: #fff;
-  font-size: 15px;
+  font-size: 14px;
 }
 .order-details-b-bar {
   height: 1.18838028rem;
@@ -983,6 +983,7 @@ li[data-shop-count="0"]::before {
   background-color: #fff;
   height: 1.32042254rem;
   width: 1.32042254rem;
+  left: 1.32042254rem;
   border-radius: 30px;
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
@@ -2880,6 +2881,49 @@ div.base-order .base-order-date-state {
 }
 div.base-order:first-child {
   margin-top: 0;
+}
+div.base-order.groupbuy-state-order-underway .base-order-info {
+  background-image: url("../img/icon/order-underway.png");
+}
+div.base-order.groupbuy-state-order-succeed .base-order-info {
+  background-image: url("../img/icon/order-succeed.png");
+}
+div.base-order.groupbuy-state-order-failure .base-order-info {
+  background-image: url("../img/icon/order-failure.png");
+}
+div.base-order.groupbuy-base-order > .base-order-info {
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  background-origin: content-box;
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: 23%;
+}
+div.base-order.groupbuy-base-order > .base-order-info .order-name-price {
+  width: 53%;
+}
+div.base-order.groupbuy-base-order > .base-order-info .order-name-price > p {
+  font-size: 13px;
+  line-height: 1.4;
+}
+div.base-order.groupbuy-base-order > .base-order-info .order-name-price .groupbuy-price-num {
+  padding-top: 0.17605634rem;
+  font-size: 13px;
+}
+div.base-order.groupbuy-base-order > .base-order-info .order-name-price .groupbuy-price-num > span:last-child {
+  color: #e9282e;
+  padding-left: 0.35211268rem;
+}
+div.base-order.groupbuy-base-order > .base-order-info .order-name-price .groupbuy-price {
+  font-size: 18px;
+}
+div.base-order.groupbuy-base-order > div.base-order-total {
+  padding: 0.08802817rem 0.35211268rem;
+}
+div.base-order.groupbuy-base-order .base-order-state {
+  color: #e9282e;
 }
 .base-order-date-state {
   display: -webkit-box;

@@ -24,7 +24,7 @@ province : String
 var getOrderMsg = function (imgURL, second, province) {
 
     var get_order = document.querySelector("#get-order");
-    var imgURL = arguments[0] ? arguments[0] : "http://www.atool.org/placeholder.png?size=40x40&bg=fff";
+    var imgURL = arguments[0] ? arguments[0] : "http://fakeimg.pl/100x100/fff/000?text=AB";
     var second = arguments[1] ? arguments[1] : "8";
     var province = arguments[2] ? arguments[2] : "广东";
     //imgURL

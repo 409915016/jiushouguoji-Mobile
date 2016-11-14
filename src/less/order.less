@@ -9,6 +9,7 @@
 ****************/
 
 //order框架
+//拼团订单通用 
 div.base-order {
     background-color: #fff;
     margin-top: unit( @base-mt /@base-px-2-rem, rem);
@@ -24,8 +25,64 @@ div.base-order {
     &:first-child {
         margin-top: 0;
     }
+    //拼团状态背景图
+    &.groupbuy-state-order-underway {
+        .base-order-info {
+            background-image: url("@{icon-address}/order-underway.png");
+        }
+    }
+    &.groupbuy-state-order-succeed {
+        .base-order-info {
+            background-image: url("@{icon-address}/order-succeed.png");
+        }
+    }
+    &.groupbuy-state-order-failure {
+        .base-order-info {
+            background-image: url("@{icon-address}/order-failure.png");
+        }
+    }
+    //拼团订单样式
+    //groupbuy-base-order
+    &.groupbuy-base-order {
+        > .base-order-info {
+            justify-content: flex-start;
+            background-origin: content-box;
+            background-repeat: no-repeat;
+            background-position: right center;
+            background-size: 23%;
+            .order-name-price {
+                width: 53%;
+                //拼团商品名
+                >p {
+                    //padding-top: unit(20/@base-px-2-rem, rem);
+                    font-size: 13px;
+                    line-height: 1.4;
+                }
+                .groupbuy-price-num {
+                    padding-top: unit(20/@base-px-2-rem, rem);
+                    font-size: 13px;
+                    >span:first-child {}
+                    >span:last-child {
+                        color: @red;
+                        padding-left: unit(40/@base-px-2-rem, rem);
+                    }
+                }
+                //团购价格 
+                .groupbuy-price {
+                    font-size: 18px;
+                }
+            }
+        }
+        > div.base-order-total {
+            padding: unit(10/@base-px-2-rem, rem) unit(40/@base-px-2-rem, rem);
+        }
+        .base-order-state {
+            color: @red;
+        }
+    }
 }
 
+//订单日期和状态
 .base-order-date-state {
     display: flex;
     flex-flow: row nowrap;
@@ -86,6 +143,7 @@ div.base-order {
             color: @text-gray;
         }
     }
+    //团购人数 价格
     &.sold-out {
         color: #333;
         opacity: .35;

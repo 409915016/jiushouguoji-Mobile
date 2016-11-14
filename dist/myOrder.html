@@ -138,6 +138,68 @@
 						</p>
 					</div>
 				</div>
+								<div class="base-order">
+					<div class="base-order-date-state">
+						<span class="base-order-date">2016-04-16</span>
+						<span class="base-order-state">待付款</span>
+					</div>
+					<!--除已取消的订单 可以进入订单详情页-->
+					<a href="orderDetails.html" class="base-order-info">
+						<div class="order-imgBox">
+							<img src="img\meadjohnson-1.jpg" alt=""> </div>
+						<p>【6罐装】港版美赞臣 Meadjohson 4段奶粉 900g （3-6岁宝宝）</p>
+						<div class="order-price-num">
+							<p>&#165;
+								<span>115.00</span>
+							</p>
+							<p class="base-order-price">×
+								<span>3</span>
+							</p>
+						</div>
+					</a>
+					<div class="base-order-total">
+						<p>共
+							<span>1</span>件
+							<span>&nbsp;&nbsp;&nbsp;&nbsp;应付总款&#165;:</span>
+							<span>392.00</span>
+						</p>
+					</div>
+					<!--订单操作-->
+					<div class="base-order-btn-row">
+						<a href="">取消订单</a>
+						<a href="orderPay.html">立即支付</a>
+					</div>
+				</div>
+				<div class="base-order">
+					<div class="base-order-date-state">
+						<span class="base-order-date">2016-04-16</span>
+						<span class="base-order-state">待付款</span>
+					</div>
+					<a href="orderDetails.html" class="base-order-info">
+						<div class="order-imgBox">
+							<img src="img\meadjohnson-1.jpg" alt=""> </div>
+						<p>【6罐装】港版美赞臣 Meadjohson 4段奶粉 900g （3-6岁宝宝）</p>
+						<div class="order-price-num">
+							<p>&#165;
+								<span>115.00</span>
+							</p>
+							<p class="base-order-price">×
+								<span>3</span>
+							</p>
+						</div>
+					</a>
+					<div class="base-order-total">
+						<p>共
+							<span>1</span>件
+							<span>&nbsp;&nbsp;&nbsp;&nbsp;应付总款&#165;:</span>
+							<span>392.00</span>
+						</p>
+					</div>
+					<div class="base-order-btn-row">
+						<a href="">取消订单</a>
+						<a href="orderPay.html">立即支付</a>
+					</div>
+				</div>
 			</section>
 			<!--待付款-->
 			<section class="switch-wrapper">
@@ -427,9 +489,9 @@
 			//从Cookie取出切换的nav值
 			//var SetNavActive = $(".nav-bar li").get(myCookie);
 			//读取localStorage
-			var SetNavActive = $(".nav-bar li").get(parseInt(localStorage.getItem("myOrderNav")));
+			//var SetNavActive = $(".nav-bar li").get(parseInt(localStorage.getItem("myOrderNav")));
 			//切换标签页
-			SetNavActive.click();
+			//SetNavActive.click();
 			//重置Cookie为0
 			//SetMyOrderNav(0);
 		});
