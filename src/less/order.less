@@ -154,7 +154,6 @@ div.base-order {
         }
     }
     &.groupbuy-order-info {
-
         > p {
             width: 46%;
         }
@@ -249,12 +248,19 @@ div.base-order {
 
 .order-comfirm-user-add, .order-comfirm-list {
     background-color: #fff;
-    .order-list-door-name {
-        border-bottom: 1px solid @border-color-gray-light;
-        border-top: 1px solid @border-color-gray-light;
-        padding: unit(20/@base-px-2-rem, rem) unit(40/@base-px-2-rem, rem);
-        padding-left: unit(80/@base-px-2-rem, rem);
-        font-size: 14px;
+}
+
+//订单内商家名称
+.order-list-door-name {
+    border-bottom: 1px solid @border-color-gray-light;
+    border-top: 1px solid @border-color-gray-light;
+    padding: unit(20/@base-px-2-rem, rem) unit(40/@base-px-2-rem, rem);
+    padding-left: unit(80/@base-px-2-rem, rem);
+    font-size: 14px;
+    
+    //拼团是否成功的文字，显示失败或者等待发货
+    span {
+        line-height: 1.6;
     }
 }
 
@@ -390,6 +396,9 @@ button.half-btn {
     p {
         font-size: 16px;
         margin-left: unit(40/@base-px-2-rem, rem);
+    }
+    &.groupbuy-details-state {
+        background-color: @group-state-bg-color;
     }
 }
 
@@ -699,3 +708,5 @@ section.door-comment {
         align-items: center;
     }
 }
+
+

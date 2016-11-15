@@ -65,7 +65,10 @@ gulp.task('browser-sync', ['compileLess', 'minify-css', 'copyJS'], function () {
 });
 
 
-gulp.task('update_css', ['compileLess', 'minify-css']);
+gulp.task('update_css', function(){
+    gulp.watch('src/less/*.less', ['compileLess']);
+    gulp.watch('dist/css/*.css', ['minify-css']);
+});
 
 
 gulp.task('default', ['compileLess', 'minify-css', 'browser-sync']);

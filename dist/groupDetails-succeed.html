@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="zh-cmn-Hans">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="renderer" content="webkit">
+	<title>拼团</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="renderer" content="webkit">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no" />
+	<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+	<meta content="telephone=no" name="format-detection" />
+	<link rel="Shortcut Icon" href="favicon.jpg" />
+	<link rel="stylesheet" href="css/normalize.min.css">
+	<link rel="stylesheet" href="css/style.min.css">
+	<link rel="stylesheet" href="css/swiper.min.css">
+	<script src="js/jquery.min.js"></script>
+	<script src="js/flexible.js"></script>
+	<script src="js/swiper.jquery.min.js"></script>
+	<script src="js/layer.js"></script>
+	<script src="js/main.js">
+
+	</script>
+</head>
+
+<body>
+	<div class="wrapper">
+		<!--fixed element-->
+		<!--文字头-->
+		<div class="base-nav-bar">
+			<a class="" href="my.html">
+				<i class="icon back fl"></i>
+			</a>
+			<p>拼团</p>
+			<a class="no-visible" href="index.html">
+				<i class="icon back fl"></i>
+			</a>
+		</div>
+		<!--拼团底部栏-->
+		<div class="nav-buttom-bar no-padding order-details-b-bar groupbuy-b-bar">
+			<div class="nav-btn-wrapper">
+			
+				<a href="" >更多拼团</a>
+				<a href="">我也开个团</a>
+			</div>
+		</div>
+		<!--fixed element end-->
+		<!--可见页-->
+		<div class="main-wrapper title-bar arrival order-details">
+			<!--拼团成功-->
+			<!--拼团成功-->
+			<!--拼团成功-->
+			<!--拼团成功-->
+			<!--拼团成功-->
+			<div class="base-order groupbuy-base-order groupbuy-state-order-succeed">
+				<!--base-order 同家商店多件商品重复使用-->
+				<a href="details-group.html" class="base-order-info ">
+					<!--base-order-info 一种商品显示-->
+					<!--商品图-->
+					<div class="order-imgBox">
+						<img src="img\meadjohnson-1.jpg" alt=""> </div>
+					<div class="order-name-price">
+						<p>【6罐装】港版美赞臣 Meadjohson 4段奶粉 900g （3-6岁宝宝）</p>
+						<!--团购人数 价格-->
+						<div class="groupbuy-price-num">
+							<span>3<span>人团</span></span>
+							<span>￥<span class="groupbuy-price">111.00</span>元&#47;件</span>
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="groupbuy-details-user">
+				<p><span>3</span>人团
+				</p>
+				<div class="groupbuy-details-userheader">
+					<section class="userheaderBox">
+						<img src="http://fakeimg.pl/50x50/">
+					</section>
+					<section class="userheaderBox">
+						<img src="http://fakeimg.pl/50x50/">
+					</section>					
+					<section class="userheaderBox">
+						<img src="http://fakeimg.pl/50x50/">
+					</section>
+
+				</div>
+				<div class="groupbuy-details-userinfo-wrapper">
+					<p><span>查看</span>全部拼团详情</p>
+					<div class="groupbuy-details-userinfo">
+						<section class="groupbuy-details-user">
+							<section class="userheaderBox">
+						<img src="http://fakeimg.pl/50x50/">
+					</section>		
+							<p>用户名</p>
+							<p>2011-11-12 11:00</p>
+						</section>
+						<section class="groupbuy-details-user">
+							<section class="userheaderBox">
+						<img src="http://fakeimg.pl/50x50/">
+					</section>		
+							<p>用户12312312名</p>
+							<p>2011-11-12 11:00</p>		
+						</section>
+					<section class="groupbuy-details-user">
+						<section class="userheaderBox">
+							<img src="http://fakeimg.pl/50x50/">
+						</section>		
+						<p>用户名</p>
+						<p>2011-11-12 11:00</p>
+						
+					</section>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+		<!--可见页 end-->
+	</div>
+	<script>
+		$(document).ready(function() {
+            // $(".nav-buttom-bar ul li a i").removeClass("active");
+            // $(".nav-buttom-bar ul li:nth-child(2) a i").addClass("active");
+			(".groupbuy-details-userinfo").hide();
+			$("#switch-userinfo").click(function () {
+				$(".groupbuy-details-userinfo").fadeToggle("fast", "linear");
+			});
+			$("#switch-userinf").click(function () {
+				$(".groupbuy-details-userinfo").hide();
+			});
+        });
+	</script>
+</body>
+
+</html>

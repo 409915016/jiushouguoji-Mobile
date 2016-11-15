@@ -551,6 +551,27 @@ iframe {
   border: 0;
   background-color: #ebebeb;
 }
+.order-details-b-bar.groupbuy-b-bar {
+  padding: 0rem 0.35211268rem;
+  height: 1.49647887rem;
+  background-color: rgba(235, 235, 235, 0.7);
+}
+.order-details-b-bar.groupbuy-b-bar a {
+  height: auto;
+  padding: 0.26408451rem 0.35211268rem;
+  margin: 0;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+}
+.order-details-b-bar.groupbuy-b-bar a:first-child {
+  width: 35%;
+  background-color: #d2d2d2;
+}
+.order-details-b-bar.groupbuy-b-bar a:last-child {
+  width: 65%;
+  margin-left: 0.35211268rem;
+}
 /************************
 
 通用标题栏 顶部
@@ -885,6 +906,7 @@ li[data-shop-count="0"]::before {
   height: 100%;
   -webkit-align-self: center;
       -ms-flex-item-align: center;
+              -ms-grid-row-align: center;
           align-self: center;
 }
 .order-comfirm-bar .order-comfirm-price {
@@ -1584,6 +1606,7 @@ i.icon.star-red {
   padding-left: 0.70422535rem;
   -webkit-align-self: center;
       -ms-flex-item-align: center;
+              -ms-grid-row-align: center;
           align-self: center;
 }
 .shopcar-product-count > span:before {
@@ -1592,6 +1615,7 @@ i.icon.star-red {
 .shopcar-product-count .shopcar-product-count-c {
   -webkit-align-self: center;
       -ms-flex-item-align: center;
+              -ms-grid-row-align: center;
           align-self: center;
 }
 .shopcar-product-count .shopcar-product-count-c span {
@@ -2996,6 +3020,7 @@ div.base-order.groupbuy-base-order .base-order-state {
   font-size: 14px;
   -webkit-align-self: center;
       -ms-flex-item-align: center;
+              -ms-grid-row-align: center;
           align-self: center;
 }
 .base-order-info .order-price-num p {
@@ -3140,13 +3165,15 @@ div.base-order.groupbuy-base-order .base-order-state {
 .order-comfirm-list {
   background-color: #fff;
 }
-.order-comfirm-user-add .order-list-door-name,
-.order-comfirm-list .order-list-door-name {
+.order-list-door-name {
   border-bottom: 1px solid #c8c7cc;
   border-top: 1px solid #c8c7cc;
   padding: 0.17605634rem 0.35211268rem;
   padding-left: 0.70422535rem;
   font-size: 14px;
+}
+.order-list-door-name span {
+  line-height: 1.6;
 }
 .order-comfirm-user-add {
   display: -webkit-box;
@@ -3303,6 +3330,9 @@ button.half-btn {
 .order-details-state p {
   font-size: 16px;
   margin-left: 0.35211268rem;
+}
+.order-details-state.groupbuy-details-state {
+  background-color: #f0475a;
 }
 .order-details-user-address {
   padding: 0.17605634rem 0.35211268rem;
@@ -4214,6 +4244,9 @@ a {
 .text-black {
   color: #333;
 }
+.text-16 {
+  font-size: 16px;
+}
 textarea {
   width: 100%;
   resize: none;
@@ -4720,6 +4753,149 @@ group-goods
 //需要使用 width: 100%;
 
 ************************/
+/****************
+
+拼团详情页
+
+****************/
+.groupbuy-details-user {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: column nowrap;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.groupbuy-details-user > p {
+  padding: 0.17605634rem 0.35211268rem;
+  font-size: 16px;
+}
+.groupbuy-details-userheader {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row nowrap;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 0.35211268rem;
+}
+.groupbuy-details-userheader .userheaderBox {
+  height: 1.32042254rem;
+}
+.groupbuy-details-userheader img {
+  border-radius: 100px;
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+  border-bottom-left-radius: 100px;
+  border-bottom-right-radius: 100px;
+  margin: 0 0.17605634rem;
+  height: 1.32042254rem;
+}
+.groupbuy-details-userinfo-wrapper {
+  width: 100%;
+}
+.groupbuy-details-userinfo-wrapper > p {
+  padding: 0.17605634rem 0.35211268rem;
+  text-align: center;
+  letter-spacing: 1px;
+}
+.groupbuy-details-userinfo-wrapper .groupbuy-details-userinfo {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: column nowrap;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+.groupbuy-details-userinfo-wrapper .groupbuy-details-userinfo:before {
+  content: "";
+  display: block;
+  position: relative;
+  top: 0;
+  left: 0;
+  border-left: 0.26408451rem solid transparent;
+  border-right: 0.26408451rem solid transparent;
+  border-bottom: 0.26408451rem solid #262626;
+}
+.groupbuy-details-userinfo-wrapper section.groupbuy-details-user {
+  display: none;
+  padding: 0.04401408rem 0.35211268rem;
+  padding-left: 0.52816901rem;
+  padding-right: 0.88028169rem;
+  background-color: #262626;
+  color: #fff;
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row nowrap;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.groupbuy-details-userinfo-wrapper section.groupbuy-details-user > p {
+  font-size: 14px;
+  padding: 0.26408451rem 0.17605634rem;
+  text-align: center;
+  letter-spacing: 1px;
+  text-align: left;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 40%;
+  font-size: 13px;
+}
+.groupbuy-details-userinfo-wrapper section.groupbuy-details-user > p ~ p {
+  width: 50%;
+}
+.groupbuy-details-userinfo-wrapper section.groupbuy-details-user .userheaderBox {
+  height: 0.88028169rem;
+}
+.groupbuy-details-userinfo-wrapper section.groupbuy-details-user img {
+  border-radius: 100px;
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+  border-bottom-left-radius: 100px;
+  border-bottom-right-radius: 100px;
+  height: 0.88028169rem;
+}
 /************************
 
 Swiper 分页指示器颜色

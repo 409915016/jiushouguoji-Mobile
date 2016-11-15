@@ -1,0 +1,102 @@
+@import "value.less";
+@import "func.less";
+@import "base.less";
+
+/****************
+
+拼团详情页
+
+****************/
+
+.groupbuy-details-user {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    > p {
+        padding: unit(20/@base-px-2-rem, rem) unit(40/@base-px-2-rem, rem);
+        font-size: 16px;
+    }
+}
+
+.groupbuy-details-userheader {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: unit(40/@base-px-2-rem, rem);
+    .userheaderBox {
+        height: unit(150/@base-px-2-rem, rem);
+    }
+    img {
+        .make-border-radius(100px);
+        margin: 0 unit(20/@base-px-2-rem, rem);
+        //
+        height: unit(150/@base-px-2-rem, rem);
+    }
+}
+
+.groupbuy-details-userinfo-wrapper {
+    width: 100%;
+    > p {
+        padding: unit(20/@base-px-2-rem, rem) unit(40/@base-px-2-rem, rem);
+        text-align: center;
+        letter-spacing: 1px;
+        //font-size: 16px;
+    }
+    .groupbuy-details-userinfo {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+        align-items: center;
+        position: relative;
+        
+        &:before {
+            content: "";
+            display: block;
+            position: relative;
+            top: 0;
+            left: 0;
+            border-left: unit(30/@base-px-2-rem, rem) solid transparent;
+            border-right: unit(30/@base-px-2-rem, rem) solid transparent;
+            border-bottom: unit(30/@base-px-2-rem, rem) solid @group-black;;
+
+        }
+    }
+    section.groupbuy-details-user {
+        display: none;
+        padding:  unit(5/@base-px-2-rem, rem) unit(40/@base-px-2-rem, rem);
+        padding-left: unit(60/@base-px-2-rem, rem);
+        padding-right: unit(100/@base-px-2-rem, rem);
+        background-color: @group-black;
+        color: #fff;
+        width: 100%;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-start;
+        align-items: center;
+        
+        > p {
+            font-size: 14px;
+            padding: unit(30/@base-px-2-rem, rem) unit(20/@base-px-2-rem, rem);
+            text-align: center;
+            letter-spacing: 1px;
+            text-align: left;
+            .text-omit();
+             width: 40%;
+            
+            font-size: 13px;
+            ~ p {
+                width: 50%;
+                
+            }
+        }
+        .userheaderBox {
+            height: unit(100/@base-px-2-rem, rem);
+        }
+        img {
+            .make-border-radius(100px);
+            height: unit(100/@base-px-2-rem, rem);
+        }
+    }
+}
