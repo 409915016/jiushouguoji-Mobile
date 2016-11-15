@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="zh-cmn-Hans">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="renderer" content="webkit">
+	<title>拼团支付详情</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="renderer" content="webkit">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no" />
+	<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+	<meta content="telephone=no" name="format-detection" />
+	<link rel="Shortcut Icon" href="favicon.jpg" />
+	<link rel="stylesheet" href="css/normalize.min.css">
+	<link rel="stylesheet" href="css/style.min.css">
+	<link rel="stylesheet" href="css/swiper.min.css">
+	<script src="js/jquery.min.js"></script>
+	<script src="js/flexible.js"></script>
+	<script src="js/swiper.jquery.min.js"></script>
+	<script src="js/layer.js"></script>
+	<script src="js/main.js">
+	</script>
+</head>
+
+<body>
+	<div class="wrapper">
+		<!--fixed element-->
+		<!--文字头-->
+		<div class="base-nav-bar">
+			<a class="" href="my.html">
+				<i class="icon back fl"></i>
+			</a>
+			<p>拼团支付详情</p>
+			<a class="no-visible" href=""> 保存 </a>
+		</div>
+		<!--底部确认订单-->
+		<div class="nav-buttom-bar no-padding">
+			<div class="order-comfirm-bar">
+				<p class="order-comfirm-price">共付款
+					<span class="text-red">&#165;</span>
+					<span class="text-red">73.00</span>
+				</p>
+				<a class="order-comfirm-btn" href="myOrder.html">确认订单</a>
+			</div>
+		</div>
+		<!--fixed element end-->
+		<!--可见页-->
+		<div class="main-wrapper title-bar">
+			<!--用户信息-->
+			<a href="myAddress.html" class="order-comfirm-user-add">
+				<div class="user-address-info">
+					<p class="user-real-name-phone">
+						<span class="user-real-name">就手国际</span>
+						<span class="user-phone-num">13800138000</span>
+					</p>
+					<p class="user-real-address">
+						<span>北京市</span>
+						<span>朝阳区</span>
+						<span>朝阳区朝阳区朝阳区朝阳区朝阳区朝区朝阳区朝阳区</span>
+					</p>
+					<p class="">身份证:
+						<span class="user-identity-num">441622199404062222</span>
+					</p>
+				</div>
+				<i class="icon right"></i>
+			</a>
+			<!--订单列表-->
+			<div class="order-comfirm-list">
+				<!--整个显示商品订单的块-->
+				<section class="order-list">
+					<!--同家商家信息-->
+					<p class="order-list-door-name">就手国际海外旗舰店</p>
+					<!--售罄时候显示-->
+					<!--<section class="base-order-info sold-out">
+						<div class="order-imgBox">
+							<img src="img\meadjohnson-1.jpg" alt=""> </div>
+						<p>【6罐装】港版美赞臣 Meadjohson 4段奶粉 900g （3-6岁宝宝）</p>
+						<div class="order-price-num">
+							<p>库存不足</p>
+						</div>
+					</section>-->
+					<section class="base-order-info groupbuy-order-info">
+						<div class="order-imgBox">
+							<img src="img\meadjohnson-1.jpg" alt=""> </div>
+						<p>【6罐装】港版美赞臣 Meadjohson 4段奶粉 900g （3-6岁宝宝）</p>
+						<div class="order-price-num">
+							<p class="base-order-price">&#165;
+								<span>333.99</span>/件 </p>
+						</div>
+					</section>
+					<div class="groupbuy-price-selector">
+						<p>数量</p>
+						<div class="price-selector">
+							<i class="icon minus"></i>
+							<span>0</span>
+							<i class="icon add"></i>
+						</div>
+					</div>
+					<a href="useCoupon.html" class="groupbuy-coupon-selector">
+						<p>店铺优惠券</p>
+						<p>可用优惠券
+							<span class="text-red">0</span>张</p>
+					</a>
+					<div class="groupbuy-total ">
+						<p>店铺合计：
+							<span class="text-red">&#165;</span>
+							<span class="text-red">0.011</span>(全场包邮)</p>
+					</div>
+				</section>
+			</div>
+			<!--买家留言-->
+			<div class="base-mt-wrapper">
+				<div class="order-pay-way">
+					<section class="pay-way">
+						<div class="pay-way-text">
+							<i class="icon alipay"></i>
+							<p>支付宝</p>
+						</div>
+						<i class="icon checked"></i>
+					</section>
+					<section class="pay-way">
+						<div class="pay-way-text">
+							<i class="icon wechat-pay"></i>
+							<p>微信支付</p>
+						</div>
+						<i class="icon no-check"></i>
+					</section>
+					<section class="pay-way">
+						<div class="pay-way-text">
+							<i class="icon allinpay"></i>
+							<p>通联支付</p>
+						</div>
+						<i class="icon no-check"></i>
+					</section>
+				</div>
+			</div>
+			<!--可见页 end-->
+		</div>
+		<div class="user-touch-select"> </div>
+		<script>
+			$(document).ready(function () {
+				// $(".nav-buttom-bar ul li a i").removeClass("active");
+				// $(".nav-buttom-bar ul li:nth-child(2) a i").addClass("active");
+				var aaa = get(".user-touch-select").innerHTML;
+				var user_add_c = get(".order-comfirm-user-add");
+				user_add_c.addEventListener("click", function () {
+					window.location.href = "myAddress.html";
+				})
+			});
+		</script>
+</body>
+
+</html>

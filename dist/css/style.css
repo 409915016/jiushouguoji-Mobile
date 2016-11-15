@@ -893,7 +893,6 @@ li[data-shop-count="0"]::before {
   text-align: center;
   line-height: 1.49647887rem;
   padding-right: 1.76056338rem;
-  color: #e9282e;
 }
 .order-comfirm-bar .order-comfirm-btn {
   width: 40%;
@@ -3014,11 +3013,94 @@ div.base-order.groupbuy-base-order .base-order-state {
 .base-order-info.sold-out .order-price-num p {
   color: #333;
 }
+.base-order-info.groupbuy-order-info > p {
+  width: 46%;
+}
+.base-order-info.groupbuy-order-info .base-order-price {
+  text-align: left;
+  padding-top: 0;
+  color: #333;
+}
+.groupbuy-price-selector {
+  padding: 0.26408451rem 0.35211268rem;
+  padding-left: 0.70422535rem;
+  font-size: 14px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row nowrap;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  border-bottom: 1px solid #c8c7cc;
+}
+.groupbuy-coupon-selector {
+  padding: 0.26408451rem 0.35211268rem;
+  padding-left: 0.70422535rem;
+  font-size: 14px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row nowrap;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  border-bottom: 1px solid #c8c7cc;
+}
+.groupbuy-total {
+  text-align: right;
+  padding: 0.26408451rem 0.35211268rem;
+  padding-left: 0.70422535rem;
+  font-size: 14px;
+}
 .base-order-total {
   font-size: 14px;
 }
 .base-order-total p {
   text-align: right;
+}
+.price-selector {
+  -webkit-align-self: center;
+      -ms-flex-item-align: center;
+          align-self: center;
+  font-size: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row nowrap;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.price-selector span {
+  color: #e9282e;
+  padding: 0rem 0.52816901rem;
+  font-weight: 600;
+  font-size: 15px;
 }
 .base-order-btn-row {
   display: -webkit-box;
@@ -4690,13 +4772,11 @@ Swiper 分页指示器颜色
 }
 .main-wrapper.my-page {
   background-color: #f7f7f7;
-  height: 100%;
   margin-bottom: 1.05633803rem;
 }
 @media screen and (max-height: 600px) {
   .main-wrapper.my-page {
-    height: 100%;
-    margin-bottom: 1.76056338rem;
+    overflow: visible;
   }
 }
 .main-wrapper.my-center {
@@ -4706,6 +4786,9 @@ Swiper 分页指示器颜色
 .main-wrapper.about iframe {
   width: 100%;
   height: 100vh;
+}
+.main-wrapper.searchresult {
+  overflow: visible;
 }
 .main-wrapper.searchresult .base-product-label:last-of-type {
   border-bottom: 1px solid #b2b3b4;
@@ -4994,6 +5077,17 @@ p.end-text {
 .collect .base-mt-wrapper > p.guess-you-like {
   color: #aaa;
   font-size: 16px;
+}
+.product-search-wrapper {
+  display: none;
+  height: 100%;
+  background: #fff;
+}
+.auto-keyword li {
+  margin: 5px 0;
+}
+.auto-keyword li a {
+  font-size: 0.4rem;
 }
 
 /*# sourceMappingURL=style.css.map */
