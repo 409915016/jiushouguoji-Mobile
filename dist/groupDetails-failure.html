@@ -40,8 +40,8 @@
 		<div class="nav-buttom-bar no-padding order-details-b-bar groupbuy-b-bar">
 			<div class="nav-btn-wrapper">
 			
-				<a href="" >更多拼团</a>
-				<a href="">我也开个团</a>
+				<a href="groupbuy.html" >更多拼团</a>
+				<a href="groupOrderInfo.html">我也开个团</a>
 			</div>
 		</div>
 		<!--fixed element end-->
@@ -118,14 +118,9 @@
 	</div>
 	<script>
 		$(document).ready(function() {
-            // $(".nav-buttom-bar ul li a i").removeClass("active");
-            // $(".nav-buttom-bar ul li:nth-child(2) a i").addClass("active");
 			$(".groupbuy-details-userinfo").hide();
 			$("#switch-userinfo").click(function () {
 				$(".groupbuy-details-userinfo").fadeToggle("fast", "linear");
-			});
-			$("#switch-userinf").click(function () {
-				$(".groupbuy-details-userinfo").hide();
 			});
         });
 

@@ -906,7 +906,6 @@ li[data-shop-count="0"]::before {
   height: 100%;
   -webkit-align-self: center;
       -ms-flex-item-align: center;
-              -ms-grid-row-align: center;
           align-self: center;
 }
 .order-comfirm-bar .order-comfirm-price {
@@ -1606,7 +1605,6 @@ i.icon.star-red {
   padding-left: 0.70422535rem;
   -webkit-align-self: center;
       -ms-flex-item-align: center;
-              -ms-grid-row-align: center;
           align-self: center;
 }
 .shopcar-product-count > span:before {
@@ -1615,7 +1613,6 @@ i.icon.star-red {
 .shopcar-product-count .shopcar-product-count-c {
   -webkit-align-self: center;
       -ms-flex-item-align: center;
-              -ms-grid-row-align: center;
           align-self: center;
 }
 .shopcar-product-count .shopcar-product-count-c span {
@@ -3020,7 +3017,6 @@ div.base-order.groupbuy-base-order .base-order-state {
   font-size: 14px;
   -webkit-align-self: center;
       -ms-flex-item-align: center;
-              -ms-grid-row-align: center;
           align-self: center;
 }
 .base-order-info .order-price-num p {
@@ -3333,6 +3329,13 @@ button.half-btn {
 }
 .order-details-state.groupbuy-details-state {
   background-color: #f0475a;
+  background-origin: padding-box;
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: 100%;
+  background-image: url("../img/icon/groupbuybg.jpg");
+  color: #fff;
+  padding: 0.88028169rem;
 }
 .order-details-user-address {
   padding: 0.17605634rem 0.35211268rem;

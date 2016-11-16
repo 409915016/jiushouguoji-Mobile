@@ -40,8 +40,8 @@
 		<div class="nav-buttom-bar no-padding order-details-b-bar groupbuy-b-bar">
 			<div class="nav-btn-wrapper">
 			
-				<a href="" >更多拼团</a>
-				<a href="">我也开个团</a>
+				<a href="groupbuy.html" >更多拼团</a>
+				<a href="groupOrderInfo.html">我也开个团</a>
 			</div>
 		</div>
 		<!--fixed element end-->
@@ -85,7 +85,7 @@
 
 				</div>
 				<div class="groupbuy-details-userinfo-wrapper">
-					<p><span>查看</span>全部拼团详情</p>
+					<p id="switch-userinfo"><span>查看</span>全部拼团详情</p>
 					<div class="groupbuy-details-userinfo">
 						<section class="groupbuy-details-user">
 							<section class="userheaderBox">
@@ -122,9 +122,7 @@
 			$("#switch-userinfo").click(function () {
 				$(".groupbuy-details-userinfo").fadeToggle("fast", "linear");
 			});
-			$("#switch-userinf").click(function () {
-				$(".groupbuy-details-userinfo").hide();
-			});
+
         });
 	</script>
 </body>
