@@ -5268,5 +5268,24 @@ p.end-text {
 .auto-keyword li a {
   font-size: 0.4rem;
 }
+.error-wrapper {
+  background-color: #96d6f7;
+  background-origin: padding-box;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 100%;
+  padding: 1.32042254rem 0;
+  height: 100%;
+  color: #fff;
+}
+.error-wrapper img {
+  width: 100%;
+}
+.error-wrapper p {
+  text-align: center;
+  font-size: 20px;
+  color: #3284c6;
+  text-shadow: 2px 2px 0px #bbe3fa;
+}
 
 /*# sourceMappingURL=style.css.map */
