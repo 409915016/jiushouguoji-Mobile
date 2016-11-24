@@ -12,12 +12,18 @@ section.product-show {
     img {
         width: 100%;
     }
+    //靠近轮播图的团购
+    //团购没有顶部外边距
+    + section.product-details {
+        margin-top: 0;
+    }
 }
 
 //商品详细信息
 section.product-details {
     background-color: #fff;
     padding: 0 unit(40/@base-px-2-rem, rem);
+    margin-top: unit(40/@base-px-2-rem, rem);
     p {
         padding-top: unit(30/@base-px-2-rem, rem);
         &.border-b {
@@ -83,12 +89,16 @@ section.product-details {
 //拼团用户列表
 .group-buy-member-list {
     padding: unit(30/@base-px-2-rem, rem) unit(40/@base-px-2-rem, rem);
+    padding-bottom: 0;
     background-color: #fff;
     .group-buy-member {
         border-bottom: 1px solid @border-color-gray-very-light;
         // &:first-child > div {
         //     margin-top: 0;
         // }
+        &:last-child {
+            border: 0;
+        }
     }
 }
 
@@ -229,6 +239,7 @@ div.comment-queue {
 ************************/
 
 section.comment-one {
+    border-top: 1px solid @border-color-gray-light;
     >p {
         line-height: 1.6;
         >span {
@@ -243,11 +254,15 @@ section.comment-one {
             }
         }
     }
+    &:nth-of-type(1) {
+        border: 0;
+    }
     p.comment-content {
         //text-indent: 24px;
         font-size: 12px;
         color: #333;
         line-height: 1.6;
+        padding-bottom: unit(20/@base-px-2-rem, rem);
     }
     //是否包含评论图片
     div.comment-imgBox {
