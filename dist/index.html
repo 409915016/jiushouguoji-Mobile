@@ -13,6 +13,7 @@
 	<link rel="stylesheet" href="css/style.min.css">
 	<link rel="stylesheet" href="css/swiper.min.css">
 	<script src="js/jquery.min.js"></script>
+	<script src="js/jquery.mobile.min.js"></script>
 	<!--移动端自适应布局-->
 	<script src="js/flexible.js"></script>
 	<script src="js/swiper.jquery.min.js"></script>
@@ -292,6 +293,7 @@
 		<!--可见页 end-->
 	</div>
 	<script>
+		
 		//搜索页关闭 在成功弹出搜索页之后调用
 		function search_wrapper_close() {
 			//禁止页面滑动
@@ -322,6 +324,10 @@
 	</script>
 	<script>
 		$(document).ready(function () {
+			//加载后再设置文字大小
+			$("body > div.wrapper > div.nav-bar > ul > li > a").css("font-size","14px");	
+		
+					
 			//顶部导航
 			$(".nav-bar ul li").removeClass("active");
 			$(".nav-bar ul li:first-child").addClass("active");

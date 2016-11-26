@@ -237,9 +237,10 @@
                 //height: unit(@nav-bar-height  /@base-px-2-rem, rem);
                 .make-line-and-height-p(@nav-bar-height);
                 padding: 0 unit((@nav-bar-link-padding/3)/@base-px-2-rem, rem);
-                font-size: 14px;
+                //在首页中加载后用SJ设置为14px
+                //修复安卓微信加载导航文字过大的问题
+                font-size: 0px;
                 color: @nav-bar-link-color;
-                font-size: unit( ( 36 / 32), em);
                 // @media screen and (min-width: 768px) {
                 //     font-size: 20px;
                 //     letter-spacing: 2px;
