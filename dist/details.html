@@ -70,6 +70,10 @@
 					</li>
 				</ul>
 			</div>
+
+			
+
+
 		</div>
 		<!--就手国际收到订单-->
 		<div class="" id="get-order">
@@ -81,6 +85,18 @@
 		</div>
 		<!--加入购物车动画-->
 		<img id="TurnAround-img" src="" alt="">
+
+
+
+		<!--查看大图-->
+		<div class="full-screen">
+			<div class="full-screen-imgBox">
+				<img src="https://placeholdit.imgix.net/~text?txtsize=28&txt=%E5%B0%B1%E6%89%8B&w=100&h=100" alt="">
+			</div>
+		</div>
+		<!--查看大图-->
+
+
 		<!--fixed element end-->
 		<!--可见页-->
 		<div class="main-wrapper title-bar">
@@ -417,6 +433,29 @@
                 baseMsg("添加收藏成功");
             }
         })
+
+
+
+		//点击查看大图
+		$(".comment-imgBox img").click(function(){
+			$(".full-screen").css("display","flex");
+			var this_img = this.src;
+			console.log($(this).width());
+			console.log($(document).width());
+
+			if( $(document).width() > $(this).width() ) {
+				$(".full-screen").css("align-items","center");
+
+
+			}
+			var full_img = $(".full-screen-imgBox img")[0].src;
+			$(".full-screen-imgBox img")[0].src = this.src;
+			$(".full-screen").click(function(){
+				$(this).css("display","none");
+			})
+			
+
+		})
 	</script>
 </body>
 

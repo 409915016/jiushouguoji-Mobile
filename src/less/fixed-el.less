@@ -313,8 +313,6 @@
     &.no-padding {
         padding: 0;
     }
-
-  
     //订单详情下 的操作按钮
     .nav-btn-wrapper {
         display: flex;
@@ -334,28 +332,26 @@
             font-size: 14px;
         }
     }
-    
 }
 
 .order-details-b-bar {
     height: unit((@nav-buttom-bar-height - 35)/@base-px-2-rem, rem);
     border: 0;
     background-color: @border-color-gray-very-light;
-       //拼团透明度底部 
-    &.groupbuy-b-bar{
+    //拼团透明度底部 
+    &.groupbuy-b-bar {
         //拼团详情页要比一般的底部栏高  容纳按钮
         padding: unit(0/@base-px-2-rem, rem) unit(40/@base-px-2-rem, rem);
         height: unit((@nav-buttom-bar-height)/@base-px-2-rem, rem);
         //http://stackoverflow.com/questions/14860874/how-to-convert-hex-color-to-rgba-with-less-compiler
         //less fade 函数可以把hex转换成rgba颜色 褪色
-        background-color: fade(@border-color-gray-very-light, 70%); 
+        background-color: fade(@border-color-gray-very-light, 70%);
         //更多拼团 和 我也开个团按钮
         a {
             height: auto;
             padding: unit(30/@base-px-2-rem, rem) unit(40/@base-px-2-rem, rem);
             margin: 0;
             justify-content: space-around;
-        
         }
         a:first-child {
             width: 35%;
@@ -365,7 +361,6 @@
             width: 65%;
             margin-left: unit(40/@base-px-2-rem, rem);
         }
-
     }
 }
 
@@ -697,4 +692,53 @@ li[data-shop-count="0"] {
     //修正默认位置与返回按钮重叠
     left: unit( 150/@base-px-2-rem, rem);
     .make-border-radius(30px);
+}
+
+
+/****************
+
+评论页 点击放大评论图
+
+****************/
+
+.full-screen {
+    position: fixed;
+    z-index: @z-index-nav-search-bar + 1;
+    width: 100%;
+    max-width: @max-width;
+    height: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .55);
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: stretch;
+    display: none;
+    .full-screen-imgBox {
+        position: relative;
+        img {
+            width: 100%;
+        }
+    }
+    &:after {
+        display: block;
+        content: "";
+        position: absolute;
+        top: 10%;
+        right: 1%;
+        height: unit( 100/@base-px-2-rem, rem);
+        width: unit( 100/@base-px-2-rem, rem);
+        background-color: rgba(255, 255, 255, .1);
+
+        background-image: url("@{icon-address}/x.png");
+        background-repeat: no-repeat;
+        //background-origin: content-box;
+        background-size: 120% 120%; 
+        background-position: center center;
+    
+
+
+
+        .make-border-radius(50px);
+    }
 }
