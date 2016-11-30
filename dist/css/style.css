@@ -2443,6 +2443,46 @@ login-sign-wrapper
   color: #b0b0b0;
   font-size: 10px;
 }
+.login-sign-wrapper.bind-wechat form {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: column nowrap;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.login-sign-wrapper.bind-wechat p.login-select {
+  width: 80%;
+}
+.login-sign-wrapper.bind-wechat p.login-select span {
+  font-size: 14px;
+  padding: 0.17605634rem 0;
+  margin: 0 0.08802817rem;
+  border-bottom: 2px solid #fff;
+}
+@media screen and (min-width: 375px) {
+  .login-sign-wrapper.bind-wechat p.login-select span {
+    font-size: 16px;
+  }
+}
+.login-sign-wrapper.bind-wechat p.login-select span.active {
+  border-bottom: 2px solid #ed5358;
+}
+.login-sign-wrapper.bind-wechat p.login-select span:first-child {
+  float: left;
+}
+.login-sign-wrapper.bind-wechat p.login-select span:last-child {
+  float: right;
+}
 /****************
 
 到货提醒 我的收藏 心愿单 页面
