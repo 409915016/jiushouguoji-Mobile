@@ -2338,8 +2338,10 @@ login-sign-wrapper
   margin-right: 2.02464789rem;
 }
 .login-sign-wrapper.sign section:nth-of-type(1) button {
-  width: 50%;
+  width: 100%;
   margin: 0;
+  margin-left: -0.5rem;
+  margin-left: -1.05633803rem;
   position: relative;
   left: 2.02464789rem;
   padding: 0.13204225rem 0.17605634rem;
@@ -2348,6 +2350,9 @@ login-sign-wrapper
   border: 1px solid #ed5358;
   font-size: 14px;
   letter-spacing: 1px;
+}
+.login-sign-wrapper.sign section:nth-of-type(1) input {
+  width: 200%;
 }
 .login-sign-wrapper > p {
   padding-bottom: 0.44014085rem;

@@ -14,8 +14,7 @@
 	<link rel="stylesheet" href="css/normalize.min.css">
 	<link rel="stylesheet" href="css/style.min.css">
 	<link rel="stylesheet" href="css/swiper.min.css">
-
-
+	
 </head>
 
 <body>
@@ -73,11 +72,12 @@
 
 		</div>
 		<!--就手国际收到订单-->
-		<div class="" id="get-order" style="transform: translate3d(0, 0, 0);">
+		<div class="" id="get-order">
 			<div class="get-order-imgBox">
-				<img src="" alt="">
-			</div>
-			<p>就手国际8秒前收到来自广东的一张订单</p>
+				<img src="" alt=""> </div>
+			<p>就手国际
+				<span class="get-order-second">8</span>秒前收到来自
+				<span class="get-order-province">广东</span>的一张订单</p>
 		</div>
 		<!--加入购物车动画-->
 		<img id="TurnAround-img" src="" alt="">
@@ -345,11 +345,20 @@
 		</div>
 		<!--可见页 end-->
 	</div>
+
+
+
+
 	<script src="js/jquery.min.js"></script>
 	<script src="js/flexible.js"></script>
 	<script src="js/swiper.jquery.min.js"></script>
+	<script src="http://cdn.bootcss.com/iScroll/5.2.0/iscroll.min.js"></script>
 	<script src="js/layer.js"></script>
 	<script src="js/main.js"></script>
+
+
+
+
 	<script>
 		$(document).ready(function () {
             //隐藏图片详情
@@ -397,11 +406,11 @@
         //就手收到订单
         //getOrderMsg(imgURL, second, province);
         //getOrderMsg("http://www.atool.org/placeholder.png?size=50x50&bg=fff", 10, "黑龙江");
+        //循环测试用
         // TestgetOrderMsg();
         //消息提示
 		//WebSocket 订单广播
 		connect();
-        //消息提示
         //baseMsg("加入购物车成功");
         addShopCarBtn = get("#addShopCar");
         addShopCaP = get("#addShopCar p").innerHTML;

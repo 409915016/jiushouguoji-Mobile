@@ -56,6 +56,43 @@ var getOrderMsg = function (imgURL, second, province) {
 }
 
 
+var NewOrderMsg = function (imgURL, text) {
+
+    var get_order = document.querySelector("#get-order");
+    var imgURL = arguments[0] ? arguments[0] : "http://fakeimg.pl/100x100/fff/000?text=AB";
+    var second = arguments[1] ? arguments[1] : "就手国际7秒前收到来自北京的一张订单";
+    //imgURL
+    var get_order_img = document.querySelector(".get-order-imgBox img");
+    get_order_img.src = imgURL;
+    //second
+    // var get_order_second = document.querySelector(".get-order-second");
+    // get_order_second.innerHTML = second;
+    //province
+    // var get_order_province = document.querySelector(".get-order-province");
+    // get_order_province.innerHTML = province;
+
+    var get_order_text = document.querySelector("#get-order p");
+    get_order_text.innerHTML = text;
+
+    //display
+    //get-order get-order-animated-set get-order-animated
+    get_order.classList.add('get-order-animated-set');
+    get_order.classList.add('get-order-animated');
+
+    get_order.addEventListener("webkitAnimationEnd", function () {
+        this.classList.remove("get-order-animated-set");
+        this.classList.remove("get-order-animated");
+    })
+
+    get_order.addEventListener("animationend", function () {
+        this.classList.remove("get-order-animated-set");
+        this.classList.remove("get-order-animated");
+
+
+    })
+    get_order = null;
+}
+
 
 
 /******************
@@ -403,10 +440,51 @@ function set_door_grade(row_num, mark, orderid) {
 
 
 
+
+
+/************
+ * 
+WebSocket 订单广播
+ * 
+ **************/
+
+var ws;
+
+function connect() {
+    // 创建websocket
+    ws = new WebSocket("ws://www.jiushouguoji.com:7272");
+    // 当有消息时根据消息类型显示不同信息
+    ws.onmessage = onmessage;
+    ws.onclose = function () {
+        console.log("连接关闭，定时重连");
+        connect();
+    };
+    ws.onerror = function () {
+        console.log("出现错误");
+    };
+}
+
+function onmessage(e) {
+    //console.log(e);
+    console.log(e.data);
+
+    var data = eval("(" + e.data + ")");
+    switch (data['type']) {
+        case 'BroadcastOrder':
+            //console.log(data['content']);
+            // console.log(data['content'].image);
+            // console.log(data['content'].title);
+            NewOrderMsg(data['content'].image, data['content'].title);
+            break;
+        case 'ping':
+            ws.send('{"type":"pong"}');
+            break;
+    }
+}
+
+
+
 window.onload = function () {
 
-  
 
-
-  
 }

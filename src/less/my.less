@@ -224,10 +224,12 @@ login-sign-wrapper
             width: 55%;
             margin-right: unit( 230/@base-px-2-rem, rem);
             button {
-                width: 50%;
+                width: 100%;
                 margin: 0;
+                margin-left: -0.5rem;
+                margin-left: -(unit(120/@base-px-2-rem, rem));
                 position: relative;
-                left: unit( 230/@base-px-2-rem, rem);
+                left: unit(230/@base-px-2-rem, rem);
                 padding: unit(15/@base-px-2-rem, rem) unit(20/@base-px-2-rem, rem);
                 background-color: #fff;
                 color: @login-btn-bg-color;
@@ -235,6 +237,9 @@ login-sign-wrapper
                 font-size: 14px;
                 letter-spacing: 1px;
                 //line-height: 2;
+            }
+            input {
+                width: 200%;
             }
         }
     }
