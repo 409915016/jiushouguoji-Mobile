@@ -223,11 +223,13 @@ iframe {
   padding-bottom: 0.14084507rem;
   border-bottom: 1px solid #b2b2b2;
 }
-.search-bar form {
+.search-bar form,
+.search-bar div.fl {
   display: inline-block;
   width: 72%;
 }
-.search-bar form.flex {
+.search-bar form.flex,
+.search-bar div.fl.flex {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4537,6 +4539,14 @@ button {
   color: #fff;
   border-radius: 5px;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+button[disabled],
+button.disabled {
+  background-color: #8b8b8b;
+  cursor: not-allowed;
+  filter: alpha(opacity=65);
+  -webkit-box-shadow: none;
+  box-shadow: none;
 }
 button.goGroupBuy {
   padding: 0.22007042rem 0.70422535rem;

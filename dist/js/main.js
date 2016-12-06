@@ -59,7 +59,7 @@ var getOrderMsg = function (imgURL, second, province) {
 var NewOrderMsg = function (imgURL, text) {
 
     var get_order = document.querySelector("#get-order");
-    var imgURL = arguments[0] ? arguments[0] : "http://fakeimg.pl/100x100/fff/000?text=AB";
+    var imgURL = arguments[0] ? arguments[0] : "http://www.jiushouguoji.hk/uploadfile/goods/5/2016/01/18/1453082622.jpg_60X60.jpg";
     var second = arguments[1] ? arguments[1] : "就手国际7秒前收到来自北京的一张订单";
     //imgURL
     var get_order_img = document.querySelector(".get-order-imgBox img");
@@ -91,6 +91,7 @@ var NewOrderMsg = function (imgURL, text) {
 
     })
     get_order = null;
+
 }
 
 
@@ -466,15 +467,15 @@ function connect() {
 
 function onmessage(e) {
     //console.log(e);
-    console.log(e.data);
+    //console.log(e.data);
 
     var data = eval("(" + e.data + ")");
     switch (data['type']) {
         case 'BroadcastOrder':
             //console.log(data['content']);
-            // console.log(data['content'].image);
-            // console.log(data['content'].title);
-            NewOrderMsg(data['content'].image, data['content'].title);
+            console.log(data['content']['image']);
+            console.log(data['content']['title']);
+            NewOrderMsg(data['content']['image'], data['content']['title']);
             break;
         case 'ping':
             ws.send('{"type":"pong"}');
