@@ -196,8 +196,11 @@ iframe {
   position: fixed;
   z-index: 11;
   display: block;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
   right: 0.88028169rem;
   bottom: 1.93661972rem;
+  padding: 0.08802817rem;
   width: 0.79225352rem;
   height: 0.79225352rem;
 }
@@ -907,6 +910,7 @@ li[data-shop-count="0"]::before {
   height: 100%;
   -webkit-align-self: center;
       -ms-flex-item-align: center;
+              -ms-grid-row-align: center;
           align-self: center;
 }
 .order-comfirm-bar .order-comfirm-price {
@@ -1661,6 +1665,7 @@ i.icon.star-red {
   padding-left: 0.70422535rem;
   -webkit-align-self: center;
       -ms-flex-item-align: center;
+              -ms-grid-row-align: center;
           align-self: center;
 }
 .shopcar-product-count > span:before {
@@ -1669,6 +1674,7 @@ i.icon.star-red {
 .shopcar-product-count .shopcar-product-count-c {
   -webkit-align-self: center;
       -ms-flex-item-align: center;
+              -ms-grid-row-align: center;
           align-self: center;
 }
 .shopcar-product-count .shopcar-product-count-c span {
@@ -1809,7 +1815,7 @@ section.product-details .product-details-returns {
   border-bottom-right-radius: 40px;
   margin: 0.17605634rem 0;
   margin-left: 0.26408451rem;
-  font-size: 13px;
+  font-size: 12px;
 }
 .group-buy-user img {
   width: 1.1443662rem;
@@ -3133,6 +3139,7 @@ div.base-order.groupbuy-base-order .base-order-state {
   font-size: 14px;
   -webkit-align-self: center;
       -ms-flex-item-align: center;
+              -ms-grid-row-align: center;
           align-self: center;
 }
 .base-order-info .order-price-num p {
@@ -4901,6 +4908,8 @@ group-goods
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
+  padding: 0.35211268rem 0;
+  background-color: #f9f9f9;
 }
 .groupbuy-details-user > p {
   padding: 0.17605634rem 0.35211268rem;
@@ -4922,7 +4931,6 @@ group-goods
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-  padding-top: 0.35211268rem;
 }
 .groupbuy-details-userheader .userheaderBox {
   height: 1.32042254rem;
@@ -4935,6 +4943,28 @@ group-goods
   border-bottom-right-radius: 100px;
   margin: 0 0.17605634rem;
   height: 1.32042254rem;
+}
+.groupbuy-details-residue {
+  margin-top: 0.52816901rem;
+}
+.groupbuy-details-residue > p {
+  padding: 0.17605634rem 0.35211268rem;
+  font-size: 15px;
+}
+.groupbuy-details-countdown > p {
+  padding: 0.17605634rem 0.35211268rem;
+  font-size: 15px;
+}
+.groupbuy-details-countdown > p span {
+  background-color: #262626;
+  padding: 0.08802817rem 0.13204225rem;
+  border-radius: 3px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  color: #fff;
+  letter-spacing: 1px;
 }
 .groupbuy-details-userinfo-wrapper {
   width: 100%;

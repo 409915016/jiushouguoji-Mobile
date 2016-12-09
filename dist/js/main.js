@@ -9,17 +9,17 @@ var getAll = function (name) {
 
 /******************
 
-就手收到订单弹出层
+ 就手收到订单弹出层
 
-getOrderMsg(imgURL, second, province);
+ getOrderMsg(imgURL, second, province);
 
-imgURL : imgURL
+ imgURL : imgURL
 
-second : number
+ second : number
 
-province : String
+ province : String
 
-*****************/
+ *****************/
 
 var getOrderMsg = function (imgURL, second, province) {
 
@@ -59,7 +59,7 @@ var getOrderMsg = function (imgURL, second, province) {
 var NewOrderMsg = function (imgURL, text) {
 
     var get_order = document.querySelector("#get-order");
-    var imgURL = arguments[0] ? arguments[0] : "http://www.jiushouguoji.hk/uploadfile/goods/5/2016/01/18/1453082622.jpg_60X60.jpg";
+    var imgURL = arguments[0] ? arguments[0] : "http://fakeimg.pl/100x100/fff/000?text=AB";
     var second = arguments[1] ? arguments[1] : "就手国际7秒前收到来自北京的一张订单";
     //imgURL
     var get_order_img = document.querySelector(".get-order-imgBox img");
@@ -91,18 +91,16 @@ var NewOrderMsg = function (imgURL, text) {
 
     })
     get_order = null;
-
 }
-
 
 
 /******************
 
-我的页面 到 我的订单跳转
+ 我的页面 到 我的订单跳转
 
-设置 Cookie
+ 设置 Cookie
 
-*****************/
+ *****************/
 
 function SetMyOrderNav(navNum) {
 
@@ -114,14 +112,13 @@ function SetMyOrderNav(navNum) {
 }
 
 
-
 /******************
 
-消息弹出层
+ 消息弹出层
 
-baseMsg(String);
+ baseMsg(String);
 
-*****************/
+ *****************/
 
 var baseMsg = function (String) {
     layer.open({
@@ -135,11 +132,11 @@ var baseMsg = function (String) {
 
 /******************
 
-消息选择框
+ 消息选择框
 
-baseSelect(String);
+ baseSelect(String);
 
-*****************/
+ *****************/
 
 var baseSelect = function (String) {
     layer.open({
@@ -155,14 +152,13 @@ var baseSelect = function (String) {
 }
 
 
-
 /******************
 
-首页返回顶部
+ 首页返回顶部
 
-SrolltoTop();
+ SrolltoTop();
 
-*****************/
+ *****************/
 var SrolltoTop = function () {
     // reference to stackoverflow 
     // http://stackoverflow.com/questions/14249998/jquery-back-to-top
@@ -192,9 +188,9 @@ var SrolltoTop = function () {
 
 /******************
 
-用户退出
+ 用户退出
 
-*****************/
+ *****************/
 
 function uesrExit() {
     //底部对话框
@@ -211,10 +207,10 @@ function uesrExit() {
 
 
 /******************
- 
-就手收到订单测试
 
-*****************/
+ 就手收到订单测试
+
+ *****************/
 
 
 function TestgetOrderMsg() {
@@ -225,12 +221,12 @@ function TestgetOrderMsg() {
 
 
 /******************
- 
 
-设置产品详情页内 购物车按钮物品数量
+
+ 设置产品详情页内 购物车按钮物品数量
  0 为不显示
 
-*****************/
+ *****************/
 
 function setShopCarNum(num) {
     var shop_car_count = $(".product-nav-bar ul li:nth-child(2)")[0];
@@ -252,11 +248,11 @@ $(document).ready(function () {
 
 
 /******************
- 
 
-添加到购物车 动画逻辑
 
-*****************/
+ 添加到购物车 动画逻辑
+
+ *****************/
 
 function shopcarTurnAround() {
     TurnAround_img = get("#TurnAround-img");
@@ -278,17 +274,16 @@ function shopcarTurnAround() {
     }, 1000);
 
 
-
 }
 
 
 /******************
- 
-检查注册密码是否重复
-返回
-true
-false
-*****************/
+
+ 检查注册密码是否重复
+ 返回
+ true
+ false
+ *****************/
 
 function check_password_retype() {
     var a = false;
@@ -304,12 +299,12 @@ function check_password_retype() {
 }
 
 /******************
- 
-检查输入是否为空
-返回
-true
-false
-*****************/
+
+ 检查输入是否为空
+ 返回
+ true
+ false
+ *****************/
 function check_input_empty(inputElement) {
     var i = false;
     //var _this = this;
@@ -333,8 +328,6 @@ var isNumber = function isNumber(value) {
 }
 
 
-
-
 var goods_grade_value = function () {
     this.scores = 5;
     this.result = 3;
@@ -348,7 +341,6 @@ var door_grade_value = function () {
         this.servicecredit = 5,
         this.deliverycredit = 5
 };
-
 
 
 //商品评价
@@ -369,10 +361,10 @@ function set_goods_grade(HTMLDom) {
     var content_text;
     //用户文字评论
     $(goods_contentDOM).keyup(function (content_text) {
-            content_text = goods_contentDOM.value.trim();
-            data.content = content_text;
-        })
-        //好评
+        content_text = goods_contentDOM.value.trim();
+        data.content = content_text;
+    })
+    //好评
     $(goods_result_DOM).click(function (result_class) {
         var _this = $(this)[0];
         var _this_all = $(this).parent().children();
@@ -400,6 +392,7 @@ function set_goods_grade(HTMLDom) {
 
         })
     }
+
     //激活icon
     function icon_click(i, iconWrap, result_class, iconAll) {
         // i 是传入的序号
@@ -440,13 +433,10 @@ function set_door_grade(row_num, mark, orderid) {
 }
 
 
-
-
-
 /************
- * 
-WebSocket 订单广播
- * 
+ *
+ WebSocket 订单广播
+ *
  **************/
 
 var ws;
@@ -473,9 +463,9 @@ function onmessage(e) {
     switch (data['type']) {
         case 'BroadcastOrder':
             //console.log(data['content']);
-            console.log(data['content']['image']);
-            console.log(data['content']['title']);
-            NewOrderMsg(data['content']['image'], data['content']['title']);
+            // console.log(data['content'].image);
+            // console.log(data['content'].title);
+            NewOrderMsg(data['content'].image, data['content'].title);
             break;
         case 'ping':
             ws.send('{"type":"pong"}');
@@ -483,9 +473,132 @@ function onmessage(e) {
     }
 }
 
+/***************
+ *
+ *拼团倒计时
+ * *
+ ****************/
+function CountDown() {
+    var countdown = $(".groupbuy-details-countdown");
+    var hour = $(".countdown-h");
+    var minute = $(".countdown-m");
+    var second = $(".countdown-s");
+
+    if (typeof(t) == "undefined") {
+        console.log("没有设置时间");
+        return;
+    }
+    if (t === 0) {
+        console.log("时间到了");
+        countdown.hide();
+        return;
+    } else {
+        countdown.show();
+    }
+
+    t = t - 1;
+    var d = Math.floor(t / 60 / 60 / 24);
+    var h = Math.floor(t / 60 / 60 % 24);
+    var m = Math.floor(t / 60 % 60);
+    var s = Math.floor(t % 60);
+
+    console.log(t);
+    console.log(h + "时" + m + "分" + s + "秒");
+    console.log(s.toString().length);
+
+    if (s.toString().length == 1) {
+        s = "0" + s;
+    }
+    if (m.toString().length == 1) {
+        m = "0" + m;
+    }
+    if (h.toString().length == 1) {
+        h = "0" + h;
+    }
+    hour.text(h);
+    minute.text(m);
+    second.text(s);
+}
+
+
+/***************
+ *
+ *拼团倒计时设置函数
+ * *
+ ****************/
+function SetCountDown(t) {
+    window.t = t;
+    setInterval(CountDown, 1000);
+}
+/******************
+ *
+ * 产品详情页 倒计时
+ *
+ **************** */
+
+
+
+function detailCountDown(dom) {
+    //t = 100;
+    //t = time;
+
+    var singleTime = $(dom).find(".count-down-time");
+    var t = singleTime.attr("time");
+    if (typeof(t) == "undefined") {
+        console.log("没有设置时间");
+        return;
+    }
+    if (t == 0) {
+        console.log("时间到了");
+        $(dom).remove();
+        return;
+    } else {
+        $(dom).show();
+    }
+
+    t = t - 1;
+    singleTime.attr("time", t);
+    var h = Math.floor(t / 60 / 60 % 24);
+    var m = Math.floor(t / 60 % 60);
+    var s = Math.floor(t % 60);
+
+    //console.log( t);
+    console.log(h + "时" + m + "分" + s + "秒");
+    //console.log(s.toString().length);
+
+    if (s.toString().length == 1) {
+        s = "0" + s;
+    }
+    if (m.toString().length == 1) {
+        m = "0" + m;
+    }
+    if (h.toString().length == 1) {
+        h = "0" + h;
+    }
+    singleTime.text(h + ":" + m + ":" + s);
+
+}
+
+function detailCountDownGo() {
+
+    if ($(document).find(".group-buy-member-list").length != 0) {
+        var allgroupbuy = $(".group-buy-member");
+        allgroupbuy.each(function (i) {
+            //var t = $(this).find('.count-down-time').attr('time');
+            detailCountDown($(this));
+                if( $(".group-buy-member").length == 0 ) {
+                    $(".product-group-buy").remove();
+                }
+            }
+        )
+    } else {
+        console.log("没有拼团哇");
+    }
+}
 
 
 window.onload = function () {
 
 
 }
+

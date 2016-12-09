@@ -12,12 +12,14 @@
     position: fixed;
     z-index: @z-index-nav-search-bar;
     display: block;
+    box-sizing: content-box;
     right: unit(100/@base-px-2-rem, rem);
     //http://sale.jd.com/act/vxSIhCHBKP1.html?qz_gdt=yyiowvy2aaafg63wuciq&utm_campaign=t_232310336_1&utm_term=yyiowvy2aaafg63wuciq&utm_medium=jzt-zhitou&utm_source=jdzt_refer_null#
     //left: 50%;
     //margin-left: 33vw;
     //margin-left: unit(380/@base-px-2-rem, rem);.
     bottom: unit((@nav-bar-height + 100)/@base-px-2-rem, rem);
+    padding: unit(10/@base-px-2-rem, rem);
     width: unit(@go-to-top-icon-size/@base-px-2-rem, rem);
     height: unit(@go-to-top-icon-size/@base-px-2-rem, rem);
     //fix the ipad high resolution?

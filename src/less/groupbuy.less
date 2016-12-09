@@ -13,6 +13,8 @@
     flex-flow: column nowrap;
     justify-content: flex-start;
     align-items: center;
+    padding: unit(40/@base-px-2-rem, rem) 0;
+    background-color: #f9f9f9;
     > p {
         padding: unit(20/@base-px-2-rem, rem) unit(40/@base-px-2-rem, rem);
         font-size: 16px;
@@ -24,7 +26,7 @@
     flex-flow: row nowrap;
     justify-content: flex-start;
     align-items: center;
-    padding-top: unit(40/@base-px-2-rem, rem);
+
     .userheaderBox {
         height: unit(150/@base-px-2-rem, rem);
     }
@@ -34,6 +36,28 @@
         //
         height: unit(150/@base-px-2-rem, rem);
     }
+}
+
+.groupbuy-details-residue {
+    margin-top: unit(60/@base-px-2-rem, rem);
+    > p {
+        padding: unit(20/@base-px-2-rem, rem) unit(40/@base-px-2-rem, rem);
+        font-size: 15px;
+    }
+}
+.groupbuy-details-countdown {
+    > p {
+        padding: unit(20/@base-px-2-rem, rem) unit(40/@base-px-2-rem, rem);
+        font-size: 15px;
+        span {
+            background-color: @group-black;
+            padding: unit(10/@base-px-2-rem, rem) unit(15   /@base-px-2-rem, rem);
+            .make-border-radius(3px);
+            color: #fff;
+            letter-spacing: 1px;
+        }
+    }
+
 }
 
 .groupbuy-details-userinfo-wrapper {
@@ -84,7 +108,6 @@
             text-align: left;
             .text-omit();
              width: 40%;
-            
             font-size: 13px;
             ~ p {
                 width: 50%;
