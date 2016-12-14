@@ -8,9 +8,9 @@
     <meta content="black" name="apple-mobile-web-app-status-bar-style">
     <meta content="telephone=no" name="format-detection">
     <link rel="Shortcut Icon" href="favicon.jpg">
-    <link rel="stylesheet" href="css/normalize.min.css">
+
     <link rel="stylesheet" href="css/style.min.css">
-    <link rel="stylesheet" href="css/swiper.min.css">
+
     <script src="js/jquery.min.js"></script>
     <script src="js/flexible.js"></script>
     <script src="js/swiper.jquery.min.js"></script>
@@ -47,11 +47,11 @@
                 <!--有就手帐号-->
                 <form class=" has-account-form">
                     <section class="inputBlock">
-                        <input type="text" name="username" value="" placeholder="手机号">
+                        <input type="tel" name="username" value="" placeholder="手机号">
                         <button id="verify" onclick="return false;">验证</button>
                     </section>
                     <section class="inputBlock ">
-                        <input type="text" name="verify" value="" placeholder="请输入收到的验证码">
+                        <input type="tel" name="verify" value="" placeholder="请输入收到的验证码">
                     </section>
                     <section class="inputBlock">
                         <input type="password" name="password" value="" placeholder="登陆密码">
@@ -61,11 +61,11 @@
                 <!--没有就手帐号-->
                 <form class="not-account-form">
                     <section class="inputBlock">
-                        <input type="text" name="username" value="" placeholder="手机号">
+                        <input type="tel" name="username" value="" placeholder="手机号">
                         <button id="verify" onclick="return false;">验证</button>
                     </section>
                     <section class="inputBlock ">
-                        <input type="text" name="verify" value="" placeholder="请输入收到的验证码">
+                        <input type="tel" name="verify" value="" placeholder="请输入收到的验证码">
                     </section>
                     <section class="inputBlock">
                         <input type="password" name="password" value="" placeholder="6-16位登录密码">

@@ -9,19 +9,10 @@
 	<meta name="renderer" content="webkit">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no" />
 	<link rel="Shortcut Icon" href="favicon.jpg" />
-	<link rel="stylesheet" href="css/normalize.min.css">
 	<link rel="stylesheet" href="css/style.min.css">
-	<link rel="stylesheet" href="css/swiper.min.css">
-	<script src="js/jquery.min.js"></script>
-	<!--移动端自适应布局-->
-	<script src="js/flexible.js"></script>
-	<script src="js/swiper.jquery.min.js"></script>
-	<!--弹窗组件 -->
-	<script src="js/layer.js"></script>
-	<script src="js/main.js"></script>
-	<!--js/jsonTest.js 首页数据测试用 -->
-	<!--js/getActivityList.json  js/getNavList.json 为测试用JSON数据-->
-	<script src="js/jsonTest.js"></script>
+
+
+
 </head>
 
 <body>
@@ -291,7 +282,32 @@
 		</div>
 		<!--可见页 end-->
 	</div>
+
+	<script src="js/flexible.js"></script>
+	<script data-main="js/config" src="js/require-min.js"></script>
+
+
+	<!--<script src="js/jquery.min.js"></script>-->
+	<!--移动端自适应布局-->
+	<!--<script src="js/swiper.jquery.min.js"></script>-->
+	<!--弹窗组件 -->
+	<!--<script src="js/layer.js"></script>
+	<script src="js/main.js"></script>-->
+	<!--js/jsonTest.js 首页数据测试用 -->
+	<!--js/getActivityList.json  js/getNavList.json 为测试用JSON数据-->
+	<!--<script src="js/jsonTest.js"></script>-->
+
 	<script>
+	
+		require(['jquery.min','swiper.jquery.min','layer','main'], function ($) {
+			require(['flexible']);
+			require(['app/jsonTest']);
+			require(['app/index']);
+		});
+
+	</script>
+
+	<!--<script>
 		
 		//搜索页关闭 在成功弹出搜索页之后调用
 		function search_wrapper_close() {
@@ -343,7 +359,7 @@
 				$(".search-bar-menu").hide();
 			});
 		});
-	</script>
+	</script>-->
 </body>
 
 </html>

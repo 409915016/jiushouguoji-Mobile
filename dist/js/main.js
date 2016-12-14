@@ -242,11 +242,6 @@ function shopCarNumAdd() {
 }
 
 
-$(document).ready(function () {
-
-});
-
-
 /******************
 
 

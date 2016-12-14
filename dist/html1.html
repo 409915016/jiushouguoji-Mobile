@@ -1,0 +1,96 @@
+<html lang="zh-cmn-Hans" data-dpr="1" style="font-size: 41.4px;"><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="renderer" content="webkit">
+    <title>微信绑定 </title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <link rel="Shortcut Icon" href="favicon.jpg">
+    >
+    <link rel="stylesheet" href="css/style.min.css">
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/flexible.js"></script>
+    <script src="js/swiper.jquery.min.js"></script>
+    <script src="js/layer.js"></script>
+    <script src="js/main.js"></script>
+    <script src="http://cdn.bootcss.com/jquery_lazyload/1.9.7/jquery.lazyload.min.js"></script>
+
+    
+</head>
+
+<body style="font-size: 12px;">
+<div class="wrapper">
+    <!--fixed element-->
+
+    
+    <div class="base-nav-bar">
+        <a class="" href="/User">
+            <i class="icon back fl"></i>
+        </a>
+        <p>微信绑定</p>
+        <a href="/User/login">登陆</a>
+    </div>
+
+    <div class="main-wrapper title-bar no-b-nav h-100-white">
+        <form>
+            <div class="login-sign-wrapper sign">
+                <p>绑定平台账号</p>
+                <section class="inputBlock">
+                    <input type="text" name="username" value="" placeholder="手机号">
+                    <button id="verify" onclick="return false;">验证</button>
+                </section>
+                <section class="inputBlock ">
+                    <input type="text" name="verify" value="" placeholder="请输入收到的验证码">
+                </section>
+                <section class="inputBlock">
+                    <input type="password" name="password" value="" placeholder="6-16位登录密码">
+                </section>
+                <section class="inputBlock">
+                    <input type="password" name="password_retype" value="" placeholder="请再次输入密码">
+                </section>
+                <button id="submit" onclick="return false;">提交</button>
+            </div>
+        </form>
+    </div>
+
+
+    <!--fixed element end-->
+</div>
+
+
+
+<script>
+    $("body > div.wrapper > div.nav-bar > ul > li > a").css('font-size', '14px');
+</script>
+
+    <script>
+        $('#verify').click(function(){
+            var mobile = $('input[name=username]').val();
+            $.ajax({
+                url: '/User/verify'+'/'+ mobile,
+                success: function (msg) {
+                    baseMsg(msg);
+                }
+            });
+        });
+        $('#submit').click(function () {
+            var target = "/User/register";
+            var data = $('form').serialize();
+            $.ajax({
+                url: target,
+                data: data,
+                type: 'POST',
+                success: function (msg) {
+                    baseMsg(msg);
+                    if(msg == "")
+                        window.location = "/User";
+                }
+            });
+        });
+    </script>
+
+
+</body></html>

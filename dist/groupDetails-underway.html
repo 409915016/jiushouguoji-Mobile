@@ -11,9 +11,9 @@
 	<meta content="black" name="apple-mobile-web-app-status-bar-style" />
 	<meta content="telephone=no" name="format-detection" />
 	<link rel="Shortcut Icon" href="favicon.jpg" />
-	<link rel="stylesheet" href="css/normalize.min.css">
+
 	<link rel="stylesheet" href="css/style.min.css">
-	<link rel="stylesheet" href="css/swiper.min.css">
+
 	<script src="js/jquery.min.js"></script>
 	<script src="js/flexible.js"></script>
 	<script src="js/swiper.jquery.min.js"></script>
@@ -41,7 +41,7 @@
 			<div class="nav-btn-wrapper">
 			
 				<a href="groupbuy.html" >更多拼团</a>
-				<a href="groupOrderInfo.html">还差1人拼团成功</a>
+				<a href="groupOrderInfo.html">我也开个团</a>
 			</div>
 		</div>
 		<!--fixed element end-->
@@ -70,8 +70,8 @@
 				</a>
 			</div>
 			<div class="groupbuy-details-user">
-				<!--<p><span>3</span>人团-->
-				<!--</p>-->
+				<p><span>3</span>人团
+				</p>
 				<div class="groupbuy-details-userheader">
 					<section class="userheaderBox">
 						<img src="http://fakeimg.pl/50x50/">
@@ -83,16 +83,6 @@
 						<img src="http://fakeimg.pl/50x50/">
 					</section>
 
-				</div>
-				<!--剩余人数提示-->
-				<div class="groupbuy-details-residue">
-					<p>还差<span>1</span>人成团，等你等你等到我心碎</p>
-				</div>
-				<!--剩余时间提示-->
-				<div class="groupbuy-details-countdown">
-					<p>
-						剩余&nbsp;<span class="countdown-h">00</span>&nbsp;:&nbsp;<span class="countdown-m">00</span>&nbsp;:&nbsp;<span class="countdown-s">00</span>&nbsp;结束
-					</p>
 				</div>
 				<div class="groupbuy-details-userinfo-wrapper">
 					<p id="switch-userinfo"><span>查看</span>全部拼团详情</p>
@@ -126,15 +116,13 @@
 		</div>
 		<!--可见页 end-->
 	</div>
-
-
 	<script>
 		$(document).ready(function() {
 			$(".groupbuy-details-userinfo").hide();
 			$("#switch-userinfo").click(function () {
 				$(".groupbuy-details-userinfo").fadeToggle("fast", "linear");
 			});
-            SetCountDown(50);
+			
 
         });
 	</script>
