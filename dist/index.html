@@ -237,7 +237,7 @@
 				</section>
 			</div>
 			<!--单个商品-->
-			<div class="base-mt-wrapper">
+			<div class="base-mt-wrapper loading-more" >
 				<p class="recommend">精品推荐</p>
 				<!--单个商品-->
 				<div class="single-goods">
@@ -281,85 +281,40 @@
 			</div>
 		</div>
 		<!--可见页 end-->
+
+		<div class="test">
+			<p>偏移：<span id="offset"></span> </p>
+			<p>文档高度：<span id="docheight"></span> </p>
+			<p>窗口高度：<span id="winheight"></span> </p>
+			<p>差值：<span id="count"></span> </p>
+			<p>加载更多？<span id="isPostP"></span> </p>
+
+		</div>
 	</div>
 
 	<script src="js/flexible.js"></script>
-	<script data-main="js/config" src="js/require-min.js"></script>
-
-
-	<!--<script src="js/jquery.min.js"></script>-->
+	<!--<script data-main="js/config" src="js/require-min.js"></script>-->
+	<script src="js/jquery.min.js"></script>
 	<!--移动端自适应布局-->
-	<!--<script src="js/swiper.jquery.min.js"></script>-->
+	<script src="js/swiper.jquery.min.js"></script>
 	<!--弹窗组件 -->
-	<!--<script src="js/layer.js"></script>
-	<script src="js/main.js"></script>-->
+	<script src="js/layer.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/app/index.js"></script>
 	<!--js/jsonTest.js 首页数据测试用 -->
 	<!--js/getActivityList.json  js/getNavList.json 为测试用JSON数据-->
-	<!--<script src="js/jsonTest.js"></script>-->
+	<script src="js/app/jsonTest.js"></script>
 
 	<script>
 	
-		require(['jquery.min','swiper.jquery.min','layer','main'], function ($) {
-			require(['flexible']);
-			require(['app/jsonTest']);
-			require(['app/index']);
-		});
+//		require(['jquery.min','swiper.jquery.min','layer','main'], function ($) {
+//			require(['flexible']);
+//			require(['app/jsonTest']);
+//			require(['app/index']);
+//		});
 
 	</script>
 
-	<!--<script>
-		
-		//搜索页关闭 在成功弹出搜索页之后调用
-		function search_wrapper_close() {
-			//禁止页面滑动
-			//body.preventDefault();
-			get(".layui-m-layermain .search-bar-back").addEventListener("click", function () {
-				layer.closeAll();
-				window.scrollTo(0, 0);
-			})
-		}
-
-		var search_wrapper = get(".product-search-wrapper").innerHTML;
-		//点击假的搜索栏 弹出页面
-		get(".fake-product-search").addEventListener("click", function () {
-			layer.open({
-				type: 1,
-				content: search_wrapper,
-				anim: false,
-				style: 'position:fixed; top:0; left:0; width: 100%; height: 100%; padding:10px 0; border:none;',
-				success: search_wrapper_close,
-			});
-			//页面弹出后获取输入焦点
-			var search_keyword = $(".layui-m-layermain #product-search");
-			search_keyword.focus();
-			search_keyword.keyup(function () {
-				console.log(this.value);
-			});
-		})
-	</script>
-	<script>
-		$(document).ready(function () {
-			//加载后再设置文字大小
-			$("body > div.wrapper > div.nav-bar > ul > li > a").css("font-size","14px");	
-		
-					
-			//顶部导航
-			$(".nav-bar ul li").removeClass("active");
-			$(".nav-bar ul li:first-child").addClass("active");
-			$(".nav-buttom-bar ul li a i").removeClass("active");
-			$(".nav-buttom-bar ul li:first-child a i").addClass("active");
-			//首页返回顶部
-			SrolltoTop();
-			//左边铃铛点击弹出下拉菜单
-			//$(".search-bar-menu").hide();
-			$(".search-bar-more").click(function () {
-				$(".search-bar-menu").fadeToggle("fast", "linear");
-			});
-			$(".main-wrapper").click(function () {
-				$(".search-bar-menu").hide();
-			});
-		});
-	</script>-->
 </body>
 
 </html>

@@ -326,6 +326,7 @@ iframe {
 .search-keyword-wrapper {
   margin-top: 1.32042254rem;
   padding: 0 0.35211268rem;
+  height: 100%;
 }
 .search-keyword-row {
   overflow: hidden;
@@ -467,7 +468,7 @@ iframe {
   height: 1.05633803rem;
   line-height: 1.05633803rem;
   padding: 0 0.08215962rem;
-  font-size: 0px;
+  font-size: 14px;
   color: #8a8a8a;
 }
 /************************
@@ -1086,6 +1087,16 @@ li[data-shop-count="0"]::before {
   border-top-right-radius: 50px;
   border-bottom-left-radius: 50px;
   border-bottom-right-radius: 50px;
+}
+.test {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  z-index: 15;
+  background-color: #fff;
+}
+.test p {
+  color: #000;
 }
 i.icon {
   width: 0.79225352rem;
@@ -4368,8 +4379,67 @@ body .layui-m-layer .layui-m-layer-msg {
   -webkit-animation-name: TurnAround;
   animation-name: TurnAround;
 }
+/*页面加载中 遮罩层*/
+.mask {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-color: #eee;
+  z-index: 1002;
+  opacity: 1;
+  width: 100vw;
+  height: 100vh;
+  height: 100%;
+}
+/*页面加载中 遮罩层动画*/
+/*Typing Loader*/
+.typing_loader {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  -webkit-animation: typing .8s linear infinite alternate;
+          animation: typing .8s linear infinite alternate;
+  margin: 0px auto;
+  /* Not necessary- its only for layouting*/
+  position: relative;
+  left: -24px;
+  top: 49%;
+}
+@-webkit-keyframes typing {
+  0% {
+    background-color: #ff0000;
+    -webkit-box-shadow: 24px 0px 0px 0px rgba(255, 0, 0, 0.2), 48px 0px 0px 0px rgba(255, 0, 0, 0.2);
+            box-shadow: 24px 0px 0px 0px rgba(255, 0, 0, 0.2), 48px 0px 0px 0px rgba(255, 0, 0, 0.2);
+  }
+  25% {
+    background-color: rgba(255, 0, 0, 0.4);
+    -webkit-box-shadow: 24px 0px 0px 0px #ff0000, 48px 0px 0px 0px rgba(255, 0, 0, 0.2);
+            box-shadow: 24px 0px 0px 0px #ff0000, 48px 0px 0px 0px rgba(255, 0, 0, 0.2);
+  }
+  75% {
+    background-color: rgba(255, 0, 0, 0.4);
+    -webkit-box-shadow: 24px 0px 0px 0px rgba(255, 0, 0, 0.2), 48px 0px 0px 0px #ff0000;
+            box-shadow: 24px 0px 0px 0px rgba(255, 0, 0, 0.2), 48px 0px 0px 0px #ff0000;
+  }
+}
+@keyframes typing {
+  0% {
+    background-color: #ff0000;
+    -webkit-box-shadow: 24px 0px 0px 0px rgba(255, 0, 0, 0.2), 48px 0px 0px 0px rgba(255, 0, 0, 0.2);
+            box-shadow: 24px 0px 0px 0px rgba(255, 0, 0, 0.2), 48px 0px 0px 0px rgba(255, 0, 0, 0.2);
+  }
+  25% {
+    background-color: rgba(255, 0, 0, 0.4);
+    -webkit-box-shadow: 24px 0px 0px 0px #ff0000, 48px 0px 0px 0px rgba(255, 0, 0, 0.2);
+            box-shadow: 24px 0px 0px 0px #ff0000, 48px 0px 0px 0px rgba(255, 0, 0, 0.2);
+  }
+  75% {
+    background-color: rgba(255, 0, 0, 0.4);
+    -webkit-box-shadow: 24px 0px 0px 0px rgba(255, 0, 0, 0.2), 48px 0px 0px 0px #ff0000;
+            box-shadow: 24px 0px 0px 0px rgba(255, 0, 0, 0.2), 48px 0px 0px 0px #ff0000;
+  }
+}
 html {
-  font-size: 113.6px;
   height: 100%;
 }
 body {

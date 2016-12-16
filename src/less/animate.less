@@ -102,3 +102,50 @@
     -webkit-animation-name: TurnAround;
     animation-name: TurnAround;
 }
+
+
+
+/*页面加载中 遮罩层*/
+.mask {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: #eee;
+    z-index: 1002;
+    opacity:1;
+    width: 100vw;
+    height: 100vh;
+    height: 100%;
+}
+
+/*页面加载中 遮罩层动画*/
+
+
+/*Typing Loader*/
+.typing_loader{
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    animation: typing .8s linear infinite alternate;
+    margin: 0px auto; /* Not necessary- its only for layouting*/
+    position: relative;
+    left: -24px;
+    top: 49%;
+}
+
+@keyframes typing{
+    0%{
+        background-color: rgba(255,0,0, 1);
+        box-shadow: 24px 0px 0px 0px rgba(255,0,0,0.2),
+        48px 0px 0px 0px rgba(255,0,0,0.2);
+    }
+    25%{
+        background-color: rgba(255,0,0, 0.4);
+        box-shadow: 24px 0px 0px 0px rgba(255,0,0,2),
+        48px 0px 0px 0px rgba(255,0,0,0.2);
+    }
+    75%{ background-color: rgba(255,0,0, 0.4);
+        box-shadow: 24px 0px 0px 0px rgba(255,0,0,0.2),
+        48px 0px 0px 0px rgba(255,0,0,1);
+    }
+}

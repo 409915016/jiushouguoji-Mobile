@@ -368,14 +368,15 @@
             //拉动查看图片详情
             var ones = true;
             $(window).scroll(function () {　　
-                var scrollTop = $(this).scrollTop();　　
+                //进度条顶部偏移
+                var scrollTop = $(this).scrollTop();　
+                //文档高度
                 var scrollHeight = $(document).height();　　
+				//当前窗口高度
                 var windowHeight = $(this).height();
-                //console.log(ones);
+
                 if ((scrollTop + windowHeight == scrollHeight) && (ones)) {　　
                     ones = false;
-                    //alert("you are in the bottom");
-                    //console.log(ones);
                     $('.product-longPic').show();
                     var longPic_h = ($('.product-longPic').offset() - $('.product-tips').height());
                     $('html, body').delay(800).animate({

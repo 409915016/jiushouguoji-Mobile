@@ -18,8 +18,7 @@
 	<script src="js/flexible.js"></script>
 	<script src="js/swiper.jquery.min.js"></script>
 	<script src="js/layer.js"></script>
-	<script src="js/main.js">
-	</script>
+	<script src="js/main.js"></script>
 </head>
 
 <body>
@@ -217,9 +216,14 @@
 		</div>
 		<!--可见页 end-->
 	</div>
+	<div id="mask" class="mask">
+		<div class="typing_loader"></div>
+	</div>
+
 	<script>
 		$(document).ready(function () {
-			//我的页面 点击 到我的订单
+            $("#mask").hide();
+            //我的页面 点击 到我的订单
 			$(".has-shop-count ul li").on("click", function () {
 					var all_li = $(".has-shop-count li");
 					var this_li = this;
