@@ -1089,6 +1089,7 @@ li[data-shop-count="0"]::before {
   border-bottom-right-radius: 50px;
 }
 .test {
+  display: none;
   position: fixed;
   top: 50%;
   right: 0;
@@ -1097,6 +1098,13 @@ li[data-shop-count="0"]::before {
 }
 .test p {
   color: #000;
+}
+.indexLoadingP {
+  padding-top: 0.14084507rem;
+  padding-bottom: 0.14084507rem;
+  text-align: center;
+  font-size: 16px;
+  letter-spacing: 1px;
 }
 i.icon {
   width: 0.79225352rem;

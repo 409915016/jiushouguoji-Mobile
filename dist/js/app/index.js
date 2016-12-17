@@ -1,4 +1,3 @@
-
 //搜索页关闭 在成功弹出搜索页之后调用
 function search_wrapper_close() {
     //禁止页面滑动
@@ -10,15 +9,12 @@ function search_wrapper_close() {
 }
 
 
-
 //传入字符串，返回DOM
 function parseDom(arg) {
     var objE = document.createElement("div");
     objE.innerHTML = arg;
     return objE.childNodes;
-
 };
-
 
 
 var search_wrapper = get(".product-search-wrapper").innerHTML;
@@ -38,7 +34,6 @@ get(".fake-product-search").addEventListener("click", function () {
         //console.log(this.value);
     });
 })
-
 
 
 //加载后再设置文字大小
@@ -61,7 +56,7 @@ $(".main-wrapper").click(function () {
     $(".search-bar-menu").hide();
 });
 //
-
+var loadingP = $('.indexLoadingP');
 
 var offset = $('#offset');
 var docheight = $('#docheight');
@@ -74,11 +69,11 @@ var scrollHeight = $(document).height();
 //当前窗口高度
 var windowHeight = $(this).height();
 
-var isPostP =  $('#isPostP');
+var isPostP = $('#isPostP');
 
-var countP =  $('#count');
+var countP = $('#count');
 
-var isPostPx = 600;
+var isPostPx = parseInt($(document).height() / 3);
 
 var isPost = true;
 
@@ -86,15 +81,10 @@ var PageValue = 1;
 
 //每次加载的数量
 var OnesLodingNum = 6;
-//当前加载的位置
-var LodingNumFlag = 0;
-
 
 //本地获取到的商品数据
 var goods_recommend = [];
-
 var Height_minus = ( $(document).height() - $(this).height() - $(this).scrollTop() );
-
 function scrol_test() {
     //偏移
     offset.text($(this).scrollTop());
@@ -104,51 +94,53 @@ function scrol_test() {
     winheight.text($(this).height());
     Height_minus = ( $(document).height() - $(this).height() - $(this).scrollTop() );
     countP.text(Height_minus);
-    if ( (Height_minus < isPostPx) && isPost ){
+    if ((Height_minus < isPostPx) && isPost) {
 
         getData(PageValue, OnesLodingNum);
+
+        // console.log(goods_recommend);
+        // console.log(LodingNumFlag);
+        // console.log(i);
+
         isPost = false;
         isPostP.text("■");
         var tepWrapper = $(".loading-more")[0];
+        var loadingP = $('.loadingP');
         //加入DOM文档
         //从当前加载位置开始 到加载个数阀值停止
-        for (var i = 0; i < OnesLodingNum ; i++)
-        {
-            console.log(goods_recommend);
-            console.log(LodingNumFlag);
+        for (var i = 0; i < OnesLodingNum; i++) {
             var goods_url = goods_recommend[i].url;
             var goods_imgURL = goods_recommend[i].image;
             var goods_name = goods_recommend[i].name;
             var goods_price = goods_recommend[i].price;
-
             var html_temp = '<div class="single-goods">' + '<a href="' + goods_url + '">' + '<div class="product-imgBox">' +
                 '<img src="' + goods_imgURL + '" alt=""> ' + '</div>' + '<div class="product-name-price">' +
                 '<p>' + goods_name + '</p>' + '<p>¥<span>' + goods_price + '</span></p>' + '</div>' + '</a>' + '</div>';
 
-            $( parseDom(html_temp)).appendTo(tepWrapper);
+            $(parseDom(html_temp)).insertBefore(".indexLoadingP");
 
         }
         isPost = true;
-    } else  {
+    } else {
         isPostP.text("□");
     }
 
 }
 
-function getData(p , n) {
+function getData(p, n) {
     var num = n;
     var page = p;
-    var PostUrl = 'http://wap.jiushouguoji.com/rcm?page=' + page + '&n=' + num ;
-    $.getJSON(PostUrl, function (data){
+    var PostUrl = 'http://wap.jiushouguoji.com/rcm?page=' + page + '&n=' + num;
+    $.getJSON(PostUrl, function (data) {
         switch (data.status) {
             case 1 : {
                 //console.table(data.data);
                 var t = data.data;
                 //data.data each
                 //每次过来要清空数组
-                goods_recommend.splice(0,goods_recommend.length);
+                goods_recommend.splice(0, goods_recommend.length);
                 //console.table(goods_recommend);
-                $(t).each(function (i ,element) {
+                $(t).each(function (i, element) {
                     var i = {};
                     //var m = ['id', 'name','price','image'];
                     i.url = element.url;
@@ -165,7 +157,7 @@ function getData(p , n) {
             }
         }
 
-        if(data.status == 1) {
+        if (data.status == 1) {
         }
     })
 }
@@ -176,9 +168,10 @@ function loadingChecker() {
 }
 
 
-$(document).ready(function(){
-    getData();
-    loadingChecker();
+$(document).ready(function () {
+
+    getData(PageValue, OnesLodingNum);
+    setTimeout('loadingChecker()', 1000);
 
 });
 

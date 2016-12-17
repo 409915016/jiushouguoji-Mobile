@@ -9,7 +9,7 @@ $(function ($) {
     var api_msg;
     var nav_banner_imgadr = new Array;
     var nav_banner_imgbid = new Array;
- 
+
 
     //product banner and big-img
     $.getJSON("js/getActivityList.json", function (data) {
@@ -54,10 +54,11 @@ $(function ($) {
         })
 
         //重新实例化
-        var index_Swiper = new Swiper('.swiper-product', {
+        new Swiper('.swiper-product', {
             slidesPerView: 3,
             spaceBetween: 0,
-        });
+        })
+
 
     });
 
