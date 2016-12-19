@@ -11,9 +11,7 @@
 	<meta content="black" name="apple-mobile-web-app-status-bar-style" />
 	<meta content="telephone=no" name="format-detection" />
 	<link rel="Shortcut Icon" href="favicon.jpg" />
-
 	<link rel="stylesheet" href="css/style.min.css">
-
 	<script src="js/jquery.min.js"></script>
 	<script src="js/flexible.js"></script>
 	<script src="js/swiper.jquery.min.js"></script>
@@ -104,6 +102,48 @@
 					</li>
 				</ul>
 			</section>
+			<!--我的拼团-->
+			<div class="base-mt-wrapper">
+				<a href="myOrder.html">
+					<section class="user-row my-order">
+						<p>我的拼团</p>
+						<div class="look-my-order">
+							<span>查看我的拼团</span>
+							<i class="icon right"></i>
+						</div>
+					</section>
+				</a>
+			</div>
+			<!--查看我的拼团-->
+			<section class="user-row has-shop-count">
+				<ul>
+					<li>
+						<a href="javascript:void(0);">
+							<i class="icon cyclo-all"></i>
+							<p>全部</p>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:void(0);">
+							<i class="icon cyclo-correct"></i>
+							<p>拼团成功</p>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:void(0);">
+							<i class="icon cyclo-people"></i>
+							<p>拼团中</p>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:void(0);">
+							<i class="icon cyclo-alert"></i>
+							<p>拼团失败</p>
+						</a>
+					</li>
+				</ul>
+			</section>
+			<!--我的订单-->
 			<div class="base-mt-wrapper">
 				<a href="myOrder.html">
 					<section class="user-row my-order">
@@ -140,12 +180,6 @@
 						<a href="javascript:void(0);">
 							<i class="icon comment"></i>
 							<p>待评价</p>
-						</a>
-					</li>
-					<li>
-						<a href="myGroupBuy.html">
-							<i class="icon comment"></i>
-							<p>我的团</p>
 						</a>
 					</li>
 				</ul>
@@ -236,11 +270,9 @@
 				//跳转到 myOrder.html 页面后再读取切换标签页
 				//设置显示订单的数量
 			var my_order_count = $(".has-shop-count li");
-			my_order_count[0].dataset.shopCount = "1";
-			my_order_count[1].dataset.shopCount = "1";
-			my_order_count[2].dataset.shopCount = "1";
-			my_order_count[3].dataset.shopCount = "1";
-			my_order_count[4].dataset.shopCount = "1";
+            my_order_count.each(function () {
+				this.dataset.shopCount = "0";
+            })
 			//设置nav 为0
 			//SetMyOrderNav(0);
 		});

@@ -1117,87 +1117,92 @@ i.icon {
   /********************
 
     首页搜索栏、导航栏icon
-    
+
     ********************/
   /********************
 
     底部导航栏icon
-    
+
     ********************/
   /********************
 
     返回顶部icon
-    
+
     ********************/
   /********************
 
     标题栏icon
-    
+
     ********************/
   /********************
 
     评论块右指示
-    
+
     ********************/
   /********************
 
     商品左下角 收藏 购物车 客服
-    
+
     ********************/
   /********************
 
     购物车 勾选 加 减
-    
+
     ********************/
   /********************
 
-    我的页面 
-    
+    我的页面  我的收藏 心愿单 到货提醒
+
     ********************/
   /********************
 
-    我的页面  4个
-    
+    我的拼团 全部 拼团成功 拼团中 拼团失败 4个
+
     ********************/
   /********************
 
-    我的页面  4个
-    
+    我的页面 待付款 待发货 待收货 待评价 4个
+
     ********************/
   /********************
 
-    我的页面  4个
-    
+    我的页面  收货地址 我的足迹 优惠券  退货/退款  4个
+
+    ********************/
+  /********************
+
+    我的页面  客服 个人资料 关于就手 退出登陆 4个
+
     ********************/
   /********************
 
     QQ 微信
-    
+
     ********************/
   /********************
 
-    登陆页面 输入框 
-    
+    登陆页面 输入框
+
     ********************/
   /********************
 
     支付方式 支付宝 通联
-    
+
     ********************/
   /********************
 
     订单详情
-    
+
     ********************/
   /********************
 
     发表评价
-    
+
     ********************/
   /********************
 
     五星
-    
+
     ********************/
 }
 i.icon.message {
@@ -1344,13 +1349,33 @@ i.icon.clock {
   width: 0.88028169rem;
   height: 0.88028169rem;
 }
-i.icon.car {
-  background-image: url("../img/icon/car.png");
+i.icon.cyclo-all {
+  background-image: url("../img/icon/cyclo-all.png");
   width: 0.88028169rem;
   height: 0.88028169rem;
 }
-i.icon.comment {
-  background-image: url("../img/icon/comment.png");
+i.icon.cyclo-correct {
+  background-image: url("../img/icon/cyclo-correct.png");
+  width: 0.88028169rem;
+  height: 0.88028169rem;
+}
+i.icon.cyclo-people {
+  background-image: url("../img/icon/cyclo-people.png");
+  width: 0.88028169rem;
+  height: 0.88028169rem;
+}
+i.icon.cyclo-alert {
+  background-image: url("../img/icon/cyclo-alert.png");
+  width: 0.88028169rem;
+  height: 0.88028169rem;
+}
+i.icon.wallet {
+  background-image: url("../img/icon/wallet.png");
+  width: 0.88028169rem;
+  height: 0.88028169rem;
+}
+i.icon.car {
+  background-image: url("../img/icon/car.png");
   width: 0.88028169rem;
   height: 0.88028169rem;
 }
@@ -1359,8 +1384,8 @@ i.icon.package {
   width: 0.88028169rem;
   height: 0.88028169rem;
 }
-i.icon.wallet {
-  background-image: url("../img/icon/wallet.png");
+i.icon.comment {
+  background-image: url("../img/icon/comment.png");
   width: 0.88028169rem;
   height: 0.88028169rem;
 }
@@ -2213,6 +2238,7 @@ section.user-row ul {
 section.user-row ul li {
   text-align: center;
   position: relative;
+  width: 25%;
 }
 section.user-row.my-order {
   display: -webkit-box;
