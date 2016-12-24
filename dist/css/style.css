@@ -1287,8 +1287,8 @@ i.icon.share {
 }
 i.icon.right {
   background-image: url("../img/icon/right.png");
-  width: 0.24647887rem;
-  height: 0.49295775rem;
+  width: 0.17253521rem;
+  height: 0.34507042rem;
 }
 i.icon.details-collect {
   background-image: url("../img/icon/details-collect-1.jpg");
@@ -2206,6 +2206,8 @@ section.user-row {
   background-color: #fff;
   padding: 0.35211268rem;
   margin-top: 0.04401408rem;
+  padding-top: 0.17605634rem;
+  padding-bottom: 0.17605634rem;
   /****************
 
     我的订单 
@@ -2294,33 +2296,48 @@ section.user-row.my-order .look-my-order span {
 section.user-row.my-order .look-my-order i {
   margin: 0rem;
 }
-.has-shop-count li {
-  vertical-align: top;
+/****************
+
+我的订单  右上角角标
+
+****************/
+.has-shop-count i[data-shop-count="0"]::before {
+  display: none;
 }
-.has-shop-count li::before {
+.has-shop-count i {
+  vertical-align: top;
+  font-style: normal;
+}
+.has-shop-count i::before {
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
   -webkit-text-size-adjust: none;
-  content: attr(data-shop-count);
   position: absolute;
   display: block;
-  right: -webkit-calc(25% - 3px);
-  right: calc(25% - 3px);
+  content: attr(data-shop-count);
+  right: -webkit-calc(25% - 4px);
+  right: calc(25% - 4px);
   top: -1px;
+  height: 16px;
+  width: 15px;
   font-size: 12px;
+  line-height: 1.4;
+  -webkit-transform: scale(0.95);
+      -ms-transform: scale(0.95);
+          transform: scale(0.95);
+  letter-spacing: -1px;
+  vertical-align: top;
+  padding: 0 1px 0 0;
   color: #fff;
   background-color: #e9282e;
-  height: 16px;
-  width: 16px;
-  text-align: center;
-  -webkit-box-shadow: 0 0 0px 2px rgba(255, 255, 255, 0.5);
-          box-shadow: 0 0 0px 2px rgba(255, 255, 255, 0.5);
+  -webkit-box-shadow: 0 0 0px 1px #ffffff;
+          box-shadow: 0 0 0px 1px #ffffff;
   border-radius: 50%;
-  line-height: 1.4;
-  vertical-align: top;
 }
 @media screen and (min-width: 414px) {
-  .has-shop-count li::before {
-    right: -webkit-calc(28% - 3px);
-    right: calc(28% - 3px);
+  .has-shop-count i::before {
+    right: -webkit-calc(28% - 4px);
+    right: calc(28% - 4px);
   }
 }
 /****************
