@@ -23,6 +23,15 @@
 	<div class="wrapper">
 		<!--fixed element-->
 		<!--文字头-->
+		<div class="base-nav-bar">
+			<a class="no-visible" href="index.html">
+				<i class="icon back fl"></i>
+			</a>
+			<p>Uesr Name</p>
+			<a class="no-visible" href="index.html">
+				<i class="icon back fl"></i>
+			</a>
+		</div>
 		<!--底部导航栏-->
 		<div class="nav-buttom-bar">
 			<ul>
@@ -54,7 +63,7 @@
 		</div>
 		<!--fixed element end-->
 		<!--可见页-->
-		<div class="main-wrapper no-mart">
+		<div class="main-wrapper title-bar my-page">
 			<!--登陆后点击进入个人信息页-->
 			<!--myCenter.html-->
 			<!--<a href="myCenter.html">-->
@@ -93,47 +102,6 @@
 					</li>
 				</ul>
 			</section>
-			<!--我的订单-->
-			<div class="base-mt-wrapper">
-				<a href="myOrder.html">
-					<section class="user-row my-order">
-						<p>我的订单</p>
-						<div class="look-my-order">
-							<span>查看全部订单</span>
-							<i class="icon right"></i>
-						</div>
-					</section>
-				</a>
-			</div>
-			<!--查看全部订单-->
-			<section class="user-row has-shop-count">
-				<ul>
-					<li data-shop-count="0">
-						<a href="javascript:void(0);">
-							<i class="icon wallet"></i>
-							<p>待付款</p>
-						</a>
-					</li>
-					<li data-shop-count="5">
-						<a href="javascript:void(0);">
-							<i class="icon car"></i>
-							<p>待发货</p>
-						</a>
-					</li>
-					<li data-shop-count="8">
-						<a href="javascript:void(0);">
-							<i class="icon package"></i>
-							<p>待收货</p>
-						</a>
-					</li>
-					<li data-shop-count="10">
-						<a href="javascript:void(0);">
-							<i class="icon comment"></i>
-							<p>待评价</p>
-						</a>
-					</li>
-				</ul>
-			</section>
 			<!--我的拼团-->
 			<div class="base-mt-wrapper">
 				<a href="myOrder.html">
@@ -147,7 +115,7 @@
 				</a>
 			</div>
 			<!--查看我的拼团-->
-			<section class="user-row">
+			<section class="user-row has-shop-count">
 				<ul>
 					<li>
 						<a href="javascript:void(0);">
@@ -171,6 +139,47 @@
 						<a href="javascript:void(0);">
 							<i class="icon cyclo-alert"></i>
 							<p>拼团失败</p>
+						</a>
+					</li>
+				</ul>
+			</section>
+			<!--我的订单-->
+			<div class="base-mt-wrapper">
+				<a href="myOrder.html">
+					<section class="user-row my-order">
+						<p>我的订单</p>
+						<div class="look-my-order">
+							<span>查看全部订单</span>
+							<i class="icon right"></i>
+						</div>
+					</section>
+				</a>
+			</div>
+			<!--查看全部订单-->
+			<section class="user-row has-shop-count">
+				<ul>
+					<li>
+						<a href="javascript:void(0);">
+							<i class="icon wallet"></i>
+							<p>待付款</p>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:void(0);">
+							<i class="icon car"></i>
+							<p>待发货</p>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:void(0);">
+							<i class="icon package"></i>
+							<p>待收货</p>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:void(0);">
+							<i class="icon comment"></i>
+							<p>待评价</p>
 						</a>
 					</li>
 				</ul>
@@ -209,28 +218,29 @@
 			<section class="user-row">
 				<ul>
 					<li>
+						<a href="">
+							<i class="icon people"></i>
+							<p>售后客服</p>
+						</a>
+					</li>
+					<li>
 						<a href="myCenter.html">
 							<i class="icon me"></i>
 							<p>个人资料</p>
 						</a>
 					</li>
 					<li>
-						<!--http://api.jiushouguoji.hk/app/Guider/aboutUs-->
-							<a href="about.html">
+						<!--http://wap.jiushouguoji.com/index.php/Home/Index/abountUs.html-->
+						<a href="http://wap.jiushouguoji.com/index.php/Home/Index/abountUs.html">
+							<!--<a href="about.html">-->
 							<i class="icon info"></i>
 							<p>关于就手</p>
 						</a>
 					</li>
 					<li>
-						<a href="">
-							<i class="icon"></i>
-							<p> </p>
-						</a>
-					</li>
-					<li>
-						<a href="">
-							<i class="icon"></i>
-							<p> </p>
+						<a href="javascript:uesrExit();">
+							<i class="icon exit"></i>
+							<p>退出登录</p>
 						</a>
 					</li>
 				</ul>
@@ -260,9 +270,9 @@
 				//跳转到 myOrder.html 页面后再读取切换标签页
 				//设置显示订单的数量
 			var my_order_count = $(".has-shop-count li");
-//            my_order_count.each(function () {
-//				this.dataset.shopCount = "0";
-//            })
+            my_order_count.each(function () {
+				this.dataset.shopCount = "0";
+            })
 			//设置nav 为0
 			//SetMyOrderNav(0);
 		});
