@@ -1,4 +1,5 @@
-<html lang="zh-cmn-Hans" data-dpr="1" style="font-size: 41.4px;"><head>
+<html lang="zh-cmn-Hans" data-dpr="1" style="font-size: 41.4px;">
+<head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="renderer" content="webkit">
     <title>微信绑定 </title>
@@ -8,100 +9,62 @@
     <meta content="black" name="apple-mobile-web-app-status-bar-style">
     <meta content="telephone=no" name="format-detection">
     <link rel="Shortcut Icon" href="favicon.jpg">
-
     <link rel="stylesheet" href="css/style.min.css">
-
     <script src="js/jquery.min.js"></script>
     <script src="js/flexible.js"></script>
     <script src="js/swiper.jquery.min.js"></script>
     <script src="js/layer.js"></script>
     <script src="js/main.js"></script>
     <script src="http://cdn.bootcss.com/jquery_lazyload/1.9.7/jquery.lazyload.min.js"></script>
-
-    
 </head>
-
 <body style="font-size: 12px;">
 <div class="wrapper">
     <!--fixed element-->
-
-    
-    <div class="base-nav-bar">
-        <a class="" href="/User">
-            <i class="icon back fl"></i>
-        </a>
-        <p>微信绑定</p>
-        <a href="/User/login">登陆</a>
+    <div class="main-wrapper no-b-nav h-100-white no-mart">
+        <div class="login-sign-wrapper sign bind-wechat">
+            <p class="login-select">
+                <span class="has-account-select">您已有就手帐号</span>
+                <span class="not-account-select">您没有就手帐号</span>
+            </p>
+            <!--有就手帐号-->
+            <form class=" has-account-form">
+                <section class="inputBlock">
+                    <input type="tel" name="username" value="" placeholder="手机号">
+                    <button id="verify" onclick="return false;">验证</button>
+                </section>
+                <section class="inputBlock ">
+                    <input type="tel" name="verify" value="" placeholder="请输入收到的验证码">
+                </section>
+                <section class="inputBlock">
+                    <input type="password" name="password" value="" placeholder="登陆密码">
+                </section>
+                <button id="submit" onclick="return false;">立即绑定</button>
+            </form>
+            <!--没有就手帐号-->
+            <form class="not-account-form">
+                <section class="inputBlock">
+                    <input type="tel" name="username" value="" placeholder="手机号">
+                    <button id="verify" onclick="return false;">验证</button>
+                </section>
+                <section class="inputBlock ">
+                    <input type="tel" name="verify" value="" placeholder="请输入收到的验证码">
+                </section>
+                <section class="inputBlock">
+                    <input type="password" name="password" value="" placeholder="6-16位登录密码">
+                </section>
+                <section class="inputBlock">
+                    <input type="password" name="password_retype" value="" placeholder="请再次输入密码">
+                </section>
+                <button id="submit" onclick="return false;">立即注册并绑定</button>
+            </form>
+        </div>
     </div>
-
-    <div class="main-wrapper title-bar no-b-nav h-100-white ">
-
-
-       
-        
-            <div class="login-sign-wrapper sign bind-wechat">
-                <p class="login-select">
-                    <span class="has-account-select">您已有就手帐号</span>
-                    <span class="not-account-select">您没有就手帐号</span>
-                </p>
-                <!--有就手帐号-->
-                <form class=" has-account-form">
-                    <section class="inputBlock">
-                        <input type="tel" name="username" value="" placeholder="手机号">
-                        <button id="verify" onclick="return false;">验证</button>
-                    </section>
-                    <section class="inputBlock ">
-                        <input type="tel" name="verify" value="" placeholder="请输入收到的验证码">
-                    </section>
-                    <section class="inputBlock">
-                        <input type="password" name="password" value="" placeholder="登陆密码">
-                    </section>
-                    <button id="submit" onclick="return false;">立即绑定</button>
-                </form>
-                <!--没有就手帐号-->
-                <form class="not-account-form">
-                    <section class="inputBlock">
-                        <input type="tel" name="username" value="" placeholder="手机号">
-                        <button id="verify" onclick="return false;">验证</button>
-                    </section>
-                    <section class="inputBlock ">
-                        <input type="tel" name="verify" value="" placeholder="请输入收到的验证码">
-                    </section>
-                    <section class="inputBlock">
-                        <input type="password" name="password" value="" placeholder="6-16位登录密码">
-                    </section>
-                    <section class="inputBlock">
-                        <input type="password" name="password_retype" value="" placeholder="请再次输入密码">
-                    </section>
-                    <button id="submit" onclick="return false;">立即注册并绑定</button>
-                </form>
-            </div>
-        
-    </div>
-
-
     <!--fixed element end-->
 </div>
-
-
-
 <script>
     $("body > div.wrapper > div.nav-bar > ul > li > a").css('font-size', '14px');
 </script>
-
 <script>
-    // $('.has-account-select').click(function(){
-    //     $('this').addClass('active');
-    //     $(".has-account-form").removeClass('no-display');
-    // })
-
-    // $('.not-account-select').click(function(){
-    //      $('this').addClass('active');
-    //      $(".not-account-form").removeClass('no-display');
-    // })
-
-
-
     $('form').hide();
     $('form').eq($('.login-select span').index($('.login-select span:first').addClass('active'))).show();
     $('.login-select span').click(function () {
@@ -111,12 +74,10 @@
         $('form').hide();
         $('form').eq($('.login-select span').index(_this)).show();
     });
-
-
-    $('#verify').click(function(){
+    $('#verify').click(function () {
         var mobile = $('input[name=username]').val();
         $.ajax({
-            url: '/User/verify'+'/'+ mobile,
+            url: '/User/verify' + '/' + mobile,
             success: function (msg) {
                 baseMsg(msg);
             }
@@ -131,12 +92,11 @@
             type: 'POST',
             success: function (msg) {
                 baseMsg(msg);
-                if(msg == "")
+                if (msg == "")
                     window.location = "/User";
             }
         });
     });
 </script>
-
-
-</body></html>
+</body>
+</html>

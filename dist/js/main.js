@@ -579,9 +579,9 @@ function detailCountDownGo() {
     if ($(document).find(".group-buy-member-list").length != 0) {
         var allgroupbuy = $(".group-buy-member");
         allgroupbuy.each(function (i) {
-            //var t = $(this).find('.count-down-time').attr('time');
-            detailCountDown($(this));
-                if( $(".group-buy-member").length == 0 ) {
+                //var t = $(this).find('.count-down-time').attr('time');
+                detailCountDown($(this));
+                if ($(".group-buy-member").length == 0) {
                     $(".product-group-buy").remove();
                 }
             }

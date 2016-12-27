@@ -1,7 +1,7 @@
 @import "value.less";
 @import "func.less";
 @import "base.less";
-
+//groupbuy.less
 /****************
 
 拼团详情页
@@ -74,7 +74,7 @@
         justify-content: flex-start;
         align-items: center;
         position: relative;
-        
+
         &:before {
             content: "";
             display: block;
@@ -97,9 +97,9 @@
         width: 100%;
         display: flex;
         flex-flow: row nowrap;
-        justify-content: flex-start;
+        justify-content: space-around;
         align-items: center;
-        
+
         > p {
             font-size: 14px;
             padding: unit(30/@base-px-2-rem, rem) unit(20/@base-px-2-rem, rem);
@@ -111,7 +111,9 @@
             font-size: 13px;
             ~ p {
                 width: 50%;
-                
+                letter-spacing: 0px;
+                padding: unit(30/@base-px-2-rem, rem) 0;
+                text-align: right;
             }
         }
         .userheaderBox {

@@ -85,7 +85,7 @@ icon 图标大小
 
 ****************/
 /*
-function
+function.less
 */
 .clearfix:before,
 .clearfix:after {
@@ -5172,10 +5172,9 @@ group-goods
   -webkit-flex-flow: row nowrap;
       -ms-flex-flow: row nowrap;
           flex-flow: row nowrap;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
   -webkit-box-align: center;
   -webkit-align-items: center;
       -ms-flex-align: center;
@@ -5196,6 +5195,9 @@ group-goods
 }
 .groupbuy-details-userinfo-wrapper section.groupbuy-details-user > p ~ p {
   width: 50%;
+  letter-spacing: 0px;
+  padding: 0.26408451rem 0;
+  text-align: right;
 }
 .groupbuy-details-userinfo-wrapper section.groupbuy-details-user .userheaderBox {
   height: 0.88028169rem;
@@ -5289,6 +5291,10 @@ Swiper 分页指示器颜色
 }
 .main-wrapper.no-mart {
   margin-top: 0;
+}
+.main-wrapper.h-100-white {
+  background-color: #fff;
+  height: 100%;
 }
 .product-wrapper {
   background-color: #f2f2f2;

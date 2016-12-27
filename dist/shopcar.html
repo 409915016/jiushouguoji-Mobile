@@ -1,352 +1,349 @@
 <!doctype html>
 <html lang="zh-cmn-Hans">
-
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="renderer" content="webkit">
-	<title>购物车</title>
-	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
-	<meta name="renderer" content="webkit">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no" />
-	<meta content="black" name="apple-mobile-web-app-status-bar-style" />
-	<meta content="telephone=no" name="format-detection" />
-	<link rel="Shortcut Icon" href="favicon.jpg" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="renderer" content="webkit">
+    <title>购物车</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"/>
+    <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+    <meta content="telephone=no" name="format-detection"/>
+    <link rel="Shortcut Icon" href="favicon.jpg"/>
+    <link rel="stylesheet" href="css/style.min.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/flexible.js"></script>
+    <script src="js/swiper.jquery.min.js"></script>
+    <script src="js/layer.js"></script>
+    <script src="js/main.js">
 
-	<link rel="stylesheet" href="css/style.min.css">
-
-	<script src="js/jquery.min.js"></script>
-	<script src="js/flexible.js"></script>
-	<script src="js/swiper.jquery.min.js"></script>
-	<script src="js/layer.js"></script>
-	<script src="js/main.js">
-
-	</script>
+    </script>
 </head>
 
 <body>
-	<div class="wrapper">
-		<!--fixed element-->
-		<!--文字头-->
-		<div class="base-nav-bar">
-			<a class="no-visible" href="index.html">
-				<i class="icon back fl"></i>
-			</a>
-			<p>购物车</p>
-			<a class="" href="index.html"> 删除 </a>
-		</div>
-		<!--底部导航栏-->
-		<div class="nav-buttom-bar">
-			<ul>
-				<li>
-					<a class="" href="index.html">
-						<i class="icon home "></i>
-						<p>首页</p>
-					</a>
-				</li>
-				<li>
-					<a href="hot.html">
-						<i class="icon hot "></i>
-						<p>抢购</p>
-					</a>
-				</li>
-				<li>
-					<a href="shopCar.html">
-						<i class="icon shopcar active"></i>
-						<p>购物车</p>
-					</a>
-				</li>
-				<li>
-					<a href="my.html">
-						<i class="icon my "></i>
-						<p>我的</p>
-					</a>
-				</li>
-			</ul>
-		</div>
-		<!--购物车结账栏-->
-		<div class="shopcar-nav-bar">
-			<div class="shopcar-check-icon">
-				<input type="checkbox" name="111" value="111" id="" class="door-check-1" />
-				<label for="">
-					<i class="icon no-check"></i>
-				</label>
-			</div>
-			<span>全选</span>
-			<div class="order-price">
-				<p>总计:&#165;
-					<span>927.00</span>
-				</p>
-				<p>共
-					<span>5</span>件</p>
-			</div>
-			<a href="orderInfo.html" class="order-btn"> 结算 </a>
-		</div>
-		<!--返回顶部按钮-->
-		<!--<a id="back-to-top">
-            <i class="icon totop"></i>
-        </a>-->
-		<!--fixed element end-->
-		<!--可见页-->
-		<div class="main-wrapper title-bar shopcar">
-			<!--当购物车空时 显示-->
-			<!--<div class="shopcar-wrapper">
-                <div class="shopcar-empty">
-                    <p>购物车还没有商品，快去逛逛吧。</p>
+<div class="wrapper">
+    <!--fixed element-->
+    <!--文字头-->
+    <div class="base-nav-bar">
+        <a class="no-visible" href="index.html">
+            <i class="icon back fl"></i>
+        </a>
+        <p>购物车</p>
+        <a class="" href="index.html"> 删除 </a>
+    </div>
+    <!--底部导航栏-->
+    <div class="nav-buttom-bar">
+        <ul>
+            <li>
+                <a class="" href="index.html">
+                    <i class="icon home "></i>
+                    <p>首页</p>
+                </a>
+            </li>
+            <li>
+                <a href="hot.html">
+                    <i class="icon hot "></i>
+                    <p>抢购</p>
+                </a>
+            </li>
+            <li>
+                <a href="shopCar.html">
+                    <i class="icon shopcar active"></i>
+                    <p>购物车</p>
+                </a>
+            </li>
+            <li>
+                <a href="my.html">
+                    <i class="icon my "></i>
+                    <p>我的</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!--购物车结账栏-->
+    <div class="shopcar-nav-bar">
+        <div class="shopcar-check-icon">
+            <input type="checkbox" name="111" value="111" id="" class="door-check-1"/>
+            <label for="">
+                <i class="icon no-check"></i>
+            </label>
+        </div>
+        <span>全选</span>
+        <div class="order-price">
+            <p>总计:&#165;
+                <span>927.00</span>
+            </p>
+            <p>共
+                <span>5</span>件</p>
+        </div>
+        <a href="orderInfo.html" class="order-btn"> 结算 </a>
+    </div>
+    <!--返回顶部按钮-->
+    <!--<a id="back-to-top">
+        <i class="icon totop"></i>
+    </a>-->
+    <!--fixed element end-->
+    <!--可见页-->
+    <div class="main-wrapper title-bar shopcar">
+        <!--当购物车空时 显示-->
+        <!--<div class="shopcar-wrapper">
+            <div class="shopcar-empty">
+                <p>购物车还没有商品，快去逛逛吧。</p>
 
-                    <a href="hotsell.html"><span>去逛逛</span></a>
+                <a href="hotsell.html"><span>去逛逛</span></a>
+            </div>
+        </div>-->
+        <!--同一门店商品-->
+        <section class="base-mt-wrapper shopcar-door">
+            <!--门店名称-->
+            <div class="door-name">
+                <div class="shopcar-check-icon">
+                    <input type="checkbox" name="111" value="111" id="" class="door-check-1"/>
+                    <label for="">
+                        <i class="icon no-check"></i>
+                    </label>
                 </div>
-            </div>-->
-			<!--同一门店商品-->
-			<section class="base-mt-wrapper shopcar-door">
-				<!--门店名称-->
-				<div class="door-name">
-					<div class="shopcar-check-icon">
-						<input type="checkbox" name="111" value="111" id="" class="door-check-1" />
-						<label for="">
-							<i class="icon no-check"></i>
-						</label>
-					</div>
-					<span>就手国际海外旗舰店</span>
-				</div>
-				<!--门店内购物车商品-->
-				<div class="shopcar-list-wrapper">
-					<!--单件商品-->
-					<section class="shopcar-list">
-						<div class="shopcar-list-left">
-							<div class="shopcar-check-icon">
-								<input type="checkbox" name="111" value="111" id="" class="door-check-1" />
-								<label for="">
-									<i class="icon no-check"></i>
-								</label>
-							</div>
-							<a href="details.html" class="shopcar-list-img">
-								<img src="img/meadjohnson-1.jpg" alt=""> </a>
-						</div>
-						<div class="shopcar-list-right">
-							<!--置顶-->
-							<p>【6罐装】港版美赞臣 Meadjohson 4段奶粉 900g （3-6岁宝宝）</p>
-							<!--置底-->
-							<div class="shopcar-product-price-count">
-								<div class="shopcar-product-count">
-									<span>37.00</span>
-									<div class="shopcar-product-count-c">
-										<i class="icon minus"></i>
-										<span>0</span>
-										<i class="icon add"></i>
-									</div>
-								</div>
-							</div>
-						</div>
-					</section>
-					<!--单件商品-->
-					<section class="shopcar-list">
-						<div class="shopcar-list-left">
-							<div class="shopcar-check-icon">
-								<input type="checkbox" name="111" value="111" id="" class="door-check-1" />
-								<label for="">
-									<i class="icon no-check"></i>
-								</label>
-							</div>
-							<a href="details.html" class="shopcar-list-img">
-								<img src="img/meadjohnson-1.jpg" alt=""> </a>
-						</div>
-						<div class="shopcar-list-right">
-							<!--置顶-->
-							<p>【6罐装】港版美赞臣 Meadjohson 4段奶粉 900g （3-6岁宝宝）</p>
-							<!--置底-->
-							<div class="shopcar-product-price-count">
-								<div class="shopcar-product-count">
-									<span>37.00</span>
-									<div class="shopcar-product-count-c">
-										<i class="icon minus"></i>
-										<span>0</span>
-										<i class="icon add"></i>
-									</div>
-								</div>
-							</div>
-						</div>
-					</section>
-					<!--单件商品-->
-					<section class="shopcar-list">
-						<div class="shopcar-list-left">
-							<div class="shopcar-check-icon">
-								<input type="checkbox" name="111" value="111" id="" class="door-check-1" />
-								<label for="">
-									<i class="icon no-check"></i>
-								</label>
-							</div>
-							<a href="details.html" class="shopcar-list-img">
-								<img src="img/meadjohnson-1.jpg" alt=""> </a>
-						</div>
-						<div class="shopcar-list-right">
-							<!--置顶-->
-							<p>【6罐装】港版美赞臣 Meadjohson 4段奶粉 900g （3-6岁宝宝）</p>
-							<!--置底-->
-							<div class="shopcar-product-price-count">
-								<div class="shopcar-product-count">
-									<span>37.00</span>
-									<div class="shopcar-product-count-c">
-										<i class="icon minus"></i>
-										<span>0</span>
-										<i class="icon add"></i>
-									</div>
-								</div>
-							</div>
-						</div>
-					</section>
-				</div>
-			</section>
-			<!--同一门店商品-->
-			<section class="base-mt-wrapper shopcar-door">
-				<!--门店名称-->
-				<div class="door-name">
-					<div class="shopcar-check-icon">
-						<input type="checkbox" name="111" value="111" id="" class="door-check-1" />
-						<label for="">
-							<i class="icon no-check"></i>
-						</label>
-					</div>
-					<span>就手国际海外旗舰店</span>
-				</div>
-				<!--门店内购物车商品-->
-				<div class="shopcar-list-wrapper">
-					<!--单件商品-->
-					<section class="shopcar-list">
-						<div class="shopcar-list-left">
-							<div class="shopcar-check-icon">
-								<input type="checkbox" name="111" value="111" id="" class="door-check-1" />
-								<label for="">
-									<i class="icon no-check"></i>
-								</label>
-							</div>
-							<a href="details.html" class="shopcar-list-img">
-								<img src="img/meadjohnson-1.jpg" alt=""> </a>
-						</div>
-						<div class="shopcar-list-right">
-							<!--置顶-->
-							<p>【6罐装】港版美赞臣 Meadjohson 4段奶粉 900g （3-6岁宝宝）</p>
-							<!--置底-->
-							<div class="shopcar-product-price-count">
-								<div class="shopcar-product-count">
-									<span>37.00</span>
-									<div class="shopcar-product-count-c">
-										<i class="icon minus"></i>
-										<span>0</span>
-										<i class="icon add"></i>
-									</div>
-								</div>
-							</div>
-						</div>
-					</section>
-					<!--单件商品-->
-					<section class="shopcar-list">
-						<div class="shopcar-list-left">
-							<div class="shopcar-check-icon">
-								<input type="checkbox" name="111" value="111" id="" class="door-check-1" />
-								<label for="">
-									<i class="icon no-check"></i>
-								</label>
-							</div>
-							<a href="details.html" class="shopcar-list-img">
-								<img src="img/meadjohnson-1.jpg" alt=""> </a>
-						</div>
-						<div class="shopcar-list-right">
-							<!--置顶-->
-							<p>【6罐装】港版美赞臣 Meadjohson 4段奶粉 900g （3-6岁宝宝）</p>
-							<!--置底-->
-							<div class="shopcar-product-price-count">
-								<div class="shopcar-product-count">
-									<span>37.00</span>
-									<div class="shopcar-product-count-c">
-										<i class="icon minus"></i>
-										<span>0</span>
-										<i class="icon add"></i>
-									</div>
-								</div>
-							</div>
-						</div>
-					</section>
-					<!--单件商品-->
-					<section class="shopcar-list">
-						<div class="shopcar-list-left">
-							<div class="shopcar-check-icon">
-								<input type="checkbox" name="111" value="111" id="" class="door-check-1" />
-								<label for="">
-									<i class="icon no-check"></i>
-								</label>
-							</div>
-							<a href="details.html" class="shopcar-list-img">
-								<img src="img/meadjohnson-1.jpg" alt=""> </a>
-						</div>
-						<div class="shopcar-list-right">
-							<!--置顶-->
-							<p>【6罐装】港版美赞臣 Meadjohson 4段奶粉 900g （3-6岁宝宝）</p>
-							<!--置底-->
-							<div class="shopcar-product-price-count">
-								<div class="shopcar-product-count">
-									<span>37.00</span>
-									<div class="shopcar-product-count-c">
-										<i class="icon minus"></i>
-										<span>0</span>
-										<i class="icon add"></i>
-									</div>
-								</div>
-							</div>
-						</div>
-					</section>
-				</div>
-			</section>
-			<!--猜你喜欢-->
-			<div class="base-mt-wrapper">
-				<p class="guess-you-like">购物车猜你喜欢</p>
-				<div class="product-box-wrapper">
-					<div class="product-box">
-						<a href="details.html">
-							<img src="img/meadjohnson-1.jpg">
-							<p>【6罐装】港版美赞臣 Meadjohson 4段奶粉 900g （3-6岁宝宝）</p>
-							<p>&#165;
-								<span>840.00</span>
-							</p>
-						</a>
-					</div>
-					<div class="product-box">
-						<a href="details.html">
-							<img src="img/meadjohnson-1.jpg">
-							<p>【6罐装】港版美赞臣 Meadjohson 4段奶粉 900g （3-6岁宝宝）</p>
-							<p>&#165;
-								<span>840.00</span>
-							</p>
-						</a>
-					</div>
-					<div class="product-box">
-						<a href="details.html">
-							<img src="img/meadjohnson-1.jpg">
-							<p>【6罐装】港版美赞臣 Meadjohson 4段奶粉 900g （3-6岁宝宝）</p>
-							<p>&#165;
-								<span>840.00</span>
-							</p>
-						</a>
-					</div>
-					<div class="product-box">
-						<a href="details.html">
-							<img src="img/meadjohnson-1.jpg">
-							<p>【6罐装】港版美赞臣 Meadjohson 4段奶粉 900g （3-6岁宝宝）</p>
-							<p>&#165;
-								<span>840.00</span>
-							</p>
-						</a>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!--可见页 end-->
-	</div>
-	<script>
-		$(document).ready(function () {
-			// $(".nav-buttom-bar ul li a i").removeClass("active");
-			// $(".nav-buttom-bar ul li:nth-child(2) a i").addClass("active");
-		});
-	</script>
+                <span>就手国际海外旗舰店</span>
+            </div>
+            <!--门店内购物车商品-->
+            <div class="shopcar-list-wrapper">
+                <!--单件商品-->
+                <section class="shopcar-list">
+                    <div class="shopcar-list-left">
+                        <div class="shopcar-check-icon">
+                            <input type="checkbox" name="111" value="111" id="" class="door-check-1"/>
+                            <label for="">
+                                <i class="icon no-check"></i>
+                            </label>
+                        </div>
+                        <a href="details.html" class="shopcar-list-img">
+                            <img src="img/meadjohnson-1.jpg" alt=""> </a>
+                    </div>
+                    <div class="shopcar-list-right">
+                        <!--置顶-->
+                        <p>【6罐装】港版美赞臣 Meadjohson 4段奶粉 900g （3-6岁宝宝）</p>
+                        <!--置底-->
+                        <div class="shopcar-product-price-count">
+                            <div class="shopcar-product-count">
+                                <span>37.00</span>
+                                <div class="shopcar-product-count-c">
+                                    <i class="icon minus"></i>
+                                    <span>0</span>
+                                    <i class="icon add"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--单件商品-->
+                <section class="shopcar-list">
+                    <div class="shopcar-list-left">
+                        <div class="shopcar-check-icon">
+                            <input type="checkbox" name="111" value="111" id="" class="door-check-1"/>
+                            <label for="">
+                                <i class="icon no-check"></i>
+                            </label>
+                        </div>
+                        <a href="details.html" class="shopcar-list-img">
+                            <img src="img/meadjohnson-1.jpg" alt=""> </a>
+                    </div>
+                    <div class="shopcar-list-right">
+                        <!--置顶-->
+                        <p>【6罐装】港版美赞臣 Meadjohson 4段奶粉 900g （3-6岁宝宝）</p>
+                        <!--置底-->
+                        <div class="shopcar-product-price-count">
+                            <div class="shopcar-product-count">
+                                <span>37.00</span>
+                                <div class="shopcar-product-count-c">
+                                    <i class="icon minus"></i>
+                                    <span>0</span>
+                                    <i class="icon add"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--单件商品-->
+                <section class="shopcar-list">
+                    <div class="shopcar-list-left">
+                        <div class="shopcar-check-icon">
+                            <input type="checkbox" name="111" value="111" id="" class="door-check-1"/>
+                            <label for="">
+                                <i class="icon no-check"></i>
+                            </label>
+                        </div>
+                        <a href="details.html" class="shopcar-list-img">
+                            <img src="img/meadjohnson-1.jpg" alt=""> </a>
+                    </div>
+                    <div class="shopcar-list-right">
+                        <!--置顶-->
+                        <p>【6罐装】港版美赞臣 Meadjohson 4段奶粉 900g （3-6岁宝宝）</p>
+                        <!--置底-->
+                        <div class="shopcar-product-price-count">
+                            <div class="shopcar-product-count">
+                                <span>37.00</span>
+                                <div class="shopcar-product-count-c">
+                                    <i class="icon minus"></i>
+                                    <span>0</span>
+                                    <i class="icon add"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </section>
+        <!--同一门店商品-->
+        <section class="base-mt-wrapper shopcar-door">
+            <!--门店名称-->
+            <div class="door-name">
+                <div class="shopcar-check-icon">
+                    <input type="checkbox" name="111" value="111" id="" class="door-check-1"/>
+                    <label for="">
+                        <i class="icon no-check"></i>
+                    </label>
+                </div>
+                <span>就手国际海外旗舰店</span>
+            </div>
+            <!--门店内购物车商品-->
+            <div class="shopcar-list-wrapper">
+                <!--单件商品-->
+                <section class="shopcar-list">
+                    <div class="shopcar-list-left">
+                        <div class="shopcar-check-icon">
+                            <input type="checkbox" name="111" value="111" id="" class="door-check-1"/>
+                            <label for="">
+                                <i class="icon no-check"></i>
+                            </label>
+                        </div>
+                        <a href="details.html" class="shopcar-list-img">
+                            <img src="img/meadjohnson-1.jpg" alt=""> </a>
+                    </div>
+                    <div class="shopcar-list-right">
+                        <!--置顶-->
+                        <p>【6罐装】港版美赞臣 Meadjohson 4段奶粉 900g （3-6岁宝宝）</p>
+                        <!--置底-->
+                        <div class="shopcar-product-price-count">
+                            <div class="shopcar-product-count">
+                                <span>37.00</span>
+                                <div class="shopcar-product-count-c">
+                                    <i class="icon minus"></i>
+                                    <span>0</span>
+                                    <i class="icon add"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--单件商品-->
+                <section class="shopcar-list">
+                    <div class="shopcar-list-left">
+                        <div class="shopcar-check-icon">
+                            <input type="checkbox" name="111" value="111" id="" class="door-check-1"/>
+                            <label for="">
+                                <i class="icon no-check"></i>
+                            </label>
+                        </div>
+                        <a href="details.html" class="shopcar-list-img">
+                            <img src="img/meadjohnson-1.jpg" alt=""> </a>
+                    </div>
+                    <div class="shopcar-list-right">
+                        <!--置顶-->
+                        <p>【6罐装】港版美赞臣 Meadjohson 4段奶粉 900g （3-6岁宝宝）</p>
+                        <!--置底-->
+                        <div class="shopcar-product-price-count">
+                            <div class="shopcar-product-count">
+                                <span>37.00</span>
+                                <div class="shopcar-product-count-c">
+                                    <i class="icon minus"></i>
+                                    <span>0</span>
+                                    <i class="icon add"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--单件商品-->
+                <section class="shopcar-list">
+                    <div class="shopcar-list-left">
+                        <div class="shopcar-check-icon">
+                            <input type="checkbox" name="111" value="111" id="" class="door-check-1"/>
+                            <label for="">
+                                <i class="icon no-check"></i>
+                            </label>
+                        </div>
+                        <a href="details.html" class="shopcar-list-img">
+                            <img src="img/meadjohnson-1.jpg" alt=""> </a>
+                    </div>
+                    <div class="shopcar-list-right">
+                        <!--置顶-->
+                        <p>【6罐装】港版美赞臣 Meadjohson 4段奶粉 900g （3-6岁宝宝）</p>
+                        <!--置底-->
+                        <div class="shopcar-product-price-count">
+                            <div class="shopcar-product-count">
+                                <span>37.00</span>
+                                <div class="shopcar-product-count-c">
+                                    <i class="icon minus"></i>
+                                    <span>0</span>
+                                    <i class="icon add"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </section>
+        <!--猜你喜欢-->
+        <div class="base-mt-wrapper">
+            <p class="guess-you-like">购物车猜你喜欢</p>
+            <div class="product-box-wrapper">
+                <div class="product-box">
+                    <a href="details.html">
+                        <img src="img/meadjohnson-1.jpg">
+                        <p>【6罐装】港版美赞臣 Meadjohson 4段奶粉 900g （3-6岁宝宝）</p>
+                        <p>&#165;
+                            <span>840.00</span>
+                        </p>
+                    </a>
+                </div>
+                <div class="product-box">
+                    <a href="details.html">
+                        <img src="img/meadjohnson-1.jpg">
+                        <p>【6罐装】港版美赞臣 Meadjohson 4段奶粉 900g （3-6岁宝宝）</p>
+                        <p>&#165;
+                            <span>840.00</span>
+                        </p>
+                    </a>
+                </div>
+                <div class="product-box">
+                    <a href="details.html">
+                        <img src="img/meadjohnson-1.jpg">
+                        <p>【6罐装】港版美赞臣 Meadjohson 4段奶粉 900g （3-6岁宝宝）</p>
+                        <p>&#165;
+                            <span>840.00</span>
+                        </p>
+                    </a>
+                </div>
+                <div class="product-box">
+                    <a href="details.html">
+                        <img src="img/meadjohnson-1.jpg">
+                        <p>【6罐装】港版美赞臣 Meadjohson 4段奶粉 900g （3-6岁宝宝）</p>
+                        <p>&#165;
+                            <span>840.00</span>
+                        </p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--可见页 end-->
+</div>
+<script>
+    $(document).ready(function () {
+        // $(".nav-buttom-bar ul li a i").removeClass("active");
+        // $(".nav-buttom-bar ul li:nth-child(2) a i").addClass("active");
+    });
+</script>
 </body>
 
 </html>
