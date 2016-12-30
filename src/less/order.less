@@ -11,96 +11,96 @@
 //order框架
 //拼团订单通用 
 div.base-order {
-    background-color: #fff;
-    margin-top: unit( @base-mt /@base-px-2-rem, rem);
-    & > div, a {
-        padding: unit(20/@base-px-2-rem, rem) unit(40/@base-px-2-rem, rem)
-    }
-    .base-order-btn-row {
-        padding-top: 0;
-    }
-    .base-order-date-state {
-        padding: unit(35/@base-px-2-rem, rem) unit(50/@base-px-2-rem, rem);
-    }
-    &:first-child {
-        margin-top: 0;
-    }
-    //拼团状态背景图
-    &.groupbuy-state-order-underway {
-        .base-order-info {
-            background-image: url("@{icon-address}/order-underway.png");
-        }
-    }
-    &.groupbuy-state-order-succeed {
-        .base-order-info {
-            background-image: url("@{icon-address}/order-succeed.png");
-        }
-    }
-    &.groupbuy-state-order-failure {
-        .base-order-info {
-            background-image: url("@{icon-address}/order-failure.png");
-        }
-    }
-    //拼团订单样式
-    //groupbuy-base-order
-    &.groupbuy-base-order {
-        > .base-order-info {
-            justify-content: flex-start;
-            background-origin: content-box;
-            background-repeat: no-repeat;
-            background-position: right center;
-            background-size: 23%;
-            .order-name-price {
-                width: 53%;
-                //拼团商品名
-                >p {
-                    //padding-top: unit(20/@base-px-2-rem, rem);
-                    font-size: 13px;
-                    line-height: 1.4;
-                }
-                .groupbuy-price-num {
-                    padding-top: unit(20/@base-px-2-rem, rem);
-                    font-size: 13px;
-                    >span:first-child {}
-                    >span:last-child {
-                        color: @red;
-                        padding-left: unit(40/@base-px-2-rem, rem);
-                    }
-                }
-                //团购价格
-                .groupbuy-price {
-                    font-size: 18px;
-                }
-            }
-        }
-        > div.base-order-total {
-            padding: unit(10/@base-px-2-rem, rem) unit(40/@base-px-2-rem, rem);
-        }
-        .base-order-state {
-            color: @red;
-        }
-    }
+	background-color: #fff;
+	margin-top: unit(@base-mt /@base-px-2-rem, rem);
+	& > div, a {
+		padding: unit(20/@base-px-2-rem, rem) unit(40/@base-px-2-rem, rem)
+	}
+	.base-order-btn-row {
+		padding-top: 0;
+	}
+	.base-order-date-state {
+		padding: unit(35/@base-px-2-rem, rem) unit(50/@base-px-2-rem, rem);
+	}
+	&:first-child {
+		margin-top: 0;
+	}
+	//拼团状态背景图
+	&.groupbuy-state-order-underway {
+		.base-order-info {
+			background-image: url("@{icon-address}/order-underway.png");
+		}
+	}
+	&.groupbuy-state-order-succeed {
+		.base-order-info {
+			background-image: url("@{icon-address}/order-succeed.png");
+		}
+	}
+	&.groupbuy-state-order-failure {
+		.base-order-info {
+			background-image: url("@{icon-address}/order-failure.png");
+		}
+	}
+	//拼团订单样式
+	//groupbuy-base-order
+	&.groupbuy-base-order {
+		> .base-order-info {
+			justify-content: flex-start;
+			background-origin: content-box;
+			background-repeat: no-repeat;
+			background-position: right center;
+			background-size: 23%;
+			.order-name-price {
+				width: 53%;
+				//拼团商品名
+				> p {
+					//padding-top: unit(20/@base-px-2-rem, rem);
+					font-size: 13px;
+					line-height: 1.4;
+				}
+				.groupbuy-price-num {
+					padding-top: unit(20/@base-px-2-rem, rem);
+					font-size: 13px;
+					> span:first-child {
+					}
+					> span:last-child {
+						color: @red;
+						padding-left: unit(40/@base-px-2-rem, rem);
+					}
+				}
+				//团购价格
+				.groupbuy-price {
+					font-size: 18px;
+				}
+			}
+		}
+		> div.base-order-total {
+			padding: unit(10/@base-px-2-rem, rem) unit(40/@base-px-2-rem, rem);
+		}
+		.base-order-state {
+			color: @red;
+		}
+	}
 }
 
 //订单日期和状态
 .base-order-date-state {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-around;
-    align-items: center;
-    font-size: 14px;
-    border-bottom: 1px solid @border-color-gray-light;
-    span {
-        width: 50%;
-        &:first-child {
-            text-align: left;
-        }
-        &:last-child {
-            text-align: right;
-        }
-    }
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-around;
+	align-items: center;
+	font-size: 14px;
+	border-bottom: 1px solid @border-color-gray-light;
+	span {
+		width: 50%;
+		&:first-child {
+			text-align: left;
+		}
+		&:last-child {
+			text-align: right;
+		}
+	}
 }
-
 
 /****************
 
@@ -110,135 +110,134 @@ div.base-order {
 ****************/
 
 .base-order-info {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-around;
-    align-items: center;
-    border-bottom: 1px solid @border-color-gray-light;
-    padding: unit(20/@base-px-2-rem, rem) unit(40/@base-px-2-rem, rem);
-    .order-imgBox {
-        width: unit(300/@base-px-2-rem, rem);
-        height: unit(300/@base-px-2-rem, rem);
-        img {
-            width: 100%;
-            height: 100%;
-        }
-    }
-    & > p {
-        align-self: flex-start;
-        padding-top: unit(20/@base-px-2-rem, rem);
-        width: 53%;
-        font-size: 14px;
-        line-height: 1.4;
-    }
-    .order-price-num {
-        font-size: 14px;
-        align-self: center;
-        p {
-            text-align: right;
-        }
-        .base-order-price {
-            padding-top: unit(20/@base-px-2-rem, rem);
-            text-align: right;
-            color: @text-gray;
-        }
-    }
-    //团购人数 价格
-    &.sold-out {
-        color: #333;
-        opacity: .35;
-        .order-price-num {
-            p {
-                color: #333;
-            }
-        }
-    }
-    &.groupbuy-order-info {
-        > p {
-            width: 46%;
-        }
-        .base-order-price {
-            text-align: left;
-            padding-top: 0;
-            color: #333;
-        }
-    }
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-around;
+	align-items: center;
+	border-bottom: 1px solid @border-color-gray-light;
+	padding: unit(20/@base-px-2-rem, rem) unit(40/@base-px-2-rem, rem);
+	.order-imgBox {
+		width: unit(300/@base-px-2-rem, rem);
+		height: unit(300/@base-px-2-rem, rem);
+		img {
+			width: 100%;
+			height: 100%;
+		}
+	}
+	& > p {
+		align-self: flex-start;
+		padding-top: unit(20/@base-px-2-rem, rem);
+		width: 53%;
+		font-size: 14px;
+		line-height: 1.4;
+	}
+	.order-price-num {
+		font-size: 14px;
+		align-self: center;
+		p {
+			text-align: right;
+		}
+		.base-order-price {
+			padding-top: unit(20/@base-px-2-rem, rem);
+			text-align: right;
+			color: @text-gray;
+		}
+	}
+	//团购人数 价格
+	&.sold-out {
+		color: #333;
+		opacity: .35;
+		.order-price-num {
+			p {
+				color: #333;
+			}
+		}
+	}
+	&.groupbuy-order-info {
+		> p {
+			width: 46%;
+		}
+		.base-order-price {
+			text-align: left;
+			padding-top: 0;
+			color: #333;
+		}
+	}
 }
 
 //拼团支付订单详情 
 .groupbuy-price-selector {
-    padding: unit(30/@base-px-2-rem, rem) unit(40/@base-px-2-rem, rem);
-    padding-left: unit(80/@base-px-2-rem, rem);
-    font-size: 14px;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    align-items: flex-start;
-    border-bottom: 1px solid @border-color-gray-light;
+	padding: unit(30/@base-px-2-rem, rem) unit(40/@base-px-2-rem, rem);
+	padding-left: unit(80/@base-px-2-rem, rem);
+	font-size: 14px;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	align-items: flex-start;
+	border-bottom: 1px solid @border-color-gray-light;
 }
 
 .groupbuy-coupon-selector {
-    padding: unit(30/@base-px-2-rem, rem) unit(40/@base-px-2-rem, rem);
-    padding-left: unit(80/@base-px-2-rem, rem);
-    font-size: 14px;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    align-items: flex-start;
-    border-bottom: 1px solid @border-color-gray-light;
+	padding: unit(30/@base-px-2-rem, rem) unit(40/@base-px-2-rem, rem);
+	padding-left: unit(80/@base-px-2-rem, rem);
+	font-size: 14px;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	align-items: flex-start;
+	border-bottom: 1px solid @border-color-gray-light;
 }
 
 .groupbuy-total {
-    text-align: right;
-    padding: unit(30/@base-px-2-rem, rem) unit(40/@base-px-2-rem, rem);
-    padding-left: unit(80/@base-px-2-rem, rem);
-    font-size: 14px;
+	text-align: right;
+	padding: unit(30/@base-px-2-rem, rem) unit(40/@base-px-2-rem, rem);
+	padding-left: unit(80/@base-px-2-rem, rem);
+	font-size: 14px;
 }
 
 //合计
 .base-order-total {
-    font-size: 14px;
-    p {
-        text-align: right;
-    }
+	font-size: 14px;
+	p {
+		text-align: right;
+	}
 }
 
 //加减件数
 .price-selector {
-    align-self: center;
-    font-size: 0;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    align-items: center;
-    span {
-        color: @red;
-        padding: unit(0/@base-px-2-rem, rem) unit(60/@base-px-2-rem, rem);
-        font-weight: 600;
-        font-size: 15px;
-    }
+	align-self: center;
+	font-size: 0;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	align-items: center;
+	span {
+		color: @red;
+		padding: unit(0/@base-px-2-rem, rem) unit(60/@base-px-2-rem, rem);
+		font-weight: 600;
+		font-size: 15px;
+	}
 }
 
 //订单操作按钮
 .base-order-btn-row {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: flex-end;
-    align-items: center;
-    padding-top: 0;
-    > a {
-        margin-left: unit(50/@base-px-2-rem, rem);
-        background-color: @red;
-        padding: unit(25/@base-px-2-rem, rem) unit(40/@base-px-2-rem, rem);
-        border-radius: 5px;
-        color: #fff;
-        font-size: 14px;
-        &.disable {
-            background-color: #ccc;
-        }
-    }
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: flex-end;
+	align-items: center;
+	padding-top: 0;
+	> a {
+		margin-left: unit(50/@base-px-2-rem, rem);
+		background-color: @red;
+		padding: unit(25/@base-px-2-rem, rem) unit(40/@base-px-2-rem, rem);
+		border-radius: 5px;
+		color: #fff;
+		font-size: 14px;
+		&.disable {
+			background-color: #ccc;
+		}
+	}
 }
-
 
 /****************
 
@@ -247,70 +246,69 @@ div.base-order {
 ****************/
 
 .order-comfirm-user-add, .order-comfirm-list {
-    background-color: #fff;
+	background-color: #fff;
 }
 
 //订单内商家名称
 .order-list-door-name {
-    border-bottom: 1px solid @border-color-gray-light;
-    border-top: 1px solid @border-color-gray-light;
-    padding: unit(20/@base-px-2-rem, rem) unit(40/@base-px-2-rem, rem);
-    padding-left: unit(80/@base-px-2-rem, rem);
-    font-size: 14px;
+	border-bottom: 1px solid @border-color-gray-light;
+	border-top: 1px solid @border-color-gray-light;
+	padding: unit(20/@base-px-2-rem, rem) unit(40/@base-px-2-rem, rem);
+	padding-left: unit(80/@base-px-2-rem, rem);
+	font-size: 14px;
 
-    //拼团是否成功的文字，显示失败或者等待发货
-    span {
-        line-height: 1.6;
-    }
+	//拼团是否成功的文字，显示失败或者等待发货
+	span {
+		line-height: 1.6;
+	}
 }
 
 //卖家收件地址
 .order-comfirm-user-add {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-around;
-    align-items: center;
-    .user-address-info {
-        padding-right: 0;
-        width: 100%;
-    }
-    i {
-        margin-right: unit(40/@base-px-2-rem, rem);
-        margin-left: unit(20/@base-px-2-rem, rem);
-    }
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-around;
+	align-items: center;
+	.user-address-info {
+		padding-right: 0;
+		width: 100%;
+	}
+	i {
+		margin-right: unit(40/@base-px-2-rem, rem);
+		margin-left: unit(20/@base-px-2-rem, rem);
+	}
 }
 
 //下单的所有商品列表
 .order-comfirm-list {
-    background-color: @my-page-bg-color;
+	background-color: @my-page-bg-color;
 }
 
 //单个商家的商品
 .order-list {
-    background-color: #fff;
-    &:nth-child(n + 2) {
-        margin-top: unit(@base-mt/@base-px-2-rem, rem);
-        .order-list-door-name {
-            border-top: 0;
-        }
-    }
+	background-color: #fff;
+	&:nth-child(n + 2) {
+		margin-top: unit(@base-mt/@base-px-2-rem, rem);
+		.order-list-door-name {
+			border-top: 0;
+		}
+	}
 }
 
 //买家留言
 .order-comfirm-message {
-    margin-top: unit(@base-mt/@base-px-2-rem, rem);
-    padding: unit(20/@base-px-2-rem, rem) unit(80/@base-px-2-rem, rem);
-    background-color: #fff;
-    font-size: 15px;
-    textarea {
-        font-size: 15px;
-        width: 100%;
-        resize: none;
-        //line-height: 1.5;
-        color: @text-primary;
-    }
+	margin-top: unit(@base-mt/@base-px-2-rem, rem);
+	padding: unit(20/@base-px-2-rem, rem) unit(80/@base-px-2-rem, rem);
+	background-color: #fff;
+	font-size: 15px;
+	textarea {
+		font-size: 15px;
+		width: 100%;
+		resize: none;
+		//line-height: 1.5;
+		color: @text-primary;
+	}
 }
-
 
 /****************
 
@@ -319,67 +317,66 @@ div.base-order {
 ****************/
 
 .order-pay-price, .order-pay-coupon {
-    padding: unit(50/@base-px-2-rem, rem) unit(50/@base-px-2-rem, rem);
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 15px;
-    p + p {
-        color: @red;
-    }
+	padding: unit(50/@base-px-2-rem, rem) unit(50/@base-px-2-rem, rem);
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 15px;
+	p + p {
+		color: @red;
+	}
 }
 
 //支付方式
 .order-pay-way {
-    //padding-bottom: unit(800/@base-px-2-rem, rem);
-    //height: 50%;
-    > p {
-        padding: unit(50/@base-px-2-rem, rem) unit(50/@base-px-2-rem, rem);
-        font-size: 15px;
-    }
-    .pay-way {
-        padding: unit(40/@base-px-2-rem, rem) unit(50/@base-px-2-rem, rem);
-    }
-    .pay-way, .pay-way-text {
-        font-size: 15px;
-        display: flex;
-        flex-flow: row nowrap;
-        justify-content: flex-start;
-        align-items: center;
-    }
-    .pay-way-text {
-        width: 90%;
-    }
+	//padding-bottom: unit(800/@base-px-2-rem, rem);
+	//height: 50%;
+	> p {
+		padding: unit(50/@base-px-2-rem, rem) unit(50/@base-px-2-rem, rem);
+		font-size: 15px;
+	}
+	.pay-way {
+		padding: unit(40/@base-px-2-rem, rem) unit(50/@base-px-2-rem, rem);
+	}
+	.pay-way, .pay-way-text {
+		font-size: 15px;
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: flex-start;
+		align-items: center;
+	}
+	.pay-way-text {
+		width: 90%;
+	}
 }
 
 // 立即支付按钮
 .pay-btn {
-    text-align: center;
-    padding-top: 40%;
-    padding-bottom: unit(200/@base-px-2-rem, rem);
-    //35%
-    //修复小屏幕显示
-    @media screen and (max-height: 480px) {
-        padding-top: 30%;
-    }
+	text-align: center;
+	padding-top: 40%;
+	padding-bottom: unit(200/@base-px-2-rem, rem);
+	//35%
+	//修复小屏幕显示
+	@media screen and (max-height: 480px) {
+		padding-top: 30%;
+	}
 }
 
 //红色按钮
 button.half-btn {
-    font-size: 18px;
-    padding-top: unit(40/@base-px-2-rem, rem);
-    padding-bottom: unit(40/@base-px-2-rem, rem);
-    width: 55%;
-    border-radius: 8px;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-    border-bottom-left-radius: 8px;
-    border-bottom-right-radius: 8px;
-    background-color: @red;
-    color: #fff;
+	font-size: 18px;
+	padding-top: unit(40/@base-px-2-rem, rem);
+	padding-bottom: unit(40/@base-px-2-rem, rem);
+	width: 55%;
+	border-radius: 8px;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+	border-bottom-left-radius: 8px;
+	border-bottom-right-radius: 8px;
+	background-color: @red;
+	color: #fff;
 }
-
 
 /****************
 
@@ -388,71 +385,69 @@ button.half-btn {
 ****************/
 
 .order-details-state {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: flex-start;
-    align-items: center;
-    padding: unit(20/@base-px-2-rem, rem) unit(40/@base-px-2-rem, rem);
-    p {
-        font-size: 16px;
-        margin-left: unit(40/@base-px-2-rem, rem);
-    }
-    &.groupbuy-details-state {
-        background-color: @group-state-bg-color;
-        background-origin: padding-box;
-        background-repeat: no-repeat;
-        background-position: right center;
-        background-size: 100%;
-        background-image: url("@{icon-address}/groupbuybg.jpg");
-        color: #fff;
-        padding: unit(100/@base-px-2-rem, rem) ;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: flex-start;
+	align-items: center;
+	padding: unit(20/@base-px-2-rem, rem) unit(40/@base-px-2-rem, rem);
+	p {
+		font-size: 16px;
+		margin-left: unit(40/@base-px-2-rem, rem);
+	}
+	&.groupbuy-details-state {
+		background-color: @group-state-bg-color;
+		background-origin: padding-box;
+		background-repeat: no-repeat;
+		background-position: right center;
+		background-size: 100%;
+		background-image: url("@{icon-address}/groupbuybg.jpg");
+		color: #fff;
+		padding: unit(100/@base-px-2-rem, rem);
 
-
-    }
+	}
 }
 
 .order-details-user-address {
-    padding: unit(20/@base-px-2-rem, rem) unit(40/@base-px-2-rem, rem);
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: flex-start;
-    align-items: flex-start;
-    .user-address-info {
-        padding: 0;
-    }
+	padding: unit(20/@base-px-2-rem, rem) unit(40/@base-px-2-rem, rem);
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: flex-start;
+	align-items: flex-start;
+	.user-address-info {
+		padding: 0;
+	}
 }
 
 .base-text-row {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 15px;
-    //width: 100%;
-    color: @text-gray;
-    padding: unit(35/@base-px-2-rem, rem) unit(40/@base-px-2-rem, rem);
-    border-bottom: 1px solid@border-color-gray-light;
-    >span {
-        width: 50%;
-        text-align: left;
-        & + span {
-            text-align: right;
-        }
-    }
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 15px;
+	//width: 100%;
+	color: @text-gray;
+	padding: unit(35/@base-px-2-rem, rem) unit(40/@base-px-2-rem, rem);
+	border-bottom: 1px solid @border-color-gray-light;
+	> span {
+		width: 50%;
+		text-align: left;
+		& + span {
+			text-align: right;
+		}
+	}
 }
 
 .order-details-time-num {
-    font-size: 15px;
-    p {
-        padding: unit(15/@base-px-2-rem, rem) 0;
-    }
+	font-size: 15px;
+	p {
+		padding: unit(15/@base-px-2-rem, rem) 0;
+	}
 }
 
 //
 .user-touch-select {
-    display: none;
+	display: none;
 }
-
 
 /************************
 
@@ -461,65 +456,64 @@ button.half-btn {
 ************************/
 
 .message-wrapper {
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: flex-start;
-    align-items: center;
-    section, .message-single {
-        margin-top: unit(40/@base-px-2-rem, rem);
-    }
-    .message-time {
-        background-color: @border-color-gray-very-light;
-        .make-border-radius(5px);
-        padding: unit(15/@base-px-2-rem, rem) unit(50/@base-px-2-rem, rem);
-        & + section {
-            margin-top: 0;
-        }
-    }
-    .message-block {
-        display: flex;
-        flex-flow: column nowrap;
-        justify-content: flex-start;
-        align-items: center;
-        width: 100%;
-        font-size: 15px;
-        span.message-sender {
-            align-self: flex-start;
-            position: relative;
-            padding-left: unit(50/@base-px-2-rem, rem);
-            &:before {
-                content: "";
-                display: block;
-                height: 12px;
-                width: 12px;
-                .make-border-radius(30px);
-                position: absolute;
-                top: 3px;
-                left: 0;
-                background-color: @border-color-gray-very-light;
-            }
-        }
-    }
-    .message-single {
-        width: 90%;
-        .make-border-radius(10px);
-        background-color: @border-color-gray-very-light;
-        padding: unit(15/@base-px-2-rem, rem) unit(50/@base-px-2-rem, rem);
-        padding-top: 0;
-        h3 {
-            font-weight: 500;
-        }
-        .message-title {
-            padding: unit(35/@base-px-2-rem, rem) 0;
-            border-bottom: 1px solid @border-color-gray-light;
-        }
-        .message-text {
-            padding: unit(35/@base-px-2-rem, rem) 0;
-            font-size: 15px;
-        }
-    }
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: flex-start;
+	align-items: center;
+	section, .message-single {
+		margin-top: unit(40/@base-px-2-rem, rem);
+	}
+	.message-time {
+		background-color: @border-color-gray-very-light;
+		.make-border-radius(5px);
+		padding: unit(15/@base-px-2-rem, rem) unit(50/@base-px-2-rem, rem);
+		& + section {
+			margin-top: 0;
+		}
+	}
+	.message-block {
+		display: flex;
+		flex-flow: column nowrap;
+		justify-content: flex-start;
+		align-items: center;
+		width: 100%;
+		font-size: 15px;
+		span.message-sender {
+			align-self: flex-start;
+			position: relative;
+			padding-left: unit(50/@base-px-2-rem, rem);
+			&:before {
+				content: "";
+				display: block;
+				height: 12px;
+				width: 12px;
+				.make-border-radius(30px);
+				position: absolute;
+				top: 3px;
+				left: 0;
+				background-color: @border-color-gray-very-light;
+			}
+		}
+	}
+	.message-single {
+		width: 90%;
+		.make-border-radius(10px);
+		background-color: @border-color-gray-very-light;
+		padding: unit(15/@base-px-2-rem, rem) unit(50/@base-px-2-rem, rem);
+		padding-top: 0;
+		h3 {
+			font-weight: 500;
+		}
+		.message-title {
+			padding: unit(35/@base-px-2-rem, rem) 0;
+			border-bottom: 1px solid @border-color-gray-light;
+		}
+		.message-text {
+			padding: unit(35/@base-px-2-rem, rem) 0;
+			font-size: 15px;
+		}
+	}
 }
-
 
 /************************
 
@@ -528,84 +522,83 @@ button.half-btn {
 ************************/
 
 .express-wrapper {
-    padding: unit(35/@base-px-2-rem, rem) unit(35/@base-px-2-rem, rem);
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: flex-start;
-    align-items: flex-start;
-    p {
-        font-size: 16px;
-        color: @border-color-gray;
-        line-height: 1.5;
-        padding: unit(10/@base-px-2-rem, rem) 0;
-        span {
-            padding-left: unit(30/@base-px-2-rem, rem);
-        }
-    }
+	padding: unit(35/@base-px-2-rem, rem) unit(35/@base-px-2-rem, rem);
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: flex-start;
+	align-items: flex-start;
+	p {
+		font-size: 16px;
+		color: @border-color-gray;
+		line-height: 1.5;
+		padding: unit(10/@base-px-2-rem, rem) 0;
+		span {
+			padding-left: unit(30/@base-px-2-rem, rem);
+		}
+	}
 }
 
 .express-details {
-    //padding: unit(35/@base-px-2-rem, rem) unit(35/@base-px-2-rem, rem);
-    margin: unit(35/@base-px-2-rem, rem) unit(35/@base-px-2-rem, rem);
-    margin-left: unit(200/@base-px-2-rem, rem);
-    margin-top: 0;
-    position: relative;
-    .express-details-single {
-        padding: unit(30/@base-px-2-rem, rem) 0;
-        border-bottom: 1px solid @border-color-gray-very-light;
-        font-size: 13px;
-        position: relative;
-        p {
-            line-height: 1.55;
-        }
-        &:first-child {
-            color: @green;
-            //第一个圆形
-            &:before {
-                content: "";
-                display: block;
-                height: 12px;
-                width: 12px;
-                .make-border-radius(30px);
-                position: absolute;
-                top: 15px;
-                left: -41px;
-                background-color: @green;
-                box-shadow: 0px 0px 0 3px @light-green;
-            }
-        }
-        &:last-child {
-            padding-bottom: 0;
-            border: 0;
-        }
-        //除第一之外的圆
-        &:before {
-            content: "";
-            display: block;
-            height: 9px;
-            width: 9px;
-            .make-border-radius(30px);
-            position: absolute;
-            top: 16px;
-            left: -40px;
-            background-color: @border-color-gray-light;
-            //box-shadow: 0px 0px 0 3px @light-green;
-        }
-    }
-    //线
-    &:before {
-        content: "";
-        display: block;
-        height: 100%;
-        width: 1px;
-        position: absolute;
-        top: 20px;
-        left: -36px;
-        background-color: @border-color-gray-light;
-        //box-shadow: 0px 0px 0 3px @light-green;
-    }
+	//padding: unit(35/@base-px-2-rem, rem) unit(35/@base-px-2-rem, rem);
+	margin: unit(35/@base-px-2-rem, rem) unit(35/@base-px-2-rem, rem);
+	margin-left: unit(200/@base-px-2-rem, rem);
+	margin-top: 0;
+	position: relative;
+	.express-details-single {
+		padding: unit(30/@base-px-2-rem, rem) 0;
+		border-bottom: 1px solid @border-color-gray-very-light;
+		font-size: 13px;
+		position: relative;
+		p {
+			line-height: 1.55;
+		}
+		&:first-child {
+			color: @green;
+			//第一个圆形
+			&:before {
+				content: "";
+				display: block;
+				height: 12px;
+				width: 12px;
+				.make-border-radius(30px);
+				position: absolute;
+				top: 15px;
+				left: -41px;
+				background-color: @green;
+				box-shadow: 0px 0px 0 3px @light-green;
+			}
+		}
+		&:last-child {
+			padding-bottom: 0;
+			border: 0;
+		}
+		//除第一之外的圆
+		&:before {
+			content: "";
+			display: block;
+			height: 9px;
+			width: 9px;
+			.make-border-radius(30px);
+			position: absolute;
+			top: 16px;
+			left: -40px;
+			background-color: @border-color-gray-light;
+			//box-shadow: 0px 0px 0 3px @light-green;
+		}
+	}
+	//线
+	&:before {
+		content: "";
+		display: block;
+		height: 100%;
+		width: 1px;
+		position: absolute;
+		top: 20px;
+		left: -36px;
+		background-color: @border-color-gray-light;
+		//box-shadow: 0px 0px 0 3px @light-green;
+	}
 }
-
 
 /************************
 
@@ -614,76 +607,75 @@ button.half-btn {
 ************************/
 
 .add-comment-navbar {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    align-items: center;
-    height: 100%;
-    padding-left: unit(50/@base-px-2-rem, rem);
-    font-size: 15px;
-    .add-comment-select {
-        //width: 25%;
-        display: flex;
-        flex-flow: row nowrap;
-        justify-content: space-around;
-        align-items: center;
-        span {
-            padding-left: unit(20/@base-px-2-rem, rem);
-        }
-    }
-    .add-comment-sent {
-        width: 40%;
-        height: 100%;
-        line-height: unit(@nav-buttom-bar-height/@base-px-2-rem, rem);
-        background-color: @red;
-        color: #fff;
-        font-size: 18px;
-        letter-spacing: 1px;
-    }
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	align-items: center;
+	height: 100%;
+	padding-left: unit(50/@base-px-2-rem, rem);
+	font-size: 15px;
+	.add-comment-select {
+		//width: 25%;
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: space-around;
+		align-items: center;
+		span {
+			padding-left: unit(20/@base-px-2-rem, rem);
+		}
+	}
+	.add-comment-sent {
+		width: 40%;
+		height: 100%;
+		line-height: unit(@nav-buttom-bar-height/@base-px-2-rem, rem);
+		background-color: @red;
+		color: #fff;
+		font-size: 18px;
+		letter-spacing: 1px;
+	}
 }
 
 .add-comment-input {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: flex-start;
-    align-items: flex-start;
-    .add-comment-imgBox {
-        width: unit(320/@base-px-2-rem, rem);
-        height: unit(320/@base-px-2-rem, rem);
-        font-size: 0;
-        img {
-            height: 100%;
-            width: 100%;
-        }
-    }
-    textarea {
-        height: 100%;
-        width: 65%;
-        line-height: 1.5;
-        font-size: 15px;
-    }
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: flex-start;
+	align-items: flex-start;
+	.add-comment-imgBox {
+		width: unit(320/@base-px-2-rem, rem);
+		height: unit(320/@base-px-2-rem, rem);
+		font-size: 0;
+		img {
+			height: 100%;
+			width: 100%;
+		}
+	}
+	textarea {
+		height: 100%;
+		width: 65%;
+		line-height: 1.5;
+		font-size: 15px;
+	}
 }
 
 .add-comment-good {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-around;
-    align-items: center;
-    padding-top: unit(50/@base-px-2-rem, rem);
-    padding-bottom: unit(20/@base-px-2-rem, rem);
-    .comment-good {
-        display: flex;
-        flex-flow: row nowrap;
-        justify-content: space-around;
-        align-items: center;
-        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-        span {
-            padding-left: unit(30/@base-px-2-rem, rem);
-            padding-top: unit(5/@base-px-2-rem, rem);
-        }
-    }
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-around;
+	align-items: center;
+	padding-top: unit(50/@base-px-2-rem, rem);
+	padding-bottom: unit(20/@base-px-2-rem, rem);
+	.comment-good {
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: space-around;
+		align-items: center;
+		-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+		span {
+			padding-left: unit(30/@base-px-2-rem, rem);
+			padding-top: unit(5/@base-px-2-rem, rem);
+		}
+	}
 }
-
 
 /************************
 
@@ -692,30 +684,30 @@ button.half-btn {
 ************************/
 
 .add-door-comment {
-    > p {
-        font-size: 16px;
-        padding: unit(30/@base-px-2-rem, rem) 0;
-    }
-    height: 55vh;
+	> p {
+		font-size: 16px;
+		padding: unit(30/@base-px-2-rem, rem) 0;
+	}
+	height: 55vh;
 }
 
 section.door-comment {
-    padding: unit(15/@base-px-2-rem, rem) 0;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: flex-start;
-    align-items: center;
-    span {
-        width: 30%;
-        font-size: 14px;
-    }
-    .door-comment-star {
-        width: 70%;
-        display: flex;
-        flex-flow: row nowrap;
-        justify-content: space-around;
-        align-items: center;
-    }
+	padding: unit(15/@base-px-2-rem, rem) 0;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: flex-start;
+	align-items: center;
+	span {
+		width: 30%;
+		font-size: 14px;
+	}
+	.door-comment-star {
+		width: 70%;
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: space-around;
+		align-items: center;
+	}
 }
 
 

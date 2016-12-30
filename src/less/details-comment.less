@@ -8,59 +8,58 @@
 ************************/
 
 section.product-show {
-    background-color: #fff;
-    img {
-        width: 100%;
-    }
-    //靠近轮播图的团购
-    //团购没有顶部外边距
-    + section.product-details {
-        margin-top: 0;
-    }
+	background-color: #fff;
+	img {
+		width: 100%;
+	}
+	//靠近轮播图的团购
+	//团购没有顶部外边距
+	+ section.product-details {
+		margin-top: 0;
+	}
 }
 
 //商品详细信息
 section.product-details {
-    background-color: #fff;
-    padding: 0 unit(40/@base-px-2-rem, rem);
-    margin-top: unit(40/@base-px-2-rem, rem);
-    p {
-        padding-top: unit(30/@base-px-2-rem, rem);
-        &.border-b {
-            border-bottom: 1px solid @text-gray;
-        }
-    }
-    a {
-        &.border-b {
-            border-bottom: 1px solid @text-gray;
-        }
-    }
-    //价格
-    p.product-details-price {
-        font-size: 22px;
-        color: @red;
-    }
-    //品名
-    .product-details-name {
-        font-size: 16px;
-        color: @text-primary;
-    }
-    //发货店家
-    .product-details-shop {
-        font-size: 13px;
-        color: @text-gray;
-        padding-top: unit(20/@base-px-2-rem, rem);
-        padding-bottom: unit(20/@base-px-2-rem, rem);
-    }
-    //退货要求
-    .product-details-returns {
-        font-size: 13px;
-        color: @text-gray;
-        padding-top: unit(20/@base-px-2-rem, rem);
-        padding-bottom: unit(20/@base-px-2-rem, rem);
-    }
+	background-color: #fff;
+	padding: 0 unit(40/@base-px-2-rem, rem);
+	margin-top: unit(40/@base-px-2-rem, rem);
+	p {
+		padding-top: unit(30/@base-px-2-rem, rem);
+		&.border-b {
+			border-bottom: 1px solid @text-gray;
+		}
+	}
+	a {
+		&.border-b {
+			border-bottom: 1px solid @text-gray;
+		}
+	}
+	//价格
+	p.product-details-price {
+		font-size: 22px;
+		color: @red;
+	}
+	//品名
+	.product-details-name {
+		font-size: 16px;
+		color: @text-primary;
+	}
+	//发货店家
+	.product-details-shop {
+		font-size: 13px;
+		color: @text-gray;
+		padding-top: unit(20/@base-px-2-rem, rem);
+		padding-bottom: unit(20/@base-px-2-rem, rem);
+	}
+	//退货要求
+	.product-details-returns {
+		font-size: 13px;
+		color: @text-gray;
+		padding-top: unit(20/@base-px-2-rem, rem);
+		padding-bottom: unit(20/@base-px-2-rem, rem);
+	}
 }
-
 
 /************************
 
@@ -70,112 +69,112 @@ section.product-details {
 
 //外层容器
 .product-group-buy {
-    background-color: @group-gray;
-    > p {
-        padding: unit(30/@base-px-2-rem, rem) unit(40/@base-px-2-rem, rem);
-        color: #333;
-        font-size: 14px;
-    }
-    .group-buy-tips {
-        background-color: #fff;
-        span {
-            font-size: 18px;
-            padding: 0 unit(10/@base-px-2-rem, rem);
-        }
-    }
-    .group-buy-status {}
+	background-color: @group-gray;
+	> p {
+		padding: unit(30/@base-px-2-rem, rem) unit(40/@base-px-2-rem, rem);
+		color: #333;
+		font-size: 14px;
+	}
+	.group-buy-tips {
+		background-color: #fff;
+		span {
+			font-size: 18px;
+			padding: 0 unit(10/@base-px-2-rem, rem);
+		}
+	}
+	.group-buy-status {
+	}
 }
 
 //拼团用户列表
 .group-buy-member-list {
-    padding: unit(30/@base-px-2-rem, rem) unit(40/@base-px-2-rem, rem);
-    padding-bottom: 0;
-    background-color: #fff;
-    .group-buy-member {
-        border-bottom: 1px solid @border-color-gray-very-light;
-        // &:first-child > div {
-        //     margin-top: 0;
-        // }
-        &:last-child {
-            border: 0;
-        }
-    }
+	padding: unit(30/@base-px-2-rem, rem) unit(40/@base-px-2-rem, rem);
+	padding-bottom: 0;
+	background-color: #fff;
+	.group-buy-member {
+		border-bottom: 1px solid @border-color-gray-very-light;
+		// &:first-child > div {
+		//     margin-top: 0;
+		// }
+		&:last-child {
+			border: 0;
+		}
+	}
 }
 
 .group-buy-user {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    align-items: stretch;
-    border: 1px solid @red;
-    border-left: 0;
-    .make-border-radius(40px);
-    margin: unit(20/@base-px-2-rem, rem) 0;
-    margin-left: unit(30/@base-px-2-rem, rem);
-    font-size: 12px;
-    img {
-        width: unit(130/@base-px-2-rem, rem);
-        height: unit(130/@base-px-2-rem, rem);
-        .make-border-radius(40px);
-        transform: scale(1.3, 1.3);
-    }
-    .group-buy-user-info {
-        //flex
-        display: flex;
-        flex-flow: column nowrap;
-        justify-content: space-around;
-        align-items: flex-start;
-        width: 27%;
-        padding-left: unit(30/@base-px-2-rem, rem);
-        
-        p {
-        
-            .text-omit();
-        }
-        
-    }
-    .group-buy-info {
-        //width: 30%;
-        //flex
-        display: flex;
-        flex-flow: column nowrap;
-        justify-content: space-around;
-        align-items: flex-end;
-        padding-right: unit(0/@base-px-2-rem, rem);
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	align-items: stretch;
+	border: 1px solid @red;
+	border-left: 0;
+	.make-border-radius(40px);
+	margin: unit(20/@base-px-2-rem, rem) 0;
+	margin-left: unit(30/@base-px-2-rem, rem);
+	font-size: 12px;
+	img {
+		width: unit(130/@base-px-2-rem, rem);
+		height: unit(130/@base-px-2-rem, rem);
+		.make-border-radius(40px);
+		transform: scale(1.3, 1.3);
+	}
+	.group-buy-user-info {
+		//flex
+		display: flex;
+		flex-flow: column nowrap;
+		justify-content: space-around;
+		align-items: flex-start;
+		width: 27%;
+		padding-left: unit(30/@base-px-2-rem, rem);
 
-    }
-    .group-bu-go {
-        background-color: @red;
-        .make-border-radius(40px);
-        border-top-left-radius: 0;
-        border-bottom-left-radius: 0;
-        width: 20%;
+		p {
 
-        //flex
-        display: flex;
-        flex-flow: column nowrap;
-        justify-content: center;
-        align-items: center;
-        p {
-            color: #fff;
-             
-        }
-        //padding: unit(50/@base-px-2-rem, rem) 0;
-    }
+			.text-omit();
+		}
+
+	}
+	.group-buy-info {
+		//width: 30%;
+		//flex
+		display: flex;
+		flex-flow: column nowrap;
+		justify-content: space-around;
+		align-items: flex-end;
+		padding-right: unit(0/@base-px-2-rem, rem);
+
+	}
+	.group-bu-go {
+		background-color: @red;
+		.make-border-radius(40px);
+		border-top-left-radius: 0;
+		border-bottom-left-radius: 0;
+		width: 20%;
+
+		//flex
+		display: flex;
+		flex-flow: column nowrap;
+		justify-content: center;
+		align-items: center;
+		p {
+			color: #fff;
+
+		}
+		//padding: unit(50/@base-px-2-rem, rem) 0;
+	}
 }
 
 //下拉提醒
 section.product-tips {
-    background-color: #e6e6e6;
-    height: unit(@product-nav-bar-height/@base-px-2-rem, rem);
-    text-align: center;
-    p {
-        line-height: unit(@product-nav-bar-height/@base-px-2-rem, rem);
-        color: @product-tips-text-color;
-        font-size: 14px;
-    }
+	background-color: #e6e6e6;
+	height: unit(@product-nav-bar-height/@base-px-2-rem, rem);
+	text-align: center;
+	p {
+		line-height: unit(@product-nav-bar-height/@base-px-2-rem, rem);
+		color: @product-tips-text-color;
+		font-size: 14px;
+	}
 }
-
 
 /************************
 
@@ -184,53 +183,52 @@ section.product-tips {
 ************************/
 
 div.comment-queue {
-    height: 100%;
-    //可点击跳转下评论页
-    a.product-details-comment {
-        display: block;
-        font-size: 16px;
-        color: @text-gray;
-        padding: unit(20/@base-px-2-rem, rem) 0;
-        //flex 布局
-        display: flex;
-        flex-flow: row nowrap;
-        justify-content: space-between;
-        align-items: center;
-    }
-    div.comment-select {
-        display: flex;
-        flex-flow: row nowrap;
-        justify-content: flex-start;
-        align-items: center;
-        padding: unit(20/@base-px-2-rem, rem) 0;
-        border-bottom: 1px solid @text-gray;
-        >span {
-            margin-left: unit(20/@base-px-2-rem, rem);
-            padding: unit(20/@base-px-2-rem, rem) unit(45/@base-px-2-rem, rem);
-            background-color: @comment-select-bt-base-bg;
-            border-radius: 3px;
-            &.active {
-                background-color: @comment-select-bt-active-bg;
-            }
-            &:first-child {
-                margin-left: 0;
-            }
-        }
-    }
-    .comment-single {
-        display: none;
-        background-color: #fff;
-        height: 100%;
-    }
+	height: 100%;
+	//可点击跳转下评论页
+	a.product-details-comment {
+		display: block;
+		font-size: 16px;
+		color: @text-gray;
+		padding: unit(20/@base-px-2-rem, rem) 0;
+		//flex 布局
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: space-between;
+		align-items: center;
+	}
+	div.comment-select {
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: flex-start;
+		align-items: center;
+		padding: unit(20/@base-px-2-rem, rem) 0;
+		border-bottom: 1px solid @text-gray;
+		> span {
+			margin-left: unit(20/@base-px-2-rem, rem);
+			padding: unit(20/@base-px-2-rem, rem) unit(45/@base-px-2-rem, rem);
+			background-color: @comment-select-bt-base-bg;
+			border-radius: 3px;
+			&.active {
+				background-color: @comment-select-bt-active-bg;
+			}
+			&:first-child {
+				margin-left: 0;
+			}
+		}
+	}
+	.comment-single {
+		display: none;
+		background-color: #fff;
+		height: 100%;
+	}
 }
 
 //推荐商品
 .product-details-recommend {
-    font-size: 16px;
-    color: @text-gray;
-    padding-bottom: unit(20/@base-px-2-rem, rem);
+	font-size: 16px;
+	color: @text-gray;
+	padding-bottom: unit(20/@base-px-2-rem, rem);
 }
-
 
 /************************
 
@@ -239,70 +237,68 @@ div.comment-queue {
 ************************/
 
 section.comment-one {
-    border-top: 1px solid @border-color-gray-light;
-    >p {
-        line-height: 1.6;
-        >span {
-            //user-name
-            font-size: 16px;
-            width: 49%;
-            display: inline-block;
-            +span {
-                //comment-time
-                color: @text-gray;
-                text-align: right;
-            }
-        }
-    }
-    &:nth-of-type(1) {
-        border: 0;
-    }
-    p.comment-content {
-        //text-indent: 24px;
-        font-size: 12px;
-        color: #333;
-        line-height: 1.6;
-        padding-bottom: unit(20/@base-px-2-rem, rem);
-    }
-    //是否包含评论图片
-    div.comment-imgBox {
-        padding: unit(20/@base-px-2-rem, rem);
-        //fix the blank between image 
-        //img 标签之间不换行 则间隔不存在
-        font-size: 0;
-        img {
-            margin-left: unit(20/@base-px-2-rem, rem);
-            height: unit(200/@base-px-2-rem, rem);
-            width: unit(200/@base-px-2-rem, rem);
-        }
-    }
+	border-top: 1px solid @border-color-gray-light;
+	> p {
+		line-height: 1.6;
+		> span {
+			//user-name
+			font-size: 16px;
+			width: 49%;
+			display: inline-block;
+			+ span {
+				//comment-time
+				color: @text-gray;
+				text-align: right;
+			}
+		}
+	}
+	&:nth-of-type(1) {
+		border: 0;
+	}
+	p.comment-content {
+		//text-indent: 24px;
+		font-size: 12px;
+		color: #333;
+		line-height: 1.6;
+		padding-bottom: unit(20/@base-px-2-rem, rem);
+	}
+	//是否包含评论图片
+	div.comment-imgBox {
+		padding: unit(20/@base-px-2-rem, rem);
+		//fix the blank between image
+		//img 标签之间不换行 则间隔不存在
+		font-size: 0;
+		img {
+			margin-left: unit(20/@base-px-2-rem, rem);
+			height: unit(200/@base-px-2-rem, rem);
+			width: unit(200/@base-px-2-rem, rem);
+		}
+	}
 }
 
 //评论页下 评论选择按钮块 的同级第一条评论 需要一些顶部边距
 .comment-select {
-    + section.comment-one {
-        margin-top: unit(20/@base-px-2-rem, rem);
-        p.comment-content {
-            padding-top: unit(30/@base-px-2-rem, rem);
-        }
-        ~ section.comment-one {
-            border-top: 1px solid @comment-one-border-color;
-            margin-top: unit(20/@base-px-2-rem, rem);
-            padding-top: unit(20/@base-px-2-rem, rem);
-            p.comment-content {
-                padding-top: unit(30/@base-px-2-rem, rem);
-            }
-        }
-    }
+	+ section.comment-one {
+		margin-top: unit(20/@base-px-2-rem, rem);
+		p.comment-content {
+			padding-top: unit(30/@base-px-2-rem, rem);
+		}
+		~ section.comment-one {
+			border-top: 1px solid @comment-one-border-color;
+			margin-top: unit(20/@base-px-2-rem, rem);
+			padding-top: unit(20/@base-px-2-rem, rem);
+			p.comment-content {
+				padding-top: unit(30/@base-px-2-rem, rem);
+			}
+		}
+	}
 }
-
 
 /************************
 
 所有评论 - 商品评论页
 
 ************************/
-
 
 /************************
 
@@ -311,16 +307,15 @@ section.comment-one {
 ************************/
 
 section.product-more {
-    background-color: #fff;
-    padding-top: unit(40/@base-px-2-rem, rem);
-    //have some problem
-    .swiper-slide {
-        &:last-child {
-            display: none;
-        }
-    }
+	background-color: #fff;
+	padding-top: unit(40/@base-px-2-rem, rem);
+	//have some problem
+	.swiper-slide {
+		&:last-child {
+			display: none;
+		}
+	}
 }
-
 
 /************************
 
@@ -329,9 +324,9 @@ section.product-more {
 ************************/
 
 section.product-longPic {
-    font-size: 0;
-    line-height: 0;
-    img {
-        width: 100%;
-    }
+	font-size: 0;
+	line-height: 0;
+	img {
+		width: 100%;
+	}
 }

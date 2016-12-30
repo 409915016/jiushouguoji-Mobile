@@ -9,51 +9,75 @@
 ****************/
 
 .user-info-simple {
-    .base-pd-wrapper();
-    //减少了上下外边距
-    //padding-top: unit(20/@base-px-2-rem, rem);
-    //padding-bottom: unit(20/@base-px-2-rem, rem);
+	.base-pd-wrapper();
+	//减少了上下外边距
+	//padding-top: unit(20/@base-px-2-rem, rem);
+	//padding-bottom: unit(20/@base-px-2-rem, rem);
+	background-image: url("@{icon-address}/userbg.jpg");
+	background-size: 120%;
+	background-repeat: no-repeat;
+	background-position: center center;
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: flex-start;
+	//居中
+	align-items: center;
+	//align-items: stretch;
+	//用户头像容器
 
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: flex-start;
-    //align-items: center;
-    align-items: stretch;
-    //用户头像容器 
-    .user-header-imgBox {
-        margin-left: unit(40/@base-px-2-rem, rem);
-        width: unit(@user-header-imgSize/@base-px-2-rem, rem);
-        height: unit(@user-header-imgSize/@base-px-2-rem, rem);
-        img {
-            width: 100%;
-            border-radius: 50%;
-        }
-    }
-    //用户昵称 和 签名
-    .user-name-custom {
-        width: 60%;
-        font-size: 16px;
-        display: flex;
-        flex-flow: column nowrap;
-        justify-content: space-between;
-        margin-left: unit(40/@base-px-2-rem, rem);
-        p {
-            .text-omit();
-        }
-    }
-    .user-loginBox {
-        width: 75%;
-        display: flex;
-        flex-flow: row nowrap;
-        justify-content: space-around;
-        align-items: center;
-        a.button {
-            background-color: @red;
-            font-size: 16px;
-        }
-    }
+	box-shadow: 0px 0px 10px #aaa inset;
+	.user-header-imgBox {
+		margin: unit(20/@base-px-2-rem, rem) 0;
+		width: unit(@user-header-imgSize/@base-px-2-rem, rem);
+		height: unit(@user-header-imgSize/@base-px-2-rem, rem);
+		img {
+			width: 100%;
+			border-radius: 50%;
+		}
+	}
 }
 
+//用户昵称 和 签名
+.user-name-custom {
+	//width: 60%;
+	font-size: 14px;
+	text-align: center;
+	//letter-spacing: 1px;
+	//display: flex;
+	//flex-flow: column nowrap;
+	//justify-content: space-between;
+	//align-items: center;
+	//margin-left: unit(40/@base-px-2-rem, rem);
+	p {
+		.text-omit();
+	}
+}
+
+//未登录 按钮
+.user-loginBox {
+	width: 50%;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-around;
+	align-items: center;
+	a {
+		position: relative;
+		width: 50%;
+		text-align: center;
+		color: #fff;
+		&:first-child:after {
+			content: '';
+			position: absolute;
+			display: block;
+			top: 13%;
+			right: 0;
+			width: unit(4/@base-px-2-rem, rem);
+			height: 80%;
+			background-color: #fff;
+			box-shadow: 0 0 2px 0 #ddd;
+		}
+	}
+}
 
 /****************
 
@@ -62,68 +86,71 @@
 ****************/
 
 section.user-row {
-    .base-pd-wrapper();
-    margin-top: unit(5/@base-px-2-rem, rem);
-    //减少了上下外边距
-    padding-top: unit(20/@base-px-2-rem, rem);
-    padding-bottom: unit(20/@base-px-2-rem, rem);
-    &.pt-60 {
-        padding-top: unit(60/@base-px-2-rem, rem);
-    }
-    i {
-        margin-top: unit(@my-page-icon-mt/@base-px-2-rem, rem);
-        margin-bottom: unit(@my-page-icon-mb/@base-px-2-rem, rem);
-    }
-    ul {
-        display: flex;
-        flex-flow: row nowrap;
-        justify-content: space-around;
-        align-items: center;
-        //align-items: stretch;
-        li {
-            text-align: center;
-            position: relative;
-            width: 25%;
-        }
-    }
-    /****************
+	.base-pd-wrapper();
+	margin-top: unit(4/@base-px-2-rem, rem);
+	//减少了上下外边距
+	padding-top: unit(20/@base-px-2-rem, rem);
+	padding-bottom: unit(20/@base-px-2-rem, rem);
+	&.pt-60 {
+		padding-top: unit(60/@base-px-2-rem, rem);
+	}
+	i {
+		margin-top: unit(@my-page-icon-mt/@base-px-2-rem, rem);
+		margin-bottom: unit(@my-page-icon-mb/@base-px-2-rem, rem);
+	}
+	ul {
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: space-around;
+		align-items: center;
+		//align-items: stretch;
+		li {
+			text-align: center;
+			position: relative;
+			width: 25%;
+		}
+	}
+	&.no-mart {
+		margin: 0;
+	}
+	/****************
 
-    我的订单 
+	我的订单
 
-    ****************/
-    &.my-order {
-        display: flex;
-        flex-flow: row nowrap;
-        justify-content: space-between;
-        align-items: center;
-        p {
-            font-size: 14px;
-            color: #333;
-            font-weight: 600;
-            width: 65%;
-            margin-left: unit(40/@base-px-2-rem, rem);
-        }
-        /****************
+	****************/
+	&.my-order {
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: space-between;
+		align-items: center;
+		p {
+			font-size: 14px;
+			color: #333;
+			font-weight: 600;
+			width: 65%;
+			margin-left: unit(40/@base-px-2-rem, rem);
+		}
+		/****************
 
-        查看全部订单
+		查看全部订单
 
-        ****************/
-        .look-my-order {
-            display: flex;
-            flex-flow: row nowrap;
-            justify-content: flex-end;
-            align-items: center;
-            width: 35%;
-            span {
-                margin-right: unit(40/@base-px-2-rem, rem);
-                //width: 85%;
-                color: #999999;
-            }
-            i {
-                margin: unit(0/@base-px-2-rem, rem);
-            }
-        }
-    }
+		****************/
+		.look-my-order {
+			display: flex;
+			flex-flow: row nowrap;
+			justify-content: flex-end;
+			align-items: center;
+			width: 35%;
+			span {
+				margin-right: unit(40/@base-px-2-rem, rem);
+				//width: 85%;
+				color: #999999;
+			}
+			i {
+				margin: unit(0/@base-px-2-rem, rem);
+			}
+		}
+	}
 }
 
 /****************
@@ -133,59 +160,58 @@ section.user-row {
 ****************/
 
 .has-shop-count {
-    i[data-shop-count="0"] {
-        &::before {
-            display: none;
-        }
-    }
-    i {
-        vertical-align: top;
-        font-style: normal;
-        &::before {
-            //修正字体的右偏移
-            box-sizing: content-box;
-            //http://www.cnblogs.com/zjzhome/p/4898898.html
-            //移动Web单行文字垂直居中的问题
-            //https://www.zhihu.com/question/21093147?rf=21339583
-            //WebKit 取消桌面浏览器 -webkit-text-size-adjust 支持后
-            //怎么在 Chrome 下设置 12px 以下的字体大小？
-            -webkit-text-size-adjust: none;
-            //购物车商品数量
-            //display: block;
-            //http://www.jb51.net/article/81984.htm
-            //dataset
-            position: absolute;
-            display: block;
-            content: attr(data-shop-count);
+	i[data-shop-count="0"] {
+		&::before {
+			display: none;
+		}
+	}
+	i {
+		vertical-align: top;
+		font-style: normal;
+		&::before {
+			//修正字体的右偏移
+			box-sizing: content-box;
+			//http://www.cnblogs.com/zjzhome/p/4898898.html
+			//移动Web单行文字垂直居中的问题
+			//https://www.zhihu.com/question/21093147?rf=21339583
+			//WebKit 取消桌面浏览器 -webkit-text-size-adjust 支持后
+			//怎么在 Chrome 下设置 12px 以下的字体大小？
+			-webkit-text-size-adjust: none;
+			//购物车商品数量
+			//display: block;
+			//http://www.jb51.net/article/81984.htm
+			//dataset
+			position: absolute;
+			display: block;
+			content: attr(data-shop-count);
 
-            //z-index: @z-index-nav-search-bar + 1;
-            right: calc(~"25% - 4px");
-            top: -1px;
-            height: 16px;
-            //修正字体的右偏移
-            width: 15px;
+			//z-index: @z-index-nav-search-bar + 1;
+			right: calc(~"28% - 4px");
+			top: 1px;
+			height: 16px;
+			//修正字体的右偏移
+			width: 15px;
 
-            font-size: 12px;
-            line-height: 1.4;
-            transform: scale(0.95);
-            letter-spacing: -1px;
-            vertical-align: top;
-            //修正字体的右偏移
-            padding: 0 1px 0 0;
+			font-size: 12px;
+			line-height: 1.4;
+			transform: scale(0.95);
+			letter-spacing: -1px;
+			vertical-align: top;
+			//修正字体的右偏移
+			padding: 0 1px 0 0;
 
-            color: #fff;
-            background-color: @red;
-            box-shadow:  0 0 0px 1px rgba(255,255,255,1);
-            border-radius: 50%;
+			color: #fff;
+			background-color: @red;
+			box-shadow: 0 0 0px 1px rgba(255, 255, 255, 1);
+			border-radius: 50%;
 
-            //修正6p 偏移量
-            @media screen and (min-width: 414px) {
-                right: calc(~"28% - 4px");
-            }
-        }
-    }
+			//修正6p 偏移量
+			@media screen and (min-width: 414px) {
+				right: calc(~"29% - 4px");
+			}
+		}
+	}
 }
-
 
 /****************
 
@@ -194,23 +220,22 @@ section.user-row {
 ****************/
 
 section.my-center-header-name {
-    padding-top: unit(@base-nav-bar-height/@base-px-2-rem, rem);
-    text-align: center;
-    .my-center-header-imgBox {
-        display: inline-block;
-        width: unit(@user-header-imgSize/@base-px-2-rem, rem);
-        height: unit(@user-header-imgSize/@base-px-2-rem, rem);
-        margin-bottom: unit(20/@base-px-2-rem, rem);
-        img {
-            width: 100%;
-            .make-border-radius(50px);
-        }
-        ~ p {
-            font-size: 16px;
-        }
-    }
+	padding-top: unit(@base-nav-bar-height/@base-px-2-rem, rem);
+	text-align: center;
+	.my-center-header-imgBox {
+		display: inline-block;
+		width: unit(@user-header-imgSize/@base-px-2-rem, rem);
+		height: unit(@user-header-imgSize/@base-px-2-rem, rem);
+		margin-bottom: unit(20/@base-px-2-rem, rem);
+		img {
+			width: 100%;
+			.make-border-radius(50px);
+		}
+		~ p {
+			font-size: 16px;
+		}
+	}
 }
-
 
 /****************
 
@@ -219,27 +244,26 @@ section.my-center-header-name {
 ****************/
 
 .my-center-row {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-around;
-    align-items: center;
-    padding: unit(40/@base-px-2-rem, rem);
-    border-bottom: 1px solid @shopcar-border-color;
-    p {
-        font-size: 15px;
-        &:first-child {
-            text-align: left;
-            width: 30%;
-        }
-        &:nth-child(2) {
-            width: 45%;
-            text-align: right;
-            //文字超出隐藏省略
-            .text-omit();
-        }
-    }
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-around;
+	align-items: center;
+	padding: unit(40/@base-px-2-rem, rem);
+	border-bottom: 1px solid @shopcar-border-color;
+	p {
+		font-size: 15px;
+		&:first-child {
+			text-align: left;
+			width: 30%;
+		}
+		&:nth-child(2) {
+			width: 45%;
+			text-align: right;
+			//文字超出隐藏省略
+			.text-omit();
+		}
+	}
 }
-
 
 /****************
 
@@ -250,156 +274,156 @@ login-sign-wrapper
 ****************/
 
 .login-sign-wrapper {
-    padding: unit(200/@base-px-2-rem, rem) unit(100/@base-px-2-rem, rem) unit(50/@base-px-2-rem, rem);
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #fff;
-    color: #b0b0b0;
-    font-size: 14px;
-    //仅注册页 重置密码页
-    //存在单行 两个按钮样式
-    &.sign {
-        input {
-            margin-left: unit( 50/@base-px-2-rem, rem);
-        }
-        section:nth-of-type(1) {
-            width: 55%;
-            margin-right: unit( 230/@base-px-2-rem, rem);
-            button {
-                width: 100%;
-                margin: 0;
-                margin-left: -0.5rem;
-                margin-left: -(unit(120/@base-px-2-rem, rem));
-                position: relative;
-                left: unit(230/@base-px-2-rem, rem);
-                padding: unit(15/@base-px-2-rem, rem) unit(20/@base-px-2-rem, rem);
-                background-color: #fff;
-                color: @login-btn-bg-color;
-                border: 1px solid @login-btn-bg-color;
-                font-size: 14px;
-                letter-spacing: 1px;
-                //line-height: 2;
-            }
-            input {
-                width: 200%;
-            }
-        }
-    }
-    //中间的句子
-    > p {
-        padding-bottom: unit(50/@base-px-2-rem, rem);
-    }
-    //重置密码页
-    a.forget {
-        align-self: flex-end;
-        padding-top: unit(30/@base-px-2-rem, rem);
-        margin-right: unit(100/@base-px-2-rem, rem);
-        color: #b0b0b0;
-        font-size: 12px;
-    }
-    //大红 按钮
-    button {
-        width: 80%;
-        margin-top: unit(50/@base-px-2-rem, rem);
-        border-radius: 53px;
-        border-top-left-radius: 53px;
-        border-top-right-radius: 53px;
-        border-bottom-left-radius: 53px;
-        border-bottom-right-radius: 53px;
-        background-color: @login-btn-bg-color;
-        height: unit(120/@base-px-2-rem, rem);
-    }
-    //保持容器的间距
-    section {
-        margin-top: unit(50/@base-px-2-rem, rem);
-        height: unit(120/@base-px-2-rem, rem);
-    }
-    //input 容器布局
-    section.inputBlock {
-        display: flex;
-        flex-flow: row nowrap;
-        justify-content: flex-start;
-        align-items: center;
-        width: 80%;
-        background-color: #f0f0f0;
-        padding: unit(10/@base-px-2-rem, rem) 0;
-        border-radius: 53px;
-        border-top-left-radius: 53px;
-        border-top-right-radius: 53px;
-        border-bottom-left-radius: 53px;
-        border-bottom-right-radius: 53px;
-        input {
-            width: 80%;
-            background-color: transparent;
-            font-size: 15px;
-            //修复手机端输入提示偏上的问题
-            line-height: 1.65;
-            line-height: normal;
-        }
-    }
-    //其他登陆方式
-    section.other-way-login {
-        width: 50%;
-        text-align: center;
-        padding-top: unit(150/@base-px-2-rem, rem);
-        //文字居中
-        >p {
-            font-size: 11px;
-        }
-        //两个按钮的容器
-        div.qq-wechat {
-            margin-top: unit(70/@base-px-2-rem, rem);
-            font-size: 12px;
-            ul {
-                display: flex;
-                flex-flow: row nowrap;
-                justify-content: space-around;
-                align-items: center;
-                li {
-                    padding: 0 unit(5/@base-px-2-rem, rem);
-                }
-                p {
-                    color: #b0b0b0;
-                    font-size: 10px;
-                }
-            }
-        }
-    }
-    &.bind-wechat {
-        form {
-            display: flex;
-            flex-flow: column nowrap;
-            justify-content: space-between;
-            align-items: center;
+	padding: unit(200/@base-px-2-rem, rem) unit(100/@base-px-2-rem, rem) unit(50/@base-px-2-rem, rem);
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: space-between;
+	align-items: center;
+	background-color: #fff;
+	color: #b0b0b0;
+	font-size: 14px;
+	//仅注册页 重置密码页
+	//存在单行 两个按钮样式
+	&.sign {
+		input {
+			margin-left: unit(50/@base-px-2-rem, rem);
+		}
+		section:nth-of-type(1) {
+			width: 55%;
+			margin-right: unit(230/@base-px-2-rem, rem);
+			button {
+				width: 100%;
+				margin: 0;
+				margin-left: -0.5rem;
+				margin-left: -(unit(120/@base-px-2-rem, rem));
+				position: relative;
+				left: unit(230/@base-px-2-rem, rem);
+				padding: unit(15/@base-px-2-rem, rem) unit(20/@base-px-2-rem, rem);
+				background-color: #fff;
+				color: @login-btn-bg-color;
+				border: 1px solid @login-btn-bg-color;
+				font-size: 14px;
+				letter-spacing: 1px;
+				//line-height: 2;
+				.hollow_button_disabled_function();
 
-        }
-        p.login-select {
-            width: 80%;
-            span {
-                //width: 50%;
-                font-size: 14px;
-                padding: unit(20/@base-px-2-rem, rem) 0;
-                margin: 0 unit(10/@base-px-2-rem, rem);
-                border-bottom: 2px solid #fff;
-                @media screen and (min-width: 375px) {
-                    font-size: 16px;
-                }
-                &.active {
-                    border-bottom: 2px solid @login-btn-bg-color;
-                }
-            }
-            span:first-child {
-                float: left;
-            }
-            span:last-child {
-                float: right;
-            }
-        }
-    }
+			}
+			input {
+				width: 200%;
+			}
+		}
+	}
+	//中间的句子
+	> p {
+		padding-bottom: unit(50/@base-px-2-rem, rem);
+	}
+	//重置密码页
+	a.forget {
+		align-self: flex-end;
+		padding-top: unit(30/@base-px-2-rem, rem);
+		margin-right: unit(100/@base-px-2-rem, rem);
+		color: #b0b0b0;
+		font-size: 12px;
+	}
+	//大红 按钮
+	button {
+		width: 80%;
+		margin-top: unit(50/@base-px-2-rem, rem);
+		border-radius: 53px;
+		border-top-left-radius: 53px;
+		border-top-right-radius: 53px;
+		border-bottom-left-radius: 53px;
+		border-bottom-right-radius: 53px;
+		background-color: @login-btn-bg-color;
+		height: unit(120/@base-px-2-rem, rem);
+	}
+	//保持容器的间距
+	section {
+		margin-top: unit(50/@base-px-2-rem, rem);
+		height: unit(120/@base-px-2-rem, rem);
+	}
+	//input 容器布局
+	section.inputBlock {
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: flex-start;
+		align-items: center;
+		width: 80%;
+		background-color: #f0f0f0;
+		padding: unit(10/@base-px-2-rem, rem) 0;
+		border-radius: 53px;
+		border-top-left-radius: 53px;
+		border-top-right-radius: 53px;
+		border-bottom-left-radius: 53px;
+		border-bottom-right-radius: 53px;
+		input {
+			width: 80%;
+			background-color: transparent;
+			font-size: 15px;
+			//修复手机端输入提示偏上的问题
+			line-height: normal;
+		}
+	}
+	//其他登陆方式
+	section.other-way-login {
+		width: 50%;
+		text-align: center;
+		padding-top: unit(150/@base-px-2-rem, rem);
+		//文字居中
+		> p {
+			font-size: 11px;
+		}
+		//两个按钮的容器
+		div.qq-wechat {
+			margin-top: unit(70/@base-px-2-rem, rem);
+			font-size: 12px;
+			ul {
+				display: flex;
+				flex-flow: row nowrap;
+				justify-content: space-around;
+				align-items: center;
+				li {
+					padding: 0 unit(5/@base-px-2-rem, rem);
+				}
+				p {
+					color: #b0b0b0;
+					font-size: 10px;
+				}
+			}
+		}
+	}
+	&.bind-wechat {
+		form {
+			display: flex;
+			flex-flow: column nowrap;
+			justify-content: space-between;
+			align-items: center;
+
+		}
+		p.login-select {
+			width: 80%;
+			span {
+				//width: 50%;
+				font-size: 14px;
+				padding: unit(20/@base-px-2-rem, rem) 0;
+				margin: 0 unit(10/@base-px-2-rem, rem);
+				border-bottom: 2px solid #fff;
+				@media screen and (min-width: 375px) {
+					font-size: 16px;
+				}
+				&.active {
+					border-bottom: 2px solid @login-btn-bg-color;
+				}
+			}
+			span:first-child {
+				float: left;
+			}
+			span:last-child {
+				float: right;
+			}
+		}
+	}
 }
-
 
 /****************
 
@@ -411,49 +435,48 @@ login-sign-wrapper
 
 //当没有收藏的时候 显示一些文字
 .arrival, .wish, div.collect {
-    //防止与icon 的collect冲突
-    min-height: unit(500/@base-px-2-rem, rem);
-    //当没有收藏的时候 显示一些文字来占位
-    //文字的样式
-    > p {
-        padding: unit(150/@base-px-2-rem, rem) 0;
-        line-height: 1.6;
-        text-align: center;
-        font-size: 16px;
-        background-color: #fff;
-    }
+	//防止与icon 的collect冲突
+	min-height: unit(500/@base-px-2-rem, rem);
+	//当没有收藏的时候 显示一些文字来占位
+	//文字的样式
+	> p {
+		padding: unit(150/@base-px-2-rem, rem) 0;
+		line-height: 1.6;
+		text-align: center;
+		font-size: 16px;
+		background-color: #fff;
+	}
 }
 
 .base-product-label {
-    padding: unit(10/@base-px-2-rem, rem) unit(30/@base-px-2-rem, rem);
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: flex-start;
-    align-items: stretch;
-    background-color: #fff;
-    border-bottom: 1px solid @shopcar-border-color;
-    &:last-of-type {
-        border-bottom: 0;
-    }
-    .label-product-imgBox {
-        width: unit(300/@base-px-2-rem, rem);
-        height: unit(300/@base-px-2-rem, rem);
-        img {
-            width: 100%;
-            height: 100%;
-        }
-    }
-    .label-product-info {
-        font-size: 14px;
-        width: 75%;
-        display: flex;
-        flex-flow: column nowrap;
-        justify-content: space-around;
-        align-items: stretch;
-        padding: unit(20/@base-px-2-rem, rem) unit(0/@base-px-2-rem, rem)
-    }
+	padding: unit(10/@base-px-2-rem, rem) unit(30/@base-px-2-rem, rem);
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: flex-start;
+	align-items: stretch;
+	background-color: #fff;
+	border-bottom: 1px solid @shopcar-border-color;
+	&:last-of-type {
+		border-bottom: 0;
+	}
+	.label-product-imgBox {
+		width: unit(300/@base-px-2-rem, rem);
+		height: unit(300/@base-px-2-rem, rem);
+		img {
+			width: 100%;
+			height: 100%;
+		}
+	}
+	.label-product-info {
+		font-size: 14px;
+		width: 75%;
+		display: flex;
+		flex-flow: column nowrap;
+		justify-content: space-around;
+		align-items: stretch;
+		padding: unit(20/@base-px-2-rem, rem) unit(0/@base-px-2-rem, rem)
+	}
 }
-
 
 /****************
 
@@ -466,61 +489,61 @@ login-sign-wrapper
 ****************/
 
 .coupon {
-    .switch-wrapper {
-        display: none;
-        background-color: #fff;
-        height: 100%;
-    }
-    .coupon-single {
-        margin: unit(40/@base-px-2-rem, rem) unit(30/@base-px-2-rem, rem) 0;
-        //width: 100%;
-        padding: unit(30/@base-px-2-rem, rem);
-        border-radius: 7px;
-        height: unit(250/@base-px-2-rem, rem);
-        background-color: #eee;
-        display: flex;
-        flex-flow: row nowrap;
-        justify-content: flex-start;
-        align-items: center;
-        font-size: 12px;
-        > span {
-            font-size: 17px;
-            font-weight: 600;
-            width: 23%;
-        }
-        p {
-            padding: unit(13/@base-px-2-rem, rem) 0;
-        }
-    }
-    .coupon-name-time-key {
-        margin-left: unit(50/@base-px-2-rem, rem);
-        display: flex;
-        flex-flow: column nowrap;
-        justify-content: space-between;
-        align-items: stretch;
-        width: 73%;
-    }
-    .coupon-name-time {
-        display: flex;
-        flex-flow: row nowrap;
-        justify-content: space-between;
-        align-items: center;
-    }
+	.switch-wrapper {
+		display: none;
+		background-color: #fff;
+		height: 100%;
+	}
+	.coupon-single {
+		margin: unit(40/@base-px-2-rem, rem) unit(30/@base-px-2-rem, rem) 0;
+		//width: 100%;
+		padding: unit(30/@base-px-2-rem, rem);
+		border-radius: 7px;
+		height: unit(250/@base-px-2-rem, rem);
+		background-color: #eee;
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: flex-start;
+		align-items: center;
+		font-size: 12px;
+		> span {
+			font-size: 17px;
+			font-weight: 600;
+			width: 23%;
+		}
+		p {
+			padding: unit(13/@base-px-2-rem, rem) 0;
+		}
+	}
+	.coupon-name-time-key {
+		margin-left: unit(50/@base-px-2-rem, rem);
+		display: flex;
+		flex-flow: column nowrap;
+		justify-content: space-between;
+		align-items: stretch;
+		width: 73%;
+	}
+	.coupon-name-time {
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: space-between;
+		align-items: center;
+	}
 }
 
 //使用优惠券
 .base-tips {
-    margin: unit(40/@base-px-2-rem, rem) unit(30/@base-px-2-rem, rem) 0;
-    //width: 100%;
-    padding: unit(30/@base-px-2-rem, rem);
-    border-radius: 7px;
-    height: unit(250/@base-px-2-rem, rem);
-    background-color: #eee;
-    color: @text-gray;
-    font-size: 12px;
-    p {}
+	margin: unit(40/@base-px-2-rem, rem) unit(30/@base-px-2-rem, rem) 0;
+	//width: 100%;
+	padding: unit(30/@base-px-2-rem, rem);
+	border-radius: 7px;
+	height: unit(250/@base-px-2-rem, rem);
+	background-color: #eee;
+	color: @text-gray;
+	font-size: 12px;
+	p {
+	}
 }
-
 
 /****************
 
@@ -529,38 +552,37 @@ login-sign-wrapper
 ****************/
 
 .user-address-single {
-    background-color: #fff;
-    margin-top: unit( @base-mt /@base-px-2-rem, rem);
-    border-top: 1px solid @border-color-gray-light;
-    border-bottom: 1px solid @border-color-gray-light;
-    color: @border-color-gray;
-    &:first-child {
-        border-top: 0;
-        margin-top: 0;
-    }
-    .user-address-select {
-        display: flex;
-        flex-flow: row nowrap;
-        justify-content: flex-start;
-        align-items: center;
-        //比下面地址宽一些
-        padding: unit(15/@base-px-2-rem, rem) unit(60/@base-px-2-rem, rem);
-        padding-right: unit(80/@base-px-2-rem, rem);
-        font-size: 15px;
-        border-bottom: 1px solid @border-color-gray;
-        i {
-            margin-right: unit(45/@base-px-2-rem, rem);
-        }
-        span {
-            flex-grow: 2;
-        }
-        span.user-address-del {
-            flex-grow: 1;
-            text-align: right;
-        }
-    }
+	background-color: #fff;
+	margin-top: unit(@base-mt /@base-px-2-rem, rem);
+	border-top: 1px solid @border-color-gray-light;
+	border-bottom: 1px solid @border-color-gray-light;
+	color: @border-color-gray;
+	&:first-child {
+		border-top: 0;
+		margin-top: 0;
+	}
+	.user-address-select {
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: flex-start;
+		align-items: center;
+		//比下面地址宽一些
+		padding: unit(15/@base-px-2-rem, rem) unit(60/@base-px-2-rem, rem);
+		padding-right: unit(80/@base-px-2-rem, rem);
+		font-size: 15px;
+		border-bottom: 1px solid @border-color-gray;
+		i {
+			margin-right: unit(45/@base-px-2-rem, rem);
+		}
+		span {
+			flex-grow: 2;
+		}
+		span.user-address-del {
+			flex-grow: 1;
+			text-align: right;
+		}
+	}
 }
-
 
 /****************
 
@@ -571,21 +593,20 @@ login-sign-wrapper
 ****************/
 
 .user-address-info {
-    padding: unit(10/@base-px-2-rem, rem) unit(80/@base-px-2-rem, rem);
-    p {
-        font-size: 14px;
-        //line-height: 1.4;
-        padding: unit(8/@base-px-2-rem, rem) 0;
-    }
-    p.user-real-name-phone {
-        display: flex;
-        flex-flow: row nowrap;
-        justify-content: flex-start;
-        align-items: center;
-        justify-content: space-between;
-    }
+	padding: unit(10/@base-px-2-rem, rem) unit(80/@base-px-2-rem, rem);
+	p {
+		font-size: 14px;
+		//line-height: 1.4;
+		padding: unit(8/@base-px-2-rem, rem) 0;
+	}
+	p.user-real-name-phone {
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: flex-start;
+		align-items: center;
+		justify-content: space-between;
+	}
 }
-
 
 /****************
 
@@ -594,106 +615,104 @@ login-sign-wrapper
 ****************/
 
 p.alert-red {
-    padding: unit(10/@base-px-2-rem, rem) unit(30/@base-px-2-rem, rem);
-    background-color: @pink;
-    color: @alert-red-color;
-    border-radius: 5px;
-    line-height: 1.55;
+	padding: unit(10/@base-px-2-rem, rem) unit(30/@base-px-2-rem, rem);
+	background-color: @pink;
+	color: @alert-red-color;
+	border-radius: 5px;
+	line-height: 1.55;
 }
 
 .user-input-list {
-    padding: 0 unit(30/@base-px-2-rem, rem) 0;
-    background-color: #fff;
-    font-size: 14px;
+	padding: 0 unit(30/@base-px-2-rem, rem) 0;
+	background-color: #fff;
+	font-size: 14px;
 }
 
 //输入栏 
 .input-list-row {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: flex-start;
-    align-items: center;
-    color: #a4a4a4;
-    border-bottom: 1px solid @border-color-gray-very-light;
-    padding: unit(35/@base-px-2-rem, rem) unit(5/@base-px-2-rem, rem);
-    > span {
-        width: 20%;
-    }
-    > input {
-        width: 80%;
-        //修复手机端输入提示偏上的问题
-        line-height: normal;
-        font-size: 14px;
-        padding: 0;
-    }
-    input::-webkit-input-placeholder {
-        font-size: 14px;
-        line-height: 1.15;
-    }
-    input:-moz-placeholder {
-        font-size: 14px;
-        line-height: 1.15;
-    }
-    input::-moz-placeholder {
-        font-size: 14px;
-        line-height: 1.15;
-    }
-    input:-ms-input-placeholder {
-        font-size: 14px;
-        line-height: 1.15;
-    }
-    &.has-radius {
-        border: 0;
-        background-color: @border-color-gray-very-light;
-        margin-top: unit(50/@base-px-2-rem, rem);
-        padding: unit(45/@base-px-2-rem, rem) unit(5/@base-px-2-rem, rem);
-        .make-border-radius(5px);
-        font-size: 15px;
-        color: #333;
-        >span {
-            width: 35%;
-            //padding: 0 unit(55/@base-px-2-rem, rem);
-            text-align: left;
-            span {
-                padding: 0 unit(30/@base-px-2-rem, rem);
-                font-weight: 600;
-                font-size: 17px;
-            }
-        }
-        >input, select {
-            background-color: @border-color-gray-very-light;
-            font-size: 15px;
-            width: 65%;
-            color: #333;
-            line-height: normal
-        }
-        &:last-child {
-            padding: 0;
-        }
-        > button {
-            width: 100%;
-            padding: unit(45/@base-px-2-rem, rem) 0;
-            background-color: @red;
-        }
-    }
-    &.has-select {
-        padding: unit(10/@base-px-2-rem, rem) unit(5/@base-px-2-rem, rem); //15
-        position: relative;
-        select {
-            padding: unit(15/@base-px-2-rem, rem) 0;
-            width: 20%;
-            color: #a4a4a4;
-        }
-    }
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: flex-start;
+	align-items: center;
+	color: #a4a4a4;
+	border-bottom: 1px solid @border-color-gray-very-light;
+	padding: unit(35/@base-px-2-rem, rem) unit(5/@base-px-2-rem, rem);
+	> span {
+		width: 20%;
+	}
+	> input {
+		width: 80%;
+		//修复手机端输入提示偏上的问题
+		line-height: normal;
+		font-size: 14px;
+		padding: 0;
+	}
+	input::-webkit-input-placeholder {
+		font-size: 14px;
+		line-height: 1.15;
+	}
+	input:-moz-placeholder {
+		font-size: 14px;
+		line-height: 1.15;
+	}
+	input::-moz-placeholder {
+		font-size: 14px;
+		line-height: 1.15;
+	}
+	input:-ms-input-placeholder {
+		font-size: 14px;
+		line-height: 1.15;
+	}
+	&.has-radius {
+		border: 0;
+		background-color: @border-color-gray-very-light;
+		margin-top: unit(50/@base-px-2-rem, rem);
+		padding: unit(45/@base-px-2-rem, rem) unit(5/@base-px-2-rem, rem);
+		.make-border-radius(5px);
+		font-size: 15px;
+		color: #333;
+		> span {
+			width: 35%;
+			//padding: 0 unit(55/@base-px-2-rem, rem);
+			text-align: left;
+			span {
+				padding: 0 unit(30/@base-px-2-rem, rem);
+				font-weight: 600;
+				font-size: 17px;
+			}
+		}
+		> input, select {
+			background-color: @border-color-gray-very-light;
+			font-size: 15px;
+			width: 65%;
+			color: #333;
+			line-height: normal
+		}
+		&:last-child {
+			padding: 0;
+		}
+		> button {
+			width: 100%;
+			padding: unit(45/@base-px-2-rem, rem) 0;
+			background-color: @red;
+		}
+	}
+	&.has-select {
+		padding: unit(10/@base-px-2-rem, rem) unit(5/@base-px-2-rem, rem); //15
+		position: relative;
+		select {
+			padding: unit(15/@base-px-2-rem, rem) 0;
+			width: 20%;
+			color: #a4a4a4;
+		}
+	}
 }
-
 
 /****************
 
 关于我们
 
 ****************/
-
 
 /****************
 
@@ -703,85 +722,85 @@ p.alert-red {
 
 //点击修改用户信息按钮弹出窗口
 .uesr-change-pop {
-    position: relative;
-    .layui-m-layercont {
-        //position: relative;
-        padding: 20px 30px !important;
-        .wide-input {
-            border: 1px solid @red;
-            padding: unit(25/@base-px-2-rem, rem);
-            font-size: 14px;
-            width: 67%;
-            .make-border-radius(5px);
-        }
-        .half-btn {
-            margin-top: unit(60/@base-px-2-rem, rem);
-            padding: unit(25/@base-px-2-rem, rem);
-            width: 78%;
-            //margin-left: unit(55/@base-px-2-rem, rem);
-        }
-    }
-    form {
-        display: flex;
-        flex-flow: column nowrap;
-        justify-content: flex-start;
-        align-items: stretch;
-        p {
-            padding: unit(25/@base-px-2-rem, rem) unit(30/@base-px-2-rem, rem);
-            align-self: flex-start;
-        }
-        //单个布局
-        section.input-block {
-            display: flex;
-            flex-flow: row nowrap;
-            justify-content: flex-start;
-            align-items: stretch;
-            padding-bottom: unit(35/@base-px-2-rem, rem);
-            position: relative;
-        }
-    }
-    //下拉输入
-    .select-block {
-        border: 1px solid @red;
-        .make-border-radius(5px);
-        //padding: unit(25/@base-px-2-rem, rem);
-        width: 73%;
-        display: flex;
-        flex-flow: column nowrap;
-        justify-content: space-around;
-        align-items: center;
-        position: relative;
-        text-align: center;
-        //四个下拉选择 
-        select.user-sex {
-            width: 100%;
-            padding: unit(20/@base-px-2-rem, rem) 0;
-            text-indent: 45%;
-            //fix android gray background 
-            background-color: #fff;
-            option {
-                //fix android gray background 
-                background-color: #fff;
-            }
-        }
-        //生日年月日
-        // select.user-bday {
-        //     width: 33%;
-        //     text-indent: unit(75/@base-px-2-rem, rem);
-        //     &:first-child {
-        //         text-indent: unit(50/@base-px-2-rem, rem);
-        //     }
-        // }
-        input[type="date"] {
-            text-align: center;
-            width: 110px;
-            //fix android gray background 
-            background-color: #fff;
-            @media screen and (max-width: 320px) {}
-        }
-    }
+	position: relative;
+	.layui-m-layercont {
+		//position: relative;
+		padding: 20px 30px !important;
+		.wide-input {
+			border: 1px solid @red;
+			padding: unit(25/@base-px-2-rem, rem);
+			font-size: 14px;
+			width: 67%;
+			.make-border-radius(5px);
+		}
+		.half-btn {
+			margin-top: unit(60/@base-px-2-rem, rem);
+			padding: unit(25/@base-px-2-rem, rem);
+			width: 78%;
+			//margin-left: unit(55/@base-px-2-rem, rem);
+		}
+	}
+	form {
+		display: flex;
+		flex-flow: column nowrap;
+		justify-content: flex-start;
+		align-items: stretch;
+		p {
+			padding: unit(25/@base-px-2-rem, rem) unit(30/@base-px-2-rem, rem);
+			align-self: flex-start;
+		}
+		//单个布局
+		section.input-block {
+			display: flex;
+			flex-flow: row nowrap;
+			justify-content: flex-start;
+			align-items: stretch;
+			padding-bottom: unit(35/@base-px-2-rem, rem);
+			position: relative;
+		}
+	}
+	//下拉输入
+	.select-block {
+		border: 1px solid @red;
+		.make-border-radius(5px);
+		//padding: unit(25/@base-px-2-rem, rem);
+		width: 73%;
+		display: flex;
+		flex-flow: column nowrap;
+		justify-content: space-around;
+		align-items: center;
+		position: relative;
+		text-align: center;
+		//四个下拉选择
+		select.user-sex {
+			width: 100%;
+			padding: unit(20/@base-px-2-rem, rem) 0;
+			text-indent: 45%;
+			//fix android gray background
+			background-color: #fff;
+			option {
+				//fix android gray background
+				background-color: #fff;
+			}
+		}
+		//生日年月日
+		// select.user-bday {
+		//     width: 33%;
+		//     text-indent: unit(75/@base-px-2-rem, rem);
+		//     &:first-child {
+		//         text-indent: unit(50/@base-px-2-rem, rem);
+		//     }
+		// }
+		input[type="date"] {
+			text-align: center;
+			width: 110px;
+			//fix android gray background
+			background-color: #fff;
+			@media screen and (max-width: 320px) {
+			}
+		}
+	}
 }
-
 
 /****************
 
@@ -791,26 +810,26 @@ p.alert-red {
 ****************/
 
 .change-user-info-close {
-    position: absolute;
-    top: unit(5/@base-px-2-rem, rem);
-    right: unit(5/@base-px-2-rem, rem);
-    width: unit(1/@base-px-2-rem, rem);
-    height: unit(1/@base-px-2-rem, rem);
-    padding: unit(50/@base-px-2-rem, rem);
-    &:after, &:before {
-        content: "";
-        position: relative;
-        width: 23px;
-        height: 3px;
-        background-color: #ccc;
-        display: block;
-        left: -12px;
-    }
-    &:after {
-        margin-top: -3px;
-        transform: rotate(45deg);
-    }
-    &:before {
-        transform: rotate(135deg);
-    }
+	position: absolute;
+	top: unit(5/@base-px-2-rem, rem);
+	right: unit(5/@base-px-2-rem, rem);
+	width: unit(1/@base-px-2-rem, rem);
+	height: unit(1/@base-px-2-rem, rem);
+	padding: unit(50/@base-px-2-rem, rem);
+	&:after, &:before {
+		content: "";
+		position: relative;
+		width: 23px;
+		height: 3px;
+		background-color: #ccc;
+		display: block;
+		left: -12px;
+	}
+	&:after {
+		margin-top: -3px;
+		transform: rotate(45deg);
+	}
+	&:before {
+		transform: rotate(135deg);
+	}
 }

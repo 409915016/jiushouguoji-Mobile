@@ -2,377 +2,374 @@
 <html lang="zh-cmn-Hans">
 
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="renderer" content="webkit">
-	<title>就手国际 - 全球正品大集会</title>
-	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
-	<meta name="renderer" content="webkit">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no" />
-	<!--fix the iphone browser phone num identify-->
-	<meta name="format-detection" content="telephone=no" />
-	<link rel="Shortcut Icon" href="favicon.jpg" />
-
-	<link rel="stylesheet" href="css/style.min.css">
-
-	<script src="js/jquery.min.js"></script>
-	<script src="js/flexible.js"></script>
-	<script src="js/swiper.jquery.min.js"></script>
-	<script src="js/layer.js"></script>
-	<script src="js/main.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="renderer" content="webkit">
+    <title>就手国际 - 全球正品大集会</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"/>
+    <!--fix the iphone browser phone num identify-->
+    <meta name="format-detection" content="telephone=no"/>
+    <link rel="Shortcut Icon" href="favicon.jpg"/>
+    <link rel="stylesheet" href="css/style.min.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/flexible.js"></script>
+    <script src="js/swiper.jquery.min.js"></script>
+    <script src="js/layer.js"></script>
+    <script src="js/main.js"></script>
 </head>
 
 <body>
-	<div class="wrapper">
-		<!--fixed element-->
-		<div class="base-nav-bar">
-			<a href="index.html">
-				<i class="icon back fl"></i>
-			</a>
-			<p>商品详情</p>
-			<a class="no-visible" href="index.html">
-				<i class="icon back fl"></i>
-			</a>
-		</div>
-		<!--商品详情页底部导航栏-->
-		<div class="product-nav-bar">
-			<div class="product-action">
-				<ul class="product-nav-action">
-					<li>
-						<a class="">
-							<i class="icon details-collect "></i>
-							<p>收藏</p>
-						</a>
-					</li>
-					<li>
-						<!--<span class="shop-car-count"></span>-->
-						<a href="shopCar.html">
-							<i class="icon details-shopcar "></i>
-							<p>购物车</p>
-						</a>
-					</li>
-					<li>
-						<a href="">
-							<i class="icon details-services"></i>
-							<p>客服</p>
-						</a>
-					</li>
-				</ul>
-			</div>
-			<div class="product-action-buy">
-				<ul class="product-nav-buy">
-					<li>
-						<a class="" id="addShopCar">
+<div class="wrapper">
+    <!--fixed element-->
+    <div class="base-nav-bar">
+        <a href="index.html">
+            <i class="icon back fl"></i>
+        </a>
+        <p>商品详情</p>
+        <a class="no-visible" href="index.html">
+            <i class="icon back fl"></i>
+        </a>
+    </div>
+    <!--商品详情页底部导航栏-->
+    <div class="product-nav-bar">
+        <div class="product-action">
+            <ul class="product-nav-action">
+                <li>
+                    <a class="">
+                        <i class="icon details-collect "></i>
+                        <p>收藏</p>
+                    </a>
+                </li>
+                <li>
+                    <!--<span class="shop-car-count"></span>-->
+                    <a href="shopCar.html" data-shop-count="1">
+                        <i class="icon details-shopcar"></i>
+                        <p>购物车</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <i class="icon details-services"></i>
+                        <p>客服</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="product-action-buy">
+            <ul class="product-nav-buy">
+                <li>
+                    <a class="" id="addShopCar">
+                        <p>&#165;<span>112.00</span></p>
+                        <p>加入购物车</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="groupOrderInfo.html" class="" id="addgroupbuy">
+                        <p>&#165;<span>112.00</span></p>
+                        <p>
+                            <span>3</span>人团</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--就手国际收到订单-->
+    <div class="" id="get-order">
+        <div class="get-order-imgBox">
+            <img src="" alt=""></div>
+        <p>就手国际
+            <span class="get-order-second">8</span>秒前收到来自
+            <span class="get-order-province">广东</span>的一张订单</p>
+    </div>
+    <!--加入购物车动画-->
+    <img id="TurnAround-img" src="" alt="">
+    <!--fixed element end-->
+    <!--可见页-->
+    <div class="main-wrapper title-bar">
+        <!--商品滑动图-->
+        <section class="product-show">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="img/meadjohnson-1.jpg"></img>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="img/meadjohnson-1.jpg"></img>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="img/meadjohnson-1.jpg"></img>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="img/meadjohnson-1.jpg"></img>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
+        <!--商品详情 评论-->
+        <!--包含推荐商品的文字头-->
+        <section class="product-details">
+            <p class="product-details-price">&#165;1272.00</p>
+            <p class="product-details-name">【6罐装】港版美赞臣 Meadjohson 4段奶粉 900g （3-6岁宝宝）</p>
+            <p class="product-details-shop border-b">由“就手国际海外旗舰店” 发货并提供售后，就手国际提供客服</p>
+            <p class="product-details-returns">不支持7天无理由退货，此商品不提供国内购物发票</p>
+        </section>
+        <!--团购信息-->
+        <section class="product-group-buy">
+            <p class="group-buy-tips">支付开团并邀请
+                <span>1</span>人开团，人数不足自动退款</p>
+            <p class="group-buy-status">以下小伙伴正在发起团购，您可以直接参与</p>
+            <div class="group-buy-member-list">
+                <section class="group-buy-member">
+                    <a class="group-buy-user">
+                        <img src="http://fakeimg.pl/100x100">
+                        <div class="group-buy-user-info">
+                            <p>憧憬、一下憧憬、一下</p>
+                            <p>无锡</p>
+                        </div>
+                        <div class="group-buy-info">
+                            <p>还差
+                                <span>2</span>人成团</p>
+                            <p>剩余
+                                <span>23:23:23</span>结束</p>
+                        </div>
+                        <div class="group-bu-go">
+                            <p>去参团</p>
+                        </div>
+                    </a>
+                </section>
+                <section class="group-buy-member">
+                    <a class="group-buy-user">
+                        <img src="http://fakeimg.pl/100x100">
+                        <div class="group-buy-user-info">
+                            <p>憧憬、一下憧憬、一下</p>
+                            <p>无锡</p>
+                        </div>
+                        <div class="group-buy-info">
+                            <p>还差
+                                <span>2</span>人成团</p>
+                            <p>剩余
+                                <span>23:23:23</span>结束</p>
+                        </div>
+                        <div class="group-bu-go">
+                            <p>去参团</p>
+                        </div>
+                    </a>
+                </section>
+            </div>
+        </section>
+        <section class="product-details">
+            <!--评论块-->
+            <div class="comment-queue">
+                <!--跳转评论页-->
+                <a href="comment.html" class="product-details-comment border-b">
+                    <span>评论</span>
+                    <i class="icon right fr"></i>
+                </a>
+                <!--显示单条评论-->
+                <section class="comment-one">
+                    <p>
+                        <span class="user-name">M150****2593</span>
+                        <span class="comment-time">16-07-18 15:34</span>
+                    </p>
+                    <p class="comment-content">评论评论评论论评论评论评论评论评论评论评论评评论评论评论评论评评论评论评论评论评论</p>
+                    <div class="comment-imgBox">
+                        <img src="http://fakeimg.pl/350x350/?text=Hello">
+                        <img src="http://fakeimg.pl/350x350/?text=Hello">
+                        <img src="http://fakeimg.pl/350x350/?text=Hello">
+                        <img src="http://fakeimg.pl/350x350/?text=Hello"></div>
 
-							<p>&#165;<span>112.00</span></p>
-							<p>加入购物车</p>
-						</a>
-					</li>
-					<li>
-						<a href="groupOrderInfo.html" class="" id="addgroupbuy">
-							<p>&#165;<span>112.00</span></p>
-							<p>
-								<span>3</span>人团</p>
-						</a>
-					</li>
-				</ul>
-			</div>
-		</div>
-		<!--就手国际收到订单-->
-		<div class="" id="get-order">
-			<div class="get-order-imgBox">
-				<img src="" alt=""> </div>
-			<p>就手国际
-				<span class="get-order-second">8</span>秒前收到来自
-				<span class="get-order-province">广东</span>的一张订单</p>
-		</div>
-		<!--加入购物车动画-->
-		<img id="TurnAround-img" src="" alt="">
-		<!--fixed element end-->
-		<!--可见页-->
-		<div class="main-wrapper title-bar">
-			<!--商品滑动图-->
-			<section class="product-show">
-				<div class="swiper-container">
-					<div class="swiper-wrapper">
-						<div class="swiper-slide">
-							<img src="img/meadjohnson-1.jpg"></img>
-						</div>
-						<div class="swiper-slide">
-							<img src="img/meadjohnson-1.jpg"></img>
-						</div>
-						<div class="swiper-slide">
-							<img src="img/meadjohnson-1.jpg"></img>
-						</div>
-						<div class="swiper-slide">
-							<img src="img/meadjohnson-1.jpg"></img>
-						</div>
-					</div>
-					<div class="swiper-pagination"></div>
-				</div>
-			</section>
-			<!--商品详情 评论-->
-			<!--包含推荐商品的文字头-->
-			<section class="product-details">
-				<p class="product-details-price">&#165;1272.00</p>
-				<p class="product-details-name">【6罐装】港版美赞臣 Meadjohson 4段奶粉 900g （3-6岁宝宝）</p>
-				<p class="product-details-shop border-b">由“就手国际海外旗舰店” 发货并提供售后，就手国际提供客服</p>
-				<p class="product-details-returns">不支持7天无理由退货，此商品不提供国内购物发票</p>
-			</section>
-			<!--团购信息-->
-			<section class="product-group-buy">
-				<p class="group-buy-tips">支付开团并邀请
-					<span>1</span>人开团，人数不足自动退款</p>
-				<p class="group-buy-status">以下小伙伴正在发起团购，您可以直接参与</p>
-				<div class="group-buy-member-list">
-					<section class="group-buy-member">
-						<a class="group-buy-user">
-							<img src="http://fakeimg.pl/100x100">
-							<div class="group-buy-user-info">
-								<p>憧憬、一下憧憬、一下</p>
-								<p>无锡</p>
-							</div>
-							<div class="group-buy-info">
-								<p>还差
-									<span>2</span>人成团</p>
-								<p>剩余
-									<span>23:23:23</span>结束</p>
-							</div>
-							<div class="group-bu-go">
-								<p>去参团</p>
-							</div>
-						</a>
-					</section>
-					<section class="group-buy-member">
-						<a class="group-buy-user">
-							<img src="http://fakeimg.pl/100x100">
-							<div class="group-buy-user-info">
-								<p>憧憬、一下憧憬、一下</p>
-								<p>无锡</p>
-							</div>
-							<div class="group-buy-info">
-								<p>还差
-									<span>2</span>人成团</p>
-								<p>剩余
-									<span>23:23:23</span>结束</p>
-							</div>
-							<div class="group-bu-go">
-								<p>去参团</p>
-							</div>
-						</a>
-					</section>
-				</div>
-			</section>
-			<section class="product-details">
-				<!--评论块-->
-				<div class="comment-queue">
-					<!--跳转评论页-->
-					<a href="comment.html" class="product-details-comment border-b">
-						<span>评论</span>
-						<i class="icon right fr"></i>
-					</a>
-					<!--显示单条评论-->
-					<section class="comment-one">
-						<p>
-							<span class="user-name">M150****2593</span>
-							<span class="comment-time">16-07-18 15:34</span>
-						</p>
-						<p class="comment-content">评论评论评论论评论评论评论评论评论评论评论评评论评论评论评论评评论评论评论评论评论</p>
-						<div class="comment-imgBox">
-							<img src="http://fakeimg.pl/350x350/?text=Hello">
-							<img src="http://fakeimg.pl/350x350/?text=Hello">
-							<img src="http://fakeimg.pl/350x350/?text=Hello">
-							<img src="http://fakeimg.pl/350x350/?text=Hello"> </div>
-
-					</section>
-					<!--单条评论-->
-					<section class="comment-one">
-						<p>
-							<span class="user-name">M150****2593</span>
-							<span class="comment-time">16-07-18 15:34</span>
-						</p>
-						<p class="comment-content">评论评论评论评论评论评论评论评论评论评论评论评论评论评论评论评论评评论评论评论评论评论评论评评论评论评论评论评论评论评评论评论评论评论评论</p>
-						<!--<div class="comment-imgBox">-->
-						<!--    <img src="http://www.atool.org/placeholder.png?size=100x100&text=测试" alt="">-->
-						<!--    <img src="http://www.atool.org/placeholder.png?size=100x100&text=测试" alt="">-->
-						<!--    <img src="http://www.atool.org/placeholder.png?size=100x100&text=测试" alt="">-->
-						<!--    <img src="http://www.atool.org/placeholder.png?size=100x100&text=测试" alt="">-->
-						<!--</div>-->
-					</section>
-				</div>
-				<p class="border-b product-details-recommend">推荐商品</p>
-			</section>
-			<!--推荐商品Swiper -->
-			<section class="product-more">
-				<div class="swiper-container swiper-product">
-					<div class="swiper-wrapper">
-						<div class="swiper-slide">
-							<a href="details.html">
-								<img src="img/meadjohnson-1.jpg">
-								<p>【6罐装】港版美赞臣 Meadjohson 4段奶粉 900g （3-6岁宝宝）</p>
-								<p>&#165;
-									<span>840.00</span>
-								</p>
-							</a>
-						</div>
-						<div class="swiper-slide">
-							<a href="details.html">
-								<img src="img/meadjohnson-1.jpg">
-								<p>【6罐装】港版美赞臣 Meadjohson 4段奶粉 900g （3-6岁宝宝）</p>
-								<p>&#165;
-									<span>840.00</span>
-								</p>
-							</a>
-						</div>
-						<div class="swiper-slide">
-							<a href="details.html">
-								<img src="img/meadjohnson-1.jpg">
-								<p>【6罐装】港版美赞臣 Meadjohson 4段奶粉 900g （3-6岁宝宝）</p>
-								<p>&#165;
-									<span>840.00</span>
-								</p>
-							</a>
-						</div>
-						<div class="swiper-slide">
-							<a href="details.html">
-								<img src="img/meadjohnson-1.jpg">
-								<p>【6罐装】港版美赞臣 Meadjohson 4段奶粉 900g （3-6岁宝宝）</p>
-								<p>&#165;
-									<span>840.00</span>
-								</p>
-							</a>
-						</div>
-						<div class="swiper-slide">
-							<a href="details.html">
-								<img src="img/meadjohnson-1.jpg">
-								<p>【6罐装】港版美赞臣 Meadjohson 4段奶粉 900g （3-6岁宝宝）</p>
-								<p>&#165;
-									<span>840.00</span>
-								</p>
-							</a>
-						</div>
-						<div class="swiper-slide">
-							<a href="details.html">
-								<img src="img/meadjohnson-1.jpg">
-								<p>【6罐装】港版美赞臣 Meadjohson 4段奶粉 900g （3-6岁宝宝）</p>
-								<p>&#165;
-									<span>840.00</span>
-								</p>
-							</a>
-						</div>
-						<div class="swiper-slide">
-							<a href="feature.html">
-								<p>查看更多</p>
-							</a>
-						</div>
-					</div>
-				</div>
-			</section>
-			<section class="product-tips">
-				<p>继续拖动 查看图文详情</p>
-			</section>
-			<!--商品介绍长图-->
-			<section class="product-longPic">
-				<img src="img/productLongPic/1.jpg" alt="">
-				<img src="img/productLongPic/2.jpg" alt="">
-				<img src="img/productLongPic/3.jpg" alt="">
-				<img src="img/productLongPic/4.jpg" alt="">
-				<img src="img/productLongPic/5.jpg" alt="">
-				<img src="img/productLongPic/6.jpg" alt="">
-				<img src="img/productLongPic/7.jpg" alt="">
-				<img src="img/productLongPic/8.jpg" alt="">
-				<img src="img/productLongPic/9.jpg" alt="">
-				<img src="img/productLongPic/10.jpg" alt="">
-				<img src="img/productLongPic/11.jpg" alt="">
-				<img src="img/productLongPic/12.jpg" alt="">
-				<img src="img/productLongPic/13.jpg" alt=""> </section>
-		</div>
-		<!--可见页 end-->
-	</div>
-	<script>
-		$(document).ready(function () {
-			//隐藏图片详情
-			$('.product-longPic').hide();
-			//实例化图片滑动
-			var mySwiper = new Swiper('.product-show .swiper-container', {
-				autoplay: 3500,
-				loop: true,
-				pagination: '.swiper-pagination',
-			});
-			//实例化推荐商品
-			var mySwiper1 = new Swiper('.swiper-product', {
-				slidesPerView: 3,
-				spaceBetween: 0,
-			});
-			//拉动查看图片详情
-			var ones = true;
-			$(window).scroll(function () {　　
-				var scrollTop = $(this).scrollTop();　　
-				var scrollHeight = $(document).height();　　
-				var windowHeight = $(this).height();
-				//console.log(ones);
-				if ((scrollTop + windowHeight == scrollHeight) && (ones)) {　　
-					ones = false;
-					//alert("you are in the bottom");
-					//console.log(ones);
-					$('.product-longPic').show();
-					var longPic_h = ($('.product-longPic').offset() - $('.product-tips').height());
-					$('html, body').delay(800).animate({
-						//http://www.tuicool.com/articles/JJNZRb
-						scrollTop: $('.product-longPic').offset().top - 100
-					}, 400, function () {
-						//$('.product-tips p').html("图文详情");
-						$('.product-tips').hide("fast", "linear");
-					});
-				}
-			});
-		});
-	</script>
-	<script>
-		//设置显示的购物车内商品数量
-		setShopCarNum(0);
-		//显示的购物车内商品数量 + 1 
-		shopCarNumAdd();
-		//就手收到订单
-		//getOrderMsg(imgURL, second, province);
-		//getOrderMsg("http://www.atool.org/placeholder.png?size=50x50&bg=fff", 10, "黑龙江");
-		//循环测试用
-		//TestgetOrderMsg();
-		//消息提示
-		//baseMsg("加入购物车成功");
-		addShopCarBtn = get("#addShopCar");
-		addShopCaP = get("#addShopCar p:last-child").innerHTML;
-		addShopCarBtn.addEventListener("click", function () {
-			if (addShopCaP == "添加到货提醒") {
-				//数据处理
-				baseMsg(addShopCaP + "成功");
-			}
-			if (addShopCaP == "加入心愿单") {
-				//数据处理
-				baseMsg(addShopCaP + "成功");
-			}
-			if (addShopCaP == "加入购物车") {
-				//数据处理
-				shopcarTurnAround();
-			}
-		})
-		addmyCollectBtn = get(".product-nav-bar a:first-child");
-		myCollectIcon = get(".product-nav-bar a:first-child i");
-		addmyCollectBtn.addEventListener("click", function () {
-			//数据处理
-			//取消收藏
-			if (myCollectIcon.classList.contains("collect-red")) {
-				console.log(myCollectIcon.classList.contains("collect-red"));
-				myCollectIcon.classList.remove("collect-red");
-				myCollectIcon.classList.add("details-collect");
-				baseMsg("取消收藏成功");
-			} else {
-				//添加收藏
-				myCollectIcon.classList.remove("details-collect");
-				myCollectIcon.classList.add("collect-red");
-				baseMsg("添加收藏成功");
-			}
-		})
-	</script>
+                </section>
+                <!--单条评论-->
+                <section class="comment-one">
+                    <p>
+                        <span class="user-name">M150****2593</span>
+                        <span class="comment-time">16-07-18 15:34</span>
+                    </p>
+                    <p class="comment-content">评论评论评论评论评论评论评论评论评论评论评论评论评论评论评论评论评评论评论评论评论评论评论评评论评论评论评论评论评论评评论评论评论评论评论</p>
+                    <!--<div class="comment-imgBox">-->
+                    <!--    <img src="http://www.atool.org/placeholder.png?size=100x100&text=测试" alt="">-->
+                    <!--    <img src="http://www.atool.org/placeholder.png?size=100x100&text=测试" alt="">-->
+                    <!--    <img src="http://www.atool.org/placeholder.png?size=100x100&text=测试" alt="">-->
+                    <!--    <img src="http://www.atool.org/placeholder.png?size=100x100&text=测试" alt="">-->
+                    <!--</div>-->
+                </section>
+            </div>
+            <p class="border-b product-details-recommend">推荐商品</p>
+        </section>
+        <!--推荐商品Swiper -->
+        <section class="product-more">
+            <div class="swiper-container swiper-product">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <a href="details.html">
+                            <img src="img/meadjohnson-1.jpg">
+                            <p>【6罐装】港版美赞臣 Meadjohson 4段奶粉 900g （3-6岁宝宝）</p>
+                            <p>&#165;
+                                <span>840.00</span>
+                            </p>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="details.html">
+                            <img src="img/meadjohnson-1.jpg">
+                            <p>【6罐装】港版美赞臣 Meadjohson 4段奶粉 900g （3-6岁宝宝）</p>
+                            <p>&#165;
+                                <span>840.00</span>
+                            </p>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="details.html">
+                            <img src="img/meadjohnson-1.jpg">
+                            <p>【6罐装】港版美赞臣 Meadjohson 4段奶粉 900g （3-6岁宝宝）</p>
+                            <p>&#165;
+                                <span>840.00</span>
+                            </p>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="details.html">
+                            <img src="img/meadjohnson-1.jpg">
+                            <p>【6罐装】港版美赞臣 Meadjohson 4段奶粉 900g （3-6岁宝宝）</p>
+                            <p>&#165;
+                                <span>840.00</span>
+                            </p>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="details.html">
+                            <img src="img/meadjohnson-1.jpg">
+                            <p>【6罐装】港版美赞臣 Meadjohson 4段奶粉 900g （3-6岁宝宝）</p>
+                            <p>&#165;
+                                <span>840.00</span>
+                            </p>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="details.html">
+                            <img src="img/meadjohnson-1.jpg">
+                            <p>【6罐装】港版美赞臣 Meadjohson 4段奶粉 900g （3-6岁宝宝）</p>
+                            <p>&#165;
+                                <span>840.00</span>
+                            </p>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="feature.html">
+                            <p>查看更多</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="product-tips">
+            <p>继续拖动 查看图文详情</p>
+        </section>
+        <!--商品介绍长图-->
+        <section class="product-longPic">
+            <img src="img/productLongPic/1.jpg" alt="">
+            <img src="img/productLongPic/2.jpg" alt="">
+            <img src="img/productLongPic/3.jpg" alt="">
+            <img src="img/productLongPic/4.jpg" alt="">
+            <img src="img/productLongPic/5.jpg" alt="">
+            <img src="img/productLongPic/6.jpg" alt="">
+            <img src="img/productLongPic/7.jpg" alt="">
+            <img src="img/productLongPic/8.jpg" alt="">
+            <img src="img/productLongPic/9.jpg" alt="">
+            <img src="img/productLongPic/10.jpg" alt="">
+            <img src="img/productLongPic/11.jpg" alt="">
+            <img src="img/productLongPic/12.jpg" alt="">
+            <img src="img/productLongPic/13.jpg" alt=""></section>
+    </div>
+    <!--可见页 end-->
+</div>
+<script>
+    $(document).ready(function () {
+        //隐藏图片详情
+        $('.product-longPic').hide();
+        //实例化图片滑动
+        var mySwiper = new Swiper('.product-show .swiper-container', {
+            autoplay: 3500,
+            loop: true,
+            pagination: '.swiper-pagination',
+        });
+        //实例化推荐商品
+        var mySwiper1 = new Swiper('.swiper-product', {
+            slidesPerView: 3,
+            spaceBetween: 0,
+        });
+        //拉动查看图片详情
+        var ones = true;
+        $(window).scroll(function () {
+            var scrollTop = $(this).scrollTop();
+            var scrollHeight = $(document).height();
+            var windowHeight = $(this).height();
+            //console.log(ones);
+            if ((scrollTop + windowHeight == scrollHeight) && (ones)) {
+                ones = false;
+                //alert("you are in the bottom");
+                //console.log(ones);
+                $('.product-longPic').show();
+                var longPic_h = ($('.product-longPic').offset() - $('.product-tips').height());
+                $('html, body').delay(800).animate({
+                    //http://www.tuicool.com/articles/JJNZRb
+                    scrollTop: $('.product-longPic').offset().top - 100
+                }, 400, function () {
+                    //$('.product-tips p').html("图文详情");
+                    $('.product-tips').hide("fast", "linear");
+                });
+            }
+        });
+    });
+</script>
+<script>
+    //设置显示的购物车内商品数量
+    setShopCarNum(0);
+    //显示的购物车内商品数量 + 1
+    shopCarNumAdd();
+    //就手收到订单
+    //getOrderMsg(imgURL, second, province);
+    //getOrderMsg("http://www.atool.org/placeholder.png?size=50x50&bg=fff", 10, "黑龙江");
+    //循环测试用
+    //TestgetOrderMsg();
+    //消息提示
+    //baseMsg("加入购物车成功");
+    addShopCarBtn = get("#addShopCar");
+    addShopCaP = get("#addShopCar p:last-child").innerHTML;
+    addShopCarBtn.addEventListener("click", function () {
+        if (addShopCaP == "添加到货提醒") {
+            //数据处理
+            baseMsg(addShopCaP + "成功");
+        }
+        if (addShopCaP == "加入心愿单") {
+            //数据处理
+            baseMsg(addShopCaP + "成功");
+        }
+        if (addShopCaP == "加入购物车") {
+            //数据处理
+            shopcarTurnAround();
+        }
+    })
+    addmyCollectBtn = get(".product-nav-bar a:first-child");
+    myCollectIcon = get(".product-nav-bar a:first-child i");
+    addmyCollectBtn.addEventListener("click", function () {
+        //数据处理
+        //取消收藏
+        if (myCollectIcon.classList.contains("collect-red")) {
+            console.log(myCollectIcon.classList.contains("collect-red"));
+            myCollectIcon.classList.remove("collect-red");
+            myCollectIcon.classList.add("details-collect");
+            baseMsg("取消收藏成功");
+        } else {
+            //添加收藏
+            myCollectIcon.classList.remove("details-collect");
+            myCollectIcon.classList.add("collect-red");
+            baseMsg("添加收藏成功");
+        }
+    })
+</script>
 </body>
 
 </html>

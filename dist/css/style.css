@@ -110,6 +110,10 @@ function
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 .fr {
   float: right;
@@ -239,8 +243,8 @@ iframe {
   height: 1.1443662rem;
   background-color: #fff;
   top: 0;
-  padding-top: 0.14084507rem;
-  padding-bottom: 0.14084507rem;
+  padding-top: 0.1056338rem;
+  padding-bottom: 0.1056338rem;
   border-bottom: 1px solid #b2b2b2;
 }
 .search-bar form,
@@ -331,9 +335,9 @@ iframe {
 .search-keyword-row {
   overflow: hidden;
   /*display: flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
-    align-items: center;*/
+	flex-flow: row wrap;
+	justify-content: space-around;
+	align-items: center;*/
   padding: 0.17605634rem 0;
   width: 100%;
 }
@@ -481,11 +485,11 @@ iframe {
   z-index: 11;
   width: 100%;
   max-width: 640px;
-  height: 1.49647887rem;
+  height: 1.23239437rem;
   background-color: #fff;
   bottom: 0;
-  padding-top: 0.14084507rem;
-  padding-bottom: 0.14084507rem;
+  padding-top: 0.1056338rem;
+  padding-bottom: 0.1056338rem;
   border-top: 1px solid rgba(0, 0, 0, 0.2);
   text-align: center;
 }
@@ -535,7 +539,7 @@ iframe {
   color: #fff;
   font-size: 16px;
   letter-spacing: 1px;
-  line-height: 1.23239437rem;
+  line-height: 0.96830986rem;
 }
 .nav-buttom-bar.no-padding {
   padding: 0;
@@ -569,13 +573,13 @@ iframe {
   font-size: 14px;
 }
 .order-details-b-bar {
-  height: 1.18838028rem;
+  height: 0.92429577rem;
   border: 0;
   background-color: #ebebeb;
 }
 .order-details-b-bar.groupbuy-b-bar {
   padding: 0rem 0.35211268rem;
-  height: 1.49647887rem;
+  height: 1.23239437rem;
   background-color: rgba(235, 235, 235, 0.7);
 }
 .order-details-b-bar.groupbuy-b-bar a {
@@ -669,17 +673,18 @@ iframe {
   z-index: 11;
   width: 100%;
   max-width: 640px;
-  height: 1.32042254rem;
+  height: 1.1443662rem;
   background-color: #fff;
   bottom: 0;
-  border-top: 1px solid #b2b2b2;
+  -webkit-box-shadow: -1px 0 3px 0 #c8c7cc;
+          box-shadow: -1px 0 3px 0 #c8c7cc;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-wrap: row nowrap;
-      -ms-flex-wrap: row nowrap;
-          flex-wrap: row nowrap;
+  -webkit-flex-flow: row nowrap;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
@@ -700,9 +705,9 @@ ul.product-nav-action {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-wrap: row nowrap;
-      -ms-flex-wrap: row nowrap;
-          flex-wrap: row nowrap;
+  -webkit-flex-flow: row nowrap;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
   -webkit-justify-content: space-around;
       -ms-flex-pack: distribute;
           justify-content: space-around;
@@ -713,20 +718,6 @@ ul.product-nav-action {
 }
 ul.product-nav-action li {
   font-size: 0;
-}
-ul.product-nav-action li:nth-child(2) {
-  position: relative;
-}
-ul.product-nav-action li:nth-child(2)::before {
-  content: attr(data-shop-count);
-  position: absolute;
-  z-index: 12;
-  right: 0;
-  top: 5px;
-  font-size: 13px;
-  color: #e9282e;
-  height: 13px;
-  width: 0;
 }
 ul.product-nav-action li a {
   text-align: center;
@@ -752,6 +743,33 @@ ul.product-nav-action li p {
     letter-spacing: 0px;
   }
 }
+ul.product-nav-action li:nth-child(2) a {
+  position: relative;
+}
+ul.product-nav-action li:nth-child(2) a::before {
+  -webkit-text-size-adjust: none;
+  position: absolute;
+  display: block;
+  content: attr(data-shop-count);
+  right: -webkit-calc(-8% - 1px);
+  right: calc(-8% - 1px);
+  top: 1px;
+  height: 16px;
+  width: 15px;
+  font-size: 12px;
+  line-height: 1.4;
+  -webkit-transform: scale(0.95);
+      -ms-transform: scale(0.95);
+          transform: scale(0.95);
+  letter-spacing: -1px;
+  vertical-align: top;
+  padding: 0 1px 0 0;
+  color: #fff;
+  background-color: #e9282e;
+  -webkit-box-shadow: 0 0 0px 1px #ffffff;
+          box-shadow: 0 0 0px 1px #ffffff;
+  border-radius: 50%;
+}
 ul.product-nav-buy {
   display: -webkit-box;
   display: -webkit-flex;
@@ -772,7 +790,7 @@ ul.product-nav-buy {
 ul.product-nav-buy li {
   text-align: center;
   width: 100%;
-  height: 1.32042254rem;
+  height: 1.1443662rem;
 }
 ul.product-nav-buy li a {
   display: -webkit-box;
@@ -793,8 +811,8 @@ ul.product-nav-buy li a {
   height: 100%;
 }
 ul.product-nav-buy li a p {
-  line-height: 0.66021127rem;
-  height: 0.66021127rem;
+  line-height: 0.5721831rem;
+  height: 0.5721831rem;
   width: 100%;
   color: #fff;
   font-size: 17px;
@@ -837,9 +855,9 @@ li[data-shop-count="0"]::before {
   z-index: 11;
   width: 100%;
   max-width: 640px;
-  height: 1.49647887rem;
+  height: 1.23239437rem;
   background-color: #fff;
-  bottom: 1.49647887rem;
+  bottom: 1.23239437rem;
   border-top: 1px solid #b2b2b2;
   padding-left: 0.44014085rem;
   display: -webkit-box;
@@ -888,7 +906,7 @@ li[data-shop-count="0"]::before {
   background-color: #e9282e;
   height: 100%;
   text-align: center;
-  line-height: 1.49647887rem;
+  line-height: 1.23239437rem;
   font-size: 16px;
   font-weight: 500;
   letter-spacing: 2px;
@@ -935,7 +953,7 @@ li[data-shop-count="0"]::before {
   width: 60%;
   height: 100%;
   text-align: center;
-  line-height: 1.49647887rem;
+  line-height: 1.23239437rem;
   padding-right: 1.76056338rem;
 }
 .order-comfirm-bar .order-comfirm-btn {
@@ -943,7 +961,7 @@ li[data-shop-count="0"]::before {
   background-color: #e9282e;
   height: 100%;
   text-align: center;
-  line-height: 1.49647887rem;
+  line-height: 1.23239437rem;
   font-size: 16px;
   font-weight: 500;
   letter-spacing: 2px;
@@ -959,7 +977,7 @@ li[data-shop-count="0"]::before {
   z-index: 11;
   width: 100%;
   max-width: 640px;
-  height: 1.49647887rem;
+  height: 1.23239437rem;
   background-color: #fff;
   padding: 0.08802817rem;
   top: 1.58450704rem;
@@ -1022,7 +1040,7 @@ li[data-shop-count="0"]::before {
   z-index: 11;
   width: 100%;
   max-width: 640px;
-  height: 1.49647887rem;
+  height: 1.23239437rem;
   background-color: #fff;
   height: 1.32042254rem;
   width: 1.32042254rem;
@@ -1100,8 +1118,8 @@ li[data-shop-count="0"]::before {
   color: #000;
 }
 .indexLoadingP {
-  padding-top: 0.14084507rem;
-  padding-bottom: 0.14084507rem;
+  padding-top: 0.1056338rem;
+  padding-bottom: 0.1056338rem;
   text-align: center;
   font-size: 16px;
   letter-spacing: 1px;
@@ -1116,94 +1134,94 @@ i.icon {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   /********************
 
-    首页搜索栏、导航栏icon
+	首页搜索栏、导航栏icon
 
-    ********************/
+	********************/
   /********************
 
-    底部导航栏icon
+	底部导航栏icon
 
-    ********************/
+	********************/
   /********************
 
-    返回顶部icon
+	返回顶部icon
 
-    ********************/
+	********************/
   /********************
 
-    标题栏icon
+	标题栏icon
 
-    ********************/
+	********************/
   /********************
 
-    评论块右指示
+	评论块右指示
 
-    ********************/
+	********************/
   /********************
 
-    商品左下角 收藏 购物车 客服
+	商品左下角 收藏 购物车 客服
 
-    ********************/
+	********************/
   /********************
 
-    购物车 勾选 加 减
+	购物车 勾选 加 减
 
-    ********************/
+	********************/
   /********************
 
-    我的页面  我的收藏 心愿单 到货提醒
+	我的页面  我的收藏 心愿单 到货提醒
 
-    ********************/
+	********************/
   /********************
 
-    我的拼团 全部 拼团成功 拼团中 拼团失败 4个
+	我的拼团 全部 拼团成功 拼团中 拼团失败 4个
 
-    ********************/
+	********************/
   /********************
 
-    我的页面 待付款 待发货 待收货 待评价 4个
+	我的页面 待付款 待发货 待收货 待评价 4个
 
-    ********************/
+	********************/
   /********************
 
-    我的页面  收货地址 我的足迹 优惠券  退货/退款  4个
+	我的页面  收货地址 我的足迹 优惠券  退货/退款  4个
 
-    ********************/
+	********************/
   /********************
 
-    我的页面  客服 个人资料 关于就手 退出登陆 4个
+	我的页面  客服 个人资料 关于就手 退出登陆 4个
 
-    ********************/
+	********************/
   /********************
 
-    QQ 微信
+	QQ 微信
 
-    ********************/
+	********************/
   /********************
 
-    登陆页面 输入框
+	登陆页面 输入框
 
-    ********************/
+	********************/
   /********************
 
-    支付方式 支付宝 通联
+	支付方式 支付宝 通联
 
-    ********************/
+	********************/
   /********************
 
-    订单详情
+	订单详情
 
-    ********************/
+	********************/
   /********************
 
-    发表评价
+	发表评价
 
-    ********************/
+	********************/
   /********************
 
-    五星
+	五星
 
-    ********************/
+	********************/
 }
 i.icon.message {
   background-image: url("../img/icon/message@2x.png");
@@ -1224,9 +1242,8 @@ i.icon.scan {
 }
 i.icon.home {
   background-image: url("../img/icon/home@2x.png");
-  margin-top: 0.04401408rem;
-  width: 0.79225352rem;
-  height: 0.79225352rem;
+  width: 0.70422535rem;
+  height: 0.70422535rem;
 }
 i.icon.home.active {
   background-image: url("../img/icon/home-red@2x.png");
@@ -1236,9 +1253,8 @@ i.icon.home.active + p {
 }
 i.icon.hot {
   background-image: url("../img/icon/hot@2x.png");
-  margin-top: 0.04401408rem;
-  width: 0.79225352rem;
-  height: 0.79225352rem;
+  width: 0.70422535rem;
+  height: 0.70422535rem;
 }
 i.icon.hot.active {
   background-image: url("../img/icon/hot-red@2x.png");
@@ -1248,9 +1264,8 @@ i.icon.hot.active + p {
 }
 i.icon.shopcar {
   background-image: url("../img/icon/shopcar@2x.png");
-  margin-top: 0.04401408rem;
-  width: 0.79225352rem;
-  height: 0.79225352rem;
+  width: 0.70422535rem;
+  height: 0.70422535rem;
 }
 i.icon.shopcar.active {
   background-image: url("../img/icon/shopcar-red@2x.png");
@@ -1260,9 +1275,8 @@ i.icon.shopcar.active + p {
 }
 i.icon.my {
   background-image: url("../img/icon/my@2x.png");
-  margin-top: 0.04401408rem;
-  width: 0.79225352rem;
-  height: 0.79225352rem;
+  width: 0.70422535rem;
+  height: 0.70422535rem;
 }
 i.icon.my.active {
   background-image: url("../img/icon/my-red@2x.png");
@@ -1293,26 +1307,26 @@ i.icon.right {
 i.icon.details-collect {
   background-image: url("../img/icon/details-collect-1.jpg");
   margin-top: 0.04401408rem;
-  width: 0.79225352rem;
-  height: 0.79225352rem;
+  width: 0.70422535rem;
+  height: 0.70422535rem;
 }
 i.icon.collect-red {
   background-image: url("../img/icon/collect-red.png");
   margin-top: 0.04401408rem;
-  width: 0.79225352rem;
-  height: 0.79225352rem;
+  width: 0.70422535rem;
+  height: 0.70422535rem;
 }
 i.icon.details-shopcar {
   background-image: url("../img/icon/details-shopcar-1.jpg");
   margin-top: 0.04401408rem;
-  width: 0.79225352rem;
-  height: 0.79225352rem;
+  width: 0.70422535rem;
+  height: 0.70422535rem;
 }
 i.icon.details-services {
   background-image: url("../img/icon/details-services-1.jpg");
   margin-top: 0.04401408rem;
-  width: 0.79225352rem;
-  height: 0.79225352rem;
+  width: 0.70422535rem;
+  height: 0.70422535rem;
 }
 i.icon.checked {
   background-image: url("../img/icon/checked.png");
@@ -1962,11 +1976,11 @@ section.product-details .product-details-returns {
 }
 section.product-tips {
   background-color: #e6e6e6;
-  height: 1.32042254rem;
+  height: 1.1443662rem;
   text-align: center;
 }
 section.product-tips p {
-  line-height: 1.32042254rem;
+  line-height: 1.1443662rem;
   color: #5a5a5a;
   font-size: 14px;
 }
@@ -2129,34 +2143,10 @@ section.product-longPic img {
 .user-info-simple {
   background-color: #fff;
   padding: 0.35211268rem;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-flow: row nowrap;
-      -ms-flex-flow: row nowrap;
-          flex-flow: row nowrap;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: stretch;
-  -webkit-align-items: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
-}
-.user-info-simple .user-header-imgBox {
-  margin-left: 0.35211268rem;
-  width: 1.84859155rem;
-  height: 1.84859155rem;
-}
-.user-info-simple .user-header-imgBox img {
-  width: 100%;
-  border-radius: 50%;
-}
-.user-info-simple .user-name-custom {
-  width: 60%;
-  font-size: 16px;
+  background-image: url("../img/icon/userbg.jpg");
+  background-size: 120%;
+  background-repeat: no-repeat;
+  background-position: center center;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2164,20 +2154,38 @@ section.product-longPic img {
   -webkit-flex-flow: column nowrap;
       -ms-flex-flow: column nowrap;
           flex-flow: column nowrap;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  margin-left: 0.35211268rem;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-shadow: 0px 0px 10px #aaa inset;
+          box-shadow: 0px 0px 10px #aaa inset;
 }
-.user-info-simple .user-name-custom p {
+.user-info-simple .user-header-imgBox {
+  margin: 0.17605634rem 0;
+  width: 1.49647887rem;
+  height: 1.49647887rem;
+}
+.user-info-simple .user-header-imgBox img {
+  width: 100%;
+  border-radius: 50%;
+}
+.user-name-custom {
+  font-size: 14px;
+  text-align: center;
+}
+.user-name-custom p {
   width: 100%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.user-info-simple .user-loginBox {
-  width: 75%;
+.user-loginBox {
+  width: 50%;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2193,9 +2201,23 @@ section.product-longPic img {
       -ms-flex-align: center;
           align-items: center;
 }
-.user-info-simple .user-loginBox a.button {
-  background-color: #e9282e;
-  font-size: 16px;
+.user-loginBox a {
+  position: relative;
+  width: 50%;
+  text-align: center;
+  color: #fff;
+}
+.user-loginBox a:first-child:after {
+  content: '';
+  position: absolute;
+  display: block;
+  top: 13%;
+  right: 0;
+  width: 0.03521127rem;
+  height: 80%;
+  background-color: #fff;
+  -webkit-box-shadow: 0 0 2px 0 #ddd;
+          box-shadow: 0 0 2px 0 #ddd;
 }
 /****************
 
@@ -2205,21 +2227,21 @@ section.product-longPic img {
 section.user-row {
   background-color: #fff;
   padding: 0.35211268rem;
-  margin-top: 0.04401408rem;
+  margin-top: 0.03521127rem;
   padding-top: 0.17605634rem;
   padding-bottom: 0.17605634rem;
   /****************
 
-    我的订单 
+	我的订单
 
-    ****************/
+	****************/
 }
 section.user-row.pt-60 {
   padding-top: 0.52816901rem;
 }
 section.user-row i {
   margin-top: 0.08802817rem;
-  margin-bottom: 0.17605634rem;
+  margin-bottom: 0.11443662rem;
 }
 section.user-row ul {
   display: -webkit-box;
@@ -2242,6 +2264,9 @@ section.user-row ul li {
   position: relative;
   width: 25%;
 }
+section.user-row.no-mart {
+  margin: 0;
+}
 section.user-row.my-order {
   display: -webkit-box;
   display: -webkit-flex;
@@ -2260,9 +2285,9 @@ section.user-row.my-order {
           align-items: center;
   /****************
 
-        查看全部订单
+		查看全部订单
 
-        ****************/
+		****************/
 }
 section.user-row.my-order p {
   font-size: 14px;
@@ -2315,9 +2340,9 @@ section.user-row.my-order .look-my-order i {
   position: absolute;
   display: block;
   content: attr(data-shop-count);
-  right: -webkit-calc(25% - 4px);
-  right: calc(25% - 4px);
-  top: -1px;
+  right: -webkit-calc(28% - 4px);
+  right: calc(28% - 4px);
+  top: 1px;
   height: 16px;
   width: 15px;
   font-size: 12px;
@@ -2336,8 +2361,8 @@ section.user-row.my-order .look-my-order i {
 }
 @media screen and (min-width: 414px) {
   .has-shop-count i::before {
-    right: -webkit-calc(28% - 4px);
-    right: calc(28% - 4px);
+    right: -webkit-calc(29% - 4px);
+    right: calc(29% - 4px);
   }
 }
 /****************
@@ -2351,8 +2376,8 @@ section.my-center-header-name {
 }
 section.my-center-header-name .my-center-header-imgBox {
   display: inline-block;
-  width: 1.84859155rem;
-  height: 1.84859155rem;
+  width: 1.49647887rem;
+  height: 1.49647887rem;
   margin-bottom: 0.17605634rem;
 }
 section.my-center-header-name .my-center-header-imgBox img {
@@ -2453,6 +2478,16 @@ login-sign-wrapper
   font-size: 14px;
   letter-spacing: 1px;
 }
+.login-sign-wrapper.sign section:nth-of-type(1) button.disabled,
+.login-sign-wrapper.sign section:nth-of-type(1) button[disabled] {
+  pointer-events: none;
+  border-color: #8b8b8b !important;
+  color: #8b8b8b !important;
+  cursor: not-allowed !important;
+  filter: alpha(opacity=65);
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
 .login-sign-wrapper.sign section:nth-of-type(1) input {
   width: 200%;
 }
@@ -2512,7 +2547,6 @@ login-sign-wrapper
   width: 80%;
   background-color: transparent;
   font-size: 15px;
-  line-height: 1.65;
   line-height: normal;
 }
 .login-sign-wrapper section.other-way-login {
@@ -3856,7 +3890,7 @@ button.half-btn {
 .add-comment-navbar .add-comment-sent {
   width: 40%;
   height: 100%;
-  line-height: 1.49647887rem;
+  line-height: 1.23239437rem;
   background-color: #e9282e;
   color: #fff;
   font-size: 18px;
@@ -4533,7 +4567,7 @@ textarea {
 .wrapper {
   width: 100%;
   height: 100%;
-  background-color: #f2f2f2;
+  background-color: #f7f7f7;
   margin: 0 auto;
   max-width: 640px;
   padding-top: 0.00880282rem;
@@ -4701,6 +4735,7 @@ button {
 }
 button[disabled],
 button.disabled {
+  pointer-events: none;
   background-color: #8b8b8b;
   cursor: not-allowed;
   filter: alpha(opacity=65);
@@ -5228,13 +5263,13 @@ Swiper 分页指示器颜色
   width: 100%;
   max-width: 640px;
   margin-top: 2.21830986rem;
-  padding-bottom: 1.49647887rem;
-  background-color: #f2f2f2;
+  padding-bottom: 1.23239437rem;
+  background-color: #f7f7f7;
   overflow: hidden;
 }
 .main-wrapper.title-bar {
   margin-top: 1.32042254rem;
-  padding-bottom: 1.49647887rem;
+  padding-bottom: 1.23239437rem;
 }
 .main-wrapper.title-bar.h-100-white {
   background-color: #fff;
@@ -5245,7 +5280,7 @@ Swiper 分页指示器颜色
 }
 .main-wrapper.h-title-bar {
   margin-top: 2.37676056rem;
-  padding-bottom: 1.49647887rem;
+  padding-bottom: 1.23239437rem;
 }
 .main-wrapper.h-title-bar.h-100-white {
   background-color: #fff;
@@ -5258,7 +5293,7 @@ Swiper 分页指示器颜色
   padding-bottom: 0rem;
 }
 .main-wrapper.shopcar {
-  padding-bottom: 2.99295775rem;
+  padding-bottom: 2.46478873rem;
 }
 .main-wrapper.my-page {
   background-color: #f7f7f7;
@@ -5297,7 +5332,7 @@ Swiper 分页指示器颜色
   height: 100%;
 }
 .product-wrapper {
-  background-color: #f2f2f2;
+  background-color: #f7f7f7;
 }
 /************************
 

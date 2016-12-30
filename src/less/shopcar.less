@@ -9,11 +9,10 @@
 ****************/
 
 .shopcar-door {
-    &:first-child {
-        margin-top: 0;
-    }
+	&:first-child {
+		margin-top: 0;
+	}
 }
-
 
 /****************
 
@@ -22,32 +21,31 @@
 ****************/
 
 .door-name {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    flex-flow: row nowrap;
-    //侧轴居中
-    align-items: center;
-    justify-content: flex-start;
-    padding: 0 unit(@shopcar-left-right-blank/@base-px-2-rem, rem);
-    >span {
-        // height: unit( @shopcar-door-height/@base-px-2-rem, rem);
-        // line-height: unit( @shopcar-door-height/@base-px-2-rem, rem);
-        .make-line-and-height-p(@shopcar-door-height);
-        font-size: 16px;
-    }
-    .shopcar-check-icon {
-        font-size: 0;
-        margin-right: unit(45/@base-px-2-rem, rem);
-        width: unit(@shopcar-check-icon/@base-px-2-rem, rem);
-        height: unit(@shopcar-check-icon/@base-px-2-rem, rem);
-        i {
-            // margin-top: unit(80/@base-px-2-rem, rem);
-            // margin-right: unit(45/@base-px-2-rem, rem);
-        }
-    }
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	flex-flow: row nowrap;
+	//侧轴居中
+	align-items: center;
+	justify-content: flex-start;
+	padding: 0 unit(@shopcar-left-right-blank/@base-px-2-rem, rem);
+	> span {
+		// height: unit( @shopcar-door-height/@base-px-2-rem, rem);
+		// line-height: unit( @shopcar-door-height/@base-px-2-rem, rem);
+		.make-line-and-height-p(@shopcar-door-height);
+		font-size: 16px;
+	}
+	.shopcar-check-icon {
+		font-size: 0;
+		margin-right: unit(45/@base-px-2-rem, rem);
+		width: unit(@shopcar-check-icon/@base-px-2-rem, rem);
+		height: unit(@shopcar-check-icon/@base-px-2-rem, rem);
+		i {
+			// margin-top: unit(80/@base-px-2-rem, rem);
+			// margin-right: unit(45/@base-px-2-rem, rem);
+		}
+	}
 }
-
 
 /****************
 
@@ -56,16 +54,15 @@
 ****************/
 
 .shopcar-list {
-    padding: unit(@shopcar-left-right-blank/@base-px-2-rem, rem);
-    border-top: 1px solid @shopcar-border-color;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    flex-flow: row nowrap;
-    //两边对齐
-    justify-content: space-between;
+	padding: unit(@shopcar-left-right-blank/@base-px-2-rem, rem);
+	border-top: 1px solid @shopcar-border-color;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	flex-flow: row nowrap;
+	//两边对齐
+	justify-content: space-between;
 }
-
 
 /****************
 
@@ -74,38 +71,37 @@
 ****************/
 
 .shopcar-list-left {
-    width: 60%;
-    font-size: 0;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    flex-flow: row nowrap;
-    //侧轴居中
-    align-items: center;
-    justify-content: flex-start;
-    //check icon 容器
-    .shopcar-list-icon, .shopcar-check-icon {
-        font-size: 0;
-        margin-right: unit(45/@base-px-2-rem, rem);
-        width: unit(@shopcar-check-icon/@base-px-2-rem, rem);
-        height: unit(@shopcar-check-icon/@base-px-2-rem, rem);
-        i {
-            // margin-top: unit(80/@base-px-2-rem, rem);
-            // margin-right: unit(45/@base-px-2-rem, rem);
-        }
-    }
-    .shopcar-list-img {
-        font-size: 0;
-        height: unit(300/@base-px-2-rem, rem);
-        width: unit(300/@base-px-2-rem, rem);
-        img {
-            width: 100%;
-            height: unit(300/@base-px-2-rem, rem);
-            width: unit(300/@base-px-2-rem, rem);
-        }
-    }
+	width: 60%;
+	font-size: 0;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	flex-flow: row nowrap;
+	//侧轴居中
+	align-items: center;
+	justify-content: flex-start;
+	//check icon 容器
+	.shopcar-list-icon, .shopcar-check-icon {
+		font-size: 0;
+		margin-right: unit(45/@base-px-2-rem, rem);
+		width: unit(@shopcar-check-icon/@base-px-2-rem, rem);
+		height: unit(@shopcar-check-icon/@base-px-2-rem, rem);
+		i {
+			// margin-top: unit(80/@base-px-2-rem, rem);
+			// margin-right: unit(45/@base-px-2-rem, rem);
+		}
+	}
+	.shopcar-list-img {
+		font-size: 0;
+		height: unit(300/@base-px-2-rem, rem);
+		width: unit(300/@base-px-2-rem, rem);
+		img {
+			width: 100%;
+			height: unit(300/@base-px-2-rem, rem);
+			width: unit(300/@base-px-2-rem, rem);
+		}
+	}
 }
-
 
 /****************
 
@@ -114,25 +110,24 @@
 ****************/
 
 .shopcar-list-right {
-    font-size: 13px;
-    margin-left: unit(30/@base-px-2-rem, rem);
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    flex-flow: row wrap;
-    width: 100%;
-    //justify-content: space-between;
-    p {
-        //置顶
-        align-self: flex-start;
-    }
-    .shopcar-product-price-count {
-        width: 100%;
-        //置底
-        align-self: flex-end;
-    }
+	font-size: 13px;
+	margin-left: unit(30/@base-px-2-rem, rem);
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	flex-flow: row wrap;
+	width: 100%;
+	//justify-content: space-between;
+	p {
+		//置顶
+		align-self: flex-start;
+	}
+	.shopcar-product-price-count {
+		width: 100%;
+		//置底
+		align-self: flex-end;
+	}
 }
-
 
 /****************
 
@@ -141,55 +136,54 @@
 ****************/
 
 .wrapper {
-    input[type="checkbox"] {
-        display: none;
-    }
-    input:checked {
-        & ~ label i {
-            background-image: url("@{icon-address}/checked.png");
-        }
-    }
-    label {
-        display: block;
-    }
+	input[type="checkbox"] {
+		display: none;
+	}
+	input:checked {
+		& ~ label i {
+			background-image: url("@{icon-address}/checked.png");
+		}
+	}
+	label {
+		display: block;
+	}
 }
 
 .shopcar-product-count {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    font-size: 16px;
-    > span {
-        padding-left: unit(80/@base-px-2-rem, rem);
-        align-self: center;
-        &:before {
-            content: "¥";
-        }
-    }
-    .shopcar-product-count-c {
-        //line-height: unit(@shopcar-add-icon/@base-px-2-rem, rem);
-        //font-size: 0;
-        align-self: center;
-        span {
-            float: left;
-            line-height: unit(@shopcar-add-icon/@base-px-2-rem, rem);
-            //height: unit(@shopcar-add-icon/@base-px-2-rem, rem);
-            padding: unit(0/@base-px-2-rem, rem) 0;
-            // font-size: 16px;
-        }
-        i {
-            float: left;
-            box-sizing: content-box;
-            padding: unit(0/@base-px-2-rem, rem) unit(30/@base-px-2-rem, rem);
-            //vertical-align: middle;
-            //line-height: unit(@shopcar-add-icon/@base-px-2-rem, rem);
-        }
-    }
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	font-size: 16px;
+	> span {
+		padding-left: unit(80/@base-px-2-rem, rem);
+		align-self: center;
+		&:before {
+			content: "¥";
+		}
+	}
+	.shopcar-product-count-c {
+		//line-height: unit(@shopcar-add-icon/@base-px-2-rem, rem);
+		//font-size: 0;
+		align-self: center;
+		span {
+			float: left;
+			line-height: unit(@shopcar-add-icon/@base-px-2-rem, rem);
+			//height: unit(@shopcar-add-icon/@base-px-2-rem, rem);
+			padding: unit(0/@base-px-2-rem, rem) 0;
+			// font-size: 16px;
+		}
+		i {
+			float: left;
+			box-sizing: content-box;
+			padding: unit(0/@base-px-2-rem, rem) unit(30/@base-px-2-rem, rem);
+			//vertical-align: middle;
+			//line-height: unit(@shopcar-add-icon/@base-px-2-rem, rem);
+		}
+	}
 }
-
 
 /****************
 
@@ -198,20 +192,20 @@
 ****************/
 
 .shopcar-empty {
-    background-color: #fff;
-    text-align: center;
-    padding: unit(100/@base-px-2-rem, rem) 0;
-    p {
-        font-size: 18px;
-        padding-bottom: unit(100/@base-px-2-rem, rem);
-    }
-    a {
-        display: inline;
-        padding: unit(10/@base-px-2-rem, rem);
-    }
-    span {
-        font-size: 14px;
-        padding: unit(15/@base-px-2-rem, rem) unit(70/@base-px-2-rem, rem);
-        background-color: @comment-select-bt-base-bg;
-    }
+	background-color: #fff;
+	text-align: center;
+	padding: unit(100/@base-px-2-rem, rem) 0;
+	p {
+		font-size: 18px;
+		padding-bottom: unit(100/@base-px-2-rem, rem);
+	}
+	a {
+		display: inline;
+		padding: unit(10/@base-px-2-rem, rem);
+	}
+	span {
+		font-size: 14px;
+		padding: unit(15/@base-px-2-rem, rem) unit(70/@base-px-2-rem, rem);
+		background-color: @comment-select-bt-base-bg;
+	}
 }

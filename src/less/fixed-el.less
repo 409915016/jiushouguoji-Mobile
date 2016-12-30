@@ -9,25 +9,24 @@
 ************************/
 
 #back-to-top {
-    position: fixed;
-    z-index: @z-index-nav-search-bar;
-    display: block;
-    box-sizing: content-box;
-    right: unit(100/@base-px-2-rem, rem);
-    //http://sale.jd.com/act/vxSIhCHBKP1.html?qz_gdt=yyiowvy2aaafg63wuciq&utm_campaign=t_232310336_1&utm_term=yyiowvy2aaafg63wuciq&utm_medium=jzt-zhitou&utm_source=jdzt_refer_null#
-    //left: 50%;
-    //margin-left: 33vw;
-    //margin-left: unit(380/@base-px-2-rem, rem);.
-    bottom: unit((@nav-bar-height + 100)/@base-px-2-rem, rem);
-    padding: unit(10/@base-px-2-rem, rem);
-    width: unit(@go-to-top-icon-size/@base-px-2-rem, rem);
-    height: unit(@go-to-top-icon-size/@base-px-2-rem, rem);
-    //fix the ipad high resolution?
-    @media screen and (min-width: 768px) {
-        right: unit(270/@base-px-2-rem, rem);
-    }
+	position: fixed;
+	z-index: @z-index-nav-search-bar;
+	display: block;
+	box-sizing: content-box;
+	right: unit(100/@base-px-2-rem, rem);
+	//http://sale.jd.com/act/vxSIhCHBKP1.html?qz_gdt=yyiowvy2aaafg63wuciq&utm_campaign=t_232310336_1&utm_term=yyiowvy2aaafg63wuciq&utm_medium=jzt-zhitou&utm_source=jdzt_refer_null#
+	//left: 50%;
+	//margin-left: 33vw;
+	//margin-left: unit(380/@base-px-2-rem, rem);.
+	bottom: unit((@nav-bar-height + 100)/@base-px-2-rem, rem);
+	padding: unit(10/@base-px-2-rem, rem);
+	width: unit(@go-to-top-icon-size/@base-px-2-rem, rem);
+	height: unit(@go-to-top-icon-size/@base-px-2-rem, rem);
+	//fix the ipad high resolution?
+	@media screen and (min-width: 768px) {
+		right: unit(270/@base-px-2-rem, rem);
+	}
 }
-
 
 /************************
 
@@ -36,159 +35,158 @@
 ************************/
 
 .search-bar {
-    // position: fixed;
-    // z-index: @z-index-nav-search-bar;
-    // width: 100%;
-    // max-width: @max-width;
-    // height: unit(@search-bar-height/@base-px-2-rem, rem);
-    // background-color: #fff;
-    .make-fixed-bar(@search-bar-height);
-    top: 0;
-    padding-top: unit(@search-bar-blank/@base-px-2-rem, rem);
-    padding-bottom: unit(@search-bar-blank/@base-px-2-rem, rem);
-    border-bottom: 1px solid @bar-border-color;
-    form, div.fl {
-        display: inline-block;
-        width: 72%;
-        &.flex {
-            display: flex;
-            flex-flow: row nowrap;
-            justify-content: space-around;
-            align-items: center;
-        }
-    }
-    .form-group {
-        display: inline-block;
-        vertical-align: initial;
-        width: 100%;
-        border-radius: 5px;
-        background-color: @search-area-color;
-        //padding-top should be equal to span.vertical-line height
-        padding-top: unit(@search-area-blank/@base-px-2-rem, rem);
-        //padding-bottom: unit(@search-area-blank/@base-px-2-rem, rem);
-        height: unit(@search-area-height/@base-px-2-rem, rem);
-        span.vertical-line {
-            border-left: 1px solid #555;
-            //same to input height minus 15 maybe
-            height: unit( (@search-input-height - 22) /@base-px-2-rem, rem);
-            //margin-top should be equal to form-group padding-top
-            margin-top: unit(10/@base-px-2-rem, rem);
-        }
-        input {
-            background-color: @search-area-color;
-            padding: 0;
-            float: left;
-            margin-left: unit(20/@base-px-2-rem, rem);
-            height: unit(@search-input-height/@base-px-2-rem, rem);
-            line-height: unit(@search-input-height/@base-px-2-rem, rem);
-            width: 75%;
-            letter-spacing: 1px;
-            font-size: 14px;
-            @media screen and (min-width: 768px) {
-                font-size: 20px;
-                letter-spacing: 2px;
-            }
-        }
-    }
-    &.flex {
-        display: flex;
-        flex-flow: row nowrap;
-        justify-content: space-around;
-        align-items: center;
-        .search-bar-submitBtn {
-            font-size: 16px;
-            display: block;
-            padding: unit(20/@base-px-2-rem, rem);
-        }
-        .form-group {
-            //修复弹出搜索页的搜索框样式
-            padding-top: unit((@search-area-blank+5)/@base-px-2-rem, rem);
-        }
-    }
+	// position: fixed;
+	// z-index: @z-index-nav-search-bar;
+	// width: 100%;
+	// max-width: @max-width;
+	// height: unit(@search-bar-height/@base-px-2-rem, rem);
+	// background-color: #fff;
+	.make-fixed-bar(@search-bar-height);
+	top: 0;
+	padding-top: unit(@search-bar-blank/@base-px-2-rem, rem);
+	padding-bottom: unit(@search-bar-blank/@base-px-2-rem, rem);
+	border-bottom: 1px solid @bar-border-color;
+	form, div.fl {
+		display: inline-block;
+		width: 72%;
+		&.flex {
+			display: flex;
+			flex-flow: row nowrap;
+			justify-content: space-around;
+			align-items: center;
+		}
+	}
+	.form-group {
+		display: inline-block;
+		vertical-align: initial;
+		width: 100%;
+		border-radius: 5px;
+		background-color: @search-area-color;
+		//padding-top should be equal to span.vertical-line height
+		padding-top: unit(@search-area-blank/@base-px-2-rem, rem);
+		//padding-bottom: unit(@search-area-blank/@base-px-2-rem, rem);
+		height: unit(@search-area-height/@base-px-2-rem, rem);
+		span.vertical-line {
+			border-left: 1px solid #555;
+			//same to input height minus 15 maybe
+			height: unit((@search-input-height - 22) /@base-px-2-rem, rem);
+			//margin-top should be equal to form-group padding-top
+			margin-top: unit(10/@base-px-2-rem, rem);
+		}
+		input {
+			background-color: @search-area-color;
+			padding: 0;
+			float: left;
+			margin-left: unit(20/@base-px-2-rem, rem);
+			height: unit(@search-input-height/@base-px-2-rem, rem);
+			line-height: unit(@search-input-height/@base-px-2-rem, rem);
+			width: 75%;
+			letter-spacing: 1px;
+			font-size: 14px;
+			@media screen and (min-width: 768px) {
+				font-size: 20px;
+				letter-spacing: 2px;
+			}
+		}
+	}
+	&.flex {
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: space-around;
+		align-items: center;
+		.search-bar-submitBtn {
+			font-size: 16px;
+			display: block;
+			padding: unit(20/@base-px-2-rem, rem);
+		}
+		.form-group {
+			//修复弹出搜索页的搜索框样式
+			padding-top: unit((@search-area-blank+5)/@base-px-2-rem, rem);
+		}
+	}
 }
 
 .search-bar-back {
-    padding: unit(20/@base-px-2-rem, rem) unit(20/@base-px-2-rem, rem);
+	padding: unit(20/@base-px-2-rem, rem) unit(20/@base-px-2-rem, rem);
 }
 
 //搜索页内
 .search-keyword-wrapper {
-    margin-top: unit((@base-nav-bar-height)/@base-px-2-rem, rem);
-    padding: 0 unit(40/@base-px-2-rem, rem);
-    //修复小屏幕容器不完全白底的问题？
-    height: 100%;
+	margin-top: unit((@base-nav-bar-height)/@base-px-2-rem, rem);
+	padding: 0 unit(40/@base-px-2-rem, rem);
+	//修复小屏幕容器不完全白底的问题？
+	height: 100%;
 }
 
 .search-keyword-row {
-    //修复 justify-content: space-between; 不两边对齐的问题
-    //取消该元素的 content: none;
-    overflow: hidden;
-    &:after {
-        content: none;
-    }
-    &:before {
-        content: none;
-    }
-    /*display: flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
-    align-items: center;*/
-    padding: unit(20/@base-px-2-rem, rem) 0;
-    width: 100%;
-    &:first-child {
-        justify-content: flex-start;
-        > a {
-            padding: unit(10/@base-px-2-rem, rem) unit(20/@base-px-2-rem, rem);
-            border: 1px solid #333;
-            .make-border-radius(10px);
-            margin-bottom: 0;
-        }
-    }
-    > a {
-        float: left;
-        padding: unit(10/@base-px-2-rem, rem) unit(20/@base-px-2-rem, rem);
-        margin-bottom: unit(20/@base-px-2-rem, rem);
-        margin-left: 0;
-        margin-right: unit(35/@base-px-2-rem, rem);
-        margin-bottom: unit(50/@base-px-2-rem, rem);
-        border: 1px solid @border-color-gray-very-light;
-        .make-border-radius(10px);
-    }
+	//修复 justify-content: space-between; 不两边对齐的问题
+	//取消该元素的 content: none;
+	overflow: hidden;
+	&:after {
+		content: none;
+	}
+	&:before {
+		content: none;
+	}
+	/*display: flex;
+	flex-flow: row wrap;
+	justify-content: space-around;
+	align-items: center;*/
+	padding: unit(20/@base-px-2-rem, rem) 0;
+	width: 100%;
+	&:first-child {
+		justify-content: flex-start;
+		> a {
+			padding: unit(10/@base-px-2-rem, rem) unit(20/@base-px-2-rem, rem);
+			border: 1px solid #333;
+			.make-border-radius(10px);
+			margin-bottom: 0;
+		}
+	}
+	> a {
+		float: left;
+		padding: unit(10/@base-px-2-rem, rem) unit(20/@base-px-2-rem, rem);
+		margin-bottom: unit(20/@base-px-2-rem, rem);
+		margin-left: 0;
+		margin-right: unit(35/@base-px-2-rem, rem);
+		margin-bottom: unit(50/@base-px-2-rem, rem);
+		border: 1px solid @border-color-gray-very-light;
+		.make-border-radius(10px);
+	}
 }
 
 .search-bar-menu {
-    .make-fixed-bar(@search-bar-height);
-    width: unit(250/@base-px-2-rem, rem);
-    height: 100%;
-    //height: unit(335/@base-px-2-rem, rem);
-    //background-color: #fff;
-    position: absolute;
-    z-index: 11;
-    top: unit((@search-bar-height + 1) /@base-px-2-rem, rem);
-    left: unit(50/@base-px-2-rem, rem);
-    display: none;
-    ul {
-        border: 1px solid @text-gray;
-        border-radius: 8px;
-        border-top-left-radius: 8px;
-        border-top-right-radius: 8px;
-        border-bottom-left-radius: 8px;
-        border-bottom-right-radius: 8px;
-        background-color: #fff;
-    }
-    li {
-        text-align: center;
-        border-bottom: 1px solid @text-gray;
-        &:last-child {
-            border-bottom: none;
-        }
-        a {
-            font-size: 14px;
-            padding: unit(30/@base-px-2-rem, rem) 0;
-        }
-    }
+	.make-fixed-bar(@search-bar-height);
+	width: unit(250/@base-px-2-rem, rem);
+	height: 100%;
+	//height: unit(335/@base-px-2-rem, rem);
+	//background-color: #fff;
+	position: absolute;
+	z-index: 11;
+	top: unit((@search-bar-height + 1) /@base-px-2-rem, rem);
+	left: unit(50/@base-px-2-rem, rem);
+	display: none;
+	ul {
+		border: 1px solid @text-gray;
+		border-radius: 8px;
+		border-top-left-radius: 8px;
+		border-top-right-radius: 8px;
+		border-bottom-left-radius: 8px;
+		border-bottom-right-radius: 8px;
+		background-color: #fff;
+	}
+	li {
+		text-align: center;
+		border-bottom: 1px solid @text-gray;
+		&:last-child {
+			border-bottom: none;
+		}
+		a {
+			font-size: 14px;
+			padding: unit(30/@base-px-2-rem, rem) 0;
+		}
+	}
 }
-
 
 /************************
 
@@ -197,63 +195,62 @@
 ************************/
 
 .nav-bar {
-    position: fixed;
-    //z-index: @z-index-nav-search-bar - 1;
-    width: 100%;
-    max-width: @max-width;
-    height: unit(@nav-bar-height/@base-px-2-rem, rem);
-    background-color: #fff;
-    .make-fixed-bar(@nav-bar-height);
-    //修正遮盖弹出菜单
-    z-index: 10;
-    //search bar in his head
-    top: unit(@search-bar-height/@base-px-2-rem, rem);
-    //nav bar ,no padding in this block.
-    //padding-top: unit(@nav-bar-blank/@base-px-2-rem, rem);
-    text-align: center;
-    //text-align: justify;
-    &.on-base-title {
-        top: unit(@base-nav-bar-height/@base-px-2-rem, rem);
-        ul {
-            display: flex;
-            flex-flow: row nowrap;
-            justify-content: space-around;
-            align-items: center;
-        }
-    }
-    ul {
-        display: flex;
-        flex-flow: row nowrap;
-        justify-content: space-around;
-        align-items: center;
-        padding: 0 unit((@base-pd-tb/2)/@base-px-2-rem, rem);
-        li {
-            &.active {
-                a {
-                    color: red;
-                    border-bottom: 1px solid #333;
-                }
-            }
-            a {
-                display: block;
-                //equal to nav-bar height
-                //line-height: unit(@nav-bar-height  /@base-px-2-rem, rem);
-                //height: unit(@nav-bar-height  /@base-px-2-rem, rem);
-                .make-line-and-height-p(@nav-bar-height);
-                padding: 0 unit((@nav-bar-link-padding/3)/@base-px-2-rem, rem);
-                //在首页中加载后用SJ设置为14px
-                //修复安卓微信加载导航文字过大的问题
-                font-size: 14px;
-                color: @nav-bar-link-color;
-                // @media screen and (min-width: 768px) {
-                //     font-size: 20px;
-                //     letter-spacing: 2px;
-                // }
-            }
-        }
-    }
+	position: fixed;
+	//z-index: @z-index-nav-search-bar - 1;
+	width: 100%;
+	max-width: @max-width;
+	height: unit(@nav-bar-height/@base-px-2-rem, rem);
+	background-color: #fff;
+	.make-fixed-bar(@nav-bar-height);
+	//修正遮盖弹出菜单
+	z-index: 10;
+	//search bar in his head
+	top: unit(@search-bar-height/@base-px-2-rem, rem);
+	//nav bar ,no padding in this block.
+	//padding-top: unit(@nav-bar-blank/@base-px-2-rem, rem);
+	text-align: center;
+	//text-align: justify;
+	&.on-base-title {
+		top: unit(@base-nav-bar-height/@base-px-2-rem, rem);
+		ul {
+			display: flex;
+			flex-flow: row nowrap;
+			justify-content: space-around;
+			align-items: center;
+		}
+	}
+	ul {
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: space-around;
+		align-items: center;
+		padding: 0 unit((@base-pd-tb/2)/@base-px-2-rem, rem);
+		li {
+			&.active {
+				a {
+					color: red;
+					border-bottom: 1px solid #333;
+				}
+			}
+			a {
+				display: block;
+				//equal to nav-bar height
+				//line-height: unit(@nav-bar-height  /@base-px-2-rem, rem);
+				//height: unit(@nav-bar-height  /@base-px-2-rem, rem);
+				.make-line-and-height-p(@nav-bar-height);
+				padding: 0 unit((@nav-bar-link-padding/3)/@base-px-2-rem, rem);
+				//在首页中加载后用SJ设置为14px
+				//修复安卓微信加载导航文字过大的问题
+				font-size: 14px;
+				color: @nav-bar-link-color;
+				// @media screen and (min-width: 768px) {
+				//     font-size: 20px;
+				//     letter-spacing: 2px;
+				// }
+			}
+		}
+	}
 }
-
 
 /************************
 
@@ -262,112 +259,111 @@
 ************************/
 
 .nav-buttom-bar {
-    // position: fixed;
-    // width: 100%;
-    // max-width: @max-width;
-    // height: unit(@nav-buttom-bar-height/@base-px-2-rem, rem);
-    // z-index: @z-index-nav-search-bar;
-    // background-color: #fff;
-    .make-fixed-bar(@nav-buttom-bar-height);
-    bottom: 0;
-    padding-top: unit(@search-bar-blank/@base-px-2-rem, rem);
-    padding-bottom: unit(@search-bar-blank/@base-px-2-rem, rem);
-    border-top: 1px solid rgba(0, 0, 0, 0.2);
-    text-align: center;
-    ul {
-        //display: block;
-        display: flex;
-        flex-flow: row nowrap;
-        justify-content: space-around;
-        align-items: center;
-        padding: 0 unit(@base-pd-tb/@base-px-2-rem, rem);
-        li {
-            //display: inline-block;
-            text-align: center;
-            width: 25%;
-            a {
-                display: block;
-                &.active {
-                    color: red;
-                }
-            }
-            p {
-                //test value line-height
-                line-height: unit(25/@base-px-2-rem, rem);
-                font-size: 12px;
-                @media screen and (min-width: 768px) {
-                    font-size: 20px;
-                    letter-spacing: 2px;
-                }
-            }
-        }
-    }
-    &.red-btn {
-        background-color: @red;
-        border-top: 0;
-        > a {
-            display: block;
-            color: #fff;
-            font-size: 16px;
-            letter-spacing: 1px;
-            //height: unit( @nav-buttom-bar-height/@base-px-2-rem, rem);
-            line-height: unit(( @nav-buttom-bar-height - 30)/@base-px-2-rem, rem);
-        }
-    }
-    &.no-padding {
-        padding: 0;
-    }
-    //订单详情下 的操作按钮
-    .nav-btn-wrapper {
-        display: flex;
-        flex-flow: row nowrap;
-        justify-content: flex-end;
-        align-items: center;
-        height: 100%;
-        > a {
-            height: 100%;
-            //height: unit( @nav-buttom-bar-height/@base-px-2-rem, rem);
-            margin-left: unit(50/@base-px-2-rem, rem);
-            background-color: @red;
-            width: 25%;
-            padding: unit(40/@base-px-2-rem, rem) unit(40/@base-px-2-rem, rem);
-            border-radius: 5px;
-            color: #fff;
-            font-size: 14px;
-        }
-    }
+	// position: fixed;
+	// width: 100%;
+	// max-width: @max-width;
+	// height: unit(@nav-buttom-bar-height/@base-px-2-rem, rem);
+	// z-index: @z-index-nav-search-bar;
+	// background-color: #fff;
+	.make-fixed-bar(@nav-buttom-bar-height);
+	bottom: 0;
+	padding-top: unit(@search-bar-blank/@base-px-2-rem, rem);
+	padding-bottom: unit(@search-bar-blank/@base-px-2-rem, rem);
+	border-top: 1px solid rgba(0, 0, 0, 0.2);
+	text-align: center;
+	ul {
+		//display: block;
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: space-around;
+		align-items: center;
+		padding: 0 unit(@base-pd-tb/@base-px-2-rem, rem);
+		li {
+			//display: inline-block;
+			text-align: center;
+			width: 25%;
+			a {
+				display: block;
+				&.active {
+					color: red;
+				}
+			}
+			p {
+				//test value line-height
+				line-height: unit(25/@base-px-2-rem, rem);
+				font-size: 12px;
+				@media screen and (min-width: 768px) {
+					font-size: 20px;
+					letter-spacing: 2px;
+				}
+			}
+		}
+	}
+	&.red-btn {
+		background-color: @red;
+		border-top: 0;
+		> a {
+			display: block;
+			color: #fff;
+			font-size: 16px;
+			letter-spacing: 1px;
+			//height: unit( @nav-buttom-bar-height/@base-px-2-rem, rem);
+			line-height: unit(( @nav-buttom-bar-height - 30)/@base-px-2-rem, rem);
+		}
+	}
+	&.no-padding {
+		padding: 0;
+	}
+	//订单详情下 的操作按钮
+	.nav-btn-wrapper {
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: flex-end;
+		align-items: center;
+		height: 100%;
+		> a {
+			height: 100%;
+			//height: unit( @nav-buttom-bar-height/@base-px-2-rem, rem);
+			margin-left: unit(50/@base-px-2-rem, rem);
+			background-color: @red;
+			width: 25%;
+			padding: unit(40/@base-px-2-rem, rem) unit(40/@base-px-2-rem, rem);
+			border-radius: 5px;
+			color: #fff;
+			font-size: 14px;
+		}
+	}
 }
 
 .order-details-b-bar {
-    height: unit((@nav-buttom-bar-height - 35)/@base-px-2-rem, rem);
-    border: 0;
-    background-color: @border-color-gray-very-light;
-    //拼团透明度底部 
-    &.groupbuy-b-bar {
-        //拼团详情页要比一般的底部栏高  容纳按钮
-        padding: unit(0/@base-px-2-rem, rem) unit(40/@base-px-2-rem, rem);
-        height: unit((@nav-buttom-bar-height)/@base-px-2-rem, rem);
-        //http://stackoverflow.com/questions/14860874/how-to-convert-hex-color-to-rgba-with-less-compiler
-        //less fade 函数可以把hex转换成rgba颜色 褪色
-        background-color: fade(@border-color-gray-very-light, 70%);
-        //更多拼团 和 我也开个团按钮
-        a {
-            height: auto;
-            padding: unit(30/@base-px-2-rem, rem) unit(40/@base-px-2-rem, rem);
-            margin: 0;
-            justify-content: space-around;
-        }
-        a:first-child {
-            width: 35%;
-            background-color: darken(@border-color-gray-very-light, 10%);
-        }
-        a:last-child {
-            width: 65%;
-            margin-left: unit(40/@base-px-2-rem, rem);
-        }
-    }
+	height: unit((@nav-buttom-bar-height - 35)/@base-px-2-rem, rem);
+	border: 0;
+	background-color: @border-color-gray-very-light;
+	//拼团透明度底部
+	&.groupbuy-b-bar {
+		//拼团详情页要比一般的底部栏高  容纳按钮
+		padding: unit(0/@base-px-2-rem, rem) unit(40/@base-px-2-rem, rem);
+		height: unit((@nav-buttom-bar-height)/@base-px-2-rem, rem);
+		//http://stackoverflow.com/questions/14860874/how-to-convert-hex-color-to-rgba-with-less-compiler
+		//less fade 函数可以把hex转换成rgba颜色 褪色
+		background-color: fade(@border-color-gray-very-light, 70%);
+		//更多拼团 和 我也开个团按钮
+		a {
+			height: auto;
+			padding: unit(30/@base-px-2-rem, rem) unit(40/@base-px-2-rem, rem);
+			margin: 0;
+			justify-content: space-around;
+		}
+		a:first-child {
+			width: 35%;
+			background-color: darken(@border-color-gray-very-light, 10%);
+		}
+		a:last-child {
+			width: 65%;
+			margin-left: unit(40/@base-px-2-rem, rem);
+		}
+	}
 }
-
 
 /************************
 
@@ -376,40 +372,39 @@
 ************************/
 
 .base-nav-bar {
-    .make-fixed-bar(@base-nav-bar-height);
-    top: 0;
-    border-bottom: 1px solid @bar-border-color;
-    // padding-top: unit(@search-bar-blank*2/@base-px-2-rem, rem);
-    // padding-bottom: unit(@search-bar-blank*2/@base-px-2-rem, rem);
-    // text-align: center;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    align-items: center;
-    //顶部栏 文字标题
-    >p {
-        //float: left;
-        //width: 86%;
-        font-size: 16px;
-        font-weight: 600;
-        line-height: unit( (@search-bar-height - @nav-bar-blank*2) /@base-px-2-rem, rem);
-        .mod-retina-display(20px, 0px);
-        //margin-right: unit( 10/@base-px-2-rem, rem);
-        //margin-left: -(unit(@search-bar-icon-size /@base-px-2-rem, rem));
-        //文字标题省略
-        //white-space:nowrap;
-        //overflow:hidden;
-        //text-overflow:ellipsis;
-    }
-    a {
-        padding-right: unit( 35/@base-px-2-rem, rem);
-        font-size: 16px;
-        font-weight: 600;
-        line-height: unit( (@search-bar-height - @nav-bar-blank*2) /@base-px-2-rem, rem);
-        .mod-retina-display(20px, 0px);
-    }
+	.make-fixed-bar(@base-nav-bar-height);
+	top: 0;
+	border-bottom: 1px solid @bar-border-color;
+	// padding-top: unit(@search-bar-blank*2/@base-px-2-rem, rem);
+	// padding-bottom: unit(@search-bar-blank*2/@base-px-2-rem, rem);
+	// text-align: center;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	align-items: center;
+	//顶部栏 文字标题
+	> p {
+		//float: left;
+		//width: 86%;
+		font-size: 16px;
+		font-weight: 600;
+		line-height: unit((@search-bar-height - @nav-bar-blank*2) /@base-px-2-rem, rem);
+		.mod-retina-display(20px, 0px);
+		//margin-right: unit( 10/@base-px-2-rem, rem);
+		//margin-left: -(unit(@search-bar-icon-size /@base-px-2-rem, rem));
+		//文字标题省略
+		//white-space:nowrap;
+		//overflow:hidden;
+		//text-overflow:ellipsis;
+	}
+	a {
+		padding-right: unit(35/@base-px-2-rem, rem);
+		font-size: 16px;
+		font-weight: 600;
+		line-height: unit((@search-bar-height - @nav-bar-blank*2) /@base-px-2-rem, rem);
+		.mod-retina-display(20px, 0px);
+	}
 }
-
 
 /************************
 
@@ -418,125 +413,160 @@
 ************************/
 
 .product-nav-bar {
-    // position: fixed;
-    // z-index: @z-index-nav-search-bar;
-    // width: 100%;
-    // max-width: @max-width;
-    // height: unit(@product-nav-bar-height/@base-px-2-rem, rem);
-    // background-color: #fff;
-    .make-fixed-bar(@product-nav-bar-height);
-    bottom: 0;
-    border-top: 1px solid @bar-border-color;
-    display: flex;
-    flex-wrap: row nowrap;
-    justify-content: space-between;
-    align-items: stretch;
-    .product-action {
-        width: 45%;
-    }
-    .product-action-buy {
-        width: 55%;
-    }
+	// position: fixed;
+	// z-index: @z-index-nav-search-bar;
+	// width: 100%;
+	// max-width: @max-width;
+	// height: unit(@product-nav-bar-height/@base-px-2-rem, rem);
+	// background-color: #fff;
+	.make-fixed-bar(@product-nav-bar-height);
+	bottom: 0;
+	//border-top: 1px solid @bar-border-color;
+	box-shadow: -1px 0 3px 0 @border-color-gray-light;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	align-items: stretch;
+	.product-action {
+		width: 45%;
+	}
+	.product-action-buy {
+		width: 55%;
+	}
 }
 
 ul.product-nav-action {
-    display: flex;
-    flex-wrap: row nowrap;
-    justify-content: space-around;
-    align-items: stretch;
-    //三个icon
-    li {
-        font-size: 0;
-        &:nth-child(2) {
-            position: relative;
-            &::before {
-                //购物车商品数量
-                //display: block;
-                //http://www.jb51.net/article/81984.htm
-                //dataset
-                content: attr(data-shop-count);
-                position: absolute;
-                z-index: @z-index-nav-search-bar + 1;
-                right: 0;
-                top: 5px;
-                font-size: 13px;
-                color: @red;
-                height: 13px;
-                width: 0;
-            }
-        }
-        a {
-            text-align: center;
-            display: block;
-            &.active {
-                color: red;
-            }
-        }
-        //icon 下的文字
-        p {
-            //test value line-height
-            line-height: unit(45/@base-px-2-rem, rem);
-            font-size: 12px;
-            color: @product-nav-text-color;
-            .mod-retina-display(20px, 0px);
-        }
-    }
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-around;
+	align-items: stretch;
+	//三个icon
+	li {
+		font-size: 0;
+		a {
+			text-align: center;
+			display: block;
+			&.active {
+				color: red;
+			}
+
+		}
+		//icon 下的文字
+		p {
+			//test value line-height
+			line-height: unit(45/@base-px-2-rem, rem);
+			font-size: 12px;
+			color: @product-nav-text-color;
+			.mod-retina-display(20px, 0px);
+		}
+	}
+	//显示购物车 数量角标
+	li {
+		&:nth-child(2) a{
+			position: relative;
+			&::before {
+				//购物车商品数量
+				//display: block;
+				//http://www.jb51.net/article/81984.htm
+				//dataset
+				//content: attr(data-shop-count);
+
+
+				//position: absolute;
+				//z-index: @z-index-nav-search-bar + 1;
+				//right: 0;
+				//top: 5px;
+				//font-size: 13px;
+				//color: @red;
+				//height: 13px;
+				//width: 0;
+
+				-webkit-text-size-adjust: none;
+				//购物车商品数量
+				//display: block;
+				//http://www.jb51.net/article/81984.htm
+				//dataset
+				position: absolute;
+				display: block;
+				content: attr(data-shop-count);
+
+				//z-index: @z-index-nav-search-bar + 1;
+				right: calc(~"-8% - 1px");
+				top: 1px;
+				height: 16px;
+				//修正字体的右偏移
+				width: 15px;
+
+				font-size: 12px;
+				line-height: 1.4;
+				transform: scale(0.95);
+				letter-spacing: -1px;
+				vertical-align: top;
+				//修正字体的右偏移
+				padding: 0 1px 0 0;
+
+				color: #fff;
+				background-color: @red;
+				box-shadow: 0 0 0px 1px rgba(255, 255, 255, 1);
+				border-radius: 50%;
+			}
+		}
+	}
 }
 
 //加入购物车 与 拼团
 ul.product-nav-buy {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-around;
-    align-items: center;
-    //加入购物车
-    //拼团
-    height: 100%;
-    li {
-        text-align: center;
-        width: 100%;
-        height: unit((@product-nav-bar-height) /@base-px-2-rem, rem);
-        //加入购物车 团购内文字
-        a {
-            display: flex;
-            flex-flow: column nowrap;
-            justify-content: center;
-            align-items: stretch;
-            height: 100%;
-            p {
-                //兼容团购的两行文字 一半高度
-                line-height: unit((@product-nav-bar-height/2) /@base-px-2-rem, rem);
-                height: unit((@product-nav-bar-height/2) /@base-px-2-rem, rem);
-                width: 100%;
-                color: #fff;
-                font-size: 17px;
-                letter-spacing: 1px;
-                .mod-retina-display(20px, 2px);
-                //修复小屏幕 字体过大
-                @media screen and (max-width: 320px) {
-                    font-size: 14px;
-                    letter-spacing: 0px;
-                }
-            }
-        }
-        &:first-child {
-            //width: 55%;
-            background-color: @group-pink;
-        }
-        &:last-child {
-            //width: 55%;
-            background-color: @red;
-        }
-    }
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-around;
+	align-items: center;
+	//加入购物车
+	//拼团
+	height: 100%;
+	li {
+		text-align: center;
+		width: 100%;
+		height: unit((@product-nav-bar-height) /@base-px-2-rem, rem);
+		//加入购物车 团购内文字
+		a {
+			display: flex;
+			flex-flow: column nowrap;
+			justify-content: center;
+			align-items: stretch;
+			height: 100%;
+			p {
+				//兼容团购的两行文字 一半高度
+				line-height: unit((@product-nav-bar-height/2) /@base-px-2-rem, rem);
+				height: unit((@product-nav-bar-height/2) /@base-px-2-rem, rem);
+				width: 100%;
+				color: #fff;
+				font-size: 17px;
+				letter-spacing: 1px;
+				.mod-retina-display(20px, 2px);
+				//修复小屏幕 字体过大
+				@media screen and (max-width: 320px) {
+					font-size: 14px;
+					letter-spacing: 0px;
+				}
+			}
+		}
+		&:first-child {
+			//width: 55%;
+			background-color: @group-pink;
+		}
+		&:last-child {
+			//width: 55%;
+			background-color: @red;
+		}
+	}
 }
 
 //商品详情页显示购物车数量
 li[data-shop-count="0"] {
-    &::before {
-        display: none !important;
-    }
+	&::before {
+		display: none !important;
+	}
 }
-
 
 /****************
 
@@ -545,49 +575,48 @@ li[data-shop-count="0"] {
 ****************/
 
 .shopcar-nav-bar {
-    .make-fixed-bar(@nav-buttom-bar-height);
-    //位于base nav上
-    bottom: unit(@nav-buttom-bar-height/@base-px-2-rem, rem);
-    border-top: 1px solid @bar-border-color;
-    padding-left: unit(@shopcar-left-right-blank/@base-px-2-rem, rem);
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    align-items: center;
-    .shopcar-check-icon {
-        margin-right: 0;
-    }
-    .shopcar-check-icon + span {
-        text-align: left;
-        width: 20%;
-        color: #333;
-        font-size: 18px;
-        font-weight: 500;
-    }
-    .order-price {
-        width: 34%;
-        //height: 100%;
-        text-align: right;
-        //padding-right: unit( (@shopcar-left-right-blank - 20)/@base-px-2-rem, rem);
-        p {
-            font-size: 15px;
-            &:first-child {
-                color: @red;
-            }
-            &:nth-child(2) {
-                color: @text-gray;
-                font-size: 13px;
-            }
-        }
-    }
-    a.order-btn {
-        width: 33.33%;
-        display: block;
-        //通用
-        .base-nav-buttom-bar-big-btn();
-    }
+	.make-fixed-bar(@nav-buttom-bar-height);
+	//位于base nav上
+	bottom: unit(@nav-buttom-bar-height/@base-px-2-rem, rem);
+	border-top: 1px solid @bar-border-color;
+	padding-left: unit(@shopcar-left-right-blank/@base-px-2-rem, rem);
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	align-items: center;
+	.shopcar-check-icon {
+		margin-right: 0;
+	}
+	.shopcar-check-icon + span {
+		text-align: left;
+		width: 20%;
+		color: #333;
+		font-size: 18px;
+		font-weight: 500;
+	}
+	.order-price {
+		width: 34%;
+		//height: 100%;
+		text-align: right;
+		//padding-right: unit( (@shopcar-left-right-blank - 20)/@base-px-2-rem, rem);
+		p {
+			font-size: 15px;
+			&:first-child {
+				color: @red;
+			}
+			&:nth-child(2) {
+				color: @text-gray;
+				font-size: 13px;
+			}
+		}
+	}
+	a.order-btn {
+		width: 33.33%;
+		display: block;
+		//通用
+		.base-nav-buttom-bar-big-btn();
+	}
 }
-
 
 /****************
 
@@ -596,16 +625,15 @@ li[data-shop-count="0"] {
 ****************/
 
 .base-nav-buttom-bar-big-btn() {
-    background-color: @red;
-    height: 100%;
-    text-align: center;
-    line-height: unit(@nav-buttom-bar-height/@base-px-2-rem, rem);
-    font-size: 16px;
-    font-weight: 500;
-    letter-spacing: 2px;
-    color: #fff;
+	background-color: @red;
+	height: 100%;
+	text-align: center;
+	line-height: unit(@nav-buttom-bar-height/@base-px-2-rem, rem);
+	font-size: 16px;
+	font-weight: 500;
+	letter-spacing: 2px;
+	color: #fff;
 }
-
 
 /****************
 
@@ -614,34 +642,33 @@ li[data-shop-count="0"] {
 ****************/
 
 .order-comfirm-bar {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-around;
-    align-items: center;
-    height: 100%;
-    width: 100%;
-    font-size: 15px;
-    .order-comfirm-price, .order-comfirm-btn {
-        height: 100%;
-        align-self: center;
-    }
-    .order-comfirm-price {
-        width: 60%;
-        height: 100%;
-        text-align: center;
-        line-height: unit(@nav-buttom-bar-height/@base-px-2-rem, rem);
-        padding-right: unit(200/@base-px-2-rem, rem);
-        //color: @red;
-    }
-    .order-comfirm-btn {
-        width: 40%;
-        height: 100%;
-        text-align: center;
-        line-height: unit(@nav-buttom-bar-height/@base-px-2-rem, rem);
-        .base-nav-buttom-bar-big-btn();
-    }
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-around;
+	align-items: center;
+	height: 100%;
+	width: 100%;
+	font-size: 15px;
+	.order-comfirm-price, .order-comfirm-btn {
+		height: 100%;
+		align-self: center;
+	}
+	.order-comfirm-price {
+		width: 60%;
+		height: 100%;
+		text-align: center;
+		line-height: unit(@nav-buttom-bar-height/@base-px-2-rem, rem);
+		padding-right: unit(200/@base-px-2-rem, rem);
+		//color: @red;
+	}
+	.order-comfirm-btn {
+		width: 40%;
+		height: 100%;
+		text-align: center;
+		line-height: unit(@nav-buttom-bar-height/@base-px-2-rem, rem);
+		.base-nav-buttom-bar-big-btn();
+	}
 }
-
 
 /****************
 
@@ -650,42 +677,41 @@ li[data-shop-count="0"] {
 ****************/
 
 #get-order {
-    .make-fixed-bar(@nav-buttom-bar-height);
-    padding: unit( 10/@base-px-2-rem, rem);
-    top: unit((@search-bar-height+50)/@base-px-2-rem, rem);
-    left: unit( 80/@base-px-2-rem, rem);
-    width: auto;
-    //width: unit( 850/@base-px-2-rem, rem);
-    height: unit( 120/@base-px-2-rem, rem);
-    background-color: rgba(0, 0, 0, 0.35);
-    font-size: 12px;
-    .make-border-radius(20px);
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: flex-start;
-    align-items: center;
-    //display: none;
-    opacity: 0;
-    .get-order-imgBox {
-        width: unit( 100/@base-px-2-rem, rem);
-        height: unit( 100/@base-px-2-rem, rem);
-        img {
-            width: 100%;
-            height: 100%;
-            .make-border-radius(20px);
-        }
-    }
-    p {
-        color: #fff;
-        padding: 0 unit( 20/@base-px-2-rem, rem);
-    }
-    //修复小屏幕显示
-    @media screen and (max-width: 320px) {
-        //width: unit( 980/@base-px-2-rem, rem);
-        width: auto;
-    }
+	.make-fixed-bar(@nav-buttom-bar-height);
+	padding: unit(10/@base-px-2-rem, rem);
+	top: unit((@search-bar-height+50)/@base-px-2-rem, rem);
+	left: unit(80/@base-px-2-rem, rem);
+	width: auto;
+	//width: unit( 850/@base-px-2-rem, rem);
+	height: unit(120/@base-px-2-rem, rem);
+	background-color: rgba(0, 0, 0, 0.35);
+	font-size: 12px;
+	.make-border-radius(20px);
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: flex-start;
+	align-items: center;
+	//display: none;
+	opacity: 0;
+	.get-order-imgBox {
+		width: unit(100/@base-px-2-rem, rem);
+		height: unit(100/@base-px-2-rem, rem);
+		img {
+			width: 100%;
+			height: 100%;
+			.make-border-radius(20px);
+		}
+	}
+	p {
+		color: #fff;
+		padding: 0 unit(20/@base-px-2-rem, rem);
+	}
+	//修复小屏幕显示
+	@media screen and (max-width: 320px) {
+		//width: unit( 980/@base-px-2-rem, rem);
+		width: auto;
+	}
 }
-
 
 /****************
 
@@ -695,14 +721,13 @@ li[data-shop-count="0"] {
 
 //旋转的图
 #TurnAround-img {
-    .make-fixed-bar(@nav-buttom-bar-height);
-    height: unit( 150/@base-px-2-rem, rem);
-    width: unit( 150/@base-px-2-rem, rem);
-    //修正默认位置与返回按钮重叠
-    left: unit( 150/@base-px-2-rem, rem);
-    .make-border-radius(30px);
+	.make-fixed-bar(@nav-buttom-bar-height);
+	height: unit(150/@base-px-2-rem, rem);
+	width: unit(150/@base-px-2-rem, rem);
+	//修正默认位置与返回按钮重叠
+	left: unit(150/@base-px-2-rem, rem);
+	.make-border-radius(30px);
 }
-
 
 /****************
 
@@ -711,61 +736,60 @@ li[data-shop-count="0"] {
 ****************/
 
 .full-screen {
-    position: fixed;
-    z-index: @z-index-nav-search-bar + 1;
-    width: 100%;
-    max-width: @max-width;
-    height: 100%;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, .55);
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: stretch;
-    display: none;
-    .full-screen-imgBox {
-        position: relative;
-        img {
-            width: 100%;
-        }
-    }
-    &:after {
-        display: block;
-        content: "";
-        position: absolute;
-        top: 10%;
-        right: 1%;
-        height: unit( 100/@base-px-2-rem, rem);
-        width: unit( 100/@base-px-2-rem, rem);
-        background-color: rgba(255, 255, 255, .1);
-        background-image: url("@{icon-address}/x.png");
-        background-repeat: no-repeat;
-        //background-origin: content-box;
-        background-size: 120% 120%; 
-        background-position: center center;
-        .make-border-radius(50px);
-    }
+	position: fixed;
+	z-index: @z-index-nav-search-bar + 1;
+	width: 100%;
+	max-width: @max-width;
+	height: 100%;
+	height: 100vh;
+	background-color: rgba(0, 0, 0, .55);
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: center;
+	align-items: stretch;
+	display: none;
+	.full-screen-imgBox {
+		position: relative;
+		img {
+			width: 100%;
+		}
+	}
+	&:after {
+		display: block;
+		content: "";
+		position: absolute;
+		top: 10%;
+		right: 1%;
+		height: unit(100/@base-px-2-rem, rem);
+		width: unit(100/@base-px-2-rem, rem);
+		background-color: rgba(255, 255, 255, .1);
+		background-image: url("@{icon-address}/x.png");
+		background-repeat: no-repeat;
+		//background-origin: content-box;
+		background-size: 120% 120%;
+		background-position: center center;
+		.make-border-radius(50px);
+	}
 }
+
 //测试
 
-
 .test {
-    display: none;
-    position: fixed;
-    top: 50%;
-    right: 0;
-    z-index: 15;
-    background-color: #fff;
-    p {
-        color: #000;
-    }
+	display: none;
+	position: fixed;
+	top: 50%;
+	right: 0;
+	z-index: 15;
+	background-color: #fff;
+	p {
+		color: #000;
+	}
 }
 
-
 .indexLoadingP {
-    padding-top: unit(@search-bar-blank/@base-px-2-rem, rem);
-    padding-bottom: unit(@search-bar-blank/@base-px-2-rem, rem);
-    text-align: center;
-    font-size: 16px;
-    letter-spacing: 1px;
+	padding-top: unit(@search-bar-blank/@base-px-2-rem, rem);
+	padding-bottom: unit(@search-bar-blank/@base-px-2-rem, rem);
+	text-align: center;
+	font-size: 16px;
+	letter-spacing: 1px;
 }
