@@ -94,6 +94,8 @@
 		flex-flow: row nowrap;
 		justify-content: space-around;
 		align-items: center;
+		//改变盒模型 兼容旧设计
+		box-sizing: content-box;
 		.search-bar-submitBtn {
 			font-size: 16px;
 			display: block;
@@ -102,6 +104,8 @@
 		.form-group {
 			//修复弹出搜索页的搜索框样式
 			padding-top: unit((@search-area-blank+5)/@base-px-2-rem, rem);
+			//改变盒模型 兼容旧设计
+			box-sizing: content-box;
 		}
 	}
 }
@@ -110,9 +114,15 @@
 	padding: unit(20/@base-px-2-rem, rem) unit(20/@base-px-2-rem, rem);
 }
 
-//搜索页内
+
+/************************
+
+     搜索栏弹出页
+
+************************/
+
 .search-keyword-wrapper {
-	margin-top: unit((@base-nav-bar-height)/@base-px-2-rem, rem);
+	margin-top: unit((@search-bar-height)/@base-px-2-rem, rem);
 	padding: 0 unit(40/@base-px-2-rem, rem);
 	//修复小屏幕容器不完全白底的问题？
 	height: 100%;
@@ -134,7 +144,9 @@
 	align-items: center;*/
 	padding: unit(20/@base-px-2-rem, rem) 0;
 	width: 100%;
-	&:first-child {
+
+	//热搜
+	&:nth-child(2) {
 		justify-content: flex-start;
 		> a {
 			padding: unit(10/@base-px-2-rem, rem) unit(20/@base-px-2-rem, rem);
@@ -143,17 +155,42 @@
 			margin-bottom: 0;
 		}
 	}
+	//热搜单词
 	> a {
 		float: left;
 		padding: unit(10/@base-px-2-rem, rem) unit(20/@base-px-2-rem, rem);
-		margin-bottom: unit(20/@base-px-2-rem, rem);
 		margin-left: 0;
 		margin-right: unit(35/@base-px-2-rem, rem);
 		margin-bottom: unit(50/@base-px-2-rem, rem);
 		border: 1px solid @border-color-gray-very-light;
 		.make-border-radius(10px);
+		font-size: 14px;
 	}
 }
+
+
+/************************
+
+     搜索匹配提示
+
+************************/
+
+.auto-keyword li {
+	padding: 0.4rem 0;
+}
+
+.auto-keyword li a {
+	font-size: 13px;
+}
+
+
+
+/************************
+
+     首页左方按钮弹出菜单
+
+************************/
+
 
 .search-bar-menu {
 	.make-fixed-bar(@search-bar-height);
@@ -169,10 +206,6 @@
 	ul {
 		border: 1px solid @text-gray;
 		border-radius: 8px;
-		border-top-left-radius: 8px;
-		border-top-right-radius: 8px;
-		border-bottom-left-radius: 8px;
-		border-bottom-right-radius: 8px;
 		background-color: #fff;
 	}
 	li {
@@ -267,8 +300,8 @@
 	// background-color: #fff;
 	.make-fixed-bar(@nav-buttom-bar-height);
 	bottom: 0;
-	padding-top: unit(@search-bar-blank/@base-px-2-rem, rem);
-	padding-bottom: unit(@search-bar-blank/@base-px-2-rem, rem);
+	padding-top: unit(@nav-buttom-blank/@base-px-2-rem, rem);
+	padding-bottom: unit(@nav-buttom-blank/@base-px-2-rem, rem);
 	border-top: 1px solid rgba(0, 0, 0, 0.2);
 	text-align: center;
 	ul {
@@ -289,9 +322,9 @@
 				}
 			}
 			p {
-				//test value line-height
 				line-height: unit(25/@base-px-2-rem, rem);
 				font-size: 12px;
+				transform: scale(0.9);
 				@media screen and (min-width: 768px) {
 					font-size: 20px;
 					letter-spacing: 2px;
@@ -462,53 +495,54 @@ ul.product-nav-action {
 	}
 	//显示购物车 数量角标
 	li {
-		&:nth-child(2) a{
+		&:nth-child(2) a i{
+
+			&[data-shop-count="0"] {
+				&::before {
+					display: none;
+				}
+			}
+
 			position: relative;
 			&::before {
 				//购物车商品数量
-				//display: block;
-				//http://www.jb51.net/article/81984.htm
-				//dataset
-				//content: attr(data-shop-count);
-
-
-				//position: absolute;
-				//z-index: @z-index-nav-search-bar + 1;
-				//right: 0;
-				//top: 5px;
-				//font-size: 13px;
-				//color: @red;
-				//height: 13px;
-				//width: 0;
-
 				-webkit-text-size-adjust: none;
-				//购物车商品数量
-				//display: block;
 				//http://www.jb51.net/article/81984.htm
 				//dataset
 				position: absolute;
 				display: block;
 				content: attr(data-shop-count);
+				font-style: normal;
 
 				//z-index: @z-index-nav-search-bar + 1;
-				right: calc(~"-8% - 1px");
-				top: 1px;
+				right: calc(~"-18% - 1px");
+				top: -1px;
 				height: 16px;
 				//修正字体的右偏移
 				width: 15px;
-
 				font-size: 12px;
 				line-height: 1.4;
-				transform: scale(0.95);
+				transform: scale(0.85);
 				letter-spacing: -1px;
 				vertical-align: top;
 				//修正字体的右偏移
 				padding: 0 1px 0 0;
 
+
 				color: #fff;
 				background-color: @red;
 				box-shadow: 0 0 0px 1px rgba(255, 255, 255, 1);
 				border-radius: 50%;
+				//修正ip6 偏移量
+				@media screen and (min-width: 320px) {
+					transform: scale(0.85);
+				}
+				//修正6p 偏移量
+				@media screen and (min-width: 414px) {
+					transform: scale(0.95);
+					top: 1px;
+				}
+
 			}
 		}
 	}
@@ -743,7 +777,6 @@ li[data-shop-count="0"] {
 	height: 100%;
 	height: 100vh;
 	background-color: rgba(0, 0, 0, .55);
-	display: flex;
 	flex-flow: column nowrap;
 	justify-content: center;
 	align-items: stretch;

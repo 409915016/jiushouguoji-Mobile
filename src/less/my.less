@@ -282,12 +282,19 @@ login-sign-wrapper
 	background-color: #fff;
 	color: #b0b0b0;
 	font-size: 14px;
+	//修正6p 下首个输入框撑大的问题
+	@media screen and (min-width: 414px) {
+		padding: unit(200/@base-px-2-rem, rem) unit(150/@base-px-2-rem, rem) unit(50/@base-px-2-rem, rem);
+	}
+
 	//仅注册页 重置密码页
 	//存在单行 两个按钮样式
 	&.sign {
 		input {
 			margin-left: unit(50/@base-px-2-rem, rem);
+			height: 80%;
 		}
+		//获取短信 电话号码输入框
 		section:nth-of-type(1) {
 			width: 55%;
 			margin-right: unit(230/@base-px-2-rem, rem);
@@ -311,7 +318,12 @@ login-sign-wrapper
 			input {
 				width: 200%;
 			}
+
+			@media screen and (min-width: 414px) {
+				width: 51%;
+			}
 		}
+
 	}
 	//中间的句子
 	> p {
