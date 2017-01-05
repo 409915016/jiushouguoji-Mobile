@@ -120,11 +120,11 @@ function SetMyOrderNav(navNum) {
 
  *****************/
 
-var baseMsg = function (String) {
+var baseMsg = function (str, t) {
     layer.open({
         className: 'base-msg-pop',
-        content: String,
-        time: '2',
+        content: str,
+        time: t == undefined ? 2 : t,
         shade: false
     })
 }
@@ -229,16 +229,15 @@ function TestgetOrderMsg() {
  *****************/
 
 function setShopCarNum(num) {
-    var shop_car_count = $(".product-nav-bar ul li:nth-child(2)")[0];
-    shop_car_count.dataset.shopCount = num;
+    var shop_car_count = $(".product-nav-bar ul li:nth-child(2) a i");
+    shop_car_count.attr("data-shop-count", num);
 }
 
 function shopCarNumAdd() {
-    var shop_car_count = $(".product-nav-bar ul li:nth-child(2)")[0];
+    var shop_car_count = $(".product-nav-bar ul li:nth-child(2) a i");
     var addNum = Math.abs(shop_car_count.dataset.shopCount) + 1;
-    shop_car_count.dataset.shopCount = addNum;
-
-
+    shop_car_count.attr("data-shop-count", addNum);
+    shopcarTurnAround()
 }
 
 
@@ -262,12 +261,6 @@ function shopcarTurnAround() {
         this.classList.remove("TurnAround-set");
         this.style.display = "none";
     }, false);
-
-    setTimeout(function () {
-        shopCarNumAdd();
-        baseMsg("加入购物车成功");
-    }, 1000);
-
 
 }
 
@@ -586,14 +579,31 @@ function detailCountDownGo() {
                 }
             }
         )
+    } else if ($(document).find(".groupbuy-details-userinfo-wrapper").length != 0) {
+        var time = $(".groupbuy-details-userinfo-wrapper > p:first");
+        detailCountDown(time);
     } else {
-        console.log("没有拼团哇");
+        clearInterval(cd);
     }
 }
 
 
-window.onload = function () {
+/******************
 
+ 返回任意区间的随机数
 
+ **************** */
+
+function randomNum(minNum, maxNum) {
+    switch (arguments.length) {
+        case 1:
+            return parseInt(Math.random() * minNum + 1, 10);
+            break;
+        case 2:
+            return parseInt(Math.random() * (maxNum - minNum + 1) + minNum, 10);
+            break;
+        default:
+            return 0;
+            break;
+    }
 }
-

@@ -55,7 +55,16 @@ $(".search-bar-more").click(function () {
 $(".main-wrapper").click(function () {
     $(".search-bar-menu").hide();
 });
-//
+//传入字符串，返回DOM
+function parseDom(arg) {
+    var objE = document.createElement("div");
+    objE.innerHTML = arg;
+    return objE.childNodes;
+};
+//定时执行检查函数的id
+var loadingCheckerId;
+var searchWrapperisOn = 0;
+
 var loadingP = $('.indexLoadingP');
 
 var offset = $('#offset');
@@ -73,54 +82,70 @@ var isPostP = $('#isPostP');
 
 var countP = $('#count');
 
-var isPostPx = parseInt($(document).height() / 3);
+var LoadingPx = parseInt($(document).height() / 3);
 
-var isPost = true;
+var canRequest = true;
 
 var PageValue = 1;
+var MaxPage = 50;
+var MinPage = 1;
 
 //每次加载的数量
-var OnesLodingNum = 6;
+var NumOfPage = 6;
 
 //本地获取到的商品数据
 var goods_recommend = [];
 var Height_minus = ( $(document).height() - $(this).height() - $(this).scrollTop() );
-function scrol_test() {
+
+function scrollCheck() {
+    var canPost = false;
     //偏移
     offset.text($(this).scrollTop());
     //文档长度
     docheight.text($(document).height());
     //窗口高度
     winheight.text($(this).height());
+    //文档与窗口差值
     Height_minus = ( $(document).height() - $(this).height() - $(this).scrollTop() );
     countP.text(Height_minus);
-    if ((Height_minus < isPostPx) && isPost) {
 
-        getData(PageValue, OnesLodingNum);
+    (Height_minus < LoadingPx) ? canPost = true : canPost = false;
+    return canPost;
 
-        // console.log(goods_recommend);
-        // console.log(LodingNumFlag);
-        // console.log(i);
+}
 
-        isPost = false;
+function InsertToDoc() {
+
+    if ( (scrollCheck()) && canRequest && (!searchWrapperisOn)) {
+        canRequest = false;
+        getData(randomNum(MinPage, MaxPage), NumOfPage);
         isPostP.text("■");
-        var tepWrapper = $(".loading-more")[0];
         var loadingP = $('.loadingP');
         //加入DOM文档
         //从当前加载位置开始 到加载个数阀值停止
-        for (var i = 0; i < OnesLodingNum; i++) {
+        for (var i = 0; i < NumOfPage; i++) {
             var goods_url = goods_recommend[i].url;
             var goods_imgURL = goods_recommend[i].image;
             var goods_name = goods_recommend[i].name;
             var goods_price = goods_recommend[i].price;
-            var html_temp = '<div class="single-goods">' + '<a href="' + goods_url + '">' + '<div class="product-imgBox">' +
-                '<img src="' + goods_imgURL + '" alt=""> ' + '</div>' + '<div class="product-name-price">' +
-                '<p>' + goods_name + '</p>' + '<p>¥<span>' + goods_price + '</span></p>' + '</div>' + '</a>' + '</div>';
+            var goods_stock = goods_recommend[i].stock;
+            //判断无货
+            if (goods_stock == 0) {
+                var html_temp = '<div class="single-goods">' + '<a href="' + goods_url + '">' + '<div class="product-imgBox soldout">' +
+                    '<img src="' + goods_imgURL + '" alt=""> ' + '</div>' + '<div class="product-name-price">' +
+                    '<p>' + goods_name + '</p>' + '<p>¥<span>' + goods_price + '</span></p>' + '</div>' + '</a>' + '</div>';
 
+            } else {
+                //有货
+                var html_temp = '<div class="single-goods">' + '<a href="' + goods_url + '">' + '<div class="product-imgBox">' +
+                    '<img src="' + goods_imgURL + '" alt=""> ' + '</div>' + '<div class="product-name-price">' +
+                    '<p>' + goods_name + '</p>' + '<p>¥<span>' + goods_price + '</span></p>' + '</div>' + '</a>' + '</div>';
+
+            }
             $(parseDom(html_temp)).insertBefore(".indexLoadingP");
 
         }
-        isPost = true;
+        canRequest = true;
     } else {
         isPostP.text("□");
     }
@@ -134,44 +159,38 @@ function getData(p, n) {
     $.getJSON(PostUrl, function (data) {
         switch (data.status) {
             case 1 : {
-                //console.table(data.data);
                 var t = data.data;
-                //data.data each
                 //每次过来要清空数组
                 goods_recommend.splice(0, goods_recommend.length);
-                //console.table(goods_recommend);
+                //data.data each
                 $(t).each(function (i, element) {
                     var i = {};
-                    //var m = ['id', 'name','price','image'];
                     i.url = element.url;
                     i.name = element.name;
                     i.price = element.price;
                     i.image = element.image;
+                    i.stock = element.stock;
                     goods_recommend.push(i);
 
-                })
-                //console.table(goods_recommend);
-                //成功获取一次后 PageValue 要增加
-
+                });
+                //成功获取 1 次后 PageValue 要增加
                 PageValue += 1;
             }
         }
-
         if (data.status == 1) {
         }
     })
 }
 
 function loadingChecker() {
-    scrol_test();
-    setTimeout('loadingChecker()', 100)
+    InsertToDoc();
+    setTimeout('loadingChecker()', 250);
 }
 
-
 $(document).ready(function () {
-
-    getData(PageValue, OnesLodingNum);
-    setTimeout('loadingChecker()', 1000);
-
+    getData(randomNum(MinPage, MaxPage), NumOfPage);
+    loadingCheckerId = setTimeout('loadingChecker()', 1300);
 });
+
+
 

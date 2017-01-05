@@ -269,16 +269,33 @@ a.button {
 		//修复移动端图显示不正常
 		position: relative;
 	}
-	.product-imgBox {
+	div.product-imgBox {
 		padding: unit(10/@base-px-2-rem, rem) unit(40/@base-px-2-rem, rem);
 		height: 40%;
 		width: 40%;
+		position: relative;
 		img {
 			width: 100%;
 			height: 100%;
 		}
 		&::after {
 			display: none;
+		}
+		&.soldout {
+			&:after {
+				content: '';
+				display: block;
+				background-image: url("@{icon-address}/soldout.png");
+				background-size: 50%;
+				background-repeat: no-repeat;
+				background-position: center center;
+				left: 0;
+				bottom: 0;
+				border: 0;
+				width: 100%;
+				height: 100%;
+			}
+
 		}
 	}
 	.product-name-price {
@@ -446,11 +463,11 @@ group-goods
 		> .product-box {
 			display: inline-block;
 			width: 49%;
-			> a {
+			a {
 				//display: block;
 				//width: 49.5%;
 				text-align: center;
-				> img {
+				img {
 					//http://stackoverflow.com/questions/7055393/center-image-using-text-align-center
 					//fix the img in the block containers
 					//img is an inline ele
@@ -458,7 +475,7 @@ group-goods
 					display: block;
 					margin: 0 auto;
 				}
-				> p {
+				p {
 					text-overflow: ellipsis;
 					line-height: 1.4em;
 					height: 2.8em;
@@ -474,6 +491,30 @@ group-goods
 				}
 			}
 		}
+	}
+}
+
+/************************
+
+商品图售罄样式
+
+************************/
+
+.soldout {
+	position: relative;
+	&:after {
+		position: absolute;
+		content: '';
+		display: block;
+		background-image: url("@{icon-address}/soldout.png");
+		background-size: 37%;
+		background-repeat: no-repeat;
+		background-position: center center;
+		left: 0;
+		bottom: 0;
+		border: 0;
+		width: 100%;
+		height: 100%;
 	}
 }
 

@@ -4642,27 +4642,27 @@ button {
   display: inline-block;
   width: 49%;
 }
-.base-mt-wrapper .product-box-wrapper > .product-box > a {
+.base-mt-wrapper .product-box-wrapper > .product-box a {
   text-align: center;
 }
-.base-mt-wrapper .product-box-wrapper > .product-box > a > img {
+.base-mt-wrapper .product-box-wrapper > .product-box a img {
   height: 3.16901408rem;
   display: block;
   margin: 0 auto;
 }
-.base-mt-wrapper .product-box-wrapper > .product-box > a > p {
+.base-mt-wrapper .product-box-wrapper > .product-box a p {
   text-overflow: ellipsis;
   line-height: 1.4em;
   height: 2.8em;
   overflow: hidden;
 }
 @media screen and (min-width: 768px) {
-  .base-mt-wrapper .product-box-wrapper > .product-box > a > p {
+  .base-mt-wrapper .product-box-wrapper > .product-box a p {
     font-size: 20px;
     letter-spacing: 2px;
   }
 }
-.base-mt-wrapper .product-box-wrapper > .product-box > a > p + p {
+.base-mt-wrapper .product-box-wrapper > .product-box a p + p {
   color: red;
   font-weight: 600;
 }
@@ -4836,17 +4836,31 @@ a.button {
           align-items: stretch;
   position: relative;
 }
-.no-swiper-product .product-imgBox {
+.no-swiper-product div.product-imgBox {
   padding: 0.08802817rem 0.35211268rem;
   height: 40%;
   width: 40%;
+  position: relative;
 }
-.no-swiper-product .product-imgBox img {
+.no-swiper-product div.product-imgBox img {
   width: 100%;
   height: 100%;
 }
-.no-swiper-product .product-imgBox::after {
+.no-swiper-product div.product-imgBox::after {
   display: none;
+}
+.no-swiper-product div.product-imgBox.soldout:after {
+  content: '';
+  display: block;
+  background-image: url("../img/icon/soldout.png");
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  left: 0;
+  bottom: 0;
+  border: 0;
+  width: 100%;
+  height: 100%;
 }
 .no-swiper-product .product-name-price {
   width: 60%;
@@ -4938,17 +4952,31 @@ single-goods
           align-items: stretch;
   position: relative;
 }
-.single-goods .product-imgBox {
+.single-goods div.product-imgBox {
   padding: 0.08802817rem 0.35211268rem;
   height: 40%;
   width: 40%;
+  position: relative;
 }
-.single-goods .product-imgBox img {
+.single-goods div.product-imgBox img {
   width: 100%;
   height: 100%;
 }
-.single-goods .product-imgBox::after {
+.single-goods div.product-imgBox::after {
   display: none;
+}
+.single-goods div.product-imgBox.soldout:after {
+  content: '';
+  display: block;
+  background-image: url("../img/icon/soldout.png");
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  left: 0;
+  bottom: 0;
+  border: 0;
+  width: 100%;
+  height: 100%;
 }
 .single-goods .product-name-price {
   width: 60%;
@@ -5075,29 +5103,51 @@ group-goods
   display: inline-block;
   width: 49%;
 }
-.base-mt-wrapper .product-box-wrapper > .product-box > a {
+.base-mt-wrapper .product-box-wrapper > .product-box a {
   text-align: center;
 }
-.base-mt-wrapper .product-box-wrapper > .product-box > a > img {
+.base-mt-wrapper .product-box-wrapper > .product-box a img {
   height: 3.16901408rem;
   display: block;
   margin: 0 auto;
 }
-.base-mt-wrapper .product-box-wrapper > .product-box > a > p {
+.base-mt-wrapper .product-box-wrapper > .product-box a p {
   text-overflow: ellipsis;
   line-height: 1.4em;
   height: 2.8em;
   overflow: hidden;
 }
 @media screen and (min-width: 768px) {
-  .base-mt-wrapper .product-box-wrapper > .product-box > a > p {
+  .base-mt-wrapper .product-box-wrapper > .product-box a p {
     font-size: 20px;
     letter-spacing: 2px;
   }
 }
-.base-mt-wrapper .product-box-wrapper > .product-box > a > p + p {
+.base-mt-wrapper .product-box-wrapper > .product-box a p + p {
   color: red;
   font-weight: 600;
+}
+/************************
+
+商品图售罄样式
+
+************************/
+.soldout {
+  position: relative;
+}
+.soldout:after {
+  position: absolute;
+  content: '';
+  display: block;
+  background-image: url("../img/icon/soldout.png");
+  background-size: 37%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  left: 0;
+  bottom: 0;
+  border: 0;
+  width: 100%;
+  height: 100%;
 }
 /************************
 
