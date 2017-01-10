@@ -10,9 +10,6 @@
 
 .user-info-simple {
 	.base-pd-wrapper();
-	//减少了上下外边距
-	//padding-top: unit(20/@base-px-2-rem, rem);
-	//padding-bottom: unit(20/@base-px-2-rem, rem);
 	background-image: url("@{icon-address}/userbg.jpg");
 	background-size: 120%;
 	background-repeat: no-repeat;
@@ -22,14 +19,12 @@
 	justify-content: flex-start;
 	//居中
 	align-items: center;
-	//align-items: stretch;
+	box-shadow: 0 0 10px #aaa inset;
 	//用户头像容器
-
-	box-shadow: 0px 0px 10px #aaa inset;
 	.user-header-imgBox {
-		margin: unit(20/@base-px-2-rem, rem) 0;
-		width: unit(@user-header-imgSize/@base-px-2-rem, rem);
-		height: unit(@user-header-imgSize/@base-px-2-rem, rem);
+		margin: unit(round(20/@base-px-2-rem, 1), rem) 0;
+		width: unit(round(@user-header-imgSize/@base-px-2-rem, 1), rem);
+		height: unit(round(@user-header-imgSize/@base-px-2-rem, 1), rem);
 		img {
 			width: 100%;
 			border-radius: 50%;
@@ -39,15 +34,8 @@
 
 //用户昵称 和 签名
 .user-name-custom {
-	//width: 60%;
 	font-size: 14px;
 	text-align: center;
-	//letter-spacing: 1px;
-	//display: flex;
-	//flex-flow: column nowrap;
-	//justify-content: space-between;
-	//align-items: center;
-	//margin-left: unit(40/@base-px-2-rem, rem);
 	p {
 		.text-omit();
 	}
@@ -67,14 +55,14 @@
 		color: #fff;
 		&:first-child:after {
 			content: '';
-			position: absolute;
 			display: block;
+			position: absolute;
 			top: 13%;
 			right: 0;
-			width: unit(4/@base-px-2-rem, rem);
+			width: unit(round(4/@base-px-2-rem, 3), rem);
 			height: 80%;
 			background-color: #fff;
-			box-shadow: 0 0 2px 0 #ddd;
+			box-shadow: 0 0 4px 0 #999;
 		}
 	}
 }
@@ -87,7 +75,7 @@
 
 section.user-row {
 	.base-pd-wrapper();
-	margin-top: unit(4/@base-px-2-rem, rem);
+	margin-top: unit(round(4/@base-px-2-rem, 3), rem);
 	//减少了上下外边距
 	padding-top: unit(20/@base-px-2-rem, rem);
 	padding-bottom: unit(20/@base-px-2-rem, rem);
@@ -95,8 +83,8 @@ section.user-row {
 		padding-top: unit(60/@base-px-2-rem, rem);
 	}
 	i {
-		margin-top: unit(@my-page-icon-mt/@base-px-2-rem, rem);
-		margin-bottom: unit(@my-page-icon-mb/@base-px-2-rem, rem);
+		margin-top: unit(round(@my-page-icon-mt/@base-px-2-rem, 1), rem);
+		margin-bottom: unit(round(@my-page-icon-mb/@base-px-2-rem, 1), rem);
 	}
 	ul {
 		display: flex;
@@ -169,42 +157,36 @@ section.user-row {
 		vertical-align: top;
 		font-style: normal;
 		&::before {
-			//修正字体的右偏移
-			box-sizing: content-box;
+			display: block;
+			//角标的内容取 i 元素的 data-shop-count 属性值
+			content: attr(data-shop-count);
 			//http://www.cnblogs.com/zjzhome/p/4898898.html
 			//移动Web单行文字垂直居中的问题
 			//https://www.zhihu.com/question/21093147?rf=21339583
 			//WebKit 取消桌面浏览器 -webkit-text-size-adjust 支持后
 			//怎么在 Chrome 下设置 12px 以下的字体大小？
 			-webkit-text-size-adjust: none;
-			//购物车商品数量
-			//display: block;
+			//JS控制伪元素的方法汇总
 			//http://www.jb51.net/article/81984.htm
 			//dataset
 			position: absolute;
-			display: block;
-			content: attr(data-shop-count);
-
-			//z-index: @z-index-nav-search-bar + 1;
 			right: calc(~"28% - 4px");
 			top: 1px;
+			box-sizing: content-box;
+			transform: scale(0.95);
+			padding: 0 1px 0 0;
 			height: 16px;
 			//修正字体的右偏移
 			width: 15px;
-
-			font-size: 12px;
-			line-height: 1.4;
-			transform: scale(0.95);
 			letter-spacing: -1px;
 			vertical-align: top;
 			//修正字体的右偏移
-			padding: 0 1px 0 0;
-
 			color: #fff;
 			background-color: @red;
-			box-shadow: 0 0 0px 1px rgba(255, 255, 255, 1);
+			font-size: 12px;
+			line-height: 1.4;
+			box-shadow: 0 0 0 1px rgba(255, 255, 255, 1);
 			border-radius: 50%;
-
 			//修正6p 偏移量
 			@media screen and (min-width: 414px) {
 				right: calc(~"29% - 4px");
@@ -220,13 +202,13 @@ section.user-row {
 ****************/
 
 section.my-center-header-name {
-	padding-top: unit(@base-nav-bar-height/@base-px-2-rem, rem);
+	padding-top: unit(round(@base-nav-bar-height/@base-px-2-rem, 2), rem);
 	text-align: center;
 	.my-center-header-imgBox {
 		display: inline-block;
-		width: unit(@user-header-imgSize/@base-px-2-rem, rem);
-		height: unit(@user-header-imgSize/@base-px-2-rem, rem);
-		margin-bottom: unit(20/@base-px-2-rem, rem);
+		width: unit(round(@user-header-imgSize/@base-px-2-rem, 2), rem);
+		height: unit(round(@user-header-imgSize/@base-px-2-rem, 2), rem);
+		margin-bottom: unit(round(20/@base-px-2-rem, 2), rem);
 		img {
 			width: 100%;
 			.make-border-radius(50px);
@@ -248,7 +230,7 @@ section.my-center-header-name {
 	flex-flow: row nowrap;
 	justify-content: space-around;
 	align-items: center;
-	padding: unit(40/@base-px-2-rem, rem);
+	padding: unit(round(40/@base-px-2-rem, 2), rem);
 	border-bottom: 1px solid @shopcar-border-color;
 	p {
 		font-size: 15px;
@@ -274,51 +256,47 @@ login-sign-wrapper
 ****************/
 
 .login-sign-wrapper {
-	padding: unit(200/@base-px-2-rem, rem) unit(100/@base-px-2-rem, rem) unit(50/@base-px-2-rem, rem);
+	padding: unit(round(200/@base-px-2-rem, 1), rem) unit(round(100/@base-px-2-rem, 1), rem) unit(round(50/@base-px-2-rem, 1), rem);
 	display: flex;
 	flex-flow: column nowrap;
 	justify-content: space-between;
 	align-items: center;
-	background-color: #fff;
-	color: #b0b0b0;
 	font-size: 14px;
+	color: @bar-border-color;
+	background-color: #fff;
 	//修正6p 下首个输入框撑大的问题
 	@media screen and (min-width: 414px) {
-		padding: unit(200/@base-px-2-rem, rem) unit(150/@base-px-2-rem, rem) unit(50/@base-px-2-rem, rem);
+		padding: unit(round(200/@base-px-2-rem, 1), rem) unit(round(150/@base-px-2-rem, 1), rem) unit(round(50/@base-px-2-rem, 1), rem);
 	}
 
 	//仅注册页 重置密码页
 	//存在单行 两个按钮样式
 	&.sign {
 		input {
-			margin-left: unit(50/@base-px-2-rem, rem);
+			margin-left: unit(round(50/@base-px-2-rem, 1), rem);
 			height: 80%;
 		}
 		//获取短信 电话号码输入框
 		section:nth-of-type(1) {
 			width: 55%;
-			margin-right: unit(230/@base-px-2-rem, rem);
+			margin-right: unit(round(230/@base-px-2-rem, 2), rem);
 			button {
-				width: 100%;
-				margin: 0;
-				margin-left: -0.5rem;
-				margin-left: -(unit(120/@base-px-2-rem, rem));
 				position: relative;
-				left: unit(230/@base-px-2-rem, rem);
-				padding: unit(15/@base-px-2-rem, rem) unit(20/@base-px-2-rem, rem);
+				left: unit(round(230/@base-px-2-rem, 2), rem);
+				width: 100%;
+				margin-top: 0;
+				margin-left: -(round(unit(120/@base-px-2-rem,1), rem));
+				padding: unit(round(15/@base-px-2-rem, 2), rem) unit(round(20/@base-px-2-rem, 2), rem);
 				background-color: #fff;
 				color: @login-btn-bg-color;
 				border: 1px solid @login-btn-bg-color;
 				font-size: 14px;
 				letter-spacing: 1px;
-				//line-height: 2;
 				.hollow_button_disabled_function();
-
 			}
 			input {
 				width: 200%;
 			}
-
 			@media screen and (min-width: 414px) {
 				width: 51%;
 			}
@@ -327,7 +305,7 @@ login-sign-wrapper
 	}
 	//中间的句子
 	> p {
-		padding-bottom: unit(50/@base-px-2-rem, rem);
+		padding-bottom: unit(round(50/@base-px-2-rem, 2), rem);
 	}
 	//重置密码页
 	a.forget {
@@ -340,14 +318,10 @@ login-sign-wrapper
 	//大红 按钮
 	button {
 		width: 80%;
+		height: unit(120/@base-px-2-rem, rem);
 		margin-top: unit(50/@base-px-2-rem, rem);
 		border-radius: 53px;
-		border-top-left-radius: 53px;
-		border-top-right-radius: 53px;
-		border-bottom-left-radius: 53px;
-		border-bottom-right-radius: 53px;
 		background-color: @login-btn-bg-color;
-		height: unit(120/@base-px-2-rem, rem);
 	}
 	//保持容器的间距
 	section {
@@ -356,18 +330,14 @@ login-sign-wrapper
 	}
 	//input 容器布局
 	section.inputBlock {
+		padding: unit(10/@base-px-2-rem, rem) 0;
 		display: flex;
 		flex-flow: row nowrap;
 		justify-content: flex-start;
 		align-items: center;
 		width: 80%;
 		background-color: #f0f0f0;
-		padding: unit(10/@base-px-2-rem, rem) 0;
 		border-radius: 53px;
-		border-top-left-radius: 53px;
-		border-top-right-radius: 53px;
-		border-bottom-left-radius: 53px;
-		border-bottom-right-radius: 53px;
 		input {
 			width: 80%;
 			background-color: transparent;
@@ -410,15 +380,13 @@ login-sign-wrapper
 			flex-flow: column nowrap;
 			justify-content: space-between;
 			align-items: center;
-
 		}
 		p.login-select {
 			width: 80%;
 			span {
-				//width: 50%;
-				font-size: 14px;
-				padding: unit(20/@base-px-2-rem, rem) 0;
 				margin: 0 unit(10/@base-px-2-rem, rem);
+				padding: unit(20/@base-px-2-rem, rem) 0;
+				font-size: 14px;
 				border-bottom: 2px solid #fff;
 				@media screen and (min-width: 375px) {
 					font-size: 16px;
@@ -435,6 +403,11 @@ login-sign-wrapper
 			}
 		}
 	}
+}
+
+//登录页错误提示
+.notice {
+	display: none;
 }
 
 /****************

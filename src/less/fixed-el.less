@@ -45,7 +45,7 @@
 	top: 0;
 	padding-top: unit(@search-bar-blank/@base-px-2-rem, rem);
 	padding-bottom: unit(@search-bar-blank/@base-px-2-rem, rem);
-	border-bottom: 1px solid @bar-border-color;
+	border-bottom: 1px solid @border-color-gray-light;
 	form, div.fl {
 		display: inline-block;
 		width: 72%;
@@ -89,6 +89,7 @@
 			}
 		}
 	}
+	//兼容旧设计
 	&.flex {
 		display: flex;
 		flex-flow: row nowrap;
@@ -96,8 +97,10 @@
 		align-items: center;
 		//改变盒模型 兼容旧设计
 		box-sizing: content-box;
+		border: 0;
+		.fixed-shadow(bottom, 2px);
 		.search-bar-submitBtn {
-			font-size: 16px;
+			font-size: 14px;
 			display: block;
 			padding: unit(20/@base-px-2-rem, rem);
 		}
@@ -114,7 +117,6 @@
 	padding: unit(20/@base-px-2-rem, rem) unit(20/@base-px-2-rem, rem);
 }
 
-
 /************************
 
      搜索栏弹出页
@@ -126,6 +128,7 @@
 	padding: 0 unit(40/@base-px-2-rem, rem);
 	//修复小屏幕容器不完全白底的问题？
 	height: 100%;
+	.clearfix();
 }
 
 .search-keyword-row {
@@ -168,7 +171,6 @@
 	}
 }
 
-
 /************************
 
      搜索匹配提示
@@ -183,14 +185,11 @@
 	font-size: 13px;
 }
 
-
-
 /************************
 
      首页左方按钮弹出菜单
 
 ************************/
-
 
 .search-bar-menu {
 	.make-fixed-bar(@search-bar-height);
@@ -295,14 +294,14 @@
 	// position: fixed;
 	// width: 100%;
 	// max-width: @max-width;
-	// height: unit(@nav-buttom-bar-height/@base-px-2-rem, rem);
+	// height: unit(@nav-bottom-bar-height/@base-px-2-rem, rem);
 	// z-index: @z-index-nav-search-bar;
 	// background-color: #fff;
-	.make-fixed-bar(@nav-buttom-bar-height);
+	.make-fixed-bar(@nav-bottom-bar-height);
 	bottom: 0;
 	padding-top: unit(@nav-buttom-blank/@base-px-2-rem, rem);
 	padding-bottom: unit(@nav-buttom-blank/@base-px-2-rem, rem);
-	border-top: 1px solid rgba(0, 0, 0, 0.2);
+	border-top: 1px solid @border-color-gray-very-light;
 	text-align: center;
 	ul {
 		//display: block;
@@ -340,8 +339,8 @@
 			color: #fff;
 			font-size: 16px;
 			letter-spacing: 1px;
-			//height: unit( @nav-buttom-bar-height/@base-px-2-rem, rem);
-			line-height: unit(( @nav-buttom-bar-height - 30)/@base-px-2-rem, rem);
+			//height: unit( @nav-bottom-bar-height/@base-px-2-rem, rem);
+			line-height: unit(( @nav-bottom-bar-height - 30)/@base-px-2-rem, rem);
 		}
 	}
 	&.no-padding {
@@ -356,7 +355,7 @@
 		height: 100%;
 		> a {
 			height: 100%;
-			//height: unit( @nav-buttom-bar-height/@base-px-2-rem, rem);
+			//height: unit( @nav-bottom-bar-height/@base-px-2-rem, rem);
 			margin-left: unit(50/@base-px-2-rem, rem);
 			background-color: @red;
 			width: 25%;
@@ -369,14 +368,14 @@
 }
 
 .order-details-b-bar {
-	height: unit((@nav-buttom-bar-height - 35)/@base-px-2-rem, rem);
+	height: unit((@nav-bottom-bar-height - 35)/@base-px-2-rem, rem);
 	border: 0;
 	background-color: @border-color-gray-very-light;
 	//拼团透明度底部
 	&.groupbuy-b-bar {
 		//拼团详情页要比一般的底部栏高  容纳按钮
 		padding: unit(0/@base-px-2-rem, rem) unit(40/@base-px-2-rem, rem);
-		height: unit((@nav-buttom-bar-height)/@base-px-2-rem, rem);
+		height: unit((@nav-bottom-bar-height)/@base-px-2-rem, rem);
 		//http://stackoverflow.com/questions/14860874/how-to-convert-hex-color-to-rgba-with-less-compiler
 		//less fade 函数可以把hex转换成rgba颜色 褪色
 		background-color: fade(@border-color-gray-very-light, 70%);
@@ -407,7 +406,8 @@
 .base-nav-bar {
 	.make-fixed-bar(@base-nav-bar-height);
 	top: 0;
-	border-bottom: 1px solid @bar-border-color;
+	//border-bottom: 1px solid @bar-border-color;
+	.fixed-shadow(bottom, 1px);
 	// padding-top: unit(@search-bar-blank*2/@base-px-2-rem, rem);
 	// padding-bottom: unit(@search-bar-blank*2/@base-px-2-rem, rem);
 	// text-align: center;
@@ -455,7 +455,8 @@
 	.make-fixed-bar(@product-nav-bar-height);
 	bottom: 0;
 	//border-top: 1px solid @bar-border-color;
-	box-shadow: -1px 0 3px 0 @border-color-gray-light;
+	//box-shadow: -1px 0 3px 0 @border-color-gray-light;
+	.fixed-shadow(top, 2px);
 	display: flex;
 	flex-flow: row nowrap;
 	justify-content: space-between;
@@ -495,7 +496,7 @@ ul.product-nav-action {
 	}
 	//显示购物车 数量角标
 	li {
-		&:nth-child(2) a i{
+		&:nth-child(2) a i {
 
 			&[data-shop-count="0"] {
 				&::before {
@@ -527,7 +528,6 @@ ul.product-nav-action {
 				vertical-align: top;
 				//修正字体的右偏移
 				padding: 0 1px 0 0;
-
 
 				color: #fff;
 				background-color: @red;
@@ -609,10 +609,11 @@ li[data-shop-count="0"] {
 ****************/
 
 .shopcar-nav-bar {
-	.make-fixed-bar(@nav-buttom-bar-height);
+	.make-fixed-bar(@nav-bottom-bar-height);
 	//位于base nav上
-	bottom: unit(@nav-buttom-bar-height/@base-px-2-rem, rem);
-	border-top: 1px solid @bar-border-color;
+	bottom: unit(@nav-bottom-bar-height/@base-px-2-rem, rem);
+	//border-top: 1px solid @bar-border-color;
+	.fixed-shadow(top, 2px);
 	padding-left: unit(@shopcar-left-right-blank/@base-px-2-rem, rem);
 	display: flex;
 	flex-flow: row nowrap;
@@ -662,7 +663,7 @@ li[data-shop-count="0"] {
 	background-color: @red;
 	height: 100%;
 	text-align: center;
-	line-height: unit(@nav-buttom-bar-height/@base-px-2-rem, rem);
+	line-height: unit(@nav-bottom-bar-height/@base-px-2-rem, rem);
 	font-size: 16px;
 	font-weight: 500;
 	letter-spacing: 2px;
@@ -691,7 +692,7 @@ li[data-shop-count="0"] {
 		width: 60%;
 		height: 100%;
 		text-align: center;
-		line-height: unit(@nav-buttom-bar-height/@base-px-2-rem, rem);
+		line-height: unit(@nav-bottom-bar-height/@base-px-2-rem, rem);
 		padding-right: unit(200/@base-px-2-rem, rem);
 		//color: @red;
 	}
@@ -699,7 +700,7 @@ li[data-shop-count="0"] {
 		width: 40%;
 		height: 100%;
 		text-align: center;
-		line-height: unit(@nav-buttom-bar-height/@base-px-2-rem, rem);
+		line-height: unit(@nav-bottom-bar-height/@base-px-2-rem, rem);
 		.base-nav-buttom-bar-big-btn();
 	}
 }
@@ -711,7 +712,7 @@ li[data-shop-count="0"] {
 ****************/
 
 #get-order {
-	.make-fixed-bar(@nav-buttom-bar-height);
+	.make-fixed-bar(@nav-bottom-bar-height);
 	padding: unit(10/@base-px-2-rem, rem);
 	top: unit((@search-bar-height+50)/@base-px-2-rem, rem);
 	left: unit(80/@base-px-2-rem, rem);
@@ -755,7 +756,7 @@ li[data-shop-count="0"] {
 
 //旋转的图
 #TurnAround-img {
-	.make-fixed-bar(@nav-buttom-bar-height);
+	.make-fixed-bar(@nav-bottom-bar-height);
 	height: unit(150/@base-px-2-rem, rem);
 	width: unit(150/@base-px-2-rem, rem);
 	//修正默认位置与返回按钮重叠

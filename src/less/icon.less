@@ -2,8 +2,8 @@
 @import "value.less";
 
 i.icon {
-	width: unit(@search-bar-icon-size/@base-px-2-rem, rem);
-	height: unit(@search-bar-icon-size/@base-px-2-rem, rem);
+	width: unit(round(@search-bar-icon-size/@base-px-2-rem, 1), rem);
+	height: unit(round(@search-bar-icon-size/@base-px-2-rem, 1), rem);
 	background-origin: content-box;
 	background-repeat: no-repeat;
 	display: inline-block;
@@ -16,20 +16,20 @@ i.icon {
 	********************/
 	&.message {
 		background-image: url("@{icon-address}/message@2x.png");
-		margin-left: unit(40/@base-px-2-rem, rem);
-		margin-right: unit(30/@base-px-2-rem, rem);
+		margin-left: unit(round(40/@base-px-2-rem, 1), rem);
+		margin-right: unit(round(30/@base-px-2-rem, 1), rem);
 	}
 	&.search {
 		background-image: url("@{icon-address}/search@2x.png");
-		width: unit(@search-input-icon-size/@base-px-2-rem, rem);
-		height: unit(@search-input-icon-size/@base-px-2-rem, rem);
-		margin-left: unit(40/@base-px-2-rem, rem);
-		margin-right: unit(30/@base-px-2-rem, rem);
-		margin-top: unit(10/@base-px-2-rem, rem);
+		width: unit(round(@search-input-icon-size/@base-px-2-rem, 1), rem);
+		height: unit(round(@search-input-icon-size/@base-px-2-rem, 1), rem);
+		margin-left: unit(round(40/@base-px-2-rem, 1), rem);
+		margin-right: unit(round(30/@base-px-2-rem, 1), rem);
+		margin-top: unit(round(10/@base-px-2-rem, 1), rem);
 	}
 	&.scan {
 		background-image: url("@{icon-address}/scan@2x.png");
-		margin-right: unit(40/@base-px-2-rem, rem);
+		margin-right: unit(round(30/@base-px-2-rem, 1), rem);
 	}
 	/********************
 
@@ -38,8 +38,8 @@ i.icon {
 	********************/
 	&.home {
 		background-image: url("@{icon-address}/home@2x.png");
-		width: unit(@nav-buttom-bar-icon-size/@base-px-2-rem, rem);
-		height: unit(@nav-buttom-bar-icon-size/@base-px-2-rem, rem);
+		width: unit(round(@nav-buttom-bar-icon-size/@base-px-2-rem, 1), rem);
+		height: unit(round(@nav-buttom-bar-icon-size/@base-px-2-rem, 1), rem);
 		&.active {
 			background-image: url("@{icon-address}/home-red@2x.png");
 			& + p {
@@ -49,8 +49,8 @@ i.icon {
 	}
 	&.hot {
 		background-image: url("@{icon-address}/hot@2x.png");
-		width: unit(@nav-buttom-bar-icon-size/@base-px-2-rem, rem);
-		height: unit(@nav-buttom-bar-icon-size/@base-px-2-rem, rem);
+		width: unit(round(@nav-buttom-bar-icon-size/@base-px-2-rem, 1), rem);
+		height: unit(round(@nav-buttom-bar-icon-size/@base-px-2-rem, 1), rem);
 		&.active {
 			background-image: url("@{icon-address}/hot-red@2x.png");
 			& + p {
@@ -60,8 +60,8 @@ i.icon {
 	}
 	&.shopcar {
 		background-image: url("@{icon-address}/shopcar@2x.png");
-		width: unit(@nav-buttom-bar-icon-size/@base-px-2-rem, rem);
-		height: unit(@nav-buttom-bar-icon-size/@base-px-2-rem, rem);
+		width: unit(round(@nav-buttom-bar-icon-size/@base-px-2-rem, 1), rem);
+		height: unit(round(@nav-buttom-bar-icon-size/@base-px-2-rem, 1), rem);
 		&.active {
 			background-image: url("@{icon-address}/shopcar-red@2x.png");
 			& + p {
@@ -71,8 +71,8 @@ i.icon {
 	}
 	&.my {
 		background-image: url("@{icon-address}/my@2x.png");
-		width: unit(@nav-buttom-bar-icon-size/@base-px-2-rem, rem);
-		height: unit(@nav-buttom-bar-icon-size/@base-px-2-rem, rem);
+		width: unit(round(@nav-buttom-bar-icon-size/@base-px-2-rem, 1), rem);
+		height: unit(round(@nav-buttom-bar-icon-size/@base-px-2-rem, 1), rem);
 		&.active {
 			background-image: url("@{icon-address}/my-red@2x.png");
 			& + p {
@@ -88,8 +88,8 @@ i.icon {
 	//返回顶部
 	&.totop {
 		background-image: url("@{icon-address}/gotop@2x.png");
-		width: unit(@go-to-top-icon-size/@base-px-2-rem, rem);
-		height: unit(@go-to-top-icon-size/@base-px-2-rem, rem);
+		width: unit(round(@go-to-top-icon-size/@base-px-2-rem, 1), rem);
+		height: unit(round(@go-to-top-icon-size/@base-px-2-rem, 1), rem);
 	}
 	/********************
 
@@ -99,15 +99,14 @@ i.icon {
 	//返回
 	&.back {
 		background-image: url("@{icon-address}/back@2x.png");
-		//margin-left: unit(10/@base-px-2-rem, rem);
 	}
 	//分享
 	&.share {
 		background-image: url("@{icon-address}/share@2x.png");
-		width: unit((@base-nav-bar-icon-size - 20) /@base-px-2-rem, rem);
-		height: unit((@base-nav-bar-icon-size - 20) /@base-px-2-rem, rem);
-		margin-right: unit(20/@base-px-2-rem, rem);
-		margin-top: unit(15/@base-px-2-rem, rem);
+		width: unit(round((@base-nav-bar-icon-size - 20) /@base-px-2-rem, 1), rem);
+		height: unit(round((@base-nav-bar-icon-size - 20) /@base-px-2-rem, 1), rem);
+		margin-right: unit(round(20/@base-px-2-rem, 1), rem);
+		margin-top: unit(round(15/@base-px-2-rem, 1), rem);
 	}
 	/********************
 
@@ -117,8 +116,8 @@ i.icon {
 	&.right {
 		background-image: url("@{icon-address}/right.png");
 		//margin-left: unit(10/@base-px-2-rem, rem);
-		width: unit((28 * 0.7)/@base-px-2-rem, rem);
-		height: unit((56 * 0.7)/@base-px-2-rem, rem);
+		width: unit(round((28 * 0.7)/@base-px-2-rem, 2), rem);
+		height: unit(round((56 * 0.7)/@base-px-2-rem, 2), rem);
 	}
 	/********************
 
@@ -127,28 +126,28 @@ i.icon {
 	********************/
 	&.details-collect {
 		background-image: url("@{icon-address}/details-collect-1.jpg");
-		margin-top: unit(5/@base-px-2-rem, rem);
-		width: unit(@nav-buttom-bar-icon-size/@base-px-2-rem, rem);
-		height: unit(@nav-buttom-bar-icon-size/@base-px-2-rem, rem);
+		margin-top: unit(round(5/@base-px-2-rem, 2), rem);
+		width: unit(round(@nav-buttom-bar-icon-size/@base-px-2-rem, 2), rem);
+		height: unit(round(@nav-buttom-bar-icon-size/@base-px-2-rem, 2), rem);
 	}
 	//红色收藏
 	&.collect-red {
 		background-image: url("@{icon-address}/collect-red.png");
-		margin-top: unit(5/@base-px-2-rem, rem);
-		width: unit(@nav-buttom-bar-icon-size/@base-px-2-rem, rem);
-		height: unit(@nav-buttom-bar-icon-size/@base-px-2-rem, rem);
+		margin-top: unit(round(5/@base-px-2-rem), rem);
+		width: unit(round(@nav-buttom-bar-icon-size/@base-px-2-rem, 2), rem);
+		height: unit(round(@nav-buttom-bar-icon-size/@base-px-2-rem, 2), rem);
 	}
 	&.details-shopcar {
 		background-image: url("@{icon-address}/details-shopcar-1.jpg");
-		margin-top: unit(5/@base-px-2-rem, rem);
-		width: unit(@nav-buttom-bar-icon-size/@base-px-2-rem, rem);
-		height: unit(@nav-buttom-bar-icon-size/@base-px-2-rem, rem);
+		margin-top: unit(round(5/@base-px-2-rem), rem);
+		width: unit(round(@nav-buttom-bar-icon-size/@base-px-2-rem, 2), rem);
+		height: unit(round(@nav-buttom-bar-icon-size/@base-px-2-rem, 2), rem);
 	}
 	&.details-services {
 		background-image: url("@{icon-address}/details-services-1.jpg");
-		margin-top: unit(5/@base-px-2-rem, rem);
-		width: unit(@nav-buttom-bar-icon-size/@base-px-2-rem, rem);
-		height: unit(@nav-buttom-bar-icon-size/@base-px-2-rem, rem);
+		margin-top: unit(round(5/@base-px-2-rem), rem);
+		width: unit(round(@nav-buttom-bar-icon-size/@base-px-2-rem, 2), rem);
+		height: unit(round(@nav-buttom-bar-icon-size/@base-px-2-rem, 2), rem);
 	}
 	/********************
 
@@ -157,25 +156,23 @@ i.icon {
 	********************/
 	&.checked {
 		background-image: url("@{icon-address}/checked.png");
-		//margin-top: unit(5/@base-px-2-rem, rem);
-		width: unit(@shopcar-check-icon/@base-px-2-rem, rem);
-		height: unit(@shopcar-check-icon/@base-px-2-rem, rem);
+		width: unit(round(@shopcar-check-icon/@base-px-2-rem, 2), rem);
+		height: unit(round(@shopcar-check-icon/@base-px-2-rem, 2), rem);
 	}
 	&.no-check {
 		background-image: url("@{icon-address}/no-check.png");
-		//margin-top: unit(42/@base-px-2-rem, rem);
-		width: unit(@shopcar-check-icon/@base-px-2-rem, rem);
-		height: unit(@shopcar-check-icon/@base-px-2-rem, rem);
+		width: unit(round(@shopcar-check-icon/@base-px-2-rem, 2), rem);
+		height: unit(round(@shopcar-check-icon/@base-px-2-rem, 2), rem);
 	}
 	&.add {
 		background-image: url("@{icon-address}/add.png");
-		width: unit(@shopcar-add-icon/@base-px-2-rem, rem);
-		height: unit(@shopcar-add-icon/@base-px-2-rem, rem);
+		width: unit(round(@shopcar-check-icon/@base-px-2-rem, 2), rem);
+		height: unit(round(@shopcar-check-icon/@base-px-2-rem, 2), rem);
 	}
 	&.minus {
 		background-image: url("@{icon-address}/minus.png");
-		width: unit(@shopcar-add-icon/@base-px-2-rem, rem);
-		height: unit(@shopcar-add-icon/@base-px-2-rem, rem);
+		width: unit(round(@shopcar-check-icon/@base-px-2-rem, 2), rem);
+		height: unit(round(@shopcar-check-icon/@base-px-2-rem, 2), rem);
 	}
 	/********************
 
@@ -184,18 +181,18 @@ i.icon {
 	********************/
 	&.collect {
 		background-image: url("@{icon-address}/collect.png");
-		width: unit(@my-page-icon-size-small/@base-px-2-rem, rem);
-		height: unit(@my-page-icon-size-small/@base-px-2-rem, rem);
+		width: unit(round(@my-page-icon-size-small/@base-px-2-rem, 1), rem);
+		height: unit(round(@my-page-icon-size-small/@base-px-2-rem, 1), rem);
 	}
 	&.heart {
 		background-image: url("@{icon-address}/heart.png");
-		width: unit(@my-page-icon-size-small/@base-px-2-rem, rem);
-		height: unit(@my-page-icon-size-small/@base-px-2-rem, rem);
+		width: unit(round(@my-page-icon-size-small/@base-px-2-rem, 1), rem);
+		height: unit(round(@my-page-icon-size-small/@base-px-2-rem, 1), rem);
 	}
 	&.clock {
 		background-image: url("@{icon-address}/clock.png");
-		width: unit(@my-page-icon-size-small/@base-px-2-rem, rem);
-		height: unit(@my-page-icon-size-small/@base-px-2-rem, rem);
+		width: unit(round(@my-page-icon-size-small/@base-px-2-rem, 1), rem);
+		height: unit(round(@my-page-icon-size-small/@base-px-2-rem, 1), rem);
 	}
 
 	/********************
@@ -206,23 +203,23 @@ i.icon {
 
 	&.cyclo-all {
 		background-image: url("@{icon-address}/cyclo-all.png");
-		width: unit(@my-page-icon-size-small/@base-px-2-rem, rem);
-		height: unit(@my-page-icon-size-small/@base-px-2-rem, rem);
+		width: unit(round(@my-page-icon-size-small/@base-px-2-rem, 1), rem);
+		height: unit(round(@my-page-icon-size-small/@base-px-2-rem, 1), rem);
 	}
 	&.cyclo-correct {
 		background-image: url("@{icon-address}/cyclo-correct.png");
-		width: unit(@my-page-icon-size-small/@base-px-2-rem, rem);
-		height: unit(@my-page-icon-size-small/@base-px-2-rem, rem);
+		width: unit(round(@my-page-icon-size-small/@base-px-2-rem, 1), rem);
+		height: unit(round(@my-page-icon-size-small/@base-px-2-rem, 1), rem);
 	}
 	&.cyclo-people {
 		background-image: url("@{icon-address}/cyclo-people.png");
-		width: unit(@my-page-icon-size-small/@base-px-2-rem, rem);
-		height: unit(@my-page-icon-size-small/@base-px-2-rem, rem);
+		width: unit(round(@my-page-icon-size-small/@base-px-2-rem, 1), rem);
+		height: unit(round(@my-page-icon-size-small/@base-px-2-rem, 1), rem);
 	}
 	&.cyclo-alert {
 		background-image: url("@{icon-address}/cyclo-alert.png");
-		width: unit(@my-page-icon-size-small/@base-px-2-rem, rem);
-		height: unit(@my-page-icon-size-small/@base-px-2-rem, rem);
+		width: unit(round(@my-page-icon-size-small/@base-px-2-rem, 1), rem);
+		height: unit(round(@my-page-icon-size-small/@base-px-2-rem, 1), rem);
 	}
 
 	/********************
@@ -232,23 +229,23 @@ i.icon {
 	********************/
 	&.wallet {
 		background-image: url("@{icon-address}/wallet.png");
-		width: unit(@my-page-icon-size-small/@base-px-2-rem, rem);
-		height: unit(@my-page-icon-size-small/@base-px-2-rem, rem);
+		width: unit(round(@my-page-icon-size-small/@base-px-2-rem, 1), rem);
+		height: unit(round(@my-page-icon-size-small/@base-px-2-rem, 1), rem);
 	}
 	&.car {
 		background-image: url("@{icon-address}/car.png");
-		width: unit(@my-page-icon-size-small/@base-px-2-rem, rem);
-		height: unit(@my-page-icon-size-small/@base-px-2-rem, rem);
+		width: unit(round(@my-page-icon-size-small/@base-px-2-rem, 1), rem);
+		height: unit(round(@my-page-icon-size-small/@base-px-2-rem, 1), rem);
 	}
 	&.package {
 		background-image: url("@{icon-address}/package.png");
-		width: unit(@my-page-icon-size-small/@base-px-2-rem, rem);
-		height: unit(@my-page-icon-size-small/@base-px-2-rem, rem);
+		width: unit(round(@my-page-icon-size-small/@base-px-2-rem, 1), rem);
+		height: unit(round(@my-page-icon-size-small/@base-px-2-rem, 1), rem);
 	}
 	&.comment {
 		background-image: url("@{icon-address}/comment.png");
-		width: unit(@my-page-icon-size-small/@base-px-2-rem, rem);
-		height: unit(@my-page-icon-size-small/@base-px-2-rem, rem);
+		width: unit(round(@my-page-icon-size-small/@base-px-2-rem, 1), rem);
+		height: unit(round(@my-page-icon-size-small/@base-px-2-rem, 1), rem);
 	}
 
 	/********************
@@ -258,23 +255,23 @@ i.icon {
 	********************/
 	&.addr {
 		background-image: url("@{icon-address}/addr.png");
-		width: unit(@my-page-icon-size-small/@base-px-2-rem, rem);
-		height: unit(@my-page-icon-size-small/@base-px-2-rem, rem);
+		width: unit(round(@my-page-icon-size-small/@base-px-2-rem, 1), rem);
+		height: unit(round(@my-page-icon-size-small/@base-px-2-rem, 1), rem);
 	}
 	&.history {
 		background-image: url("@{icon-address}/history.png");
-		width: unit(@my-page-icon-size-small/@base-px-2-rem, rem);
-		height: unit(@my-page-icon-size-small/@base-px-2-rem, rem);
+		width: unit(round(@my-page-icon-size-small/@base-px-2-rem, 1), rem);
+		height: unit(round(@my-page-icon-size-small/@base-px-2-rem, 1), rem);
 	}
 	&.coupon {
 		background-image: url("@{icon-address}/coupon.png");
-		width: unit(@my-page-icon-size-small/@base-px-2-rem, rem);
-		height: unit(@my-page-icon-size-small/@base-px-2-rem, rem);
+		width: unit(round(@my-page-icon-size-small/@base-px-2-rem, 1), rem);
+		height: unit(round(@my-page-icon-size-small/@base-px-2-rem, 1), rem);
 	}
 	&.refund {
 		background-image: url("@{icon-address}/refund.png");
-		width: unit(@my-page-icon-size-small/@base-px-2-rem, rem);
-		height: unit(@my-page-icon-size-small/@base-px-2-rem, rem);
+		width: unit(round(@my-page-icon-size-small/@base-px-2-rem, 1), rem);
+		height: unit(round(@my-page-icon-size-small/@base-px-2-rem, 1), rem);
 	}
 	/********************
 
@@ -283,23 +280,23 @@ i.icon {
 	********************/
 	&.people {
 		background-image: url("@{icon-address}/people.png");
-		width: unit(@my-page-icon-size-small/@base-px-2-rem, rem);
-		height: unit(@my-page-icon-size-small/@base-px-2-rem, rem);
+		width: unit(round(@my-page-icon-size-small/@base-px-2-rem, 1), rem);
+		height: unit(round(@my-page-icon-size-small/@base-px-2-rem, 1), rem);
 	}
 	&.me {
 		background-image: url("@{icon-address}/me.png");
-		width: unit(@my-page-icon-size-small/@base-px-2-rem, rem);
-		height: unit(@my-page-icon-size-small/@base-px-2-rem, rem);
+		width: unit(round(@my-page-icon-size-small/@base-px-2-rem, 1), rem);
+		height: unit(round(@my-page-icon-size-small/@base-px-2-rem, 1), rem);
 	}
 	&.info {
 		background-image: url("@{icon-address}/info.png");
-		width: unit(@my-page-icon-size-small/@base-px-2-rem, rem);
-		height: unit(@my-page-icon-size-small/@base-px-2-rem, rem);
+		width: unit(round(@my-page-icon-size-small/@base-px-2-rem, 1), rem);
+		height: unit(round(@my-page-icon-size-small/@base-px-2-rem, 1), rem);
 	}
 	&.exit {
 		background-image: url("@{icon-address}/exit.png");
-		width: unit(@my-page-icon-size-small/@base-px-2-rem, rem);
-		height: unit(@my-page-icon-size-small/@base-px-2-rem, rem);
+		width: unit(round(@my-page-icon-size-small/@base-px-2-rem, 1), rem);
+		height: unit(round(@my-page-icon-size-small/@base-px-2-rem, 1), rem);
 	}
 	/********************
 
@@ -308,13 +305,13 @@ i.icon {
 	********************/
 	&.qq {
 		background-image: url("@{icon-address}/qq.png");
-		width: unit((@my-page-icon-size + 1)/@base-px-2-rem, rem);
-		height: unit((@my-page-icon-size + 1)/@base-px-2-rem, rem);
+		width: unit(round((@my-page-icon-size + 1)/@base-px-2-rem, 1), rem);
+		height: unit(round((@my-page-icon-size + 1)/@base-px-2-rem, 1), rem);
 	}
 	&.wechat {
 		background-image: url("@{icon-address}/wechat.png");
-		width: unit((@my-page-icon-size + 1)/@base-px-2-rem, rem);
-		height: unit((@my-page-icon-size + 1)/@base-px-2-rem, rem);
+		width: unit(round((@my-page-icon-size + 1)/@base-px-2-rem, 1), rem);
+		height: unit(round((@my-page-icon-size + 1)/@base-px-2-rem, 1), rem);
 	}
 	/********************
 
@@ -323,15 +320,15 @@ i.icon {
 	********************/
 	&.account {
 		background-image: url("@{icon-address}/account.png");
-		margin: 0 unit(25/@base-px-2-rem, rem);
-		width: unit(@input-icon/@base-px-2-rem, rem);
-		height: unit(@input-icon/@base-px-2-rem, rem);
+		margin: 0 unit(round(25/@base-px-2-rem, 1), rem);
+		width: unit(round(@input-icon/@base-px-2-rem, 2), rem);
+		height: unit(round(@input-icon/@base-px-2-rem, 2), rem);
 	}
 	&.password {
 		background-image: url("@{icon-address}/password.png");
-		margin: 0 unit(25/@base-px-2-rem, rem);
-		width: unit(@input-icon/@base-px-2-rem, rem);
-		height: unit(@input-icon/@base-px-2-rem, rem);
+		margin: 0 unit(round(25/@base-px-2-rem, 1), rem);
+		width: unit(round(@input-icon/@base-px-2-rem, 2), rem);
+		height: unit(round(@input-icon/@base-px-2-rem, 2), rem);
 	}
 	/********************
 
@@ -340,21 +337,21 @@ i.icon {
 	********************/
 	&.allinpay {
 		background-image: url("@{icon-address}/allinpay.png");
-		margin: 0 unit(25/@base-px-2-rem, rem);
-		width: unit(@input-icon/@base-px-2-rem, rem);
-		height: unit(@input-icon/@base-px-2-rem, rem);
+		margin: 0 unit(round(25/@base-px-2-rem, 1), rem);
+		width: unit(round(@input-icon/@base-px-2-rem, 1), rem);
+		height: unit(round(@input-icon/@base-px-2-rem, 1), rem);
 	}
 	&.alipay {
 		background-image: url("@{icon-address}/alipay.png");
-		margin: 0 unit(25/@base-px-2-rem, rem);
-		width: unit(@input-icon/@base-px-2-rem, rem);
-		height: unit(@input-icon/@base-px-2-rem, rem);
+		margin: 0 unit(round(25/@base-px-2-rem, 1), rem);
+		width: unit(round(@input-icon/@base-px-2-rem, 1), rem);
+		height: unit(round(@input-icon/@base-px-2-rem, 1), rem);
 	}
 	&.wechat-pay {
 		background-image: url("@{icon-address}/wechat-pay.png");
-		margin: 0 unit(25/@base-px-2-rem, rem);
-		width: unit(@input-icon/@base-px-2-rem, rem);
-		height: unit(@input-icon/@base-px-2-rem, rem);
+		margin: 0 unit(round(25/@base-px-2-rem, 1), rem);
+		width: unit(round(@input-icon/@base-px-2-rem, 1), rem);
+		height: unit(round(@input-icon/@base-px-2-rem, 1), rem);
 	}
 	/********************
 
@@ -364,16 +361,15 @@ i.icon {
 	&.truck {
 		background-image: url("@{icon-address}/truck.png");
 		//大
-		margin: unit(10/@base-px-2-rem, rem) unit(25/@base-px-2-rem, rem);
-		width: unit((@input-icon+ 80)/@base-px-2-rem, rem);
-		height: unit((@input-icon+80)/@base-px-2-rem, rem);
+		margin: unit(round(10/@base-px-2-rem, 2), rem) unit(round(25/@base-px-2-rem, 2), rem);
+		width: unit(round((@input-icon+ 80)/@base-px-2-rem, 2), rem);
+		height: unit(round((@input-icon+ 80)/@base-px-2-rem, 2), rem);
 	}
 	&.location {
 		background-image: url("@{icon-address}/location.png"); //小
-		margin: 0 unit(25/@base-px-2-rem, rem);
-		margin-top: unit(8/@base-px-2-rem, rem);
-		width: unit((@input-icon - 10)/@base-px-2-rem, rem);
-		height: unit((@input-icon - 10)/@base-px-2-rem, rem);
+		margin: unit(round(8/@base-px-2-rem, 2), rem) unit(round(25/@base-px-2-rem, 2), rem) 0;
+		width: unit(round((@input-icon - 10)/@base-px-2-rem, 2), rem);
+		height: unit(round((@input-icon - 10)/@base-px-2-rem, 2), rem);
 	}
 	/********************
 
@@ -382,33 +378,33 @@ i.icon {
 	********************/
 	&.bad {
 		background-image: url("@{icon-address}/bad.png");
-		width: unit(@shopcar-check-icon/@base-px-2-rem, rem);
-		height: unit(@shopcar-check-icon/@base-px-2-rem, rem);
+		width: unit(round(@shopcar-check-icon/@base-px-2-rem, 2), rem);
+		height: unit(round(@shopcar-check-icon/@base-px-2-rem, 2), rem);
 	}
 	&.bad-gray {
 		background-image: url("@{icon-address}/bad-gray.png");
-		width: unit(@shopcar-check-icon/@base-px-2-rem, rem);
-		height: unit(@shopcar-check-icon/@base-px-2-rem, rem);
+		width: unit(round(@shopcar-check-icon/@base-px-2-rem, 2), rem);
+		height: unit(round(@shopcar-check-icon/@base-px-2-rem, 2), rem);
 	}
 	&.good {
 		background-image: url("@{icon-address}/good.png");
-		width: unit(@shopcar-check-icon/@base-px-2-rem, rem);
-		height: unit(@shopcar-check-icon/@base-px-2-rem, rem);
+		width: unit(round(@shopcar-check-icon/@base-px-2-rem, 2), rem);
+		height: unit(round(@shopcar-check-icon/@base-px-2-rem, 2), rem);
 	}
 	&.good-gray {
 		background-image: url("@{icon-address}/good-gray.png");
-		width: unit(@shopcar-check-icon/@base-px-2-rem, rem);
-		height: unit(@shopcar-check-icon/@base-px-2-rem, rem);
+		width: unit(round(@shopcar-check-icon/@base-px-2-rem, 2), rem);
+		height: unit(round(@shopcar-check-icon/@base-px-2-rem, 2), rem);
 	}
 	&.not-good {
 		background-image: url("@{icon-address}/not-good.png");
-		width: unit(@shopcar-check-icon/@base-px-2-rem, rem);
-		height: unit(@shopcar-check-icon/@base-px-2-rem, rem);
+		width: unit(round(@shopcar-check-icon/@base-px-2-rem, 2), rem);
+		height: unit(round(@shopcar-check-icon/@base-px-2-rem, 2), rem);
 	}
 	&.not-good-gray {
 		background-image: url("@{icon-address}/not-good-gray.png");
-		width: unit(@shopcar-check-icon/@base-px-2-rem, rem);
-		height: unit(@shopcar-check-icon/@base-px-2-rem, rem);
+		width: unit(round(@shopcar-check-icon/@base-px-2-rem, 2), rem);
+		height: unit(round(@shopcar-check-icon/@base-px-2-rem, 2), rem);
 	}
 	/********************
 
@@ -417,12 +413,12 @@ i.icon {
 	********************/
 	&.star-gray {
 		background-image: url("@{icon-address}/star-gray.png");
-		width: unit(@shopcar-check-icon/@base-px-2-rem, rem);
-		height: unit(@shopcar-check-icon/@base-px-2-rem, rem);
+		width: unit(round(@shopcar-check-icon/@base-px-2-rem, 2), rem);
+		height: unit(round(@shopcar-check-icon/@base-px-2-rem, 2), rem);
 	}
 	&.star-red {
 		background-image: url("@{icon-address}/star-red.png");
-		width: unit(@shopcar-check-icon/@base-px-2-rem, rem);
-		height: unit(@shopcar-check-icon/@base-px-2-rem, rem);
+		width: unit(round(@shopcar-check-icon/@base-px-2-rem, 2), rem);
+		height: unit(round(@shopcar-check-icon/@base-px-2-rem, 2), rem);
 	}
 }

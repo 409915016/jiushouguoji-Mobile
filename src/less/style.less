@@ -35,17 +35,15 @@ Swiper 分页指示器颜色
 	position: relative;
 	width: 100%;
 	max-width: @max-width;
-	margin-top: unit((@search-bar-height + @nav-bar-height + 2)/@base-px-2-rem, rem);
-	padding-bottom: unit((@nav-buttom-bar-height ) /@base-px-2-rem, rem);
+	margin-top: unit(round((@search-bar-height + @nav-bar-height + 2)/@base-px-2-rem, 1), rem);
+	padding-bottom: unit(round((@nav-bottom-bar-height ) /@base-px-2-rem, 1), rem);
 	background-color: @wrapper-bg-color;
-	//test
 	overflow: hidden;
 	//feature 只存在标题栏时，高度为 search-bar的高度
 	//各种页面下 可见块的顶部边距
 	&.title-bar {
-		margin-top: unit((@base-nav-bar-height)/@base-px-2-rem, rem);
-		//padding-bottom: unit(0 /@base-px-2-rem, rem);
-		padding-bottom: unit((@nav-buttom-bar-height ) /@base-px-2-rem, rem);
+		margin-top: unit(round((@base-nav-bar-height)/@base-px-2-rem, 1), rem);
+		padding-bottom: unit(round((@nav-bottom-bar-height ) /@base-px-2-rem, 1), rem);
 		&.h-100-white {
 			background-color: #fff;
 			height: 100%;
@@ -55,8 +53,8 @@ Swiper 分页指示器颜色
 		}
 	}
 	&.h-title-bar {
-		margin-top: unit((@base-nav-bar-height + @nav-bar-height)/@base-px-2-rem, rem);
-		padding-bottom: unit((@nav-buttom-bar-height) /@base-px-2-rem, rem);
+		margin-top: unit(round((@base-nav-bar-height + @nav-bar-height)/@base-px-2-rem, 1), rem);
+		padding-bottom: unit(round((@nav-bottom-bar-height) /@base-px-2-rem, 1), rem);
 		&.h-100-white {
 			background-color: #fff;
 			height: 100%;
@@ -69,22 +67,16 @@ Swiper 分页指示器颜色
 		padding-bottom: unit(0 /@base-px-2-rem, rem);
 	}
 	&.shopcar {
-		padding-bottom: unit((@nav-buttom-bar-height )*2 /@base-px-2-rem, rem);
+		padding-bottom: unit(round((@nav-bottom-bar-height )*2 /@base-px-2-rem, 1), rem);
 	}
 	&.my-page {
 		background-color: @my-page-bg-color;
 		//height: 100%;
-		margin-bottom: unit(120 /@base-px-2-rem, rem);
+		margin-bottom: unit(round(120 /@base-px-2-rem, 1), rem);
 		//修复小屏幕显示页面显示不全
 		@media screen and (max-height: 600px) {
-			//height: 100%;
-			//margin-bottom: unit(200 /@base-px-2-rem, rem);
 			overflow: visible;
 		}
-		// @media screen and (min-height: 568px) {
-		//     height: 100%;
-		//     margin-bottom: unit(120 /@base-px-2-rem, rem);
-		// }
 		&.no-mart {
 			margin-top: 0;
 		}
@@ -141,11 +133,7 @@ main-wrapper
 	.big-banner-imgBox {
 		width: 100%;
 		max-width: @max-width;
-		height: unit(750/@base-px-2-rem, rem);
-		// background-image: url("../img/banner-img.jpg");
-		// background-size: 100%;
-		// background-repeat: no-repeat no-repeat;
-		// background-position: center center;
+		height: unit(round(750/@base-px-2-rem, 1), rem);
 		position: relative;
 		// to fix the big image split the page
 		// http://www.divcss5.com/wenji/w364.shtml
@@ -154,16 +142,14 @@ main-wrapper
 			//display: block;
 			// to fix the big image split the page
 			// http://stackoverflow.com/questions/7055393/center-image-using-text-align-center
-			height: unit(750/@base-px-2-rem, rem);
+			height: unit(round(750/@base-px-2-rem, 1), rem);
 			position: relative;
 			//-webkit- to fix UC borwser transform not work.
-			-webkit-transform: translateX(-50%) scale(1.1, 1.1);
 			transform: translateX(-50%) scale(1.1, 1.1);
+			left: 49.9%;
 			zoom: 1.1;
 			//fix the ip6 over device not in the center
-			left: 49.9%;
 			@media screen and (min-width: 768px) {
-				-webkit-transform: translateX(-50%) scale(1.2, 1.2);
 				transform: translateX(-50%) scale(1.2, 1.2);
 				zoom: 1.2;
 			}
@@ -179,22 +165,19 @@ main-wrapper
 
 ************************/
 
-div.product-imgBox {
+div.series-product-imgBox {
 	width: 100%;
 	max-width: @max-width;
-	height: unit(750/@base-px-2-rem, rem);
+	height: unit(round(750/@base-px-2-rem, 1), rem);
 	position: relative;
 	overflow: hidden;
 	img {
-		height: unit(750/@base-px-2-rem, rem);
+		height: unit(round(750/@base-px-2-rem, 1), rem);
 		position: relative;
-		//-webkit- to fix UC borwser transform not work.
-		-webkit-transform: translateX(-50%) scale(1, 1);
 		transform: translateX(-50%) scale(1, 1);
 		zoom: 1.1;
 		left: 49.9%;
 		@media screen and (min-width: 768px) {
-			-webkit-transform: translateX(-50%) scale(1.2, 1.2);
 			transform: translateX(-50%) scale(1.2, 1.2);
 			zoom: 1.2;
 		}
@@ -205,9 +188,9 @@ div.product-imgBox {
 		position: absolute;
 		bottom: 0;
 		left: 46.999%;
-		border-left: unit(40/@base-px-2-rem, rem) solid transparent;
-		border-right: unit(40/@base-px-2-rem, rem) solid transparent;
-		border-bottom: unit(40/@base-px-2-rem, rem) solid #fff;
+		border-left: unit(round(40/@base-px-2-rem, 1), rem) solid transparent;
+		border-right: unit(round(40/@base-px-2-rem, 1), rem) solid transparent;
+		border-bottom: unit(round(40/@base-px-2-rem, 1), rem) solid #fff;
 	}
 	//隐藏正三角
 	&.no-after {
@@ -227,7 +210,7 @@ div.swiper-product {
 	.swiper-slide {
 		text-align: center;
 		img {
-			height: unit(360/@base-px-2-rem, rem);
+			height: unit(round(360/@base-px-2-rem, 1), rem);
 		}
 		p {
 			text-overflow: ellipsis;
@@ -245,28 +228,27 @@ div.swiper-product {
 		}
 	}
 	.swiper-slide {
-		//last swipwer look more……
+		//last swipwer more……
 		&:last-child {
 			//to fix UC borwser margin-top not work.
 			.clearfix();
+			//查看更多
 			p {
 				font-size: 15px;
-				margin: unit(45/@base-px-2-rem, rem);
-				margin-top: unit(100/@base-px-2-rem, rem);
-				// height: unit(250/@base-px-2-rem, rem);
-				// line-height: unit(250/@base-px-2-rem, rem);
-				.make-line-and-height-p(250);
+				margin: unit(round(100/@base-px-2-rem, 2), rem) unit(round(45/@base-px-2-rem, 2), rem) unit(round(45/@base-px-2-rem, 2), rem);
 				border: 1px solid #999;
-				font-weight: 600;
 				@media screen and (min-width: 768px) {
 					font-size: 20px;
 					letter-spacing: 2px;
 					font-weight: 500;
 				}
+				.make-line-and-height-p(250);
 			}
 		}
 	}
 }
+
+
 
 /******************
 
@@ -277,15 +259,14 @@ div.swiper-product {
 //直接用于任何容器 已具有样式
 p.end-text {
 	color: #999;
-	.mod-retina-display(20px, 0px);
 	position: relative;
 	width: 100%;
 	text-align: center;
-	.make-line-and-height-p(@big-banner-text-height);
 	font-size: 15px;
 	background-color: #fff;
 	letter-spacing: 1px;
 	font-weight: 500;
+	.make-line-and-height-p(@big-banner-text-height);
 	.mod-retina-display(20px, 2px);
 }
 
@@ -302,24 +283,16 @@ p.end-text {
 
 .product-search-wrapper {
 	display: none;
-	height: 100%;
 	background: #fff;
 }
-
 
 //404 页面
 .error-wrapper {
 	background-color: @blue;
-	background-origin: padding-box;
-	background-repeat: no-repeat;
-	background-position: center center;
-	background-size: 100%;
-	//background-image: url("@{icon-address}/404.png");
-	padding: unit(150/@base-px-2-rem, rem) 0;
+	padding: unit(round(150/@base-px-2-rem,1), rem) 0;
 	height: 100%;
 	color: #fff;
 	img {
-
 		width: 100%;
 	}
 	p {

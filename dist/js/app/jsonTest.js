@@ -39,7 +39,7 @@ $(function ($) {
 
 
         var all_img = new Array;
-        all_img = $(".product-imgBox a img");
+        all_img = $(".series-product-imgBox a img");
 
         //6
         data.data.forEach(function (element, index, array) {
