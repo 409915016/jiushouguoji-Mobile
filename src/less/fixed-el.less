@@ -260,8 +260,8 @@
 		li {
 			&.active {
 				a {
-					color: red;
-					border-bottom: 1px solid #333;
+					color: @red;
+					border-bottom: 1px solid @red;
 				}
 			}
 			a {
@@ -290,7 +290,7 @@
 
 ************************/
 
-.nav-buttom-bar {
+.nav-bottom-bar {
 	// position: fixed;
 	// width: 100%;
 	// max-width: @max-width;
@@ -649,7 +649,7 @@ li[data-shop-count="0"] {
 		width: 33.33%;
 		display: block;
 		//通用
-		.base-nav-buttom-bar-big-btn();
+		.base-nav-bottom-bar-big-btn();
 	}
 }
 
@@ -659,7 +659,7 @@ li[data-shop-count="0"] {
 
 ****************/
 
-.base-nav-buttom-bar-big-btn() {
+.base-nav-bottom-bar-big-btn() {
 	background-color: @red;
 	height: 100%;
 	text-align: center;
@@ -701,7 +701,7 @@ li[data-shop-count="0"] {
 		height: 100%;
 		text-align: center;
 		line-height: unit(@nav-bottom-bar-height/@base-px-2-rem, rem);
-		.base-nav-buttom-bar-big-btn();
+		.base-nav-bottom-bar-big-btn();
 	}
 }
 

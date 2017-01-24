@@ -492,8 +492,8 @@ iframe {
   padding: 0 0.17605634rem;
 }
 .nav-bar ul li.active a {
-  color: red;
-  border-bottom: 1px solid #333;
+  color: #e9282e;
+  border-bottom: 1px solid #e9282e;
 }
 .nav-bar ul li a {
   display: block;
@@ -508,7 +508,7 @@ iframe {
       底部导航栏
 
 ************************/
-.nav-buttom-bar {
+.nav-bottom-bar {
   position: fixed;
   z-index: 11;
   width: 100%;
@@ -521,7 +521,7 @@ iframe {
   border-top: 1px solid #ebebeb;
   text-align: center;
 }
-.nav-buttom-bar ul {
+.nav-bottom-bar ul {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -538,17 +538,17 @@ iframe {
           align-items: center;
   padding: 0 0.35211268rem;
 }
-.nav-buttom-bar ul li {
+.nav-bottom-bar ul li {
   text-align: center;
   width: 25%;
 }
-.nav-buttom-bar ul li a {
+.nav-bottom-bar ul li a {
   display: block;
 }
-.nav-buttom-bar ul li a.active {
+.nav-bottom-bar ul li a.active {
   color: red;
 }
-.nav-buttom-bar ul li p {
+.nav-bottom-bar ul li p {
   line-height: 0.22007042rem;
   font-size: 12px;
   -webkit-transform: scale(0.9);
@@ -556,26 +556,26 @@ iframe {
           transform: scale(0.9);
 }
 @media screen and (min-width: 768px) {
-  .nav-buttom-bar ul li p {
+  .nav-bottom-bar ul li p {
     font-size: 20px;
     letter-spacing: 2px;
   }
 }
-.nav-buttom-bar.red-btn {
+.nav-bottom-bar.red-btn {
   background-color: #e9282e;
   border-top: 0;
 }
-.nav-buttom-bar.red-btn > a {
+.nav-bottom-bar.red-btn > a {
   display: block;
   color: #fff;
   font-size: 16px;
   letter-spacing: 1px;
   line-height: 0.96830986rem;
 }
-.nav-buttom-bar.no-padding {
+.nav-bottom-bar.no-padding {
   padding: 0;
 }
-.nav-buttom-bar .nav-btn-wrapper {
+.nav-bottom-bar .nav-btn-wrapper {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -593,7 +593,7 @@ iframe {
           align-items: center;
   height: 100%;
 }
-.nav-buttom-bar .nav-btn-wrapper > a {
+.nav-bottom-bar .nav-btn-wrapper > a {
   height: 100%;
   margin-left: 0.44014085rem;
   background-color: #e9282e;
@@ -4528,12 +4528,8 @@ body .layui-m-layer .layui-m-layer-msg {
             box-shadow: 24px 0px 0px 0px rgba(255, 0, 0, 0.2), 48px 0px 0px 0px #ff0000;
   }
 }
-html {
-  height: 100%;
-}
 body {
-  height: 100%;
-  background-color: #e6e6e6;
+  background-color: #f7f7f7;
   color: #333;
 }
 a {
@@ -4555,7 +4551,6 @@ textarea {
 }
 .wrapper {
   width: 100%;
-  height: 100%;
   background-color: #f7f7f7;
   margin: 0 auto;
   max-width: 640px;
@@ -4787,7 +4782,6 @@ a.button {
   width: 40%;
 }
 .no-swiper-product div.product-imgBox img {
-  height: 100%;
   width: 100%;
 }
 .no-swiper-product div.product-imgBox::after {
@@ -4901,7 +4895,6 @@ single-goods
   width: 40%;
 }
 .single-goods div.product-imgBox img {
-  height: 100%;
   width: 100%;
 }
 .single-goods div.product-imgBox::after {
@@ -5347,7 +5340,6 @@ Swiper 分页指示器颜色
 }
 .main-wrapper.title-bar.h-100-white {
   background-color: #fff;
-  height: 100%;
 }
 .main-wrapper.title-bar.no-b-nav {
   padding-bottom: 0;
@@ -5358,7 +5350,6 @@ Swiper 分页指示器颜色
 }
 .main-wrapper.h-title-bar.h-100-white {
   background-color: #fff;
-  height: 100%;
 }
 .main-wrapper.h-title-bar.no-b-nav {
   padding-bottom: 0;
@@ -5383,11 +5374,10 @@ Swiper 分页指示器颜色
 }
 .main-wrapper.my-center {
   background-color: #fff;
-  height: 100%;
+  padding-bottom: 0;
 }
 .main-wrapper.about iframe {
   width: 100%;
-  height: 100vh;
 }
 .main-wrapper.about.no-mart {
   margin-top: 0;
@@ -5403,7 +5393,6 @@ Swiper 分页指示器颜色
 }
 .main-wrapper.h-100-white {
   background-color: #fff;
-  height: 100%;
 }
 .product-wrapper {
   background-color: #f7f7f7;

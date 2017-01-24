@@ -43,8 +43,8 @@ $("body > div.wrapper > div.nav-bar > ul > li > a").css("font-size", "14px");
 //顶部导航
 $(".nav-bar ul li").removeClass("active");
 $(".nav-bar ul li:first-child").addClass("active");
-$(".nav-buttom-bar ul li a i").removeClass("active");
-$(".nav-buttom-bar ul li:first-child a i").addClass("active");
+$(".nav-bottom-bar ul li a i").removeClass("active");
+$(".nav-bottom-bar ul li:first-child a i").addClass("active");
 //首页返回顶部
 SrolltoTop();
 //左边铃铛点击弹出下拉菜单

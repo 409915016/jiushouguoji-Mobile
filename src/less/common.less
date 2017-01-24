@@ -3,13 +3,10 @@
 @import "base.less";
 
 html {
-	//font-size: 113.6px;
-	height: 100%;
 }
 
 body {
-	height: 100%;
-	background-color: #e6e6e6;
+	background-color: @wrapper-bg-color;
 	color: #333;
 }
 
@@ -38,7 +35,6 @@ textarea {
 // body 下的容器
 .wrapper {
 	width: 100%;
-	height: 100%;
 	background-color: @wrapper-bg-color;
 	margin: 0 auto;
 	max-width: @max-width;
@@ -93,7 +89,6 @@ button {
 
 .base-wrapper() {
 	//defluat 140
-	//margin-top: unit(@base-mt/@base-px-2-rem, rem);
 	background-color: #fff;
 	overflow: hidden;
 	border-bottom: 1px solid @border-color-gray-light;
@@ -263,7 +258,6 @@ a.button {
 		padding: unit(10/@base-px-2-rem, rem) unit(40/@base-px-2-rem, rem);
 		width: 40%;
 		img {
-			height: 100%;
 			width: 100%;
 		}
 		&::after {

@@ -1,0 +1,97 @@
+/*
+function
+*/
+/*
+function
+*/
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+.fr {
+  float: right;
+}
+.fl {
+  float: left;
+}
+ul,
+li,
+p,
+h1,
+h2,
+h3 {
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+  color: #111;
+}
+a:link {
+  color: #111;
+}
+a:visited {
+  color: #111;
+}
+input[type="date"] {
+  display: block;
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  appearance: button;
+  outline: none;
+  border: 0;
+  font-family: "Helvetica Neue", "Helvetica", "STHeiTi", "Heiti SC", "微软雅黑", "SimSun", "宋体", "sans-serif";
+}
+button,
+select,
+option,
+input[type="text"],
+input[type="password"],
+textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  outline: none;
+  border: 0;
+  font-family: "Helvetica Neue", "Helvetica", "STHeiTi", "Heiti SC", "微软雅黑", "SimSun", "宋体", "sans-serif";
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+body {
+  font-family: "Helvetica Neue", "Helvetica", "STHeiTi", "Heiti SC", "微软雅黑", "SimSun", "宋体", "sans-serif";
+  width: 100%;
+}
+section:before,
+section:after {
+  content: "";
+  display: table;
+}
+section:after {
+  clear: both;
+}
+/*
+some table normalize style in here
+*/
+th {
+  font-weight: 500;
+}
+th,
+td {
+  padding: 0px 20px;
+}
+img[src=""] {
+  opacity: 0;
+}
+.no-visible {
+  visibility: hidden !important;
+}
+.no-display {
+  display: none !important;
+}
+iframe {
+  border: 0;
+}
+
+/*# sourceMappingURL=base.css.map */

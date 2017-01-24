@@ -46,7 +46,6 @@ Swiper 分页指示器颜色
 		padding-bottom: unit(round((@nav-bottom-bar-height ) /@base-px-2-rem, 1), rem);
 		&.h-100-white {
 			background-color: #fff;
-			height: 100%;
 		}
 		&.no-b-nav {
 			padding-bottom: 0;
@@ -57,7 +56,6 @@ Swiper 分页指示器颜色
 		padding-bottom: unit(round((@nav-bottom-bar-height) /@base-px-2-rem, 1), rem);
 		&.h-100-white {
 			background-color: #fff;
-			height: 100%;
 		}
 		&.no-b-nav {
 			padding-bottom: 0;
@@ -67,11 +65,10 @@ Swiper 分页指示器颜色
 		padding-bottom: unit(0 /@base-px-2-rem, rem);
 	}
 	&.shopcar {
-		padding-bottom: unit(round((@nav-bottom-bar-height )*2 /@base-px-2-rem, 1), rem);
+		padding-bottom: unit(round((@nav-bottom-bar-height)*2    /@base-px-2-rem, 1), rem);
 	}
 	&.my-page {
 		background-color: @my-page-bg-color;
-		//height: 100%;
 		margin-bottom: unit(round(120 /@base-px-2-rem, 1), rem);
 		//修复小屏幕显示页面显示不全
 		@media screen and (max-height: 600px) {
@@ -83,13 +80,11 @@ Swiper 分页指示器颜色
 	}
 	&.my-center {
 		background-color: #fff;
-		height: 100%;
-
+		padding-bottom: 0;
 	}
 	&.about {
 		iframe {
 			width: 100%;
-			height: 100vh;
 		}
 		&.no-mart {
 			margin-top: 0;
@@ -108,7 +103,6 @@ Swiper 分页指示器颜色
 
 	&.h-100-white {
 		background-color: #fff;
-		height: 100%;
 	}
 
 }
