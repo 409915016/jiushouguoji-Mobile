@@ -1,14 +1,14 @@
-::Coding
+ï»¿::Coding
 XCOPY D:\phpStudy\WWW\jiushouguoji-Mobile\dist D:\GitCode\jiushouguoji-Mobile\dist\ /Y/E/I
 XCOPY D:\phpStudy\WWW\jiushouguoji-Mobile\src D:\GitCode\jiushouguoji-Mobile\src\ /Y/E/I
 XCOPY D:\phpStudy\WWW\jiushouguoji-Mobile\gulpfile.js D:\GitCode\jiushouguoji-Mobile\ /Y
 XCOPY D:\phpStudy\WWW\jiushouguoji-Mobile\package.json D:\GitCode\jiushouguoji-Mobile\ /Y
 XCOPY D:\phpStudy\WWW\jiushouguoji-Mobile\INC_copy.bat D:\GitCode\jiushouguoji-Mobile\ /Y
 ::GitHub
-XCOPY D:\phpStudy\WWW\jiushouguoji-Mobile\dist D:\ÎÒµÄÎÄµµ\jiushouguoji-Mobile\dist\ /Y/E/I
-XCOPY D:\phpStudy\WWW\jiushouguoji-Mobile\src D:\ÎÒµÄÎÄµµ\jiushouguoji-Mobile\src\ /Y/E/I
-XCOPY D:\phpStudy\WWW\jiushouguoji-Mobile\gulpfile.js D:\ÎÒµÄÎÄµµ\jiushouguoji-Mobile\ /Y
-XCOPY D:\phpStudy\WWW\jiushouguoji-Mobile\package.json D:\ÎÒµÄÎÄµµ\jiushouguoji-Mobile\ /Y
-XCOPY D:\phpStudy\WWW\jiushouguoji-Mobile\INC_copy.bat D:\ÎÒµÄÎÄµµ\jiushouguoji-Mobile\ /Y
+XCOPY D:\phpStudy\WWW\jiushouguoji-Mobile\dist D:\æˆ‘çš„æ–‡æ¡£\jiushouguoji-Mobile\dist\ /Y/E/I
+XCOPY D:\phpStudy\WWW\jiushouguoji-Mobile\src D:\æˆ‘çš„æ–‡æ¡£\jiushouguoji-Mobile\src\ /Y/E/I
+XCOPY D:\phpStudy\WWW\jiushouguoji-Mobile\gulpfile.js D:\æˆ‘çš„æ–‡æ¡£\jiushouguoji-Mobile\ /Y
+XCOPY D:\phpStudy\WWW\jiushouguoji-Mobile\package.json D:\æˆ‘çš„æ–‡æ¡£\jiushouguoji-Mobile\ /Y
+XCOPY D:\phpStudy\WWW\jiushouguoji-Mobile\INC_copy.bat D:\æˆ‘çš„æ–‡æ¡£\jiushouguoji-Mobile\ /Y
 :: XCOPY D:\phpStudy\WWW\jiushouguoji-Mobile\dist\css D:\GitCode\jiushouguoji-Mobile\web\Public\css /Y/E/I
 :: XCOPY D:\phpStudy\WWW\jiushouguoji-Mobile\dist\js\main.js D:\GitCode\jiushouguoji-Mobile\web\Public\js /Y
