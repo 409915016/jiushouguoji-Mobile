@@ -1,8 +1,6 @@
 <div align="center">
     <h3>简介</h3> 
-     <a href="http://wap.jiushouguoji.com">
-        <img width="120" heigth="120" src="http://api.jiushouguoji.hk/Uploads/20170606/059361fcb8404d.png">
-     </a>
+     <a href="http://wap.jiushouguoji.com"></a>
 </div>
 
 基于 ThinkPHP5 模板渲染的微信端购物商城：
