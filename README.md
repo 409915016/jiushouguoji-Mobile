@@ -1,7 +1,7 @@
 <div align="center">
     <h3>简介</h3> 
      <a href="http://wap.jiushouguoji.com">
-        <img width="120" heigth="120" src="http:\/\/api.jiushouguoji.hk\/Uploads\/20170606\/059361fcb8404d.png">
+        <img width="120" heigth="120" src="http://api.jiushouguoji.hk/Uploads/20170606/059361fcb8404d.png">
      </a>
 </div>
 
