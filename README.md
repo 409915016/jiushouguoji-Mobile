@@ -3,7 +3,7 @@
      <a href="http://wap.jiushouguoji.com"></a>
 </div>
 
-基于 ThinkPHP5 模板渲染的微信端购物商城：
+基于 ThinkPHP3.2.3 模板渲染的微信端购物商城：
 - 支持微信支付
 - 基于 `Gulp` 构建
 - 使用 `Less` 管理多页面样式
