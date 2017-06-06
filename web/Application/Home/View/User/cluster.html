@@ -1,0 +1,83 @@
+<extend name="Public/base" />
+
+<block name="body">
+    <!--文字头-->
+    <div class="base-nav-bar">
+        <a class="" href="/User">
+            <i class="icon back fl"></i>
+        </a>
+        <p>{$title}</p>
+        <a class="no-visible" href="">
+            <i class="icon back fl"></i>
+        </a>
+    </div>
+
+    <!--顶部导航栏-->
+    <div class="nav-bar on-base-title ">
+        <ul class="">
+            <li class="<eq name="_GET['type']" value="all">active</eq>">
+                <a href="{:U('User/order/cluster/all')}">全部</a>
+            </li>
+            <li class="<eq name="_GET['type']" value="underway">active</eq>">
+                <a href="{:U('User/order/cluster/underway')}">拼团中</a>
+            </li>
+            <li class="<eq name="_GET['type']" value="success">active</eq>">
+                <a href="{:U('User/order/cluster/success')}">拼团成功</a>
+            </li>
+            <li class="<eq name="_GET['type']" value="failed">active</eq>">
+                <a href="{:U('User/order/cluster/failed')}">拼团失败</a>
+            </li>
+        </ul>
+    </div>
+    <div class="main-wrapper h-title-bar no-b-nav myorder">
+        <section class="switch-wrapper">
+                <!--base-order start-->
+            <volist name="cluster_list" id="v">
+                <switch name="v.status">
+                    <case value="2">
+                        <div class="base-order groupbuy-base-order groupbuy-state-order-underway">
+                            <div class="base-order-date-state">
+                                <span class="base-order-date">{$v.pay_time|date='Y-m-d',###}</span>
+                                <span class="base-order-state">拼团中</span>
+                            </div>
+                    </case>
+                    <case value="3">
+                        <div class="base-order groupbuy-base-order groupbuy-state-order-succeed">
+                            <div class="base-order-date-state">
+                                <span class="base-order-date">{$v.pay_time|date='Y-m-d',###}</span>
+                                <span class="base-order-state">拼团成功</span>
+                            </div>
+                    </case>
+                    <case value="4">
+                        <div class="base-order groupbuy-base-order groupbuy-state-order-failure">
+                            <div class="base-order-date-state">
+                                <span class="base-order-date">{$v.pay_time|date='Y-m-d',###}</span>
+                                <span class="base-order-state">拼团失败</span>
+                            </div>
+                    </case>
+                </switch>
+                <a href="{:U('cluster/detail/'.$v['cluster_id'])}" class="base-order-info">
+                    <div class="order-imgBox">
+                        <img src="{$v.goods_image}" alt="">
+                    </div>
+                    <div class="order-name-price">
+                        <p>{$v.goods_name}</p>
+                        <!--团购人数 价格-->
+                        <div class="groupbuy-price-num">
+                            <span>{$v.cluster_member}<span>人团</span></span>
+                            <span>&#165;<span class="groupbuy-price">{$v.cluster_price}</span>元&#47;件</span>
+                        </div>
+                    </div>
+                </a>
+                    <div class="base-order-total"> </div>
+                    <div class="base-order-btn-row">
+                        <a href="/cluster/detail/{$v['cluster_id']}">查看拼团详情</a>
+                        <a href="/cluster/order/{$v['id']}">查看订单详情</a>
+                    </div>
+                </div>
+                <!--base-order close-->
+        </volist>
+    </section>
+
+    </div>
+</block>

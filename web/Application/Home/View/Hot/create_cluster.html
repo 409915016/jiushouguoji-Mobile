@@ -1,0 +1,150 @@
+<extend name="Public/base" />
+
+<block name="body">
+    <!--文字头-->
+    <div class="base-nav-bar">
+        <a class="" href="{:U('detail/'.$goods_detail['id'])}">
+            <i class="icon back fl"></i>
+        </a>
+        <p></p>
+        <a class="no-visible" href=""></a>
+    </div>
+    <!--底部确认订单-->
+    <div class="nav-bottom-bar no-padding">
+        <div class="order-comfirm-bar">
+            <p class="order-comfirm-price">共付款
+                &#165;<span id="total-fee" class="text-red">0.00</span>
+            </p>
+            <a class="order-comfirm-btn" id="pay">确认订单</a>
+        </div>
+    </div>
+
+    <div class="main-wrapper title-bar">
+        <!--用户信息-->
+        <a href="/select_address?coupon={$_GET['coupon']}" class="order-comfirm-user-add">
+            <div class="user-address-info">
+                <p class="user-real-name-phone">
+                    <span class="user-real-name">{$addr.name}</span>
+                    <span class="user-phone-num">{$addr.mobile}</span>
+                </p>
+                <p class="user-real-address">
+                    <span>{$addr.area}</span>
+                </p>
+                <p class="">身份证:
+                    <span class="user-identity-num">{$addr.personid}</span>
+                </p>
+            </div>
+            <i class="icon right"></i>
+        </a>
+        <!--订单列表-->
+        <div class="order-comfirm-list">
+            <!--整个显示商品订单的块-->
+            <section class="order-list">
+                <!--同家商家信息-->
+                <p class="order-list-door-name">{$goods_detail.shop_name}</p>
+                <!--售罄时候显示-->
+                <gt name="goods_detail.stock" value="0">
+                    <section class="base-order-info groupbuy-order-info">
+                        <div class="order-imgBox">
+                            <img src="{$goods_detail.image}" alt="">
+                        </div>
+                        <p>{$goods_detail.name}</p>
+                        <div class="order-price-num">
+                            <p class="base-order-price">&#165;
+                                <span>{$goods_detail.cluster_price}</span>/件
+                            </p>
+                        </div>
+                    </section>
+                    <div class="groupbuy-price-selector">
+                        <p>数量</p>
+                        <div class="price-selector">
+                            <i class="icon minus" onclick="sum_add(-1)"></i>
+                            <span id="goods_num">1</span>
+                            <i class="icon add" onclick="sum_add(1)"></i>
+                        </div>
+                    </div>
+                    <else/>
+                    <section class="base-order-info sold-out">
+                        <div class="order-imgBox">
+                            <img src="{$goods_detail.image}" alt="">
+                        </div>
+                        <p>{$goods_detail.name}</p>
+                        <div class="order-price-num">
+                            <p>库存不足</p>
+                        </div>
+                    </section>
+                </gt>
+                <a href="/User/coupon/available/{$goods_detail['id']}?addr={$_GET['addr']|default=$addr['id']}" class="groupbuy-coupon-selector">
+                    <p>店铺优惠券</p>
+                    <p>可用优惠券
+                        <span class="text-red">{$available_coupon}</span>张
+                    </p>
+                </a>
+                <div class="groupbuy-total ">
+                    <p>店铺合计：&#165;
+                        <span id="price_count" class="text-red">0.00</span></p>
+                </div>
+                <notempty name="c_value">
+                    <div class="groupbuy-total ">
+                        <p>使用优惠券：&#165;
+                            <span class="text-red">-{$c_value}</span>
+                        </p>
+                    </div>
+                </notempty>
+            </section>
+        </div>
+        <!--买家留言-->
+        <div class="base-mt-wrapper">
+            <div class="order-pay-way">
+                <section class="pay-way">
+                    <div class="pay-way-text">
+                        <i class="icon wechat-pay"></i>
+                        <p>微信支付</p>
+                    </div>
+                    <i class="icon checked"></i>
+                </section>
+            </div>
+        </div>
+        <!--可见页 end-->
+        <form action="/User/Order/pay/cluster_order" method="post">
+            <eq name="type" value="join"><input type="text" name="cluster_id" value="{$_GET['cluster_id']}" hidden></eq>
+            <input type="text" name="goods_id" value="{$goods_detail.id}" hidden>
+            <input type="text" name="addr_id" value="{$_GET['addr']|default=$addr['id']}" hidden>
+            <input type="text" name="goods_num" value="1" hidden>
+            <input type="text" name="coupon_num" value="{$_GET['coupon']}" hidden>
+            <input type="text" name="pay_channel" value="5" hidden>
+            <input type="text" name="order_price" value="0" hidden>
+        </form>
+    </div>
+</block>
+
+<block name="script">
+    <script>
+        $('#pay').click(function(){
+            $('form').submit();
+        });
+
+    </script>
+    <script>
+        (price_count =  function(){
+            var goods_num = parseInt($('#goods_num').text());
+            var price = {$goods_detail.cluster_price};
+            var result = (price * goods_num).toFixed(2);
+            $('#price_count').text(result);
+            $('input[name=order_price]').val(result);
+            return result;
+        })();
+        (total_count = function(){
+            var p_count = price_count();
+            var c_value = {$c_value|default=0};
+            $('#total-fee').text((p_count - c_value).toFixed(2));
+        })();
+        function sum_add(add){
+            var goods_num_before = $('input[name=goods_num]').val();
+            var goods_num_after = (add + parseInt(goods_num_before)) || 1;
+            $('input[name=goods_num]').val(goods_num_after);
+            $('#goods_num').text(goods_num_after);
+            price_count();
+        }
+    </script>
+</block>

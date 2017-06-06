@@ -1,0 +1,183 @@
+<extend name="Public/base" />
+
+<block name="body">
+    <div class="base-nav-bar">
+        <a class="" href="{:U('User')}">
+            <i class="icon back fl"></i>
+        </a>
+        <p>{$title}</p>
+        <a class="no-visible" href="">
+            <i class="icon back fl"></i>
+        </a>
+    </div>
+
+    <!--底部导航栏-->
+    <div class="nav-bottom-bar no-padding">
+        <div class="add-comment-navbar">
+            <div class="add-comment-select">
+                <input type="checkbox" name="111" value="" id="anonymous" class="door-check-1" checked/>
+                <label for="anonymous">
+                    <i class="icon no-check"></i>
+                </label>
+                <span>匿名评价</span>
+            </div>
+            <a href="javascript:;" class="add-comment-sent ajax-post">发表评价</a>
+        </div>
+    </div>
+
+    <div class="main-wrapper title-bar wish ">
+        <volist name="goods_list" id="v">
+            <section class="addComment-product" data-goods-id="{$v.goods_id}">
+                <div class="base-mt-wrapper pd b-line">
+                    <div class="add-comment-wrapper">
+                        <label for="comment">
+                            <div class="add-comment-input">
+                                <div class="add-comment-imgBox">
+                                    <img src="{$v.goods_image}" alt="">
+                                </div>
+                                <textarea id="comment" placeholder="亲，给好评哟！"></textarea>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="add-comment-wrapper">
+                        <input type="file" name="image">
+                    </div>
+                </div>
+                <div class="base-wrapper no-border">
+                    <div class="add-comment-good">
+                        <section class="comment-good">
+                            <i class="icon good-gray"></i>
+                            <span>好评</span>
+                        </section>
+                        <section class="comment-good">
+                            <i class="icon not-good-gray"></i>
+                            <span>中评</span>
+                        </section>
+                        <section class="comment-good">
+                            <i class="icon bad-gray"></i>
+                            <span>差评</span>
+                        </section>
+                    </div>
+                </div>
+            </section>
+        </volist>
+        <div class="base-mt-wrapper pd">
+            <div class="add-door-comment">
+                <p>店铺介绍</p>
+                <div class="door-comment-select">
+                    <section class="door-comment">
+                        <span>描述相符</span>
+                        <div class="door-comment-star">
+                            <i class="icon star-gray"></i>
+                            <i class="icon star-gray"></i>
+                            <i class="icon star-gray"></i>
+                            <i class="icon star-gray"></i>
+                            <i class="icon star-gray"></i>
+                        </div>
+                    </section>
+                    <section class="door-comment">
+                        <span>发货速度</span>
+                        <div class="door-comment-star">
+                            <i class="icon star-gray"></i>
+                            <i class="icon star-gray"></i>
+                            <i class="icon star-gray"></i>
+                            <i class="icon star-gray"></i>
+                            <i class="icon star-gray"></i>
+                        </div>
+                    </section>
+                    <section class="door-comment">
+                        <span>服务态度</span>
+                        <div class="door-comment-star">
+                            <i class="icon star-gray"></i>
+                            <i class="icon star-gray"></i>
+                            <i class="icon star-gray"></i>
+                            <i class="icon star-gray"></i>
+                            <i class="icon star-gray"></i>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</block>
+
+<block name="script">
+    <script>
+        $('.ajax-post').click(function () {
+            $.ajax({
+                'url': '{:U("User/Order/comment/".$_GET["order_id"])}',
+                'data': data,
+                'type': 'post',
+                'success': function (r) {
+                    baseMsg(r.message);
+                    if(r.status == 1){
+                        location.href = '/User/Order/all';
+                    }
+                }
+            });
+        });
+    </script>
+    <script>
+        var data = {};
+        data.order = {};
+        data.order.order_id = "{$_GET['order_id']}";
+
+        function getGoodsId(e){
+            return $(e).parents('.addComment-product').attr('data-goods-id');
+        }
+
+        $('.add-comment-input > textarea').blur(function(){
+            var goods_id = getGoodsId(this);
+            var text = $(this).val();
+
+            if(data[goods_id] === undefined)
+                data[goods_id] = {'isanonymous':1};
+            data[goods_id]['content'] = text;
+            //TODO: 2016年12月13日 18:20:06
+            data[goods_id]['image'] = [];
+        });
+
+
+        $('.comment-good').click(function(){
+            var goods_id = getGoodsId(this);
+            var row = $(this).parent().children();
+            var i = row.index(this);
+
+            if(data[goods_id] === undefined)
+                data[goods_id] = {'isanonymous':1};
+            data[goods_id]['result'] = i + 1;
+
+            var default_class = ['good-gray', 'not-good-gray', 'bad-gray'];
+            var active_class = ['good', 'not-good', 'bad'];
+
+            row.find('i').each(function(index){$(this).removeClass(active_class[index]).addClass(default_class[index]);});
+            $(this).find('i').removeClass(default_class[i]).addClass(active_class[i]);
+        });
+
+        $('.door-comment-star > i').click(function(){
+            var row = $(this).parent().children();
+            var i = row.index(this);
+            var row_i = $('.door-comment-star').index($(this).parent());
+            var rows_case = ['desccredit','servicecredit','deliverycredit'];
+
+            data['order'][rows_case[row_i]] = i + 1;
+
+            $(this).removeClass('star-gary').addClass('star-red');
+            $(this).prevAll().removeClass('star-gary').addClass('star-red');
+            $(this).nextAll().removeClass('star-red').addClass('star-gary');
+        });
+
+        $('.add-comment-select label').click(function(){
+            var checked = $('.add-comment-select input').is(':checked');
+            $('.addComment-product').each(function(){
+                var goods_id = $(this).attr('goods-id');
+
+                if(data[goods_id] === undefined)
+                    data[goods_id] = {'isanonymous':1};;
+
+                data[goods_id]['isanonymous'] = !data[goods_id]['isanonymous'] + 0;
+            });
+        });
+        </script>
+</block>

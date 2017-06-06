@@ -1,0 +1,69 @@
+<extend name="Public/base"/>
+
+<block name="body">
+    <div class="base-nav-bar">
+        <a class="" href="/User">
+            <i class="icon back fl"></i>
+        </a>
+        <p>理由描述</p>
+        <a class="no-visible" href="">
+            <i class="icon back fl"></i>
+        </a>
+    </div>
+    <div class="main-wrapper title-bar no-b-nav wish h-100-white">
+        <div class="base-wrapper no-tbpdding ">
+            <form action="" method="post">
+
+                <section class="input-list-row has-radius">
+					<span>
+						<span class="text-red">*</span>申请服务
+                    </span>
+                    <input type="text" value="退款" disabled>
+                </section>
+                <section class="input-list-row has-radius">
+					<span>
+						<span class="text-red">*</span>{$type}原因
+                    </span>
+                    <select name="reason">
+                        <option value="我不想买了">选择{$type}原因</option>
+                        <option value="我不想买了">我不想买了</option>
+                        <option value="订单信息有误">订单信息有误</option>
+                        <option value="未按规定时间发货">未按规定时间发货</option>
+                        <option value="拍错, 重新下单">拍错, 重新下单</option>
+                    </select>
+                </section>
+                <section class="input-list-row has-radius">
+					<span>
+						<span class="text-red">*</span>{$type}说明
+                    </span>
+                    <input type="text" name="message" placeholder="最多200字">
+                </section>
+                <input type="text" name="order_id" value="{:I('get.order_id')}" hidden>
+                <input type="text" name="type" value="{:I('get.type')}" hidden>
+            </form>
+            <section class="input-list-row has-radius">
+                <button id="submit">提交申请</button>
+            </section>
+        </div>
+    </div>
+</block>
+
+<block name="script">
+    <script>
+        $('#submit').click(function(){
+            $.ajax({
+                url: '',
+                type: 'POST',
+                data: $('form').serialize(),
+                success: function(r){
+                    baseMsg(r.message);
+                    if(r.status == 1){
+                        location.href = '/User/Order/payed';
+                    }else{
+                        location.href = '/User/Order/payed';
+                    }
+                }
+            });
+        });
+    </script>
+</block>

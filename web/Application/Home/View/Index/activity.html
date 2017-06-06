@@ -1,0 +1,42 @@
+<extend name="Public/base" />
+
+<block name="body">
+    <!--文字头-->
+    <div class="base-nav-bar">
+        <a href="/home">
+            <i class="icon back fl"></i>
+        </a>
+        <p>{$act.name}专场</p>
+        <a class="no-visible" href="">
+            <i class="icon back fl"></i>
+        </a>
+    </div>
+    <!--可见页-->
+    <div class="main-wrapper title-bar feature">
+        <!--商品大图与滑动-->
+        <div class="product-wrapper">
+            <section class="base-mt-wrapper no-mart">
+                <div class="series-product-imgBox">
+                    <a href="" class="">
+                        <img src="{$act.cover}" alt="{$act.name}">
+                    </a>
+                </div>
+                <div class="product-box-wrapper">
+
+                    <volist name="act.goods_list" id="v">
+                        <div class="product-box">
+                            <a href="{:U('/detail/'.$v['id'])}">
+                                <img src="{$v.image}">
+                                <p>{$v.name}</p>
+                                <p>&#165;<span>{$v.price}</span></p>
+                            </a>
+                        </div>
+                    </volist>
+
+                </div>
+                <p class="end-text">已经全部加载完毕</p>
+            </section>
+        </div>
+        <!--单个商品-->
+    </div>
+</block>

@@ -1,0 +1,38 @@
+<extend name="Public/base" />
+
+<block name="body">
+    <div class="base-nav-bar">
+        <a class="" href="my.html">
+            <i class="icon back fl"></i>
+        </a>
+        <p>退货/退款</p>
+        <a class="no-visible" href="">
+            <i class="icon back fl"></i>
+        </a>
+    </div>
+
+    <div class="main-wrapper title-bar no-b-nav arrival">
+        <volist name="list" id="v">
+            <div class="base-order">
+                <div class="base-order-date-state">
+                    <span class="base-order-date">{$v.create_time|date='Y-m-d',###}</span>
+                    <!--退款状态-->
+                    <span class="base-order-state">{$v.refund_status_text}</span>
+                </div>
+                <section href="" class="base-order-info">
+                    <div class="order-imgBox">
+                        <img src="{$v['order_goods'][0]['goods_image']}" alt=""> </div>
+                    <p>{$v['order_goods'][0]['goods_name']}</p>
+                    <div class="order-price-num">
+                        <p>&#165;
+                            <span>{$v.total_fee}</span>
+                        </p>
+                        <p class="base-order-price">
+                            共<span>{$v.total_goods_num}</span>件
+                        </p>
+                    </div>
+                </section>
+            </div>
+        </volist>
+    </div>
+</block>

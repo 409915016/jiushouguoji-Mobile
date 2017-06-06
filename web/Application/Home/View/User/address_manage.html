@@ -1,0 +1,72 @@
+<extend name="Public/base" />
+
+<block name="body">
+    <div class="base-nav-bar">
+        <!--{:W('Teleport/save')}-->
+        <a href="{:W('Teleport/lbo')}">
+            <i class="icon back fl"></i>
+        </a>
+        <p>{$title}</p>
+        <a class="no-visible" href="">
+            <i class="icon back fl"></i>
+        </a>
+    </div>
+    <!--底部新收货地址-->
+    <div class="nav-bottom-bar red-btn">
+        <a href="{:U('User/Address/add')}">新增收货地址</a>
+    </div>
+
+    <div class="main-wrapper title-bar">
+        <volist name="data" id="v">
+            <section class="user-address-single">
+                <div class="user-address-select">
+                    <i class="icon ajax-post <eq name='v.default' value='1'> checked <else/> no-check </eq>" _target="{:U('User/Address/setDefault/'.$v['id'])}"></i>
+                    <span>默认地址</span>
+                    <span class="user-address-del ajax-post del" _target="{:U('User/Address/del/'.$v['id'])}">删除</span>
+                </div>
+                <div class="user-address-info">
+                    <p class="user-real-name-phone">
+                        <span class="user-real-name">{$v.name}</span>
+                        <span class="user-phone-num">{$v.mobile}</span>
+                    </p>
+                    <p class="user-real-address">
+                        <span>{$v.area}</span>
+                        <span>{$v.address}</span>
+                    </p>
+                    <p class="">身份证:
+                        <span class="user-identity-num">{$v.personid}</span>
+                    </p>
+                </div>
+            </section>
+        </volist>
+    </div>
+</block>
+
+<block name="script">
+    <script>
+        $('.ajax-post').click(function () {
+            var _this = $(this);
+            console.log(_this);
+            var _this_addr = _this.parents('.user-address-single');
+            var target = _this.attr('_target');
+            baseMsg('请稍等..', 0);
+            $.ajax({
+                'url': target,
+                'dataType': 'json',
+                'success': function (r) {
+                    if(r.status == 1){
+                        baseMsg(r.message+'成功');
+                        _this.is('.del') ? _this_addr.fadeToggle("fast", "linear") : _this.is('.no-check') ? setDefault(_this) : 0;
+                    }else{
+                        baseMsg(r.message+'失败');
+                    }
+
+                }
+            })
+        });
+        var setDefault = function(e){
+            $('.checked').removeClass('checked').addClass('no-check');
+            e.removeClass('no-check').addClass('checked');
+        }
+    </script>
+</block>

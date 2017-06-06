@@ -1,0 +1,113 @@
+<extend name="Public/base" />
+
+<block name="body">
+
+    <div class="main-wrapper no-b-nav h-100-white no-mart ">
+        <div class="login-sign-wrapper sign bind-wechat">
+            <p class="login-select">
+                <span class="has-account-select">已有就手帐号</span>
+                <span class="not-account-select">没有就手帐号</span>
+            </p>
+            <!--有就手帐号-->
+            <form class=" has-account-form">
+                <section class="inputBlock">
+                    <input type="tel" name="mobile" value="" placeholder="手机号">
+                    <button class="verify" _target="/User/verify" onclick="return false;">验证</button>
+                </section>
+                <section class="inputBlock ">
+                    <input type="tel" name="verify" value="" placeholder="请输入收到的验证码">
+                </section>
+                <input type="text" name="open_id" value="{$open_id}" hidden>
+                <button class="submit" _target="/User/third_bind" onclick="return false;">立即绑定</button>
+            </form>
+            <!--没有就手帐号-->
+            <form class="not-account-form">
+                <section class="inputBlock">
+                    <input type="tel" name="mobile" value="" placeholder="手机号">
+                    <button class="verify" _target="/User/verify" onclick="return false;">验证</button>
+                </section>
+                <section class="inputBlock ">
+                    <input type="tel" name="verify" value="" placeholder="请输入收到的验证码">
+                </section>
+                <section class="inputBlock">
+                    <input type="password" name="password" value="" placeholder="6-16位登录密码">
+                </section>
+                <section class="inputBlock">
+                    <input type="password" name="password_retype" value="" placeholder="请再次输入密码">
+                </section>
+                <input type="text" name="open_id" value="{$open_id}" hidden>
+                <button class="submit" _target="/User/third_bind" onclick="return false;">立即注册并绑定</button>
+            </form>
+        </div>
+    </div>
+</block>
+<block name="script">
+    <script>
+        $('form').hide();
+        $('form').eq($('.login-select span').index($('.login-select span:first').addClass('active'))).show();
+        $('.login-select span').click(function () {
+            var _this = $(this);
+            $('.login-select span').removeClass('active');
+            _this.addClass('active');
+            $('form').hide();
+            $('form').eq($('.login-select span').index(_this)).show();
+        });
+    </script>
+    <script>
+        var cid = [];
+        $('.verify').click(function(){
+            baseMsg('正在发送验证码..', 0);
+            var _this = $(this);
+            var verify_id = $('.verify').index(_this);
+            cid[verify_id] = setInterval(function(){disabled_countdown(_this)}, 1000);
+            var target = $(this).attr('_target');
+            var mobile = 'mobile=' + _this.parents('form').find('input[name=mobile]').val();
+            $.ajax({
+                url: target,
+                data: mobile,
+                type: 'POST',
+                success: function (r) {
+                    baseMsg('验证码'+r.message);
+                }
+            });
+        });
+        var disabled_countdown = function(btn){
+            if(btn.is('.disabled')){
+                if(btn.attr('countdown') > 0){
+                    btn.attr('countdown', btn.attr('countdown') -1);
+                }else{
+                    var verify_id = $('.verify').index(btn);
+                    clearInterval(cid[verify_id]);
+                    btn.text('验证');
+                    btn.removeClass('disabled');
+                    return;
+                }
+            }else{
+                btn.addClass('disabled');
+                btn.attr('countdown', 60);
+            }
+            btn.text( btn.attr('countdown') +'秒');
+        }
+        $('.submit').click(function () {
+            var _this = $(this);
+            var target = _this.attr('_target');
+            var data =  _this.parents('form').serialize();
+            $.ajax({
+                url: target,
+                data: data,
+                type: 'POST',
+                success: function (r) {
+                    baseMsg(r.message);
+                    switch (r.status){
+                        case 1:
+                            $.ajax({
+                                url: '/User/weixin_init',
+                                success: function(){location.href="{:W('Teleport/port')}"}
+                            }); break;
+                    }
+                }
+            });
+        });
+    </script>
+</block>
+

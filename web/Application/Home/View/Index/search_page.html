@@ -1,0 +1,31 @@
+<div class="product-search-wrapper">
+    <div class="search-bar flex">
+        <!--关闭搜索页-->
+        <a class="search-bar-back">
+            <i class="icon back fl"></i>
+        </a>
+        <!--输入框容器-->
+        <form class="fl flex">
+            <div class="form-group">
+                <i class="icon search fl"></i>
+                <label for="product-search"></label>
+                <span class="vertical-line fl"></span>
+                <input type="text" id="product-search" name="keyword" class="fl" value="" placeholder="在千万海外商品中搜索"> </div>
+        </form>
+        <!--点击搜索商品-->
+        <a href="javascript:submit();" class="search-bar-submitBtn action-search"> 搜索 </a>
+    </div>
+    <div class="search-keyword-wrapper">
+        <section class="search-keyword-row">
+            <ul class="auto-keyword"></ul>
+        </section>
+        <section class="search-keyword-row">
+            <a class="search-keyword-title">热搜</a>
+        </section>
+        <section class="search-keyword-row clearfix">
+            <volist name="hot" id="v">
+                <a href="/search/{$v.keyword}">{$v.keyword}</a>
+            </volist>
+        </section>
+    </div>
+</div>

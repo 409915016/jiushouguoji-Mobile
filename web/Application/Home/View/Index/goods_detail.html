@@ -1,0 +1,343 @@
+<extend name="Public/base" />
+
+<block name="body">
+    <div class="base-nav-bar">
+        <a href="{:W('Teleport/port')}"><i class="icon back fl"></i></a>
+        <!--{:W('Teleport/save')}-->
+        <p></p>
+        <a href="/Home"><i class="icon home fl"></i></a>
+    </div>
+
+    <!--商品详情页底部导航栏-->
+    <div class="product-nav-bar">
+        <div class="product-action">
+            <ul class="product-nav-action">
+                <li>
+                    <eq name="detail.subscribe_collect" value="Y">
+                        <a id="collect" class="ajax-post"_target="{:U('Collect/cancel/'.$_GET['id'])}">
+                            <i class="icon collect-red"></i>
+                            <p>收藏</p>
+                        </a>
+                        <else/>
+                        <a id="collect" class="ajax-post"_target="{:U('Collect/add/'.$_GET['id'])}">
+                            <i class="icon details-collect"></i>
+                            <p>收藏</p>
+                        </a>
+                    </eq>
+                </li>
+                <li>
+                    <a href="{:U('/Cart')}">
+                        <i class="icon details-shopcar "></i>
+                        <p>购物车</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="{:U('/Home')}">
+                        <i class="icon details-services"></i>
+                        <p>客服</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="product-action-buy">
+            <ul class="product-nav-buy">
+                <gt name="detail.stock" value="0">
+                    <li>
+                        <a id="addShopCar" class="ajax-post" _target="{:U('Cart/add/'.$_GET['id'])}">
+
+                            <p>&#165;<span>{$detail.price}</span></p>
+                            <p>加入购物车</p>
+                        </a>
+                    </li>
+                    <gt name="detail.cluster_member" value="0">
+                        <li>
+                            <a id="addgroupbuy" href="{:U('cluster/create/goods_id/'.$_GET['id'])}">
+                                <p>&#165;<span>{$detail.cluster_price}</span></p>
+                                <p>
+                                    <span>{$detail.cluster_member}</span>人团</p>
+                            </a>
+                        </li>
+                    </gt>
+                    <else />
+                    <li>
+                        <eq name="detail.subscribe_arrival" value="Y">
+                            <a id="arrival" class="ajax-post alert" _target="{:U('Alert/cancel/'.$_GET['id'])}">
+                                <p>取消到货提醒</p>
+                            </a>
+                            <else/>
+                            <a id="arrival" class="ajax-post" _target="{:U('Alert/add/'.$_GET['id'])}">
+                                <p>到货提醒</p>
+                            </a>
+                        </eq>
+                    </li>
+                </gt>
+
+            </ul>
+        </div>
+    </div>
+
+    <!--就手国际收到订单-->
+    <div class="" id="get-order" style="transform: translate3d(0, 0, 0);">
+        <div class="get-order-imgBox">
+            <img src="" alt="">
+        </div>
+        <p>就手国际8秒前收到来自广东的一张订单</p>
+    </div>
+
+    <!--加入购物车动画-->
+    <img id="TurnAround-img" src="" alt="">
+    <!--查看大图-->
+    <div class="full-screen">
+        <div class="full-screen-imgBox">
+            <img src="https://placeholdit.imgix.net/~text?txtsize=28&txt=%E5%B0%B1%E6%89%8B&w=100&h=100" alt="">
+        </div>
+    </div>
+
+    <div class="main-wrapper title-bar">
+        <!--商品滑动图-->
+        <section class="product-show">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <volist name="detail.images" id="v">
+                        <div class="swiper-slide">
+                            <img src="{$v['image']}" />
+                        </div>
+                    </volist>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
+        <!--商品详情 评论-->
+        <!--包含推荐商品的文字头-->
+        <section class="product-details">
+            <p class="product-details-price">&#165;{$detail.price}</p>
+            <p class="product-details-name">{$detail.name}</p>
+            <p class="product-details-shop border-b">{$detail.sevice}</p>
+            <p class="product-details-returns">{$detail.prompt}</p>
+        </section>
+        <!--团购信息-->
+        <section class="product-group-buy">
+            <gt name="detail.cluster_member" value="0">
+                <p class="group-buy-tips">支付开团并邀请<span>{$detail['cluster_member'] - 1}</span>人开团，人数不足自动退款</p>
+            </gt>
+
+            <notempty name="member_list">
+                <p class="group-buy-status">以下小伙伴正在发起团购，您可以直接参与</p>
+                <div class="group-buy-member-list">
+                    <!--{$member_list|var_dump}-->
+                    <volist name="member_list" id="v">
+                        <section class="group-buy-member">
+                            <a class="group-buy-user" href="{:U('cluster/detail/'.$v['id'])}">
+                                <img src="{$v.logo}">
+                                <div class="group-buy-user-info">
+                                    <p>{$v.name}</p>
+                                    <p>{$v.city}</p>
+                                </div>
+                                <div class="group-buy-info">
+                                    <p>还差
+                                        <span>{$v.gap_num}</span>人成团</p>
+                                    <p>剩余
+                                        <span class="count-down-time" time="{$v.gap_time}">0</span>结束</p>
+                                </div>
+                                <div class="group-bu-go">
+                                    <p>去参团</p>
+                                </div>
+                            </a>
+                        </section>
+                    </volist>
+                </div>
+            </notempty>
+
+        </section>
+        <section class="product-details">
+            <!--评论块-->
+            <div class="comment-queue">
+                <!--跳转评论页-->
+                <a href="{:U('detail/comments/'.$_GET['id'])}" class="product-details-comment border-b">
+                    <span>评论</span>
+                    <i class="icon right fr"></i>
+                </a>
+                <volist name="comments" id="v">
+                    <section class="comment-one">
+                        <p>
+                            <span class="user-name">{$v.member_name|substr_replace=###,'***',-8,-3}</span>
+                            <span class="comment-time">{$v.create_time|date="y-m-d h:m:s"}</span>
+                        </p>
+                        <p class="comment-content">{$v.content}</p>
+                            <div class="comment-imgBox">
+                                <notempty name="v.image">
+                                    <volist name="v.image" id="vv">
+                                            <img src="{$vv}" alt="">
+                                    </volist>
+                                </notempty>
+                            </div>
+                    </section>
+                </volist>
+            </div>
+        </section>
+        <notempty name="related_goods">
+            <section class="product-details">
+                <p class="border-b border-b product-details-recommend">推荐商品</p>
+            </section>
+            <!--推荐商品Swiper -->
+            <section class="product-more">
+                <div class="swiper-container swiper-product">
+                    <div class="swiper-wrapper">
+                        <volist name="related_goods" id="v">
+                            <div class="swiper-slide">
+                                <a href="{:U('/detail/'.$v['id'])}">
+                                    <img src="{$v.image}">
+                                    <p>{$v.name}</p>
+                                    <p>&#165;
+                                        <span>{$v.price}</span>
+                                    </p>
+                                </a>
+                            </div>
+                        </volist>
+                        <div class="swiper-slide">
+                            <a href="{$detail.shop_id}">
+                                <p>查看更多</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </notempty>
+
+        <section class="product-tips">
+            <p>继续拖动 查看图文详情</p>
+        </section>
+        <!--商品介绍长图-->
+        <section class="product-longPic">
+        </section>
+    </div>
+
+</block>
+
+<block name="script">
+    <script>
+        var cd = setInterval(detailCountDownGo, 1000);
+    </script>
+    <script>
+        (function () {
+            //隐藏图片详情
+            $('.product-longPic').hide();
+            //实例化图片滑动
+            new Swiper('.product-show .swiper-container', {
+                autoplay: 3500,
+                loop: true,
+                pagination: '.swiper-pagination',
+            });
+            //实例化推荐商品
+            new Swiper('.swiper-product', {
+                slidesPerView: 3,
+                spaceBetween: 0,
+            });
+        })();
+        //拉动查看图片详情
+        var ones = true;
+        $(window).scroll(function () {
+            var scrollTop = $(this).scrollTop();
+            var scrollHeight = $(document).height();
+            var windowHeight = $(this).height();
+            if ((scrollTop + windowHeight == scrollHeight) && (ones)) {
+                ones = false;
+                $('.product-longPic').append($('{$detail.body}')).show();
+                $('html, body').delay(800).animate({
+                    scrollTop: $('.product-longPic').offset().top - 100
+                }, 400, function () {
+                    $('.product-tips').hide("fast", "linear");
+                });
+            }
+        });
+    </script>
+    <script>
+        $('.ajax-post').click(function(){
+            var _this = $(this);
+            var target = _this.attr('_target');
+            baseMsg('请稍等..', 0);
+            $.ajax({
+                url: target,
+                success: function(r){
+                    baseMsg(r.message);
+                    switch (r.status){
+                        case 1:
+                            r.status == 1 &&
+                            _this.is('#addShopCar') ? shopCarNumAdd() : _this.is('#collect') ? collect() : _this.is('#arrival') ? arrival() : 0;
+                            break;
+                        case -5:
+                            location.href = "/User/login";
+                            break;
+                    }
+                }
+            });
+        });
+        connect();
+        //设置显示的购物车内商品数量
+        setShopCarNum('{$detail.cart_info.goods_sum}');
+
+        var collect = function(){
+            var _this = $('#collect');
+            var icon = _this.find('i');
+            icon.toggleClass('details-collect').toggleClass('collect-red');
+            if(icon.is('.details-collect')){
+                _this.attr("_target", "{:U('collect/add/'.$_GET['id'])}");
+            }else if(icon.is('.collect-red')){
+                _this.attr("_target", "{:U('collect/cancel/'.$_GET['id'])}");
+            }
+        };
+
+        var arrival = function(){
+            var _this = $('#arrival');
+            _this.toggleClass('alert');
+            if(_this.is('.alert')){
+                _this.find('p').text('取消到货提醒');
+                _this.attr("_target", "{:U('alert/cancel/'.$_GET['id'])}");
+            }else{
+                _this.find('p').text('到货提醒');
+                _this.attr("_target", "{:U('alert/add/'.$_GET['id'])}");
+            }
+        };
+
+        //点击查看大图
+        $(".comment-imgBox img").click(function() {
+            var fulls = $(".full-screen");
+            fulls.css("display", "flex");
+            if ($(document).width() > $(this).width()) {
+                fulls.css("align-items", "center");
+            }
+            $(".full-screen-imgBox img").attr({src: $(this).attr("src")});
+            fulls.click(function () {
+                $(this).css("display", "none");
+            });
+        });
+    </script>
+    <present name="wx_config">
+        <script>
+            var wx_config = <?= $wx_config ?>;
+            var share_config = {
+                title: '{$detail.name}',
+                desc: '售价: ¥{$detail.price}。就手国际，全球正品大集会。',
+                imgUrl: '{$detail["images"][0]["image"]}',
+            };
+            wx.config({
+                debug: false,
+                appId: wx_config.appId,
+                timestamp: wx_config.timestamp,
+                nonceStr: wx_config.nonceStr,
+                signature: wx_config.signature,
+                jsApiList: ['onMenuShareTimeline', 'onMenuShareAppMessage', 'onMenuShareQQ', 'onMenuShareWeibo', 'onMenuShareQZone', 'hideMenuItems',]
+            });
+            wx.ready(function(){
+                wx.onMenuShareTimeline(share_config);
+                wx.onMenuShareAppMessage(share_config);
+                wx.onMenuShareQQ(share_config);
+                wx.onMenuShareWeibo(share_config);
+                wx.onMenuShareQZone(share_config);
+                wx.hideMenuItems({
+                    menuList: ['menuItem:share:email', 'menuItem:readMode', 'menuItem:setFont', 'menuItem:copyUrl',]
+                });
+            });
+        </script>
+    </present>
+</block>

@@ -1,0 +1,104 @@
+<extend name="Public/base" />
+
+<block name="body">
+    <div class="base-nav-bar">
+    <a href="javascript: history.back();">
+        <i class="icon back fl"></i>
+    </a>
+    <p>商品评论</p>
+    <a class="no-visible" href="">
+        <i class="icon back fl"></i>
+    </a>
+    </div>
+
+    <div class="main-wrapper title-bar h-100-white no-b-nav">
+        <div class="base-pd-lr-wrapper has-b-padding">
+            <!--评论块-->
+            <div class="comment-queue">
+
+                <div class="comment-select">
+                    <span class="active">
+                        全部<span> ({$comments_info.count}) </span>
+                    </span>
+                    <span>
+                        好评<span> ({$comments_info.good_count}) </span>
+                    </span>
+                    <span>
+                        图片<span> ({$comments_info.img_count}) </span>
+                    </span>
+                </div>
+                <div class="comment-wrapper">
+                    <div class="comment-single">
+                        <!--全部评论-->
+                        <volist name="comments" id="v">
+                            <section class="comment-one {:count($v['image'])>0?'_image':''} _{$v['result']|default='default'}">
+                                <p>
+                                    <span class="user-name"> <eq name="v.isanonymous" value="1">匿名用户 <else/> {$v.member_name} </eq> </span>
+                                    <span class="comment-time">{$v.create_time|date='y-m-d h:m',###}</span>
+                                </p>
+                                <p class="comment-content">{$v.content}</p>
+                                <div class="comment-imgBox">
+                                    <volist name="v.image" id="vv">
+                                        <img src="{$vv}" />
+                                    </volist>
+                                </div>
+                            </section>
+                        </volist>
+                    </div>
+                </div>
+                <p class="end-text">加载更多..</p>
+            </div>
+        </div>
+    </div>
+</block>
+
+<block name="script">
+    <script>
+        //评论页 页面切换
+        (function () {
+            $('.comment-single').eq(0).show();
+
+            $('.comment-select > span').click(function(){
+                $('.comment-select > span').removeClass('active');
+                $(this).addClass('active');
+                scr();
+            });
+
+            function scr(){
+                var _all = $('.comment-one');
+                var _image = $('.comment-one._image');
+                var _good = $('.comment-one._good');
+                switch ($('.comment-select > span').index($('.comment-select > span.active'))){
+                    case 1 :
+                        _all.hide();_good.show();
+                        break;
+                    case 2 :
+                        _all.hide();_image.show();
+                        break;
+                    default :
+                        _all.show();
+                }
+            }
+
+            var page = 1;
+            $('.end-text').click(function(){
+                if(!$(this).is('.finish')){
+                    $.ajax({
+                        url: location.pathname + '?page=' + ++page,
+                        success: function(r){
+                            if(r.status == 1){
+                                r.data.forEach(function(one){
+                                    var one_dom = '<section class="comment-one '+ (function(){return one.image.length>0?'_image':''})() +'_'+ one.result +'"><p><span class="user-name">'+ (function(){return one.isanonymous?'匿名用户':one.member_name})() +'</span><span class="comment-time">'+ (function(){var D=new Date(one.update_time * 1000);var y=D.getYear()-100,m=D.getMonth(),d=D.getDay(),h=D.getHours(),i=D.getMinutes();return y+'-'+m+'-'+d+' '+h+':'+i;})() +'</span></p><p class="comment-content">'+ one.content +'</p>'+ (function(){return one.image.length>0?'<div class="comment-imgBox">'+(function(){var s='';one.image.forEach(function(e){s+='<img src="'+e+'">'});return s;})() +'</div>':''})()+'</section>';
+                                    $('.comment-single').append(one_dom);
+                                });
+                                scr();
+                            }else{
+                                $('.end-text').text('所有评论已加载').addClass('finish');
+                            }
+                        }
+                    });
+                }
+            });
+        })();
+    </script>
+</block>

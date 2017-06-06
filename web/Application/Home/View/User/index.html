@@ -1,0 +1,210 @@
+<extend name="Public/base" />
+
+<block name="body">
+    <include file="Public/bottom_bar" tab="4"/>
+
+    <div class="main-wrapper no-mart">
+        <present name="info">
+            <a href="{:U('/User/information')}" class="user-info-simple">
+                <div class="user-header-imgBox">
+                    <img src="{$info.logo}" alt="{$info.nickname}">
+                </div>
+                <div class="user-name-custom">
+                    <p>{$info.nickname}</p>
+                    <p>{$info.signature}</p>
+                </div>
+            </a>
+        <else/>
+            <section class="user-info-simple">
+                <div class="user-header-imgBox">
+                    <img src="__PUBLIC__/img/icon/notlogin.png" alt="jiushou">
+                </div>
+                <div class="user-loginBox">
+                    <a class="" href="{:U('User/login')}">登陆</a>
+                    <a class="" href="{:U('User/register')}">注册</a>
+                </div>
+            </section>
+        </present>
+        <section class="user-row">
+            <ul>
+                <li>
+                    <a href="{:U('User/Concern/collect')}">
+                        <i class="icon collect"></i>
+                        <p>我的收藏</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="{:U('User/Concern/wish')}">
+                        <i class="icon heart"></i>
+                        <p>心愿单</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="{:U('User/Concern/alert')}">
+                        <i class="icon clock"></i>
+                        <p>到货提醒</p>
+                    </a>
+                </li>
+            </ul>
+        </section>
+
+        <div class="base-mt-wrapper">
+            <a href="{:U('User/order/all')}">
+                <section class="user-row my-order">
+                    <p>我的订单</p>
+                    <div class="look-my-order">
+                        <span>查看全部订单</span>
+                        <i class="icon right"></i>
+                    </div>
+                </section>
+            </a>
+        </div>
+        <!--查看全部订单-->
+        <section class="user-row has-shop-count">
+            <ul>
+                <li data-shop-count="{$mark['wait_pay']|default=0}">
+                    <a href="{:U('User/order/wait_pay')}">
+                        <i class="icon wallet" data-shop-count="{$mark['wait_pay']|default=0}"></i>
+                        <p>待付款</p>
+                    </a>
+                </li>
+                <li data-shop-count="{$mark['order_payed']|default=0}">
+                    <a href="{:U('User/order/payed')}">
+                        <i class="icon car" data-shop-count="{$mark['order_payed']|default=0}"></i>
+                        <p>待发货</p>
+                    </a>
+                </li>
+                <li data-shop-count="{$mark['wait_confirm']|default=0}">
+                    <a href="{:U('User/order/wait_confirm_goods')}">
+                        <i class="icon package" data-shop-count="{$mark['wait_confirm']|default=0}"></i>
+                        <p>待收货</p>
+                    </a>
+                </li>
+                <li data-shop-count="{$mark['wait_evaluation']|default=0}">
+                    <a href="{:U('User/order/finish')}">
+                        <i class="icon comment" data-shop-count="{$mark['wait_evaluation']|default=0}"></i>
+                        <p>待评价</p>
+                    </a>
+                </li>
+            </ul>
+        </section>
+
+        <!--我的拼团-->
+        <div class="base-mt-wrapper">
+            <a href="/User/order/cluster/all">
+                <section class="user-row my-order">
+                    <p>我的拼团</p>
+                    <div class="look-my-order">
+                        <span>查看我的拼团</span>
+                        <i class="icon right"></i>
+                    </div>
+                </section>
+            </a>
+        </div>
+        <!--查看我的拼团-->
+        <section class="user-row">
+            <ul>
+                <li>
+                    <a href="/User/order/cluster/all">
+                        <i class="icon cyclo-all"></i>
+                        <p>全部</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="/User/order/cluster/underway">
+                        <i class="icon cyclo-people"></i>
+                        <p>拼团中</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="/User/order/cluster/success">
+                        <i class="icon cyclo-correct"></i>
+                        <p>拼团成功</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="/User/order/cluster/failed">
+                        <i class="icon cyclo-alert"></i>
+                        <p>拼团失败</p>
+                    </a>
+                </li>
+            </ul>
+        </section>
+
+        <!--8个页面-->
+        <div class="base-mt-wrapper">
+            <section class="user-row">
+                <ul>
+                    <li>
+                        <a href="{:U('User/Address')}">
+                            <i class="icon addr"></i>
+                            <p>收货地址</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{:U('User/Footprint')}">
+                            <i class="icon history"></i>
+                            <p>我的足迹</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{:U('User/Coupon/unused')}">
+                            <i class="icon coupon"></i>
+                            <p>优惠券</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{:U('User/refund')}">
+                            <i class="icon refund"></i>
+                            <p>退货/退款</p>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+        </div>
+        <section class="user-row">
+            <ul>
+                <li>
+                    <a href="__PUBLIC__/aboutGroupBuy.html">
+                        <i class="icon info"></i>
+                        <p>怎么拼团</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="__PUBLIC__/about.html">
+                        <i class="icon info"></i>
+                        <p>关于就手</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <i class="icon"></i>
+                        <p>&nbsp;</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <i class="icon"></i>
+                        <p>&nbsp;</p>
+                    </a>
+                </li>
+            </ul>
+        </section>
+    </div>
+</block>
+
+<block name="script">
+    <script>
+        $('.ajax-post').click(function () {
+            $.ajax({
+                'url': '{:U("/User/logout")}',
+                'dataType': 'json',
+                'success': function (data) {
+                    baseMsg(data.message);
+                    if(data.status == 1)
+                        location.href = '{:U("/User")}';
+                }
+            });
+        });
+    </script>
+</block>

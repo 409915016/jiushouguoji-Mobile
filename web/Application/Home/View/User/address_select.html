@@ -1,0 +1,38 @@
+<extend name="Public/base" />
+
+<block name="body">
+    <div class="base-nav-bar">
+        <a href="javascript: history.back();">
+            <i class="icon back fl"></i>
+        </a>
+        <p>{$title}</p>
+        <a class="no-visible" href="">
+            <i class="icon back fl"></i>
+        </a>
+    </div>
+
+    <div class="main-wrapper title-bar">
+        <volist name="data" id="v">
+            <a href="{$back}?addr={$v.id}&coupon={$_GET['coupon']}">
+                <section class="user-address-single">
+                    <div class="user-address-select">
+                        <span>选择</span>
+                    </div>
+                    <div class="user-address-info">
+                        <p class="user-real-name-phone">
+                            <span class="user-real-name">{$v.name}</span>
+                            <span class="user-phone-num">{$v.mobile}</span>
+                        </p>
+                        <p class="user-real-address">
+                            <span>{$v.area}</span>
+                            <span>{$v.address}</span>
+                        </p>
+                        <p class="">身份证:
+                            <span class="user-identity-num">{$v.personid}</span>
+                        </p>
+                    </div>
+                </section>
+            </a>
+        </volist>
+    </div>
+</block>

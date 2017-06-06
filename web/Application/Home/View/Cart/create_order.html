@@ -1,0 +1,101 @@
+<extend name="Public/base" />
+
+<block name="body">
+    <div class="base-nav-bar">
+        <a class="" href="{:U('/Cart')}">
+            <i class="icon back fl"></i>
+        </a>
+        <p>订单信息</p>
+        <a class="no-visible" href=""></a>
+    </div>
+    <!--底部确认订单-->
+    <div class="nav-bottom-bar no-padding">
+        <div class="order-comfirm-bar">
+            <p class="order-comfirm-price">合计：&#165;
+                <span>0.00</span>
+            </p>
+            <a class="order-comfirm-btn ajax-post" _target="{:U('Cart/confirm_order')}" href="javascript:;">确认订单</a>
+        </div>
+    </div>
+
+    <div class="main-wrapper title-bar">
+        <!--用户信息-->
+        <a class="order-comfirm-user-add" href="{:U('User/address')}">
+            <div class="user-address-info">
+                <p class="user-real-name-phone">
+                    <span class="user-real-name">{$address.name}</span>
+                    <span class="user-phone-num">{$address.mobile}</span>
+                </p>
+                <p class="user-real-address">
+                    <span>{$address.area}</span>
+                </p>
+                <p class="">身份证:
+                    <span class="user-identity-num">{$address.personid}</span>
+                </p>
+            </div>
+            <i class="icon right"></i>
+        </a>
+        <!--订单列表-->
+        <div class="order-comfirm-list">
+            <!--整个显示商品订单的块-->
+            <volist name="data" id="v">
+                <section class="order-list">
+                    <!--同家商家信息-->
+                    <volist name="v" id="v_shop">
+                        <p class="order-list-door-name">{$v_shop['description']['shop_name']}</p>
+                        <volist name="v_shop.goods" id="v_shop_goods">
+                            <section class="base-order-info" data-total-price="{$v_shop_goods['goods_price'] * $v_shop_goods['goods_num'] - $v_shop['description']['freight']}">
+                                <div class="order-imgBox">
+                                    <img src="{$v_shop_goods.goods_image}" alt="">
+                                </div>
+                                <p>{$v_shop_goods.goods_name}</p>
+                                <div class="order-price-num">
+                                    <p>
+                                        <eq name="v_shop_goods.is_free_shipping" value="Y">包邮<else/>运费:<span>{$v_shop['description']['freight']}</span></eq>
+                                    </p>
+                                    <p class="base-order-price">×
+                                        <span>{$v_shop_goods.goods_num}</span>
+                                    </p>
+                                    <p class="text-red">&#165;
+                                        <span>{$v_shop_goods['goods_price'] * $v_shop_goods['goods_num']}</span>
+                                    </p>
+                                </div>
+                            </section>
+                        </volist>
+                    </volist>
+
+                </section>
+            </volist>
+        </div>
+        <!--买家留言-->
+        <div class="order-comfirm-message">
+            <p>留言：</p> <textarea rows="4" cols="" maxlength="50"></textarea> </div>
+    </div>
+</block>
+
+<block name="script">
+    <script>
+        (function(){
+            var p = 0.00;
+            $('.base-order-info').each(function(){
+                var a = $(this).attr('data-total-price');
+                p += parseFloat(a);
+            });
+            $('.order-comfirm-price span').text(p.toFixed(2));
+        })();
+        $('.ajax-post').click(function(){
+            var target = $(this).attr('_target');
+            var data = {id: '{$address.id}', msg: $('textarea').val()};
+            baseMsg('正在下单..', 0);
+            $.ajax({
+                url: target,
+                data: data,
+                type: 'POST',
+                success: function(r){
+                    baseMsg(r.message);
+                    location.href = r.data;
+                }
+            })
+        })
+    </script>
+</block>

@@ -1,0 +1,29 @@
+<!--底部导航栏-->
+<div class="nav-bottom-bar">
+    <ul>
+        <li>
+            <a href="{:U('/Home','',false)}" <if condition="[tab] eq 1"> class="active"</if> >
+                <i class="icon home <if condition='[tab] eq 1'> active</if>"></i>
+                <p>首页</p>
+            </a>
+        </li>
+        <li>
+            <a href="{:U('/Hot','',false)}" <if condition="[tab] eq 2"> class="active"</if> >
+                <i class="icon hot <if condition='[tab] eq 2'> active</if>"></i>
+                <p>拼团</p>
+            </a>
+        </li>
+        <li>
+            <a href="{:U('/Cart','',false)}" <if condition="[tab] eq 3"> class="active"</if> >
+                <i class="icon shopcar <if condition='[tab] eq 3'> active</if>"></i>
+                <p>购物车</p>
+            </a>
+        </li>
+        <li>
+            <a href="{:U('/User','',false)}" <if condition="[tab] eq 4"> class="active"</if> >
+                <i class="icon my <if condition='[tab] eq 4'> active</if>"></i>
+                <p>个人中心</p>
+            </a>
+        </li>
+    </ul>
+</div>

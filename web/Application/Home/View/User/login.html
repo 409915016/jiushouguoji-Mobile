@@ -1,0 +1,94 @@
+<extend name="Public/base" />
+
+<block name="body">
+
+    <div class="base-nav-bar">
+        <a class="" href="{:W('Teleport/port')}">
+            <i class="icon back fl"></i>
+        </a>
+        <p></p>
+        <a href="/User/register">注册</a>
+    </div>
+
+    <div class="main-wrapper title-bar no-b-nav h-100-white">
+        <form>
+        <div class="login-sign-wrapper">
+            <p>登陆就手国际</p>
+            <section class="inputBlock">
+                <i class="icon account "></i>
+                <input type="tel" name="username" placeholder="手机号">
+            </section>
+            <section class="inputBlock">
+                <i class="icon password "></i>
+                <input type="password" name="password" placeholder="密码">
+            </section>
+            <input type="text" name="type" value="1" hidden>
+            <a href="/User/forgot" class="forget">忘记密码?</a>
+            <button class="ajax-post" onclick="return false;" disabled>登录</button>
+            <p><span id="notice" class="text-red no-display">请检查用户名与密码是否正确</span></p>
+            <p><span id="not-none" class="text-red no-display">用户名或密码不能为空</span></p>
+            <section class="other-way-login">
+                <p>其他方式登录</p>
+                <div class="qq-wechat">
+                    <ul>
+                        <li>
+                            <a href="/User/weixin_auth">
+                                <i class="icon wechat"></i>
+                                <p>微信</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+        </div>
+    </form>
+    </div>
+
+</block>
+
+<block name="script">
+    <script>
+        $('.ajax-post').click(function () {
+            var action = '{:U("User/login")}';
+            var form = $('form').serialize();
+
+            baseMsg('正在登录中..', 0);
+            $.ajax({
+                type: 'POST',
+                url: action,
+                data: form,
+                success: function (data) {
+                    baseMsg(data.message);
+                    if(data.status == 1)
+                        location.href = "{:W('Teleport/port')}";  //回到之前的页面
+                    else
+                        $('#notice').removeClass('no-display');
+                }
+            });
+        });
+        $('input[name=password]').keyup(function(){
+            var _button = $('button.ajax-post');
+            if($(this).val() == ''){
+                $('#not-none').removeClass('no-display');
+                _button.attr('disabled','');
+            }else{
+                $('#not-none').removeClass('no-display').addClass('no-display');
+                _button.removeAttr('disabled');
+            }
+        })
+        $('input[name=username]').blur(function(){
+            var _button = $('button.ajax-post');
+            var u = $('input[name=username]').val();
+            var p = $('input[name=password]').val();
+
+            if(u == '' || p == ''){
+                $('#not-none').removeClass('no-display');
+                _button.attr('disabled','');
+            }else{
+                $('#not-none').removeClass('no-display').addClass('no-display');
+                _button.removeAttr('disabled');
+            }
+        });
+    </script>
+</block>

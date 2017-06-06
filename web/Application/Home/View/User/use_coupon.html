@@ -1,0 +1,51 @@
+<extend name="Public/base"/>
+
+<block name="body">
+    <div class="base-nav-bar">
+        <a class="" href="javascript:history.back()">
+            <i class="icon back fl"></i>
+        </a>
+        <p>使用优惠券</p>
+        <a class="no-visible" href="index.html">
+            <i class="icon back fl"></i>
+        </a>
+    </div>
+
+    <div class="main-wrapper title-bar no-b-nav wish coupon h-100-white ">
+        <!--优惠券其中可使用的页面{$back}?addr={$_GET['addr']}&coupon={$v['c_num']}-->
+        <empty name="coupons_list">
+            <div class="base-tips">
+                <p>没有可用的优惠券</p>
+            </div>
+        </empty>
+            <volist name="coupons_list" id="v">
+                <a href="{$back}?addr={$_GET['addr']}&coupon={$v['c_num']}">
+                    <div class="coupon-single">
+                        <span>&#165;{$v.c_value}</span>
+                        <div class="coupon-name-time-key">
+                            <div class="coupon-name-time">
+                                <div class="coupon-name">
+                                    <p>{$v.c_name}</p>
+                                    <p>{$v.use_comments}</p>
+                                </div>
+                                <div class="coupon-time">
+                                    <p>过期时间</p>
+                                    <p>{$v.expdate|date='Y-m-d',###}</p>
+                                </div>
+                            </div>
+                            <div class="coupon-key">
+                                <p>券码:
+                                    <span>{$v.c_num}</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+            </volist>
+            <!--使用优惠券尾部的的提示 -->
+            <div class="base-tips">
+                <p>就手温馨提示：当你使用现金券购买的商品发生退货款时，现金券所抵购的费用将不会退还。</p>
+            </div>
+    </div>
+</block>

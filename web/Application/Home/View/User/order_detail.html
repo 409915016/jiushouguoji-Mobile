@@ -1,0 +1,148 @@
+<extend name="Public/base" />
+
+<block name="body">
+    <script>console.log('{$data|json_encode=###,256}');</script>
+    <div class="base-nav-bar">
+        <a class="" href="{:W('Teleport/port')}">
+            <i class="icon back fl"></i>
+        </a>
+        <p>订单详情</p>
+        <a class="no-visible" href="">
+            <i class="icon back fl"></i>
+        </a>
+    </div>
+    <empty name="data.botton">
+        <else />
+        <div class="nav-bottom-bar no-padding order-details-b-bar">
+            <div class="nav-btn-wrapper">
+                <empty name="data.button">
+                    <switch name="data.order_status">
+                        <case value="ORDER_WAIT_PAY">
+                            <a class="ajax-post" _target="/User/Order/cancel/{$data['order_id']}" href="" onclick="return false;">取消订单</a>
+                            <a href="/User/Order/pay/{$data['order_id']}">立即支付</a>
+                        </case>
+                        <case value="ORDER_PAYED">
+                            <a href="/User/Order/refund/1/{$v['order_id']}">申请退款</a>
+                        </case>
+                        <case value="ORDER_WAIT_CONFIRM_GOODS">
+                            <a href="" onclick="return false;">查看物流</a>
+                            <a href="javascript:;" class="ajax-post" _target="/User/Order/received/{$data['order_id']}">确认收货</a>
+                        </case>
+                        <case value="ORDER_FINISH">
+                            <a href="javascript:;" class="ajax-post" _target="/User/Order/refund/2/{$v['order_id']}">申请退货</a>
+                            <a href="" onclick="return false;">查看物流</a>
+                            <eq name="waiting_evolution" value="1"><a href="/User/Order/comment/{$v['order_id']}">评价</a></eq>
+                        </case>
+                        <default />
+                    </switch>
+                    <else />
+                    <a class="disabled" onclick="return false;">{$data.button}</a>
+                </empty>
+            </div>
+        </div>
+    </empty>
+    <div class="main-wrapper title-bar arrival order-details">
+        <div class="base-wrapper no-thing">
+            <div class="order-details-state groupbuy-details-state ">
+                <empty name="data.button">
+                    <p>{$data.order_status_text}</p>
+                    <else/>
+                    <p>{$data.button}</p>
+                </empty>
+            </div>
+        </div>
+        <div class="base-wrapper no-thing">
+            <div class="order-details-user-address">
+                <i class="icon location"></i>
+                <div class="user-address-info">
+                    <p class="user-real-name-phone">
+                        <span class="user-real-name">{$data.receiver_name}</span>
+                        <span class="user-phone-num">{$data.receiver_mobile}</span>
+                    </p>
+                    <p class="user-real-address">
+                        <span>{$data.receiver_area}</span>
+                    </p>
+                    <p class="user-real-address">
+                        <span>{$data.receiver_address}</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <volist name="data.order_goods" id="goods">
+            <section class="order-list">
+                <p class="order-list-door-name">{$data.shop_name}<span class="fr text-red">{$data.order_status_text}</span></p>
+                <a class="base-order-info groupbuy-order-info" href="/detail/{$goods.goods_id}">
+                    <div class="order-imgBox">
+                        <img src="{$goods.goods_image}" alt=""> </div>
+                    <p>{$goods.goods_name}</p>
+                    <div class="order-price-num">
+                        <p class="base-order-price">&#165;
+                            <span class="">{$goods.goods_price}</span>/件 </p>
+                    </div>
+                </a>
+                <div class="groupbuy-total ">
+                    <p>共<span>{$goods.goods_num}</span>件商品&nbsp;合计：
+                        <span class="text-red text-16">&#165;</span>
+                        <span class="text-red text-16">{$goods.total_fee}</span></p>
+                </div>
+            </section>
+        </volist>
+
+        <div class="base-mt-wrapper">
+            <section class="base-text-row text-black">
+                <span>应付：</span>
+                <span>{$data.total_fee}</span>
+            </section>
+            <section class="base-text-row text-black">
+                <span>优惠券：</span>
+                <span>- {$data.coupon_fee}</span>
+            </section>
+            <section class="base-text-row text-black">
+                <span>运费：</span>
+                <span>{$data.shipping_fee}</span>
+            </section>
+            <section class="base-text-row text-black">
+                <span>税费：</span>
+                <span>{$data.tax_fee}</span>
+            </section>
+            <section class="base-text-row  text-black">
+                <span>收件人：</span>
+                <span>{$data.receiver_name}</span>
+            </section>
+            <section class="base-text-row  text-black">
+                <span>支付方式：</span>
+                <span>{$data.payment_name}</span>
+            </section>
+            <section class="base-text-row  text-black">
+                <span>下单时间：</span>
+                <span>{$data.create_time|date='Y-m-d h:i',###}</span>
+            </section>
+            <section class="base-text-row text-black">
+                <span>订单编号：</span>
+                <span>{$data.order_id}</span>
+            </section>
+        </div>
+    </div>
+</block>
+
+<block name="script">
+    <script>
+        $('.ajax-post').click(function(){
+            var _this = $(this);
+            var _text = _this.text();
+            var _target = _this.attr('_target');
+            if(confirm('要'+_text+'吗?')){
+                baseMsg('正在'+_text+'..', 0);
+                $.ajax({
+                    url: _target,
+                    success: function(r){
+                        baseMsg(r.message);
+                        if(r.status == 1){
+                            location.href = "{:W('Teleport/port')}";
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+</block>

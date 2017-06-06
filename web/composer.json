@@ -1,0 +1,19 @@
+{
+    "name": "jiushouguoji",
+    "description": "",
+    "type": "",
+    "keywords": [""],
+    "homepage": "http://www.jiushouguoji.com",
+    "license": "Apache2",
+    "authors": [
+        {
+            "name": "jiushouguoji",
+            "email": "admin@jiushouguoji.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "thenbsp/wechat": "^2.0"
+    },
+    "minimum-stability": "dev"
+}

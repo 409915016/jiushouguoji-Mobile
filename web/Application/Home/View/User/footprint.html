@@ -1,0 +1,49 @@
+<extend name="Public/base" />
+
+<block name="body">
+    <div class="base-nav-bar">
+        <a class="" href="my.html">
+            <i class="icon back fl"></i>
+        </a>
+        <p>{$title}</p>
+        <a class="no-visible" href="index.html">
+            <i class="icon back fl"></i>
+        </a>
+    </div>
+
+    <div class="main-wrapper title-bar no-b-nav arrival">
+        <empty name="list">
+            <p>空空如也<br>就手推荐</p>
+            <else />
+            <volist name="list" id="v">
+                <a href="/detail/{$v['goods_id']}" class="base-product-label">
+                    <div class="label-product-imgBox">
+                        <img src="{$v.goods_image}" alt=""> </div>
+                    <div class="label-product-info">
+                        <p>{$v.goods_name}</p>
+                        <p>&#165;
+                            <span>{$v.goods_price}</span>
+                        </p>
+                    </div>
+                </a>
+            </volist>
+        </empty>
+
+        <div class="base-mt-wrapper">
+            <p class="guess-you-like">猜你喜欢</p>
+            <div class="product-box-wrapper">
+                <volist name="goods" id="v">
+                    <div class="product-box">
+                        <a href="/detail/{$v.id}">
+                            <img src="{$v.image}">
+                            <p>{$v.name}</p>
+                            <p>&#165;
+                                <span>{$v.price}</span>
+                            </p>
+                        </a>
+                    </div>
+                </volist>
+            </div>
+        </div>
+    </div>
+</block>

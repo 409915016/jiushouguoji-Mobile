@@ -1,0 +1,112 @@
+<extend name="Public/base" />
+
+<block name="body">
+    <div class="base-nav-bar">
+        <a class="" href="/User/login">
+            <i class="icon back fl"></i>
+        </a>
+        <p>重置密码</p>
+        <a class="no-visible" href=""><i class="icon back fl"></i></a>
+    </div>
+
+    <div class="main-wrapper title-bar no-b-nav h-100-white">
+        <form>
+            <div class="login-sign-wrapper sign">
+                <section class="inputBlock">
+                    <input type="text" name="mobile" value="" placeholder="手机号">
+                    <button id="verify" _target="/User/verify" onclick="return false;">验证</button>
+                </section>
+                <section class="inputBlock ">
+                    <input type="text" name="verify" value="" placeholder="验证码">
+                </section>
+                <section class="inputBlock">
+                    <input type="password" name="password" value="" placeholder="6-16位新密码">
+                </section>
+                <section class="inputBlock">
+                    <input type="password" name="retype_password" value="" placeholder="确认新密码">
+                </section>
+                <p class="notice"><span class="text-red"></span></p>
+                <button class="ajax-post" onclick="return false;" disabled>确定</button>
+            </div>
+        </form>
+    </div>
+</block>
+
+<block name="script">
+    <script>
+        var cid = 0;
+        $('#verify').click(function(){
+            baseMsg('正在发送验证码..', 0);
+            var _this = $(this);
+            cid = setInterval(function(){disabled_countdown(_this)}, 1000);
+            var target = $(this).attr('_target');
+            var mobile = 'mobile=' + _this.parents('form').find('input[name=mobile]').val();
+            $.ajax({
+                url: target,
+                data: mobile,
+                type: 'POST',
+                success: function (r) {
+                    baseMsg('验证码'+r.message);
+                }
+            });
+        });
+        var disabled_countdown = function(btn){
+            if(btn.is('.disabled')){
+                if(btn.attr('countdown') > 0){
+                    btn.attr('countdown', btn.attr('countdown') -1);
+                }else{
+                    clearInterval(cid);
+                    btn.text('验证');
+                    btn.removeClass('disabled');
+                    return;
+                }
+            }else{
+                btn.addClass('disabled');
+                btn.attr('countdown', 60);
+            }
+            btn.text( btn.attr('countdown') +'秒');
+        }
+        $('.ajax-post').click(function () {
+            var action = '{:U("User/forgot")}';
+            var form = $('form').serialize();
+            $.ajax({
+                type: 'POST',
+                url: action,
+                data: form,
+                success: function (r) {
+                    baseMsg(r.message);
+                    if(r.status == 1)
+                        location.href = "/User";
+                }
+            });
+        });
+
+        /*密码验证*/
+        $('input[type=password]').keyup(function(){
+            var _form = $(this).parents('form'),
+                _once = _form.find('input[name=password]').val(),
+                _twice = _form.find('input[name=retype_password]').val(),
+                _notice = $('.notice'),
+                _notice_text = _notice.find('span'),
+                _button = $('button.ajax-post'),
+                _verify = $('input[name=verify]');
+
+            if(_once.length < 6){
+                _notice_text.text('密码长度不能小于6个字符');
+                _notice.show();
+                _button.attr('disabled','');
+            }else if(_twice != '' && _once !== _twice){
+                _notice_text.text('两次密码输入不相同!');
+                _notice.show();
+                _button.attr('disabled','');
+            }else if(_verify.val().length < 4){
+                _notice_text.text('请填写正确的验证码!');
+                _notice.show();
+                _button.attr('disabled','');
+            }else{
+                _notice.hide();
+                _button.removeAttr('disabled');
+            }
+        });
+    </script>
+</block>

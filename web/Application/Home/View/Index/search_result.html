@@ -1,0 +1,61 @@
+<extend name="Public/base" />
+
+<block name="script">
+
+    <script src="__PUBLIC__/js/index.js"></script>
+
+</block>
+
+
+<block name="body">
+    <div class="base-nav-bar">
+        <a class="" href="javascript:history.back();">
+            <i class="icon back fl"></i>
+        </a>
+        <p data-key="{$keyword}">搜索结果</p>
+        <a class="no-visible" href="">
+            <i class="icon back fl"></i>
+        </a>
+    </div>
+
+    <div class="main-wrapper title-bar no-b-nav arrival h-100-white searchresult">
+        <empty name="list">
+            <p>没有发现亲需要的商品<br>就手推荐</p>
+            <div class="base-mt-wrapper">
+                <p class="guess-you-like">猜你喜欢</p>
+                <div class="product-box-wrapper">
+                    <volist name="goods" id="v">
+                        <div class="product-box">
+                            <a href="detail/{$v.id}">
+                                <img src="{$v.image}">
+                                <p>{$v.name}</p>
+                                <p>&#165;
+                                    <span>{$v.price}</span>
+                                </p>
+                            </a>
+                        </div>
+                    </volist>
+                </div>
+            </div>
+            <else/>
+            <volist name="list" id="v">
+                <a href="{:U('detail/'.$v['id'])}" class="base-product-label">
+                    <div class="label-product-imgBox">
+                        <img src="{$v.image}" alt="">
+                    </div>
+                    <div class="label-product-info">
+                        <p>{$v.name}</p>
+                        <p>&#165;
+                            <span>{$v.price}</span>
+                        </p>
+                    </div>
+                </a>
+            </volist>
+            <div>
+                <p class="end-text">已加载完所有搜索结果</p>
+            </div>
+
+        </empty>
+    </div>
+</block>
+

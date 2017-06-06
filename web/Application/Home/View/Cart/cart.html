@@ -1,0 +1,241 @@
+<extend name="Public/base" />
+
+<block name="body">
+    <div class="base-nav-bar">
+            <a class="no-visible" href="">
+                <i class="icon back fl"></i>
+            </a>
+            <p></p>
+            <notempty name="cart_list">
+                <a class="ajax-post delete-goods" _target="{:U('Cart/delete_goods','',false)}" href="javascript:;"> 删除 </a>
+                <else/>
+                <a class="no-visible" href=""><i class="icon"></i></a>
+            </notempty>
+        </div>
+    <!--底部导航栏-->
+    <include file="Public/bottom_bar" tab="3"/>
+
+    <notempty name="cart_list">
+        <div class="shopcar-nav-bar">
+            <div class="shopcar-check-icon">
+                <input type="checkbox" name="111" value="111" id="select-all" class="door-check-1" <eq name="all_checked" value="1">checked</eq> />
+                <label class="ajax-post select multi-select" _target="{:U('/Cart/change_status/','',false)}" for="select-all">
+                    <i class="icon no-check"></i>
+                </label>
+            </div>
+            <span>全选</span>
+            <div class="order-price">
+                <p>总计:&#165;
+                    <span>{$cart_info.price_sum|default="0"}</span>
+                </p>
+                <p>共
+                    <span>{$cart_info.goods_sum|default="0"}</span>件
+                </p>
+            </div>
+            <a href="{:U('Cart/create_order')}" class="order-btn"> 结算 </a>
+        </div>
+    </notempty>
+    <div class="main-wrapper title-bar shopcar">
+        <!--当购物车空时 显示-->
+        <empty name="cart_list">
+            <div class="shopcar-wrapper">
+                <div class="shopcar-empty">
+                    <p>购物车还没有商品</p>
+
+                    <a href="/Hot"><span>快去逛逛吧</span></a>
+                </div>
+            </div>
+            <else/>
+            <volist name="cart_list" id="v">
+                <!--同一门店商品-->
+                <section class="base-mt-wrapper shopcar-door">
+                    <!--门店名称-->
+                    <div class="door-name">
+                        <div class="shopcar-check-icon">
+                            <input type="checkbox" name="{$v[0]['shop_id']}" value="0" id="shop-{$v[0]['shop_id']}" class="door-check-1" />
+                            <label class="ajax-post select multi-select shop" _target="{:U('/Cart/change_status/','',false)}" for="shop-{$v[0]['shop_id']}">
+                                <i class="icon no-check"></i>
+                            </label>
+                        </div>
+                        <span>{$v[0]['shop_name']}</span>
+                    </div>
+                    <!--门店内购物车商品-->
+                    <div class="shopcar-list-wrapper">
+                        <!--单件商品-->
+                        <volist name="v" id="vv">
+                            <section class="shopcar-list">
+                                <div class="shopcar-list-left">
+                                    <div class="shopcar-check-icon">
+                                        <input type="checkbox" name="{$vv.id}" value="0" id="goods-{$vv.id}" class="door-check-1" <eq name="vv.status" value="1">checked</eq> />
+                                        <label class="ajax-post select" _target="{:U('Cart/change_status/'. $vv['id'],'',false)}" for="goods-{$vv.id}">
+                                            <i class="icon no-check"></i>
+                                        </label>
+                                    </div>
+                                    <a href="detail/{$vv.goods_id}" class="shopcar-list-img">
+                                        <img src="{$vv.goods_image}" alt="">
+                                    </a>
+                                </div>
+                                <div class="shopcar-list-right">
+                                    <!--置顶-->
+                                    <p>{$vv.goods_name}</p>
+                                    <!--置底-->
+                                    <div class="shopcar-product-price-count">
+                                        <div class="shopcar-product-count">
+                                            <span>{$vv.goods_price}</span>
+                                            <div class="shopcar-product-count-c">
+                                                <i class="icon minus" onclick="count('#goods-{$vv.id}-count',-1)"></i>
+                                                <span id="goods-{$vv.id}-count">{$vv.goods_num}</span>
+                                                <i class="icon add" onclick="count('#goods-{$vv.id}-count',1)"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </volist>
+                    </div>
+                </section>
+            </volist>
+        </empty>
+        <div class="base-mt-wrapper">
+            <p class="guess-you-like">猜你喜欢</p>
+            <div class="product-box-wrapper">
+                <volist name="goods" id="v">
+                    <div class="product-box">
+                        <a href="detail/{$v.id}">
+                            <div <eq name="v.stock" value="0"> class="soldout" </eq> ><img src="{$v.image}"></div>
+
+                            <p>{$v.name}</p>
+                            <p>&#165;
+                                <span>{$v.price}</span>
+                            </p>
+                        </a>
+                    </div>
+                </volist>
+            </div>
+        </div>
+    </div>
+
+</block>
+
+<block name="script">
+    <script>
+        (shop_check = function () {
+            var select_all = $('input#select-all')[0];
+
+            select_all.checked = true;
+
+            $('.shopcar-door').find('input[id|=shop]').each(function(){
+                var _this = this;
+                var _this_shop = $(this).parents('.shopcar-door');
+
+                _this.checked = true;
+
+                _this_shop.find('input[id|=goods]').each(function () {
+                    _this.checked = (_this.checked & $(this).is(':checked'));
+                });
+
+                select_all.checked = (select_all.checked & _this.checked);
+            });
+        })();
+        (shop_select = function (there) {
+            if($(there).is('#select-all')){
+                var checker = $(there).is(':checked');
+                $('.shopcar-door').find('input[id|=shop]').each(function () {
+                    var this_checked = $(this).is(':checked');
+                    if((!checker|this_checked)&(checker|!this_checked) ){
+                        shop_select(this);
+                    }
+                })
+            }else{
+                var shop = $(there).parents('.shopcar-door');
+                var shop_status = $(there).is(':checked');
+                shop.find('input[id|=goods]').each(function () {
+                    this.checked = !shop_status;
+                });
+            }
+        })();
+        (price_count = function () {
+            var amount = 0.00;
+            var count = 0;
+            $('input[id|=goods]:checked').each(function(){
+                var goods = $(this).parents('.shopcar-list');
+                var goods_price = parseFloat(goods.find('.shopcar-product-count > span').text());
+                var goods_count = parseFloat(goods.find('.shopcar-product-count-c > span').text());
+                amount += (goods_price * goods_count);
+                count += goods_count;
+                $('.order-price span').eq(0).text(amount.toFixed(2));
+                $('.order-price span').eq(1).text(count);
+            });
+        })();
+    </script>
+    <script>
+        var count = function (i,a){
+            var id = i.split('-')[1];
+            var url = a > 0 ? 'Cart/goods_count/add/' + id : 'Cart/goods_count/sub/' + id;
+            $.ajax({
+                url: url,
+                success: function(add){
+                    if(add){
+                        var t = $(i).text();
+                        $(i).text(parseInt(t)+a);
+                        price_count();
+                    }
+
+                },
+            });
+        }
+
+        $('.ajax-post').click(function () {
+            var _this = $(this);
+            var target = _this.attr('_target');
+
+            if(_this.is('.select')){
+                var _this_id = '#'+_this.attr('for');
+
+                if(_this.is('.multi-select')){
+                    var list = [];
+                    if(_this.is('.shop')){
+                        _this.parents('.shopcar-door').find('input[id|=goods]').each(function(){ list.push($(this).attr('name'));});
+                    }else{
+                        $('input[id|=goods]').each(function(){list.push($(this).attr('name'));});
+                    }
+                    shop_select(_this_id);
+                    list.join(',');
+                    target = target + '/' + list;
+                }
+
+                if(!$(_this_id).is(':checked')){
+                    target = target+'/'+1;
+                }else{
+                    target = target+'/'+0;
+                }
+
+                $.ajax({
+                    url: target,
+                    success: function(change){
+                        if(change){
+                            shop_check();
+                            price_count();
+                        }
+                    }
+                });
+            }else if(_this.is('.delete-goods')){
+                var list = [];
+                $('input[id|=goods]:checked').each(function(){list.push($(this).attr('name'));});
+                list.join(',');
+                target = target + '/' + list;
+
+                $.ajax({
+                    url: target,
+                    success: function(change){
+                        if(change){
+                            baseMsg('删除商品成功');
+                            location.reload();
+                        }
+                    }
+                });
+            }
+        });
+
+    </script>
+</block>

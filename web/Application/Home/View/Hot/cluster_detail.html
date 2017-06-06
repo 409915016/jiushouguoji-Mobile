@@ -1,0 +1,83 @@
+<extend name="Public/base" />
+
+<block name="body">
+
+    <div class="main-wrapper no-mart title-bar arrival order-details">
+        <switch name="detail.status">
+            <case value="2">
+                <div class="base-order groupbuy-base-order groupbuy-state-order-underway">
+                <!--拼团底部栏-->
+                <div class="nav-bottom-bar no-padding order-details-b-bar groupbuy-b-bar">
+                    <div class="nav-btn-wrapper">
+                        <a href="/hot" >更多拼团</a>
+                        <a href="/cluster/join/cluster_id/{$_GET['cluster_id']}">参团</a>
+                    </div>
+                </div>
+            </case>
+            <case value="3"><div class="base-order groupbuy-base-order groupbuy-state-order-succeed"></case>
+            <case value="4"><div class="base-order groupbuy-base-order groupbuy-state-order-failure"></case>
+            <default />
+            <div class="base-order groupbuy-base-order groupbuy-state-order-failure">
+        </switch>
+        <a href="/detail/{$detail.goods_id}" class="base-order-info ">
+            <div class="order-imgBox">
+                <img src="{$detail.goods_image}" alt=""> </div>
+            <div class="order-name-price">
+                <p>{$detail.goods_name}</p>
+                <!--团购人数 价格-->
+                <div class="groupbuy-price-num">
+                    <span>{$detail.s_num}<span>人团</span></span>
+                    <span>&#165;<span class="groupbuy-price">{$detail.goods_price}</span>元&#47;件</span>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="groupbuy-details-user">
+        <p>
+            <span>{$detail.s_num}</span>人团
+        </p>
+        <div class="groupbuy-details-userheader">
+            <volist name="detail.member" id="v">
+                <section class="userheaderBox">
+                    <img src="{$v.logo}">
+                </section>
+            </volist>
+
+        </div>
+        <div class="groupbuy-details-userinfo-wrapper">
+            <gt name="detail.gap_time" value="0"><p class="count-down-time-p">剩余<span class="count-down-time" time="{$detail.gap_time}">.....</span>结束</p></gt>
+            <p id="switch-userinfo">
+                <span>查看</span>全部拼团详情
+            </p>
+            <div class="groupbuy-details-userinfo">
+                <volist name="detail.member" id="v">
+                    <section class="groupbuy-details-user">
+                        <section class="userheaderBox">
+                            <img src="{$v.logo}">
+                        </section>
+                        <p>{$v.name}</p>
+                        <p>{$v.create_time|date='Y-m-d h:i:s',###}</p>
+                    </section>
+
+                </volist>
+            </div>
+        </div>
+    </div>
+
+    </div>
+</block>
+
+<block name="script">
+
+    <script>console.log('{:json_encode($detail)}');</script>
+    <script>
+        if({$detail.gap_time} > 0)
+            setInterval(detailCountDownGo, 1000);
+        $(document).ready(function() {
+            $(".groupbuy-details-userinfo").hide();
+            $("#switch-userinfo").click(function () {
+                $(".groupbuy-details-userinfo").fadeToggle("fast", "linear");
+            });
+        });
+    </script>
+</block>

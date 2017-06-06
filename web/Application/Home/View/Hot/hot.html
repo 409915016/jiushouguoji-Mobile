@@ -1,0 +1,28 @@
+<extend name="Public/base" />
+
+<block name="body">
+    <!--底部导航栏-->
+    <include file="Public/bottom_bar" tab="2"/>
+
+    <div class="main-wrapper no-mart">
+        <volist name="list" id="v">
+            <section class="base-mt-wrapper">
+                <a href="detail/{$v.id}" class="group-goods">
+                    <div class="group-goods-imgBox">
+                        <img src="{$v.image}">
+                    </div>
+                    <p>{$v.name}</p>
+                    <div class="group-goods-info">
+                        <div class="group-goods-price">
+                            <p>&#165;<span>{$v.cluster_price}</span></p>
+                            <p>单买价&#165;<span>{$v.price}</span></p>
+                        </div>
+                        <p>&#91;<span>{$v.cluster_member}</span>人团&#93;</p>
+                        <button class="goGroupBuy" type="" >去开团</button>
+                    </div>
+                </a>
+            </section>
+
+        </volist>
+    </div>
+</block>

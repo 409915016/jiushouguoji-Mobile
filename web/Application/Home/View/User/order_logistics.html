@@ -1,0 +1,32 @@
+<extend name="Public/base" />
+
+<block name="body">
+    <div class="main-wrapper no-mart no-b-nav wish">
+        <div class="base-wrapper no-border">
+            <div class="express-wrapper">
+                <p>物流状态:
+                    <span>{$data.state_text}</span>
+                </p>
+                <p>快递公司:
+                    <span>{$data.ShipperName}</span>
+                </p>
+                <p>运单编号:
+                    <span>{$data.LogisticCode}</span>
+                </p>
+                <p>友情提示:
+                    <span>具体请去快递100查询</span>
+                </p>
+            </div>
+        </div>
+        <div class="base-mt-wrapper pd">
+            <div class="express-details">
+                <volist name="data.Traces" id="v">
+                    <div class="express-details-single">
+                        <p>{$v.AcceptStation}</p>
+                        <p>{$v.AcceptTime}</p>
+                    </div>
+                </volist>
+            </div>
+        </div>
+    </div>
+</block>

@@ -1,0 +1,124 @@
+<extend name="Public/base" />
+
+<block name="body">
+    <div class="base-nav-bar">
+        <a class="" href="{:W('Teleport/port')}">
+            <i class="icon back fl"></i>
+        </a>
+        <p>{$title}</p>
+        <a href="/User/login">登陆</a>
+    </div>
+
+    <div class="main-wrapper title-bar no-b-nav h-100-white">
+        <form>
+            <div class="login-sign-wrapper sign">
+                <p>注册平台账号</p>
+                <section class="inputBlock">
+                    <input type="tel" name="username" value="" placeholder="手机号">
+                    <button id="verify" onclick="return false;">验证</button>
+                </section>
+                <section class="inputBlock ">
+                    <input type="tel" name="verify" value="" placeholder="请输入收到的验证码">
+                </section>
+                <section class="inputBlock">
+                    <input type="password" name="password" value="" placeholder="6-16位登录密码">
+                </section>
+                <section class="inputBlock">
+                    <input type="password" name="retype_password" value="" placeholder="请再次输入密码">
+                </section>
+                <p class="notice"><span class="text-red"></span></p>
+                <button id="submit" onclick="return false;" disabled>注册</button>
+                <section class="other-way-login">
+                    <p>其他方式登录</p>
+                    <div class="qq-wechat">
+                        <ul>
+                            <li>
+                                <a href="/User/weixin_auth">
+                                    <i class="icon wechat"></i>
+                                    <p>微信</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+        </form>
+    </div>
+</block>
+<block name="script">
+    <script>
+        var cid = 0;
+        $('#verify').click(function(){
+            baseMsg('正在发送验证码..', 0);
+            var _this = $(this);
+            cid = setInterval(function(){disabled_countdown(_this)}, 1000);
+            var mobile = $('input[name=username]').val();
+           $.ajax({
+               url: '/User/verify',
+               data: 'mobile=' + mobile,
+               type: 'POST',
+               success: function (r) {
+                   baseMsg('验证码'+r.message);
+               }
+           });
+        });
+        var disabled_countdown = function(btn){
+            if(btn.is('.disabled')){
+                if(btn.attr('countdown') > 0){
+                    btn.attr('countdown', btn.attr('countdown') -1);
+                }else{
+                    clearInterval(cid);
+                    btn.text('验证');
+                    btn.removeClass('disabled');
+                    return;
+                }
+            }else{
+                btn.addClass('disabled');
+                btn.attr('countdown', 60);
+            }
+            btn.text( btn.attr('countdown') +'秒');
+        }
+        $('#submit').click(function () {
+            var target = "{:U('User/register')}";
+            var data = $('form').serialize();
+            $.ajax({
+                url: target,
+                data: data,
+                type: 'POST',
+                success: function (r) {
+                    baseMsg(r.message);
+                    if(r.status == 1)
+                        window.location = "{:W('Teleport/port')}";
+                }
+            });
+        });
+        /*密码验证*/
+        $('input[type=password]').keyup(function(){
+            var _form = $(this).parents('form'),
+                    _once = _form.find('input[name=password]').val(),
+                    _twice = _form.find('input[name=retype_password]').val(),
+                    _notice = $('.notice'),
+                    _notice_text = _notice.find('span'),
+                    _button = $('#submit'),
+                    _verify = $('input[name=verify]');
+
+            if(_once.length < 6){
+                _notice_text.text('密码长度不能小于6个字符');
+                _notice.show();
+                _button.attr('disabled','');
+            }else if(_twice != '' && _once !== _twice){
+                _notice_text.text('两次密码输入不相同!');
+                _notice.show();
+                _button.attr('disabled','');
+            }else if(_verify.val().length < 4){
+                _notice_text.text('请填写正确的验证码!');
+                _notice.show();
+                _button.attr('disabled','');
+            }else{
+                _notice.hide();
+                _button.removeAttr('disabled');
+            }
+        });
+    </script>
+</block>
+

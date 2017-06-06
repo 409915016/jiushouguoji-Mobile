@@ -1,0 +1,213 @@
+<extend name="Public/base"/>
+
+<block name="body">
+
+    <!--搜索栏-->
+    <div class="search-bar">
+        <a class="search-bar-more">
+            <i class="icon message fl"></i>
+        </a>
+
+        <div class="fl">
+            <div class="form-group">
+                <i class="icon search fl"></i>
+                <label for="f-product-search"></label>
+                <span class="vertical-line fl"></span>
+                <input type="text" id="f-product-search" name="keyword" class="fl" value="" placeholder="在千万海外商品中搜索">
+            </div>
+        </div>
+        <a onclick="baseMsg('即将完善');" href="">
+            <i class="icon fr scan"></i>
+        </a>
+        <div class="search-bar-menu">
+            <ul>
+                <li><a href="/User/order/all">我的订单</a></li>
+                <li><a href="/User/coupon/unused">现金券</a></li>
+                <li><a href="/User">消息</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!--顶部导航栏-->
+    <notempty name="top_nav">
+    <div class="nav-bar">
+        <ul class="">
+            <volist name="top_nav" id="v">
+                <li class="<eq name='i-1' value='$nav_current'>active</eq>">
+                    <a href="{:U('/Home/'.($i-1))}">{$v.name}</a>
+                </li>
+            </volist>
+        </ul>
+    </div>
+    </notempty>
+
+    <!--底部导航栏-->
+    <include file="Public/bottom_bar" tab="1"/>
+
+    <!--返回顶部按钮-->
+    <a id="back-to-top">
+        <i class="icon totop"></i>
+    </a>
+
+    <div class="main-wrapper">
+        <!--标头-->
+        <div class="big-banner">
+            <div class="big-banner-imgBox">
+                <img src="{$top_nav[$nav_current]['banner']}" alt="">
+            </div>
+            <p><gt name="nav_current" value="0">{$top_nav[$nav_current]['name']} <else />就手国际</gt></p>
+        </div>
+
+        <!--商品大图与滑动-->
+        <div class="product-wrapper">
+            <!--section 专场-->
+            <volist name="brand" id="v">
+                <section class="base-mt-wrapper ">
+                    <!--商品大图-->
+                    <div class="series-product-imgBox">
+                        <a href="{:U('/activity/'.$v['id'])}" class="">
+                            <img src="{$v.cover}" alt="{$v.name}">
+                        </a>
+                    </div>
+                    <!--商品滑动-->
+                    <div class="swiper-container swiper-product">
+                        <div class="swiper-wrapper">
+                            <volist name="v.goods_list" id="vv">
+                                <div class="swiper-slide">
+                                    <a href="{:U('/detail/'.$vv['id'])}">
+                                        <div <eq name="vv.stock" value="0"> class="soldout" </eq> ><img src="{$vv.image}"> </div>
+                                        <p>{$vv.name}</p>
+                                        <p>&#165;<span>{$vv.price}</span></p>
+                                    </a>
+                                </div>
+                            </volist>
+                            <div class="swiper-slide">
+                                <a href="{:U('/activity/'.$v['id'])}">
+                                    <p>查看更多</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </volist>
+
+        </div>
+
+        <!--单个商品-->
+        <div class="base-mt-wrapper loading-more">
+            <p class="recommend">精品推荐</p>
+            <p class="indexLoadingP">正在加载更多</p>
+        </div>
+    </div>
+
+</block>
+<block name="extra">
+    <!--弹出搜索页面-->
+    <include file="search_page" />
+</block>
+
+<block name="script">
+    <script>
+        $("body > div.wrapper > div.nav-bar > ul > li > a").css('font-size', '14px');
+    </script>
+    <script src="__PUBLIC__/js/index.js"></script>
+    <script>
+        new Swiper('.swiper-product', {
+            slidesPerView: 3,
+            spaceBetween: 0,
+        })  && (function () {
+            //轮询检测
+            loadingChecker();
+        });
+
+        (function() {
+            $("img.lazy").lazyload({
+                contianer: "",
+                effect: "fadeIn",
+                skip_invisible : true,
+            });
+        })();
+    </script>
+    <script>
+        $('#f-product-search').click(function () {
+            searchWrapperisOn = true;
+            $('.wrapper').hide();
+            $('.product-search-wrapper').show();
+            //fix search wrapper cant over the window
+            $('body').css("background","#fff");
+            $('#product-search').focus();
+        });
+        $('#product-search').focus(function(){
+            document.onkeydown = function(e){
+                if(e.keyCode == 13){
+                    submit()
+                }
+            }
+        });
+        $('.search-bar-back').click(function(){
+            searchWrapperisOn = false;
+            $('.wrapper').show();
+            $('.product-search-wrapper').hide();
+            //recover
+            $('body').css("background","")
+        });
+        $('#product-search').keyup(function(){
+            var words_list = $('.auto-keyword');
+            var current_word = $(this).val();
+            words_list.empty();
+            $.ajax({
+                url: 'auto_word/'+current_word,
+                success: function(words){
+                    words.forEach(function(w){
+                        words_list.append($('<li><a href="/search/'+w+'" class="action-search">'+w+'</a></li>'));
+                    });
+                }
+            });
+        });
+
+        function submit(){
+            location.href = '/search/'+ $('#product-search').val();
+        }
+        //首页返回顶部
+        SrolltoTop();
+        //左边铃铛点击弹出下拉菜单
+        $(".search-bar-more").click(function () {
+            $(".search-bar-menu").fadeToggle("fast", "linear");
+        });
+        $(".main-wrapper").click(function () {
+            $(".search-bar-menu").hide();
+        });
+    </script>
+    <present name="wx_config">
+        <script>
+
+            var wx_config = <?= $wx_config ?>;
+
+            var share_config = {
+                title: '就手国际',
+                desc: '全球正品大集会',
+                imgUrl: 'http://fakeimg.pl/300x300/?text=Jiushou',
+                link: 'http://test.jiushouguoji.com/'
+            };
+            wx.config({
+                debug: wx_config.debug,
+                appId: wx_config.appId,
+                timestamp: wx_config.timestamp,
+                nonceStr: wx_config.nonceStr,
+                signature: wx_config.signature,
+                jsApiList: ['onMenuShareTimeline', 'onMenuShareAppMessage', 'onMenuShareQQ', 'onMenuShareWeibo', 'onMenuShareQZone', 'hideMenuItems',]
+            });
+            wx.ready(function(){
+                wx.onMenuShareTimeline(share_config);
+                wx.onMenuShareAppMessage(share_config);
+                wx.onMenuShareQQ(share_config);
+                wx.onMenuShareWeibo(share_config);
+                wx.onMenuShareQZone(share_config);
+                wx.hideMenuItems({
+                    menuList: ['menuItem:share:email', 'menuItem:readMode', 'menuItem:setFont', 'menuItem:copyUrl',]
+                });
+            });
+        </script>
+    </present>
+
+</block>

@@ -1,0 +1,137 @@
+<extend name="Public/base" />
+
+<block name="body">
+    <div class="base-nav-bar">
+        <a class="" href="/User">
+            <!--{:W('Teleport/save')}-->
+            <i class="icon back fl"></i>
+        </a>
+        <p>{$title}</p>
+        <a class="no-visible" href=""><i class="icon back fl"></i></a>
+    </div>
+
+    <!--顶部导航栏-->
+    <div class="nav-bar on-base-title ">
+        <ul class="">
+            <li <eq name="_GET['status']" value="all"> class="active"</eq> >
+                <a href="{:U('/User/order/all')}">全部</a>
+            </li>
+            <li <eq name="_GET['status']" value="wait_pay"> class="active"</eq> >
+                <a href="{:U('/User/order/wait_pay')}">待付款</a>
+            </li>
+            <li <eq name="_GET['status']" value="payed"> class="active"</eq> >
+                <a href="{:U('/User/order/payed')}">待发货</a>
+            </li>
+            <li <eq name="_GET['status']" value="wait_confirm_goods"> class="active"</eq> >
+                <a href="{:U('/User/order/wait_confirm_goods')}">待收货</a>
+            </li>
+            <li <eq name="_GET['status']" value="finish"> class="active"</eq> >
+                <a href="{:U('/User/order/finish')}">待评价</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="main-wrapper h-title-bar no-b-nav myorder">
+        <!--全部订单-->
+        <!--switch-wrapper 全部订单 待付款 待发货等切换页-->
+        <!--base-order 单张订单内商品 可存在多个商品-->
+        <!--base-order 内含下面所有-->
+        <!--base-order-date-state 该订单时间和状态-->
+        <!--base-order-info 单个商品图 和 单价数量 内有order-imgBox order-price-num -->
+        <!--base-order-total 整张订单的总价以及件数-->
+        <!--base-order-btn-row 订单操作按钮容器-->
+        <section class="switch-wrapper">
+            <!--base-order 订单页通用块-->
+            <!--已取消的订单 无法点击进入订单详情-->
+            <volist name="order_list" id="v">
+                <div class="base-order">
+                    <div class="base-order-date-state">
+                        <span class="base-order-date">{$v.create_time|date='Y-m-d',###}</span>
+                        <span class="base-order-state">
+                            <empty name="v.button">
+                                {$v.order_status_text}
+                                <else/>
+                                {$v.button}
+                            </empty>
+                        </span>
+                    </div>
+                    <volist name="v.order_goods" id="vv">
+                        <a href="/User/Order/detail/{$v['order_id']}" style="padding: 0">
+                            <div class="base-order-info">
+                                <div class="order-imgBox">
+                                    <img src="{$vv.goods_image}" alt="">
+                                </div>
+                                <p>{$vv.goods_name}</p>
+                                <div class="order-price-num">
+                                    <p>&#165;
+                                        <span>{$vv.goods_price}</span>
+                                    </p>
+                                    <p class="base-order-price">x
+                                        <span>{$vv.goods_num}</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    </volist>
+                        <div class="base-order-total">
+                            <p>共<span>{$v.total_goods_num}件</span>
+                                <span>&nbsp;&nbsp;&nbsp;&nbsp;合计:</span><span class="text-red text-first">&#165;{$v.total_fee}</span>
+                            </p>
+                        </div>
+                        <!--订单操作-->
+                        <div class="base-order-btn-row">
+                            <empty name="v.button">
+                                <switch name="_GET['status']">
+                                    <case value="wait_pay">
+                                        <a href="javascript:;" class="ajax-post" _target="/User/Order/cancel/{$v['order_id']}">取消订单</a>
+                                        <a href="/User/Order/pay/{$v['order_id']}">立即支付</a>
+                                    </case>
+                                    <case value="payed">
+                                        <a href="/User/Order/refund/1/{$v['order_id']}">申请退款</a>
+                                    </case>
+                                    <case value="wait_confirm_goods">
+                                        <a href="" onclick="return false;">查看物流</a>
+                                        <a href="javascript:;" class="ajax-post" _target="/User/Order/received/{$v['order_id']}">确认收货</a>
+                                    </case>
+                                    <case value="finish">
+                                        <a href="/User/Order/refund/2/{$v['order_id']}">申请退货</a>
+                                        <a href="javascript:;">查看物流</a>
+                                        <a href="/User/Order/comment/{$v['order_id']}">立即评价</a>
+                                    </case>
+                                    <default/>
+                                </switch>
+                                <else/>
+                                <a class="disable">
+                                    {$v.button}
+                                </a>
+                            </empty>
+                        </div>
+                </div>
+            </volist>
+        </section>
+    </div>
+</block>
+
+<block name="script">
+    <script>
+        $('a').click(function(){if(! $(this).is('.disable'))baseMsg('请稍等..', 0);});
+
+        $('.ajax-post').click(function(){
+            var _this = $(this);
+            var _text = _this.text();
+            var _target = _this.attr('_target');
+            if(confirm('要'+_text+'吗?')){
+                baseMsg('正在'+_text+'..', 0);
+                $.ajax({
+                    url: _target,
+                    success: function(r){
+                        baseMsg(r.message);
+                        if(r.status == 1){
+                            location.reload();
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+</block>

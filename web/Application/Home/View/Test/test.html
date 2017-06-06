@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https:
+</head>
+<body>
+
+    <p>title:    </p><p><input type="text" placeholder="title" id="title"></p>
+    <p>describe: </p><p><input type="text" placeholder="describe" id="describe"></p>
+    <p>link:     </p><p><input type="text" placeholder="link" id="link"></p>
+    <p>img:      </p><p><input type="text" placeholder="img" id="img"></p>
+
+    <button id="register">生成</button>
+
+
+    <p>---Ticket---</p>
+    <p>{$ticket}</p>
+
+    <p>---Nonce---</p>
+    <p>{$nonce}</p>
+
+    <p>---Timestamp---</p>
+    <p>{$timestamp}</p>
+
+    <p>---Url---</p>
+    <p>{$url}</p>
+
+    <p>---Signature---</p>
+    <p>{$signature}</p>
+
+</body>
+<script>
+    document.querySelector('#register').onclick = function(){
+        wx.onMenuShareAppMessage({
+            title: document.querySelector('#title').value,
+            desc: document.querySelector('#title').value,
+            link: document.querySelector('#title').value,
+            imgUrl: document.querySelector('#title').value,
+            type: 'link',
+            dataUrl: '',
+            success: function () {
+
+                alert('分享成功 :)');
+            },
+            cancel: function () {
+
+                alert('分享取消 :(');
+            }
+        });
+        alert('注册分享给朋友按钮');
+    }
+
+    var share_config = eval('({$share_config})');
+    var wx_config = eval('({$wx_config})');
+    wx.config({
+        debug: false,
+        appId: wx_config.appId,
+        timestamp: wx_config.timestamp,
+        nonceStr: wx_config.nonceStr,
+        signature: wx_config.signature,
+        jsApiList: ['onMenuShareTimeline', 'onMenuShareAppMessage', 'onMenuShareQQ', 'onMenuShareWeibo', 'onMenuShareQZone', 'hideMenuItems',]
+    });
+    wx.ready(function(){
+        wx.onMenuShareTimeline(share_config);
+        wx.onMenuShareAppMessage(share_config);
+        wx.onMenuShareQQ(share_config);
+        wx.onMenuShareWeibo(share_config);
+        wx.onMenuShareQZone(share_config);
+        wx.hideMenuItems({
+            menuList: ['menuItem:share:email', 'menuItem:readMode', 'menuItem:setFont', 'menuItem:copyUrl',]
+        });
+    });
+
+</script>
+</html>

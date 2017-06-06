@@ -1,0 +1,103 @@
+<extend name="Public/base" />
+
+<block name="body">
+    <div class="base-nav-bar">
+        <a href="{:U('User/Address')}">
+            <i class="icon back fl"></i>
+        </a>
+        <p>收货地址管理</p>
+        <a href="javascript:void(0);" class="ajax-post" _target="{:U('User/Address/add')}"> 保存 </a>
+    </div>
+
+    <div class="main-wrapper title-bar no-b-nav">
+        <form>
+            <div class="user-input-list">
+                <section class="input-list-row">
+                    <span>收货人</span>
+                    <input type="text" name="name" placeholder="请输入收货人的姓名"> </section>
+                <section class="input-list-row">
+                    <span>手机号</span>
+                    <input type="tel" name="mobile" placeholder="请输入收货人的手机号码"> </section>
+                <section class="input-list-row">
+                    <span>身份证</span>
+                    <input type="text" name="personid" placeholder="请输入收货人的身份证号码"> </section>
+                <p class="alert-red">海关需要对海外购物检查身份，请填写正确的身份证信息，身份证信息会加密保管，就手国际确保你信息安全，请放心购购买！<br>&nbsp;</p>
+                <section class="input-list-row has-select">
+                    <span>省市区</span>
+                    <select class="district province" name="provinceid">
+                        <option value="0">请选择</option>
+                    </select>
+                    <select class="district city" name="cityid">
+                        <option value="0">请选择</option>
+                    </select>
+                    <select class="district area" name="areaid">
+                        <option value="0">请选择</option>
+                    </select>
+
+                </section>
+                <section class="input-list-row">
+                    <span>详细地址</span>
+                    <input type="text" name="address" placeholder="请输入收货人的详细地址"> </section>
+            </div>
+        </form>
+    </div>
+</block>
+
+<block name="script">
+    <script>
+        $.ajax({
+                url: "/get_district/0",
+                success: function (data) {
+                    $.each(data,function (i,n) {
+                        $('.province').append('<option value="'+i+'">'+n+'</option>');
+                    });
+                }
+            });
+
+        $('.district').change(function () {
+            var _this = $(this);
+            var this_id = $(this).val();
+            var next_option = '';
+
+            if(_this.is('.province')){
+                next_option = $('.district.city');
+            }else if(_this.is('.city')){
+                next_option = $('.district.area');
+            }else if(_this.is('.area')){
+                return;
+            }
+
+            next_option.empty().append('<option value="0">请选择</option>');
+
+            $.ajax({
+                url: "/get_district/"+this_id,
+                success: function (data) {
+                    $.each(data,function (i,n) {
+                        next_option.append('<option value="'+i+'">'+n+'</option>');
+                    });
+                }
+            });
+        })
+    </script>
+    <script>
+        $('.ajax-post').click(function(){
+            var target = $(this).attr('_target');
+            var data = $('form').serialize();
+            $('form').attr('disabled', 'true');
+            baseMsg('请稍等..', 0);
+            $.ajax({
+                url: target,
+                data: data,
+                type: 'post',
+                success: function (r) {
+                    if(r.status){
+                        baseMsg(r.message+'成功');
+                        location.href = '{:W("Teleport/port")}';
+                    }else{
+                        baseMsg(r.message+'失败');
+                    }
+                }
+            });
+        });
+    </script>
+</block>

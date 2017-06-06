@@ -1,0 +1,105 @@
+<extend name="Public/base" />
+
+<block name="body">
+
+    <!--拼团底部栏-->
+    <!--<div class="nav-bottom-bar no-padding order-details-b-bar groupbuy-b-bar">
+        <div class="nav-btn-wrapper">
+            <a href="/hot" >更多拼团</a>
+            <a href="{:U('cluster/join/'.$_GET['cluster_id'])}">参团</a>
+        </div>
+    </div>-->
+
+    <div class="main-wrapper no-mart title-bar arrival order-details">
+        <div class="base-wrapper no-thing">
+            <div class="order-details-state groupbuy-details-state ">
+                <switch name="detail.status">
+                    <case value="2"><p>拼团中<br>已支付</p></case>
+                    <case value="3"><p>拼团成功<br>待发货</p></case>
+                    <case value="4"><p>拼团失败<br>已退款</p></case>
+                </switch>
+            </div>
+        </div>
+        <div class="base-wrapper no-thing">
+            <!--订单详情重新布局 取消 user-address-info 内边距 -->
+            <div class="order-details-user-address">
+                <i class="icon location"></i>
+                <div class="user-address-info">
+                    <p class="user-real-name-phone">
+                        <span class="user-real-name">{$detail.name}</span>
+                        <span class="user-phone-num">{$detail.mobile}</span>
+                    </p>
+                    <p class="user-real-address">
+                        <span>{$detail.address}</span>
+                    </p>
+
+                    <p class="">身份证: <span class="user-identity-num">{$detail.personid}</span></p>
+                </div>
+            </div>
+        </div>
+        <!--整个显示商品订单的块-->
+        <section class="order-list">
+            <!--同家商家信息-->
+            <p class="order-list-door-name">就手国际海外旗舰店
+                <switch name="status">
+                    <case value="2"><span class="fr text-red">拼团中, 已支付</span></case>
+                    <case value="3"><span class="fr text-red">拼团成功, 待发货</span></case>
+                    <case value="4"><span class="fr text-red">拼团失败, 已退款</span></case>
+                </switch>
+            </p>
+            <section class="base-order-info groupbuy-order-info">
+                <div class="order-imgBox">
+                    <img src="{$detail.goods_image}" alt=""> </div>
+                <p>{$detail.goods_name}</p>
+                <div class="order-price-num">
+                    <p class="base-order-price">&#165;
+                        <span class="">{$detail.cluster_price}</span>/件 </p>
+                </div>
+            </section>
+            <div class="groupbuy-total ">
+                <p>共<span>{$detail.goods_num}</span>件商品&nbsp;合计：
+                    <span class="text-red text-16">&#165;</span>
+                    <span class="text-red text-16">{$detail.pay_amount}</span></p>
+            </div>
+
+
+        </section>
+        <div class="base-mt-wrapper">
+            <section class="base-text-row text-black">
+                <span>订单编号：</span>
+                <span>{$detail.order_id}</span>
+            </section>
+            <section class="base-text-row  text-black">
+                <span>支付方式：</span>
+                <span>{$detail.pay_name}</span>
+            </section>
+            <section class="base-text-row  text-black">
+                <span>收件人：</span>
+                <span>{$detail.name}</span>
+            </section>
+            <section class="base-text-row  text-black">
+                <span>下单时间：</span>
+                <span>{$detail.pay_time|date='Y-m-d H:i',###}</span>
+            </section>
+            <!--拼团失败没有成团时间-->
+            <!--<section class="base-text-row text-black">
+                <span>成团时间：</span>
+                <span>
+                    <span>2016-11-12 11:11</span>
+            </section>-->
+        </div>
+
+    </div>
+</block>
+
+<block name="script">
+
+    <script>
+        $(document).ready(function() {
+            $(".groupbuy-details-userinfo").hide();
+            $("#switch-userinfo").click(function () {
+                $(".groupbuy-details-userinfo").fadeToggle("fast", "linear");
+            });
+        });
+    </script>
+</block>

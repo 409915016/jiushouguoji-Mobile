@@ -1,0 +1,86 @@
+<extend name="Public/base" />
+
+<block name="body">
+    <div class="base-nav-bar">
+        <a class="" href="{:U('User/Order/wait_pay')}">
+            <i class="icon back fl"></i>
+        </a>
+        <p>{$title}</p>
+        <a class="no-visible" href="">
+            <i class="icon back fl"></i>
+        </a>
+    </div>
+
+    <div class="main-wrapper title-bar no-b-nav">
+        <div class="base-mt-wrapper">
+            <div class="order-pay-price">
+                <p>订单金额</p>
+                <p>&#165;
+                    <span class="pay-price">{$order_price}</span>
+                </p>
+            </div>
+        </div>
+        <div class="base-mt-wrapper">
+            <div class="order-pay-way">
+                <p>选择支付方式</p>
+                <section class="pay-way">
+                    <div class="pay-way-text">
+                        <i class="icon wechat-pay"></i>
+                        <p>微信支付</p>
+                    </div>
+                    <i class="icon checked"></i>
+                </section>
+            </div>
+            <div class="pay-btn">
+                <button type="" class="half-btn" onclick="callpay();">确认支付</button>
+            </div>
+        </div>
+    </div>
+
+</block>
+
+<block name="script">
+    <script>
+        function jsApiCall() {
+            baseMsg('调起微信支付,请稍等.', 0);
+            WeixinJSBridge.invoke(
+                    'getBrandWCPayRequest',
+                    eval('({$jsApiParameters})'),
+                    function(res){
+                        layer.closeAll();
+                        switch (res.err_msg){
+                            case 'get_brand_wcpay_request:ok':
+                                location.href = '{$redirect_url[0]}';
+                                alert('支付成功!');
+                                break;
+                            case 'get_brand_wcpay_request:cancel':
+                                location.href = '{$redirect_url[1]}';
+                                alert('支付取消');
+                                break;
+                            case 'get_brand_wcpay_request:fail':
+                                location.href = '{$redirect_url[1]}';
+                                alert('支付失败!');
+                                break;
+                        }
+                    }
+            );
+        }
+        function callpay() {
+            if (typeof WeixinJSBridge == "undefined"){
+                if( document.addEventListener ){
+                    document.addEventListener('WeixinJSBridgeReady', jsApiCall, false);
+                }else if (document.attachEvent){
+                    document.attachEvent('WeixinJSBridgeReady', jsApiCall);
+                    document.attachEvent('onWeixinJSBridgeReady', jsApiCall);
+                }
+            }else{
+                jsApiCall();
+            }
+        }
+    </script>
+    <script>
+        $(document).ready(function(){
+            wrapperHeightCheck();
+        });
+    </script>
+</block>

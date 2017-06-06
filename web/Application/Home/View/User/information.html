@@ -1,0 +1,112 @@
+<extend name="Public/base"/>
+
+<block name="body">
+    <div class="base-nav-bar">
+        <a class="" href="/User">
+            <i class="icon back fl"></i>
+        </a>
+        <p>个人中心</p>
+        <a class="" id="change-user-infoBtn">修改</a>
+    </div>
+
+    <div class="main-wrapper title-bar my-center">
+        <section class="my-center-header-name">
+            <div class="my-center-header-imgBox">
+                <img src="{$info.logo}" alt="">
+            </div>
+            <p class="my-center-name">{$info.mobile}</p>
+        </section>
+        <div class="my-center-info">
+            <section class="my-center-row no-display">
+                <p>修改头像</p>
+                <p></p>
+                <i class="icon right "></i>
+            </section>
+            <section class="my-center-row">
+                <p>昵称</p>
+                <p>{$info.nickname}</p>
+            </section>
+            <section class="my-center-row">
+                <p>签名</p>
+                <p>{$info.signature}</p>
+            </section>
+            <section class="my-center-row">
+                <p>性别</p>
+                <p>
+                    <switch name="info.sex">
+                        <case value="0">男</case>
+                        <case value="1">女</case>
+                    </switch>
+                </p>
+            </section>
+            <section class="my-center-row">
+                <p>生日</p>
+                <p>{$info.birthday}</p>
+            </section>
+            <section class="my-center-row"></section>
+            <section class="my-center-row" onclick="forgot()">
+                <p>重置密码</p>
+                <p></p>
+            </section>
+            <section class="my-center-row" onclick="logout()">
+                <p>退出登录</p>
+                <p></p>
+            </section>
+        </div>
+    </div>
+</block>
+
+<block name="script">
+    <script>
+        $("#change-user-infoBtn").click(function () {
+            layer.open({
+                title: [
+                    "请修改你的个人信息",
+                    "background-color: #fff; color:#333;border-bottom: 1px solid #c8c7cc;"
+                ],
+                className: 'uesr-change-pop',
+                content: '<div class="pop-wrapper change-user-info-block"><div class="change-user-info-close"></div><form><section class="input-block"><p>昵称</p><input type="text" name="nickname" value="{$info.nickname}" class="wide-input user-name-input"></section><section class="input-block"><p>签名</p><input type="text" name="signature" value="{$info.signature}" class="wide-input user-name-input"></section><section class="input-block"><p>性别</p><div class="select-block"><select class="user-sex" name="sex">    <option value="0" <eq name="info.sex" value="0"> selected="selected"</eq> >男</option>    <option value="1" <eq name="info.sex" value="1"> selected="selected"</eq> >女</option></select></div></section><section class="input-block"><p>生日</p><div class="select-block"><input type="date" value="{$info.birthday|date="Y-m-d",###}" /><input type="text" name="birthday" value="{$info.birthday}" hidden /></div></section></form><button type="" class="half-btn change-user-name">提交</button></div>'
+            });
+            $(".uesr-change-pop .change-user-info-close").click(function(){
+                layer.closeAll();
+            });
+            /** don't need to translate the date format *
+            $('input[type=date]').change(function(){
+                var d = new Date($(this).val());
+                $('input[name=birthday]').val(d.getTime());
+            });*/
+            $('button.change-user-name').click(function(){
+                var target = "/User/information";
+                var data = $('form').serialize();
+                $.ajax({
+                    type: 'POST',
+                    url: target,
+                    data: data,
+                    success: function(r){
+                        baseMsg(r.message);
+                        if(r.status == 1){
+                            location.reload();
+                        }
+                    }
+                })
+            });
+        });
+        function forgot(){
+            window.location.href = "/User/forgot";
+        }
+        function logout(){
+            if(confirm('要退出登录吗?')){
+                baseMsg('正在退出..',0);
+                $.ajax({
+                    url: "/User/logout",
+                    success: function(r){
+                        baseMsg(r.message);
+                        if(r.status == 1){
+                            location.href = '/User';
+                        }
+                    }
+                });
+            }
+        }
+    </script>
+</block>

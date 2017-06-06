@@ -1,0 +1,54 @@
+<extend name="Public/base" />
+
+<block name="body">
+    <div class="base-nav-bar">
+        <a class="" href="/User">
+            <i class="icon back fl"></i>
+        </a>
+        <p></p>
+        <a class="no-visible" href="">
+            <i class="icon back fl"></i>
+        </a>
+    </div>
+    <div class="nav-bar on-base-title ">
+        <ul class="">
+            <li <eq name="_GET['type']" value="unused"> class="active"</eq> >
+                <a href="{:U('User/coupon/unused')}">未使用</a>
+            </li>
+            <li <eq name="_GET['type']" value="used"> class="active"</eq> >
+                <a href="{:U('User/coupon/used')}">已使用</a>
+            </li>
+            <li <eq name="_GET['type']" value="overdue"> class="active"</eq> >
+                <a href="{:U('User/coupon/overdue')}">已过期</a>
+            </li>
+        </ul>
+    </div>
+    <div class="main-wrapper h-title-bar h-100-white no-b-nav coupon">
+        <section class="switch-wrapper" style="display: block;">
+        <volist name="list" id="v">
+            <div class="coupon-single">
+                <span>&#165;{$v.c_value}</span>
+                <div class="coupon-name-time-key">
+                    <div class="coupon-name-time">
+                        <div class="coupon-name">
+                            <p>{$v.c_name}</p>
+                            <p>{$v.use_comments}</p>
+                        </div>
+                        <div class="coupon-time">
+                            <p>过期时间</p>
+                            <p>{$v.expdate|date='Y-m-d',###}</p>
+                        </div>
+                    </div>
+                    <div class="coupon-key">
+                        <p>券码:
+                            <span>{$v.c_num}</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </volist>
+        </section>
+    </div>
+
+    <!--{$list|var_dump}-->
+</block>
