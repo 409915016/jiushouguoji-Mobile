@@ -175,7 +175,7 @@
             $.ajax({
                 url: url,
                 success: function(add){
-                    if(add){
+                    if(add.status === 1){
                         var t = $(i).text();
                         $(i).text(parseInt(t)+a);
                         price_count();

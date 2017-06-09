@@ -744,6 +744,7 @@ iframe {
 }
 .product-nav-bar .product-action {
   width: 45%;
+  height: 100%;
 }
 .product-nav-bar .product-action-buy {
   width: 55%;
@@ -765,6 +766,7 @@ ul.product-nav-action {
   -webkit-align-items: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;
+  height: 100%;
 }
 ul.product-nav-action li {
   font-size: 0;
@@ -1374,41 +1376,43 @@ i.icon.details-collect {
 }
 i.icon.collect-red {
   background-image: url("../img/icon/collect-red.png");
-  margin-top: 0rem;
+  margin-top: 0.04rem;
   width: 0.66rem;
   height: 0.66rem;
 }
 i.icon.details-shopcar {
   background-image: url("../img/icon/details-shopcar-1.jpg");
-  margin-top: 0rem;
+  margin-top: 0.04rem;
   width: 0.66rem;
   height: 0.66rem;
 }
 i.icon.details-services {
   background-image: url("../img/icon/details-services-1.jpg");
-  margin-top: 0rem;
+  margin-top: 0.04rem;
   width: 0.66rem;
   height: 0.66rem;
 }
 i.icon.checked {
   background-image: url("../img/icon/checked.png");
-  width: 0.62rem;
-  height: 0.62rem;
+  width: 0.44rem;
+  height: 0.44rem;
 }
 i.icon.no-check {
   background-image: url("../img/icon/no-check.png");
-  width: 0.62rem;
-  height: 0.62rem;
+  width: 0.44rem;
+  height: 0.44rem;
 }
 i.icon.add {
   background-image: url("../img/icon/add.png");
-  width: 0.62rem;
-  height: 0.62rem;
+  background-position: center;
+  width: 0.44rem;
+  height: 0.44rem;
 }
 i.icon.minus {
   background-image: url("../img/icon/minus.png");
-  width: 0.62rem;
-  height: 0.62rem;
+  background-position: center;
+  width: 0.44rem;
+  height: 0.44rem;
 }
 i.icon.collect {
   background-image: url("../img/icon/collect.png");
@@ -1559,43 +1563,43 @@ i.icon.location {
 }
 i.icon.bad {
   background-image: url("../img/icon/bad.png");
-  width: 0.62rem;
-  height: 0.62rem;
+  width: 0.44rem;
+  height: 0.44rem;
 }
 i.icon.bad-gray {
   background-image: url("../img/icon/bad-gray.png");
-  width: 0.62rem;
-  height: 0.62rem;
+  width: 0.44rem;
+  height: 0.44rem;
 }
 i.icon.good {
   background-image: url("../img/icon/good.png");
-  width: 0.62rem;
-  height: 0.62rem;
+  width: 0.44rem;
+  height: 0.44rem;
 }
 i.icon.good-gray {
   background-image: url("../img/icon/good-gray.png");
-  width: 0.62rem;
-  height: 0.62rem;
+  width: 0.44rem;
+  height: 0.44rem;
 }
 i.icon.not-good {
   background-image: url("../img/icon/not-good.png");
-  width: 0.62rem;
-  height: 0.62rem;
+  width: 0.44rem;
+  height: 0.44rem;
 }
 i.icon.not-good-gray {
   background-image: url("../img/icon/not-good-gray.png");
-  width: 0.62rem;
-  height: 0.62rem;
+  width: 0.44rem;
+  height: 0.44rem;
 }
 i.icon.star-gray {
   background-image: url("../img/icon/star-gray.png");
-  width: 0.62rem;
-  height: 0.62rem;
+  width: 0.44rem;
+  height: 0.44rem;
 }
 i.icon.star-red {
   background-image: url("../img/icon/star-red.png");
-  width: 0.62rem;
-  height: 0.62rem;
+  width: 0.44rem;
+  height: 0.44rem;
 }
 /****************
 
@@ -1644,8 +1648,8 @@ i.icon.star-red {
 .door-name .shopcar-check-icon {
   font-size: 0;
   margin-right: 0.39612676rem;
-  width: 0.61619718rem;
-  height: 0.61619718rem;
+  width: 0.44014085rem;
+  height: 0.44014085rem;
 }
 /****************
 
@@ -1711,8 +1715,8 @@ i.icon.star-red {
 .shopcar-list-left .shopcar-check-icon {
   font-size: 0;
   margin-right: 0.39612676rem;
-  width: 0.61619718rem;
-  height: 0.61619718rem;
+  width: 0.44014085rem;
+  height: 0.44014085rem;
 }
 .shopcar-list-left .shopcar-list-img {
   font-size: 0;

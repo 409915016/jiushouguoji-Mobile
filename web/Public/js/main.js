@@ -1,10 +1,18 @@
 var get = function (name) {
     return document.querySelector(name);
-}
+};
 
 var getAll = function (name) {
     return document.querySelectorAll(name);
-}
+};
+
+
+//传入字符串，返回DOM
+function parseDom(arg) {
+    var objE = document.createElement("div");
+    objE.innerHTML = arg;
+    return objE.childNodes;
+};
 
 
 /******************
@@ -235,7 +243,7 @@ function setShopCarNum(num) {
 
 function shopCarNumAdd() {
     var shop_car_count = $(".product-nav-bar ul li:nth-child(2) a i");
-    var addNum = Math.abs(shop_car_count.dataset.shopCount) + 1;
+    var addNum = Math.abs(shop_car_count.attr("data-shop-count")) + 1;
     shop_car_count.attr("data-shop-count", addNum);
     shopcarTurnAround()
 }
@@ -607,3 +615,35 @@ function randomNum(minNum, maxNum) {
             break;
     }
 }
+
+/******************
+
+ 可视页面铺满整个屏幕
+
+ ******************/
+
+function wrapperHeightSetter() {
+    setTimeout(function () {
+        var wrapperH = parseInt($(".main-wrapper").height());
+        var wrapperMT = parseInt($(".main-wrapper").offset().top);
+        var windowH = parseInt($(window).height());
+        if (wrapperH < windowH) {
+            if ($(".nav-bottom-bar").length > 0) {
+                var navH = parseInt($(".nav-bottom-bar").height());
+                $(".main-wrapper").height(windowH - wrapperMT - navH - 10);
+                console.log("1");
+            } else {
+                $(".main-wrapper").height(windowH - wrapperMT);
+                console.log("2");
+            }
+        }
+    }, 300);
+}
+
+function wrapperHeightCheck() {
+    if ($(".main-wrapper").length > 0) {
+        wrapperHeightSetter();
+    }
+}
+
+
