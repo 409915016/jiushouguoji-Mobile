@@ -35,8 +35,9 @@ var SearchPageValue = 2;
 var MaxPage = 50;
 var MinPage = 1;
 
-//每次加载的数量
+//首页推荐每次加载的数量
 var NumOfPage = 6;
+var SearchNumOfPage = 20;//后端规定20
 
 //本地获取到的商品数据
 var goods_recommend = [];
@@ -137,12 +138,12 @@ function SearchInsertToDoc() {
 
     if ((scrollCheck()) && SearchcanRequest && (!searchWrapperisOn)) {
         SearchcanRequest = false;
-        SearchgetData(SearchPageValue, NumOfPage);
+        SearchgetData(SearchPageValue, SearchNumOfPage);
         //isPostP.text("■");
         //var loadingP = $('.loadingP');
         //加入DOM文档
         //从当前加载位置开始 到加载个数阀值停止
-        for (var i = 0; i < NumOfPage; i++) {
+        for (var i = 0; i < SearchNumOfPage; i++) {
             var goods_url = goods_search[i].url;
             var goods_imgURL = goods_search[i].image;
             var goods_name = goods_search[i].name;
@@ -177,7 +178,7 @@ function SearchInsertToDoc() {
 //搜索结果异步数据
 function SearchgetData(p, n) {
     var page = p;
-    var num = n;
+    var num = n;//后端规定20 无法改变
     var key = $(".base-nav-bar p[data-key]").data("key");
     var PostUrl = 'http://wap.jiushouguoji.com/search_ajax?key=' + key + '&page=' + page;
     console.log(PostUrl);
@@ -223,7 +224,7 @@ $(document).ready(function () {
         SearchcanRequest = false;
     }
     if ($(".searchresult").length) {
-        SearchgetData(SearchPageValue, NumOfPage);
+        SearchgetData(SearchPageValue, SearchNumOfPage);
         RCMcanRequest = false;
     }
     loadingCheckerId = setTimeout('loadingChecker()', 1300);
