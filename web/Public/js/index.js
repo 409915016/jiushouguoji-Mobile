@@ -108,7 +108,7 @@ function RCMInsertToDoc() {
 function RCMgetData(p, n) {
     var num = n;
     var page = p;
-    var PostUrl = 'http://wap.jiushouguoji.com/rcm?page=' + page + '&n=' + num;
+    var PostUrl = '/rcm?page=' + page + '&n=' + num;
     $.getJSON(PostUrl, function (data) {
         switch (data.status) {
             case 1 : {
@@ -180,7 +180,7 @@ function SearchgetData(p, n) {
     var page = p;
     var num = n;//后端规定20 无法改变
     var key = $(".base-nav-bar p[data-key]").data("key");
-    var PostUrl = 'http://wap.jiushouguoji.com/search_ajax?key=' + key + '&page=' + page;
+    var PostUrl = '/search_ajax?key=' + key + '&page=' + page;
     console.log(PostUrl);
     $.getJSON(PostUrl, function (data) {
         console.log(data);
